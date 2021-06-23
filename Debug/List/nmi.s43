@@ -1,0 +1,362 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+//                                                      26/Nov/2016  11:15:14 /
+// IAR C/C++ Compiler V5.50.1.20465/W32, Evaluation edition for MSP430        /
+// Copyright 1996-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    __rt_version  =  3                                                      /
+//    __double_size =  32                                                     /
+//    __reg_r4      =  free                                                   /
+//    __reg_r5      =  free                                                   /
+//    __pic         =  no                                                     /
+//    __core        =  430X                                                   /
+//    __data_model  =  large                                                  /
+//    Source file   =  E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\nmi.c                                                /
+//    Command line  =  E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\nmi.c -D DEBUG -D RAM_VECTOR -lA                     /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Debug\List /
+//                     \ -o E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Debug /
+//                     \Obj\ --no_cse --no_unroll --no_inline                 /
+//                     --no_code_motion --no_tbaa --debug -D__MSP430F5529__   /
+//                     -e --double=32 --dlib_config "D:\Program Files\IAR     /
+//                     Systems\Embedded Workbench 6.4                         /
+//                     Evaluation\430\LIB\DLIB\dl430xlff.h" -I                /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\ -I        /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\in /
+//                     c\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Driv /
+//                     ers\src\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£° /
+//                     å\Drivers\src\USB\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C /
+//                     °æ\¹¤³ÌÄ£°å\Drivers\src\USB\USB_config\ -I             /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\USB\USB_User\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\ /
+//                     ¹¤³ÌÄ£°å\Drivers\srcUSB\USB_API\USB_CDC_API\ -I        /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\USB\USB_API\USB_HID_API\ -I                          /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\USB\USB_API\USB_MSC_API\ -I                          /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\  /
+//                     -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWar /
+//                     e\delay\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£° /
+//                     å\HardWare\18b20\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C° /
+//                     æ\¹¤³ÌÄ£°å\HardWare\KEY\ -I                            /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\L /
+//                     ED\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Har /
+//                     dWare\12864\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ /
+//                     ÌÄ£°å\HardWare\oled\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6 /
+//                     \C°æ\¹¤³ÌÄ£°å\HardWare\mpu6050\inc\ -I                 /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\m /
+//                     pu6050\src\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³Ì /
+//                     Ä£°å\HardWare\nokia5110\inc\ -I                        /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\n /
+//                     okia5110\src\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤ /
+//                     ³ÌÄ£°å\HardWare\LQ_1.8_TFT\ -I                         /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\L /
+//                     CD_API\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å /
+//                     \HardWare\2.2TFT\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C° /
+//                     æ\¹¤³ÌÄ£°å\HardWare\nrf24l01\ -I                       /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\System\    /
+//                     -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\System\ /
+//                     inc\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Sy /
+//                     stem\src\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£ /
+//                     °å\User\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£° /
+//                     å\User\USER\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ /
+//                     ÌÄ£°å\Lib\UCOSII\CONFIG\ -I                            /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII /
+//                     \App\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\L /
+//                     ib\uCOSII\CONFIHG\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C /
+//                     °æ\¹¤³ÌÄ£°å\Lib\uCOSII\PORT\ -I                        /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Lib\UCOSII /
+//                     \CORE\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\ /
+//                     Lib\FatFs\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ /
+//                     £°å\Lib\FatFs\option\ --core=430X --data_model=large   /
+//                     -On --multiplier=32 --multiplier_location=4C0          /
+//                     --hw_workaround=CPU40                                  /
+//    List file     =  E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Debug\List /
+//                     \nmi.s43                                               /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME nmi
+
+        RTMODEL "__SystemLibrary", "DLib"
+        RTMODEL "__core", "430X"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dlib_file_descriptor", "1"
+        RTMODEL "__double_size", "32"
+        RTMODEL "__pic", "no"
+        RTMODEL "__reg_r4", "free"
+        RTMODEL "__reg_r5", "free"
+        RTMODEL "__rt_version", "3"
+
+        RSEG CSTACK:DATA:SORT:NOROOT(0)
+
+        EXTERN ?longjmp_r4
+        EXTERN ?longjmp_r5
+        EXTERN ?setjmp_r4
+        EXTERN ?setjmp_r5
+
+        PUBWEAK ?setjmp_save_r4
+        PUBWEAK ?setjmp_save_r5
+        PUBLIC NMI_ClearITPendingBit
+        FUNCTION NMI_ClearITPendingBit,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC NMI_DeInit
+        FUNCTION NMI_DeInit,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC NMI_GetITStatus
+        FUNCTION NMI_GetITStatus,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC NMI_ITConfig
+        FUNCTION NMI_ITConfig,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC NMI_Init
+        FUNCTION NMI_Init,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC SFRX
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA SP DATA
+          CFI Resource PC:20, SP:20, SR:16, R4L:16, R4H:4, R4:20, R5L:16, R5H:4
+          CFI Resource R5:20, R6L:16, R6H:4, R6:20, R7L:16, R7H:4, R7:20, R8L:16
+          CFI Resource R8H:4, R8:20, R9L:16, R9H:4, R9:20, R10L:16, R10H:4
+          CFI Resource R10:20, R11L:16, R11H:4, R11:20, R12L:16, R12H:4, R12:20
+          CFI Resource R13L:16, R13H:4, R13:20, R14L:16, R14H:4, R14:20, R15L:16
+          CFI Resource R15H:4, R15:20
+          CFI ResourceParts R4 R4H, R4L
+          CFI ResourceParts R5 R5H, R5L
+          CFI ResourceParts R6 R6H, R6L
+          CFI ResourceParts R7 R7H, R7L
+          CFI ResourceParts R8 R8H, R8L
+          CFI ResourceParts R9 R9H, R9L
+          CFI ResourceParts R10 R10H, R10L
+          CFI ResourceParts R11 R11H, R11L
+          CFI ResourceParts R12 R12H, R12L
+          CFI ResourceParts R13 R13H, R13L
+          CFI ResourceParts R14 R14H, R14L
+          CFI ResourceParts R15 R15H, R15L
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H SameValue
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H SameValue
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H SameValue
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H SameValue
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H SameValue
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H SameValue
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H SameValue
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H SameValue
+          CFI R11 Concat
+          CFI R12L Undefined
+          CFI R12H Undefined
+          CFI R12 Undefined
+          CFI R13L Undefined
+          CFI R13H Undefined
+          CFI R13 Undefined
+          CFI R14L Undefined
+          CFI R14H Undefined
+          CFI R14 Undefined
+          CFI R15L Undefined
+          CFI R15H Undefined
+          CFI R15 Undefined
+          CFI EndCommon cfiCommon0
+        
+// E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\src\nmi.c
+//    1 #include "nmi.h"
+//    2 #include "msp430f5529.h"
+//    3 #include "msp430f5529MemMap.h"
+//    4 
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(1)
+//    5 const SFR_MemMapPtr SFRX = SFR_BASE_PTR;
+SFRX:
+        DC32 100H
+//    6 /*************************************************************************
+//    7 *  º¯ÊýÃû³Æ£ºNMI_Init(NMIIES ies)
+//    8 *  ¹¦ÄÜËµÃ÷£ºÅäÖÃNMI
+//    9 *  ²ÎÊýËµÃ÷£ºNMIIES ies : Éç»áÖÐNMIÖÐ¶Ï´¥·¢ÑØ
+//   10 *  º¯Êý·µ»Ø£ºÎÞ
+//   11 *  Ê¹ÓÃÊ¾Àý£ºNMI_Init(NMI_Rising); //ÉèÖÃNMIÎªÉÏÉýÑØ´¥·¢ÖÐ¶Ï
+//   12 *************************************************************************/  
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   13 void  NMI_Init(NMIIES ies)
+NMI_Init:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function NMI_Init
+//   14 {
+//   15   SFRX->SYS.NMI = ENABLE;                     //Ê¹ÄÜNMI¹¦ÄÜ
+        MOVA    &SFRX, R15
+        BIS.W   #0x1, 0x4(R15)
+//   16   SFRX->IE.NMI = RESET;                       //½ûÖ¹NMIÖÐ¶Ï
+        MOVA    &SFRX, R15
+        BIC.W   #0x10, 0(R15)
+//   17   if(ies == NMI_Rising)
+        CMP.B   #0x0, R12
+        JNE     ??NMI_Init_0
+//   18   {
+//   19     SFRX->SYS.NMIIES = BIT_SET;                   //ÉèÖÃNMIÖÐ¶ÏÑØ
+        MOVA    &SFRX, R15
+        BIS.W   #0x2, 0x4(R15)
+        JMP     ??NMI_Init_1
+//   20   }
+//   21   else
+//   22   {
+//   23     SFRX->SYS.NMIIES = RESET;
+??NMI_Init_0:
+        MOVA    &SFRX, R15
+        BIC.W   #0x2, 0x4(R15)
+//   24   }
+//   25   SFRX->IFG.NMI = RESET;                      //Çå³ýNMIÖÐ¶Ï±êÖ¾
+??NMI_Init_1:
+        MOVA    &SFRX, R15
+        BIC.W   #0x10, 0x2(R15)
+//   26 }
+        RETA
+          CFI EndBlock cfiBlock0
+//   27 /*************************************************************************
+//   28 *  º¯ÊýÃû³Æ£ºNMI_DeInit()
+//   29 *  ¹¦ÄÜËµÃ÷£ºÆÁ±ÎNMI¹¦ÄÜ
+//   30 *  ²ÎÊýËµÃ÷£ºÎÞ
+//   31 *  º¯Êý·µ»Ø£ºÎÞ
+//   32 *  Ê¹ÓÃÊ¾Àý£ºNMI_DeInit(); //È¡ÏûNMI¹¦ÄÜ
+//   33 *************************************************************************/  
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   34 void    NMI_DeInit   (void)
+NMI_DeInit:
+          CFI Block cfiBlock1 Using cfiCommon0
+          CFI Function NMI_DeInit
+//   35 {
+//   36   SFRX->SYS.NMI = DISABLE;                    //½ûÖ¹NMI¹¦ÄÜ
+        MOVA    &SFRX, R15
+        BIC.W   #0x1, 0x4(R15)
+//   37 }
+        RETA
+          CFI EndBlock cfiBlock1
+//   38 /*************************************************************************
+//   39 *  º¯ÊýÃû³Æ£ºNMI_ITConfig (STATUS ITState)
+//   40 *  ¹¦ÄÜËµÃ÷£ºÉèÖÃÊÇ·ñÊ¹ÄÜNMIÖÐ¶Ï
+//   41 *  ²ÎÊýËµÃ÷£ºBOOL ITState :ÊÇ·ñÊ¹ÄÜNMIÖÐ¶Ï
+//   42 *  º¯Êý·µ»Ø£ºÎÞ
+//   43 *  Ê¹ÓÃÊ¾Àý£ºNMI_ITConfig (ENABLE);  //Ê¹ÄÜNMIÖÐ¶Ï
+//   44 *************************************************************************/  
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   45 void  NMI_ITConfig (STATUS ITState)
+NMI_ITConfig:
+          CFI Block cfiBlock2 Using cfiCommon0
+          CFI Function NMI_ITConfig
+//   46 {
+//   47   if(ITState != DISABLE)
+        CMP.B   #0x0, R12
+        JEQ     ??NMI_ITConfig_0
+//   48   {
+//   49     SFRX->IE.NMI = ENABLE;                    //ÉèÖÃÊ¹ÄÜNMIÖÐ¶Ï
+        MOVA    &SFRX, R15
+        BIS.W   #0x10, 0(R15)
+        RETA
+//   50   }
+//   51   else
+//   52   {
+//   53     SFRX->IE.NMI = DISABLE;
+??NMI_ITConfig_0:
+        MOVA    &SFRX, R15
+        BIC.W   #0x10, 0(R15)
+//   54   }
+//   55 }
+        RETA
+          CFI EndBlock cfiBlock2
+//   56 /*************************************************************************
+//   57 *  º¯ÊýÃû³Æ£ºNMI_GetITStatus(void)
+//   58 *  ¹¦ÄÜËµÃ÷£º¶ÁÈ¡NMIÖÐ¶Ï±êÖ¾
+//   59 *  ²ÎÊýËµÃ÷£ºÎÞ
+//   60 *  º¯Êý·µ»Ø£ºSTATUS : NMIÖÐ¶ÏÊÂ¼þÊÇ·ñ·¢Éú
+//   61 *  Ê¹ÓÃÊ¾Àý£ºif(TRUE == NMI_GetITStatus()){...} //ÅÐ¶ÏNMIÖÐ¶ÏÊÂ¼þÊÇ·ñ·¢Éú
+//   62 *************************************************************************/  
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   63 STATUS  NMI_GetITStatus(void)               
+NMI_GetITStatus:
+          CFI Block cfiBlock3 Using cfiCommon0
+          CFI Function NMI_GetITStatus
+//   64 {
+//   65   return ((SFRX->IFG.NMI) ? TRUE : FALSE);       //·µ»ØÖÐ¶ÏÊÂ¼þ±êÖ¾
+        MOVA    &SFRX, R15
+        BIT.W   #0x10, 0x2(R15)
+        JNC     ??NMI_GetITStatus_0
+        MOV.B   #0x1, R12
+        RETA
+??NMI_GetITStatus_0:
+        MOV.B   #0x0, R12
+        RETA
+          CFI EndBlock cfiBlock3
+//   66 }
+//   67 /*************************************************************************
+//   68 *  º¯ÊýÃû³Æ£ºNMI_ClearITPendingBit(void)
+//   69 *  ¹¦ÄÜËµÃ÷£ºÇå³ýNMIÖÐ¶Ï±êÖ¾
+//   70 *  ²ÎÊýËµÃ÷£ºÎÞ
+//   71 *  º¯Êý·µ»Ø£ºÎÞ
+//   72 *  Ê¹ÓÃÊ¾Àý£ºNMI_ClearITPendingBit();  //Çå³ýNMIÖÐ¶Ï±êÖ¾
+//   73 *************************************************************************/  
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   74 void  NMI_ClearITPendingBit(void)
+NMI_ClearITPendingBit:
+          CFI Block cfiBlock4 Using cfiCommon0
+          CFI Function NMI_ClearITPendingBit
+//   75 {
+//   76    SFRX->IFG.NMI = RESET;                       //Çå³ýÖÐ¶ÏÊÂ¼þ±êÖ¾
+        MOVA    &SFRX, R15
+        BIC.W   #0x10, 0x2(R15)
+//   77 }
+        RETA
+          CFI EndBlock cfiBlock4
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r4:
+        REQUIRE ?setjmp_r4
+        REQUIRE ?longjmp_r4
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r5:
+        REQUIRE ?setjmp_r5
+        REQUIRE ?longjmp_r5
+
+        END
+// 
+// 122 bytes in segment CODE
+//   4 bytes in segment DATA20_C
+// 
+// 122 bytes of CODE  memory
+//   4 bytes of CONST memory
+//
+//Errors: none
+//Warnings: none

@@ -1,0 +1,713 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+//                                                      14/Dec/2016  10:52:41 /
+// IAR C/C++ Compiler V5.50.1.20465/W32, Evaluation edition for MSP430        /
+// Copyright 1996-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    __rt_version  =  3                                                      /
+//    __double_size =  32                                                     /
+//    __reg_r4      =  free                                                   /
+//    __reg_r5      =  free                                                   /
+//    __pic         =  no                                                     /
+//    __core        =  430X                                                   /
+//    __data_model  =  large                                                  /
+//    Source file   =  E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\K /
+//                     EY\KEY.c                                               /
+//    Command line  =  E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\K /
+//                     EY\KEY.c -D DEBUG -D RAM_VECTOR -lA                    /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Debug\List /
+//                     \ -o E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Debug /
+//                     \Obj\ --no_cse --no_unroll --no_inline                 /
+//                     --no_code_motion --no_tbaa --debug -D__MSP430F5529__   /
+//                     -e --double=32 --dlib_config "D:\Program Files\IAR     /
+//                     Systems\Embedded Workbench 6.4                         /
+//                     Evaluation\430\LIB\DLIB\dl430xlff.h" -I                /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\ -I        /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\in /
+//                     c\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Driv /
+//                     ers\src\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£° /
+//                     å\Drivers\src\USB\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C /
+//                     °æ\¹¤³ÌÄ£°å\Drivers\src\USB\USB_config\ -I             /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\USB\USB_User\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\ /
+//                     ¹¤³ÌÄ£°å\Drivers\srcUSB\USB_API\USB_CDC_API\ -I        /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\USB\USB_API\USB_HID_API\ -I                          /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\USB\USB_API\USB_MSC_API\ -I                          /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\  /
+//                     -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWar /
+//                     e\delay\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£° /
+//                     å\HardWare\18b20\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C° /
+//                     æ\¹¤³ÌÄ£°å\HardWare\KEY\ -I                            /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\L /
+//                     ED\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Har /
+//                     dWare\12864\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ /
+//                     ÌÄ£°å\HardWare\oled\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6 /
+//                     \C°æ\¹¤³ÌÄ£°å\HardWare\mpu6050\inc\ -I                 /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\m /
+//                     pu6050\src\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³Ì /
+//                     Ä£°å\HardWare\nokia5110\inc\ -I                        /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\n /
+//                     okia5110\src\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤ /
+//                     ³ÌÄ£°å\HardWare\LQ_1.8_TFT\ -I                         /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\L /
+//                     CD_API\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å /
+//                     \HardWare\2.2TFT\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C° /
+//                     æ\¹¤³ÌÄ£°å\HardWare\nrf24l01\ -I                       /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\System\    /
+//                     -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\System\ /
+//                     inc\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Sy /
+//                     stem\src\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£ /
+//                     °å\User\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£° /
+//                     å\User\USER\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ /
+//                     ÌÄ£°å\Lib\UCOSII\CONFIG\ -I                            /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII /
+//                     \App\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\L /
+//                     ib\uCOSII\CONFIHG\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C /
+//                     °æ\¹¤³ÌÄ£°å\Lib\uCOSII\PORT\ -I                        /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Lib\UCOSII /
+//                     \CORE\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\ /
+//                     Lib\FatFs\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ /
+//                     £°å\Lib\FatFs\option\ --core=430X --data_model=large   /
+//                     -On --multiplier=32 --multiplier_location=4C0          /
+//                     --hw_workaround=CPU40                                  /
+//    List file     =  E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Debug\List /
+//                     \KEY.s43                                               /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME KEY
+
+        RTMODEL "__SystemLibrary", "DLib"
+        RTMODEL "__core", "430X"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dlib_file_descriptor", "1"
+        RTMODEL "__double_size", "32"
+        RTMODEL "__pic", "no"
+        RTMODEL "__reg_r4", "free"
+        RTMODEL "__reg_r5", "free"
+        RTMODEL "__rt_version", "3"
+
+        RSEG CSTACK:DATA:SORT:NOROOT(0)
+
+        EXTERN ?cstart_init_zero20
+        EXTERN ?longjmp_r4
+        EXTERN ?longjmp_r5
+        EXTERN ?setjmp_r4
+        EXTERN ?setjmp_r5
+
+        PUBWEAK ?setjmp_save_r4
+        PUBWEAK ?setjmp_save_r5
+        PUBLIC KEY_20msTimingProcess
+        FUNCTION KEY_20msTimingProcess,061203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 8, STACK
+        FUNCTION KEY_GPIO_Config,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 8, STACK
+        PUBLIC KEY_Init
+        FUNCTION KEY_Init,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 12, STACK
+        PUBLIC KEY_InitStruct
+        PUBLIC KEY_isPressed
+        FUNCTION KEY_isPressed,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 8, STACK
+        PUBLIC KeyStruct
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA SP DATA
+          CFI Resource PC:20, SP:20, SR:16, R4L:16, R4H:4, R4:20, R5L:16, R5H:4
+          CFI Resource R5:20, R6L:16, R6H:4, R6:20, R7L:16, R7H:4, R7:20, R8L:16
+          CFI Resource R8H:4, R8:20, R9L:16, R9H:4, R9:20, R10L:16, R10H:4
+          CFI Resource R10:20, R11L:16, R11H:4, R11:20, R12L:16, R12H:4, R12:20
+          CFI Resource R13L:16, R13H:4, R13:20, R14L:16, R14H:4, R14:20, R15L:16
+          CFI Resource R15H:4, R15:20
+          CFI ResourceParts R4 R4H, R4L
+          CFI ResourceParts R5 R5H, R5L
+          CFI ResourceParts R6 R6H, R6L
+          CFI ResourceParts R7 R7H, R7L
+          CFI ResourceParts R8 R8H, R8L
+          CFI ResourceParts R9 R9H, R9L
+          CFI ResourceParts R10 R10H, R10L
+          CFI ResourceParts R11 R11H, R11L
+          CFI ResourceParts R12 R12H, R12L
+          CFI ResourceParts R13 R13H, R13L
+          CFI ResourceParts R14 R14H, R14L
+          CFI ResourceParts R15 R15H, R15L
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H SameValue
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H SameValue
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H SameValue
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H SameValue
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H SameValue
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H SameValue
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H SameValue
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H SameValue
+          CFI R11 Concat
+          CFI R12L Undefined
+          CFI R12H Undefined
+          CFI R12 Undefined
+          CFI R13L Undefined
+          CFI R13H Undefined
+          CFI R13 Undefined
+          CFI R14L Undefined
+          CFI R14H Undefined
+          CFI R14 Undefined
+          CFI R15L Undefined
+          CFI R15H Undefined
+          CFI R15 Undefined
+          CFI EndCommon cfiCommon0
+        
+        EXTERN GPIO_ReadBit
+        FUNCTION GPIO_ReadBit,0202H
+        EXTERN GPIO_MultiBits_Init
+        FUNCTION GPIO_MultiBits_Init,0202H
+
+// E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\KEY\KEY.c
+//    1 #include "KEY.h"
+//    2 #include "msp430f5529_gpio.h"
+//    3 //°´¼ü´¦Àí½×¶Î
+//    4 typedef enum
+//    5 {
+//    6   KEY_PRESSED           ,//°´¼ü°´ÏÂ
+//    7   KEY_REALSE            ,//°´¼üËÉ¿ª
+//    8   KEY_REALSE_WOBBLE     ,//È·ÈÏËÉ¿ªµÄÏû¶¶×´Ì¬
+//    9   KEY_PRESS_WOBBLE      ,//È·ÈÏ°´ÏÂµÄÏû¶¶×´Ì¬
+//   10 }KEY_STAGEn;
+//   11 //¶Ë¿ÚÅäÖÃ²ÎÊý
+//   12 const struct
+//   13 {
+//   14   PORTn         Port;             //GPIO¶Ë¿Ú
+//   15   uint16_t      Pin;              //Òý½Å
+//   16   uint16_t      config;           //
+//   17   BOOL          PressedLevel;     //°´ÏÂ¶Ë¿ÚµçÆ½×´Ì¬
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(1)
+//   18 } KEY_InitStruct[KEY_NUM] =
+KEY_InitStruct:
+        DC8 1, 0
+        DC16 1, 33
+        DC8 0, 0, 0, 0
+        DC16 1, 33
+        DC8 0, 0
+//   19 {
+//   20   {KEY1_GPIO_PORT,KEY1_GPIO_PIN,KEY1_GPIO_CONFIG,KEY1_PRESSED_LEVEL}, //°´¼ü1Òý½ÅÅäÖÃ²ÎÊý
+//   21   {KEY2_GPIO_PORT,KEY2_GPIO_PIN,KEY2_GPIO_CONFIG,KEY2_PRESSED_LEVEL}, //°´¼ü2Òý½ÅÅäÖÃ²ÎÊý
+//   22   //ÈçÐèÌí¼Ó¸ü¶à°´¼ü£¬ÇëÏÈ¶Ô°´¼ü½øÐÐºê¶¨Òåºó£¬ÔÚ²Î¿¼ÉÏÃæÐÞ¸Ä
+//   23   //{KEY3_GPIO_PORT,KEY3_GPIO_PIN,KEY2_GPIO_CONFIG,KEY3_PRESSED_LEVEL}, //°´¼ü3Òý½ÅÅäÖÃ²ÎÊý
+//   24 };
+//   25 //°´¼ü´¦ÀíÐÅÏ¢±äÁ¿
+//   26 volatile struct
+//   27 {
+//   28   void (*ClickedCallBack)(KEY_EVENT);  //°´¼üÊÂ¼þ»Øµ÷º¯Êý
+//   29   KEY_STAGEn    Stage;         //°´¼ü´¦Àí½×¶Î
+//   30   BOOL          isClicked;     //°´¼ü×´Ì¬ÊÇ·ñ·¢Éú¸Ä±ä                     
+//   31   BOOL          isLongClick;   //ÊÇ·ñÊÇ³¤°´
+//   32   uint16_t      ClickTimes;    //µã»÷´ÎÊý±äÁ¿
+//   33   uint16_t      DealTime;      //°´¼ü´¦ÀíÊ±¼ä
+//   34   uint16_t      PressedTime;   //°´¼ü°´ÏÂÊ±¼ä
+//   35   uint8_t     	WobbleTime;    //Ïû¶¶Ê±¼ä±äÁ¿	
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+//   36 }KeyStruct[KEY_NUM];
+KeyStruct:
+        DS8 32
+//   37 /*******************************************************************************
+//   38 *  º¯ÊýÃû³Æ£ºKEY_GPIO_Config(KEYn key)
+//   39 *  ¹¦ÄÜËµÃ÷£ºKEY¶Ë¿Ú³õÊ¼»¯³ÌÐò
+//   40 *  ²ÎÊýËµÃ÷£ºKEYn key: °´¼ü
+//   41 *  º¯Êý·µ»Ø£ºÎÞ
+//   42 *  Ê¹ÓÃÊ¾Àý£º
+//   43 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   44 static void KEY_GPIO_Config(KEYn key)
+KEY_GPIO_Config:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function KEY_GPIO_Config
+//   45 {
+        FUNCALL KEY_GPIO_Config, GPIO_MultiBits_Init
+        LOCFRAME CSTACK, 8, STACK
+        PUSHM.A #0x1, R10
+          CFI R10L Frame(CFA, -8)
+          CFI R10H Frame(CFA, -6)
+          CFI CFA SP+8
+        MOV.B   R12, R10
+//   46   GPIO_Init(KEY_InitStruct[key].Port, KEY_InitStruct[key].Pin, KEY_InitStruct[key].config);
+        MOV.B   R10, R15
+        RLAM.A  #0x3, R15
+        MOVX.W  KEY_InitStruct + 4(R15), R14
+        MOV.W   #0x1, R13
+        MOV.B   R10, R15
+        RLAM.A  #0x3, R15
+        MOVX.B  KEY_InitStruct + 2(R15), R15
+        SUB.B   #0x1, R15
+        JN      ??KEY_GPIO_Config_0
+        RPT     R15
+        RLAX.W  R13
+??KEY_GPIO_Config_0:
+        ADD.B   #0x1, R15
+        MOV.B   R10, R15
+        RLAM.A  #0x3, R15
+        MOVX.B  KEY_InitStruct(R15), R12
+        CALLA   #GPIO_MultiBits_Init
+//   47 }
+        POPM.A  #0x1, R10
+          CFI R10H SameValue
+          CFI R10L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock0
+//   48 /*******************************************************************************
+//   49 *  º¯ÊýÃû³Æ£ºKEY_Init(KEYn key,void (*ClickedCallBack)(KEY_EVENT))
+//   50 *  ¹¦ÄÜËµÃ÷£ºKEY³õÊ¼»¯³ÌÐò
+//   51 *  ²ÎÊýËµÃ÷£º
+//   52              KEYn key: Òª³õÊ¼»¯µÄ°´¼ü
+//   53              void (*ClickedCallBack)(KEY_EVENT): °´¼üÊÂ¼þµ÷ÓÃµÄ»Øµôº¯Êý
+//   54 *  º¯Êý·µ»Ø£ºÎÞ
+//   55 *  Ê¹ÓÃÊ¾Àý£º
+//   56 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   57 void KEY_Init(KEYn key,void (*ClickedCallBack)(KEY_EVENT))
+KEY_Init:
+          CFI Block cfiBlock1 Using cfiCommon0
+          CFI Function KEY_Init
+//   58 {
+        FUNCALL KEY_Init, KEY_GPIO_Config
+        LOCFRAME CSTACK, 12, STACK
+        PUSHM.A #0x2, R11
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+12
+        MOV.B   R12, R10
+        MOVA    R13, R11
+//   59   KEY_GPIO_Config(key);
+        MOV.B   R10, R12
+        CALLA   #KEY_GPIO_Config
+//   60 
+//   61   KeyStruct[key].ClickedCallBack = ClickedCallBack; //×é²á°´¼ü´¦ÀíÊÂ¼þ»Øµ÷º¯Êý
+        MOV.B   R10, R15
+        RLAM.A  #0x4, R15
+        MOVX.A  R11, KeyStruct(R15)
+//   62   KeyStruct[key].ClickTimes = 0;        //µã»÷´ÎÊýÇåÁã
+        MOV.B   R10, R15
+        RLAM.A  #0x4, R15
+        MOVX.W  #0x0, KeyStruct + 8(R15)
+//   63   KeyStruct[key].Stage = KEY_REALSE;    //°´¼ü´¦ÓÚËÉ¿ª×´Ì¬
+        MOV.B   R10, R15
+        RLAM.A  #0x4, R15
+        MOVX.B  #0x1, KeyStruct + 4(R15)
+//   64   KeyStruct[key].isClicked = FALSE;     //°´¼ü×´Ì¬Î´¸Ä±ä
+        MOV.B   R10, R15
+        RLAM.A  #0x4, R15
+        MOVX.B  #0x0, KeyStruct + 5(R15)
+//   65   KeyStruct[key].isLongClick = FALSE;   //²»ÊÇ³¤°´
+        MOV.B   R10, R15
+        RLAM.A  #0x4, R15
+        MOVX.B  #0x0, KeyStruct + 6(R15)
+//   66   KeyStruct[key].WobbleTime = 0;        //Ïû¶¶Ê±¼ä³õÊ¼»¯Îª0
+        MOV.B   R10, R15
+        RLAM.A  #0x4, R15
+        MOVX.B  #0x0, KeyStruct + 14(R15)
+//   67 }
+        POPM.A  #0x2, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock1
+//   68 /*******************************************************************************
+//   69 *  º¯ÊýÃû³Æ£ºKEY_isPressed(KEYn key)
+//   70 *  ¹¦ÄÜËµÃ÷£ºÅÐ¶Ï°´¼üÊÇ·ñ°´ÏÂ
+//   71 *  ²ÎÊýËµÃ÷£º
+//   72              KEYn key: °´¼ü
+//   73 *  º¯Êý·µ»Ø£ºBOOL £º°´¼üµ±Ç°µÄ×´Ì¬
+//   74 *  Ê¹ÓÃÊ¾Àý£º
+//   75 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   76 BOOL KEY_isPressed(KEYn key)
+KEY_isPressed:
+          CFI Block cfiBlock2 Using cfiCommon0
+          CFI Function KEY_isPressed
+//   77 {
+        FUNCALL KEY_isPressed, GPIO_ReadBit
+        LOCFRAME CSTACK, 8, STACK
+        PUSHM.A #0x1, R10
+          CFI R10L Frame(CFA, -8)
+          CFI R10H Frame(CFA, -6)
+          CFI CFA SP+8
+        MOV.B   R12, R10
+//   78   if(KEY_InitStruct[key].PressedLevel == GPIO_ReadBit(KEY_InitStruct[key].Port, KEY_InitStruct[key].Pin))
+        MOV.B   R10, R15
+        RLAM.A  #0x3, R15
+        MOVX.B  KEY_InitStruct + 2(R15), R13
+        MOV.B   R10, R15
+        RLAM.A  #0x3, R15
+        MOVX.B  KEY_InitStruct(R15), R12
+        CALLA   #GPIO_ReadBit
+        MOV.B   R10, R15
+        RLAM.A  #0x3, R15
+        CMPX.B  R12, KEY_InitStruct + 6(R15)
+        JNE     ??KEY_isPressed_0
+//   79     return TRUE;
+        MOV.B   #0x1, R12
+        JMP     ??KEY_isPressed_1
+//   80   else 
+//   81     return FALSE;
+??KEY_isPressed_0:
+        MOV.B   #0x0, R12
+??KEY_isPressed_1:
+        POPM.A  #0x1, R10
+          CFI R10H SameValue
+          CFI R10L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock2
+//   82 }
+//   83 /*******************************************************************************
+//   84 *  º¯ÊýÃû³Æ£ºKEY_20msTimingProcess(KEYn key)
+//   85 *  ¹¦ÄÜËµÃ÷£º°´¼ü20msÖÜÆÚ´¦Àíº¯Êý
+//   86 *  ²ÎÊýËµÃ÷£º
+//   87              KEYn key: °´¼ü
+//   88 *  º¯Êý·µ»Ø£ºÎÞ
+//   89 *  Ê¹ÓÃÊ¾Àý£º
+//   90 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   91 void KEY_20msTimingProcess(KEYn key)
+KEY_20msTimingProcess:
+          CFI Block cfiBlock3 Using cfiCommon0
+          CFI Function KEY_20msTimingProcess
+//   92 {
+        FUNCALL KEY_20msTimingProcess, KEY_isPressed
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL KEY_20msTimingProcess, KEY_isPressed
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL KEY_20msTimingProcess
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL KEY_20msTimingProcess, KEY_isPressed
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL KEY_20msTimingProcess, KEY_isPressed
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL KEY_20msTimingProcess
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL KEY_20msTimingProcess
+        LOCFRAME CSTACK, 8, STACK
+        PUSHM.A #0x1, R10
+          CFI R10L Frame(CFA, -8)
+          CFI R10H Frame(CFA, -6)
+          CFI CFA SP+8
+        MOV.B   R12, R10
+//   93   switch(KeyStruct[key].Stage)
+        MOV.B   R10, R15
+        RLAM.A  #0x4, R15
+        MOVX.B  KeyStruct + 4(R15), R14
+        SUB.B   #0x0, R14
+        JEQ     ??KEY_20msTimingProcess_5
+        SUB.B   #0x1, R14
+        JEQ     ??KEY_20msTimingProcess_6
+        SUB.B   #0x1, R14
+        JEQ     ??KEY_20msTimingProcess_7
+        SUB.B   #0x1, R14
+        JEQ     ??KEY_20msTimingProcess_8
+        JMP     ??KEY_20msTimingProcess_4
+//   94   {
+//   95   case KEY_REALSE:
+//   96     if(KEY_isPressed(key)) //Èç¹û°´¼ü°´ÏÂ
+??KEY_20msTimingProcess_6:
+        MOV.B   R10, R12
+        CALLA   #KEY_isPressed
+        CMP.B   #0x0, R12
+        JEQ     ??KEY_20msTimingProcess_4
+//   97     {
+//   98       KeyStruct[key].Stage = KEY_PRESS_WOBBLE;    //½øÈë°´ÏÂÏû¶¶½×¶Î
+        MOV.B   R10, R15
+        RLAM.A  #0x4, R15
+        MOVX.B  #0x3, KeyStruct + 4(R15)
+//   99       KeyStruct[key].WobbleTime = 0;              //Ïû¶¶Ê±¼äÇåÁã
+        MOV.B   R10, R15
+        RLAM.A  #0x4, R15
+        MOVX.B  #0x0, KeyStruct + 14(R15)
+//  100       KeyStruct[key].PressedTime = 0;             //°´¼ü°´ÏÂÊ±¼äÇåÁã
+        MOV.B   R10, R15
+        RLAM.A  #0x4, R15
+        MOVX.W  #0x0, KeyStruct + 12(R15)
+//  101     }
+//  102     break;
+        JMP     ??KEY_20msTimingProcess_4
+//  103   case KEY_PRESS_WOBBLE:
+//  104     KeyStruct[key].PressedTime += KEY_TIMING_PROCESS_TIME;								//°´¼ü°´ÏÂÊ±¼ä¿ªÊ¼¼ÆÊ±
+??KEY_20msTimingProcess_8:
+        MOV.B   R10, R15
+        RLAM.A  #0x4, R15
+        ADDX.W  #0x14, KeyStruct + 12(R15)
+//  105     KeyStruct[key].WobbleTime += KEY_TIMING_PROCESS_TIME; 								//Ïû¶¶Ê±¼ä¿ªÊ¼¼ÆÊ±
+        MOV.B   R10, R15
+        RLAM.A  #0x4, R15
+        ADDX.B  #0x14, KeyStruct + 14(R15)
+//  106     if(KEY_isPressed(key)) //Èç¹û°´¼ü°´ÏÂ
+        MOV.B   R10, R12
+        CALLA   #KEY_isPressed
+        CMP.B   #0x0, R12
+        JEQ     ??KEY_20msTimingProcess_9
+//  107     {
+//  108       if(KeyStruct[key].WobbleTime >= KEY_PRESS_WOBBLE_TIME)  //Ïû¶¶Ê±¼ä´ïµ½
+        MOV.B   R10, R15
+        RLAM.A  #0x4, R15
+        CMPX.B  #0xa, KeyStruct + 14(R15)
+        JNC     ??KEY_20msTimingProcess_4
+//  109       {
+//  110         KeyStruct[key].Stage = KEY_PRESSED;         //¿ÉÒÔÈ·ÈÏ°´ÏÂ£¬½øÈëÒÑ°´ÏÂ½×¶Î
+        MOV.B   R10, R15
+        RLAM.A  #0x4, R15
+        MOVX.B  #0x0, KeyStruct + 4(R15)
+//  111         KeyStruct[key].ClickTimes ++;             //°´ÏÂ´ÎÊý¼Ó1
+        MOV.B   R10, R15
+        RLAM.A  #0x4, R15
+        ADDX.W  #0x1, KeyStruct + 8(R15)
+        JMP     ??KEY_20msTimingProcess_4
+//  112       }
+//  113     }
+//  114     else
+//  115     {
+//  116       KeyStruct[key].Stage = KEY_REALSE;          //Èç¹ûÏû¶¶Ê±¼äÄÚËÉ¿ªÔòÈÏÎª¸Ã´Î°´¼ü°´ÏÂÎÞÐ§
+??KEY_20msTimingProcess_9:
+        MOV.B   R10, R15
+        RLAM.A  #0x4, R15
+        MOVX.B  #0x1, KeyStruct + 4(R15)
+//  117     }
+//  118     break;
+        JMP     ??KEY_20msTimingProcess_4
+//  119   case KEY_PRESSED:
+//  120     KeyStruct[key].PressedTime += KEY_TIMING_PROCESS_TIME;                //¼ÌÐø¼ÇÂ¼°´¼ü°´ÏÂÊ±¼ä
+??KEY_20msTimingProcess_5:
+        MOV.B   R10, R15
+        RLAM.A  #0x4, R15
+        ADDX.W  #0x14, KeyStruct + 12(R15)
+//  121     if( (KeyStruct[key].isLongClick == FALSE)
+//  122         &&(KeyStruct[key].PressedTime >= KEY_LONG_CLICK_PERIOD)) //Èç¹û³¤Ê±¼ä°´ÏÂ£¬ÔòÈÏÎªÊÇ³¤°´×´Ì¬
+        MOV.B   R10, R15
+        RLAM.A  #0x4, R15
+        CMPX.B  #0x0, KeyStruct + 6(R15)
+        JNE     ??KEY_20msTimingProcess_10
+        MOV.B   R10, R15
+        RLAM.A  #0x4, R15
+        CMPX.W  #0x1f4, KeyStruct + 12(R15)
+        JNC     ??KEY_20msTimingProcess_10
+//  123     {
+//  124       KeyStruct[key].ClickedCallBack(KEY_LONG_CLICK); //°´¼ü°´ÏÂÊ±¼ä¹ý³¤£¬ÔòÈÏÎªÊÇ³¤»÷
+        MOV.B   #0x3, R12
+        MOV.B   R10, R15
+        RLAM.A  #0x4, R15
+        MOVX.A  KeyStruct(R15), R15
+        CALLA   R15
+//  125       KeyStruct[key].isLongClick = TRUE;          //±ê¼ÇÎª³¤°´
+        MOV.B   R10, R15
+        RLAM.A  #0x4, R15
+        MOVX.B  #0x1, KeyStruct + 6(R15)
+        JMP     ??KEY_20msTimingProcess_4
+//  126     }
+//  127     else
+//  128     {
+//  129       if(KEY_isPressed(key) == FALSE) //Èç¹û°´¼üËÉ¿ª
+??KEY_20msTimingProcess_10:
+        MOV.B   R10, R12
+        CALLA   #KEY_isPressed
+        CMP.B   #0x0, R12
+        JNE     ??KEY_20msTimingProcess_4
+//  130       {
+//  131         KeyStruct[key].Stage = KEY_REALSE_WOBBLE; //½øÈë°´¼üËÉ¿ªºóÏû¶¶½×¶Î
+        MOV.B   R10, R15
+        RLAM.A  #0x4, R15
+        MOVX.B  #0x2, KeyStruct + 4(R15)
+//  132         KeyStruct[key].WobbleTime = 0;            //Ïû¶¶Ê±¼äÇåÁã£¬Ò»±ßºóÐø½×¶ÎÏû¶¶
+        MOV.B   R10, R15
+        RLAM.A  #0x4, R15
+        MOVX.B  #0x0, KeyStruct + 14(R15)
+//  133       }
+//  134     }
+//  135     break;
+        JMP     ??KEY_20msTimingProcess_4
+//  136   case KEY_REALSE_WOBBLE:
+//  137     KeyStruct[key].WobbleTime += KEY_TIMING_PROCESS_TIME;                 //°´¼üËÉ¿ªÏû¶¶Ê±¼ä¿ªÊ¼¼ÆÊ±
+??KEY_20msTimingProcess_7:
+        MOV.B   R10, R15
+        RLAM.A  #0x4, R15
+        ADDX.B  #0x14, KeyStruct + 14(R15)
+//  138     if(KEY_isPressed(key) == FALSE) //Èç¹û°´¼üËÉ¿ª
+        MOV.B   R10, R12
+        CALLA   #KEY_isPressed
+        CMP.B   #0x0, R12
+        JNE     ??KEY_20msTimingProcess_4
+//  139     {
+//  140       if(KeyStruct[key].WobbleTime >= KEY_REALSE_WOBBLE_TIME)  //Ïû¶¶Ê±¼ä´ïµ½
+        MOV.B   R10, R15
+        RLAM.A  #0x4, R15
+        CMPX.B  #0xa, KeyStruct + 14(R15)
+        JNC     ??KEY_20msTimingProcess_4
+//  141       {
+//  142         KeyStruct[key].Stage = KEY_REALSE;              //½øÈë°´¼üÍêÈ«ËÉ¿ª½×¶Î
+        MOV.B   R10, R15
+        RLAM.A  #0x4, R15
+        MOVX.B  #0x1, KeyStruct + 4(R15)
+//  143         KeyStruct[key].isClicked = TRUE;             //±ê¼Ç°´¼ü×´Ì¬·¢Éú¸Ä±ä
+        MOV.B   R10, R15
+        RLAM.A  #0x4, R15
+        MOVX.B  #0x1, KeyStruct + 5(R15)
+//  144       }
+//  145     }
+//  146     break;	
+//  147     default:break;
+//  148   }
+//  149   if(KeyStruct[key].isClicked == TRUE)  //Èç¹û°´¼ü×´Ì¬¸Ä±äÁË
+??KEY_20msTimingProcess_4:
+        MOV.B   R10, R15
+        RLAM.A  #0x4, R15
+        CMPX.B  #0x1, KeyStruct + 5(R15)
+        JNE     ??KEY_20msTimingProcess_11
+//  150   {
+//  151     //´ïµ½Ë«»÷Ê±¼ä×î´óÖµ»òÒÑ¾­Ë«»÷
+//  152     KeyStruct[key].DealTime += KEY_TIMING_PROCESS_TIME;
+        MOV.B   R10, R15
+        RLAM.A  #0x4, R15
+        ADDX.W  #0x14, KeyStruct + 10(R15)
+//  153     if((KeyStruct[key].DealTime >= KEY_DOUBLE_CLICK_PERIOD)
+//  154       ||KeyStruct[key].ClickTimes >= 2)
+        MOV.B   R10, R15
+        RLAM.A  #0x4, R15
+        CMPX.W  #0xc8, KeyStruct + 10(R15)
+        JC      ??KEY_20msTimingProcess_12
+        MOV.B   R10, R15
+        RLAM.A  #0x4, R15
+        CMPX.W  #0x2, KeyStruct + 8(R15)
+        JNC     ??KEY_20msTimingProcess_11
+//  155     {
+//  156       if(KeyStruct[key].ClickedCallBack != NULL)
+??KEY_20msTimingProcess_12:
+        MOV.B   R10, R15
+        RLAM.A  #0x4, R15
+        MOVX.A  KeyStruct(R15), R15
+        CMPA    #0x0, R15
+        JEQ     ??KEY_20msTimingProcess_13
+//  157       {
+//  158         //Èç¹û°´ÏÂÊ±¼äºÜ³¤
+//  159         if((KeyStruct[key].isLongClick == FALSE))
+        MOV.B   R10, R15
+        RLAM.A  #0x4, R15
+        CMPX.B  #0x0, KeyStruct + 6(R15)
+        JNE     ??KEY_20msTimingProcess_13
+//  160         {
+//  161           if(KeyStruct[key].ClickTimes >= 2)  //°´ÏÂ¶à´ÎÔòÈÏÎªÊÇË«»÷
+        MOV.B   R10, R15
+        RLAM.A  #0x4, R15
+        CMPX.W  #0x2, KeyStruct + 8(R15)
+        JNC     ??KEY_20msTimingProcess_14
+//  162             KeyStruct[key].ClickedCallBack(KEY_DOUBLE_CLICK);
+        MOV.B   #0x2, R12
+        MOV.B   R10, R15
+        RLAM.A  #0x4, R15
+        MOVX.A  KeyStruct(R15), R15
+        CALLA   R15
+        JMP     ??KEY_20msTimingProcess_13
+//  163           else if(KeyStruct[key].ClickTimes == 1)                               //·ñÔòÈÏÎªÊÇµ¥»÷
+??KEY_20msTimingProcess_14:
+        MOV.B   R10, R15
+        RLAM.A  #0x4, R15
+        CMPX.W  #0x1, KeyStruct + 8(R15)
+        JNE     ??KEY_20msTimingProcess_13
+//  164             KeyStruct[key].ClickedCallBack(KEY_CLICK);
+        MOV.B   #0x1, R12
+        MOV.B   R10, R15
+        RLAM.A  #0x4, R15
+        MOVX.A  KeyStruct(R15), R15
+        CALLA   R15
+//  165         }
+//  166       }
+//  167       KeyStruct[key].PressedTime = 0;
+??KEY_20msTimingProcess_13:
+        MOV.B   R10, R15
+        RLAM.A  #0x4, R15
+        MOVX.W  #0x0, KeyStruct + 12(R15)
+//  168       KeyStruct[key].ClickTimes = 0;
+        MOV.B   R10, R15
+        RLAM.A  #0x4, R15
+        MOVX.W  #0x0, KeyStruct + 8(R15)
+//  169       KeyStruct[key].DealTime = 0;
+        MOV.B   R10, R15
+        RLAM.A  #0x4, R15
+        MOVX.W  #0x0, KeyStruct + 10(R15)
+//  170       KeyStruct[key].isClicked = FALSE;
+        MOV.B   R10, R15
+        RLAM.A  #0x4, R15
+        MOVX.B  #0x0, KeyStruct + 5(R15)
+//  171       KeyStruct[key].isLongClick = FALSE;
+        MOV.B   R10, R15
+        RLAM.A  #0x4, R15
+        MOVX.B  #0x0, KeyStruct + 6(R15)
+//  172     }
+//  173   }
+//  174 }
+??KEY_20msTimingProcess_11:
+        POPM.A  #0x1, R10
+          CFI R10H SameValue
+          CFI R10L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock3
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r4:
+        REQUIRE ?setjmp_r4
+        REQUIRE ?longjmp_r4
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r5:
+        REQUIRE ?setjmp_r5
+        REQUIRE ?longjmp_r5
+
+        END
+// 
+// 676 bytes in segment CODE
+//  16 bytes in segment DATA20_C
+//  32 bytes in segment DATA20_Z
+// 
+// 676 bytes of CODE  memory
+//  16 bytes of CONST memory
+//  32 bytes of DATA  memory
+//
+//Errors: none
+//Warnings: none

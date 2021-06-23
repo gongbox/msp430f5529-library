@@ -1,0 +1,423 @@
+###############################################################################
+#                                                                             #
+#                                                       06/Jun/2016  16:42:35 #
+# IAR C/C++ Compiler V5.50.1.20465/W32, Evaluation edition for MSP430         #
+# Copyright 1996-2012 IAR Systems AB.                                         #
+#                                                                             #
+#    __rt_version  =  3                                                       #
+#    __double_size =  32                                                      #
+#    __reg_r4      =  free                                                    #
+#    __reg_r5      =  free                                                    #
+#    __pic         =  no                                                      #
+#    __core        =  430X                                                    #
+#    __data_model  =  large                                                   #
+#    Source file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\System\src\startup.c                             #
+#    Command line  =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\System\src\startup.c -D NDEBUG -D RAM_VECTOR     #
+#                     -lC C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C° #
+#                     æ\¹¤³ÌÄ£°å\Release\List\ -lA                            #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\List\ -o C:\Users\615\Desktop\MSP430\MSP #
+#                     430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Release\Obj\             #
+#                     -D__MSP430F5529__ -e --double=32 --dlib_config          #
+#                     "D:\Program Files (x86)\IAR Systems\Embedded Workbench  #
+#                     6.4 Evaluation\430\LIB\DLIB\dl430xlfn.h" -I             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\ -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Ê #
+#                     ý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\inc\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\ -I C:\Users\615\Desktop\MSP430\MSP4 #
+#                     30F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\src\USB\ -I       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_config\ -I                   #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_User\ -I                     #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\srcUSB\USB_API\USB_CDC_API\ -I           #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_API\USB_HID_API\ -I          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_API\USB_MSC_API\ -I          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\KEY\ -I C:\Users\615\Desktop\MSP430\MSP #
+#                     430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\LED\ -I         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\12864\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\oled\ -I      #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\mpu6050\inc\ -I                         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\mpu6050\src\ -I                         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\nokia5110\inc\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\nokia5110\src\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\LQ_1.8_TFT\ -I                          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\LCD_API\ -I                             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\2.2TFT\ -I                              #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\delay\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\ -I             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\System\inc\ -I C:\Users\615\Desktop\MSP430\MSP43 #
+#                     0F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\src\ -I             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\User\ -I C:\Users\615\Desktop\MSP430\MSP430F5529 #
+#                     ¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\User\USER\ -I                    #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\UCOSII\CONFIG\ -I                            #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\uCOSII\App\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII\CONFIHG\    #
+#                     -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ #
+#                     \¹¤³ÌÄ£°å\Lib\uCOSII\PORT\ -I                           #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\UCOSII\CORE\ -I                              #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\FatFs\ -I C:\Users\615\Desktop\MSP430\MSP430 #
+#                     F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\FatFs\option\           #
+#                     --core=430X --data_model=large -Oh --multiplier=32      #
+#                     --multiplier_location=4C0 --hw_workaround=CPU40         #
+#    List file     =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\List\startup.lst                         #
+#    Object file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\Obj\startup.r43                          #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\src\startup.c
+      1          #include "system.h"
+      2          #include "include.h"
+      3          #include "intrinsics.h"
+      4          
+      5          static void RAM_data_Init(void);
+      6          static void SystemInit(void);
+      7          #ifdef DEBUG
+      8          static void Start_Show(void);
+      9          #endif
+     10          #if 0
+     11          /*******************************************************************************
+     12          *  º¯ÊýÃû³Æ£ºReset_Handler(void)
+     13          *  ¹¦ÄÜËµÃ÷£º¸´Î»ÖÐ¶Ï·þÎñº¯Êý
+     14          *  ²ÎÊýËµÃ÷£ºÎÞ
+     15          *  º¯Êý·µ»Ø£ºÎÞ
+     16          *  Ê¹ÓÃÊ¾Àý£ºÎÞ
+     17          *  ×¢ÒâÊÂÏî£ºÐèÒªÐÞ¸Ä¹¤³ÌÅäÖÃ£¬¹´Ñ¡linkerÄ¿Â¼ÏÂµÄoverride default program,²¢Ñ¡ÔñDefined by ApplicatÑ¡Ïî
+     18          ********************************************************************************/
+     19          extern void main();
+     20          #pragma vector=RESET_VECTOR
+     21          __interrupt void Reset_Handler(void)
+     22          {
+     23            SystemInit();
+     24            main();
+     25            while(1);
+     26          }
+     27          #else
+     28          /*******************************************************************************
+     29          *  º¯ÊýÃû³Æ£º__low_level_init(void)
+     30          *  ¹¦ÄÜËµÃ÷£ºÆô¶¯º¯Êý£¬ÔÚÖ÷º¯ÊýÖ®Ç°µ÷ÓÃ
+     31          *  ²ÎÊýËµÃ÷£ºÎÞ
+     32          *  º¯Êý·µ»Ø£ºÎÞ
+     33          *  Ê¹ÓÃÊ¾Àý£ºÎÞ
+     34          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2, root
+     35          __intrinsic int __low_level_init(void)
+   \                     __low_level_init:
+   \   000000                REQUIRE ?cstart_call_low_level_init
+     36          {
+     37              SystemInit();
+   \   000000   ........     CALLA   #DisableWatchDog
+   \   000004   ........     CALLA   #Set_VectorTable_To_RAM
+   \   000008   ........     CALLA   #RAM_data_Init
+   \   00000C   3E404042     MOV.W   #0x4240, R14
+   \   000010   3F400F00     MOV.W   #0xf, R15
+   \   000014   4D43         MOV.B   #0x0, R13
+   \   000016   6C43         MOV.B   #0x2, R12
+   \   000018   ........     CALLA   #DCO_PLLConfig
+   \   00001C   4D43         MOV.B   #0x0, R13
+   \   00001E   7C400300     MOV.B   #0x3, R12
+   \   000022   ........     CALLA   #CLOCK_MCLK_Config
+   \   000026   4D43         MOV.B   #0x0, R13
+   \   000028   7C400300     MOV.B   #0x3, R12
+   \   00002C   ........     CALLA   #CLOCK_SMCLK_Config
+   \   000030   4D43         MOV.B   #0x0, R13
+   \   000032   6C43         MOV.B   #0x2, R12
+   \   000034   ........     CALLA   #CLOCK_ACLK_Config
+     38              return 0;//0-²»³õÊ¼»¯²ÎÊý,1-³õÊ¼»¯²ÎÊý
+   \   000038   0C43         MOV.W   #0x0, R12
+   \   00003A   1001         RETA
+     39          }
+     40          #endif
+     41          /*******************************************************************************
+     42          *  º¯ÊýÃû³Æ£ºSystemInit (void)
+     43          *  ¹¦ÄÜËµÃ÷£ºÆô¶¯º¯Êý£¬ÔÚÖ÷º¯ÊýÖ®Ç°µ÷ÓÃ
+     44          *  ²ÎÊýËµÃ÷£ºÎÞ
+     45          *  º¯Êý·µ»Ø£ºÎÞ
+     46          *  Ê¹ÓÃÊ¾Àý£ºÎÞ
+     47          ********************************************************************************/
+     48          void SystemInit (void)
+     49          {   
+     50              DisableWatchDog();            //¹Ø±Õ¿´ÃÅ¹·
+     51          #ifdef RAM_VECTOR
+     52              Set_VectorTable_To_RAM();     //ÉèÖÃÖÐ¶ÏÏòÁ¿Ó³Éäµ½RAMÇøÓò
+     53          #else
+     54              Set_VectorTable_To_FLASH();   //ÉèÖÃÖÐ¶ÏÏòÁ¿Ó³Éäµ½FLASHÇøÓò
+     55          #endif
+     56              RAM_data_Init();              //³õÊ¼»¯Êý¾Ý  
+     57              /*******************************Ê±ÖÓ³õÊ¼»¯*********************************/
+     58              DCO_PLLConfig(FLL_REF,FLLREF_DIV,DCO_CLK_HZ);             //³õÊ¼»¯DCOÆµÂÊ
+     59              CLOCK_MCLK_Config (MCLK_SOURCE , MCLK_DIV);               //ÉèÖÃÊ±ÖÓÔ´¼°Ê±ÖÓ·ÖÆµ
+     60              CLOCK_SMCLK_Config(SMCLK_SOURCE, SMCLK_DIV);              //ÉèÖÃÊ±ÖÓÔ´¼°Ê±ÖÓ·ÖÆµ
+     61              CLOCK_ACLK_Config (ACLK_SOURCE , ACLK_DIV);               //ÉèÖÃÊ±ÖÓÔ´¼°Ê±ÖÓ·ÖÆµ
+     62              /**************************************************************************/
+     63          #if(defined(DEBUG))
+     64          #if(defined(DEBUG_UART_PRINT))
+     65              UART_Init(Print_UART, Print_Baud);          //µ÷ÊÔÄ£Ê½ÏÂ£¬Èç¹ûÑ¡ÔñÊ¹ÓÃ´®¿Ú×÷ÎªÐÅÏ¢´òÓ¡Ôò³õÊ¼»¯UARTÄ£¿é
+     66          #endif
+     67              Start_Show();
+     68          #endif
+     69          }
+     70          //Æô¶¯ºó´òÓ¡ÌáÊ¾ÐÅÏ¢
+     71          #ifdef DEBUG
+     72          void Start_Show()
+     73          {
+     74              DEBUG_PRINTF("\nMSP430F5529 ²âÊÔ³ÌÐò!\n");  //µ÷ÊÔÄ£Ê½ÏÂ´òÓ¡ÐÅÏ¢
+     75              DEBUG_PRINTF("\n MCLK ÆµÂÊ:%ld HZ\n",g_sClock.MCLK.CLK_HZ);
+     76              DEBUG_PRINTF("SMCLK ÆµÂÊ:%ld HZ\n",g_sClock.SMCLK.CLK_HZ);
+     77              DEBUG_PRINTF(" ACLK ÆµÂÊ:%ld HZ\n",g_sClock.ACLK.CLK_HZ);  
+     78          #ifdef DELAY_TIMER
+     79              DEBUG_PRINTF("\nÊ¹ÓÃ¶¨Ê±Æ÷ÑÓÊ±,¶¨Ê±Æ÷:%s\n",TOSTRING(DELAY_TIMER));
+     80          #else
+     81              DEBUG_PRINTF("\nÊ¹ÓÃÈí¼þÄ£ÄâÑÓÊ±\n%s\n",TOSTRING(DELAY_MS(ms)));
+     82          #endif
+     83          }
+     84          #endif
+     85          /*******************************************************************************
+     86          *  º¯ÊýÃû³Æ£ºRAM_data_Init(void)
+     87          *  ¹¦ÄÜËµÃ÷£º¸´ÖÆÖÐ¶ÏÏòÁ¿±í ºÍ ±ØÒªµÄÊý¾Ýµ½ RAMÀï
+     88          *  ²ÎÊýËµÃ÷£ºÎÞ
+     89          *  º¯Êý·µ»Ø£ºÎÞ
+     90          *  Ê¹ÓÃÊ¾Àý£ºÎÞ
+     91          ********************************************************************************/
+     92          #pragma section = "DATA16_I"
+     93          #pragma section = "DATA20_I"
+     94          #pragma section = "DATA16_ID"
+     95          #pragma section = "DATA20_ID"
+     96          #pragma section = "DATA16_Z"
+     97          #pragma section = "DATA20_Z"
+     98          #pragma section = "TLS16_I"
+     99          #pragma section = "TLS16_ID"
+    100          #pragma section = "CODE_I"
+    101          #pragma section = "CODE_ID"
+    102          #pragma section = "INTVEC"
+
+   \                                 In  segment CODE, align 2
+    103          void RAM_data_Init(void)
+   \                     RAM_data_Init:
+    104          {
+   \   000000   0A14         PUSHM.A #0x1, R10
+    105              uint32_t n;
+    106              //³õÊ¼»¯ÖÐ¶ÏÏòÁ¿±í
+    107              extern ISR_TYPE __VECTOR_RAM[64];
+    108              ISR_TYPE *vector_ram = __section_begin("INTVEC");
+   \   000002   ........     MOVA    #SFB(INTVEC), R15
+    109              for(int i=0;i < VECTOR_SIZE;i++)
+   \   000006   ........     MOVA    #__VECTOR_RAM, R14
+    110              { //¸´ÖÆÖÐ¶ÏÏòÁ¿±í£¬¶ÔÃ»ÓÐ¶¨ÒåµÄÖÐ¶ÏÏòÁ¿¸³ÖµÎªdefault_isr£¨Ä¬ÈÏÖÐ¶Ï·þÎñº¯Êý£©
+    111                __VECTOR_RAM[i] = (0 == *vector_ram || (ISR_TYPE)0xFFFF == *vector_ram) ? (ISR_TYPE)default_isr : *vector_ram;  
+                                                                                                 ^
+Warning[Pe767]: conversion from pointer to smaller integer
+   \                     ??RAM_data_Init_0:
+   \   00000A   2D4F         MOV.W   @R15, R13
+   \   00000C   0D93         CMP.W   #0x0, R13
+   \   00000E   0224         JEQ     ??RAM_data_Init_14
+   \   000010   3D93         CMP.W   #0xffff, R13
+   \   000012   0220         JNE     ??RAM_data_Init_7
+   \                     ??RAM_data_Init_14:
+   \   000014   3D40....     MOV.W   #LWRD(default_isr), R13
+   \                     ??RAM_data_Init_7:
+   \   000018   8E4D0000     MOV.W   R13, 0(R14)
+    112                vector_ram++;
+   \   00001C   EF03         ADDA    #0x2, R15
+    113              }
+   \   00001E   EE03         ADDA    #0x2, R14
+   \   000020   ........     CMPA    #__VECTOR_RAM + 128, R14
+   \   000024   F223         JNE     ??RAM_data_Init_0
+    114              /* °ÑÒÑ¸³³õÖµµÄ±äÁ¿´ÓROMÀï¸´ÖÆÊý¾Ýµ½RAMÀï */
+    115              uint8_t *data_ram = __section_begin("DATA16_I");            //ÒÑ¸³³õÖµµÄ±äÁ¿µÄµØÖ·ÔÚRAMÀï
+   \   000026   ........     MOVA    #SFB(DATA16_I), R15
+   \   00002A   ........     MOVA    #SFB(DATA16_ID), R14
+    116              uint8_t *data_rom = __section_begin("DATA16_ID");       //ÒÑ¸³³õÖµµÄ±äÁ¿µÄÊý¾Ý´æ·ÅÔÚROMÀï£¬ÐèÒª¸³Öµµ½RAMÀï
+    117              uint8_t *data_rom_end = __section_end("DATA16_ID");
+    118              n = data_rom_end - data_rom;
+   \   00002E   3C40....     MOV.W   #LWRD((SFE(DATA16_ID) & 0xfffff) - (SFB(DATA16_ID) & 0xfffff)), R12
+   \   000032   3D40....     MOV.W   #LWRD((SFE(DATA16_ID) & 0xfffff) - (SFB(DATA16_ID) & 0xfffff) >> 16), R13
+   \   000036   ........     CALLA   #?Subroutine0
+    119          
+    120              /* ¸´ÖÆ³õÊ¼»¯Êý¾Ýµ½RAMÀï */
+    121              while (n--)
+    122              {
+    123                  *data_ram++ = *data_rom++; 
+    124              }
+    125              /* °ÑÒÑ¸³³õÖµµÄ±äÁ¿´ÓROMÀï¸´ÖÆÊý¾Ýµ½RAMÀï */
+    126              data_ram = __section_begin("DATA20_I");            //ÒÑ¸³³õÖµµÄ±äÁ¿µÄµØÖ·ÔÚRAMÀï
+   \                     ??CrossCallReturnLabel_0:
+   \   00003A   ........     MOVA    #SFB(DATA20_I), R15
+   \   00003E   ........     MOVA    #SFB(DATA20_ID), R14
+    127              data_rom = __section_begin("DATA20_ID");       //ÒÑ¸³³õÖµµÄ±äÁ¿µÄÊý¾Ý´æ·ÅÔÚROMÀï£¬ÐèÒª¸³Öµµ½RAMÀï
+    128              data_rom_end = __section_end("DATA20_ID");
+    129              n = data_rom_end - data_rom;
+   \   000042   3C40....     MOV.W   #LWRD((SFE(DATA20_ID) & 0xfffff) - (SFB(DATA20_ID) & 0xfffff)), R12
+   \   000046   3D40....     MOV.W   #LWRD((SFE(DATA20_ID) & 0xfffff) - (SFB(DATA20_ID) & 0xfffff) >> 16), R13
+   \   00004A   ........     CALLA   #?Subroutine0
+    130          
+    131              /* ¸´ÖÆ³õÊ¼»¯Êý¾Ýµ½RAMÀï */
+    132              while (n--)
+   \                     ??CrossCallReturnLabel_1:
+   \   00004E   ........     MOVA    #SFB(DATA16_Z), R15
+    133              {
+    134                  *data_ram++ = *data_rom++;
+    135              }
+    136              
+    137              /* Ã»¸³³õÖµ»òÕß³õÖµÎª0µÄ±äÁ¿£¬ÐèÒªÇå³ýÆäRAMÀïµÄÊý¾Ý£¬È·±£ÖµÎª0 */
+    138              uint8_t *bss_start = __section_begin("DATA16_Z");
+    139              uint8_t *bss_end = __section_end("DATA16_Z");
+    140          
+    141              /* Çå³ýÃ»¸³³õÖµ»òÕß³õÖµÎª0µÄ±äÁ¿Êý¾ÝÖµ */
+    142              n = bss_end - bss_start;
+   \   000052   3C40....     MOV.W   #LWRD((SFE(DATA16_Z) & 0xfffff) - (SFB(DATA16_Z) & 0xfffff)), R12
+   \   000056   3D40....     MOV.W   #LWRD((SFE(DATA16_Z) & 0xfffff) - (SFB(DATA16_Z) & 0xfffff) >> 16), R13
+   \   00005A   ........     CALLA   #?Subroutine1
+    143              while(n--)
+   \                     ??CrossCallReturnLabel_4:
+   \   00005E   ........     MOVA    #SFB(DATA20_Z), R15
+    144              {
+    145                  *bss_start++ = 0;
+    146              }
+    147              /* Ã»¸³³õÖµ»òÕß³õÖµÎª0µÄ±äÁ¿£¬ÐèÒªÇå³ýÆäRAMÀïµÄÊý¾Ý£¬È·±£ÖµÎª0 */
+    148              bss_start = __section_begin("DATA20_Z");
+    149              bss_end = __section_end("DATA20_Z");
+    150          
+    151              /* Çå³ýÃ»¸³³õÖµ»òÕß³õÖµÎª0µÄ±äÁ¿Êý¾ÝÖµ */
+    152              n = bss_end - bss_start;
+   \   000062   3C40....     MOV.W   #LWRD((SFE(DATA20_Z) & 0xfffff) - (SFB(DATA20_Z) & 0xfffff)), R12
+   \   000066   3D40....     MOV.W   #LWRD((SFE(DATA20_Z) & 0xfffff) - (SFB(DATA20_Z) & 0xfffff) >> 16), R13
+   \   00006A   ........     CALLA   #?Subroutine1
+    153              while(n--)
+    154              {
+    155                  *bss_start++ = 0;
+    156              }
+    157             
+    158               /* ¸³ÖµÓÃ __ramfunc ÉùÃ÷µÄº¯ÊýµÄµÄ´úÂë¶Îµ½ RAM£¬¿ÉÒÔ¼Ó¿ì´úÂëµÄÔËÐÐ        */
+    159              uint8_t *code_relocate_ram = __section_begin("CODE_I");
+   \                     ??CrossCallReturnLabel_5:
+   \   00006E   ........     MOVA    #SFB(CODE_I), R15
+   \   000072   ........     MOVA    #SFB(CODE_ID), R14
+    160              uint8_t *code_relocate = __section_begin("CODE_ID");
+    161              uint8_t *code_relocate_end = __section_end("CODE_ID");
+    162          
+    163              /* ´ÓROMÀï¸´ÖÆº¯Êý´úÂëµ½RAMÀï */
+    164              n = code_relocate_end - code_relocate;
+   \   000076   3C40....     MOV.W   #LWRD((SFE(CODE_ID) & 0xfffff) - (SFB(CODE_ID) & 0xfffff)), R12
+   \   00007A   3D40....     MOV.W   #LWRD((SFE(CODE_ID) & 0xfffff) - (SFB(CODE_ID) & 0xfffff) >> 16), R13
+   \   00007E   ........     CALLA   #?Subroutine0
+    165              while (n--)
+    166              {
+    167                  *code_relocate_ram++ = *code_relocate++;
+    168              }
+    169              
+    170              /* ¸³Öµ Thread-local storage for main thread(require custom runtime library)µ½RAM*/
+    171              uint8_t *tls_ram = __section_begin("TLS16_I");
+   \                     ??CrossCallReturnLabel_2:
+   \   000082   ........     MOVA    #SFB(TLS16_I), R15
+   \   000086   ........     MOVA    #SFB(TLS16_ID), R14
+    172              uint8_t *tls_start = __section_begin("TLS16_ID");
+    173              uint8_t *tls_end   = __section_end("TLS16_ID");
+    174          
+    175              /* ´ÓROMÀï¸´ÖÆº¯Êý´úÂëµ½RAMÀï */
+    176              n = tls_end - tls_start;
+   \   00008A   3C40....     MOV.W   #LWRD((SFE(TLS16_ID) & 0xfffff) - (SFB(TLS16_ID) & 0xfffff)), R12
+   \   00008E   3D40....     MOV.W   #LWRD((SFE(TLS16_ID) & 0xfffff) - (SFB(TLS16_ID) & 0xfffff) >> 16), R13
+   \   000092   ........     CALLA   #?Subroutine0
+    177              while (n--)
+    178              {
+    179                  *tls_ram++ = *tls_start++;
+    180              }
+    181          }
+   \                     ??CrossCallReturnLabel_3:
+   \   000096   0A16         POPM.A  #0x1, R10
+   \   000098   1001         RETA
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine1:
+   \   000000   0E4C         MOV.W   R12, R14
+   \   000002   0EDD         BIS.W   R13, R14
+   \   000004   0E93         CMP.W   #0x0, R14
+   \   000006   0A24         JEQ     ??RAM_data_Init_12
+   \                     ??RAM_data_Init_3:
+   \   000008   CF430000     MOV.B   #0x0, 0(R15)
+   \   00000C   AF000100     ADDA    #0x1, R15
+   \   000010   3C53         ADD.W   #0xffff, R12
+   \   000012   3D63         ADDC.W  #0xffff, R13
+   \   000014   0E4C         MOV.W   R12, R14
+   \   000016   0EDD         BIS.W   R13, R14
+   \   000018   0E93         CMP.W   #0x0, R14
+   \   00001A   F623         JNE     ??RAM_data_Init_3
+   \                     ??RAM_data_Init_12:
+   \   00001C   1001         RETA
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine0:
+   \   000000   0A4C         MOV.W   R12, R10
+   \   000002   0ADD         BIS.W   R13, R10
+   \   000004   0A93         CMP.W   #0x0, R10
+   \   000006   0A24         JEQ     ??RAM_data_Init_8
+   \                     ??RAM_data_Init_1:
+   \   000008   FF4E0000     MOV.B   @R14+, 0(R15)
+   \   00000C   AF000100     ADDA    #0x1, R15
+   \   000010   3C53         ADD.W   #0xffff, R12
+   \   000012   3D63         ADDC.W  #0xffff, R13
+   \   000014   0A4C         MOV.W   R12, R10
+   \   000016   0ADD         BIS.W   R13, R10
+   \   000018   0A93         CMP.W   #0x0, R10
+   \   00001A   F623         JNE     ??RAM_data_Init_1
+   \                     ??RAM_data_Init_8:
+   \   00001C   1001         RETA
+
+   Maximum stack usage in bytes:
+
+   CSTACK Function
+   ------ --------
+       8  RAM_data_Init
+       4  __low_level_init
+            4 -> CLOCK_ACLK_Config
+            4 -> CLOCK_MCLK_Config
+            4 -> CLOCK_SMCLK_Config
+            4 -> DCO_PLLConfig
+            4 -> DisableWatchDog
+            4 -> RAM_data_Init
+            4 -> Set_VectorTable_To_RAM
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      30  ?Subroutine0
+      30  ?Subroutine1
+     154  RAM_data_Init
+      60  __low_level_init
+
+ 
+ 274 bytes in segment CODE
+ 
+ 274 bytes of CODE memory
+
+Errors: none
+Warnings: 1

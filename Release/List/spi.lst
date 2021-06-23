@@ -1,0 +1,490 @@
+###############################################################################
+#                                                                             #
+#                                                       06/Jun/2016  16:42:35 #
+# IAR C/C++ Compiler V5.50.1.20465/W32, Evaluation edition for MSP430         #
+# Copyright 1996-2012 IAR Systems AB.                                         #
+#                                                                             #
+#    __rt_version  =  3                                                       #
+#    __double_size =  32                                                      #
+#    __reg_r4      =  free                                                    #
+#    __reg_r5      =  free                                                    #
+#    __pic         =  no                                                      #
+#    __core        =  430X                                                    #
+#    __data_model  =  large                                                   #
+#    Source file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\spi.c                                #
+#    Command line  =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\spi.c -D NDEBUG -D RAM_VECTOR -lC    #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\List\ -lA C:\Users\615\Desktop\MSP430\MS #
+#                     P430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Release\List\ -o        #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\Obj\ -D__MSP430F5529__ -e --double=32    #
+#                     --dlib_config "D:\Program Files (x86)\IAR               #
+#                     Systems\Embedded Workbench 6.4                          #
+#                     Evaluation\430\LIB\DLIB\dl430xlfn.h" -I                 #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\ -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Ê #
+#                     ý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\inc\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\ -I C:\Users\615\Desktop\MSP430\MSP4 #
+#                     30F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\src\USB\ -I       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_config\ -I                   #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_User\ -I                     #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\srcUSB\USB_API\USB_CDC_API\ -I           #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_API\USB_HID_API\ -I          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_API\USB_MSC_API\ -I          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\KEY\ -I C:\Users\615\Desktop\MSP430\MSP #
+#                     430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\LED\ -I         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\12864\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\oled\ -I      #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\mpu6050\inc\ -I                         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\mpu6050\src\ -I                         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\nokia5110\inc\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\nokia5110\src\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\LQ_1.8_TFT\ -I                          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\LCD_API\ -I                             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\2.2TFT\ -I                              #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\delay\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\ -I             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\System\inc\ -I C:\Users\615\Desktop\MSP430\MSP43 #
+#                     0F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\src\ -I             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\User\ -I C:\Users\615\Desktop\MSP430\MSP430F5529 #
+#                     ¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\User\USER\ -I                    #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\UCOSII\CONFIG\ -I                            #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\uCOSII\App\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII\CONFIHG\    #
+#                     -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ #
+#                     \¹¤³ÌÄ£°å\Lib\uCOSII\PORT\ -I                           #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\UCOSII\CORE\ -I                              #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\FatFs\ -I C:\Users\615\Desktop\MSP430\MSP430 #
+#                     F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\FatFs\option\           #
+#                     --core=430X --data_model=large -Oh --multiplier=32      #
+#                     --multiplier_location=4C0 --hw_workaround=CPU40         #
+#    List file     =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\List\spi.lst                             #
+#    Object file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\Obj\spi.r43                              #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\src\spi.c
+      1          #include "spi.h"
+      2          #include "clock.h"
+      3          #include "gpio.h"
+      4          
+
+   \                                 In  segment DATA20_C, align 2, align-sorted
+      5          const USCI_MemMapPtr USCIX[]={USCI_A0_BASE_PTR,USCI_A1_BASE_PTR,USCI_B0_BASE_PTR,USCI_B1_BASE_PTR};
+   \                     USCIX:
+   \   000000   C00500000006 DC32 5C0H, 600H, 5E0H, 620H
+   \            0000E0050000
+   \            20060000    
+      6          
+      7          const struct
+      8          {
+      9            IO_PIN STE_PIN ; //
+     10            IO_PIN SIMO_PIN; //
+     11            IO_PIN SOMI_PIN; //
+     12            IO_PIN CLK_PIN ; //
+
+   \                                 In  segment DATA20_C, align 1, align-sorted
+     13          }SPI_PIN[]=
+   \                     SPI_PIN:
+   \   000000   020202030204 DC8 2, 2, 2, 3, 2, 4, 1, 7, 3, 3, 3, 4, 3, 5, 3, 0, 1, 1, 2, 0, 2, 1, 2
+   \            010703030304
+   \            030503000101
+   \            0200020102  
+   \   000017   020300030103 DC8 2, 3, 0, 3, 1, 3, 2, 3, 3
+   \            020303      
+     14          { //        STE             SIMO             SOMI             CLK
+     15            /*SPI0*/{.STE_PIN={P3,2},.SIMO_PIN={P3,3},.SOMI_PIN={P3,4},.CLK_PIN={P2,7}},    
+     16            /*SPI1*/{.STE_PIN={P4,3},.SIMO_PIN={P4,4},.SOMI_PIN={P4,5},.CLK_PIN={P4,0}},       
+     17            /*SPI2*/{.STE_PIN={P2,1},.SIMO_PIN={P3,0},.SOMI_PIN={P3,1},.CLK_PIN={P3,2}},    
+     18            /*SPI3*/{.STE_PIN={P4,0},.SIMO_PIN={P4,1},.SOMI_PIN={P4,2},.CLK_PIN={P4,3}},  
+     19          };//Òý½Å³õÊ¼»¯Êý×é
+     20          /*******************************************************************************
+     21          *  º¯ÊýÃû³Æ£ºSPI_Master_Init (SPIn spin,uint32_t BaudRate,FirstBit firstbit, SPI_STE_Mode spistemode,SPI_CLK_Mode spiclkmode)
+     22          *  ¹¦ÄÜËµÃ÷£ºSPI³õÊ¼»¯
+     23          *  ²ÎÊýËµÃ÷£ºSPIn spin                  :SPIÄ£¿éºÅ
+     24                       uint32_t BaudRate            :´«Êä²¨ÌØÂÊ
+     25                       FirstBit firstbit          :ÏÈ·¢ËÍ¸ßÎ»»òµÍÎ»Êý¾Ý
+     26                       SPI_STE_Mode spistemode    :STEÄ£Ê½
+     27                       SPI_CLK_Mode spiclkmode    :SPIÊ±ÖÓÄ£Ê½
+     28          *  º¯Êý·µ»Ø£ºÎÞ
+     29          *  Ê¹ÓÃÀý³Ì£ºSPI_Master_Init(SPI2,10000000,MSB_First,SPI_STE_None,SPI_Mode_4); //³õÊ¼»¯SPIÄ£¿é£¬²¨ÌØÂÊÎª10000000£¬ÏÈ·¢ËÍ¸ßÎ»Êý¾Ý£¬STEÐÅºÅÆÁ±Î£¬Ê±ÖÓÏßÄ£Ê½4
+     30          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+     31          void SPI_Master_Init (SPIn spin,uint32_t BaudRate,FirstBit firstbit, SPI_STE_Mode spistemode,SPI_CLK_Mode spiclkmode)
+   \                     SPI_Master_Init:
+     32          {
+   \   000000   7B14         PUSHM.A #0x8, R11
+   \   000002   2183         SUB.W   #0x2, SP
+   \   000004   4A4C         MOV.B   R12, R10
+   \   000006   444D         MOV.B   R13, R4
+   \   000008   57412800     MOV.B   0x28(SP), R7
+     33            WordType BR;
+     34            BR.Word = g_sClock.SMCLK.CLK_HZ/BaudRate;        //ÇóÈ¡²¨ÌØÂÊËùÐèµÄ·ÖÆµÏµÊý
+   \   00000C   ....1C42.... MOVX.W  &g_sClock + 12, R12
+   \   000012   ....1D42.... MOVX.W  &g_sClock + 14, R13
+   \   000018   ........     CALLA   #?DivMod32u
+   \   00001C   814C0000     MOV.W   R12, 0(SP)
+     35            if(spistemode != SPI_STE_None)
+   \   000020   0B43         MOV.W   #0x0, R11
+   \   000022   0E4A         MOV.W   R10, R14
+   \   000024   0F43         MOV.W   #0x0, R15
+   \   000026   0E5E         RLA.W   R14
+   \   000028   0E5E         RLA.W   R14
+   \   00002A   0E5E         RLA.W   R14
+   \   00002C   1F15         PUSHM.W #0x2, R15
+   \   00002E   0816         POPM.A  #0x1, R8
+   \   000030   39400001     MOV.W   #0x100, R9
+   \   000034   56412600     MOV.B   0x26(SP), R6
+   \   000038   4693         CMP.B   #0x0, R6
+   \   00003A   0C24         JEQ     ??SPI_Master_Init_4
+     36            {
+     37              GPIO_Init(SPI_PIN[spin].STE_PIN.Port,SPI_PIN[spin].STE_PIN.Pin,SEL);     //Æ¬Ñ¡ÐÅºÅÒý½ÅÉèÎªµÚ¶þ¹¦ÄÜ
+   \   00003C   0E49         MOV.W   R9, R14
+   \   00003E   1D43         MOV.W   #0x1, R13
+   \   000040   ....5F48.... MOVX.B  SPI_PIN + 1(R8), R15
+   \   000046   ........     CALLA   #?Subroutine1
+     38            }
+   \                     ??CrossCallReturnLabel_3:
+   \   00004A   ....5C48.... MOVX.B  SPI_PIN(R8), R12
+   \   000050   ........     CALLA   #GPIO_MultiBits_Init
+     39            GPIO_Init(SPI_PIN[spin].SIMO_PIN.Port,SPI_PIN[spin].SIMO_PIN.Pin,SEL);     //Ö÷Êä³ö´ÓÊäÈëÐÅºÅÒý½ÅÉèÎªµÚ¶þ¹¦ÄÜ
+   \                     ??SPI_Master_Init_4:
+   \   000054   0E49         MOV.W   R9, R14
+   \   000056   1D43         MOV.W   #0x1, R13
+   \   000058   ....5F48.... MOVX.B  SPI_PIN + 3(R8), R15
+   \   00005E   ........     CALLA   #?Subroutine1
+   \                     ??CrossCallReturnLabel_4:
+   \   000062   ....5C48.... MOVX.B  SPI_PIN + 2(R8), R12
+   \   000068   ........     CALLA   #GPIO_MultiBits_Init
+     40            GPIO_Init(SPI_PIN[spin].SOMI_PIN.Port,SPI_PIN[spin].SOMI_PIN.Pin,SEL);     //Ö÷ÊäÈë´ÓÊä³öÐÅºÅÒý½ÅÉèÎªµÚ¶þ¹¦ÄÜ
+   \   00006C   0E49         MOV.W   R9, R14
+   \   00006E   1D43         MOV.W   #0x1, R13
+   \   000070   ....5F48.... MOVX.B  SPI_PIN + 5(R8), R15
+   \   000076   ........     CALLA   #?Subroutine1
+   \                     ??CrossCallReturnLabel_5:
+   \   00007A   ....5C48.... MOVX.B  SPI_PIN + 4(R8), R12
+   \   000080   ........     CALLA   #GPIO_MultiBits_Init
+     41            GPIO_Init(SPI_PIN[spin].CLK_PIN.Port,SPI_PIN[spin].CLK_PIN.Pin,SEL);       //Ê±ÖÓÐÅºÅÒý½ÅÉèÎªµÚ¶þ¹¦ÄÜ
+   \   000084   0E49         MOV.W   R9, R14
+   \   000086   1D43         MOV.W   #0x1, R13
+   \   000088   ....5F48.... MOVX.B  SPI_PIN + 7(R8), R15
+   \   00008E   ........     CALLA   #?Subroutine1
+   \                     ??CrossCallReturnLabel_6:
+   \   000092   ....5C48.... MOVX.B  SPI_PIN + 6(R8), R12
+   \   000098   ........     CALLA   #GPIO_MultiBits_Init
+     42            
+     43            USCIX[spin]->CTL1 = UCSWRST; 
+   \   00009C   1B15         PUSHM.W #0x2, R11
+   \   00009E   0F16         POPM.A  #0x1, R15
+   \   0000A0   4F06         RLAM.A  #0x2, R15
+   \   0000A2   ....5B4F.... MOVX.A  USCIX(R15), R11
+   \   0000A8   DB430000     MOV.B   #0x1, 0(R11)
+     44            USCIX[spin]->SYNC = SET;                             //Í¬²½Ä£Ê½
+   \   0000AC   DBD30100     BIS.B   #0x1, 0x1(R11)
+     45            USCIX[spin]->MST = SET;                              //Ö÷»úÄ£Ê½
+   \   0000B0   FBD20100     BIS.B   #0x8, 0x1(R11)
+     46            USCIX[spin]->MODE = spistemode;                      //Æ¬Ñ¡ÐÅºÅÉèÖÃ
+   \   0000B4   4656         RLA.B   R6
+   \   0000B6   76F00600     AND.B   #0x6, R6
+   \   0000BA   5E4B0100     MOV.B   0x1(R11), R14
+   \   0000BE   7EF0F900     AND.B   #0xf9, R14
+   \   0000C2   4ED6         BIS.B   R6, R14
+   \   0000C4   CB4E0100     MOV.B   R14, 0x1(R11)
+     47            USCIX[spin]->CKMODE = spiclkmode;                    //Ê±ÖÓÏßÄ£Ê½ÉèÖÃ
+   \   0000C8                RPT     #0x6
+   \   0000C8   45184757     RLAX.B  R7
+   \   0000CC   5E4B0100     MOV.B   0x1(R11), R14
+   \   0000D0   7EF03F00     AND.B   #0x3f, R14
+   \   0000D4   4ED7         BIS.B   R7, R14
+   \   0000D6   CB4E0100     MOV.B   R14, 0x1(R11)
+     48            USCIX[spin]->MSB = firstbit;                         //·¢ËÍÊ×Î»ÉèÖÃ
+   \   0000DA   54B3         BIT.B   #0x1, R4
+   \   0000DC   042C         JC      ??SPI_Master_Init_5
+   \   0000DE   FBC020000100 BIC.B   #0x20, 0x1(R11)
+   \   0000E4   033C         JMP     ??SPI_Master_Init_6
+   \                     ??SPI_Master_Init_5:
+   \   0000E6   FBD020000100 BIS.B   #0x20, 0x1(R11)
+     49            
+     50            USCIX[spin]->SSEL= USCI_SSEL__SMCLK;                 //Ê±ÖÓÔ´ÉèÖÃ
+   \                     ??SPI_Master_Init_6:
+   \   0000EC   7E403F00     MOV.B   #0x3f, R14
+   \   0000F0   6EFB         AND.B   @R11, R14
+   \   0000F2   7ED08000     BIS.B   #0x80, R14
+   \   0000F6   CB4E0000     MOV.B   R14, 0(R11)
+     51            
+     52            USCIX[spin]->BRW = BR.Word;                          //BRWÐ´1ÓëÐ´0·¢ÏÖ²¨ÌØÂÊÃ»ÓÐÇø±ð
+   \   0000FA   AB410600     MOV.W   @SP, 0x6(R11)
+     53            USCIX[spin]->CTL1 &=~ UCSWRST; 
+   \   0000FE   DBC30000     BIC.B   #0x1, 0(R11)
+     54            
+     55            USCIX[spin]->IE = 0u;                                         //¹Ø±ÕËùÓÐÖÐ¶Ï
+   \   000102   CB431C00     MOV.B   #0x0, 0x1c(R11)
+     56            USCIX[spin]->RXIFG = RESET;                                   //Çå³ý½ÓÊÕÊý¾Ý±êÖ¾
+   \   000106   DBC31D00     BIC.B   #0x1, 0x1d(R11)
+     57            USCIX[spin]->TXIFG = SET;                                     //ÖÃÎ»·¢ËÍ»º³åÇøÎª¿Õ±êÖ¾
+   \   00010A   EBD31D00     BIS.B   #0x2, 0x1d(R11)
+     58          }
+   \   00010E   2153         ADD.W   #0x2, SP
+   \   000110   7416         POPM.A  #0x8, R11
+   \   000112   1001         RETA
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine1:
+   \   000000   5F83         SUB.B   #0x1, R15
+   \   000002   0230         JN      ??SPI_Master_Init_0
+   \   000004                RPT     R15
+   \   000004   CF180D5D     RLAX.W  R13
+   \                     ??SPI_Master_Init_0:
+   \   000008   1001         RETA
+     59          /*******************************************************************************
+     60          º¯ÊýÃû³Æ£ºSPI_SetBaudRate (SPIn spin, uint32_t BaudRate)     
+     61          ¹¦ÄÜËµÃ÷£ºÉèÖÃSPI²¨ÌØÂÊ
+     62          ²ÎÊýËµÃ÷£ºSPIn spin                  :SPIÄ£¿éºÅ
+     63                    uint32_t BaudRate            :´«Êä²¨ÌØÂÊ
+     64          º¯Êý·µ»Ø£ºÎÞ
+     65          *******************************************************************************/
+
+   \                                 In  segment CODE, align 2
+     66          void  SPI_SetBaudRate (SPIn spin, uint32_t BaudRate)                  
+   \                     SPI_SetBaudRate:
+     67          {
+   \   000000   0A14         PUSHM.A #0x1, R10
+   \   000002   4D4C         MOV.B   R12, R13
+     68            USCIX[spin]->CTL1 = UCSSEL__SMCLK + UCSWRST;                //ÉèÖÃÊ±ÖÓÔ´
+   \   000004   4D06         RLAM.A  #0x2, R13
+   \   000006   ....5A4D.... MOVX.A  USCIX(R13), R10
+   \   00000C   FA4081000000 MOV.B   #0x81, 0(R10)
+     69           
+     70            USCIX[spin]->BRW =(uint16_t)g_sClock.SMCLK.CLK_HZ/BaudRate;                                 //ÉèÖÃ²¨ÌØÂÊ
+   \   000012   ....1C42.... MOVX.W  &g_sClock + 12, R12
+   \   000018   0D43         MOV.W   #0x0, R13
+   \   00001A   ........     CALLA   #?DivMod32u
+   \   00001E   8A4C0600     MOV.W   R12, 0x6(R10)
+     71          
+     72            USCIX[spin]->CTL1 &= ~UCSWRST;      
+   \   000022   DAC30000     BIC.B   #0x1, 0(R10)
+     73          }
+   \   000026   0A16         POPM.A  #0x1, R10
+   \   000028   1001         RETA
+     74          /*******************************************************************************
+     75          *  º¯ÊýÃû³Æ£ºSPI_SendReadByte(SPIn spin,uint8_t data)
+     76          *  ¹¦ÄÜËµÃ÷£ºSPI·¢ËÍ²¢½ÓÊÕÒ»×Ö½ÚÊý¾Ý£¬·¢ËÍµÄÍ¬Ê±Ò»¶¨»á½ÓÊÕÊý¾Ý
+     77          *  ²ÎÊýËµÃ÷£ºSPIn spin :SPIÄ£¿éºÅ
+     78                       uint8_t data:Òª·¢ËÍµÄÊý¾Ý
+     79          *  º¯Êý·µ»Ø£º¶ÁÈ¡µ½µÄÊý¾Ý
+     80          *  Ê¹ÓÃÊ¾Àý£ºSPI_SendReadByte(SPIn spin,uint8_t data)
+     81          *  ×¢Òâ£º²»Ìá¹©Æ¬Ñ¡ÐÅºÅ£¬ÐèÒª×Ô¼ºÊ¹ÓÃIO¿ÚÄ£ÄâCSÆ¬Ñ¡ÐÅºÅ
+     82          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+     83          uint8_t SPI_SendReadByte(SPIn spin,uint8_t data)
+   \                     SPI_SendReadByte:
+   \                     ??SPI_SendReadByte_0:
+     84          {
+     85            while(USCIX[spin]->UC_BUSY == SET);                   //ÅÐ¶ÏSPInÓ²¼þÊÇ·ñÃ¦
+   \   000000   4F4C         MOV.B   R12, R15
+   \   000002   4F06         RLAM.A  #0x2, R15
+   \   000004   ....5F4F.... MOVX.A  USCIX(R15), R15
+   \   00000A   DFB30A00     BIT.B   #0x1, 0xa(R15)
+   \   00000E   F82F         JC      ??SPI_SendReadByte_0
+     86            USCIX[spin]->TXBUF = data;                            // Ð´ÈëÒª·¢ËÍµÄÊý¾Ý
+   \   000010   CF4D0E00     MOV.B   R13, 0xe(R15)
+     87            while(USCIX[spin]->UC_BUSY == SET);                   //ÅÐ¶ÏSPInÓ²¼þÊÇ·ñÃ¦
+   \                     ??SPI_SendReadByte_1:
+   \   000014   DFB30A00     BIT.B   #0x1, 0xa(R15)
+   \   000018   FD2F         JC      ??SPI_SendReadByte_1
+     88            return USCIX[spin]->RXBUF;                            //·µ»Ø½ÓÊÕµ½µÄÊý¾Ý,¶ÁÈ¡RXBUFºóRXIFGÎ»×Ô¶¯Çå³ý
+   \   00001A   5C4F0C00     MOV.B   0xc(R15), R12
+   \   00001E   1001         RETA
+     89          }
+     90          /*******************************************************************************
+     91          *  º¯ÊýÃû³Æ£ºSPI_SendReadString(SPIn spin,char * SendData,char * ReceiveData,uint16_t Length)
+     92          *  ¹¦ÄÜËµÃ÷£ºSPIn·¢ËÍ²¢½ÓÊÕ¶à×Ö½ÚÊý¾Ý
+     93          *  ²ÎÊýËµÃ÷£ºSPIn spin          :SPIÄ£¿éºÅ
+     94                       char * SendData    :·¢ËÍÊý¾ÝµØÖ·
+     95                       char * ReceiveData :½ÓÊÕÊý¾Ý»º´æµØÖ·
+     96                       uint16_t Length      :Òª·¢ËÍÊý¾Ý×Ö½ÚÊý
+     97          *  º¯Êý·µ»Ø£ºÎÞ
+     98          *  Ê¹ÓÃÊ¾Àý£ºchar SendData[20] = "Hello!";
+     99                       char ReceiveData[20];
+    100                       SPI_SendReadString(SPI0,SendData,ReceiveData,strlen("Hello!")); //SPI0·¢ËÍ×Ö·û´®
+    101          *  ×¢Òâ£º²»Ìá¹©Æ¬Ñ¡ÐÅºÅ£¬ÐèÒª×Ô¼ºÊ¹ÓÃIO¿ÚÄ£ÄâCSÆ¬Ñ¡ÐÅºÅ
+    102          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+    103          void SPI_SendReadString(SPIn spin,char * SendData,char * ReceiveData,uint16_t Length)
+   \                     SPI_SendReadString:
+    104          {
+   \   000000   3B14         PUSHM.A #0x4, R11
+   \   000002   4B4C         MOV.B   R12, R11
+   \   000004   C80D         MOVA    R13, R8
+   \   000006   0A4F         MOV.W   R15, R10
+   \   000008   0F93         CMP.W   #0x0, R15
+   \   00000A   0A24         JEQ     ??SPI_SendReadString_1
+    105            while(Length--)
+    106            {
+    107              *ReceiveData++=SPI_SendReadByte(spin, *SendData++);
+   \                     ??SPI_SendReadString_0:
+   \   00000C   7D48         MOV.B   @R8+, R13
+   \   00000E   4C4B         MOV.B   R11, R12
+   \   000010   ........     CALLA   #SPI_SendReadByte
+   \   000014   CE4C0000     MOV.B   R12, 0(R14)
+   \   000018   AE000100     ADDA    #0x1, R14
+   \   00001C   3A53         ADD.W   #0xffff, R10
+    108            }
+   \   00001E   F623         JNE     ??SPI_SendReadString_0
+    109          }
+   \                     ??SPI_SendReadString_1:
+   \   000020   3816         POPM.A  #0x4, R11
+   \   000022   1001         RETA
+    110          /*******************************************************************************
+    111          *  º¯ÊýÃû³Æ£ºSPI_ITConfig    (SPIn spin,SPI_IRQn irqn,STATUS ITState)
+    112          *  ¹¦ÄÜËµÃ÷£ºÉèÖÃSPIÄ³Ò»ÖÐ¶ÏÊÇ·ñÊ¹ÄÜ
+    113          *  ²ÎÊýËµÃ÷£ºSPIn spin          :SPIÄ£¿éºÅ
+    114                       SPI_IRQn irqn      :ÖÐ¶ÏÊÂ¼þÑ¡Ôñ
+    115                       STATUS ITState     :ÖÐ¶ÏÊÇ·ñÊ¹ÄÜ
+    116          *  º¯Êý·µ»Ø£ºÎÞ
+    117          *  Ê¹ÓÃÊ¾Àý£ºSPI_ITConfig    (SPI1,SPI_RX_IRQn,ENABLE);  //Ê¹ÄÜSPI1µÄ½ÓÊÕÖÐ¶Ï
+    118          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine0:
+   \   000000   4C4C         MOV.B   R12, R12
+   \   000002   4C06         RLAM.A  #0x2, R12
+   \   000004   ....5F4C.... MOVX.A  USCIX(R12), R15
+   \   00000A   1001         RETA
+
+   \                                 In  segment CODE, align 2
+    119          void  SPI_ITConfig    (SPIn spin,SPI_IRQn irqn,STATUS ITState)
+   \                     SPI_ITConfig:
+    120          {
+    121            if(ITState != DISABLE)
+   \   000000   ........     CALLA   #?Subroutine0
+   \                     ??CrossCallReturnLabel_2:
+   \   000004   4E93         CMP.B   #0x0, R14
+   \   000006   0324         JEQ     ??SPI_ITConfig_0
+    122            {
+    123              USCIX[spin]->IE |= irqn;
+   \   000008   CFDD1C00     BIS.B   R13, 0x1c(R15)
+   \   00000C   1001         RETA
+    124            }
+    125            else
+    126            {
+    127              USCIX[spin]->IE &=~irqn;
+   \                     ??SPI_ITConfig_0:
+   \   00000E   CFCD1C00     BIC.B   R13, 0x1c(R15)
+    128            }
+    129          }
+   \   000012   1001         RETA
+    130          /*******************************************************************************
+    131          *  º¯ÊýÃû³Æ£ºSPI_GetITStatus(SPIn spin,SPI_IRQn irqn)
+    132          *  ¹¦ÄÜËµÃ÷£º»ñÈ¡SPIÖÐ¶Ï±êÖ¾Î»×´Ì¬
+    133          *  ²ÎÊýËµÃ÷£ºSPIn spin          :SPIÄ£¿éºÅ
+    134                       SPI_IRQn irqn      :ÖÐ¶ÏÊÂ¼þÑ¡Ôñ
+    135          *  º¯Êý·µ»Ø£ºSTATUS :TRUE-ÖÐ¶ÏÊÂ¼þ·¢Éú FALSE-ÖÐ¶ÏÊÂ¼þÎ´·¢Éú
+    136          *  Ê¹ÓÃÊ¾Àý£ºif(TRUE == SPI_GetITStatus(SPI1,SPI_RX_IRQn)){...}  //ÅÐ¶ÏSPI1½ÓÊÕÖÐ¶ÏÊÂ¼þÊÇ·ñ·¢Éú
+    137          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+    138          STATUS  SPI_GetITStatus(SPIn spin,SPI_IRQn irqn)
+   \                     SPI_GetITStatus:
+    139          {
+    140            return ((USCIX[spin]->IFG & irqn) ? TRUE : FALSE);
+   \   000000   ........     CALLA   #?Subroutine0
+   \                     ??CrossCallReturnLabel_1:
+   \   000004   CFBD1D00     BIT.B   R13, 0x1d(R15)
+   \   000008   0220         JNE     ??SPI_GetITStatus_0
+   \   00000A   4C43         MOV.B   #0x0, R12
+   \   00000C   1001         RETA
+   \                     ??SPI_GetITStatus_0:
+   \   00000E   5C43         MOV.B   #0x1, R12
+   \   000010   1001         RETA
+    141          }
+    142          /*******************************************************************************
+    143          *  º¯ÊýÃû³Æ£ºSPI_ClearITPendingBit(SPIn spin,SPI_IRQn irqn)
+    144          *  ¹¦ÄÜËµÃ÷£ºSPInÇå³ýÖÐ¶Ï±êÖ¾Î»×´Ì¬
+    145          *  ²ÎÊýËµÃ÷£ºSPIn spin          :SPIÄ£¿éºÅ
+    146                       SPI_IRQn irqn      :ÖÐ¶ÏÊÂ¼þÑ¡Ôñ
+    147          *  º¯Êý·µ»Ø£ºÎÞ
+    148          *  Ê¹ÓÃÊ¾Àý£ºSPI_ClearITPendingBit(SPI1,SPI_RX_IRQn);  //Çå³ýSPI1½ÓÊÕÖÐ¶Ï±êÖ¾
+    149          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+    150          void   SPI_ClearITPendingBit(SPIn spin,SPI_IRQn irqn)
+   \                     SPI_ClearITPendingBit:
+    151          {
+    152             USCIX[spin]->IFG &=~ irqn;
+   \   000000   ........     CALLA   #?Subroutine0
+   \                     ??CrossCallReturnLabel_0:
+   \   000004   CFCD1D00     BIC.B   R13, 0x1d(R15)
+    153          }
+   \   000008   1001         RETA
+
+   Maximum stack usage in bytes:
+
+   CSTACK Function
+   ------ --------
+       4  SPI_ClearITPendingBit
+       4  SPI_GetITStatus
+       4  SPI_ITConfig
+      38  SPI_Master_Init
+            38 -> GPIO_MultiBits_Init
+       4  SPI_SendReadByte
+      20  SPI_SendReadString
+            20 -> SPI_SendReadByte
+       8  SPI_SetBaudRate
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      12  ?Subroutine0
+      10  ?Subroutine1
+      10  SPI_ClearITPendingBit
+      18  SPI_GetITStatus
+      20  SPI_ITConfig
+     276  SPI_Master_Init
+      32  SPI_PIN
+      32  SPI_SendReadByte
+      36  SPI_SendReadString
+      42  SPI_SetBaudRate
+      16  USCIX
+
+ 
+ 456 bytes in segment CODE
+  48 bytes in segment DATA20_C
+ 
+ 456 bytes of CODE  memory
+  48 bytes of CONST memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,47 @@
+C51 COMPILER V7.20   MAIN                                                                  06/16/2010 15:21:23 PAGE 1   
+
+
+C51 COMPILER V7.20, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN MAIN.OBJ
+COMPILER INVOKED BY: E:\单片机专用\keil UV3 C51绿色精简版\keil UV3 C51绿色精简版\keil UV3 C51绿色精简版\C51\BIN\C51.EXE 
+                    -MAIN.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          /*****************************************
+   2          创建：陈志强
+   3          时间：2010.6.12
+   4          功能：工程主函数(主机接收部分)
+   5          *****************************************/
+   6          #include"reg52.h"
+   7          #include"Allhead.h"
+   8          /************************主函数********************/
+   9          void main()
+  10          {
+  11   1         unchar RevTempDate[1]={0x41};
+  12   1         LCDInt();
+  13   1         NRF24L01Int();
+  14   1         NRFSetRXMode();//设置为接收模式
+  15   1         LcdShow(0,0,"DATE:");
+  16   1         while(1)
+  17   1          {
+  18   2                  if(NRFRevDate(RevTempDate)==1)//为1说明数据包接收到了
+  19   2                        {
+  20   3                           LcdShow(0,6,RevTempDate);
+  21   3                        }
+  22   2              }       
+  23   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     67    ----
+   CONSTANT SIZE    =      7    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       1
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

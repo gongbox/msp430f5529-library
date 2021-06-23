@@ -1,0 +1,506 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+//                                                      06/Jun/2016  16:42:17 /
+// IAR C/C++ Compiler V5.50.1.20465/W32, Evaluation edition for MSP430        /
+// Copyright 1996-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    __rt_version  =  3                                                      /
+//    __double_size =  32                                                     /
+//    __reg_r4      =  free                                                   /
+//    __reg_r5      =  free                                                   /
+//    __pic         =  no                                                     /
+//    __core        =  430X                                                   /
+//    __data_model  =  large                                                  /
+//    Source file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\KEY\KEY.c                             /
+//    Command line  =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\KEY\KEY.c -D NDEBUG -D RAM_VECTOR     /
+//                     -lC C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C /
+//                     °æ\¹¤³ÌÄ£°å\Release\List\ -lA                          /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Release\List\ -o C:\Users\615\Desktop\MSP430\M /
+//                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Release\Obj\          /
+//                     -D__MSP430F5529__ -e --double=32 --dlib_config         /
+//                     "D:\Program Files (x86)\IAR Systems\Embedded           /
+//                     Workbench 6.4 Evaluation\430\LIB\DLIB\dl430xlfn.h" -I  /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\ -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº /
+//                     ¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\inc\ -I                    /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\ -I C:\Users\615\Desktop\MSP430\MS /
+//                     P430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\src\USB\ -I    /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_config\ -I                 /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_User\ -I                   /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\srcUSB\USB_API\USB_CDC_API\ -I         /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_API\USB_HID_API\ -I        /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_API\USB_MSC_API\ -I        /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\KEY\ -I C:\Users\615\Desktop\MSP430\M /
+//                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\LED\ -I      /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\12864\ -I                             /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\oled\ -I C:\Users\615\Desktop\MSP430\ /
+//                     MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\mpu6050\inc /
+//                     \ -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\ /
+//                     C°æ\¹¤³ÌÄ£°å\HardWare\mpu6050\src\ -I                  /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\nokia5110\inc\ -I                     /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\nokia5110\src\ -I                     /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\LQ_1.8_TFT\ -I                        /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\LCD_API\ -I                           /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\2.2TFT\ -I                            /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\delay\ -I                             /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\System\ -I C:\Users\615\Desktop\MSP430\MSP430F /
+//                     5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\inc\ -I              /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\System\src\ -I C:\Users\615\Desktop\MSP430\MSP /
+//                     430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\User\ -I                /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\User\USER\ -I C:\Users\615\Desktop\MSP430\MSP4 /
+//                     30F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\UCOSII\CONFIG\ -I    /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\uCOSII\App\ -I                             /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\uCOSII\CONFIHG\ -I                         /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\uCOSII\PORT\ -I                            /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\UCOSII\CORE\ -I                            /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\FatFs\ -I C:\Users\615\Desktop\MSP430\MSP4 /
+//                     30F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\FatFs\option\        /
+//                     --core=430X --data_model=large -Oh --multiplier=32     /
+//                     --multiplier_location=4C0 --hw_workaround=CPU40        /
+//    List file     =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Release\List\KEY.s43                           /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME KEY
+
+        RTMODEL "__SystemLibrary", "DLib"
+        RTMODEL "__core", "430X"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__double_size", "32"
+        RTMODEL "__pic", "no"
+        RTMODEL "__reg_r4", "free"
+        RTMODEL "__reg_r5", "free"
+        RTMODEL "__rt_version", "3"
+
+        RSEG CSTACK:DATA:SORT:NOROOT(0)
+
+        EXTERN ?longjmp_r4
+        EXTERN ?longjmp_r5
+        EXTERN ?setjmp_r4
+        EXTERN ?setjmp_r5
+
+        PUBWEAK ?setjmp_save_r4
+        PUBWEAK ?setjmp_save_r5
+        PUBLIC KEY_ITConfig
+        FUNCTION KEY_ITConfig,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 8, STACK
+        PUBLIC KEY_Init
+        FUNCTION KEY_Init,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 8, STACK
+        PUBLIC KEY_PIN
+        PUBLIC KEY_Status_Get
+        FUNCTION KEY_Status_Get,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 8, STACK
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA SP DATA
+          CFI Resource PC:20, SP:20, SR:16, R4L:16, R4H:4, R4:20, R5L:16, R5H:4
+          CFI Resource R5:20, R6L:16, R6H:4, R6:20, R7L:16, R7H:4, R7:20, R8L:16
+          CFI Resource R8H:4, R8:20, R9L:16, R9H:4, R9:20, R10L:16, R10H:4
+          CFI Resource R10:20, R11L:16, R11H:4, R11:20, R12L:16, R12H:4, R12:20
+          CFI Resource R13L:16, R13H:4, R13:20, R14L:16, R14H:4, R14:20, R15L:16
+          CFI Resource R15H:4, R15:20
+          CFI ResourceParts R4 R4H, R4L
+          CFI ResourceParts R5 R5H, R5L
+          CFI ResourceParts R6 R6H, R6L
+          CFI ResourceParts R7 R7H, R7L
+          CFI ResourceParts R8 R8H, R8L
+          CFI ResourceParts R9 R9H, R9L
+          CFI ResourceParts R10 R10H, R10L
+          CFI ResourceParts R11 R11H, R11L
+          CFI ResourceParts R12 R12H, R12L
+          CFI ResourceParts R13 R13H, R13L
+          CFI ResourceParts R14 R14H, R14L
+          CFI ResourceParts R15 R15H, R15L
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H SameValue
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H SameValue
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H SameValue
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H SameValue
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H SameValue
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H SameValue
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H SameValue
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H SameValue
+          CFI R11 Concat
+          CFI R12L Undefined
+          CFI R12H Undefined
+          CFI R12 Undefined
+          CFI R13L Undefined
+          CFI R13H Undefined
+          CFI R13 Undefined
+          CFI R14L Undefined
+          CFI R14H Undefined
+          CFI R14 Undefined
+          CFI R15L Undefined
+          CFI R15H Undefined
+          CFI R15 Undefined
+          CFI EndCommon cfiCommon0
+        
+        
+          CFI Common cfiCommon1 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H SameValue
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H SameValue
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H SameValue
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H SameValue
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H SameValue
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H SameValue
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H SameValue
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H SameValue
+          CFI R11 Concat
+          CFI R12L SameValue
+          CFI R12H SameValue
+          CFI R12 Concat
+          CFI R13L SameValue
+          CFI R13H SameValue
+          CFI R13 Concat
+          CFI R14L SameValue
+          CFI R14H SameValue
+          CFI R14 Concat
+          CFI R15L SameValue
+          CFI R15H SameValue
+          CFI R15 Concat
+          CFI EndCommon cfiCommon1
+        
+        EXTERN GPIO_Bit_Get
+        FUNCTION GPIO_Bit_Get,0202H
+        EXTERN GPIO_ITConfig
+        FUNCTION GPIO_ITConfig,0202H
+        EXTERN GPIO_MultiBits_Init
+        FUNCTION GPIO_MultiBits_Init,0202H
+
+// C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\KEY\KEY.c
+//    1 #include "KEY.h"
+//    2 #include "gpio.h"
+//    3 //¶¨ÒåLEDÒý½Å
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+//    4 const IO_PIN KEY_PIN[KEY_NUM]=
+KEY_PIN:
+        DC8 1, 1, 0, 1
+//    5 {
+//    6   {KEY0_PORT,KEY0_PIN},
+//    7   {KEY1_PORT,KEY1_PIN},
+//    8 };//LEDÒý½Å
+//    9 /*******************************************************************************
+//   10 *  º¯ÊýÃû³Æ£ºKEY_Init( KEYn key,uint16_t config)
+//   11 *  ¹¦ÄÜËµÃ÷£º°´¼ü³õÊ¼»¯
+//   12 *  ²ÎÊýËµÃ÷£ºKEYn key           :°´¼ü£¨KEY0,KEY1...£©
+//   13              uint16_t config    :°´¼üÅäÖÃ£¬ÕâÀïÊäÈë²ÎÊýÊÇ½«¸Ã°´¼ü¶ÔÓ¦µÄIO¿ÚÅäÖÃÎªºÎÖÖÄ£Ê½
+//   14 *  º¯Êý·µ»Ø£ºÎÞ
+//   15 *  Ê¹ÓÃÊ¾Àý£ºKEY_Init( KEY_ALL,GPI|PULL_UP|IRQ_FALLING);  //½«ËùÓÐ°´¼üÅäÖÃÎªÊäÈëÄ£Ê½,ÉÏÀ­£¬ÉÏÉýÑØ´¥·¢IO¿ÚÖÐ¶Ï
+//   16 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   17 void KEY_Init( KEYn key,uint16_t config)
+KEY_Init:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function KEY_Init
+//   18 {
+        FUNCALL KEY_Init, GPIO_MultiBits_Init
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL KEY_Init, GPIO_MultiBits_Init
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL KEY_Init, GPIO_MultiBits_Init
+        LOCFRAME CSTACK, 8, STACK
+        PUSHM.A #0x1, R10
+          CFI R10L Frame(CFA, -8)
+          CFI R10H Frame(CFA, -6)
+          CFI CFA SP+8
+        MOV.W   R13, R10
+//   19   if(key == KEY_ALL)
+        CMP.B   #0x2, R12
+        JNE     ??KEY_Init_0
+//   20   {
+//   21     for(key = KEY0;key < KEY_NUM;key++)
+//   22     {
+//   23       GPIO_Init(KEY_PIN[key].Port, KEY_PIN[key].Pin, config);
+        MOV.W   R13, R14
+        MOV.B   #0x2, R13
+        MOV.B   #0x1, R12
+        CALLA   #GPIO_MultiBits_Init
+        MOV.W   R10, R14
+        MOV.B   #0x2, R13
+        MOV.B   #0x0, R12
+        JMP     ??KEY_Init_1
+//   24     }
+//   25   }
+//   26   else
+//   27   {
+//   28     GPIO_Init(KEY_PIN[key].Port, KEY_PIN[key].Pin, config);
+??KEY_Init_0:
+        MOV.B   R12, R12
+        ADDA    R12, R12
+        MOVA    R12, R15
+        MOV.W   R13, R14
+        MOV.W   #0x1, R13
+        MOVX.B  KEY_PIN + 1(R12), R10
+        SUB.B   #0x1, R10
+        JN      ??KEY_Init_2
+        RPT     R10
+        RLAX.W  R13
+??KEY_Init_2:
+        MOVX.B  KEY_PIN(R15), R12
+??KEY_Init_1:
+        CALLA   #GPIO_MultiBits_Init
+//   29   }
+//   30 }
+        POPM.A  #0x1, R10
+          CFI R10H SameValue
+          CFI R10L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock0
+//   31 /*******************************************************************************
+//   32 *  º¯ÊýÃû³Æ£ºKEY_ITConfig(KEYn key,BOOL ITState)
+//   33 *  ¹¦ÄÜËµÃ÷£º°´¼ü×´Ì¬»ñÈ¡
+//   34 *  ²ÎÊýËµÃ÷£ºKEYn key           :°´¼ü£¨KEY0,KEY1...£©
+//   35              STATUS ITState     :ÊÇ·ñÊ¹ÄÜ°´¼üËù¶ÔÓ¦µÄIO¿ÚµÄÖÐ¶Ï
+//   36 *  º¯Êý·µ»Ø£ºÎÞ
+//   37 *  Ê¹ÓÃÊ¾Àý£ºKEY_ITConfig(KEY0,ENABLE);  //Ê¹ÄÜ°´¼ü0µÄIO¿ÚÖÐ¶Ï£¬¼´Ê¹ÄÜP2.1µÄIOµÄÖÐ¶Ï
+//   38 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   39 void KEY_ITConfig(KEYn key,STATUS ITState)
+KEY_ITConfig:
+          CFI Block cfiBlock1 Using cfiCommon0
+          CFI Function KEY_ITConfig
+//   40 {
+        FUNCALL KEY_ITConfig, GPIO_ITConfig
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL KEY_ITConfig, GPIO_ITConfig
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL KEY_ITConfig, GPIO_ITConfig
+        LOCFRAME CSTACK, 8, STACK
+        PUSHM.A #0x1, R10
+          CFI R10L Frame(CFA, -8)
+          CFI R10H Frame(CFA, -6)
+          CFI CFA SP+8
+        MOV.B   R13, R10
+//   41   if(key == KEY_ALL)
+        CMP.B   #0x2, R12
+        JNE     ??KEY_ITConfig_0
+//   42   {
+//   43     for(key = KEY0;key < KEY_NUM;key++)
+//   44     {
+//   45       GPIO_ITConfig(KEY_PIN[key].Port, KEY_PIN[key].Pin, ITState);
+        MOV.B   R13, R14
+        MOV.B   #0x1, R13
+        MOV.B   #0x1, R12
+        CALLA   #GPIO_ITConfig
+        MOV.B   R10, R14
+        MOV.B   #0x1, R13
+        MOV.B   #0x0, R12
+        JMP     ??KEY_ITConfig_1
+//   46     }
+//   47   }
+//   48   else
+//   49   {
+//   50     GPIO_ITConfig(KEY_PIN[key].Port, KEY_PIN[key].Pin, ITState);
+??KEY_ITConfig_0:
+        MOV.B   R12, R12
+        ADDA    R12, R12
+        MOVA    R12, R15
+        MOV.B   R13, R14
+        CALLA   #?Subroutine0
+//   51   }
+??KEY_ITConfig_1:
+        CALLA   #GPIO_ITConfig
+//   52 }
+        POPM.A  #0x1, R10
+          CFI R10H SameValue
+          CFI R10L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock1
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?Subroutine0:
+          CFI Block cfiCond2 Using cfiCommon0
+          CFI Function KEY_Status_Get
+          CFI Conditional ??KEY_Status_Get_2
+          CFI R10L Frame(CFA, -8)
+          CFI R10H Frame(CFA, -6)
+          CFI CFA SP+12
+          CFI Block cfiCond3 Using cfiCommon0
+          CFI (cfiCond3) Function KEY_ITConfig
+          CFI (cfiCond3) Conditional ??KEY_ITConfig_1
+          CFI (cfiCond3) R10L Frame(CFA, -8)
+          CFI (cfiCond3) R10H Frame(CFA, -6)
+          CFI (cfiCond3) CFA SP+12
+          CFI Block cfiPicker4 Using cfiCommon1
+          CFI (cfiPicker4) NoFunction
+          CFI (cfiPicker4) Picker
+        MOVX.B  KEY_PIN + 1(R12), R13
+        MOVX.B  KEY_PIN(R15), R12
+        RETA
+          CFI EndBlock cfiCond2
+          CFI EndBlock cfiCond3
+          CFI EndBlock cfiPicker4
+//   53 /*******************************************************************************
+//   54 *  º¯ÊýÃû³Æ£ºKEY_Status_Get(KEYn key)
+//   55 *  ¹¦ÄÜËµÃ÷£º°´¼ü×´Ì¬»ñÈ¡
+//   56 *  ²ÎÊýËµÃ÷£ºKEYn key           :°´¼ü£¨KEY0,KEY1...£©£¬×¢Òâ×îºÃ²»ÒªÊäÈëKEY_ALL
+//   57 *  º¯Êý·µ»Ø£ºSTATUS £º·µ»Ø°´¼ü×´Ì¬£ºTRUE-°´ÏÂ£¬FALSE-Î´°´ÏÂ£¨ÐèÒª×¢Òâºê¶¨ÒåKEY_CLICKËù´ú±í°´ÏÂÊ±µÄµçÆ½×´Ì¬£©
+//   58 *  Ê¹ÓÃÊ¾Àý£ºif(TRUE == KEY_Status_Get(KEY0)){...};//ÅÐ¶ÏKEY0ÊÇ·ñ°´ÏÂ
+//   59 *  Ê¹ÓÃ×¢Òâ£ºÅÐ¶ÏËùÓÐ°´¼ü×´Ì¬Ê±Ö»ÒªÓÐÒ»¸öÊÇ°´ÏÂ Ôò·µ»ØTRUE
+//   60 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   61 STATUS KEY_Status_Get(KEYn key)
+KEY_Status_Get:
+          CFI Block cfiBlock5 Using cfiCommon0
+          CFI Function KEY_Status_Get
+//   62 {
+        FUNCALL KEY_Status_Get, GPIO_Bit_Get
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL KEY_Status_Get, GPIO_Bit_Get
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL KEY_Status_Get, GPIO_Bit_Get
+        LOCFRAME CSTACK, 8, STACK
+        PUSHM.A #0x1, R10
+          CFI R10L Frame(CFA, -8)
+          CFI R10H Frame(CFA, -6)
+          CFI CFA SP+8
+//   63   STATUS status = FALSE;
+        MOV.B   #0x0, R10
+//   64   if(key == KEY_ALL)
+        CMP.B   #0x2, R12
+        JNE     ??KEY_Status_Get_0
+//   65   {
+//   66     for(key = KEY0;key < KEY_NUM;key++)
+//   67     {
+//   68       if(KEY_CLICK == GPIO_Bit_Get(KEY_PIN[key].Port, KEY_PIN[key].Pin))
+        MOV.B   #0x1, R13
+        MOV.B   #0x1, R12
+        CALLA   #GPIO_Bit_Get
+        CMP.B   #0x0, R12
+        JNE     ??KEY_Status_Get_1
+//   69         status = TRUE;
+        MOV.B   #0x1, R10
+??KEY_Status_Get_1:
+        MOV.B   #0x1, R13
+        MOV.B   #0x0, R12
+        JMP     ??KEY_Status_Get_2
+//   70     }
+//   71   }
+//   72   else
+//   73   {
+//   74     if(KEY_CLICK == GPIO_Bit_Get(KEY_PIN[key].Port, KEY_PIN[key].Pin))
+??KEY_Status_Get_0:
+        MOV.B   R12, R12
+        ADDA    R12, R12
+        MOVA    R12, R15
+        CALLA   #?Subroutine0
+??KEY_Status_Get_2:
+        CALLA   #GPIO_Bit_Get
+        CMP.B   #0x0, R12
+        JNE     ??KEY_Status_Get_3
+//   75       status = TRUE;
+        MOV.B   #0x1, R10
+//   76   }
+//   77   return status;
+??KEY_Status_Get_3:
+        MOV.B   R10, R12
+        POPM.A  #0x1, R10
+          CFI R10H SameValue
+          CFI R10L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock5
+//   78 }
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r4:
+        REQUIRE ?setjmp_r4
+        REQUIRE ?longjmp_r4
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r5:
+        REQUIRE ?setjmp_r5
+        REQUIRE ?longjmp_r5
+
+        END
+// 
+// 178 bytes in segment CODE
+//   4 bytes in segment DATA20_C
+// 
+// 178 bytes of CODE  memory
+//   4 bytes of CONST memory
+//
+//Errors: none
+//Warnings: none

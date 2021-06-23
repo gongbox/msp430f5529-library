@@ -1,0 +1,796 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+//                                                      10/Dec/2016  11:06:52 /
+// IAR C/C++ Compiler V5.50.1.20465/W32, Evaluation edition for MSP430        /
+// Copyright 1996-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    __rt_version  =  3                                                      /
+//    __double_size =  32                                                     /
+//    __reg_r4      =  free                                                   /
+//    __reg_r5      =  free                                                   /
+//    __pic         =  no                                                     /
+//    __core        =  430X                                                   /
+//    __data_model  =  large                                                  /
+//    Source file   =  E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\System\src /
+//                     \startup.c                                             /
+//    Command line  =  E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\System\src /
+//                     \startup.c -D DEBUG -D RAM_VECTOR -lA                  /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Debug\List /
+//                     \ -o E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Debug /
+//                     \Obj\ --no_cse --no_unroll --no_inline                 /
+//                     --no_code_motion --no_tbaa --debug -D__MSP430F5529__   /
+//                     -e --double=32 --dlib_config "D:\Program Files\IAR     /
+//                     Systems\Embedded Workbench 6.4                         /
+//                     Evaluation\430\LIB\DLIB\dl430xlff.h" -I                /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\ -I        /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\in /
+//                     c\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Driv /
+//                     ers\src\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£° /
+//                     å\Drivers\src\USB\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C /
+//                     °æ\¹¤³ÌÄ£°å\Drivers\src\USB\USB_config\ -I             /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\USB\USB_User\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\ /
+//                     ¹¤³ÌÄ£°å\Drivers\srcUSB\USB_API\USB_CDC_API\ -I        /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\USB\USB_API\USB_HID_API\ -I                          /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\USB\USB_API\USB_MSC_API\ -I                          /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\  /
+//                     -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWar /
+//                     e\delay\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£° /
+//                     å\HardWare\18b20\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C° /
+//                     æ\¹¤³ÌÄ£°å\HardWare\KEY\ -I                            /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\L /
+//                     ED\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Har /
+//                     dWare\12864\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ /
+//                     ÌÄ£°å\HardWare\oled\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6 /
+//                     \C°æ\¹¤³ÌÄ£°å\HardWare\mpu6050\inc\ -I                 /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\m /
+//                     pu6050\src\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³Ì /
+//                     Ä£°å\HardWare\nokia5110\inc\ -I                        /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\n /
+//                     okia5110\src\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤ /
+//                     ³ÌÄ£°å\HardWare\LQ_1.8_TFT\ -I                         /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\L /
+//                     CD_API\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å /
+//                     \HardWare\2.2TFT\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C° /
+//                     æ\¹¤³ÌÄ£°å\HardWare\nrf24l01\ -I                       /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\System\    /
+//                     -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\System\ /
+//                     inc\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Sy /
+//                     stem\src\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£ /
+//                     °å\User\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£° /
+//                     å\User\USER\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ /
+//                     ÌÄ£°å\Lib\UCOSII\CONFIG\ -I                            /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII /
+//                     \App\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\L /
+//                     ib\uCOSII\CONFIHG\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C /
+//                     °æ\¹¤³ÌÄ£°å\Lib\uCOSII\PORT\ -I                        /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Lib\UCOSII /
+//                     \CORE\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\ /
+//                     Lib\FatFs\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ /
+//                     £°å\Lib\FatFs\option\ --core=430X --data_model=large   /
+//                     -On --multiplier=32 --multiplier_location=4C0          /
+//                     --hw_workaround=CPU40                                  /
+//    List file     =  E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Debug\List /
+//                     \startup.s43                                           /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME startup
+
+        RTMODEL "__SystemLibrary", "DLib"
+        RTMODEL "__core", "430X"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dlib_file_descriptor", "1"
+        RTMODEL "__double_size", "32"
+        RTMODEL "__iar_require _Printf", "qualifiers"
+        RTMODEL "__pic", "no"
+        RTMODEL "__reg_r4", "free"
+        RTMODEL "__reg_r5", "free"
+        RTMODEL "__rt_version", "3"
+
+        RSEG CODE_I:DATA:REORDER:NOROOT(0)
+        RSEG CODE_ID:DATA:REORDER:NOROOT(0)
+        RSEG CSTACK:DATA:SORT:NOROOT(0)
+        RSEG DATA16_I:DATA:REORDER:NOROOT(0)
+        RSEG DATA16_ID:DATA:REORDER:NOROOT(0)
+        RSEG DATA16_Z:DATA:REORDER:NOROOT(0)
+        RSEG DATA20_I:DATA:REORDER:NOROOT(0)
+        RSEG DATA20_ID:DATA:REORDER:NOROOT(0)
+        RSEG DATA20_Z:DATA:REORDER:NOROOT(0)
+        RSEG TLS16_I:DATA:REORDER:NOROOT(0)
+        RSEG TLS16_ID:DATA:REORDER:NOROOT(0)
+
+        EXTERN ?cstart_call_low_level_init
+        EXTERN ?longjmp_r4
+        EXTERN ?longjmp_r5
+        EXTERN ?setjmp_r4
+        EXTERN ?setjmp_r5
+
+        PUBWEAK ?setjmp_save_r4
+        PUBWEAK ?setjmp_save_r5
+        FUNCTION RAM_data_Init,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 56, STACK
+        FUNCTION Start_Show,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 20, STACK
+        FUNCTION SystemInit,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC __low_level_init
+        FUNCTION __low_level_init,031203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA SP DATA
+          CFI Resource PC:20, SP:20, SR:16, R4L:16, R4H:4, R4:20, R5L:16, R5H:4
+          CFI Resource R5:20, R6L:16, R6H:4, R6:20, R7L:16, R7H:4, R7:20, R8L:16
+          CFI Resource R8H:4, R8:20, R9L:16, R9H:4, R9:20, R10L:16, R10H:4
+          CFI Resource R10:20, R11L:16, R11H:4, R11:20, R12L:16, R12H:4, R12:20
+          CFI Resource R13L:16, R13H:4, R13:20, R14L:16, R14H:4, R14:20, R15L:16
+          CFI Resource R15H:4, R15:20
+          CFI ResourceParts R4 R4H, R4L
+          CFI ResourceParts R5 R5H, R5L
+          CFI ResourceParts R6 R6H, R6L
+          CFI ResourceParts R7 R7H, R7L
+          CFI ResourceParts R8 R8H, R8L
+          CFI ResourceParts R9 R9H, R9L
+          CFI ResourceParts R10 R10H, R10L
+          CFI ResourceParts R11 R11H, R11L
+          CFI ResourceParts R12 R12H, R12L
+          CFI ResourceParts R13 R13H, R13L
+          CFI ResourceParts R14 R14H, R14L
+          CFI ResourceParts R15 R15H, R15L
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H SameValue
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H SameValue
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H SameValue
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H SameValue
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H SameValue
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H SameValue
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H SameValue
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H SameValue
+          CFI R11 Concat
+          CFI R12L Undefined
+          CFI R12H Undefined
+          CFI R12 Undefined
+          CFI R13L Undefined
+          CFI R13H Undefined
+          CFI R13 Undefined
+          CFI R14L Undefined
+          CFI R14H Undefined
+          CFI R14 Undefined
+          CFI R15L Undefined
+          CFI R15H Undefined
+          CFI R15 Undefined
+          CFI EndCommon cfiCommon0
+        
+        EXTERN VectorTableCopyToRAM
+        FUNCTION VectorTableCopyToRAM,0202H
+        EXTERN printf
+        FUNCTION printf,010202H
+        EXTERN g_sClock
+        EXTERN DisableWatchDog
+        FUNCTION DisableWatchDog,0202H
+        EXTERN Set_VectorTable_To_RAM
+        FUNCTION Set_VectorTable_To_RAM,0202H
+        EXTERN CLOCK_DCO_PLLConfig
+        FUNCTION CLOCK_DCO_PLLConfig,0202H
+        EXTERN CLOCK_MCLK_Config
+        FUNCTION CLOCK_MCLK_Config,0202H
+        EXTERN CLOCK_SMCLK_Config
+        FUNCTION CLOCK_SMCLK_Config,0202H
+        EXTERN CLOCK_ACLK_Config
+        FUNCTION CLOCK_ACLK_Config,0202H
+
+// E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\System\src\startup.c
+//    1 #include "system.h"
+//    2 #include "include.h"
+//    3 #include "intrinsics.h"
+//    4 
+//    5 static void RAM_data_Init(void);
+//    6 static void SystemInit(void);
+//    7 #ifdef DEBUG
+//    8 static void Start_Show(void);
+//    9 #endif
+//   10 #if 0
+//   11 /*******************************************************************************
+//   12 *  º¯ÊýÃû³Æ£ºReset_Handler(void)
+//   13 *  ¹¦ÄÜËµÃ÷£º¸´Î»ÖÐ¶Ï·þÎñº¯Êý
+//   14 *  ²ÎÊýËµÃ÷£ºÎÞ
+//   15 *  º¯Êý·µ»Ø£ºÎÞ
+//   16 *  Ê¹ÓÃÊ¾Àý£ºÎÞ
+//   17 *  ×¢ÒâÊÂÏî£ºÐèÒªÐÞ¸Ä¹¤³ÌÅäÖÃ£¬¹´Ñ¡linkerÄ¿Â¼ÏÂµÄoverride default program,²¢Ñ¡ÔñDefined by ApplicatÑ¡Ïî
+//   18 ********************************************************************************/
+//   19 extern void main();
+//   20 #pragma vector=RESET_VECTOR
+//   21 __interrupt void Reset_Handler(void)
+//   22 {
+//   23   SystemInit();
+//   24   main();
+//   25   while(1);
+//   26 }
+//   27 #else
+//   28 /*******************************************************************************
+//   29 *  º¯ÊýÃû³Æ£º__low_level_init(void)
+//   30 *  ¹¦ÄÜËµÃ÷£ºÆô¶¯º¯Êý£¬ÔÚÖ÷º¯ÊýÖ®Ç°µ÷ÓÃ
+//   31 *  ²ÎÊýËµÃ÷£ºÎÞ
+//   32 *  º¯Êý·µ»Ø£ºÎÞ
+//   33 *  Ê¹ÓÃÊ¾Àý£ºÎÞ
+//   34 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:ROOT(1)
+//   35 __intrinsic int __low_level_init(void)
+__low_level_init:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function __low_level_init
+        FUNCALL __low_level_init, SystemInit
+        LOCFRAME CSTACK, 4, STACK
+        REQUIRE ?cstart_call_low_level_init
+//   36 {
+//   37     SystemInit();
+        CALLA   #SystemInit
+//   38     return 0;//0-²»³õÊ¼»¯²ÎÊý,1-³õÊ¼»¯²ÎÊý
+        MOV.W   #0x0, R12
+        RETA
+          CFI EndBlock cfiBlock0
+//   39 }
+//   40 #endif
+//   41 /*******************************************************************************
+//   42 *  º¯ÊýÃû³Æ£ºSystemInit (void)
+//   43 *  ¹¦ÄÜËµÃ÷£ºÆô¶¯º¯Êý£¬ÔÚÖ÷º¯ÊýÖ®Ç°µ÷ÓÃ
+//   44 *  ²ÎÊýËµÃ÷£ºÎÞ
+//   45 *  º¯Êý·µ»Ø£ºÎÞ
+//   46 *  Ê¹ÓÃÊ¾Àý£ºÎÞ
+//   47 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   48 void SystemInit (void)
+SystemInit:
+          CFI Block cfiBlock1 Using cfiCommon0
+          CFI Function SystemInit
+//   49 {   
+//   50     DisableWatchDog();            //¹Ø±Õ¿´ÃÅ¹·
+        FUNCALL SystemInit, DisableWatchDog
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL SystemInit, Set_VectorTable_To_RAM
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL SystemInit, RAM_data_Init
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL SystemInit, CLOCK_DCO_PLLConfig
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL SystemInit, CLOCK_MCLK_Config
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL SystemInit, CLOCK_SMCLK_Config
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL SystemInit, CLOCK_ACLK_Config
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL SystemInit, Start_Show
+        LOCFRAME CSTACK, 4, STACK
+        CALLA   #DisableWatchDog
+//   51 #ifdef RAM_VECTOR
+//   52     Set_VectorTable_To_RAM();     //ÉèÖÃÖÐ¶ÏÏòÁ¿Ó³Éäµ½RAMÇøÓò
+        CALLA   #Set_VectorTable_To_RAM
+//   53 #else
+//   54     Set_VectorTable_To_FLASH();   //ÉèÖÃÖÐ¶ÏÏòÁ¿Ó³Éäµ½FLASHÇøÓò
+//   55 #endif
+//   56     RAM_data_Init();              //³õÊ¼»¯Êý¾Ý  
+        CALLA   #RAM_data_Init
+//   57     /*******************************Ê±ÖÓ³õÊ¼»¯*********************************/
+//   58     CLOCK_DCO_PLLConfig(FLL_REF,FLLREF_DIV,DCO_CLK_HZ);             //³õÊ¼»¯DCOÆµÂÊ
+        MOV.W   #0x7840, R14
+        MOV.W   #0x17d, R15
+        MOV.B   #0x0, R13
+        MOV.B   #0x2, R12
+        CALLA   #CLOCK_DCO_PLLConfig
+//   59     CLOCK_MCLK_Config (MCLK_SOURCE , MCLK_DIV);               //ÉèÖÃÊ±ÖÓÔ´¼°Ê±ÖÓ·ÖÆµ
+        MOV.B   #0x0, R13
+        MOV.B   #0x3, R12
+        CALLA   #CLOCK_MCLK_Config
+//   60     CLOCK_SMCLK_Config(SMCLK_SOURCE, SMCLK_DIV);              //ÉèÖÃÊ±ÖÓÔ´¼°Ê±ÖÓ·ÖÆµ
+        MOV.B   #0x0, R13
+        MOV.B   #0x5, R12
+        CALLA   #CLOCK_SMCLK_Config
+//   61     CLOCK_ACLK_Config (ACLK_SOURCE , ACLK_DIV);               //ÉèÖÃÊ±ÖÓÔ´¼°Ê±ÖÓ·ÖÆµ
+        MOV.B   #0x0, R13
+        MOV.B   #0x2, R12
+        CALLA   #CLOCK_ACLK_Config
+//   62     /**************************************************************************/
+//   63 #if(defined(DEBUG))
+//   64 #if(defined(DEBUG_UART_PRINT))
+//   65     UART_Init(Print_UART, Print_Baud);          //µ÷ÊÔÄ£Ê½ÏÂ£¬Èç¹ûÑ¡ÔñÊ¹ÓÃ´®¿Ú×÷ÎªÐÅÏ¢´òÓ¡Ôò³õÊ¼»¯UARTÄ£¿é
+//   66 #endif
+//   67     Start_Show();
+        BRA     #Start_Show
+          CFI EndBlock cfiBlock1
+//   68 #endif
+//   69 }
+//   70 //Æô¶¯ºó´òÓ¡ÌáÊ¾ÐÅÏ¢
+//   71 #ifdef DEBUG
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   72 void Start_Show()
+Start_Show:
+          CFI Block cfiBlock2 Using cfiCommon0
+          CFI Function Start_Show
+//   73 {
+//   74     DEBUG_PRINTF("\nMSP430F5529 ²âÊÔ³ÌÐò!\n");  //µ÷ÊÔÄ£Ê½ÏÂ´òÓ¡ÐÅÏ¢
+        FUNCALL Start_Show, printf
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL Start_Show, printf
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL Start_Show, printf
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL Start_Show, printf
+        LOCFRAME CSTACK, 16, STACK
+        FUNCALL Start_Show, printf
+        LOCFRAME CSTACK, 20, STACK
+        MOVA    #`?<Constant "\\nMSP430F5529 \\262\\342\\312\\324\\263`, R12
+        CALLA   #printf
+//   75     DEBUG_PRINTF("\n MCLK ÆµÂÊ:%ld HZ\n",g_sClock.MCLK.nHZ);
+        PUSHX.W &g_sClock + 2
+          CFI CFA SP+6
+        PUSHX.W &g_sClock
+          CFI CFA SP+8
+        MOVA    #`?<Constant "\\n MCLK \\306\\265\\302\\312:%ld HZ\\n"`, R12
+        CALLA   #printf
+//   76     DEBUG_PRINTF("SMCLK ÆµÂÊ:%ld HZ\n",  g_sClock.SMCLK.nHZ);
+        PUSHX.W &g_sClock + 14
+          CFI CFA SP+10
+        PUSHX.W &g_sClock + 12
+          CFI CFA SP+12
+        MOVA    #`?<Constant "SMCLK \\306\\265\\302\\312:%ld HZ\\n">`, R12
+        CALLA   #printf
+//   77     DEBUG_PRINTF(" ACLK ÆµÂÊ:%ld HZ\n",  g_sClock.ACLK.nHZ);  
+        PUSHX.W &g_sClock + 26
+          CFI CFA SP+14
+        PUSHX.W &g_sClock + 24
+          CFI CFA SP+16
+        MOVA    #`?<Constant " ACLK \\306\\265\\302\\312:%ld HZ\\n">`, R12
+        CALLA   #printf
+//   78 #ifdef DELAY_TIMER
+//   79     DEBUG_PRINTF("\nÊ¹ÓÃ¶¨Ê±Æ÷ÑÓÊ±,¶¨Ê±Æ÷:%s\n",TOSTRING(DELAY_TIMER));
+//   80 #else
+//   81     DEBUG_PRINTF("\nÊ¹ÓÃÈí¼þÄ£ÄâÑÓÊ±\n%s\n",TOSTRING(DELAY_MS(ms)));
+        PUSHX.A #`?<Constant "__delay_cycles((long)...">`
+          CFI CFA SP+20
+        MOVA    #`?<Constant "\\n\\312\\271\\323\\303\\310\\355\\274\\376`, R12
+        CALLA   #printf
+//   82 #endif
+//   83 }
+        ADD.W   #0x10, SP
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock2
+//   84 #endif
+//   85 /*******************************************************************************
+//   86 *  º¯ÊýÃû³Æ£ºRAM_data_Init(void)
+//   87 *  ¹¦ÄÜËµÃ÷£º¸´ÖÆÖÐ¶ÏÏòÁ¿±í ºÍ ±ØÒªµÄÊý¾Ýµ½ RAMÀï
+//   88 *  ²ÎÊýËµÃ÷£ºÎÞ
+//   89 *  º¯Êý·µ»Ø£ºÎÞ
+//   90 *  Ê¹ÓÃÊ¾Àý£ºÎÞ
+//   91 ********************************************************************************/
+//   92 #pragma section = "DATA16_I"
+//   93 #pragma section = "DATA20_I"
+//   94 #pragma section = "DATA16_ID"
+//   95 #pragma section = "DATA20_ID"
+//   96 #pragma section = "DATA16_Z"
+//   97 #pragma section = "DATA20_Z"
+//   98 #pragma section = "TLS16_I"
+//   99 #pragma section = "TLS16_ID"
+//  100 #pragma section = "CODE_I"
+//  101 #pragma section = "CODE_ID"
+//  102 //#pragma section = "INTVEC"
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  103 void RAM_data_Init(void)
+RAM_data_Init:
+          CFI Block cfiBlock3 Using cfiCommon0
+          CFI Function RAM_data_Init
+//  104 {
+        FUNCALL RAM_data_Init, VectorTableCopyToRAM
+        LOCFRAME CSTACK, 56, STACK
+        PUSHM.A #0x8, R11
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+36
+        SUB.W   #0x14, SP
+          CFI CFA SP+56
+//  105     uint32_t n;
+//  106     //³õÊ¼»¯ÖÐ¶ÏÏòÁ¿±í
+//  107     //ISR_TYPE *vector_rom = __section_begin("INTVEC");
+//  108     VectorTableCopyToRAM();                       //´ÓFLASHÖÐ¸´ÖÆÖÐ¶ÏÏòÁ¿±íµ½RAM
+        CALLA   #VectorTableCopyToRAM
+//  109     /* °ÑÒÑ¸³³õÖµµÄ±äÁ¿´ÓROMÀï¸´ÖÆÊý¾Ýµ½RAMÀï */
+//  110     uint8_t *data_ram = __section_begin("DATA16_I");        //ÒÑ¸³³õÖµµÄ±äÁ¿µÄµØÖ·ÔÚRAMÀï
+        MOVA    #SFB(DATA16_I), R14
+//  111     uint8_t *data_rom = __section_begin("DATA16_ID");       //ÒÑ¸³³õÖµµÄ±äÁ¿µÄÊý¾Ý´æ·ÅÔÚROMÀï£¬ÐèÒª¸³Öµµ½RAMÀï
+        MOVA    #SFB(DATA16_ID), R15
+//  112     uint8_t *data_rom_end = __section_end("DATA16_ID");
+        MOVX.A  #SFE(DATA16_ID), 0x8(SP)
+//  113     n = data_rom_end - data_rom;
+        MOVA    0x8(SP), R7
+        PUSHM.A #0x1, R7
+          CFI CFA SP+60
+        POPM.W  #0x2, R9
+          CFI CFA SP+56
+        PUSHM.A #0x1, R15
+          CFI CFA SP+60
+        POPM.W  #0x2, R7
+          CFI CFA SP+56
+        SUB.W   R6, R8
+        SUBC.W  R7, R9
+        MOV.W   R8, R10
+        MOV.W   R9, R11
+//  114 
+//  115     /* ¸´ÖÆ³õÊ¼»¯Êý¾Ýµ½RAMÀï */
+//  116     while (n--)
+??RAM_data_Init_0:
+        MOV.W   R10, R8
+        MOV.W   R11, R9
+        MOV.W   R8, R10
+        MOV.W   R9, R11
+        ADD.W   #0xffff, R10
+        ADDC.W  #0xffff, R11
+        MOV.W   R8, R7
+        BIS.W   R9, R7
+        CMP.W   #0x0, R7
+        JEQ     ??RAM_data_Init_6
+//  117     {
+//  118         *data_ram++ = *data_rom++; 
+        MOV.B   @R15, 0(R14)
+        ADDA    #0x1, R15
+        ADDA    #0x1, R14
+        JMP     ??RAM_data_Init_0
+//  119     }
+//  120     /* °ÑÒÑ¸³³õÖµµÄ±äÁ¿´ÓROMÀï¸´ÖÆÊý¾Ýµ½RAMÀï */
+//  121     data_ram = __section_begin("DATA20_I");                //ÒÑ¸³³õÖµµÄ±äÁ¿µÄµØÖ·ÔÚRAMÀï
+??RAM_data_Init_6:
+        MOVA    #SFB(DATA20_I), R14
+//  122     data_rom = __section_begin("DATA20_ID");               //ÒÑ¸³³õÖµµÄ±äÁ¿µÄÊý¾Ý´æ·ÅÔÚROMÀï£¬ÐèÒª¸³Öµµ½RAMÀï
+        MOVA    #SFB(DATA20_ID), R15
+//  123     data_rom_end = __section_end("DATA20_ID");
+        MOVX.A  #SFE(DATA20_ID), 0x8(SP)
+//  124     n = data_rom_end - data_rom;
+        MOVA    0x8(SP), R7
+        PUSHM.A #0x1, R7
+          CFI CFA SP+60
+        POPM.W  #0x2, R9
+          CFI CFA SP+56
+        PUSHM.A #0x1, R15
+          CFI CFA SP+60
+        POPM.W  #0x2, R7
+          CFI CFA SP+56
+        SUB.W   R6, R8
+        SUBC.W  R7, R9
+        MOV.W   R8, R10
+        MOV.W   R9, R11
+//  125 
+//  126     /* ¸´ÖÆ³õÊ¼»¯Êý¾Ýµ½RAMÀï */
+//  127     while (n--)
+??RAM_data_Init_1:
+        MOV.W   R10, R8
+        MOV.W   R11, R9
+        MOV.W   R8, R10
+        MOV.W   R9, R11
+        ADD.W   #0xffff, R10
+        ADDC.W  #0xffff, R11
+        MOV.W   R8, R7
+        BIS.W   R9, R7
+        CMP.W   #0x0, R7
+        JEQ     ??RAM_data_Init_7
+//  128     {
+//  129         *data_ram++ = *data_rom++;
+        MOV.B   @R15, 0(R14)
+        ADDA    #0x1, R15
+        ADDA    #0x1, R14
+        JMP     ??RAM_data_Init_1
+//  130     }
+//  131     
+//  132     /* Ã»¸³³õÖµ»òÕß³õÖµÎª0µÄ±äÁ¿£¬ÐèÒªÇå³ýÆäRAMÀïµÄÊý¾Ý£¬È·±£ÖµÎª0 */
+//  133     uint8_t *bss_start = __section_begin("DATA16_Z");
+??RAM_data_Init_7:
+        MOVA    #SFB(DATA16_Z), R13
+//  134     uint8_t *bss_end = __section_end("DATA16_Z");
+        MOVX.A  #SFE(DATA16_Z), 0x4(SP)
+//  135 
+//  136     /* Çå³ýÃ»¸³³õÖµ»òÕß³õÖµÎª0µÄ±äÁ¿Êý¾ÝÖµ */
+//  137     n = bss_end - bss_start;
+        MOVA    0x4(SP), R7
+        PUSHM.A #0x1, R7
+          CFI CFA SP+60
+        POPM.W  #0x2, R9
+          CFI CFA SP+56
+        PUSHM.A #0x1, R13
+          CFI CFA SP+60
+        POPM.W  #0x2, R7
+          CFI CFA SP+56
+        SUB.W   R6, R8
+        SUBC.W  R7, R9
+        MOV.W   R8, R10
+        MOV.W   R9, R11
+//  138     while(n--)
+??RAM_data_Init_2:
+        MOV.W   R10, R8
+        MOV.W   R11, R9
+        MOV.W   R8, R10
+        MOV.W   R9, R11
+        ADD.W   #0xffff, R10
+        ADDC.W  #0xffff, R11
+        MOV.W   R8, R7
+        BIS.W   R9, R7
+        CMP.W   #0x0, R7
+        JEQ     ??RAM_data_Init_8
+//  139     {
+//  140         *bss_start++ = 0;
+        MOV.B   #0x0, 0(R13)
+        ADDA    #0x1, R13
+        JMP     ??RAM_data_Init_2
+//  141     }
+//  142     /* Ã»¸³³õÖµ»òÕß³õÖµÎª0µÄ±äÁ¿£¬ÐèÒªÇå³ýÆäRAMÀïµÄÊý¾Ý£¬È·±£ÖµÎª0 */
+//  143     bss_start = __section_begin("DATA20_Z");
+??RAM_data_Init_8:
+        MOVA    #SFB(DATA20_Z), R13
+//  144     bss_end = __section_end("DATA20_Z");
+        MOVX.A  #SFE(DATA20_Z), 0x4(SP)
+//  145 
+//  146     /* Çå³ýÃ»¸³³õÖµ»òÕß³õÖµÎª0µÄ±äÁ¿Êý¾ÝÖµ */
+//  147     n = bss_end - bss_start;
+        MOVA    0x4(SP), R7
+        PUSHM.A #0x1, R7
+          CFI CFA SP+60
+        POPM.W  #0x2, R9
+          CFI CFA SP+56
+        PUSHM.A #0x1, R13
+          CFI CFA SP+60
+        POPM.W  #0x2, R7
+          CFI CFA SP+56
+        SUB.W   R6, R8
+        SUBC.W  R7, R9
+        MOV.W   R8, R10
+        MOV.W   R9, R11
+//  148     while(n--)
+??RAM_data_Init_3:
+        MOV.W   R10, R8
+        MOV.W   R11, R9
+        MOV.W   R8, R10
+        MOV.W   R9, R11
+        ADD.W   #0xffff, R10
+        ADDC.W  #0xffff, R11
+        MOV.W   R8, R7
+        BIS.W   R9, R7
+        CMP.W   #0x0, R7
+        JEQ     ??RAM_data_Init_9
+//  149     {
+//  150         *bss_start++ = 0;
+        MOV.B   #0x0, 0(R13)
+        ADDA    #0x1, R13
+        JMP     ??RAM_data_Init_3
+//  151     }
+//  152    
+//  153      /* ¸³ÖµÓÃ __ramfunc ÉùÃ÷µÄº¯ÊýµÄµÄ´úÂë¶Îµ½ RAM£¬¿ÉÒÔ¼Ó¿ì´úÂëµÄÔËÐÐ        */
+//  154     uint8_t *code_relocate_ram = __section_begin("CODE_I");
+??RAM_data_Init_9:
+        MOVX.A  #SFB(CODE_I), 0(SP)
+//  155     uint8_t *code_relocate = __section_begin("CODE_ID");
+        MOVA    #SFB(CODE_ID), R12
+//  156     uint8_t *code_relocate_end = __section_end("CODE_ID");
+        MOVX.A  #SFE(CODE_ID), 0x10(SP)
+//  157 
+//  158     /* ´ÓROMÀï¸´ÖÆº¯Êý´úÂëµ½RAMÀï */
+//  159     n = code_relocate_end - code_relocate;
+        MOVA    0x10(SP), R7
+        PUSHM.A #0x1, R7
+          CFI CFA SP+60
+        POPM.W  #0x2, R7
+          CFI CFA SP+56
+        PUSHM.A #0x1, R12
+          CFI CFA SP+60
+        POPM.W  #0x2, R9
+          CFI CFA SP+56
+        SUB.W   R8, R6
+        SUBC.W  R9, R7
+        MOV.W   R6, R10
+        MOV.W   R7, R11
+//  160     while (n--)
+??RAM_data_Init_4:
+        MOV.W   R10, R8
+        MOV.W   R11, R9
+        MOV.W   R8, R10
+        MOV.W   R9, R11
+        ADD.W   #0xffff, R10
+        ADDC.W  #0xffff, R11
+        MOV.W   R8, R7
+        BIS.W   R9, R7
+        CMP.W   #0x0, R7
+        JEQ     ??RAM_data_Init_10
+//  161     {
+//  162         *code_relocate_ram++ = *code_relocate++;
+        MOVA    @SP, R7
+        MOV.B   @R12, 0(R7)
+        ADDA    #0x1, R12
+        MOVA    @SP, R7
+        ADDA    #0x1, R7
+        MOVA    R7, 0(SP)
+        JMP     ??RAM_data_Init_4
+//  163     }
+//  164     
+//  165     /* ¸³Öµ Thread-local storage for main thread(require custom runtime library)µ½RAM*/
+//  166     uint8_t *tls_ram = __section_begin("TLS16_I");
+??RAM_data_Init_10:
+        MOVA    #SFB(TLS16_I), R4
+//  167     uint8_t *tls_start = __section_begin("TLS16_ID");
+        MOVA    #SFB(TLS16_ID), R5
+//  168     uint8_t *tls_end   = __section_end("TLS16_ID");
+        MOVX.A  #SFE(TLS16_ID), 0xc(SP)
+//  169 
+//  170     /* ´ÓROMÀï¸´ÖÆº¯Êý´úÂëµ½RAMÀï */
+//  171     n = tls_end - tls_start;
+        MOVA    0xc(SP), R7
+        PUSHM.A #0x1, R7
+          CFI CFA SP+60
+        POPM.W  #0x2, R7
+          CFI CFA SP+56
+        PUSHM.A #0x1, R5
+          CFI CFA SP+60
+        POPM.W  #0x2, R9
+          CFI CFA SP+56
+        SUB.W   R8, R6
+        SUBC.W  R9, R7
+        MOV.W   R6, R10
+        MOV.W   R7, R11
+//  172     while (n--)
+??RAM_data_Init_5:
+        MOV.W   R10, R8
+        MOV.W   R11, R9
+        MOV.W   R8, R10
+        MOV.W   R9, R11
+        ADD.W   #0xffff, R10
+        ADDC.W  #0xffff, R11
+        MOV.W   R8, R7
+        BIS.W   R9, R7
+        CMP.W   #0x0, R7
+        JEQ     ??RAM_data_Init_11
+//  173     {
+//  174         *tls_ram++ = *tls_start++;
+        MOV.B   @R5, 0(R4)
+        ADDA    #0x1, R5
+        ADDA    #0x1, R4
+        JMP     ??RAM_data_Init_5
+//  175     }
+//  176 }
+??RAM_data_Init_11:
+        ADD.W   #0x14, SP
+          CFI CFA SP+36
+        POPM.A  #0x8, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R4H SameValue
+          CFI R5H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R4L SameValue
+          CFI R5L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock3
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r4:
+        REQUIRE ?setjmp_r4
+        REQUIRE ?longjmp_r4
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r5:
+        REQUIRE ?setjmp_r5
+        REQUIRE ?longjmp_r5
+
+        RSEG CODE_I:DATA:REORDER:NOROOT(0)
+
+        RSEG CODE_ID:DATA:REORDER:NOROOT(0)
+
+        RSEG DATA16_I:DATA:REORDER:NOROOT(0)
+
+        RSEG DATA16_ID:DATA:REORDER:NOROOT(0)
+
+        RSEG DATA16_Z:DATA:REORDER:NOROOT(0)
+
+        RSEG DATA20_I:DATA:REORDER:NOROOT(0)
+
+        RSEG DATA20_ID:DATA:REORDER:NOROOT(0)
+
+        RSEG DATA20_Z:DATA:REORDER:NOROOT(0)
+
+        RSEG TLS16_I:DATA:REORDER:NOROOT(0)
+
+        RSEG TLS16_ID:DATA:REORDER:NOROOT(0)
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "\\nMSP430F5529 \\262\\342\\312\\324\\263`:
+        DC8 "\012MSP430F5529 \262\342\312\324\263\314\320\362!\012"
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "\\n MCLK \\306\\265\\302\\312:%ld HZ\\n"`:
+        DC8 "\012 MCLK \306\265\302\312:%ld HZ\012"
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "SMCLK \\306\\265\\302\\312:%ld HZ\\n">`:
+        DC8 "SMCLK \306\265\302\312:%ld HZ\012"
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant " ACLK \\306\\265\\302\\312:%ld HZ\\n">`:
+        DC8 " ACLK \306\265\302\312:%ld HZ\012"
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "\\n\\312\\271\\323\\303\\310\\355\\274\\376`:
+        DC8 "\012\312\271\323\303\310\355\274\376\304\243\304\342\321\323\312\261\012%s\012"
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "__delay_cycles((long)...">`:
+        DC8 5FH, 5FH, 64H, 65H, 6CH, 61H, 79H, 5FH
+        DC8 63H, 79H, 63H, 6CH, 65H, 73H, 28H, 28H
+        DC8 6CH, 6FH, 6EH, 67H, 29H, 28H, 28H, 64H
+        DC8 6FH, 75H, 62H, 6CH, 65H, 29H, 6DH, 73H
+        DC8 2AH, 28H, 32H, 35H, 4DH, 48H, 5AH, 2FH
+        DC8 31H, 29H, 2FH, 31H, 30H, 30H, 30H, 2EH
+        DC8 30H, 29H, 29H, 0
+
+        END
+// 
+// 590 bytes in segment CODE
+// 156 bytes in segment DATA20_C
+// 
+// 590 bytes of CODE  memory
+// 156 bytes of CONST memory
+//
+//Errors: none
+//Warnings: none

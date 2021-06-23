@@ -1,0 +1,155 @@
+[Stack]
+FillEnabled=0
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnLogOnly=1
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[DebugChecksum]
+Checksum=963988184
+[CallStack]
+ShowArgs=0
+[Disassembly]
+MixedMode=1
+[State Storage]
+Control Register=0
+[Sequencer]
+Control Register=0
+NextState0=0
+NextState1=0
+[Action Register]
+Break=0
+State Storage=0
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[CallStackLog]
+Enabled=0
+[DriverProfiling]
+Enabled=0
+Mode=1
+Graph=0
+Symbiont=0
+Exclusions=
+[InterruptLog]
+LogEnabled=0
+SumEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=1
+SumSortOrder=0
+[DataLog]
+LogEnabled=0
+SumEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=1
+[Breakpoints2]
+Bp0=_ 0 "STD_CODE2" "{$PROJ_DIR$\Drivers\src\uart.c}.184.17" 0 0 1 "" 0 ""
+Bp1=_ 0 "STD_CODE2" "{$PROJ_DIR$}.91.75" 0 0 1 "" 0 ""
+Bp2=_ 0 "STD_CODE2" "{$PROJ_DIR$\Debug\List\delay.s43}.228.26" 0 0 1 "" 0 ""
+Bp3=_ 0 "STD_CODE2" "{E:\MSP430\MSP430F5529库函数2.6}.37.10" 0 0 1 "" 0 ""
+Bp4=_ 0 "STD_CODE2" "{$PROJ_DIR$\System\src\isr.c}.24.9" 0 0 1 "" 0 ""
+Bp5=_ 1 "STD_CODE2" "{$PROJ_DIR$\User\main.c}.21.5" 0 0 1 "" 0 ""
+Count=6
+[Interrupts]
+Enabled=1
+[MemoryMap]
+Enabled=0
+Base=0
+UseAuto=0
+TypeViolation=1
+UnspecRange=1
+ActionState=1
+[Trace1]
+Enabled=0
+ShowSource=1
+[Breakpoints]
+Bp0=_ "STD_CODE" "{$PROJ_DIR$\Lib\uCOS-II\App\appDemo.c}.153.3" 0 0 0 0 "" 0 ""
+Bp1=_ "STD_CODE" "{$PROJ_DIR$\Lib\uCOS-II\App\appDemo.c}.153.4" 0 0 0 0 "" 0 ""
+Bp2=_ "STD_CODE" "{$PROJ_DIR$\Lib\uCOS-II\App\appDemo.c}.153.5" 0 0 0 0 "" 0 ""
+Bp3=_ "STD_CODE" "{$PROJ_DIR$\Lib\uCOS-II\App\appDemo.c}.153.6" 0 0 0 0 "" 0 ""
+Bp4=_ "STD_CODE" "{$PROJ_DIR$\Lib\uCOS-II\App\appDemo.c}.153.77" 0 0 0 0 "" 0 ""
+Bp5=_ "STD_CODE" "{$PROJ_DIR$\Lib\uCOS-II\App\appDemo.c}.151.77" 0 0 0 0 "" 0 ""
+Bp6=_ "STD_CODE" "{$PROJ_DIR$\User\main.c}.55.1" 0 0 0 0 "" 0 ""
+Bp7=_ "STD_CODE" "{$PROJ_DIR$\User\main.c}.55.1" 0 0 0 0 "" 0 ""
+Bp8=_ "STD_CODE" "{$PROJ_DIR$\User\main.c}.55.1" 0 0 0 0 "" 0 ""
+Bp9=_ "STD_CODE" "{$PROJ_DIR$\User\main.c}.55.1" 0 0 0 0 "" 0 ""
+Bp10=_ "STD_CODE" "{$PROJ_DIR$\Drivers\src\timer.c}.84.16" 0 0 0 0 "" 0 ""
+Bp11=_ "STD_CODE" "{$PROJ_DIR$\User\main.c}.55.1" 0 0 0 0 "" 0 ""
+Bp12=_ "STD_CODE" "{$PROJ_DIR$\User\main.c}.55.1" 0 0 0 0 "" 0 ""
+Bp13=_ "STD_CODE" "{$PROJ_DIR$\User\main.c}.55.1" 0 0 0 0 "" 0 ""
+Bp14=_ "STD_CODE" "{$PROJ_DIR$\User\main.c}.55.1" 0 0 0 0 "" 0 ""
+Bp15=_ "STD_CODE" "{$PROJ_DIR$\User\main.c}.55.1" 0 0 0 0 "" 0 ""
+Bp16=_ "STD_CODE" "{$PROJ_DIR$\User\main.c}.55.1" 0 0 0 0 "" 0 ""
+Bp17=_ "STD_CODE" "{$PROJ_DIR$\System\src\startup.c}.23.16" 0 0 0 0 "" 0 ""
+Bp18=_ "STD_CODE" "{$PROJ_DIR$\User\main.c}.55.1" 0 0 0 0 "" 0 ""
+Bp19=_ "STD_CODE" "{$PROJ_DIR$\User\main.c}.55.1" 0 0 0 0 "" 0 ""
+Bp20=_ "STD_CODE" "{$PROJ_DIR$\User\main.c}.55.1" 0 0 0 0 "" 0 ""
+Bp21=_ "STD_CODE" "{$PROJ_DIR$\User\main.c}.55.1" 0 0 0 0 "" 0 ""
+Bp22=_ "STD_CODE" "{$PROJ_DIR$\System\src\startup.c}.74.7" 0 0 0 0 "" 0 ""
+Bp23=_ "STD_CODE" "{$PROJ_DIR$\System\src\assert.c}.37.10" 1 0 0 0 "" 0 ""
+Bp24=_ "STD_CODE" "{$PROJ_DIR$\User\main.c}.55.1" 0 0 0 0 "" 0 ""
+Bp25=_ "STD_CODE" "{$PROJ_DIR$\User\main.c}.55.1" 0 0 0 0 "" 0 ""
+Bp26=_ "STD_CODE" "{$PROJ_DIR$\Drivers\src\timer.c}.55.81" 0 0 0 0 "" 0 ""
+Bp27=_ "STD_CODE" "{$PROJ_DIR$\User\main.c}.55.1" 0 0 0 0 "" 0 ""
+Bp28=_ "STD_CODE" "{$PROJ_DIR$\User\main.c}.55.1" 0 0 0 0 "" 0 ""
+Bp29=_ "STD_CODE" "{$PROJ_DIR$\User\USER\NRF24L01.c}.233.12" 0 0 0 0 "" 0 ""
+Bp30=_ "STD_CODE" "{$PROJ_DIR$\User\main.c}.55.1" 0 0 0 0 "" 0 ""
+Bp31=_ "STD_CODE" "{$PROJ_DIR$\HardWare\nrf24l01\nrf2401.c}.335.3" 0 0 0 0 "" 0 ""
+Bp32=_ "STD_CODE" "{$PROJ_DIR$\HardWare\nrf24l01\nrf2401.c}.298.43" 0 0 0 0 "" 0 ""
+Bp33=_ "STD_CODE" "{$PROJ_DIR$\System\src\isr.c}.24.9" 1 0 0 0 "" 0 ""
+Bp34=_ "STD_CODE" "{$PROJ_DIR$\User\main.c}.55.1" 0 0 0 0 "" 0 ""
+Bp35=_ "STD_CODE" "{$PROJ_DIR$\User\main.c}.55.1" 0 0 0 0 "" 0 ""
+Bp36=_ "STD_CODE" "{$PROJ_DIR$\User\main.c}.55.1" 0 0 0 0 "" 0 ""
+Count=37
+[FET]
+Clock mode=14
+Extended Clock mode=-1
+Secure Password=
+Extended Clock Control Enable=1
+Advanced Extended Clock Control=0
+Emulation mode=0
+Free running=0
+Shutting Down=3
+[Memory Dump]
+Start address=
+Lenghth=
+Address info=0
+Format=0
+Dump registers=0
+PC=0
+SP=0
+SR=0
+all registers=0
+File name=
+[Aliases]
+A0=_ "C:\Users\615\Desktop\MSP430\MSP430F5529库函数2.0\C版\工程模板\Lib\UCOSII\CORE\os_core.c" ""
+A1=_ "C:\Users\615\Desktop\MSP430\MSP430F5529库函数2.0\工程模板\Drivers\src\spi.c" ""
+A2=_ "C:\Users\615\Desktop\MSP430\MSP430F5529库函数2.0\工程模板\Drivers\src\uart.c" ""
+A3=_ "C:\Users\615\Desktop\MSP430\MSP430F5529库函数2.0\工程模板\HardWare\2.2TFT\LCD.c" ""
+A4=_ "C:\Users\615\Desktop\MSP430\MSP430F5529库函数2.0\工程模板\HardWare\LED\LED.c" ""
+A5=_ "C:\Users\615\Desktop\MSP430\MSP430F5529库函数2.0\工程模板\System\src\DELAY.c" ""
+A6=_ "C:\Users\615\Desktop\MSP430\MSP430F5529库函数2.0\工程模板\System\src\system.c" ""
+A7=_ "C:\Users\615\Desktop\MSP430\MSP430F5529库函数2.0\例程\工程模板\System\assert.c" ""
+A8=_ "C:\Users\615\Desktop\MSP430\MSP430F5529库函数2.4\C版\工程模板\Lib\UCOSII\CORE\os_core.c" ""
+A9=_ "C:\Users\615\Desktop\MSP430\MSP430F5529库函数2.4\C版\工程模板\Lib\UCOSII\PORT\os_cpu_c.c" ""
+A10=_ "C:\Users\615\Desktop\MSP430\MSP430F5529库函数2.4\MSP430F5529库函数2.1\C版\工程模板\HardWare\oled\OLED.c" ""
+A11=_ "C:\Users\615\Desktop\MSP430\MSP430F5529库函数2.5\C版\工程模板\Lib\UCOSII\CORE\os_core.c" ""
+A12=_ "C:\Users\615\Desktop\例程\工程模板\Drivers\src\clock.c" ""
+A13=_ "C:\Users\615\Desktop\例程\工程模板\Lib\uCOS-II\oskernel\os_core.c" ""
+A14=_ "C:\Users\615\Desktop\例程\工程模板\Lib\uCOS-II\oskernel\os_mbox.c" ""
+A15=_ "C:\Users\615\Desktop\例程\工程模板\Lib\uCOS-II\oskernel\os_task.c" ""
+A16=_ "E:\MSP430\MSP430F5529库函数2.1\C版\工程模板\Drivers\src\clock.c" ""
+A17=_ "E:\MSP430\MSP430F5529库函数2.1\C版\工程模板\HardWare\oled\OLED.c" ""
+A18=_ "E:\MSP430\MSP430F5529库函数2.1\C版\工程模板\Lib\UCOSII\CORE\os_core.c" ""
+A19=_ "E:\MSP430\MSP430F5529库函数2.1\C版\工程模板\Lib\UCOSII\PORT\os_cpu_c.c" ""
+Count=20
+SuppressDialog=1

@@ -1,0 +1,3366 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+//                                                      14/Dec/2016  10:52:42 /
+// IAR C/C++ Compiler V5.50.1.20465/W32, Evaluation edition for MSP430        /
+// Copyright 1996-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    __rt_version  =  3                                                      /
+//    __double_size =  32                                                     /
+//    __reg_r4      =  free                                                   /
+//    __reg_r5      =  free                                                   /
+//    __pic         =  no                                                     /
+//    __core        =  430X                                                   /
+//    __data_model  =  large                                                  /
+//    Source file   =  E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\o /
+//                     led\OLED.c                                             /
+//    Command line  =  E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\o /
+//                     led\OLED.c -D DEBUG -D RAM_VECTOR -lA                  /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Debug\List /
+//                     \ -o E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Debug /
+//                     \Obj\ --no_cse --no_unroll --no_inline                 /
+//                     --no_code_motion --no_tbaa --debug -D__MSP430F5529__   /
+//                     -e --double=32 --dlib_config "D:\Program Files\IAR     /
+//                     Systems\Embedded Workbench 6.4                         /
+//                     Evaluation\430\LIB\DLIB\dl430xlff.h" -I                /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\ -I        /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\in /
+//                     c\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Driv /
+//                     ers\src\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£° /
+//                     å\Drivers\src\USB\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C /
+//                     °æ\¹¤³ÌÄ£°å\Drivers\src\USB\USB_config\ -I             /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\USB\USB_User\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\ /
+//                     ¹¤³ÌÄ£°å\Drivers\srcUSB\USB_API\USB_CDC_API\ -I        /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\USB\USB_API\USB_HID_API\ -I                          /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\USB\USB_API\USB_MSC_API\ -I                          /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\  /
+//                     -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWar /
+//                     e\delay\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£° /
+//                     å\HardWare\18b20\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C° /
+//                     æ\¹¤³ÌÄ£°å\HardWare\KEY\ -I                            /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\L /
+//                     ED\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Har /
+//                     dWare\12864\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ /
+//                     ÌÄ£°å\HardWare\oled\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6 /
+//                     \C°æ\¹¤³ÌÄ£°å\HardWare\mpu6050\inc\ -I                 /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\m /
+//                     pu6050\src\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³Ì /
+//                     Ä£°å\HardWare\nokia5110\inc\ -I                        /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\n /
+//                     okia5110\src\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤ /
+//                     ³ÌÄ£°å\HardWare\LQ_1.8_TFT\ -I                         /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\L /
+//                     CD_API\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å /
+//                     \HardWare\2.2TFT\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C° /
+//                     æ\¹¤³ÌÄ£°å\HardWare\nrf24l01\ -I                       /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\System\    /
+//                     -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\System\ /
+//                     inc\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Sy /
+//                     stem\src\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£ /
+//                     °å\User\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£° /
+//                     å\User\USER\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ /
+//                     ÌÄ£°å\Lib\UCOSII\CONFIG\ -I                            /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII /
+//                     \App\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\L /
+//                     ib\uCOSII\CONFIHG\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C /
+//                     °æ\¹¤³ÌÄ£°å\Lib\uCOSII\PORT\ -I                        /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Lib\UCOSII /
+//                     \CORE\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\ /
+//                     Lib\FatFs\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ /
+//                     £°å\Lib\FatFs\option\ --core=430X --data_model=large   /
+//                     -On --multiplier=32 --multiplier_location=4C0          /
+//                     --hw_workaround=CPU40                                  /
+//    List file     =  E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Debug\List /
+//                     \OLED.s43                                              /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME OLED
+
+        RTMODEL "__SystemLibrary", "DLib"
+        RTMODEL "__core", "430X"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dlib_file_descriptor", "1"
+        RTMODEL "__double_size", "32"
+        RTMODEL "__iar_require _Printf", "unknown"
+        RTMODEL "__pic", "no"
+        RTMODEL "__reg_r4", "free"
+        RTMODEL "__reg_r5", "free"
+        RTMODEL "__rt_version", "3"
+
+        RSEG CSTACK:DATA:SORT:NOROOT(0)
+
+        EXTERN ?ShiftLeft32_7
+        EXTERN ?DivMod16s
+        EXTERN ?DivMod8u
+        EXTERN ?CopyMemoryWords20
+        EXTERN ?DivMod32u
+        EXTERN ?Mul32
+        EXTERN ?cstart_init_copy20
+        EXTERN ?cstart_init_zero20
+        EXTERN ?longjmp_r4
+        EXTERN ?longjmp_r5
+        EXTERN ?setjmp_r4
+        EXTERN ?setjmp_r5
+
+        PUBWEAK ?setjmp_save_r4
+        PUBWEAK ?setjmp_save_r5
+        PUBLIC ASCII_6X8
+        PUBLIC ASCII_8X16
+        PUBLIC CHINESE_16X16
+        PUBLIC FONT_CHINESE_TABLE
+        PUBLIC OLED_Clear
+        FUNCTION OLED_Clear,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 12, STACK
+        PUBLIC OLED_DispChar
+        FUNCTION OLED_DispChar,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 42, STACK
+        PUBLIC OLED_DispChineseAt
+        FUNCTION OLED_DispChineseAt,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 44, STACK
+        PUBLIC OLED_DispDecAt
+        FUNCTION OLED_DispDecAt,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 74, STACK
+        PUBLIC OLED_DispFolatAt
+        FUNCTION OLED_DispFolatAt,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 86, STACK
+        PUBLIC OLED_DispStringAt
+        FUNCTION OLED_DispStringAt,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 20, STACK
+        PUBLIC OLED_DispStringAtCEOL
+        FUNCTION OLED_DispStringAtCEOL,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 22, STACK
+        PUBLIC OLED_DispStringLen
+        FUNCTION OLED_DispStringLen,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 28, STACK
+        PUBLIC OLED_DrawPoint
+        FUNCTION OLED_DrawPoint,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 28, STACK
+        PUBLIC OLED_FillPart
+        FUNCTION OLED_FillPart,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 36, STACK
+        PUBLIC OLED_FillRect
+        FUNCTION OLED_FillRect,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 36, STACK
+        PUBLIC OLED_Init
+        FUNCTION OLED_Init,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 8, STACK
+        PUBLIC OLED_PORT_Init
+        FUNCTION OLED_PORT_Init,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC OLED_Printf
+        FUNCTION OLED_Printf,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 172, STACK
+        PUBLIC OLED_PrintfAt
+        FUNCTION OLED_PrintfAt,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 176, STACK
+        FUNCTION OLED_SetPosition,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 12, STACK
+        PUBLIC OLED_WriteByte
+        FUNCTION OLED_WriteByte,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 8, STACK
+        PUBWEAK _A_PBOUT_L
+        PUBWEAK _A_PDOUT_L
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA SP DATA
+          CFI Resource PC:20, SP:20, SR:16, R4L:16, R4H:4, R4:20, R5L:16, R5H:4
+          CFI Resource R5:20, R6L:16, R6H:4, R6:20, R7L:16, R7H:4, R7:20, R8L:16
+          CFI Resource R8H:4, R8:20, R9L:16, R9H:4, R9:20, R10L:16, R10H:4
+          CFI Resource R10:20, R11L:16, R11H:4, R11:20, R12L:16, R12H:4, R12:20
+          CFI Resource R13L:16, R13H:4, R13:20, R14L:16, R14H:4, R14:20, R15L:16
+          CFI Resource R15H:4, R15:20
+          CFI ResourceParts R4 R4H, R4L
+          CFI ResourceParts R5 R5H, R5L
+          CFI ResourceParts R6 R6H, R6L
+          CFI ResourceParts R7 R7H, R7L
+          CFI ResourceParts R8 R8H, R8L
+          CFI ResourceParts R9 R9H, R9L
+          CFI ResourceParts R10 R10H, R10L
+          CFI ResourceParts R11 R11H, R11L
+          CFI ResourceParts R12 R12H, R12L
+          CFI ResourceParts R13 R13H, R13L
+          CFI ResourceParts R14 R14H, R14L
+          CFI ResourceParts R15 R15H, R15L
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H SameValue
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H SameValue
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H SameValue
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H SameValue
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H SameValue
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H SameValue
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H SameValue
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H SameValue
+          CFI R11 Concat
+          CFI R12L Undefined
+          CFI R12H Undefined
+          CFI R12 Undefined
+          CFI R13L Undefined
+          CFI R13H Undefined
+          CFI R13 Undefined
+          CFI R14L Undefined
+          CFI R14H Undefined
+          CFI R14 Undefined
+          CFI R15L Undefined
+          CFI R15H Undefined
+          CFI R15 Undefined
+          CFI EndCommon cfiCommon0
+        
+        EXTERN vsprintf
+        FUNCTION vsprintf,010202H
+        EXTERN strlen
+        FUNCTION strlen,010202H
+        EXTERN _CmpLt32f
+        FUNCTION _CmpLt32f,0202H
+        EXTERN _Add32f
+        FUNCTION _Add32f,0202H
+        EXTERN _CmpGe32f
+        FUNCTION _CmpGe32f,0202H
+        EXTERN _Mul32f
+        FUNCTION _Mul32f,0202H
+        EXTERN _Div32f
+        FUNCTION _Div32f,0202H
+        EXTERN _Cast32fto32s
+        FUNCTION _Cast32fto32s,0202H
+        EXTERN _Cast32sto32f
+        FUNCTION _Cast32sto32f,0202H
+        EXTERN _Cast32fto32u
+        FUNCTION _Cast32fto32u,0202H
+        EXTERN _Cast32uto32f
+        FUNCTION _Cast32uto32f,0202H
+        EXTERN _Sub32f
+        FUNCTION _Sub32f,0202H
+        EXTERN GPIO_MultiBits_Init
+        FUNCTION GPIO_MultiBits_Init,0202H
+
+// E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\oled\OLED.c
+//    1 #include "OLED.h"
+
+        ASEGN DATA16_AN:DATA:NOROOT,0222H
+// union <unnamed> __data16 _A_PBOUT_L
+_A_PBOUT_L:
+        DS8 2
+
+        ASEGN DATA16_AN:DATA:NOROOT,0262H
+// union <unnamed> __data16 _A_PDOUT_L
+_A_PDOUT_L:
+        DS8 2
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "\\310\\375">`:
+        DC8 "\310\375"
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "\\317\\277">`:
+        DC8 "\317\277"
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "\\264\\363">`:
+        DC8 "\264\363"
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "\\321\\247">`:
+        DC8 "\321\247"
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "\\267\\311">`:
+        DC8 "\267\311"
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "\\313\\274">`:
+        DC8 "\313\274"
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "\\277\\250">`:
+        DC8 "\277\250"
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "\\266\\373">`:
+        DC8 "\266\373"
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(1)
+`?<Constant {(4.90000009E-1F), (5.00000007E-2F)`:
+        DC32 3EFAE148H, 3D4CCCCDH, 3BA3D70AH, 3A03126FH, 3851B717H, 36A7C5ACH
+//    2 #include "OLED_FONT.h"
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+// unsigned char const ASCII_6X8[95][6]
+ASCII_6X8:
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 47, 0, 0, 0, 0, 7, 0, 7, 0, 0, 20, 127
+        DC8 20, 127, 20, 0, 36, 42, 127, 42, 18, 0, 98, 100, 8, 19, 35, 0, 54
+        DC8 73, 85, 34, 80, 0, 0, 5, 3, 0, 0, 0, 0, 28, 34, 65, 0, 0, 0, 65, 34
+        DC8 28, 0, 0, 20, 8, 62, 8, 20, 0, 8, 8, 62, 8, 8, 0, 0, 0, 160, 96, 0
+        DC8 0, 8, 8, 8, 8, 8, 0, 0, 96, 96, 0, 0, 0, 32, 16, 8, 4, 2, 0, 62, 81
+        DC8 73, 69, 62, 0, 0, 66, 127, 64, 0, 0, 66, 97, 81, 73, 70, 0, 33, 65
+        DC8 69, 75, 49, 0, 24, 20, 18, 127, 16, 0, 39, 69, 69, 69, 57, 0, 60
+        DC8 74, 73, 73, 48, 0, 1, 113, 9, 5, 3, 0, 54, 73, 73, 73, 54, 0, 6, 73
+        DC8 73, 41, 30, 0, 0, 54, 54, 0, 0, 0, 0, 86, 54, 0, 0, 0, 8, 20, 34
+        DC8 65, 0, 0, 20, 20, 20, 20, 20, 0, 0, 65, 34, 20, 8, 0, 2, 1, 81, 9
+        DC8 6, 0, 50, 73, 89, 81, 62, 0, 124, 18, 17, 18, 124, 0, 127, 73, 73
+        DC8 73, 54, 0, 62, 65, 65, 65, 34, 0, 127, 65, 65, 34, 28, 0, 127, 73
+        DC8 73, 73, 65, 0, 127, 9, 9, 9, 1, 0, 62, 65, 73, 73, 122, 0, 127, 8
+        DC8 8, 8, 127, 0, 0, 65, 127, 65, 0, 0, 32, 64, 65, 63, 1, 0, 127, 8
+        DC8 20, 34, 65, 0, 127, 64, 64, 64, 64, 0, 127, 2, 12, 2, 127, 0, 127
+        DC8 4, 8, 16, 127, 0, 62, 65, 65, 65, 62, 0, 127, 9, 9, 9, 6, 0, 62, 65
+        DC8 81, 33, 94, 0, 127, 9, 25, 41, 70, 0, 70, 73, 73, 73, 49, 0, 1, 1
+        DC8 127, 1, 1, 0, 63, 64, 64, 64, 63, 0, 31, 32, 64, 32, 31, 0, 63, 64
+        DC8 56, 64, 63, 0, 99, 20, 8, 20, 99, 0, 7, 8, 112, 8, 7, 0, 97, 81, 73
+        DC8 69, 67, 0, 0, 127, 65, 65, 0, 0, 85, 42, 85, 42, 85, 0, 0, 65, 65
+        DC8 127, 0, 0, 4, 2, 1, 2, 4, 0, 64, 64, 64, 64, 64, 0, 0, 1, 2, 4, 0
+        DC8 0, 32, 84, 84, 84, 120, 0, 127, 72, 68, 68, 56, 0, 56, 68, 68, 68
+        DC8 32, 0, 56, 68, 68, 72, 127, 0, 56, 84, 84, 84, 24, 0, 8, 126, 9, 1
+        DC8 2, 0, 24, 164, 164, 164, 124, 0, 127, 8, 4, 4, 120, 0, 0, 68, 125
+        DC8 64, 0, 0, 64, 128, 132, 125, 0, 0, 127, 16, 40, 68, 0, 0, 0, 65
+        DC8 127, 64, 0, 0, 124, 4, 24, 4, 120, 0, 124, 8, 4, 4, 120, 0, 56, 68
+        DC8 68, 68, 56, 0, 252, 36, 36, 36, 24, 0, 24, 36, 36, 24, 252, 0, 124
+        DC8 8, 4, 4, 8, 0, 72, 84, 84, 84, 32, 0, 4, 63, 68, 64, 32, 0, 60, 64
+        DC8 64, 32, 124, 0, 28, 32, 64, 32, 28, 0, 60, 64, 48, 64, 60, 0, 68
+        DC8 40, 16, 40, 68, 0, 28, 160, 160, 160, 124, 0, 68, 100, 84, 76, 68
+        DC8 0, 0, 8, 118, 66, 0, 0, 0, 0, 126, 0, 0, 0, 0, 66, 118, 8, 0, 0, 4
+        DC8 2, 4, 2, 1
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+// unsigned char const ASCII_8X16[95][16]
+ASCII_8X16:
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 248, 0, 0
+        DC8 0, 0, 0, 0, 0, 51, 48, 0, 0, 0, 0, 16, 12, 6, 16, 12, 6, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 64, 192, 120, 64, 192, 120, 64, 0, 4, 63, 4, 4, 63
+        DC8 4, 4, 0, 0, 112, 136, 252, 8, 48, 0, 0, 0, 24, 32, 255, 33, 30, 0
+        DC8 0, 240, 8, 240, 0, 224, 24, 0, 0, 0, 33, 28, 3, 30, 33, 30, 0, 0
+        DC8 240, 8, 136, 112, 0, 0, 0, 30, 33, 35, 36, 25, 39, 33, 16, 16, 22
+        DC8 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 224, 24, 4, 2
+        DC8 0, 0, 0, 0, 7, 24, 32, 64, 0, 0, 2, 4, 24, 224, 0, 0, 0, 0, 64, 32
+        DC8 24, 7, 0, 0, 0, 64, 64, 128, 240, 128, 64, 64, 0, 2, 2, 1, 15, 1, 2
+        DC8 2, 0, 0, 0, 0, 240, 0, 0, 0, 0, 1, 1, 1, 31, 1, 1, 1, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 128, 176, 112, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 48, 48, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 128, 96, 24, 4, 0, 96, 24, 6, 1, 0, 0, 0, 0, 224, 16
+        DC8 8, 8, 16, 224, 0, 0, 15, 16, 32, 32, 16, 15, 0, 0, 16, 16, 248, 0
+        DC8 0, 0, 0, 0, 32, 32, 63, 32, 32, 0, 0, 0, 112, 8, 8, 8, 136, 112, 0
+        DC8 0, 48, 40, 36, 34, 33, 48, 0, 0, 48, 8, 136, 136, 72, 48, 0, 0, 24
+        DC8 32, 32, 32, 17, 14, 0, 0, 0, 192, 32, 16, 248, 0, 0, 0, 7, 4, 36
+        DC8 36, 63, 36, 0, 0, 248, 8, 136, 136, 8, 8, 0, 0, 25, 33, 32, 32, 17
+        DC8 14, 0, 0, 224, 16, 136, 136, 24, 0, 0, 0, 15, 17, 32, 32, 17, 14, 0
+        DC8 0, 56, 8, 8, 200, 56, 8, 0, 0, 0, 0, 63, 0, 0, 0, 0, 0, 112, 136, 8
+        DC8 8, 136, 112, 0, 0, 28, 34, 33, 33, 34, 28, 0, 0, 224, 16, 8, 8, 16
+        DC8 224, 0, 0, 0, 49, 34, 34, 17, 15, 0, 0, 0, 0, 192, 192, 0, 0, 0, 0
+        DC8 0, 0, 48, 48, 0, 0, 0, 0, 0, 0, 128, 0, 0, 0, 0, 0, 0, 128, 96, 0
+        DC8 0, 0, 0, 0, 0, 128, 64, 32, 16, 8, 0, 0, 1, 2, 4, 8, 16, 32, 0, 64
+        DC8 64, 64, 64, 64, 64, 64, 0, 4, 4, 4, 4, 4, 4, 4, 0, 0, 8, 16, 32, 64
+        DC8 128, 0, 0, 0, 32, 16, 8, 4, 2, 1, 0, 0, 112, 72, 8, 8, 8, 240, 0, 0
+        DC8 0, 0, 48, 54, 1, 0, 0, 192, 48, 200, 40, 232, 16, 224, 0, 7, 24, 39
+        DC8 36, 35, 20, 11, 0, 0, 0, 192, 56, 224, 0, 0, 0, 32, 60, 35, 2, 2
+        DC8 39, 56, 32, 8, 248, 136, 136, 136, 112, 0, 0, 32, 63, 32, 32, 32
+        DC8 17, 14, 0, 192, 48, 8, 8, 8, 8, 56, 0, 7, 24, 32, 32, 32, 16, 8, 0
+        DC8 8, 248, 8, 8, 8, 16, 224, 0, 32, 63, 32, 32, 32, 16, 15, 0, 8, 248
+        DC8 136, 136, 232, 8, 16, 0, 32, 63, 32, 32, 35, 32, 24, 0, 8, 248, 136
+        DC8 136, 232, 8, 16, 0, 32, 63, 32, 0, 3, 0, 0, 0, 192, 48, 8, 8, 8, 56
+        DC8 0, 0, 7, 24, 32, 32, 34, 30, 2, 0, 8, 248, 8, 0, 0, 8, 248, 8, 32
+        DC8 63, 33, 1, 1, 33, 63, 32, 0, 8, 8, 248, 8, 8, 0, 0, 0, 32, 32, 63
+        DC8 32, 32, 0, 0, 0, 0, 8, 8, 248, 8, 8, 0, 192, 128, 128, 128, 127, 0
+        DC8 0, 0, 8, 248, 136, 192, 40, 24, 8, 0, 32, 63, 32, 1, 38, 56, 32, 0
+        DC8 8, 248, 8, 0, 0, 0, 0, 0, 32, 63, 32, 32, 32, 32, 48, 0, 8, 248
+        DC8 248, 0, 248, 248, 8, 0, 32, 63, 0, 63, 0, 63, 32, 0, 8, 248, 48
+        DC8 192, 0, 8, 248, 8, 32, 63, 32, 0, 7, 24, 63, 0, 224, 16, 8, 8, 8
+        DC8 16, 224, 0, 15, 16, 32, 32, 32, 16, 15, 0, 8, 248, 8, 8, 8, 8, 240
+        DC8 0, 32, 63, 33, 1, 1, 1, 0, 0, 224, 16, 8, 8, 8, 16, 224, 0, 15, 24
+        DC8 36, 36, 56, 80, 79, 0, 8, 248, 136, 136, 136, 136, 112, 0, 32, 63
+        DC8 32, 0, 3, 12, 48, 32, 0, 112, 136, 8, 8, 8, 56, 0, 0, 56, 32, 33
+        DC8 33, 34, 28, 0, 24, 8, 8, 248, 8, 8, 24, 0, 0, 0, 32, 63, 32, 0, 0
+        DC8 0, 8, 248, 8, 0, 0, 8, 248, 8, 0, 31, 32, 32, 32, 32, 31, 0, 8, 120
+        DC8 136, 0, 0, 200, 56, 8, 0, 0, 7, 56, 14, 1, 0, 0, 248, 8, 0, 248, 0
+        DC8 8, 248, 0, 3, 60, 7, 0, 7, 60, 3, 0, 8, 24, 104, 128, 128, 104, 24
+        DC8 8, 32, 48, 44, 3, 3, 44, 48, 32, 8, 56, 200, 0, 200, 56, 8, 0, 0, 0
+        DC8 32, 63, 32, 0, 0, 0, 16, 8, 8, 8, 200, 56, 8, 0, 32, 56, 38, 33, 32
+        DC8 32, 24, 0, 0, 0, 0, 254, 2, 2, 2, 0, 0, 0, 0, 127, 64, 64, 64, 0, 0
+        DC8 12, 48, 192, 0, 0, 0, 0, 0, 0, 0, 1, 6, 56, 192, 0, 0, 2, 2, 2, 254
+        DC8 0, 0, 0, 0, 64, 64, 64, 127, 0, 0, 0, 0, 0, 4, 2, 2, 2, 4, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 128, 128, 128, 128
+        DC8 128, 128, 128, 0, 2, 2, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 128, 128, 128, 128, 0, 0, 0, 25, 36, 34, 34, 34, 63, 32, 8, 248, 0
+        DC8 128, 128, 0, 0, 0, 0, 63, 17, 32, 32, 17, 14, 0, 0, 0, 0, 128, 128
+        DC8 128, 0, 0, 0, 14, 17, 32, 32, 32, 17, 0, 0, 0, 0, 128, 128, 136
+        DC8 248, 0, 0, 14, 17, 32, 32, 16, 63, 32, 0, 0, 128, 128, 128, 128, 0
+        DC8 0, 0, 31, 34, 34, 34, 34, 19, 0, 0, 128, 128, 240, 136, 136, 136
+        DC8 24, 0, 32, 32, 63, 32, 32, 0, 0, 0, 0, 128, 128, 128, 128, 128, 0
+        DC8 0, 107, 148, 148, 148, 147, 96, 0, 8, 248, 0, 128, 128, 128, 0, 0
+        DC8 32, 63, 33, 0, 0, 32, 63, 32, 0, 128, 152, 152, 0, 0, 0, 0, 0, 32
+        DC8 32, 63, 32, 32, 0, 0, 0, 0, 0, 128, 152, 152, 0, 0, 0, 192, 128
+        DC8 128, 128, 127, 0, 0, 8, 248, 0, 0, 128, 128, 128, 0, 32, 63, 36, 2
+        DC8 45, 48, 32, 0, 0, 8, 8, 248, 0, 0, 0, 0, 0, 32, 32, 63, 32, 32, 0
+        DC8 0, 128, 128, 128, 128, 128, 128, 128, 0, 32, 63, 32, 0, 63, 32, 0
+        DC8 63, 128, 128, 0, 128, 128, 128, 0, 0, 32, 63, 33, 0, 0, 32, 63, 32
+        DC8 0, 0, 128, 128, 128, 128, 0, 0, 0, 31, 32, 32, 32, 32, 31, 0, 128
+        DC8 128, 0, 128, 128, 0, 0, 0, 128, 255, 161, 32, 32, 17, 14, 0, 0, 0
+        DC8 0, 128, 128, 128, 128, 0, 0, 14, 17, 32, 32, 160, 255, 128, 128
+        DC8 128, 128, 0, 128, 128, 128, 0, 32, 32, 63, 33, 32, 0, 1, 0, 0, 0
+        DC8 128, 128, 128, 128, 128, 0, 0, 51, 36, 36, 36, 36, 25, 0, 0, 128
+        DC8 128, 224, 128, 128, 0, 0, 0, 0, 0, 31, 32, 32, 0, 0, 128, 128, 0, 0
+        DC8 0, 128, 128, 0, 0, 31, 32, 32, 32, 16, 63, 32, 128, 128, 128, 0, 0
+        DC8 128, 128, 128, 0, 1, 14, 48, 8, 6, 1, 0, 128, 128, 0, 128, 0, 128
+        DC8 128, 128, 15, 48, 12, 3, 12, 48, 15, 0, 0, 128, 128, 0, 128, 128
+        DC8 128, 0, 0, 32, 49, 46, 14, 49, 32, 0, 128, 128, 128, 0, 0, 128, 128
+        DC8 128, 128, 129, 142, 112, 24, 6, 1, 0, 0, 128, 128, 128, 128, 128
+        DC8 128, 0, 0, 33, 48, 44, 34, 33, 48, 0, 0, 0, 0, 0, 128, 124, 2, 2, 0
+        DC8 0, 0, 0, 0, 63, 64, 64, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255
+        DC8 0, 0, 0, 0, 2, 2, 124, 128, 0, 0, 0, 0, 64, 64, 63, 0, 0, 0, 0, 0
+        DC8 6, 1, 1, 2, 2, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0
+//    3 #include "OLED_FONT_CHINESE.h"
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+// unsigned char const CHINESE_16X16[8][32]
+CHINESE_16X16:
+        DC8 0, 0, 0, 136, 136, 136, 136, 136, 136, 140, 132, 140, 8, 0, 0, 0, 0
+        DC8 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 0, 0, 0, 224
+        DC8 226, 254, 252, 240, 80, 208, 254, 254, 242, 240, 80, 0, 0, 0, 0, 7
+        DC8 7, 71, 103, 119, 58, 31, 7, 7, 29, 57, 97, 97, 64, 0, 0, 64, 64, 64
+        DC8 64, 64, 240, 254, 222, 64, 64, 96, 96, 64, 0, 0, 0, 64, 96, 48, 28
+        DC8 15, 7, 1, 3, 15, 60, 48, 32, 32, 32, 0, 0, 64, 112, 180, 188, 184
+        DC8 166, 174, 184, 252, 254, 114, 112, 16, 0, 0, 0, 4, 4, 4, 20, 52, 39
+        DC8 63, 63, 2, 2, 2, 2, 2, 0, 0, 0, 8, 8, 8, 12, 12, 4, 252, 252, 224
+        DC8 184, 152, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 15, 28, 56, 48, 60
+        DC8 60, 0, 0, 0, 0, 0, 254, 254, 164, 180, 252, 252, 244, 254, 254, 0
+        DC8 0, 0, 0, 0, 16, 28, 14, 14, 28, 59, 55, 38, 56, 58, 38, 14, 12, 0
+        DC8 0, 0, 128, 128, 128, 128, 128, 254, 254, 146, 144, 216, 88, 64, 192
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 63, 63, 3, 2, 6, 4, 0, 0, 0, 0, 0, 0, 192
+        DC8 224, 248, 158, 22, 242, 240, 144, 112, 120, 24, 16, 0, 0, 0, 17, 25
+        DC8 14, 7, 19, 49, 63, 63, 1, 3, 7, 6, 4, 0, 0
+
+        RSEG DATA20_I:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_copy20
+// unsigned char const *__data20 FONT_CHINESE_TABLE[8]
+FONT_CHINESE_TABLE:
+        DS8 32
+        REQUIRE `?<Initializer for FONT_CHINESE_TABLE>`
+//    4 #include <stdarg.h>
+//    5 #include <string.h>
+//    6 #include <stdio.h>
+//    7 typedef enum
+//    8 {
+//    9   CMD   =0u,//ÃüÁîÊ±ÎªµÍµçÆ½
+//   10   DATA  =1u,//Êý¾ÝÊ±Îª¸ßµçÆ½
+//   11 }CMD_OR_DATA;
+//   12 static const struct{
+//   13   uint8_t width;
+//   14   uint8_t height;
+//   15   const unsigned char *pData;
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(1)
+//   16 }Font[] =
+Font:
+        DC8 6, 8
+        DC32 ASCII_6X8
+        DC8 8, 16
+        DC32 ASCII_8X16
+        DC8 16, 16
+        DC32 CHINESE_16X16
+//   17 {
+//   18   {.width=6,.height= 8,.pData= &ASCII_6X8[0][0]},
+//   19   {.width=8,.height=16,.pData=&ASCII_8X16[0][0]},
+//   20   {.width=16,.height=16,.pData=&CHINESE_16X16[0][0]},
+//   21 };
+//   22 #ifdef OLED_RAM //¿ªÆôÏÔ´æ
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_zero20
+//   23 static uint8_t OLED_RAM_DATA[(OLED_HEIGHT/8)][OLED_WIDTH] ={0}; //ÏÔ´æ
+OLED_RAM_DATA:
+        DS8 1024
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_zero20
+//   24 static uint8_t line_position = 0,row_position = 0;   //¹â±êÎ»ÖÃ
+line_position:
+        DS8 1
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_zero20
+row_position:
+        DS8 1
+//   25 #endif
+//   26 static void OLED_SetPosition(uint8_t line,uint8_t x);                              //ÉèÖÃ×ø±ê
+//   27 /*******************************************************************************
+//   28 *  º¯ÊýÃû³Æ£ºOLED_PORT_Init(void)
+//   29 *  ¹¦ÄÜËµÃ÷£ºOLED¶Ë¿Ú³õÊ¼»¯³ÌÐò
+//   30 *  ²ÎÊýËµÃ÷£ºÎÞ
+//   31 *  º¯Êý·µ»Ø£ºÎÞ
+//   32 *  Ê¹ÓÃÊ¾Àý£º
+//   33 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   34 void OLED_PORT_Init(void)
+OLED_PORT_Init:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function OLED_PORT_Init
+//   35 {
+//   36 #if(OLEDHardWareSPI)
+//   37   OLEDHardWareSPI_Init();
+//   38 #else
+//   39   GPIO_Init(OLED_SCL_PORT,OLED_SCL_PIN,GPO);
+        FUNCALL OLED_PORT_Init, GPIO_MultiBits_Init
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL OLED_PORT_Init, GPIO_MultiBits_Init
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL OLED_PORT_Init, GPIO_MultiBits_Init
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL OLED_PORT_Init, GPIO_MultiBits_Init
+        LOCFRAME CSTACK, 4, STACK
+        MOV.W   #0x2, R14
+        MOV.W   #0x8, R13
+        MOV.B   #0x3, R12
+        CALLA   #GPIO_MultiBits_Init
+//   40   GPIO_Init(OLED_SDA_PORT,OLED_SDA_PIN,GPO);
+        MOV.W   #0x2, R14
+        MOV.W   #0x1, R13
+        MOV.B   #0x3, R12
+        CALLA   #GPIO_MultiBits_Init
+//   41 #endif
+//   42   GPIO_Init(OLED_RST_PORT,OLED_RST_PIN,GPO);
+        MOV.W   #0x2, R14
+        MOV.W   #0x80, R13
+        MOV.B   #0x2, R12
+        CALLA   #GPIO_MultiBits_Init
+//   43   GPIO_Init(OLED_DC_PORT ,OLED_DC_PIN ,GPO);
+        MOV.W   #0x2, R14
+        MOV.W   #0x4, R13
+        MOV.B   #0x7, R12
+        BRA     #GPIO_MultiBits_Init
+          CFI EndBlock cfiBlock0
+//   44 }
+//   45 /*******************************************************************************
+//   46 *  º¯ÊýÃû³Æ£ºOLED_WriteByte(CMD_OR_DATA DCvalue,uint8_t data)
+//   47 *  ¹¦ÄÜËµÃ÷£ºOLED·¢ËÍÒ»×Ö½ÚÊý¾Ý
+//   48 *  ²ÎÊýËµÃ÷£ºCMD_OR_DATA DCvalue£ºÃüÁî»òÊý¾Ý
+//   49              uint8_t data       £º·¢ËÍµÄÊý¾Ý
+//   50 *  º¯Êý·µ»Ø£ºÎÞ
+//   51 *  Ê¹ÓÃÊ¾Àý£º
+//   52 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   53 void OLED_WriteByte(CMD_OR_DATA DCvalue,uint8_t data)
+OLED_WriteByte:
+          CFI Block cfiBlock1 Using cfiCommon0
+          CFI Function OLED_WriteByte
+//   54 {
+        PUSHM.A #0x1, R10
+          CFI R10L Frame(CFA, -8)
+          CFI R10H Frame(CFA, -6)
+          CFI CFA SP+8
+//   55   uint8_t i;
+//   56   OLED_DC = DCvalue; //DCvalueÊÇ1DC¾ÍÎª1 ²»ÊÇ1DC¾ÍÎª0  1ÊÇÊý¾Ý 0ÊÇÃü?
+        BIT.B   #0x1, R12
+        JC      ??OLED_WriteByte_1
+        BIC.B   #0x4, &0x263
+        JMP     ??OLED_WriteByte_2
+??OLED_WriteByte_1:
+        BIS.B   #0x4, &0x263
+//   57 #ifdef OLED_RAM //Èç¹û¿ªÆôÏÔ´æ
+//   58   if(DCvalue == DATA) //·¢ËÍÊý¾ÝÊ±¸üÐÂ
+??OLED_WriteByte_2:
+        CMP.B   #0x1, R12
+        JNE     ??OLED_WriteByte_3
+//   59   {
+//   60     OLED_RAM_DATA[line_position][row_position++] = data;
+        MOVX.B  &line_position, R14
+        MOV.B   R14, R14
+        RPT     #0x7
+        RLAX.A  R14
+        MOVX.B  &row_position, R15
+        MOV.B   R15, R15
+        ADDA    R15, R14
+        MOVX.B  R13, OLED_RAM_DATA(R14)
+        ADDX.B  #0x1, &row_position
+//   61     if(row_position > 127)
+        CMPX.B  #0x80, &row_position
+        JNC     ??OLED_WriteByte_3
+//   62     {
+//   63       row_position = 0;
+        MOVX.B  #0x0, &row_position
+//   64       line_position ++;
+        ADDX.B  #0x1, &line_position
+//   65     }
+//   66   }
+//   67 #endif
+//   68 #if(OLEDHardWareSPI)
+//   69   OLEDHardWareSPI_SendByte(data);
+//   70 #else
+//   71   OLED_SCL=0;
+??OLED_WriteByte_3:
+        BIC.B   #0x8, &0x223
+//   72   for(i=0;i < 8;i++)
+        MOV.B   #0x0, R10
+??OLED_WriteByte_0:
+        CMP.B   #0x8, R10
+        JC      ??OLED_WriteByte_4
+//   73   {
+//   74     OLED_SDA = (data&0x80) ? 1 : 0;//ÉÏÉýÑØ·¢ËÍÊý¾Ý
+        BIT.B   #0x80, R13
+        SUBC.B  R14, R14
+        ADD.B   #0x1, R14
+        BIT.B   #0x80, R13
+        JC      ??OLED_WriteByte_5
+        BIC.B   #0x1, &0x223
+        JMP     ??OLED_WriteByte_6
+??OLED_WriteByte_5:
+        BIS.B   #0x1, &0x223
+//   75     OLED_SCL = 1;
+??OLED_WriteByte_6:
+        BIS.B   #0x8, &0x223
+//   76     OLED_SCL = 0;		
+        BIC.B   #0x8, &0x223
+//   77     data <<= 1;    
+        RLA.B   R13
+//   78   }
+        ADD.B   #0x1, R10
+        JMP     ??OLED_WriteByte_0
+//   79 #endif
+//   80 }
+??OLED_WriteByte_4:
+        POPM.A  #0x1, R10
+          CFI R10H SameValue
+          CFI R10L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock1
+        REQUIRE _A_PDOUT_L
+        REQUIRE _A_PBOUT_L
+//   81 /*******************************************************************************
+//   82 *  º¯ÊýÃû³Æ£ºOLED_SetPosition(uint8_t line,uint8_t x)
+//   83 *  ¹¦ÄÜËµÃ÷£ºOLEDÉèÖÃ¹â±êÎ»ÖÃ
+//   84 *  ²ÎÊýËµÃ÷£ºuint8_t line£ºÐÐÎ»ÖÃ£¨0-7£©
+//   85              uint8_t x   £ºÁÐÎ»ÖÃ£¨0-127£©
+//   86 *  º¯Êý·µ»Ø£ºÎÞ
+//   87 *  Ê¹ÓÃÊ¾Àý£º
+//   88 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   89 void OLED_SetPosition(uint8_t line,uint8_t x)
+OLED_SetPosition:
+          CFI Block cfiBlock2 Using cfiCommon0
+          CFI Function OLED_SetPosition
+//   90 {
+        FUNCALL OLED_SetPosition, OLED_WriteByte
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL OLED_SetPosition, OLED_WriteByte
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL OLED_SetPosition, OLED_WriteByte
+        LOCFRAME CSTACK, 12, STACK
+        PUSHM.A #0x2, R11
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+12
+        MOV.B   R12, R10
+        MOV.B   R13, R11
+//   91   OLED_WriteByte(CMD,0xB0+line);            //ÉèÖÃÐÐ        
+        MOV.B   R10, R13
+        ADD.B   #0xb0, R13
+        MOV.B   #0x0, R12
+        CALLA   #OLED_WriteByte
+//   92   OLED_WriteByte(CMD,x&0x0F);            //ÉèÖÃÄ³ÁÐµÄµÍËÄÎ»µØÖ· 0x00-0x0F
+        MOV.B   R11, R13
+        AND.B   #0xf, R13
+        MOV.B   #0x0, R12
+        CALLA   #OLED_WriteByte
+//   93   OLED_WriteByte(CMD,(x>>4)|0x10);       //ÉèÖÃÄ³ÁÐµÄ¸ßËÄÎ»µØÖ· 0x10-0x1F
+        MOV.B   R11, R13
+        RPT     #0x4
+        RRUX.B  R13
+        BIS.B   #0x10, R13
+        MOV.B   #0x0, R12
+        CALLA   #OLED_WriteByte
+//   94 #ifdef OLED_RAM //Èç¹û¿ªÆôÏÔ´æ
+//   95   line_position = line;
+        MOVX.B  R10, &line_position
+//   96   row_position = x;
+        MOVX.B  R11, &row_position
+//   97 #endif
+//   98 }
+        POPM.A  #0x2, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock2
+//   99 /*******************************************************************************
+//  100 *  º¯ÊýÃû³Æ£ºOLED_DrawPoint(uint8_t x,uint8_t y,uint8_t value)
+//  101 *  ¹¦ÄÜËµÃ÷£ºOLEDÔÚÄ³Ò»Î»ÖÃ»­µã,ÐèÒª¿ªÆôÏÔ´æ
+//  102 *  ²ÎÊýËµÃ÷£º
+//  103             uint8_t x£ºÁÐÎ»ÖÃ£¨0-127£©
+//  104             uint8_t y£ºÐÐÎ»ÖÃ£¨0-64£©
+//  105             uint8_t value£º¸ÃµãÊÇ·ñÏÔÊ¾(0:²»ÏÔÊ¾£¬1:ÏÔÊ¾)
+//  106 *  º¯Êý·µ»Ø£ºÎÞ
+//  107 *  Ê¹ÓÃÊ¾Àý£º
+//  108 ********************************************************************************/
+//  109 #ifdef OLED_RAM //¿ªÆôÏÔ´æ
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  110 void OLED_DrawPoint(uint8_t x,uint8_t y,uint8_t value)
+OLED_DrawPoint:
+          CFI Block cfiBlock3 Using cfiCommon0
+          CFI Function OLED_DrawPoint
+//  111 {
+        FUNCALL OLED_DrawPoint, OLED_SetPosition
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OLED_DrawPoint, OLED_WriteByte
+        LOCFRAME CSTACK, 28, STACK
+        PUSHM.A #0x6, R11
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+28
+        MOV.B   R12, R9
+        MOV.B   R13, R11
+        MOV.B   R14, R6
+//  112     uint8_t data_temp; //data1 µ±Ç°µãµÄÊý¾Ý
+//  113     uint8_t line = y/8;
+        MOV.B   R11, R12
+        MOV.B   #0x8, R14
+        CALLA   #?DivMod8u
+        MOV.B   R12, R10
+//  114     data_temp = OLED_RAM_DATA[line][x];
+        MOV.B   R10, R15
+        RPT     #0x7
+        RLAX.A  R15
+        MOV.B   R9, R9
+        ADDA    R9, R15
+        MOVX.B  OLED_RAM_DATA(R15), R8
+//  115     if(value)
+        CMP.B   #0x0, R6
+        JEQ     ??OLED_DrawPoint_0
+//  116       data_temp |= 0x01<<(y%8);
+        MOV.W   #0x1, R7
+        MOV.B   R11, R12
+        MOV.B   #0x8, R14
+        CALLA   #?DivMod8u
+        SUB.B   #0x1, R14
+        JN      ??OLED_DrawPoint_1
+        RPT     R14
+        RLAX.W  R7
+??OLED_DrawPoint_1:
+        ADD.B   #0x1, R14
+        BIS.B   R7, R8
+        JMP     ??OLED_DrawPoint_2
+//  117     else
+//  118       data_temp &= ~(0x01<<(y%8));
+??OLED_DrawPoint_0:
+        MOV.W   #0x1, R7
+        MOV.B   R11, R12
+        MOV.B   #0x8, R14
+        CALLA   #?DivMod8u
+        SUB.B   #0x1, R14
+        JN      ??OLED_DrawPoint_3
+        RPT     R14
+        RLAX.W  R7
+??OLED_DrawPoint_3:
+        ADD.B   #0x1, R14
+        BIC.B   R7, R8
+//  119     
+//  120     OLED_SetPosition(line,x);
+??OLED_DrawPoint_2:
+        MOV.B   R9, R13
+        MOV.B   R10, R12
+        CALLA   #OLED_SetPosition
+//  121     OLED_WriteByte(DATA,data_temp);
+        MOV.B   R8, R13
+        MOV.B   #0x1, R12
+        CALLA   #OLED_WriteByte
+//  122 }
+        POPM.A  #0x6, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock3
+//  123 #endif
+//  124 /*******************************************************************************
+//  125 *  º¯ÊýÃû³Æ£ºOLED_FillRect(uint8_t x0,uint8_t y0,uint8_t x1,uint8_t y1,uint8_t data)
+//  126 *  ¹¦ÄÜËµÃ÷£ºOLEDÌî³äÄ³Ò»¾ØÐÎÇøÓò
+//  127 *  ²ÎÊýËµÃ÷£ºuint8_t line£ºÐÐÎ»ÖÃ£¨0-7£©
+//  128              uint8_t x   £ºÁÐÎ»ÖÃ£¨0-127£©
+//  129              uint8_t data£º¸ÃÇøÓòÊÇ·ñÏÔÊ¾(0:²»ÏÔÊ¾£¬1:ÏÔÊ¾)
+//  130 *  º¯Êý·µ»Ø£ºÎÞ
+//  131 *  Ê¹ÓÃÊ¾Àý£º
+//  132 ********************************************************************************/
+//  133 #ifdef OLED_RAM //¿ªÆôÏÔ´æ
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  134 void OLED_FillRect(uint8_t x0,uint8_t y0,uint8_t x1,uint8_t y1,uint8_t data)
+OLED_FillRect:
+          CFI Block cfiBlock4 Using cfiCommon0
+          CFI Function OLED_FillRect
+//  135 {
+        FUNCALL OLED_FillRect, OLED_DrawPoint
+        LOCFRAME CSTACK, 36, STACK
+        PUSHM.A #0x8, R11
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+36
+        MOV.B   R12, R4
+        MOV.B   R13, R7
+        MOV.B   R14, R11
+        MOV.B   R15, R10
+        MOV.B   0x24(SP), R8
+//  136   uint8_t y,x;
+//  137   for(y=y0;y <= y1;y++)
+        MOV.B   R7, R9
+??OLED_FillRect_1:
+        CMP.B   R9, R10
+        JNC     ??OLED_FillRect_2
+//  138   { 
+//  139     for(x=x0;x <= x1;x++)
+        MOV.B   R4, R6
+??OLED_FillRect_0:
+        CMP.B   R6, R11
+        JNC     ??OLED_FillRect_3
+//  140     {
+//  141       OLED_DrawPoint(x,y,data);
+        MOV.B   R8, R14
+        MOV.B   R9, R13
+        MOV.B   R6, R12
+        CALLA   #OLED_DrawPoint
+//  142     }  
+        ADD.B   #0x1, R6
+        JMP     ??OLED_FillRect_0
+//  143   }
+??OLED_FillRect_3:
+        ADD.B   #0x1, R9
+        JMP     ??OLED_FillRect_1
+//  144 }
+??OLED_FillRect_2:
+        POPM.A  #0x8, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R4H SameValue
+          CFI R5H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R4L SameValue
+          CFI R5L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock4
+//  145 #endif
+//  146 /*******************************************************************************
+//  147 *  º¯ÊýÃû³Æ£ºOLED_FillPart(uint8_t x0,uint8_t line0,uint8_t x1,uint8_t line1,uint8_t data)
+//  148 *  ¹¦ÄÜËµÃ÷£ºOLEDÌî³äÄ³Ò»¾ØÐÎÇøÓò
+//  149 *  ²ÎÊýËµÃ÷£º
+//  150              uint8_t x0  £ºÁÐÆðÊ¼Î»ÖÃ£¨0-127£©
+//  151              uint8_t line0£ºÐÐÆðÊ¼Î»ÖÃ£¨0-7£©
+//  152              uint8_t x1  £ºÁÐ½áÊøÎ»ÖÃ£¨0-127£©
+//  153              uint8_t line1£ºÐÐ½áÊøÎ»ÖÃ£¨0-7£©
+//  154              uint8_t data£º¸ÃÇøÓòÊÇ·ñÏÔÊ¾(0:²»ÏÔÊ¾£¬1:ÏÔÊ¾) 
+//  155 
+//  156 *  º¯Êý·µ»Ø£ºÎÞ
+//  157 *  Ê¹ÓÃÊ¾Àý£ºOLED_FillPart(0,0,OLED_WIDTH,7,0);  //ÇåÆÁ
+//  158 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  159 void OLED_FillPart(uint8_t x0,uint8_t line0,uint8_t x1,uint8_t line1,uint8_t data)
+OLED_FillPart:
+          CFI Block cfiBlock5 Using cfiCommon0
+          CFI Function OLED_FillPart
+//  160 {
+        FUNCALL OLED_FillPart, OLED_SetPosition
+        LOCFRAME CSTACK, 36, STACK
+        FUNCALL OLED_FillPart, OLED_WriteByte
+        LOCFRAME CSTACK, 36, STACK
+        PUSHM.A #0x8, R11
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+36
+        MOV.B   R12, R8
+        MOV.B   R13, R4
+        MOV.B   R14, R10
+        MOV.B   R15, R11
+        MOV.B   0x24(SP), R6
+//  161   uint8_t line,x;
+//  162   data = data ? 0xff : 0x00;
+        CMP.B   #0x0, R6
+        JEQ     ??OLED_FillPart_2
+        MOV.B   #0xff, R6
+        JMP     ??OLED_FillPart_3
+??OLED_FillPart_2:
+        MOV.B   #0x0, R6
+//  163   for(line=line0;line <= line1;line++)
+??OLED_FillPart_3:
+        MOV.B   R4, R9
+??OLED_FillPart_1:
+        CMP.B   R9, R11
+        JNC     ??OLED_FillPart_4
+//  164   {
+//  165     OLED_SetPosition(line,x0);
+        MOV.B   R8, R13
+        MOV.B   R9, R12
+        CALLA   #OLED_SetPosition
+//  166     for(x=x0;x < x1;x++)
+        MOV.B   R8, R7
+??OLED_FillPart_0:
+        CMP.B   R10, R7
+        JC      ??OLED_FillPart_5
+//  167     {
+//  168 #ifdef OLED_RAM //¿ªÆôÏÔ´æ
+//  169       OLED_RAM_DATA[line][x] = 0;
+        MOV.B   R9, R15
+        RPT     #0x7
+        RLAX.A  R15
+        MOV.B   R7, R7
+        ADDA    R7, R15
+        MOVX.B  #0x0, OLED_RAM_DATA(R15)
+//  170 #endif
+//  171       OLED_WriteByte(DATA,data);
+        MOV.B   R6, R13
+        MOV.B   #0x1, R12
+        CALLA   #OLED_WriteByte
+//  172     }
+        ADD.B   #0x1, R7
+        JMP     ??OLED_FillPart_0
+//  173   }
+??OLED_FillPart_5:
+        ADD.B   #0x1, R9
+        JMP     ??OLED_FillPart_1
+//  174 }
+??OLED_FillPart_4:
+        POPM.A  #0x8, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R4H SameValue
+          CFI R5H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R4L SameValue
+          CFI R5L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock5
+//  175 /*******************************************************************************
+//  176 *  º¯ÊýÃû³Æ£ºOLED_Clear(void)
+//  177 *  ¹¦ÄÜËµÃ÷£ºOLEDÇåÆÁ£¬Èç¹û¿ªÆôÏÔ´æ£¬ÔòÍ¬ÑùÇåÁã
+//  178 *  ²ÎÊýËµÃ÷£ºÎÞ
+//  179 *  º¯Êý·µ»Ø£ºÎÞ
+//  180 *  Ê¹ÓÃÊ¾Àý£º
+//  181 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  182 void OLED_Clear(void)
+OLED_Clear:
+          CFI Block cfiBlock6 Using cfiCommon0
+          CFI Function OLED_Clear
+//  183 {
+        FUNCALL OLED_Clear, OLED_SetPosition
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL OLED_Clear, OLED_WriteByte
+        LOCFRAME CSTACK, 12, STACK
+        PUSHM.A #0x2, R11
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+12
+//  184   int line,x;
+//  185   
+//  186   for(line=0;line < (OLED_HEIGHT/8);line++)
+        MOV.W   #0x0, R10
+??OLED_Clear_1:
+        CMP.W   #0x8, R10
+        JGE     ??OLED_Clear_2
+//  187   {
+//  188     OLED_SetPosition(line,0);
+        MOV.B   #0x0, R13
+        PUSH.W  R12
+          CFI CFA SP+14
+        MOV.B   R10, 0(SP)
+        POP.W   R12
+          CFI CFA SP+12
+        CALLA   #OLED_SetPosition
+//  189     for(x=0;x<OLED_WIDTH;x++)
+        MOV.W   #0x0, R11
+??OLED_Clear_0:
+        CMP.W   #0x80, R11
+        JGE     ??OLED_Clear_3
+//  190     {
+//  191 #ifdef OLED_RAM //¿ªÆôÏÔ´æ
+//  192       OLED_RAM_DATA[line][x] = 0;
+        MOV.W   R10, R15
+        XOR.W   #0x8000, R15
+        RPT     #0x7
+        RLAX.A  R15
+        MOV.W   R11, R14
+        XOR.W   #0x8000, R14
+        SUBA    #0x8000, R14
+        ADDA    R14, R15
+        MOVX.B  #0x0, OLED_RAM_DATA(R15)
+//  193 #endif
+//  194       OLED_WriteByte(DATA,0);
+        MOV.B   #0x0, R13
+        MOV.B   #0x1, R12
+        CALLA   #OLED_WriteByte
+//  195     }
+        ADD.W   #0x1, R11
+        JMP     ??OLED_Clear_0
+//  196   }
+??OLED_Clear_3:
+        ADD.W   #0x1, R10
+        JMP     ??OLED_Clear_1
+//  197 }
+??OLED_Clear_2:
+        POPM.A  #0x2, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock6
+//  198 /*******************************************************************************
+//  199 *  º¯ÊýÃû³Æ£ºOLED_Init(void)
+//  200 *  ¹¦ÄÜËµÃ÷£ºOLED³õÊ¼»¯
+//  201 *  ²ÎÊýËµÃ÷£ºÎÞ
+//  202 *  º¯Êý·µ»Ø£ºÎÞ
+//  203 *  Ê¹ÓÃÊ¾Àý£º
+//  204 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  205 void OLED_Init(void)
+OLED_Init:
+          CFI Block cfiBlock7 Using cfiCommon0
+          CFI Function OLED_Init
+//  206 {
+        FUNCALL OLED_Init, OLED_PORT_Init
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL OLED_Init, OLED_WriteByte
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL OLED_Init, OLED_WriteByte
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL OLED_Init, OLED_WriteByte
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL OLED_Init, OLED_WriteByte
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL OLED_Init, OLED_WriteByte
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL OLED_Init, OLED_WriteByte
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL OLED_Init, OLED_WriteByte
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL OLED_Init, OLED_WriteByte
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL OLED_Init, OLED_WriteByte
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL OLED_Init, OLED_WriteByte
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL OLED_Init, OLED_WriteByte
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL OLED_Init, OLED_WriteByte
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL OLED_Init, OLED_WriteByte
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL OLED_Init, OLED_WriteByte
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL OLED_Init, OLED_WriteByte
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL OLED_Init, OLED_WriteByte
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL OLED_Init, OLED_WriteByte
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL OLED_Init, OLED_WriteByte
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL OLED_Init, OLED_Clear
+        LOCFRAME CSTACK, 8, STACK
+        PUSHM.A #0x1, R10
+          CFI R10L Frame(CFA, -8)
+          CFI R10H Frame(CFA, -6)
+          CFI CFA SP+8
+//  207     uint16_t i;
+//  208     OLED_PORT_Init();
+        CALLA   #OLED_PORT_Init
+//  209     // OLED_CS  = 0;  //Ð¾Æ¬Ñ¡ÔñÊäÈë µÍµçÆ½Ê¹ÄÜ
+//  210     OLED_RST=0;  //¸´Î»ÐÅºÅ,²»¿ÉÊ¡ÂÔ
+        BIC.B   #0x80, &0x222
+//  211     for(i=0;i<10000;i++);
+        MOV.W   #0x0, R10
+??OLED_Init_0:
+        CMP.W   #0x2710, R10
+        JC      ??OLED_Init_1
+        ADD.W   #0x1, R10
+        JMP     ??OLED_Init_0
+//  212     OLED_RST=1;
+??OLED_Init_1:
+        BIS.B   #0x80, &0x222
+//  213     
+//  214    
+//  215     OLED_WriteByte(CMD,0xA8);    //set Multiplex Ratio
+        MOV.B   #0xa8, R13
+        MOV.B   #0x0, R12
+        CALLA   #OLED_WriteByte
+//  216     OLED_WriteByte(CMD,0x3F);  
+        MOV.B   #0x3f, R13
+        MOV.B   #0x0, R12
+        CALLA   #OLED_WriteByte
+//  217     
+//  218     OLED_WriteByte(CMD,0xD3);    //ÉèÖÃÏÔÊ¾Æ«ÒÆ
+        MOV.B   #0xd3, R13
+        MOV.B   #0x0, R12
+        CALLA   #OLED_WriteByte
+//  219     OLED_WriteByte(CMD,0x00);
+        MOV.B   #0x0, R13
+        MOV.B   #0x0, R12
+        CALLA   #OLED_WriteByte
+//  220     
+//  221     OLED_WriteByte(CMD,0x40);    //ÉèÖÃ¿ªÊ¼ÏÔÊ¾ÐÐ 
+        MOV.B   #0x40, R13
+        MOV.B   #0x0, R12
+        CALLA   #OLED_WriteByte
+//  222     
+//  223     OLED_WriteByte(CMD,0xA1);    //ÉèÖÃ¶ÎÖØÓ³Éä  A0h/A1h
+        MOV.B   #0xa1, R13
+        MOV.B   #0x0, R12
+        CALLA   #OLED_WriteByte
+//  224     
+//  225     OLED_WriteByte(CMD,0xC8);    //ÉèÖÃCOMµÄÉ¨Ãè·½Ïò  C0h/C8h
+        MOV.B   #0xc8, R13
+        MOV.B   #0x0, R12
+        CALLA   #OLED_WriteByte
+//  226     
+//  227     OLED_WriteByte(CMD,0xDA);    //ÉèÖÃCOM¹Ü½ÅµÄÓ²¼þÅäÖÃ
+        MOV.B   #0xda, R13
+        MOV.B   #0x0, R12
+        CALLA   #OLED_WriteByte
+//  228     OLED_WriteByte(CMD,0x12);
+        MOV.B   #0x12, R13
+        MOV.B   #0x0, R12
+        CALLA   #OLED_WriteByte
+//  229     
+//  230     OLED_WriteByte(CMD,0x81);    //ÉèÖÃ¶Ô±È¶È
+        MOV.B   #0x81, R13
+        MOV.B   #0x0, R12
+        CALLA   #OLED_WriteByte
+//  231     OLED_WriteByte(CMD,0x7F);
+        MOV.B   #0x7f, R13
+        MOV.B   #0x0, R12
+        CALLA   #OLED_WriteByte
+//  232     
+//  233     OLED_WriteByte(CMD,0xA4);    //½ûÖ¹ÆÁÄ»ÏÔÊ¾
+        MOV.B   #0xa4, R13
+        MOV.B   #0x0, R12
+        CALLA   #OLED_WriteByte
+//  234     
+//  235     OLED_WriteByte(CMD,0xA6);    //ÉèÖÃÕý³£ÏÔÊ¾
+        MOV.B   #0xa6, R13
+        MOV.B   #0x0, R12
+        CALLA   #OLED_WriteByte
+//  236     
+//  237     OLED_WriteByte(CMD,0xD5);    //ÉèÖÃOSCÆµÂÊ
+        MOV.B   #0xd5, R13
+        MOV.B   #0x0, R12
+        CALLA   #OLED_WriteByte
+//  238     OLED_WriteByte(CMD,0x80);
+        MOV.B   #0x80, R13
+        MOV.B   #0x0, R12
+        CALLA   #OLED_WriteByte
+//  239     
+//  240     OLED_WriteByte(CMD,0x8D);    //Enable charge pupm regulator
+        MOV.B   #0x8d, R13
+        MOV.B   #0x0, R12
+        CALLA   #OLED_WriteByte
+//  241     OLED_WriteByte(CMD,0x14);
+        MOV.B   #0x14, R13
+        MOV.B   #0x0, R12
+        CALLA   #OLED_WriteByte
+//  242     
+//  243     OLED_WriteByte(CMD,0xAF);    //¿ªÏÔÊ¾
+        MOV.B   #0xaf, R13
+        MOV.B   #0x0, R12
+        CALLA   #OLED_WriteByte
+//  244     
+//  245     OLED_Clear();                //ÇåÆÁ
+        CALLA   #OLED_Clear
+//  246 }
+        POPM.A  #0x1, R10
+          CFI R10H SameValue
+          CFI R10L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock7
+        REQUIRE _A_PBOUT_L
+//  247 /*******************************************************************************
+//  248 *  º¯ÊýÃû³Æ£ºOLED_DispChar(OLED_FONT font,uint8_t line,uint8_t x,char ascii)
+//  249 *  ¹¦ÄÜËµÃ÷£ºOLEDÏÔÊ¾Ò»¸ö×Ö·û
+//  250 *  ²ÎÊýËµÃ÷£ºOLED_FONT font£º×ÖÌå£¨OLED_FONTÃ¶¾Ù£©
+//  251              uint8_t line£ºÐÐÎ»ÖÃ£¨0-7£©
+//  252              uint8_t x   £ºÁÐÎ»ÖÃ£¨0-127£©
+//  253              char ascii  £ºÒªÏÔÊ¾µÄ×Ö·û
+//  254 *  º¯Êý·µ»Ø£ºÎÞ
+//  255 *  Ê¹ÓÃÊ¾Àý£º
+//  256 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  257 void OLED_DispChar(OLED_FONT font,uint8_t line,uint8_t x,char ascii)
+OLED_DispChar:
+          CFI Block cfiBlock8 Using cfiCommon0
+          CFI Function OLED_DispChar
+//  258 {
+        FUNCALL OLED_DispChar, OLED_SetPosition
+        LOCFRAME CSTACK, 36, STACK
+        FUNCALL OLED_DispChar, OLED_SetPosition
+        LOCFRAME CSTACK, 36, STACK
+        FUNCALL OLED_DispChar, OLED_WriteByte
+        LOCFRAME CSTACK, 36, STACK
+        PUSHM.A #0x8, R11
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+36
+        MOV.B   R12, R9
+        MOV.B   R13, R7
+        MOV.B   R14, R4
+        MOV.B   R15, R6
+//  259     uint8_t offect,i,height;
+//  260     const unsigned char *pFontData;
+//  261     if(ascii<' '||ascii>'~')return;
+        CMP.B   #0x20, R6
+        JNC     ??OLED_DispChar_2
+        CMP.B   #0x7f, R6
+        JC      ??OLED_DispChar_2
+//  262     OLED_SetPosition(line,x);
+        MOV.B   R4, R13
+        MOV.B   R7, R12
+        CALLA   #OLED_SetPosition
+//  263     offect = (uint8_t)(ascii - ' ');
+        MOV.B   R6, R14
+        ADD.B   #0xe0, R14
+        MOV.B   R14, R5
+//  264     //¶ÁÈ¡´æ·Å×ÖÌåÊý¾ÝµÄÆðÊ¼Î»ÖÃ
+//  265     pFontData = Font[font].pData+(Font[font].width*Font[font].height/8)*offect;
+        MOV.B   R9, R15
+        ADDA    R15, R15
+        MOVA    R15, R14
+        ADDA    R15, R15
+        ADDA    R14, R15
+        MOVX.A  Font + 2(R15), R15
+        PUSHM.A #0x1, R15
+          CFI CFA SP+40
+        MOV.B   R9, R15
+        ADDA    R15, R15
+        MOVA    R15, R14
+        ADDA    R15, R15
+        ADDA    R14, R15
+        MOV.B   R9, R14
+        ADDA    R14, R14
+        MOVA    R14, R13
+        ADDA    R14, R14
+        ADDA    R13, R14
+        PUSH.W  SR
+          CFI CFA SP+42
+        DINT
+        NOP
+        MOVX.B  Font(R15), &0x4c0
+        MOVX.B  Font + 1(R14), &0x4c8
+        MOV.W   &0x4ca, R12
+        POP.W   SR
+          CFI CFA SP+40
+        MOV.W   #0x8, R14
+        CALLA   #?DivMod16s
+        PUSH.W  SR
+          CFI CFA SP+42
+        DINT
+        NOP
+        MOV.W   R12, &0x4c0
+        MOV.B   R5, &0x4c8
+        MOV.W   &0x4ca, R15
+        POP.W   SR
+          CFI CFA SP+40
+        MOV.W   R15, R14
+        XOR.W   #0x8000, R14
+        SUBA    #0x8000, R14
+        POPM.A  #0x1, R15
+          CFI CFA SP+36
+        ADDA    R14, R15
+        MOVA    R15, R11
+//  266     
+//  267     for(height = 0;height < Font[font].height;height+=8)
+        MOV.B   #0x0, R10
+??OLED_DispChar_1:
+        MOV.B   R9, R15
+        ADDA    R15, R15
+        MOVA    R15, R14
+        ADDA    R15, R15
+        ADDA    R14, R15
+        CMPX.B  Font + 1(R15), R10
+        JC      ??OLED_DispChar_2
+//  268     {
+//  269       OLED_SetPosition(line+(height/8),x);                   
+        MOV.B   R4, R13
+        PUSH.B  R13
+          CFI CFA SP+38
+        MOV.B   R10, R12
+        MOV.B   #0x8, R14
+        CALLA   #?DivMod8u
+        MOV.B   R7, R14
+        ADD.B   R12, R14
+        POP.B   R13
+          CFI CFA SP+36
+        MOV.B   R14, R12
+        CALLA   #OLED_SetPosition
+//  270       for(i=0;i<Font[font].width;i++)
+        MOV.B   #0x0, R8
+??OLED_DispChar_0:
+        MOV.B   R9, R15
+        ADDA    R15, R15
+        MOVA    R15, R14
+        ADDA    R15, R15
+        ADDA    R14, R15
+        CMPX.B  Font(R15), R8
+        JC      ??OLED_DispChar_5
+//  271       {
+//  272         OLED_WriteByte(DATA,*pFontData++);
+        MOV.B   @R11, R13
+        MOV.B   #0x1, R12
+        CALLA   #OLED_WriteByte
+        ADDA    #0x1, R11
+//  273       }
+        ADD.B   #0x1, R8
+        JMP     ??OLED_DispChar_0
+//  274     }
+??OLED_DispChar_5:
+        ADD.B   #0x8, R10
+        JMP     ??OLED_DispChar_1
+//  275 }
+??OLED_DispChar_2:
+        POPM.A  #0x8, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R4H SameValue
+          CFI R5H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R4L SameValue
+          CFI R5L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock8
+//  276 /*******************************************************************************
+//  277 *  º¯ÊýÃû³Æ£ºOLED_DispStringLen(OLED_FONT font,uint8_t line,uint8_t x,char *str,uint8_t len)
+//  278 *  ¹¦ÄÜËµÃ÷£ºOLEDÏÔÊ¾Ò»¸öÖ¸¶¨³¤¶ÈµÄ×Ö·û´®
+//  279 *  ²ÎÊýËµÃ÷£ºOLED_FONT font£º×ÖÌå£¨OLED_FONTÃ¶¾Ù£©
+//  280              uint8_t line£ºÐÐÎ»ÖÃ£¨0-7£©
+//  281              uint8_t x   £ºÁÐÎ»ÖÃ£¨0-127£©
+//  282              char *str   £º×Ö·û´®
+//  283              uint8_t len £º×Ö·û´®³¤¶È
+//  284 *  º¯Êý·µ»Ø£ºÎÞ
+//  285 *  Ê¹ÓÃÊ¾Àý£º
+//  286 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  287 void OLED_DispStringLen(OLED_FONT font,uint8_t line,uint8_t x,char *str,uint8_t len)
+OLED_DispStringLen:
+          CFI Block cfiBlock9 Using cfiCommon0
+          CFI Function OLED_DispStringLen
+//  288 {
+        FUNCALL OLED_DispStringLen, OLED_DispChar
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OLED_DispStringLen, OLED_DispChar
+        LOCFRAME CSTACK, 28, STACK
+        PUSHM.A #0x6, R11
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+28
+        MOV.B   R12, R9
+        MOV.B   R13, R11
+        MOV.B   R14, R10
+        MOVA    R15, R8
+        MOV.B   0x1c(SP), R6
+//  289    while(len--)
+??OLED_DispStringLen_0:
+        MOV.B   R6, R14
+        MOV.B   R14, R6
+        ADD.B   #0xff, R6
+        CMP.B   #0x0, R14
+        JEQ     ??OLED_DispStringLen_1
+//  290    {
+//  291      if(*str)
+        CMP.B   #0x0, 0(R8)
+        JEQ     ??OLED_DispStringLen_2
+//  292      {
+//  293        OLED_DispChar(font,line,x,*str++);
+        MOV.B   @R8, R15
+        MOV.B   R10, R14
+        MOV.B   R11, R13
+        MOV.B   R9, R12
+        CALLA   #OLED_DispChar
+        ADDA    #0x1, R8
+        JMP     ??OLED_DispStringLen_3
+//  294      }
+//  295      else
+//  296      {
+//  297        OLED_DispChar(font,line,x,' ');
+??OLED_DispStringLen_2:
+        MOV.B   #0x20, R15
+        MOV.B   R10, R14
+        MOV.B   R11, R13
+        MOV.B   R9, R12
+        CALLA   #OLED_DispChar
+//  298      }
+//  299      x += Font[font].width;
+??OLED_DispStringLen_3:
+        MOV.B   R9, R15
+        ADDA    R15, R15
+        MOVA    R15, R14
+        ADDA    R15, R15
+        ADDA    R14, R15
+        ADDX.B  Font(R15), R10
+//  300      if(x > (OLED_WIDTH - Font[font].width))
+        MOV.W   #0x80, R14
+        MOV.B   R9, R15
+        ADDA    R15, R15
+        MOVA    R15, R13
+        ADDA    R15, R15
+        ADDA    R13, R15
+        MOVX.B  Font(R15), R15
+        MOV.B   R15, R15
+        SUB.W   R15, R14
+        MOV.B   R10, R10
+        CMP.W   R10, R14
+        JGE     ??OLED_DispStringLen_0
+//  301      {
+//  302         x = 0;
+        MOV.B   #0x0, R10
+//  303         line += (Font[font].height/8);
+        MOV.B   R9, R15
+        ADDA    R15, R15
+        MOVA    R15, R14
+        ADDA    R15, R15
+        ADDA    R14, R15
+        MOVX.B  Font + 1(R15), R12
+        MOV.B   #0x8, R14
+        CALLA   #?DivMod8u
+        ADD.B   R12, R11
+//  304         if(line > ((OLED_HEIGHT/Font[font].height)-1))line = 0;
+        MOV.W   #0x40, R12
+        MOV.B   R9, R15
+        ADDA    R15, R15
+        MOVA    R15, R14
+        ADDA    R15, R15
+        ADDA    R14, R15
+        MOVX.B  Font + 1(R15), R14
+        MOV.B   R14, R14
+        CALLA   #?DivMod16s
+        ADD.W   #0xffff, R12
+        MOV.B   R11, R11
+        CMP.W   R11, R12
+        JGE     ??OLED_DispStringLen_0
+        MOV.B   #0x0, R11
+        JMP     ??OLED_DispStringLen_0
+//  305      }
+//  306    }
+//  307 }
+??OLED_DispStringLen_1:
+        POPM.A  #0x6, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock9
+//  308 /*******************************************************************************
+//  309 *  º¯ÊýÃû³Æ£ºOLED_DispStringAt(OLED_FONT font,uint8_t line,uint8_t x,char *str)
+//  310 *  ¹¦ÄÜËµÃ÷£ºOLEDÔÚÖ¸¶¨Î»ÖÃÏÔÊ¾Ò»¸öµÄ×Ö·û´®
+//  311 *  ²ÎÊýËµÃ÷£ºOLED_FONT font£º×ÖÌå£¨OLED_FONTÃ¶¾Ù£©
+//  312              uint8_t line£ºÐÐÎ»ÖÃ£¨0-7£©
+//  313              uint8_t x   £ºÁÐÎ»ÖÃ£¨0-127£©
+//  314              char *str   £ºÒªÏÔÊ¾µÄ×Ö·û´®
+//  315 *  º¯Êý·µ»Ø£ºÎÞ
+//  316 *  Ê¹ÓÃÊ¾Àý£ºOLED_DispStringAt(FONT_6X8,0,0,"Hello!"); //ÏÔÊ¾Ò»¸ö×Ö·û´®
+//  317 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  318 void OLED_DispStringAt(OLED_FONT font,uint8_t line,uint8_t x,char *str)
+OLED_DispStringAt:
+          CFI Block cfiBlock10 Using cfiCommon0
+          CFI Function OLED_DispStringAt
+//  319 {
+        FUNCALL OLED_DispStringAt, OLED_DispChar
+        LOCFRAME CSTACK, 20, STACK
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        MOV.B   R12, R9
+        MOV.B   R13, R11
+        MOV.B   R14, R10
+        MOVA    R15, R8
+//  320   while(*str != '\0')
+??OLED_DispStringAt_0:
+        CMP.B   #0x0, 0(R8)
+        JEQ     ??OLED_DispStringAt_1
+//  321   {
+//  322      OLED_DispChar(font,line,x,*str++);
+        MOV.B   @R8, R15
+        MOV.B   R10, R14
+        MOV.B   R11, R13
+        MOV.B   R9, R12
+        CALLA   #OLED_DispChar
+        ADDA    #0x1, R8
+//  323      x += Font[font].width;
+        MOV.B   R9, R15
+        ADDA    R15, R15
+        MOVA    R15, R14
+        ADDA    R15, R15
+        ADDA    R14, R15
+        ADDX.B  Font(R15), R10
+//  324      if(x > (OLED_WIDTH - Font[font].width))
+        MOV.W   #0x80, R14
+        MOV.B   R9, R15
+        ADDA    R15, R15
+        MOVA    R15, R13
+        ADDA    R15, R15
+        ADDA    R13, R15
+        MOVX.B  Font(R15), R15
+        MOV.B   R15, R15
+        SUB.W   R15, R14
+        MOV.B   R10, R10
+        CMP.W   R10, R14
+        JGE     ??OLED_DispStringAt_0
+//  325      {
+//  326         x = 0;
+        MOV.B   #0x0, R10
+//  327         line += (Font[font].height/8);
+        MOV.B   R9, R15
+        ADDA    R15, R15
+        MOVA    R15, R14
+        ADDA    R15, R15
+        ADDA    R14, R15
+        MOVX.B  Font + 1(R15), R12
+        MOV.B   #0x8, R14
+        CALLA   #?DivMod8u
+        ADD.B   R12, R11
+//  328         if(line > ((OLED_HEIGHT/Font[font].height)-1))line = 0;
+        MOV.W   #0x40, R12
+        MOV.B   R9, R15
+        ADDA    R15, R15
+        MOVA    R15, R14
+        ADDA    R15, R15
+        ADDA    R14, R15
+        MOVX.B  Font + 1(R15), R14
+        MOV.B   R14, R14
+        CALLA   #?DivMod16s
+        ADD.W   #0xffff, R12
+        MOV.B   R11, R11
+        CMP.W   R11, R12
+        JGE     ??OLED_DispStringAt_0
+        MOV.B   #0x0, R11
+        JMP     ??OLED_DispStringAt_0
+//  329      }
+//  330   }
+//  331 }
+??OLED_DispStringAt_1:
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock10
+//  332 /*******************************************************************************
+//  333 *  º¯ÊýÃû³Æ£ºOLED_DispStringAtCEOL(OLED_FONT font,uint8_t line,uint8_t x,char *str)
+//  334 *  ¹¦ÄÜËµÃ÷£ºOLEDÔÚÖ¸¶¨Î»ÖÃÏÔÊ¾Ò»¸öµÄ×Ö·û´®£¬²¢Çå³ýÏÔÊ¾ÖÁÄ©Î²
+//  335 *  ²ÎÊýËµÃ÷£ºOLED_FONT font£º×ÖÌå£¨OLED_FONTÃ¶¾Ù£©
+//  336              uint8_t line£ºÐÐÎ»ÖÃ£¨0-7£©
+//  337              uint8_t x   £ºÁÐÎ»ÖÃ£¨0-127£©
+//  338              char *str   £º×Ö·û´®
+//  339 *  º¯Êý·µ»Ø£ºÎÞ
+//  340 *  Ê¹ÓÃÊ¾Àý£ºOLED_DispStringAtCEOL(FONT_6X8,1,0,"Hello!"); //ÏÔÊ¾Ò»¸ö×Ö·û´®²¢Çå³ýÏÔÊ¾ÖÁÄ©Î²
+//  341 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  342 void OLED_DispStringAtCEOL(OLED_FONT font,uint8_t line,uint8_t x,char *str)
+OLED_DispStringAtCEOL:
+          CFI Block cfiBlock11 Using cfiCommon0
+          CFI Function OLED_DispStringAtCEOL
+//  343 {
+        FUNCALL OLED_DispStringAtCEOL, OLED_DispChar
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OLED_DispStringAtCEOL, OLED_FillPart
+        LOCFRAME CSTACK, 22, STACK
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        MOV.B   R12, R9
+        MOV.B   R13, R10
+        MOV.B   R14, R11
+        MOVA    R15, R8
+//  344     while(*str != '\0')
+??OLED_DispStringAtCEOL_0:
+        CMP.B   #0x0, 0(R8)
+        JEQ     ??OLED_DispStringAtCEOL_1
+//  345     {
+//  346       OLED_DispChar(font,line,x,*str++);
+        MOV.B   @R8, R15
+        MOV.B   R11, R14
+        MOV.B   R10, R13
+        MOV.B   R9, R12
+        CALLA   #OLED_DispChar
+        ADDA    #0x1, R8
+//  347       x += Font[font].width;
+        MOV.B   R9, R15
+        ADDA    R15, R15
+        MOVA    R15, R14
+        ADDA    R15, R15
+        ADDA    R14, R15
+        ADDX.B  Font(R15), R11
+//  348       if(x > (OLED_WIDTH - Font[font].width))
+        MOV.W   #0x80, R14
+        MOV.B   R9, R15
+        ADDA    R15, R15
+        MOVA    R15, R13
+        ADDA    R15, R15
+        ADDA    R13, R15
+        MOVX.B  Font(R15), R15
+        MOV.B   R15, R15
+        SUB.W   R15, R14
+        MOV.B   R11, R11
+        CMP.W   R11, R14
+        JGE     ??OLED_DispStringAtCEOL_0
+//  349       {
+//  350         x = 0;
+        MOV.B   #0x0, R11
+//  351         line += (Font[font].height/8);
+        MOV.B   R9, R15
+        ADDA    R15, R15
+        MOVA    R15, R14
+        ADDA    R15, R15
+        ADDA    R14, R15
+        MOVX.B  Font + 1(R15), R12
+        MOV.B   #0x8, R14
+        CALLA   #?DivMod8u
+        ADD.B   R12, R10
+//  352         if(line > ((OLED_HEIGHT/Font[font].height)-1))line = 0;
+        MOV.W   #0x40, R12
+        MOV.B   R9, R15
+        ADDA    R15, R15
+        MOVA    R15, R14
+        ADDA    R15, R15
+        ADDA    R14, R15
+        MOVX.B  Font + 1(R15), R14
+        MOV.B   R14, R14
+        CALLA   #?DivMod16s
+        ADD.W   #0xffff, R12
+        MOV.B   R10, R10
+        CMP.W   R10, R12
+        JGE     ??OLED_DispStringAtCEOL_0
+        MOV.B   #0x0, R10
+        JMP     ??OLED_DispStringAtCEOL_0
+//  353       }
+//  354     }
+//  355     //¶Ô¸ÃÐÐÊ£ÓàÏÔÊ¾ÇøÓòÇåÁã
+//  356     OLED_FillPart(x,line,OLED_WIDTH-1,line,0);
+??OLED_DispStringAtCEOL_1:
+        PUSH.B  #0x0
+          CFI CFA SP+22
+        MOV.B   R10, R15
+        MOV.B   #0x7f, R14
+        MOV.B   R10, R13
+        MOV.B   R11, R12
+        CALLA   #OLED_FillPart
+//  357 }
+        ADD.W   #0x2, SP
+          CFI CFA SP+20
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock11
+//  358 /*******************************************************************************
+//  359 *  º¯ÊýÃû³Æ£ºOLED_DispDecAt(OLED_FONT font,uint8_t line,uint8_t x,int32_t number,uint8_t len)
+//  360 *  ¹¦ÄÜËµÃ÷£ºOLEDÏÔÊ¾Ò»¸öµÄÕûÐÎÊý×Ö
+//  361 *  ²ÎÊýËµÃ÷£ºOLED_FONT font£º×ÖÌå£¨OLED_FONTÃ¶¾Ù£©
+//  362              uint8_t line£ºÐÐÎ»ÖÃ£¨0-7£©
+//  363              uint8_t x   £ºÁÐÎ»ÖÃ£¨0-127£©
+//  364              int32_t number£ºÒªÏÔÊ¾µÄÊý×Ö
+//  365              uint8_t len   £ºÏÔÊ¾µÄÎ»Êý
+//  366 *  º¯Êý·µ»Ø£ºÎÞ
+//  367 *  Ê¹ÓÃÊ¾Àý£º
+//  368 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  369 void OLED_DispDecAt(OLED_FONT font,uint8_t line,uint8_t x,int32_t number,uint8_t len)
+OLED_DispDecAt:
+          CFI Block cfiBlock12 Using cfiCommon0
+          CFI Function OLED_DispDecAt
+//  370 {
+        FUNCALL OLED_DispDecAt, OLED_DispStringAt
+        LOCFRAME CSTACK, 70, STACK
+        PUSHM.A #0x8, R11
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+36
+        PUSH.B  R12
+          CFI CFA SP+38
+        PUSH.B  R13
+          CFI CFA SP+40
+        SUB.W   #0x1e, SP
+          CFI CFA SP+70
+        MOV.B   R14, R5
+        MOV.B   R15, R7
+        MOV.W   0x46(SP), R8
+        MOV.W   0x48(SP), R9
+//  371   char buf[30];
+//  372   int8_t p,flag=0;
+        MOV.B   #0x0, R4
+//  373   uint32_t temp;
+//  374   if(number < 0)
+        CMP.W   #0x0, R9
+        JGE     ??OLED_DispDecAt_5
+//  375   {
+//  376     number = -number;
+        XOR.W   #0xffff, R8
+        XOR.W   #0xffff, R9
+        ADD.W   #0x1, R8
+        ADDC.W  #0x0, R9
+//  377     flag = 1;
+        MOV.B   #0x1, R4
+//  378   }
+//  379   temp = 10;
+??OLED_DispDecAt_5:
+        MOV.W   #0xa, R10
+        MOV.W   #0x0, R11
+//  380   for(p = len-1;p >= 0;p--)
+        MOV.B   R7, R14
+        ADD.B   #0xff, R14
+        MOV.B   R14, R6
+??OLED_DispDecAt_0:
+        CMP.B   #0x0, R6
+        JL      ??OLED_DispDecAt_3
+//  381   {
+//  382     buf[p] = ((number%temp)/(temp/10)) + '0';
+        MOV.W   R8, R12
+        MOV.W   R9, R13
+        MOV.W   R10, R14
+        MOV.W   R11, R15
+        CALLA   #?DivMod32u
+        MOV.W   R14, R12
+        MOV.W   R15, R13
+        PUSH.W  R13
+          CFI CFA SP+72
+        PUSH.W  R12
+          CFI CFA SP+74
+        MOV.W   R10, R12
+        MOV.W   R11, R13
+        MOV.W   #0xa, R14
+        MOV.W   #0x0, R15
+        CALLA   #?DivMod32u
+        MOV.W   R12, R14
+        MOV.W   R13, R15
+        POP.W   R12
+          CFI CFA SP+72
+        POP.W   R13
+          CFI CFA SP+70
+        CALLA   #?DivMod32u
+        ADD.B   #0x30, R12
+        MOV.B   R6, R15
+        SXT     R15
+        AND.W   #0xffff, R15
+        ADD.W   SP, R15
+        MOV.B   R12, 0(R15)
+//  383     if(number < temp)break;
+        CMP.W   R11, R9
+        JNC     ??OLED_DispDecAt_3
+        JNE     ??OLED_DispDecAt_4
+        CMP.W   R10, R8
+        JNC     ??OLED_DispDecAt_3
+//  384     temp = temp * 10;
+??OLED_DispDecAt_4:
+        MOV.W   R10, R12
+        MOV.W   R11, R13
+        MOV.W   #0xa, R14
+        MOV.W   #0x0, R15
+        CALLA   #?Mul32
+        MOV.W   R12, R10
+        MOV.W   R13, R11
+//  385   }
+        ADD.B   #0xff, R6
+        JMP     ??OLED_DispDecAt_0
+//  386   if(flag)
+??OLED_DispDecAt_3:
+        CMP.B   #0x0, R4
+        JEQ     ??OLED_DispDecAt_1
+//  387   {
+//  388     buf[--p] = '-';
+        ADD.B   #0xff, R6
+        MOV.B   R6, R15
+        SXT     R15
+        AND.W   #0xffff, R15
+        ADD.W   SP, R15
+        MOV.B   #0x2d, 0(R15)
+//  389   }
+//  390    
+//  391   while(p-- > 0)
+??OLED_DispDecAt_1:
+        MOV.B   R6, R14
+        MOV.B   R14, R6
+        ADD.B   #0xff, R6
+        CMP.B   #0x1, R14
+        JL      ??OLED_DispDecAt_6
+//  392   {
+//  393     buf[p] = ' ';
+        MOV.B   R6, R15
+        SXT     R15
+        AND.W   #0xffff, R15
+        ADD.W   SP, R15
+        MOV.B   #0x20, 0(R15)
+        JMP     ??OLED_DispDecAt_1
+//  394   }
+//  395 
+//  396   buf[len] = 0;
+??OLED_DispDecAt_6:
+        MOV.B   R7, R15
+        ADD.W   SP, R15
+        MOV.B   #0x0, 0(R15)
+//  397   
+//  398   OLED_DispStringAt(font,line,x,buf);
+        MOV.W   SP, R15
+        ADD.W   #0x0, R15
+        MOV.B   R5, R14
+        MOV.B   0x1e(SP), R13
+        MOV.B   0x20(SP), R12
+        CALLA   #OLED_DispStringAt
+//  399 }
+        ADD.W   #0x22, SP
+          CFI CFA SP+36
+        POPM.A  #0x8, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R4H SameValue
+          CFI R5H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R4L SameValue
+          CFI R5L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock12
+//  400 /*******************************************************************************
+//  401 *  º¯ÊýÃû³Æ£ºOLED_DispFolatAt(OLED_FONT font,uint8_t line,uint8_t x,float number,uint8_t len)
+//  402 *  ¹¦ÄÜËµÃ÷£ºOLEDÏÔÊ¾Ò»¸öµÄ¸¡µãÊý
+//  403 *  ²ÎÊýËµÃ÷£ºOLED_FONT font£º×ÖÌå£¨OLED_FONTÃ¶¾Ù£©
+//  404              uint8_t line£ºÐÐÎ»ÖÃ£¨0-7£©
+//  405              uint8_t x   £ºÁÐÎ»ÖÃ£¨0-127£©
+//  406              float number£ºÒªÏÔÊ¾µÄ¸¡µãÊý
+//  407              uint8_t len £ºÏÔÊ¾µÄÎ»Êý(²»¼ÆËãÐ¡Êýµã)
+//  408 *  º¯Êý·µ»Ø£ºÎÞ
+//  409 *  Ê¹ÓÃÊ¾Àý£º
+//  410 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  411 void OLED_DispFolatAt(OLED_FONT font,uint8_t line,uint8_t x,float number,uint8_t len)
+OLED_DispFolatAt:
+          CFI Block cfiBlock13 Using cfiCommon0
+          CFI Function OLED_DispFolatAt
+//  412 {
+        FUNCALL OLED_DispFolatAt, _CmpLt32f
+        LOCFRAME CSTACK, 86, STACK
+        FUNCALL OLED_DispFolatAt, _Add32f
+        LOCFRAME CSTACK, 86, STACK
+        FUNCALL OLED_DispFolatAt, _CmpGe32f
+        LOCFRAME CSTACK, 86, STACK
+        FUNCALL OLED_DispFolatAt, _Mul32f
+        LOCFRAME CSTACK, 86, STACK
+        FUNCALL OLED_DispFolatAt, _Div32f
+        LOCFRAME CSTACK, 86, STACK
+        FUNCALL OLED_DispFolatAt, _Add32f
+        LOCFRAME CSTACK, 86, STACK
+        FUNCALL OLED_DispFolatAt, _Cast32fto32s
+        LOCFRAME CSTACK, 86, STACK
+        FUNCALL OLED_DispFolatAt, _Cast32sto32f
+        LOCFRAME CSTACK, 86, STACK
+        FUNCALL OLED_DispFolatAt, _Div32f
+        LOCFRAME CSTACK, 86, STACK
+        FUNCALL OLED_DispFolatAt, _Cast32fto32u
+        LOCFRAME CSTACK, 86, STACK
+        FUNCALL OLED_DispFolatAt, _Cast32uto32f
+        LOCFRAME CSTACK, 86, STACK
+        FUNCALL OLED_DispFolatAt, _Mul32f
+        LOCFRAME CSTACK, 86, STACK
+        FUNCALL OLED_DispFolatAt, _Sub32f
+        LOCFRAME CSTACK, 86, STACK
+        FUNCALL OLED_DispFolatAt, OLED_DispStringAt
+        LOCFRAME CSTACK, 86, STACK
+        FUNCALL OLED_DispFolatAt, _Mul32f
+        LOCFRAME CSTACK, 86, STACK
+        FUNCALL OLED_DispFolatAt, _Cast32fto32u
+        LOCFRAME CSTACK, 86, STACK
+        FUNCALL OLED_DispFolatAt, _Cast32uto32f
+        LOCFRAME CSTACK, 86, STACK
+        FUNCALL OLED_DispFolatAt, _Sub32f
+        LOCFRAME CSTACK, 86, STACK
+        FUNCALL OLED_DispFolatAt, OLED_DispStringAt
+        LOCFRAME CSTACK, 86, STACK
+        PUSHM.A #0x8, R11
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+36
+        PUSH.B  R12
+          CFI CFA SP+38
+        PUSH.B  R13
+          CFI CFA SP+40
+        PUSH.B  R14
+          CFI CFA SP+42
+        SUB.W   #0x2c, SP
+          CFI CFA SP+86
+        MOV.B   R15, R4
+        MOV.W   0x56(SP), R10
+        MOV.W   0x58(SP), R11
+//  413   const float _fround[6]={0.49,0.05,0.005,0.0005,0.00005,0.000005};
+        MOV.W   SP, R15
+        ADD.W   #0x14, R15
+        MOV.W   R15, R12
+        MOVA    #`?<Constant {(4.90000009E-1F), (5.00000007E-2F)`, R14
+        MOVA    #0xc, R13
+        CALLA   #?CopyMemoryWords20
+//  414   unsigned char i=0,d;
+        MOV.B   #0x0, R9
+//  415   char Str[20];
+//  416   char * str=Str;
+        MOV.W   SP, R8
+        ADD.W   #0x0, R8
+//  417   float scale = 1.0;
+        MOV.W   #0x0, R6
+        MOV.W   #0x3f80, R7
+//  418   
+//  419   if (number<0.0) 
+        MOV.W   #0x0, R14
+        MOV.W   #0x0, R15
+        MOV.W   R10, R12
+        MOV.W   R11, R13
+        CALLA   #_CmpLt32f
+        CMP.W   #0x0, R12
+        JEQ     ??OLED_DispFolatAt_3
+//  420   {
+//  421     number=-number;
+        XOR.W   #0x8000, R11
+//  422     *str++='-';
+        MOV.B   #0x2d, 0(R8)
+        ADDA    #0x1, R8
+//  423   };
+//  424   if (len>5) 
+??OLED_DispFolatAt_3:
+        CMP.B   #0x6, R4
+        JNC     ??OLED_DispFolatAt_4
+//  425     len=5;
+        MOV.B   #0x5, R4
+//  426   number = number + _fround[len];
+??OLED_DispFolatAt_4:
+        MOV.B   R4, R15
+        RLAM.W  #0x2, R15
+        ADD.W   SP, R15
+        MOV.W   0x14(R15), R14
+        MOV.W   0x16(R15), R15
+        MOV.W   R10, R12
+        MOV.W   R11, R13
+        CALLA   #_Add32f
+        MOV.W   R12, R10
+        MOV.W   R13, R11
+//  427 
+//  428   while (number>=scale) 
+??OLED_DispFolatAt_0:
+        MOV.W   R6, R14
+        MOV.W   R7, R15
+        MOV.W   R10, R12
+        MOV.W   R11, R13
+        CALLA   #_CmpGe32f
+        CMP.W   #0x0, R12
+        JEQ     ??OLED_DispFolatAt_5
+//  429   {
+//  430     scale=scale*10.0;
+        MOV.W   #0x0, R14
+        MOV.W   #0x4120, R15
+        MOV.W   R6, R12
+        MOV.W   R7, R13
+        CALLA   #_Mul32f
+        MOV.W   R12, R6
+        MOV.W   R13, R7
+//  431     ++i;
+        ADD.B   #0x1, R9
+        JMP     ??OLED_DispFolatAt_0
+//  432   };
+//  433   if (i==0) 
+??OLED_DispFolatAt_5:
+        CMP.B   #0x0, R9
+        JNE     ??OLED_DispFolatAt_1
+//  434     *str++='0';
+        MOV.B   #0x30, 0(R8)
+        ADDA    #0x1, R8
+        JMP     ??OLED_DispFolatAt_6
+//  435   else
+//  436   {
+//  437     while (i--)
+??OLED_DispFolatAt_1:
+        MOV.B   R9, R14
+        MOV.B   R14, R9
+        ADD.B   #0xff, R9
+        CMP.B   #0x0, R14
+        JEQ     ??OLED_DispFolatAt_6
+//  438     {
+//  439       scale=(float)((int)(0.5+scale/10.0));
+        MOV.W   #0x0, R14
+        MOV.W   #0x4120, R15
+        MOV.W   R6, R12
+        MOV.W   R7, R13
+        CALLA   #_Div32f
+        MOV.W   #0x0, R14
+        MOV.W   #0x3f00, R15
+        CALLA   #_Add32f
+        MOV.W   R12, R14
+        MOV.W   R13, R15
+        MOV.W   R14, R12
+        MOV.W   R15, R13
+        CALLA   #_Cast32fto32s
+        CALLA   #_Cast32sto32f
+        MOV.W   R12, R6
+        MOV.W   R13, R7
+//  440       d=(unsigned char) (number/scale);
+        MOV.W   R6, R14
+        MOV.W   R7, R15
+        MOV.W   R10, R12
+        MOV.W   R11, R13
+        CALLA   #_Div32f
+        CALLA   #_Cast32fto32u
+        MOV.B   R12, R5
+//  441       *str++=d+'0';
+        MOV.B   R5, R14
+        ADD.B   #0x30, R14
+        MOV.B   R14, 0(R8)
+        ADDA    #0x1, R8
+//  442       number=number-scale*d;
+        MOV.B   R5, R5
+        MOV.W   R5, R12
+        MOV.W   #0x0, R13
+        CALLA   #_Cast32uto32f
+        MOV.W   R6, R14
+        MOV.W   R7, R15
+        CALLA   #_Mul32f
+        MOV.W   R12, R14
+        MOV.W   R13, R15
+        MOV.W   R10, R12
+        MOV.W   R11, R13
+        CALLA   #_Sub32f
+        MOV.W   R12, R10
+        MOV.W   R13, R11
+        JMP     ??OLED_DispFolatAt_1
+//  443      };
+//  444   }
+//  445   if (len==0) {*str=0; OLED_DispStringAt(font,line,x,Str);return;};
+??OLED_DispFolatAt_6:
+        CMP.B   #0x0, R4
+        JNE     ??OLED_DispFolatAt_7
+        MOV.B   #0x0, 0(R8)
+        MOV.W   SP, R15
+        ADD.W   #0x0, R15
+        MOV.B   0x2c(SP), R14
+        MOV.B   0x2e(SP), R13
+        MOV.B   0x30(SP), R12
+        CALLA   #OLED_DispStringAt
+        JMP     ??OLED_DispFolatAt_8
+//  446   *str++='.';
+??OLED_DispFolatAt_7:
+        MOV.B   #0x2e, 0(R8)
+        ADDA    #0x1, R8
+//  447   while (len--)
+??OLED_DispFolatAt_2:
+        MOV.B   R4, R14
+        MOV.B   R14, R4
+        ADD.B   #0xff, R4
+        CMP.B   #0x0, R14
+        JEQ     ??OLED_DispFolatAt_9
+//  448   {
+//  449     number=number*10.0;
+        MOV.W   #0x0, R14
+        MOV.W   #0x4120, R15
+        MOV.W   R10, R12
+        MOV.W   R11, R13
+        CALLA   #_Mul32f
+        MOV.W   R12, R10
+        MOV.W   R13, R11
+//  450     d=(unsigned char)number;
+        MOV.W   R10, R12
+        MOV.W   R11, R13
+        CALLA   #_Cast32fto32u
+        MOV.B   R12, R5
+//  451     *str++=d+'0';
+        MOV.B   R5, R14
+        ADD.B   #0x30, R14
+        MOV.B   R14, 0(R8)
+        ADDA    #0x1, R8
+//  452     number=number-d;
+        MOV.B   R5, R5
+        MOV.W   R5, R12
+        MOV.W   #0x0, R13
+        CALLA   #_Cast32uto32f
+        MOV.W   R12, R14
+        MOV.W   R13, R15
+        MOV.W   R10, R12
+        MOV.W   R11, R13
+        CALLA   #_Sub32f
+        MOV.W   R12, R10
+        MOV.W   R13, R11
+        JMP     ??OLED_DispFolatAt_2
+//  453   }
+//  454   *str = 0;
+??OLED_DispFolatAt_9:
+        MOV.B   #0x0, 0(R8)
+//  455   OLED_DispStringAt(font,line,x,Str);
+        MOV.W   SP, R15
+        ADD.W   #0x0, R15
+        MOV.B   0x2c(SP), R14
+        MOV.B   0x2e(SP), R13
+        MOV.B   0x30(SP), R12
+        CALLA   #OLED_DispStringAt
+//  456   
+//  457 }
+??OLED_DispFolatAt_8:
+        ADD.W   #0x32, SP
+          CFI CFA SP+36
+        POPM.A  #0x8, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R4H SameValue
+          CFI R5H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R4L SameValue
+          CFI R5L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock13
+//  458 /*******************************************************************************
+//  459 *  º¯ÊýÃû³Æ£ºOLED_DispChineseAt(OLED_FONT font,uint8_t line,uint8_t x,char *str)
+//  460 *  ¹¦ÄÜËµÃ÷£ºOLEDÏÔÊ¾Ò»¸öºº×Ö ÏÔÊ¾µÄÄÚÈÝÔÚFONT_CHINESE.hÖÐµÄ£¬
+//  461             ±ØÐëÒªÏÈÓÃºº×ÖÈ¡Ä£Èí¼þ½«Êý×é´æ·ÅÔÚ CHINESE_16X16Êý×éÀï£¬
+//  462                 Í¬Ê±°´ÏàÍ¬µÄºº×ÖË³Ðò½«ºº×Ö·ÅÈë FONT_CHINESE_TABLEÊý×éÀï
+//  463 *  ²ÎÊýËµÃ÷£ºOLED_FONT font£º×ÖÌå£¨OLED_FONTÃ¶¾Ù£©
+//  464              uint8_t line£ºÐÐÎ»ÖÃ£¨0-7£©
+//  465              uint8_t x   £ºÁÐÎ»ÖÃ£¨0-127£©
+//  466              uint8_t x,char *str£ºÒªÏÔÊ¾µÄºº×Ö×Ö·û´®
+//  467 *  º¯Êý·µ»Ø£ºÎÞ
+//  468 *  Ê¹ÓÃÊ¾Àý£º
+//  469 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  470 void OLED_DispChineseAt(OLED_FONT font,uint8_t line,uint8_t x,char *str)
+OLED_DispChineseAt:
+          CFI Block cfiBlock14 Using cfiCommon0
+          CFI Function OLED_DispChineseAt
+//  471 {
+        FUNCALL OLED_DispChineseAt, OLED_SetPosition
+        LOCFRAME CSTACK, 38, STACK
+        FUNCALL OLED_DispChineseAt, OLED_WriteByte
+        LOCFRAME CSTACK, 38, STACK
+        PUSHM.A #0x8, R11
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+36
+        SUB.W   #0x2, SP
+          CFI CFA SP+38
+        MOV.B   R12, R6
+        MOV.B   R13, R11
+        MOV.B   R14, R9
+        MOVA    R15, R10
+//  472   const unsigned char *pFontData;
+//  473   uint8_t offect,i,height;
+//  474   
+//  475   int font_num = sizeof(FONT_CHINESE_TABLE)/sizeof(char *);
+        MOV.W   #0x8, 0(SP)
+//  476 
+//  477   while(*str)
+??OLED_DispChineseAt_3:
+        CMP.B   #0x0, 0(R10)
+        JEQ     ??OLED_DispChineseAt_6
+//  478   {
+//  479     for(offect=0;offect < font_num;offect++)
+        MOV.B   #0x0, R8
+??OLED_DispChineseAt_2:
+        MOV.B   R8, R8
+        CMP.W   @SP, R8
+        JGE     ??OLED_DispChineseAt_5
+//  480     {
+//  481       if(*str == *FONT_CHINESE_TABLE[offect] && *(str+1) == *(FONT_CHINESE_TABLE[offect]+1))
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  FONT_CHINESE_TABLE(R15), R15
+        CMP.B   @R15, 0(R10)
+        JNE     ??OLED_DispChineseAt_7
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  FONT_CHINESE_TABLE(R15), R15
+        CMP.B   0x1(R15), 0x1(R10)
+        JNE     ??OLED_DispChineseAt_7
+//  482       {
+//  483         //¶ÁÈ¡´æ·Å×ÖÌåÊý¾ÝµÄÆðÊ¼Î»ÖÃ
+//  484         pFontData = Font[font].pData+(Font[font].width*Font[font].height/8)*offect;
+        MOV.B   R6, R15
+        ADDA    R15, R15
+        MOVA    R15, R14
+        ADDA    R15, R15
+        ADDA    R14, R15
+        MOVX.A  Font + 2(R15), R15
+        PUSHM.A #0x1, R15
+          CFI CFA SP+42
+        MOV.B   R6, R15
+        ADDA    R15, R15
+        MOVA    R15, R14
+        ADDA    R15, R15
+        ADDA    R14, R15
+        MOV.B   R6, R14
+        ADDA    R14, R14
+        MOVA    R14, R13
+        ADDA    R14, R14
+        ADDA    R13, R14
+        PUSH.W  SR
+          CFI CFA SP+44
+        DINT
+        NOP
+        MOVX.B  Font(R15), &0x4c0
+        MOVX.B  Font + 1(R14), &0x4c8
+        MOV.W   &0x4ca, R12
+        POP.W   SR
+          CFI CFA SP+42
+        MOV.W   #0x8, R14
+        CALLA   #?DivMod16s
+        PUSH.W  SR
+          CFI CFA SP+44
+        DINT
+        NOP
+        MOV.W   R12, &0x4c0
+        MOV.B   R8, &0x4c8
+        MOV.W   &0x4ca, R15
+        POP.W   SR
+          CFI CFA SP+42
+        MOV.W   R15, R14
+        XOR.W   #0x8000, R14
+        SUBA    #0x8000, R14
+        POPM.A  #0x1, R15
+          CFI CFA SP+38
+        ADDA    R14, R15
+        MOVA    R15, R4
+//  485         
+//  486         for(height = 0;height < Font[font].height;height+=8)
+        MOV.B   #0x0, R7
+??OLED_DispChineseAt_1:
+        MOV.B   R6, R15
+        ADDA    R15, R15
+        MOVA    R15, R14
+        ADDA    R15, R15
+        ADDA    R14, R15
+        CMPX.B  Font + 1(R15), R7
+        JC      ??OLED_DispChineseAt_8
+//  487         {
+//  488           OLED_SetPosition(line+(height/8),x);                   
+        MOV.B   R9, R13
+        PUSH.B  R13
+          CFI CFA SP+40
+        MOV.B   R7, R12
+        MOV.B   #0x8, R14
+        CALLA   #?DivMod8u
+        MOV.B   R11, R14
+        ADD.B   R12, R14
+        POP.B   R13
+          CFI CFA SP+38
+        MOV.B   R14, R12
+        CALLA   #OLED_SetPosition
+//  489           for(i=0;i<Font[font].width;i++)
+        MOV.B   #0x0, R5
+??OLED_DispChineseAt_0:
+        MOV.B   R6, R15
+        ADDA    R15, R15
+        MOVA    R15, R14
+        ADDA    R15, R15
+        ADDA    R14, R15
+        CMPX.B  Font(R15), R5
+        JC      ??OLED_DispChineseAt_9
+//  490           {
+//  491             OLED_WriteByte(DATA,*pFontData++);
+        MOV.B   @R4, R13
+        MOV.B   #0x1, R12
+        CALLA   #OLED_WriteByte
+        ADDA    #0x1, R4
+//  492           }
+        ADD.B   #0x1, R5
+        JMP     ??OLED_DispChineseAt_0
+//  493         }
+??OLED_DispChineseAt_9:
+        ADD.B   #0x8, R7
+        JMP     ??OLED_DispChineseAt_1
+//  494         x += Font[font].width;
+??OLED_DispChineseAt_8:
+        MOV.B   R6, R15
+        ADDA    R15, R15
+        MOVA    R15, R14
+        ADDA    R15, R15
+        ADDA    R14, R15
+        ADDX.B  Font(R15), R9
+//  495         if(x > (OLED_WIDTH - Font[font].width))
+        MOV.W   #0x80, R14
+        MOV.B   R6, R15
+        ADDA    R15, R15
+        MOVA    R15, R13
+        ADDA    R15, R15
+        ADDA    R13, R15
+        MOVX.B  Font(R15), R15
+        MOV.B   R15, R15
+        SUB.W   R15, R14
+        MOV.B   R9, R9
+        CMP.W   R9, R14
+        JGE     ??OLED_DispChineseAt_5
+//  496         {
+//  497           x = 0;
+        MOV.B   #0x0, R9
+//  498           line += (Font[font].height/8);
+        MOV.B   R6, R15
+        ADDA    R15, R15
+        MOVA    R15, R14
+        ADDA    R15, R15
+        ADDA    R14, R15
+        MOVX.B  Font + 1(R15), R12
+        MOV.B   #0x8, R14
+        CALLA   #?DivMod8u
+        ADD.B   R12, R11
+//  499           if(line > ((OLED_HEIGHT/Font[font].height)-1))line = 0;
+        MOV.W   #0x40, R12
+        MOV.B   R6, R15
+        ADDA    R15, R15
+        MOVA    R15, R14
+        ADDA    R15, R15
+        ADDA    R14, R15
+        MOVX.B  Font + 1(R15), R14
+        MOV.B   R14, R14
+        CALLA   #?DivMod16s
+        ADD.W   #0xffff, R12
+        MOV.B   R11, R11
+        CMP.W   R11, R12
+        JGE     ??OLED_DispChineseAt_5
+        MOV.B   #0x0, R11
+//  500         }
+//  501         break;
+        JMP     ??OLED_DispChineseAt_5
+//  502       }
+//  503     }
+??OLED_DispChineseAt_7:
+        ADD.B   #0x1, R8
+        JMP     ??OLED_DispChineseAt_2
+//  504     str +=2;
+??OLED_DispChineseAt_5:
+        ADDA    #0x2, R10
+        JMP     ??OLED_DispChineseAt_3
+//  505   }
+//  506 }
+??OLED_DispChineseAt_6:
+        ADD.W   #0x2, SP
+          CFI CFA SP+36
+        POPM.A  #0x8, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R4H SameValue
+          CFI R5H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R4L SameValue
+          CFI R5L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock14
+//  507 /*******************************************************************************
+//  508 *  º¯ÊýÃû³Æ£ºOLED_PrintfAt(OLED_FONT font,uint8_t y,uint8_t x,const char * fmt,...)
+//  509 *  ¹¦ÄÜËµÃ÷£ºOLEDÔÚÖ¸¶¨Î»ÖÃ´òÓ¡
+//  510 *  ²ÎÊýËµÃ÷£ºOLED_FONT font£º×ÖÌå£¨OLED_FONTÃ¶¾Ù£©
+//  511              uint8_t line£ºÐÐÎ»ÖÃ£¨0-7£©
+//  512              uint8_t x   £ºÁÐÎ»ÖÃ£¨0-127£©
+//  513 *  º¯Êý·µ»Ø£ºÎÞ
+//  514 *  Ê¹ÓÃÊ¾Àý£º
+//  515 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  516 void OLED_PrintfAt(OLED_FONT font,uint8_t line,uint8_t x,const char * fmt,...)
+OLED_PrintfAt:
+          CFI Block cfiBlock15 Using cfiCommon0
+          CFI Function OLED_PrintfAt
+//  517 {
+        FUNCALL OLED_PrintfAt, vsprintf
+        LOCFRAME CSTACK, 176, STACK
+        FUNCALL OLED_PrintfAt, strlen
+        LOCFRAME CSTACK, 176, STACK
+        FUNCALL OLED_PrintfAt, OLED_DispStringLen
+        LOCFRAME CSTACK, 174, STACK
+        FUNCALL OLED_PrintfAt, OLED_DispStringLen
+        LOCFRAME CSTACK, 174, STACK
+        FUNCALL OLED_PrintfAt, OLED_WriteByte
+        LOCFRAME CSTACK, 172, STACK
+        FUNCALL OLED_PrintfAt, OLED_DispStringLen
+        LOCFRAME CSTACK, 174, STACK
+        PUSHM.A #0x8, R11
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+36
+        PUSHM.A #0x1, R15
+          CFI CFA SP+40
+        SUB.W   #0x84, SP
+          CFI CFA SP+172
+        MOV.B   R12, R6
+        MOV.B   R13, R8
+        MOV.B   R14, R11
+//  518   char OLED_String[128];
+//  519   va_list ap;
+//  520   va_start(ap,fmt);
+        MOV.W   SP, R15
+        ADD.W   #0xac, R15
+        MOVA    R15, 0(SP)
+//  521   vsprintf(OLED_String,fmt,ap);
+        PUSH.W  0x4(SP)
+          CFI CFA SP+174
+        PUSH.W  0x4(SP)
+          CFI CFA SP+176
+        MOVA    0x88(SP), R13
+        MOV.W   SP, R12
+        ADD.W   #0x8, R12
+        CALLA   #vsprintf
+//  522   uint8_t lastposition=0;
+        MOV.B   #0x0, R10
+//  523   int length=strlen(OLED_String);
+        MOV.W   SP, R12
+        ADD.W   #0x8, R12
+        CALLA   #strlen
+        MOV.W   R12, R5
+//  524   int TEXT_SIZE=OLED_WIDTH/Font[font].width;
+        MOV.W   #0x80, R12
+        MOV.B   R6, R15
+        ADDA    R15, R15
+        MOVA    R15, R7
+        ADDA    R15, R15
+        ADDA    R7, R15
+        MOVX.B  Font(R15), R14
+        MOV.B   R14, R14
+        CALLA   #?DivMod16s
+        MOV.W   R12, R4
+//  525   for(int i=0;i<=length;i++)
+        MOV.W   #0x0, R7
+        ADD.W   #0x4, SP
+          CFI CFA SP+172
+??OLED_PrintfAt_2:
+        CMP.W   R7, R5
+        JL      ??OLED_PrintfAt_4
+//  526   {
+//  527     if(OLED_String[i]=='\n')
+        MOV.W   R7, R15
+        ADD.W   SP, R15
+        CMP.B   #0xa, 0x4(R15)
+        JNE     ??OLED_PrintfAt_5
+//  528     {
+//  529       uint8_t position=i;
+        PUSH.W  R9
+          CFI CFA SP+174
+        MOV.B   R7, 0(SP)
+        POP.W   R9
+          CFI CFA SP+172
+//  530       while(position>lastposition)
+??OLED_PrintfAt_0:
+        CMP.B   R9, R10
+        JC      ??OLED_PrintfAt_3
+//  531       {
+//  532         if((position-lastposition)>TEXT_SIZE)//Èç¹ûÒ»ÐÐÒªÏÔÊ¾µÄ×Ö·û´®ÊýÁ¿´óÓÚ16£¬ÔòÐèÒª»»ÐÐ
+        MOV.B   R9, R15
+        MOV.B   R10, R10
+        SUB.W   R10, R15
+        CMP.W   R15, R4
+        JGE     ??OLED_PrintfAt_6
+//  533         {
+//  534            OLED_DispStringLen(font,line,x,&OLED_String[lastposition],TEXT_SIZE);
+        PUSH.B  R4
+          CFI CFA SP+174
+        MOV.W   SP, R15
+        ADD.W   #0x6, R15
+        MOV.B   R10, R10
+        ADD.W   R10, R15
+        MOV.B   R11, R14
+        MOV.B   R8, R13
+        MOV.B   R6, R12
+        CALLA   #OLED_DispStringLen
+//  535            line += (Font[font].height/8);//»»ÐÐ
+        MOV.B   R6, R15
+        ADDA    R15, R15
+        MOVA    R15, R14
+        ADDA    R15, R15
+        ADDA    R14, R15
+        MOVX.B  Font + 1(R15), R12
+        MOV.B   #0x8, R14
+        CALLA   #?DivMod8u
+        ADD.B   R12, R8
+//  536            x=0;
+        MOV.B   #0x0, R11
+//  537            lastposition+=TEXT_SIZE;
+        ADD.B   R4, R10
+        ADD.W   #0x2, SP
+          CFI CFA SP+172
+        JMP     ??OLED_PrintfAt_0
+//  538         }
+//  539         else
+//  540         {
+//  541            OLED_DispStringLen(font,line,x,&OLED_String[lastposition],(position-lastposition));
+??OLED_PrintfAt_6:
+        MOV.B   R9, R14
+        SUB.B   R10, R14
+        PUSH.B  R14
+          CFI CFA SP+174
+        MOV.W   SP, R15
+        ADD.W   #0x6, R15
+        MOV.B   R10, R10
+        ADD.W   R10, R15
+        MOV.B   R11, R14
+        MOV.B   R8, R13
+        MOV.B   R6, R12
+        CALLA   #OLED_DispStringLen
+//  542            for(x+=(position-lastposition)*Font[font].width;x < OLED_WIDTH;x++)   //½«¸ÃÐÐÎ´ÏÔÊ¾µÄ²¿·ÖÇåÁã
+        MOV.B   R9, R14
+        SUB.B   R10, R14
+        MOV.B   R6, R15
+        ADDA    R15, R15
+        MOVA    R15, R13
+        ADDA    R15, R15
+        ADDA    R13, R15
+        PUSH.W  SR
+          CFI CFA SP+176
+        DINT
+        NOP
+        MOV.B   R14, &0x4c0
+        MOVX.B  Font(R15), &0x4c8
+        MOV.B   &0x4ca, R14
+        POP.W   SR
+          CFI CFA SP+174
+        ADD.B   R14, R11
+        ADD.W   #0x2, SP
+          CFI CFA SP+172
+??OLED_PrintfAt_1:
+        CMP.B   #0x80, R11
+        JC      ??OLED_PrintfAt_3
+//  543            {
+//  544              OLED_WriteByte(DATA,0);  //Ð´ÈëÊý¾Ý
+        MOV.B   #0x0, R13
+        MOV.B   #0x1, R12
+        CALLA   #OLED_WriteByte
+//  545            }
+        ADD.B   #0x1, R11
+        JMP     ??OLED_PrintfAt_1
+//  546            break;
+//  547         }
+//  548       } 
+//  549       lastposition=position+1;
+??OLED_PrintfAt_3:
+        MOV.B   R9, R14
+        ADD.B   #0x1, R14
+        MOV.B   R14, R10
+//  550       //»»ÐÐºóX=0,yÏÂÒÆÒ»ÐÐ
+//  551       x = 0;
+        MOV.B   #0x0, R11
+//  552       line += (Font[font].height/8);//»»ÐÐ
+        MOV.B   R6, R15
+        ADDA    R15, R15
+        MOVA    R15, R14
+        ADDA    R15, R15
+        ADDA    R14, R15
+        MOVX.B  Font + 1(R15), R12
+        MOV.B   #0x8, R14
+        CALLA   #?DivMod8u
+        ADD.B   R12, R8
+//  553       if(line>(OLED_HEIGHT/Font[font].height - 1))line=0;
+        MOV.W   #0x40, R12
+        MOV.B   R6, R15
+        ADDA    R15, R15
+        MOVA    R15, R14
+        ADDA    R15, R15
+        ADDA    R14, R15
+        MOVX.B  Font + 1(R15), R14
+        MOV.B   R14, R14
+        CALLA   #?DivMod16s
+        ADD.W   #0xffff, R12
+        MOV.B   R8, R8
+        CMP.W   R8, R12
+        JGE     ??OLED_PrintfAt_5
+        MOV.B   #0x0, R8
+//  554     }
+//  555   }
+??OLED_PrintfAt_5:
+        ADD.W   #0x1, R7
+        JMP     ??OLED_PrintfAt_2
+//  556   if(lastposition<length)
+??OLED_PrintfAt_4:
+        MOV.B   R10, R10
+        CMP.W   R5, R10
+        JGE     ??OLED_PrintfAt_7
+//  557   {
+//  558     OLED_DispStringLen(font,line,x,&OLED_String[lastposition],(length-lastposition));
+        PUSH.W  R14
+          CFI CFA SP+174
+        MOV.B   R5, 0(SP)
+        POP.W   R14
+          CFI CFA SP+172
+        SUB.B   R10, R14
+        PUSH.B  R14
+          CFI CFA SP+174
+        MOV.W   SP, R15
+        ADD.W   #0x6, R15
+        MOV.B   R10, R10
+        ADD.W   R10, R15
+        MOV.B   R11, R14
+        MOV.B   R8, R13
+        MOV.B   R6, R12
+        CALLA   #OLED_DispStringLen
+        ADD.W   #0x2, SP
+          CFI CFA SP+172
+//  559   }
+//  560   va_end(ap);
+//  561 } 
+??OLED_PrintfAt_7:
+        ADD.W   #0x88, SP
+          CFI CFA SP+36
+        POPM.A  #0x8, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R4H SameValue
+          CFI R5H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R4L SameValue
+          CFI R5L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock15
+//  562 /*******************************************************************************
+//  563 *  º¯ÊýÃû³Æ£ºOLEDPrintf(OLED_FONT font,uint8_t y,uint8_t x,const char * fmt,...)
+//  564 *  ¹¦ÄÜËµÃ÷£ºOLED´òÓ¡
+//  565 *  ²ÎÊýËµÃ÷£ºOLED_FONT font£º×ÖÌå£¨OLED_FONTÃ¶¾Ù£©
+//  566              
+//  567 *  º¯Êý·µ»Ø£ºÎÞ
+//  568 *  Ê¹ÓÃÊ¾Àý£º
+//  569 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  570 void OLED_Printf(OLED_FONT font,const char * fmt,...)
+OLED_Printf:
+          CFI Block cfiBlock16 Using cfiCommon0
+          CFI Function OLED_Printf
+//  571 {
+        FUNCALL OLED_Printf, vsprintf
+        LOCFRAME CSTACK, 172, STACK
+        FUNCALL OLED_Printf, strlen
+        LOCFRAME CSTACK, 172, STACK
+        FUNCALL OLED_Printf, OLED_DispStringLen
+        LOCFRAME CSTACK, 170, STACK
+        FUNCALL OLED_Printf, OLED_Clear
+        LOCFRAME CSTACK, 168, STACK
+        FUNCALL OLED_Printf, OLED_DispStringLen
+        LOCFRAME CSTACK, 170, STACK
+        FUNCALL OLED_Printf, OLED_WriteByte
+        LOCFRAME CSTACK, 168, STACK
+        FUNCALL OLED_Printf, OLED_Clear
+        LOCFRAME CSTACK, 168, STACK
+        FUNCALL OLED_Printf, OLED_DispStringLen
+        LOCFRAME CSTACK, 170, STACK
+        FUNCALL OLED_Printf, OLED_Clear
+        LOCFRAME CSTACK, 168, STACK
+        FUNCALL OLED_Printf, OLED_WriteByte
+        LOCFRAME CSTACK, 168, STACK
+        PUSHM.A #0x8, R11
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+36
+        SUB.W   #0x84, SP
+          CFI CFA SP+168
+        MOV.B   R12, R11
+        MOVA    R13, R7
+//  572   char OLED_String[128];
+//  573   static uint8_t x=0,y=0;
+//  574   va_list ap; 
+//  575   va_start(ap,fmt);
+        MOV.W   SP, R15
+        ADD.W   #0xa8, R15
+        MOVA    R15, 0(SP)
+//  576   vsprintf(OLED_String,fmt,ap);
+        PUSH.W  0x4(SP)
+          CFI CFA SP+170
+        PUSH.W  0x4(SP)
+          CFI CFA SP+172
+        MOVA    R7, R13
+        MOV.W   SP, R12
+        ADD.W   #0x8, R12
+        CALLA   #vsprintf
+//  577   uint8_t lastposition=0;
+        MOV.B   #0x0, R10
+//  578   int length=strlen(OLED_String);
+        MOV.W   SP, R12
+        ADD.W   #0x8, R12
+        CALLA   #strlen
+        MOV.W   R12, R4
+//  579   int TEXT_SIZE=OLED_WIDTH/Font[font].width;
+        MOV.W   #0x80, R12
+        MOV.B   R11, R15
+        ADDA    R15, R15
+        MOVA    R15, R14
+        ADDA    R15, R15
+        ADDA    R14, R15
+        MOVX.B  Font(R15), R14
+        MOV.B   R14, R14
+        CALLA   #?DivMod16s
+        MOV.W   R12, R8
+//  580   for(int i=0;i<=length;i++)//²éÕÒ»»ÐÐ·û
+        MOV.W   #0x0, R6
+        ADD.W   #0x4, SP
+          CFI CFA SP+168
+??OLED_Printf_2:
+        CMP.W   R6, R4
+        JL      ??OLED_Printf_6
+//  581   {
+//  582     if(OLED_String[i] == '\n')
+        MOV.W   R6, R15
+        ADD.W   SP, R15
+        CMP.B   #0xa, 0x4(R15)
+        JNE     ??OLED_Printf_7
+//  583     {
+//  584       uint8_t position=i;
+        PUSH.W  R9
+          CFI CFA SP+170
+        MOV.B   R6, 0(SP)
+        POP.W   R9
+          CFI CFA SP+168
+//  585       while(position>lastposition)
+??OLED_Printf_0:
+        CMP.B   R9, R10
+        JC      ??OLED_Printf_5
+//  586       {
+//  587         if((position-lastposition)>TEXT_SIZE)//Èç¹ûÒ»ÐÐÒªÏÔÊ¾µÄ×Ö·û´®ÊýÁ¿´óÓÚTEXT_SIZE£¬ÔòÒ²ÐèÒª»»ÐÐ
+        MOV.B   R9, R15
+        MOV.B   R10, R10
+        SUB.W   R10, R15
+        CMP.W   R15, R8
+        JGE     ??OLED_Printf_8
+//  588         {
+//  589            OLED_DispStringLen(font,y,x,&OLED_String[lastposition],TEXT_SIZE);
+        PUSH.B  R8
+          CFI CFA SP+170
+        MOV.W   SP, R15
+        ADD.W   #0x6, R15
+        MOV.B   R10, R10
+        ADD.W   R10, R15
+        MOVX.B  &??x, R14
+        MOVX.B  &??y, R13
+        MOV.B   R11, R12
+        CALLA   #OLED_DispStringLen
+//  590            y += (Font[font].height/8);//»»ÐÐ
+        MOV.B   R11, R15
+        ADDA    R15, R15
+        MOVA    R15, R14
+        ADDA    R15, R15
+        ADDA    R14, R15
+        MOVX.B  Font + 1(R15), R12
+        MOV.B   #0x8, R14
+        CALLA   #?DivMod8u
+        ADDX.B  R12, &??y
+//  591            if(y>(OLED_HEIGHT/Font[font].height - 1))
+        MOV.W   #0x40, R12
+        MOV.B   R11, R15
+        ADDA    R15, R15
+        MOVA    R15, R14
+        ADDA    R15, R15
+        ADDA    R14, R15
+        MOVX.B  Font + 1(R15), R14
+        MOV.B   R14, R14
+        CALLA   #?DivMod16s
+        ADD.W   #0xffff, R12
+        MOVX.B  &??y, R15
+        MOV.B   R15, R15
+        ADD.W   #0x2, SP
+          CFI CFA SP+168
+        CMP.W   R15, R12
+        JGE     ??OLED_Printf_9
+//  592            {
+//  593              y=0;
+        MOVX.B  #0x0, &??y
+//  594              OLED_Clear();//È«ÆÁÌî³äÊý¾Ý                                                
+        CALLA   #OLED_Clear
+//  595            }
+//  596            x=0;
+??OLED_Printf_9:
+        MOVX.B  #0x0, &??x
+//  597            lastposition+=TEXT_SIZE;
+        ADD.B   R8, R10
+        JMP     ??OLED_Printf_0
+//  598         }
+//  599         else
+//  600         {
+//  601            OLED_DispStringLen(font,y,x,&OLED_String[lastposition],(position-lastposition));  //ÏÔÊ¾¸ÃÐÐ×Ö·û´®
+??OLED_Printf_8:
+        MOV.B   R9, R14
+        SUB.B   R10, R14
+        PUSH.B  R14
+          CFI CFA SP+170
+        MOV.W   SP, R15
+        ADD.W   #0x6, R15
+        MOV.B   R10, R10
+        ADD.W   R10, R15
+        MOVX.B  &??x, R14
+        MOVX.B  &??y, R13
+        MOV.B   R11, R12
+        CALLA   #OLED_DispStringLen
+//  602            for(x+=(position-lastposition)*Font[font].width;x < OLED_WIDTH;x++)   //½«¸ÃÐÐÎ´ÏÔÊ¾µÄ²¿·ÖÇåÁã
+        MOV.B   R9, R14
+        SUB.B   R10, R14
+        MOV.B   R11, R15
+        ADDA    R15, R15
+        MOVA    R15, R13
+        ADDA    R15, R15
+        ADDA    R13, R15
+        PUSH.W  SR
+          CFI CFA SP+172
+        DINT
+        NOP
+        MOV.B   R14, &0x4c0
+        MOVX.B  Font(R15), &0x4c8
+        MOV.B   &0x4ca, R14
+        POP.W   SR
+          CFI CFA SP+170
+        ADDX.B  R14, &??x
+        ADD.W   #0x2, SP
+          CFI CFA SP+168
+??OLED_Printf_1:
+        CMPX.B  #0x80, &??x
+        JC      ??OLED_Printf_5
+//  603            {
+//  604              OLED_WriteByte(DATA,0);  //Ð´ÈëÊý¾Ý
+        MOV.B   #0x0, R13
+        MOV.B   #0x1, R12
+        CALLA   #OLED_WriteByte
+//  605            }
+        ADDX.B  #0x1, &??x
+        JMP     ??OLED_Printf_1
+//  606            break;
+//  607         }
+//  608       } 
+//  609       lastposition=position+1;
+??OLED_Printf_5:
+        MOV.B   R9, R14
+        ADD.B   #0x1, R14
+        MOV.B   R14, R10
+//  610       //»»ÐÐºóX=0,yÏÂÒÆÒ»ÐÐ
+//  611       x=0;
+        MOVX.B  #0x0, &??x
+//  612       y += (Font[font].height/8);//»»ÐÐ
+        MOV.B   R11, R15
+        ADDA    R15, R15
+        MOVA    R15, R14
+        ADDA    R15, R15
+        ADDA    R14, R15
+        MOVX.B  Font + 1(R15), R12
+        MOV.B   #0x8, R14
+        CALLA   #?DivMod8u
+        ADDX.B  R12, &??y
+//  613       if(y>(OLED_HEIGHT/Font[font].height - 1))
+        MOV.W   #0x40, R12
+        MOV.B   R11, R15
+        ADDA    R15, R15
+        MOVA    R15, R14
+        ADDA    R15, R15
+        ADDA    R14, R15
+        MOVX.B  Font + 1(R15), R14
+        MOV.B   R14, R14
+        CALLA   #?DivMod16s
+        ADD.W   #0xffff, R12
+        MOVX.B  &??y, R15
+        MOV.B   R15, R15
+        CMP.W   R15, R12
+        JGE     ??OLED_Printf_7
+//  614       {
+//  615          y=0;
+        MOVX.B  #0x0, &??y
+//  616          OLED_Clear();
+        CALLA   #OLED_Clear
+//  617       }
+//  618     }
+//  619   }
+??OLED_Printf_7:
+        ADD.W   #0x1, R6
+        JMP     ??OLED_Printf_2
+//  620   if(lastposition<length)//Ã»ÓÐ»»ÐÐ·û»òÓÐÊ£Óà²¿·ÖÃ»ÓÐÏÔÊ¾Ê±
+??OLED_Printf_6:
+        MOV.B   R10, R10
+        CMP.W   R4, R10
+        JGE     ??OLED_Printf_10
+//  621   {
+//  622     OLED_DispStringLen(font,y,x,&OLED_String[lastposition],(length-lastposition));
+        PUSH.W  R14
+          CFI CFA SP+170
+        MOV.B   R4, 0(SP)
+        POP.W   R14
+          CFI CFA SP+168
+        SUB.B   R10, R14
+        PUSH.B  R14
+          CFI CFA SP+170
+        MOV.W   SP, R15
+        ADD.W   #0x6, R15
+        MOV.B   R10, R10
+        ADD.W   R10, R15
+        MOVX.B  &??x, R14
+        MOVX.B  &??y, R13
+        MOV.B   R11, R12
+        CALLA   #OLED_DispStringLen
+//  623     x+=(length-lastposition)*Font[font].width;
+        PUSH.W  R14
+          CFI CFA SP+172
+        MOV.B   R4, 0(SP)
+        POP.W   R14
+          CFI CFA SP+170
+        SUB.B   R10, R14
+        MOV.B   R11, R15
+        ADDA    R15, R15
+        MOVA    R15, R13
+        ADDA    R15, R15
+        ADDA    R13, R15
+        PUSH.W  SR
+          CFI CFA SP+172
+        DINT
+        NOP
+        MOV.B   R14, &0x4c0
+        MOVX.B  Font(R15), &0x4c8
+        MOV.B   &0x4ca, R14
+        POP.W   SR
+          CFI CFA SP+170
+        ADDX.B  R14, &??x
+        ADD.W   #0x2, SP
+          CFI CFA SP+168
+//  624     while(x>=(TEXT_SIZE*Font[font].width))
+??OLED_Printf_3:
+        MOVX.B  &??x, R15
+        MOV.B   R15, R15
+        MOV.B   R11, R14
+        ADDA    R14, R14
+        MOVA    R14, R13
+        ADDA    R14, R14
+        ADDA    R13, R14
+        PUSH.W  SR
+          CFI CFA SP+170
+        DINT
+        NOP
+        MOV.W   R8, &0x4c0
+        MOVX.B  Font(R14), &0x4c8
+        MOV.W   &0x4ca, R14
+        POP.W   SR
+          CFI CFA SP+168
+        CMP.W   R14, R15
+        JL      ??OLED_Printf_11
+//  625     {
+//  626        x-=(TEXT_SIZE*Font[font].width);
+        MOV.B   R11, R15
+        ADDA    R15, R15
+        MOVA    R15, R14
+        ADDA    R15, R15
+        ADDA    R14, R15
+        PUSH.W  SR
+          CFI CFA SP+170
+        DINT
+        NOP
+        MOV.B   R8, &0x4c0
+        MOVX.B  Font(R15), &0x4c8
+        MOV.B   &0x4ca, R14
+        POP.W   SR
+          CFI CFA SP+168
+        SUBX.B  R14, &??x
+//  627        y += (Font[font].height/8);//»»ÐÐ
+        MOV.B   R11, R15
+        ADDA    R15, R15
+        MOVA    R15, R14
+        ADDA    R15, R15
+        ADDA    R14, R15
+        MOVX.B  Font + 1(R15), R12
+        MOV.B   #0x8, R14
+        CALLA   #?DivMod8u
+        ADDX.B  R12, &??y
+//  628        if(y>(OLED_HEIGHT/Font[font].height - 1))
+        MOV.W   #0x40, R12
+        MOV.B   R11, R15
+        ADDA    R15, R15
+        MOVA    R15, R14
+        ADDA    R15, R15
+        ADDA    R14, R15
+        MOVX.B  Font + 1(R15), R14
+        MOV.B   R14, R14
+        CALLA   #?DivMod16s
+        ADD.W   #0xffff, R12
+        MOVX.B  &??y, R15
+        MOV.B   R15, R15
+        CMP.W   R15, R12
+        JGE     ??OLED_Printf_3
+//  629        {
+//  630          y=0;
+        MOVX.B  #0x0, &??y
+//  631          x=0;
+        MOVX.B  #0x0, &??x
+//  632          OLED_Clear();
+        CALLA   #OLED_Clear
+        JMP     ??OLED_Printf_3
+//  633        }
+//  634     }
+//  635     for(int i=x;i < OLED_WIDTH;i++)   //½«¸ÃÐÐÎ´ÏÔÊ¾µÄ²¿·ÖÇåÁã
+??OLED_Printf_11:
+        MOVX.B  &??x, R9
+        MOV.B   R9, R9
+??OLED_Printf_4:
+        CMP.W   #0x80, R9
+        JGE     ??OLED_Printf_10
+//  636     {
+//  637       OLED_WriteByte(DATA,0);  //Ð´ÈëÊý¾Ý
+        MOV.B   #0x0, R13
+        MOV.B   #0x1, R12
+        CALLA   #OLED_WriteByte
+//  638     }
+        ADD.W   #0x1, R9
+        JMP     ??OLED_Printf_4
+//  639   }
+//  640   va_end(ap);
+//  641 }
+??OLED_Printf_10:
+        ADD.W   #0x84, SP
+          CFI CFA SP+36
+        POPM.A  #0x8, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R4H SameValue
+          CFI R5H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R4L SameValue
+          CFI R5L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock16
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_zero20
+??x:
+        DS8 1
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_zero20
+??y:
+        DS8 1
+
+        RSEG DATA20_ID:CONST:SORT:NOROOT(1)
+`?<Initializer for FONT_CHINESE_TABLE>`:
+        DC32 `?<Constant "\\310\\375">`, `?<Constant "\\317\\277">`
+        DC32 `?<Constant "\\264\\363">`, `?<Constant "\\321\\247">`
+        DC32 `?<Constant "\\267\\311">`, `?<Constant "\\313\\274">`
+        DC32 `?<Constant "\\277\\250">`, `?<Constant "\\266\\373">`
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r4:
+        REQUIRE ?setjmp_r4
+        REQUIRE ?longjmp_r4
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r5:
+        REQUIRE ?setjmp_r5
+        REQUIRE ?longjmp_r5
+
+        END
+// 
+// 3 670 bytes in segment CODE
+//     4 bytes in segment DATA16_AN
+// 2 412 bytes in segment DATA20_C
+//    32 bytes in segment DATA20_I
+//    32 bytes in segment DATA20_ID
+// 1 028 bytes in segment DATA20_Z
+// 
+// 3 670 bytes of CODE  memory
+// 2 444 bytes of CONST memory
+// 1 060 bytes of DATA  memory (+ 4 bytes shared)
+//
+//Errors: none
+//Warnings: none

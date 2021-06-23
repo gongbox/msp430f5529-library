@@ -1,0 +1,647 @@
+###############################################################################
+#                                                                             #
+#     IAR Assembler V5.50.1.50465/W32  for MSP430 06/Jun/2016  16:42:29       #
+#     Copyright 1996-2012 IAR Systems AB.                                     #
+#                                                                             #
+#           Target option =  MSP430X                                          #
+#           Source file   =  C:\Users\615\Desktop\MSP430\MSP430F5529库函数2.5\C版\工程模板\Lib\UCOSII\PORT\os_cpu_a.s43#
+#           List file     =  C:\Users\615\Desktop\MSP430\MSP430F5529库函数2.5\C版\工程模板\Release\List\os_cpu_a.lst#
+#           Object file   =  C:\Users\615\Desktop\MSP430\MSP430F5529库函数2.5\C版\工程模板\Release\Obj\os_cpu_a.r43#
+#           Command line  =  C:\Users\615\Desktop\MSP430\MSP430F5529库函数2.5\C版\工程模板\Lib\UCOSII\PORT\os_cpu_a.s43 #
+#                            -OC:\Users\615\Desktop\MSP430\MSP430F5529库函数2.5\C版\工程模板\Release\Obj\ #
+#                            -s+ -M<> -w+                                     #
+#                            -LC:\Users\615\Desktop\MSP430\MSP430F5529库函数2.5\C版\工程模板\Release\List\ #
+#                            -t8 -r -D__MSP430F5529__ -v1                     #
+#                            -ID:\Program Files (x86)\IAR Systems\Embedded Workbench 6.4 Evaluation\430\INC\ #
+#                                                                             #
+###############################################################################
+
+      1    000000              ;***********************************************
+                               ************************************************
+                               *********
+      2    000000              ;                                              
+                                uC/OS-II
+      3    000000              ;                                         The
+                                Real-Time Kernel
+      4    000000              ;
+      5    000000              ;                              (c) Copyright
+                                2002, Micrium, Inc., Weston, FL
+      6    000000              ;                                          All
+                                Rights Reserved
+      7    000000              ;
+      8    000000              ;                                              
+                                TI MSP430
+      9    000000              ;
+     10    000000              ;
+     11    000000              ; File         : OS_CPU_A.S43
+     12    000000              ; By           : Jian Chen (yenger@hotmail.com)
+     13    000000              ;                Jean J. Labrosse
+     14    000000              ;***********************************************
+                               ************************************************
+                               *********
+     15    000000              
+     16    000000              #include   <msp430f5529.h>
+     17    000000              
+     18    000000              ;***********************************************
+                               ************************************************
+                               *********
+     19    000000              ;                                          
+                                MACRO DEFINITIONS
+     20    000000              ;***********************************************
+                               ************************************************
+                               *********
+     21    000000              
+     36    000000              
+     51    000000                          
+     52    000000              ;***********************************************
+                               ************************************************
+                               *********
+     53    000000              ;                                  PUBLIC AND
+                                EXTERNAL DECLARATIONS
+     54    000000              ;***********************************************
+                               ************************************************
+                               *********
+     55    000000              
+     56    000000                          EXTERN  OSIntExit
+     57    000000                          EXTERN  OSIntNesting
+     58    000000              
+     59    000000                          EXTERN  OSISRStkPtr
+     60    000000              
+     61    000000                          EXTERN  OSPrioCur
+     62    000000                          EXTERN  OSPrioHighRdy
+     63    000000              
+     64    000000                          EXTERN  OSRunning
+     65    000000              
+     66    000000                          EXTERN  OSTCBCur
+     67    000000                          EXTERN  OSTCBHighRdy
+     68    000000              
+     69    000000                          EXTERN  OSTaskSwHook
+     70    000000                          EXTERN  OSTimeTick
+     71    000000              
+     72    000000                          PUBLIC  OSCtxSw
+     73    000000                          PUBLIC  OSCPURestoreSR
+     74    000000                          PUBLIC  OSCPUSaveSR
+     75    000000                          PUBLIC  OSIntCtxSw
+     76    000000                          PUBLIC  OSStartHighRdy
+     77    000000                          PUBLIC  TICKS_ISR
+     78    000000              
+     79    000000              ;***********************************************
+                               ************************************************
+                               *********
+     80    000000              ;                                  START HIGHEST
+                                PRIORITY READY TASK
+     81    000000              ;
+     82    000000              ; Description: This function is called by
+                                OSStart() to start the highest priority task
+                                that is ready to run.
+     83    000000              ;
+     84    000000              ; Note       : OSStartHighRdy() MUST:
+     85    000000              ;                 a) Call OSTaskSwHook()
+                                then,
+     86    000000              ;                 b) Set OSRunning to TRUE,
+     87    000000              ;                 c) Switch to the highest
+                                priority task.
+     88    000000              ;***********************************************
+                               ************************************************
+                               *********
+     89    000000              
+     90    000000                          RSEG    CODE                    ;
+  Program code
+     91    000000              
+     92    000000              OSStartHighRdy
+     93    000000 ........                 calla    #OSTaskSwHook
+     94    000004              
+     95    000004 D243....                 mov.b    #1, &OSRunning         ;
+  kernel running
+     96    000008              
+     97    000008 8241....                 mov.w    SP, &OSISRStkPtr       ;
+                                                         save interrupt stack  
+                                                                    
+     98    00000C              
+     99    00000C 1D42....                 mov.w    &OSTCBHighRdy, R13     ;
+                                                                    load
+                                                                    highest
+                                                                    ready task
+                                                                    stack
+    100    000010 214D                     mov.w    @R13, SP
+    101    000012              
+    102    000012                          POPALL                          ;
+                                pop all registers
+    102.1  000012 3F41                     pop.w    r15          ;pop     
+  r15
+    102.2  000014 3E41                     pop.w    r14          ;pop     
+  r14
+    102.3  000016 3D41                     pop.w    r13          ;pop     
+  r13
+    102.4  000018 3C41                     pop.w    r12          ;pop     
+  r12
+    102.5  00001A 3B41                     pop.w    r11          ;pop     
+  r11
+    102.6  00001C 3A41                     pop.w    r10          ;pop     
+  r10
+    102.7  00001E 3941                     pop.w    r9           ;pop     
+  r9
+    102.8  000020 3841                     pop.w    r8           ;pop     
+  r8
+    102.9  000022 3741                     pop.w    r7           ;pop     
+  r7
+    102.10 000024 3641                     pop.w    r6           ;pop     
+  r6
+    102.11 000026 3541                     pop.w    r5           ;pop     
+  r5
+    102.12 000028 3441                     pop.w    r4           ;pop      r4  
+         
+    102.13 00002A                          ENDM
+    103    00002A                           
+    104    00002A 0013                     reti                            ;
+  emulate return from interrupt
+    105    00002C               
+    106    00002C              
+    107    00002C              ;***********************************************
+                               ************************************************
+                               *********
+    108    00002C              ;                                     TASK LEVEL
+                                CONTEXT SWITCH
+    109    00002C              ;
+    110    00002C              ; Description: This function is called by
+                                OS_Sched() to perform a task level context
+                                switch.
+    111    00002C              ;
+    112    00002C              ; Note       : OSCtxSw() MUST:
+    113    00002C              ;                 a) Save the current task's
+                                registers onto the current task stack
+    114    00002C              ;                 b) Save the SP into the
+                                current task's OS_TCB
+    115    00002C              ;                 c) Call OSTaskSwHook()
+    116    00002C              ;                 d) Copy OSPrioHighRdy to
+                                OSPrioCur
+    117    00002C              ;                 e) Copy OSTCBHighRdy to
+                                OSTCBCur
+    118    00002C              ;                 f) Load the SP with OSTCBHighR
+                               dy->OSTCBStkPtr
+    119    00002C              ;                 g) Restore all the registers
+                                from the high priority task stack
+    120    00002C              ;                 h) Perform a return from
+                                interrupt
+    121    00002C              ;***********************************************
+                               ************************************************
+                               *********
+    122    00002C              
+    123    00002C              OSCtxSw
+    124    00002C                          PUSHALL                         ;
+                                push all registers 
+    124.1  00002C 0412                     push.w   r4           ;push    
+  r4
+    124.2  00002E 0512                     push.w   r5           ;push    
+  r5
+    124.3  000030 0612                     push.w   r6           ;push    
+  r6
+    124.4  000032 0712                     push.w   r7           ;push    
+  r7
+    124.5  000034 0812                     push.w   r8           ;push    
+  r8
+    124.6  000036 0912                     push.w   r9           ;push    
+  r9
+    124.7  000038 0A12                     push.w   r10          ;push    
+  r10
+    124.8  00003A 0B12                     push.w   r11          ;push    
+  r11
+    124.9  00003C 0C12                     push.w   r12          ;push    
+  r12
+    124.10 00003E 0D12                     push.w   r13          ;push    
+  r13
+    124.11 000040 0E12                     push.w   r14          ;push    
+  r14
+    124.12 000042 0F12                     push.w   r15          ;push    
+  r15
+    124.13 000044                          ENDM
+    125    000044 0442                     mov.w     sr,R4                
+                                                         ;
+    126    000046 0D41                     mov.w     SP,R13               
+                                                         ;
+    127    000048 154D1A00                 mov.w     26(R13),R5           
+                                                             ;
+    128    00004C 9D4D18001A00             mov.w     24(R13),26(R13)      
+                                                             ;
+    129    000052                         
+    130    000052 0555                     RLA       R5
+    131    000054 0555                     RLA       R5
+    132    000056 0555                     RLA       R5
+    133    000058 0555                     RLA       R5
+    134    00005A 0555                     RLA       R5
+    135    00005C 0555                     RLA       R5
+    136    00005E 0555                     RLA       R5
+    137    000060 0555                     RLA       R5
+    138    000062 0555                     RLA       R5
+    139    000064 0555                     RLA       R5
+    140    000066 0555                     RLA       R5
+    141    000068 0555                     RLA       R5
+    142    00006A 04D5                     BIS       R5,R4
+    143    00006C 8D441800                 mov.w     R4,24(R13)
+    144    000070                                     
+    145    000070 1D42....                 mov.w     &OSTCBCur, R13        ;
+                                                                 OSTCBCur->OSTC
+                                                                BStkPtr =
+                                                                 SP
+    146    000074 8D410000                 mov.w     SP, 0(R13)
+    147    000078 ........                 calla     #OSTaskSwHook
+    148    00007C              
+    149    00007C 5D42....                 mov.b     &OSPrioHighRdy, R13   ;
+                                                                      OSPrioCur
+                                                                      =
+                                                                      OSPrioHig
+                                                                     hRdy
+    150    000080 C24D....                 mov.b     R13, &OSPrioCur      
+                                                           ;
+    151    000084                                        
+    152    000084 1D42....                 mov.w     &OSTCBHighRdy, R13    ;
+                                                                     OSTCBCur 
+                                                                     =
+                                                                     OSTCBHighR
+                                                                    dy
+    153    000088 824D....                 mov.w     R13, &OSTCBCur       
+                                                           ;
+    154    00008C                                        
+    155    00008C 214D                     mov.w     @R13, SP              ; SP
+                                                                   = OSTCBHighR
+                                                           dy->OSTCBStkPtr
+    156    00008E                           
+    157    00008E                          POPALL                          ;
+                                pop all registers
+    157.1  00008E 3F41                     pop.w    r15          ;pop     
+  r15
+    157.2  000090 3E41                     pop.w    r14          ;pop     
+  r14
+    157.3  000092 3D41                     pop.w    r13          ;pop     
+  r13
+    157.4  000094 3C41                     pop.w    r12          ;pop     
+  r12
+    157.5  000096 3B41                     pop.w    r11          ;pop     
+  r11
+    157.6  000098 3A41                     pop.w    r10          ;pop     
+  r10
+    157.7  00009A 3941                     pop.w    r9           ;pop     
+  r9
+    157.8  00009C 3841                     pop.w    r8           ;pop     
+  r8
+    157.9  00009E 3741                     pop.w    r7           ;pop     
+  r7
+    157.10 0000A0 3641                     pop.w    r6           ;pop     
+  r6
+    157.11 0000A2 3541                     pop.w    r5           ;pop     
+  r5
+    157.12 0000A4 3441                     pop.w    r4           ;pop      r4  
+         
+    157.13 0000A6                          ENDM
+    158    0000A6                           
+    159    0000A6 0013                     reti                            ;
+  return from interrup
+    160    0000A8              
+    161    0000A8              
+    162    0000A8              
+    163    0000A8              ;***********************************************
+                               ************************************************
+                               *********
+    164    0000A8              ;                                       ISR
+                                LEVEL CONTEXT SWITCH
+    165    0000A8              ;
+    166    0000A8              ; Description: This function is called by
+                                OSIntExit() to perform an ISR level context
+                                switch.
+    167    0000A8              ;
+    168    0000A8              ; Note       : OSIntCtxSw() MUST:
+    169    0000A8              ;                 a) Call OSTaskSwHook()
+    170    0000A8              ;                 b) Copy OSPrioHighRdy to
+                                OSPrioCur
+    171    0000A8              ;                 c) Copy OSTCBHighRdy to
+                                OSTCBCur
+    172    0000A8              ;                 d) Load the SP with OSTCBHighR
+                               dy->OSTCBStkPtr
+    173    0000A8              ;                 e) Restore all the registers
+                                from the high priority task stack
+    174    0000A8              ;                 f) Perform a return from
+                                interrupt
+    175    0000A8              ;***********************************************
+                               ************************************************
+                               *********
+    176    0000A8              
+    177    0000A8              OSIntCtxSw
+    178    0000A8                           
+    179    0000A8 ........                 calla     #OSTaskSwHook
+    180    0000AC              
+    181    0000AC 5D42....                 mov.b     &OSPrioHighRdy, R13   ;
+                                                                      OSPrioCur
+                                                                      =
+                                                                      OSPrioHig
+                                                                     hRdy
+    182    0000B0 C24D....                 mov.b     R13, &OSPrioCur      
+                                                           ;
+    183    0000B4                                        
+    184    0000B4 1D42....                 mov.w     &OSTCBHighRdy, R13    ;
+                                                                     OSTCBCur 
+                                                                     =
+                                                                     OSTCBHighR
+                                                                    dy
+    185    0000B8 824D....                 mov.w     R13, &OSTCBCur       
+                                                           ;
+    186    0000BC                                        
+    187    0000BC 214D                     mov.w     @R13, SP              ; SP
+                                                                   = OSTCBHighR
+                                                           dy->OSTCBStkPtr
+    188    0000BE                           
+    189    0000BE                          POPALL                          ;
+                                pop all registers
+    189.1  0000BE 3F41                     pop.w    r15          ;pop     
+  r15
+    189.2  0000C0 3E41                     pop.w    r14          ;pop     
+  r14
+    189.3  0000C2 3D41                     pop.w    r13          ;pop     
+  r13
+    189.4  0000C4 3C41                     pop.w    r12          ;pop     
+  r12
+    189.5  0000C6 3B41                     pop.w    r11          ;pop     
+  r11
+    189.6  0000C8 3A41                     pop.w    r10          ;pop     
+  r10
+    189.7  0000CA 3941                     pop.w    r9           ;pop     
+  r9
+    189.8  0000CC 3841                     pop.w    r8           ;pop     
+  r8
+    189.9  0000CE 3741                     pop.w    r7           ;pop     
+  r7
+    189.10 0000D0 3641                     pop.w    r6           ;pop     
+  r6
+    189.11 0000D2 3541                     pop.w    r5           ;pop     
+  r5
+    189.12 0000D4 3441                     pop.w    r4           ;pop      r4  
+         
+    189.13 0000D6                          ENDM
+    190    0000D6                           
+    191    0000D6 0013                     reti                            ;
+  return from interrup
+    192    0000D8              
+    193    0000D8              
+    194    0000D8              ;***********************************************
+                               ************************************************
+                               *********
+    195    0000D8              ;                                             
+                                TICK ISR
+    196    0000D8              ;
+    197    0000D8              ; Description: This ISR handles tick interrupts.
+                                 This ISR uses the Watchdog timer as the tick
+                                source.
+    198    0000D8              ;
+    199    0000D8              ; Notes      : 1) The following C pseudo-code
+                                describes the operations being performed in the
+                                code below.
+    200    0000D8              ;
+    201    0000D8              ;                 Save all the CPU registers
+    202    0000D8              ;                 if (OSIntNesting == 0)
+                                {
+    203    0000D8              ;                     OSTCBCur->OSTCBStkPtr =
+                                SP;
+    204    0000D8              ;                     SP                    =
+                                OSISRStkPtr;  /* Use the ISR stack from now on 
+                                         */
+    205    0000D8              ;                 }
+    206    0000D8              ;                 OSIntNesting++;
+    207    0000D8              ;                 Enable interrupt nesting;     
+                                           /* Allow nesting of interrupts (if
+                                needed) */
+    208    0000D8              ;                 Clear the interrupt source;
+    209    0000D8              ;                 OSTimeTick();                 
+                                           /* Call uC/OS-II's tick handler     
+                                      */
+    210    0000D8              ;                 DISABLE general interrupts;   
+                                           /* Must DI before calling OSIntExit(
+                               )      */
+    211    0000D8              ;                 OSIntExit();
+    212    0000D8              ;                 if (OSIntNesting == 0)
+                                {
+    213    0000D8              ;                     SP = OSTCBHighRdy->OSTCBSt
+                               kPtr;       /* Restore the current task's stack 
+                                      */
+    214    0000D8              ;                 }
+    215    0000D8              ;                 Restore the CPU registers
+    216    0000D8              ;                 Return from interrupt.
+    217    0000D8              ;
+    218    0000D8              ;              2) ALL ISRs should be written
+                                like this!
+    219    0000D8              ;
+    220    0000D8              ;              3) You MUST disable general
+                                interrupts BEFORE you call OSIntExit() because
+                                an interrupt 
+    221    0000D8              ;                 COULD occur just as OSIntExit(
+                               ) returns and thus, the new ISR would save the
+                                SP of 
+    222    0000D8              ;                 the ISR stack and NOT the SP
+                                of the task stack.  This of course will most
+                                likely cause
+    223    0000D8              ;                 the code to crash.  By
+                                disabling interrupts BEFORE OSIntExit(),
+                                interrupts would be
+    224    0000D8              ;                 disabled when OSIntExit()
+                                would return.  This assumes that you are using
+                                OS_CRITICAL_METHOD
+    225    0000D8              ;                 #3 (which is the prefered
+                                method).
+    226    0000D8              ;
+    227    0000D8              ;              4) If you DON'T use a separate
+                                ISR stack then you don't need to disable
+                                general interrupts 
+    228    0000D8              ;                 just before calling OSIntExit(
+                               ).  The pseudo-code for an ISR would thus look
+                                like this:
+    229    0000D8              ;
+    230    0000D8              ;                 Save all the CPU registers
+    231    0000D8              ;                 if (OSIntNesting == 0)
+                                {
+    232    0000D8              ;                     OSTCBCur->OSTCBStkPtr =
+                                SP;
+    233    0000D8              ;                 }
+    234    0000D8              ;                 OSIntNesting++;
+    235    0000D8              ;                 Enable interrupt nesting;     
+                                           /* Allow nesting of interrupts (if
+                                needed) */
+    236    0000D8              ;                 Clear the interrupt source;
+    237    0000D8              ;                 OSTimeTick();                 
+                                           /* Call uC/OS-II's tick handler     
+                                      */
+    238    0000D8              ;                 OSIntExit();
+    239    0000D8              ;                 Restore the CPU registers
+    240    0000D8              ;                 Return from interrupt.
+    241    0000D8              ;***********************************************
+                               ************************************************
+                               *********
+    242    0000D8              
+    243    0000D8              TICKS_ISR                                     ;
+                                wd timer ISR
+    244    0000D8                          PUSHALL                         ;
+                                push all registers             
+    244.1  0000D8 0412                     push.w   r4           ;push    
+  r4
+    244.2  0000DA 0512                     push.w   r5           ;push    
+  r5
+    244.3  0000DC 0612                     push.w   r6           ;push    
+  r6
+    244.4  0000DE 0712                     push.w   r7           ;push    
+  r7
+    244.5  0000E0 0812                     push.w   r8           ;push    
+  r8
+    244.6  0000E2 0912                     push.w   r9           ;push    
+  r9
+    244.7  0000E4 0A12                     push.w   r10          ;push    
+  r10
+    244.8  0000E6 0B12                     push.w   r11          ;push    
+  r11
+    244.9  0000E8 0C12                     push.w   r12          ;push    
+  r12
+    244.10 0000EA 0D12                     push.w   r13          ;push    
+  r13
+    244.11 0000EC 0E12                     push.w   r14          ;push    
+  r14
+    244.12 0000EE 0F12                     push.w   r15          ;push    
+  r15
+    244.13 0000F0                          ENDM
+    245    0000F0                           
+    246    0000F0 D0C3....                 bic.b    #0x01, SFRIE1_L        ;
+  bic.b    #0x01, SFRIE1             ; disable wd timer interrupt
+    247    0000F4                           
+    248    0000F4 C293....                 cmp.b    #0, &OSIntNesting      ; if
+  (OSIntNesting == 0)  
+    249    0000F8 0620                     jne      TICKS_ISR_1
+    250    0000FA                                             
+    251    0000FA 1D42....                 mov.w    &OSTCBCur, R13         ;   
+                                                                 save task
+                                                                stack
+    252    0000FE 8D410000                 mov.w    SP, 0(R13)
+    253    000102              
+    254    000102 1142....                 mov.w    &OSISRStkPtr, SP       ;   
+                                                                    load
+                                                                   interrupt
+                                                                   stack       
+                                                                       
+                                                                   
+    255    000106              
+    256    000106              TICKS_ISR_1
+    257    000106 D253....                 inc.b    &OSIntNesting          ;
+  increase OSIntNesting
+    258    00010A D0D3....                 bis.b    #0x01, SFRIE1_L         
+  ;bis.b    #0x01, SFRIE1             ; enable wd timer interrupt
+    259    00010E                           
+    260    00010E 32D2                     EINT                            ;
+  enable general interrupt to allow for interrupt nesting
+    261    000110              
+    262    000110 ........                 calla    #OSTimeTick            ;
+  call ticks routine             
+    263    000114              
+    264    000114 32C2                     DINT                            ;
+  IMPORTANT: disable general interrupt BEFORE calling OSIntExit()
+    265    000116              
+    266    000116 ........                 calla    #OSIntExit             ;
+  call ticks routine
+    267    00011A                          //没发生任务切换的，执行以下代码
+    268    00011A C293....                 cmp.b    #0, &OSIntNesting      ; if
+  (OSIntNesting == 0) 
+    269    00011E 0320                     jne      TICKS_ISR_2
+    270    000120              
+    271    000120 1D42....                 mov.w    &OSTCBHighRdy, R13     ;   
+                                                                     restore
+                                                                    task stack
+                                                                    SP
+    272    000124 214D                     mov.w    @R13, SP
+    273    000126                                     
+    274    000126              TICKS_ISR_2
+    275    000126                          POPALL                          ;
+                                pop all registers
+    275.1  000126 3F41                     pop.w    r15          ;pop     
+  r15
+    275.2  000128 3E41                     pop.w    r14          ;pop     
+  r14
+    275.3  00012A 3D41                     pop.w    r13          ;pop     
+  r13
+    275.4  00012C 3C41                     pop.w    r12          ;pop     
+  r12
+    275.5  00012E 3B41                     pop.w    r11          ;pop     
+  r11
+    275.6  000130 3A41                     pop.w    r10          ;pop     
+  r10
+    275.7  000132 3941                     pop.w    r9           ;pop     
+  r9
+    275.8  000134 3841                     pop.w    r8           ;pop     
+  r8
+    275.9  000136 3741                     pop.w    r7           ;pop     
+  r7
+    275.10 000138 3641                     pop.w    r6           ;pop     
+  r6
+    275.11 00013A 3541                     pop.w    r5           ;pop     
+  r5
+    275.12 00013C 3441                     pop.w    r4           ;pop      r4  
+         
+    275.13 00013E                          ENDM
+    276    00013E                           
+    277    00013E 0013                     reti                            ;
+  return from interrupt
+    278    000140                                                        
+                                
+    279    000140              
+    280    000140              ;***********************************************
+                               ************************************************
+                               *********
+    281    000140              ;                             SAVE AND RESTORE
+                                THE CPU'S STATUS REGISTER
+    282    000140              ;
+    283    000140              ; Description: These functions are used to
+                                implement OS_CRITICAL_METHOD #3 by saving the
+                                status register
+    284    000140              ;              in a local variable of the
+                                calling function and then, disables interrupts.
+                                
+    285    000140              ;
+    286    000140              ; Notes      : R12 is assumed to hold the
+                                argument passed to OSCPUSaveSR() and also, the
+                                value returned
+    287    000140              ;              by OSCPURestoreSR().
+    288    000140              ;***********************************************
+                               ************************************************
+                               *********
+    289    000140              
+    290    000140              OSCPUSaveSR
+    291    000140 0C42                     MOV.W    SR,R12
+    292    000142 32C2                     DINT
+    293    000144 1001                     RETA
+    294    000146              
+    295    000146              
+    296    000146              OSCPURestoreSR
+    297    000146 024C                     MOV.W    R12,SR
+    298    000148 1001                     RETA
+    299    00014A              
+    300    00014A              ;***********************************************
+                               ************************************************
+                               *********
+    301    00014A              ;                                 WD TIMER
+                                INTERRUPT VECTOR ENTRY
+    302    00014A              ;
+    303    00014A              ;  Interrupt vectors             
+    304    00014A              ;***********************************************
+                               ************************************************
+                               *********
+    305    000000                          COMMON  INTVEC
+    306    000000              
+    307    000072                          ORG     WDT_VECTOR 
+    308    000072 ....         WDT_VEC     DW      TICKS_ISR                 ;
+                                                     interrupt vector.
+                                                     Watchdog/Timer, Timer
+                                                     mode
+    309    000074              
+    310    000074                          END
+##############################
+#          CRC:5C6A          #
+#        Errors:   0         #
+#        Warnings: 0         #
+#         Bytes: 332         #
+##############################
+
+
+
+

@@ -1,0 +1,632 @@
+###############################################################################
+#                                                                             #
+#                                                       06/Jun/2016  16:42:26 #
+# IAR C/C++ Compiler V5.50.1.20465/W32, Evaluation edition for MSP430         #
+# Copyright 1996-2012 IAR Systems AB.                                         #
+#                                                                             #
+#    __rt_version  =  3                                                       #
+#    __double_size =  32                                                      #
+#    __reg_r4      =  free                                                    #
+#    __reg_r5      =  free                                                    #
+#    __pic         =  no                                                      #
+#    __core        =  430X                                                    #
+#    __data_model  =  large                                                   #
+#    Source file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\i2c.c                                #
+#    Command line  =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\i2c.c -D NDEBUG -D RAM_VECTOR -lC    #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\List\ -lA C:\Users\615\Desktop\MSP430\MS #
+#                     P430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Release\List\ -o        #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\Obj\ -D__MSP430F5529__ -e --double=32    #
+#                     --dlib_config "D:\Program Files (x86)\IAR               #
+#                     Systems\Embedded Workbench 6.4                          #
+#                     Evaluation\430\LIB\DLIB\dl430xlfn.h" -I                 #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\ -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Ê #
+#                     ý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\inc\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\ -I C:\Users\615\Desktop\MSP430\MSP4 #
+#                     30F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\src\USB\ -I       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_config\ -I                   #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_User\ -I                     #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\srcUSB\USB_API\USB_CDC_API\ -I           #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_API\USB_HID_API\ -I          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_API\USB_MSC_API\ -I          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\KEY\ -I C:\Users\615\Desktop\MSP430\MSP #
+#                     430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\LED\ -I         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\12864\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\oled\ -I      #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\mpu6050\inc\ -I                         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\mpu6050\src\ -I                         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\nokia5110\inc\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\nokia5110\src\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\LQ_1.8_TFT\ -I                          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\LCD_API\ -I                             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\2.2TFT\ -I                              #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\delay\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\ -I             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\System\inc\ -I C:\Users\615\Desktop\MSP430\MSP43 #
+#                     0F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\src\ -I             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\User\ -I C:\Users\615\Desktop\MSP430\MSP430F5529 #
+#                     ¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\User\USER\ -I                    #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\UCOSII\CONFIG\ -I                            #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\uCOSII\App\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII\CONFIHG\    #
+#                     -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ #
+#                     \¹¤³ÌÄ£°å\Lib\uCOSII\PORT\ -I                           #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\UCOSII\CORE\ -I                              #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\FatFs\ -I C:\Users\615\Desktop\MSP430\MSP430 #
+#                     F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\FatFs\option\           #
+#                     --core=430X --data_model=large -Oh --multiplier=32      #
+#                     --multiplier_location=4C0 --hw_workaround=CPU40         #
+#    List file     =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\List\i2c.lst                             #
+#    Object file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\Obj\i2c.r43                              #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\src\i2c.c
+      1          #include "i2c.h"
+      2          #include "clock.h" 
+      3          #include "system.h"
+      4          #include "gpio.h"
+      5          const struct{
+      6            IO_PIN SCL;
+      7            IO_PIN SDA;
+
+   \                                 In  segment DATA20_C, align 1, align-sorted
+      8          }I2C_PIN[2]=
+   \                     I2C_PIN:
+   \   000000   020102000302 DC8 2, 1, 2, 0, 3, 2, 3, 1
+   \            0301        
+      9          { //        SCL         SDA
+     10            /*I2C0*/{.SCL={P3,1},.SDA={P3,0}},           
+     11            /*I2C1*/{.SCL={P4,2},.SDA={P4,1}}          
+     12          };
+     13          static inline void  I2C_Start     (I2Cn i2cn);          //·¢ËÍÒ»¸öÆðÊ¼ÐÅºÅ
+     14          static inline void  I2C_Stop      (I2Cn i2cn);          //·¢ËÍÒ»¸öÍ£Ö¹ÐÅºÅ
+     15          static inline void  I2C_WaitBusy  (I2Cn i2cn);          //µÈ´ý¿ÕÏÐ
+     16          static inline void  I2C_EnterSend (I2Cn i2cn);          //½øÈë·¢ËÍÄ£Ê½
+     17          static inline void  I2C_EnterRead (I2Cn i2cn);          //½øÈë½ÓÊÕÄ£Ê½
+     18          /*******************************************************************************
+     19          *  º¯ÊýÃû³Æ£ºI2C_MasterInit(I2Cn i2cn,uint16_t SlaveID,uint32_t BaudRate) 
+     20          *  ¹¦ÄÜËµÃ÷£º³õÊ¼»¯Ò»¸öÄ£¿éÎªI2CÖ÷»úÄ£¿é£¬²¢ÉèÖÃ´Ó»úµØÖ·¼°´«Êä²¨ÌØÂÊ
+     21          *  ²ÎÊýËµÃ÷£ºI2Cn i2cn      :Ä£¿éºÅ
+     22                       uint8_t SlaveID  :´Ó»úµØÖ·
+     23                       uint32_t BaudRate:´«Êä²¨ÌØÂÊ
+     24          *  º¯Êý·µ»Ø£ºÎÞ
+     25          *  Ê¹ÓÃÊ¾Àý£ºI2C_MasterInit   (I2C0, 0x68,100000);  //³õÊ¼»¯I2C0Ä£¿éÎªÖ÷»ú£¬´Ó»úµØÖ·Îª0x68,ÉèÖÃ´«Êä²¨ÌØÂÊÎª100000
+     26          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+     27          void  I2C_MasterInit(I2Cn i2cn,uint16_t SlaveID,uint32_t BaudRate)                                       
+   \                     I2C_MasterInit:
+     28          {
+   \   000000   5B14         PUSHM.A #0x6, R11
+   \   000002   2183         SUB.W   #0x2, SP
+   \   000004   474C         MOV.B   R12, R7
+   \   000006   0A4D         MOV.W   R13, R10
+     29            WordType BR;
+     30            BR.Word=g_sClock.SMCLK.CLK_HZ/BaudRate;        //ÇóÈ¡²¨ÌØÂÊËùÐèµÄ·ÖÆµÏµÊý
+   \   000008   ....1C42.... MOVX.W  &g_sClock + 12, R12
+   \   00000E   ....1D42.... MOVX.W  &g_sClock + 14, R13
+   \   000014   ........     CALLA   #?DivMod32u
+   \   000018   814C0000     MOV.W   R12, 0(SP)
+     31            GPIO_Init(I2C_PIN[i2cn-2].SCL.Port,I2C_PIN[i2cn-2].SCL.Pin,GPO);
+   \   00001C   4B47         MOV.B   R7, R11
+   \   00001E   2B83         SUB.W   #0x2, R11
+   \   000020   3BE00080     XOR.W   #0x8000, R11
+   \   000024   4B06         RLAM.A  #0x2, R11
+   \   000026   AB0E0000     ADDA    #0xe0000, R11
+   \   00002A   C80B         MOVA    R11, R8
+   \   00002C   ........     ADDA    #I2C_PIN + 1, R8
+   \   000030   C90B         MOVA    R11, R9
+   \   000032   ........     ADDA    #I2C_PIN, R9
+   \   000036   2E43         MOV.W   #0x2, R14
+   \   000038   ........     CALLA   #?Subroutine0
+     32            //Êä³ö9¸öÊ±ÖÓÒÔ»Ö¸´I2Cn×ÜÏß×´Ì¬  
+     33            for(uint8_t i=0;i<9;i++)
+   \                     ??CrossCallReturnLabel_1:
+   \   00003C   76400900     MOV.B   #0x9, R6
+     34            {
+     35              GPIO_Bit_Set  (I2C_PIN[i2cn-2].SCL.Port,I2C_PIN[i2cn-2].SCL.Pin,  SET);
+   \                     ??I2C_MasterInit_0:
+   \   000040   5E43         MOV.B   #0x1, R14
+   \   000042   ........     CALLA   #?Subroutine3
+     36              DELAY_US(5);
+     37              GPIO_Bit_Set  (I2C_PIN[i2cn-2].SCL.Port,I2C_PIN[i2cn-2].SCL.Pin,RESET);
+   \                     ??CrossCallReturnLabel_5:
+   \   000046   4E43         MOV.B   #0x0, R14
+   \   000048   ........     CALLA   #?Subroutine3
+     38              DELAY_US(5);
+     39            }
+   \                     ??CrossCallReturnLabel_6:
+   \   00004C   7653         ADD.B   #0xff, R6
+   \   00004E   F823         JNE     ??I2C_MasterInit_0
+     40            //³õÊ¼»¯Òý½Å
+     41            GPIO_Init(I2C_PIN[i2cn-2].SCL.Port,I2C_PIN[i2cn-2].SCL.Pin,SEL);
+   \   000050   3E400001     MOV.W   #0x100, R14
+   \   000054   ........     CALLA   #?Subroutine0
+     42            GPIO_Init(I2C_PIN[i2cn-2].SDA.Port,I2C_PIN[i2cn-2].SDA.Pin,SEL);
+   \                     ??CrossCallReturnLabel_0:
+   \   000058   3E400001     MOV.W   #0x100, R14
+   \   00005C   1D43         MOV.W   #0x1, R13
+   \   00005E   ....5F4B.... MOVX.B  I2C_PIN + 3(R11), R15
+   \   000064   5F83         SUB.B   #0x1, R15
+   \   000066   0230         JN      ??I2C_MasterInit_3
+   \   000068                RPT     R15
+   \   000068   CF180D5D     RLAX.W  R13
+   \                     ??I2C_MasterInit_3:
+   \   00006C   ....5C4B.... MOVX.B  I2C_PIN + 2(R11), R12
+   \   000072   ........     CALLA   #GPIO_MultiBits_Init
+     43            //³õÊ¼»¯¼Ä´æÆ÷
+     44            USCIX[i2cn]->CTL1 = UCSWRST;                       // Èí¼þ¸´Î»Ê¹ÄÜ£¬±£³Ö¸´Î»×´Ì¬
+   \   000076   4747         MOV.B   R7, R7
+   \   000078   4706         RLAM.A  #0x2, R7
+   \   00007A   ....5B47.... MOVX.A  USCIX(R7), R11
+   \   000080   DB430000     MOV.B   #0x1, 0(R11)
+     45            USCIX[i2cn]->CTL0 = UCMST + UCMODE_3 + UCSYNC;     // I2CÖ÷»ú£¬Í¬²½Ä£Ê½
+   \   000084   FB400F000100 MOV.B   #0xf, 0x1(R11)
+     46            if(SlaveID > 0x7F)
+   \   00008A   3A908000     CMP.W   #0x80, R10
+   \   00008E   CF0B         MOVA    R11, R15
+   \   000090   0428         JNC     ??I2C_MasterInit_4
+     47            {
+     48              USCIX[i2cn]->SLA10 = SET;
+   \   000092   FBD040000100 BIS.B   #0x40, 0x1(R11)
+   \   000098   033C         JMP     ??I2C_MasterInit_5
+     49            }
+     50            else
+     51            {
+     52              USCIX[i2cn]->SLA10 = RESET;
+   \                     ??I2C_MasterInit_4:
+   \   00009A   FBC040000100 BIC.B   #0x40, 0x1(R11)
+     53            }
+     54            USCIX[i2cn]->I2CSA = SlaveID;
+   \                     ??I2C_MasterInit_5:
+   \   0000A0   8B4A1200     MOV.W   R10, 0x12(R11)
+     55            USCIX[i2cn]->CTL1 |= UCSSEL__SMCLK;                 //Ê¹ÓÃSMCLK×÷ÎªÊ±ÖÓÔ´
+   \   0000A4   FFD080000000 BIS.B   #0x80, 0(R15)
+     56            USCIX[i2cn]->BR0 = BR.Byte[0];
+   \   0000AA   EB410600     MOV.B   @SP, 0x6(R11)
+     57            USCIX[i2cn]->BR1 = BR.Byte[1];                        
+   \   0000AE   DB4101000700 MOV.B   0x1(SP), 0x7(R11)
+     58            USCIX[i2cn]->CTL1 &=~ UCSWRST;                      //Çå³ýÈí¼þ¸´Î»£¬Õý³£²Ù×÷
+   \   0000B4   DFC30000     BIC.B   #0x1, 0(R15)
+     59            
+     60            USCIX[i2cn]->IE = 0u;                                         //¹Ø±ÕËùÓÐÖÐ¶Ï
+   \   0000B8   CB431C00     MOV.B   #0x0, 0x1c(R11)
+     61            USCIX[i2cn]->RXIFG = RESET;                                   //Çå³ý½ÓÊÕÊý¾Ý±êÖ¾
+   \   0000BC   DFC31D00     BIC.B   #0x1, 0x1d(R15)
+     62            USCIX[i2cn]->TXIFG = SET;                                     //ÖÃÎ»·¢ËÍ»º³åÇøÎª¿Õ±êÖ¾ 
+   \   0000C0   EBD31D00     BIS.B   #0x2, 0x1d(R11)
+     63          }
+   \   0000C4   2153         ADD.W   #0x2, SP
+   \   0000C6   5616         POPM.A  #0x6, R11
+   \   0000C8   1001         RETA
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine3:
+   \   000000   6D48         MOV.B   @R8, R13
+   \   000002   6C49         MOV.B   @R9, R12
+   \   000004   ........     CALLA   #GPIO_Bit_Set
+   \   000008                ////////////// Start of 5 cycles delay.
+   \   000008                RPT     #0x4
+   \   000008   43180F10     RRCX.W  R15
+   \   00000C                ////////////// End of delay code.
+   \   00000C   1001         RETA
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine0:
+   \   000000   1D43         MOV.W   #0x1, R13
+   \   000002   6F48         MOV.B   @R8, R15
+   \   000004   5F83         SUB.B   #0x1, R15
+   \   000006   0230         JN      ??I2C_MasterInit_1
+   \   000008                RPT     R15
+   \   000008   CF180D5D     RLAX.W  R13
+   \                     ??I2C_MasterInit_1:
+   \   00000C   6C49         MOV.B   @R9, R12
+   \   00000E   ........     BRA     #GPIO_MultiBits_Init
+     64          /*******************************************************************************
+     65          *  º¯ÊýÃû³Æ£ºI2C_SetSlaveID(I2Cn i2cn,uint16_t SlaveID)
+     66          *  ¹¦ÄÜËµÃ÷£ºÉèÖÃ´Ó»úµØÖ·
+     67          *  ²ÎÊýËµÃ÷£º I2Cn i2cn      :Ä£¿éºÅ
+     68                        uint8_t SlaveID  :´Ó»úµØÖ·
+     69          *  º¯Êý·µ»Ø£ºÎÞ
+     70          *  Ê¹ÓÃÊ¾Àý£ºI2C_SetSlaveID(I2C1,0x68);   //ÉèÖÃI2C1Ä£¿éµÄ´Ó»úµØÖ·Îª0x68
+     71          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+     72          void I2C_SetSlaveID(I2Cn i2cn,uint16_t SlaveID)
+   \                     I2C_SetSlaveID:
+     73          {
+     74            if(SlaveID > 0x7F)
+   \   000000   4C4C         MOV.B   R12, R12
+   \   000002   4C06         RLAM.A  #0x2, R12
+   \   000004   ....5E4C.... MOVX.A  USCIX(R12), R14
+   \   00000A   3D908000     CMP.W   #0x80, R13
+   \   00000E   0428         JNC     ??I2C_SetSlaveID_0
+     75            {
+     76              USCIX[i2cn]->SLA10 = SET;
+   \   000010   FED040000100 BIS.B   #0x40, 0x1(R14)
+   \   000016   033C         JMP     ??I2C_SetSlaveID_1
+     77            }
+     78            else
+     79            {
+     80              USCIX[i2cn]->SLA10 = RESET;
+   \                     ??I2C_SetSlaveID_0:
+   \   000018   FEC040000100 BIC.B   #0x40, 0x1(R14)
+     81            }
+     82            USCIX[i2cn]->I2CSA = SlaveID;
+   \                     ??I2C_SetSlaveID_1:
+   \   00001E   8E4D1200     MOV.W   R13, 0x12(R14)
+     83          }
+   \   000022   1001         RETA
+     84          /*******************************************************************************
+     85          *  º¯ÊýÃû³Æ£ºI2C_Start(I2Cn i2cn)
+     86          *  ¹¦ÄÜËµÃ÷£º·¢ËÍÒ»¸öÆðÊ¼ÐÅºÅ
+     87          *  ²ÎÊýËµÃ÷£ºI2Cn i2cn      :Ä£¿éºÅ
+     88          *  º¯Êý·µ»Ø£ºÎÞ
+     89          *  Ê¹ÓÃÊ¾Àý£ºI2C_Start (I2C1);  //I2C1Ä£¿é·¢ËÍÒ»¸öÆðÊ¼ÐÅºÅ
+     90          ********************************************************************************/
+     91          inline void I2C_Start(I2Cn i2cn)
+     92          {
+     93            while((USCIX[i2cn]->UC_BUSY==SET) || (USCIX[i2cn]->TXSTP==SET));//È·±£×ÜÏß¿ÕÏÐ
+     94            USCIX[i2cn]->TXSTT = SET;
+     95          }
+     96          /*******************************************************************************
+     97          *  º¯ÊýÃû³Æ£ºI2C_Stop(I2Cn i2cn)
+     98          *  ¹¦ÄÜËµÃ÷£º·¢ËÍÒ»¸öÍ£Ö¹ÐÅºÅ
+     99          *  ²ÎÊýËµÃ÷£ºI2Cn i2cn      :Ä£¿éºÅ
+    100          *  º¯Êý·µ»Ø£ºÎÞ
+    101          *  Ê¹ÓÃÊ¾Àý£ºI2C_Stop (I2C1);  //I2C1Ä£¿é·¢ËÍÒ»¸öÍ£Ö¹ÐÅºÅ
+    102          ********************************************************************************/
+    103          inline void I2C_Stop(I2Cn i2cn)
+    104          {
+    105            while(USCIX[i2cn]->UC_BUSY == SET);                 //µÈ´ý¿ÕÏÐ
+    106            USCIX[i2cn]->TXSTP =SET;                            //·¢ËÍÍ£Ö¹Î»
+    107            while(USCIX[i2cn]->TXSTP == SET);                   //µÈ´ýÍ£Ö¹Î»·¢ËÍÍê³É
+    108          }
+    109          /*******************************************************************************
+    110          *  º¯ÊýÃû³Æ£ºI2C_EnterSend (I2Cn i2cn)
+    111          *  ¹¦ÄÜËµÃ÷£ºI2C½øÈë·¢ËÍÄ£Ê½
+    112          *  ²ÎÊýËµÃ÷£ºI2Cn i2cn      :Ä£¿éºÅ
+    113          *  º¯Êý·µ»Ø£ºÎÞ
+    114          *  Ê¹ÓÃÊ¾Àý£ºI2C_EnterSend (I2C1);  //I2C1Ä£¿é½øÈëÐ´Ä£Ê½
+    115          ********************************************************************************/
+    116          inline void I2C_EnterSend (I2Cn i2cn)
+    117          {
+    118            USCIX[i2cn]->TR = SET;                              //½øÈë·¢ËÍÄ£Ê½
+    119          }
+    120          /*******************************************************************************
+    121          *  º¯ÊýÃû³Æ£ºI2C_EnterRead (I2Cn i2cn)
+    122          *  ¹¦ÄÜËµÃ÷£ºI2C½øÈë½ÓÊÕÄ£Ê½
+    123          *  ²ÎÊýËµÃ÷£ºI2Cn i2cn      :Ä£¿éºÅ
+    124          *  º¯Êý·µ»Ø£ºÎÞ
+    125          *  Ê¹ÓÃÊ¾Àý£ºI2C_EnterRead (I2C1);  //I2C1Ä£¿é½øÈë¶ÁÄ£Ê½
+    126          ********************************************************************************/
+    127          inline void I2C_EnterRead (I2Cn i2cn)
+    128          {
+    129            USCIX[i2cn]->TR = RESET;                             //½øÈë½ÓÊÕÄ£Ê½
+    130          }
+    131          /*******************************************************************************
+    132          *  º¯ÊýÃû³Æ£ºI2C_SendByte (I2Cn i2cn,uint8_t data)
+    133          *  ¹¦ÄÜËµÃ÷£ºI2C·¢ËÍÒ»×Ö½ÚÊý¾Ý
+    134          *  ²ÎÊýËµÃ÷£ºI2Cn i2cn      :Ä£¿éºÅ
+    135                       uint8_t data     :Òª·¢ËÍµÄÊý¾Ý
+    136          *  º¯Êý·µ»Ø£ºÎÞ
+    137          *  Ê¹ÓÃÊ¾Àý£ºI2C_SendByte (I2C1,0x01);  //I2C1Ä£¿é·¢ËÍÒ»×Ö½ÚÊý¾Ý0x01
+    138          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+    139          inline void I2C_SendByte (I2Cn i2cn,uint8_t data)
+   \                     I2C_SendByte:
+   \                     ??I2C_SendByte_0:
+    140          {
+    141            while(USCIX[i2cn]->TXIFG == RESET);                   //µÈ´ý
+   \   000000   4F4C         MOV.B   R12, R15
+   \   000002   4F06         RLAM.A  #0x2, R15
+   \   000004   ....5F4F.... MOVX.A  USCIX(R15), R15
+   \   00000A   EFB31D00     BIT.B   #0x2, 0x1d(R15)
+   \   00000E   F82B         JNC     ??I2C_SendByte_0
+    142            USCIX[i2cn]->TXBUF = data;                            //·¢ËÍÒªÐ´ÈëµÄÊý¾Ý
+   \   000010   CF4D0E00     MOV.B   R13, 0xe(R15)
+    143          }
+   \   000014   1001         RETA
+    144          /*******************************************************************************
+    145          *  º¯ÊýÃû³Æ£ºI2C_ReadByte  (I2Cn i2cn)
+    146          *  ¹¦ÄÜËµÃ÷£ºIIC¶ÁÈ¡Ò»¸ö×Ö½ÚÊý¾Ý
+    147          *  ²ÎÊýËµÃ÷£ºI2Cn i2cn      :Ä£¿éºÅ
+    148          *  º¯Êý·µ»Ø£º¶ÁÈ¡µ½µÄÊý¾Ý
+    149          *  Ê¹ÓÃÊ¾Àý£ºuint8 data = I2C_ReadByte  (I2C1);   //¶ÁÈ¡Êý¾Ý
+    150          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+    151          inline uint8_t I2C_ReadByte  (I2Cn i2cn)
+   \                     I2C_ReadByte:
+   \                     ??I2C_ReadByte_0:
+    152          {
+    153            while(USCIX[i2cn]->RXIFG == RESET);                 //µÈ´ý½ÓÊÕµ½Êý¾Ý
+   \   000000   4F4C         MOV.B   R12, R15
+   \   000002   4F06         RLAM.A  #0x2, R15
+   \   000004   ....5F4F.... MOVX.A  USCIX(R15), R15
+   \   00000A   DFB31D00     BIT.B   #0x1, 0x1d(R15)
+   \   00000E   F82B         JNC     ??I2C_ReadByte_0
+    154            return USCIX[i2cn]->RXBUF;
+   \   000010   5C4F0C00     MOV.B   0xc(R15), R12
+   \   000014   1001         RETA
+    155          }
+    156          /*******************************************************************************
+    157          *  º¯ÊýÃû³Æ£ºI2C_WaitBusy(I2Cn i2cn)
+    158          *  ¹¦ÄÜËµÃ÷£ºI2CµÈ´ý¿ÕÏÐ
+    159          *  ²ÎÊýËµÃ÷£ºI2Cn i2cn      :Ä£¿éºÅ
+    160          *  º¯Êý·µ»Ø£ºÎÞ
+    161          *  Ê¹ÓÃÊ¾Àý£ºI2C_WaitBusy(I2C1);  //µÈ´ýI2C1Ä£¿é²»Ã¦
+    162          ********************************************************************************/
+    163          inline void I2C_WaitBusy(I2Cn i2cn)
+    164          {
+    165            while(USCIX[i2cn]->UC_BUSY == SET);                    //µÈ´ý·¢ËÍ»ò½ÓÊÕÍê³É
+    166          }
+    167          /*******************************************************************************
+    168          *  º¯ÊýÃû³Æ£º I2C_WriteReg(I2Cn i2cn, uint8_t address, char data)
+    169          *  ¹¦ÄÜËµÃ÷£º ÍùÄ³Ò»¸öµØÖ·Ð´ÈëÒ»×Ö½ÚÊý¾Ý
+    170          *  ²ÎÊýËµÃ÷£º I2Cn i2cn      :Ä£¿éºÅ
+    171                        uint8_t address :¼Ä´æÆ÷µØÖ·
+    172                        uint8_t data    :¶Ô¸ÃµØÖ·ÒªÐ´ÈëµÄÊý¾ÝÄÚÈÝ
+    173          *  º¯Êý·µ»Ø£ºÎÞ
+    174          *  Ê¹ÓÃÊ¾Àý£ºI2C_WriteReg(I2C1, 0x20, 0x12);   //¶ÔµØÖ·Îª0x20´¦Ð´ÈëÄÚÈÝ0x12
+    175          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+    176          void  I2C_WriteReg(I2Cn i2cn, uint8_t address, uint8_t data)     
+   \                     I2C_WriteReg:
+    177          {
+    178            I2C_EnterSend(i2cn);
+   \   000000   4C4C         MOV.B   R12, R12
+   \   000002   4C06         RLAM.A  #0x2, R12
+   \   000004   ....5C4C.... MOVX.A  USCIX(R12), R12
+   \   00000A   FCD010000000 BIS.B   #0x10, 0(R12)
+    179            I2C_Start    (i2cn);                        //·¢ËÍÒ»¸öÆðÊ¼ÐÅºÅ
+   \                     ??I2C_WriteReg_0:
+   \   000010   DCB30A00     BIT.B   #0x1, 0xa(R12)
+   \   000014   FD2F         JC      ??I2C_WriteReg_0
+   \   000016   ECB20000     BIT.B   #0x4, 0(R12)
+   \   00001A   FA2F         JC      ??I2C_WriteReg_0
+   \   00001C   ECD30000     BIS.B   #0x2, 0(R12)
+    180            I2C_SendByte (i2cn,address);                //·¢ËÍÒªÐ´ÈëµÄµØÖ·
+   \                     ??I2C_WriteReg_1:
+   \   000020   ECB31D00     BIT.B   #0x2, 0x1d(R12)
+   \   000024   FD2B         JNC     ??I2C_WriteReg_1
+   \   000026   CC4D0E00     MOV.B   R13, 0xe(R12)
+    181            I2C_SendByte (i2cn,data);                   //·¢ËÍÒªÐ´ÈëµÄÊý¾Ý
+   \                     ??I2C_WriteReg_2:
+   \   00002A   ECB31D00     BIT.B   #0x2, 0x1d(R12)
+   \   00002E   FD2B         JNC     ??I2C_WriteReg_2
+   \   000030   CC4E0E00     MOV.B   R14, 0xe(R12)
+    182            I2C_Stop     (i2cn);                        //·¢ËÍÍ£Ö¹Î»
+   \                     ??I2C_WriteReg_3:
+   \   000034   DCB30A00     BIT.B   #0x1, 0xa(R12)
+   \   000038   FD2F         JC      ??I2C_WriteReg_3
+   \   00003A   ECD20000     BIS.B   #0x4, 0(R12)
+   \                     ??I2C_WriteReg_4:
+   \   00003E   ECB20000     BIT.B   #0x4, 0(R12)
+   \   000042   FD2F         JC      ??I2C_WriteReg_4
+   \                     ??I2C_WriteReg_5:
+   \   000044   DCB30A00     BIT.B   #0x1, 0xa(R12)
+   \   000048   FD2F         JC      ??I2C_WriteReg_5
+    183            I2C_WaitBusy (i2cn);
+    184          }
+   \   00004A   1001         RETA
+    185          /*******************************************************************************
+    186          *  º¯ÊýÃû³Æ£º I2C_ReadReg(I2Cn i2cn, uint8_t address) 
+    187          *  ¹¦ÄÜËµÃ÷£º ¶ÔÍâ²¿Ð¾Æ¬¶ÁÈ¡Ä³Ò»µØÖ·µÄÄÚÈÝ
+    188          *  ²ÎÊýËµÃ÷£º I2Cn i2cn      :Ä£¿éºÅ
+    189                        uint8_t address :¼Ä´æÆ÷µØÖ·
+    190          *  º¯Êý·µ»Ø£º ¶ÁÈ¡µ½µÄÄÚÈÝ
+    191          *  Ê¹ÓÃÊ¾Àý£º uint8_t data = I2C_ReadReg(I2C1, 0x20);  //¶ÁÈ¡¼Ä´æÆ÷µØÖ·Îª0x20´¦µÄÄÚÈÝ
+    192          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+    193          uint8_t    I2C_ReadReg(I2Cn i2cn, uint8_t address)             
+   \                     I2C_ReadReg:
+    194          {
+    195            I2C_EnterSend (i2cn);                       //½øÈë·¢ËÍÄ£Ê½
+   \   000000   4C4C         MOV.B   R12, R12
+   \   000002   4C06         RLAM.A  #0x2, R12
+   \   000004   ....5E4C.... MOVX.A  USCIX(R12), R14
+   \   00000A   FED010000000 BIS.B   #0x10, 0(R14)
+    196            I2C_Start     (i2cn);                       //·¢ËÍÒ»¸öÆðÊ¼ÐÅºÅ
+   \   000010   ........     CALLA   #?Subroutine2
+    197            I2C_SendByte  (i2cn,address);               //·¢ËÍÒ»×Ö½ÚÊý¾Ý
+   \                     ??I2C_ReadReg_1:
+   \   000014   EEB31D00     BIT.B   #0x2, 0x1d(R14)
+   \   000018   FD2B         JNC     ??I2C_ReadReg_1
+   \   00001A   CE4D0E00     MOV.B   R13, 0xe(R14)
+    198            I2C_WaitBusy  (i2cn);                       //µÈ´ý´«ÊäÍê±Ï
+   \                     ??I2C_ReadReg_2:
+   \   00001E   DEB30A00     BIT.B   #0x1, 0xa(R14)
+   \   000022   FD2F         JC      ??I2C_ReadReg_2
+    199            I2C_EnterRead (i2cn);                       //½øÈë½ÓÊÕÄ£Ê½
+   \   000024   FEC010000000 BIC.B   #0x10, 0(R14)
+    200            I2C_Start     (i2cn);                       //·¢ËÍÒ»¸öÆðÊ¼ÐÅºÅ
+   \   00002A   ........     CALLA   #?Subroutine2
+    201            I2C_WaitBusy  (i2cn);                       //µÈ´ý¿ÕÏÐ
+   \                     ??I2C_ReadReg_4:
+   \   00002E   DEB30A00     BIT.B   #0x1, 0xa(R14)
+   \   000032   FD2F         JC      ??I2C_ReadReg_4
+   \                     ??I2C_ReadReg_5:
+   \   000034   DEB30A00     BIT.B   #0x1, 0xa(R14)
+   \   000038   FD2F         JC      ??I2C_ReadReg_5
+   \   00003A   EED20000     BIS.B   #0x4, 0(R14)
+   \                     ??I2C_ReadReg_6:
+   \   00003E   EEB20000     BIT.B   #0x4, 0(R14)
+   \   000042   FD2F         JC      ??I2C_ReadReg_6
+   \                     ??I2C_ReadReg_7:
+   \   000044   DEB31D00     BIT.B   #0x1, 0x1d(R14)
+   \   000048   FD2B         JNC     ??I2C_ReadReg_7
+   \   00004A   5C4E0C00     MOV.B   0xc(R14), R12
+   \   00004E   1001         RETA
+    202            I2C_Stop      (i2cn);                       //·¢ËÍÒ»¸öÍ£Ö¹ÐÅºÅ,¶ÁµÄ»°ÒªÏÈ·¢ËÍÍ£Ö¹Î»
+    203            return I2C_ReadByte(i2cn);                  //¶ÁÈ¡Êý¾Ý
+    204          }
+    205          /*******************************************************************************
+    206          *  º¯ÊýÃû³Æ£º I2C_ITConfig (I2Cn i2cn,I2C_IRQn irqn,STATUS ITState)
+    207          *  ¹¦ÄÜËµÃ÷£º ÉèÖÃÊ¹ÄÜ»ò½ûÖ¹I2CnµÄÄ³Ò»¸öÖÐ¶Ï
+    208          *  ²ÎÊýËµÃ÷£º I2Cn i2cn      :Ä£¿éºÅ
+    209                        I2C_IRQn irqn :ÖÐ¶ÏÀàÐÍ
+    210          *  º¯Êý·µ»Ø£ºÎÞ
+    211          *  Ê¹ÓÃÊ¾Àý£ºI2C_ITConfig (I2C1,I2C_RX_IRQn,ENABLE);  //Ê¹ÄÜI2C1µÄ½ÓÊÕÖÐ¶Ï
+    212          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine1:
+   \   000000   4C4C         MOV.B   R12, R12
+   \   000002   4C06         RLAM.A  #0x2, R12
+   \   000004   ....5F4C.... MOVX.A  USCIX(R12), R15
+   \   00000A   1001         RETA
+
+   \                                 In  segment CODE, align 2
+    213          void  I2C_ITConfig (I2Cn i2cn,I2C_IRQn irqn,STATUS ITState)
+   \                     I2C_ITConfig:
+    214          {
+    215            if(ITState != DISABLE)
+   \   000000   ........     CALLA   #?Subroutine1
+   \                     ??CrossCallReturnLabel_4:
+   \   000004   4E93         CMP.B   #0x0, R14
+   \   000006   0324         JEQ     ??I2C_ITConfig_0
+    216            {
+    217              USCIX[i2cn]->IE |= irqn;
+   \   000008   CFDD1C00     BIS.B   R13, 0x1c(R15)
+   \   00000C   1001         RETA
+    218            }
+    219            else
+    220            {
+    221              USCIX[i2cn]->IE &=~irqn;
+   \                     ??I2C_ITConfig_0:
+   \   00000E   CFCD1C00     BIC.B   R13, 0x1c(R15)
+    222            }
+    223          }
+   \   000012   1001         RETA
+    224          /*******************************************************************************
+    225          *  º¯ÊýÃû³Æ£º I2C_GetITStatus(I2Cn i2cn,I2C_IRQn irqn)
+    226          *  ¹¦ÄÜËµÃ÷£º »ñÈ¡I2CµÄÄ³Ò»¸öÖÐ¶Ï±êÖ¾
+    227          *  ²ÎÊýËµÃ÷£º I2Cn i2cn      :Ä£¿éºÅ
+    228                        I2C_IRQn irqn :ÖÐ¶ÏÀàÐÍ
+    229          *  º¯Êý·µ»Ø£º STATUS : TRUE ÖÐ¶ÏÊÂ¼þ·¢Éú£¬FALSE ÖÐ¶ÏÊÂ¼þÎ´·¢Éú
+    230          *  Ê¹ÓÃÊ¾Àý£º if(TRUE == I2C_GetITStatus(I2C0,I2C_RX_IRQn)){...} //ÅÐ¶ÏI2C0Ä£¿éÊÇ·ñ½ÓÊÕÍê³ÉÊÂ¼þÖÐ¶Ï·¢Éú
+    231          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+    232          STATUS I2C_GetITStatus(I2Cn i2cn,I2C_IRQn irqn)
+   \                     I2C_GetITStatus:
+    233          {
+    234            return ((USCIX[i2cn]->IFG & irqn) ? TRUE :FALSE);
+   \   000000   ........     CALLA   #?Subroutine1
+   \                     ??CrossCallReturnLabel_3:
+   \   000004   CFBD1D00     BIT.B   R13, 0x1d(R15)
+   \   000008   0220         JNE     ??I2C_GetITStatus_0
+   \   00000A   4C43         MOV.B   #0x0, R12
+   \   00000C   1001         RETA
+   \                     ??I2C_GetITStatus_0:
+   \   00000E   5C43         MOV.B   #0x1, R12
+   \   000010   1001         RETA
+    235          }
+    236          /*******************************************************************************
+    237          *  º¯ÊýÃû³Æ£º I2C_ClearITPendingBit(I2Cn i2cn,I2C_IRQn irqn)
+    238          *  ¹¦ÄÜËµÃ÷£º Çå³ýI2CnµÄÄ³Ò»¸öÖÐ¶Ï±êÖ¾
+    239          *  ²ÎÊýËµÃ÷£º I2Cn i2cn      :Ä£¿éºÅ
+    240                        I2C_IRQn irqn :ÖÐ¶ÏÀàÐÍ
+    241          *  º¯Êý·µ»Ø£º ÎÞ
+    242          *  Ê¹ÓÃÊ¾Àý£º I2C_ClearITPendingBit(I2C0,I2C_RX_IRQn);   //Çå³ýI2C1Ä£¿é½ÓÊÕÖÐ¶Ï±êÖ¾Î»
+    243          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+    244          void  I2C_ClearITPendingBit(I2Cn i2cn,I2C_IRQn irqn)
+   \                     I2C_ClearITPendingBit:
+    245          {
+    246            USCIX[i2cn]->IFG &=~ irqn;
+   \   000000   ........     CALLA   #?Subroutine1
+   \                     ??CrossCallReturnLabel_2:
+   \   000004   CFCD1D00     BIC.B   R13, 0x1d(R15)
+    247          }
+   \   000008   1001         RETA
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine2:
+   \   000000   DEB30A00     BIT.B   #0x1, 0xa(R14)
+   \   000004   FD2F         JC      ?Subroutine2
+   \   000006   EEB20000     BIT.B   #0x4, 0(R14)
+   \   00000A   FA2F         JC      ?Subroutine2
+   \   00000C   EED30000     BIS.B   #0x2, 0(R14)
+   \   000010   1001         RETA
+
+   Maximum stack usage in bytes:
+
+   CSTACK Function
+   ------ --------
+       4  I2C_ClearITPendingBit
+       4  I2C_GetITStatus
+       4  I2C_ITConfig
+      30  I2C_MasterInit
+            30 -> GPIO_Bit_Set
+            30 -> GPIO_MultiBits_Init
+       4  I2C_ReadByte
+       4  I2C_ReadReg
+       4  I2C_SendByte
+       4  I2C_SetSlaveID
+       4  I2C_WriteReg
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      18  ?Subroutine0
+      12  ?Subroutine1
+      18  ?Subroutine2
+      14  ?Subroutine3
+      10  I2C_ClearITPendingBit
+      18  I2C_GetITStatus
+      20  I2C_ITConfig
+     202  I2C_MasterInit
+       8  I2C_PIN
+      22  I2C_ReadByte
+      80  I2C_ReadReg
+      22  I2C_SendByte
+      36  I2C_SetSlaveID
+      76  I2C_WriteReg
+
+ 
+ 548 bytes in segment CODE
+   8 bytes in segment DATA20_C
+ 
+ 548 bytes of CODE  memory
+   8 bytes of CONST memory
+
+Errors: none
+Warnings: none

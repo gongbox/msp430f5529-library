@@ -1,0 +1,7 @@
+"NRF24L01.obj",
+"DELAY.obj",
+"½ÓÊÕ.obj",
+"MAX232.obj",
+"LCD12864.obj" 
+TO "NRF24L01Ä£¿é" 
+RAMSIZE(256) 

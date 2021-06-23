@@ -1,0 +1,1434 @@
+###############################################################################
+#                                                                             #
+#                                                       06/Jun/2016  16:42:36 #
+# IAR C/C++ Compiler V5.50.1.20465/W32, Evaluation edition for MSP430         #
+# Copyright 1996-2012 IAR Systems AB.                                         #
+#                                                                             #
+#    __rt_version  =  3                                                       #
+#    __double_size =  32                                                      #
+#    __reg_r4      =  free                                                    #
+#    __reg_r5      =  free                                                    #
+#    __pic         =  no                                                      #
+#    __core        =  430X                                                    #
+#    __data_model  =  large                                                   #
+#    Source file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\timer.c                              #
+#    Command line  =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\timer.c -D NDEBUG -D RAM_VECTOR -lC  #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\List\ -lA C:\Users\615\Desktop\MSP430\MS #
+#                     P430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Release\List\ -o        #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\Obj\ -D__MSP430F5529__ -e --double=32    #
+#                     --dlib_config "D:\Program Files (x86)\IAR               #
+#                     Systems\Embedded Workbench 6.4                          #
+#                     Evaluation\430\LIB\DLIB\dl430xlfn.h" -I                 #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\ -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Ê #
+#                     ý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\inc\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\ -I C:\Users\615\Desktop\MSP430\MSP4 #
+#                     30F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\src\USB\ -I       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_config\ -I                   #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_User\ -I                     #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\srcUSB\USB_API\USB_CDC_API\ -I           #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_API\USB_HID_API\ -I          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_API\USB_MSC_API\ -I          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\KEY\ -I C:\Users\615\Desktop\MSP430\MSP #
+#                     430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\LED\ -I         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\12864\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\oled\ -I      #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\mpu6050\inc\ -I                         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\mpu6050\src\ -I                         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\nokia5110\inc\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\nokia5110\src\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\LQ_1.8_TFT\ -I                          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\LCD_API\ -I                             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\2.2TFT\ -I                              #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\delay\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\ -I             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\System\inc\ -I C:\Users\615\Desktop\MSP430\MSP43 #
+#                     0F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\src\ -I             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\User\ -I C:\Users\615\Desktop\MSP430\MSP430F5529 #
+#                     ¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\User\USER\ -I                    #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\UCOSII\CONFIG\ -I                            #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\uCOSII\App\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII\CONFIHG\    #
+#                     -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ #
+#                     \¹¤³ÌÄ£°å\Lib\uCOSII\PORT\ -I                           #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\UCOSII\CORE\ -I                              #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\FatFs\ -I C:\Users\615\Desktop\MSP430\MSP430 #
+#                     F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\FatFs\option\           #
+#                     --core=430X --data_model=large -Oh --multiplier=32      #
+#                     --multiplier_location=4C0 --hw_workaround=CPU40         #
+#    List file     =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\List\timer.lst                           #
+#    Object file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\Obj\timer.r43                            #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\src\timer.c
+      1          #include "timer.h"
+      2          #include "clock.h"
+      3          #include "gpio.h"
+      4          #include "stdarg.h"
+      5          #include "system.h"
+      6          
+      7          //¶¨Òå4¸öÖ¸ÕëÊý×é±£´æ TIMERX µÄµØÖ·
+
+   \                                 In  segment DATA20_C, align 2, align-sorted
+      8          const TIMER_MemMapPtr TIMERX[TIMER_NUM] ={TIMER_A0_BASE_PTR,TIMER_A1_BASE_PTR,TIMER_A2_BASE_PTR,TIMER_B0_BASE_PTR};
+   \                     TIMERX:
+   \   000000   400300008003 DC32 340H, 380H, 400H, 3C0H
+   \            000000040000
+   \            C0030000    
+      9          //¶¨ÒåÊý×é±£´æÕ¼¿Õ±È×î´óÖµ
+
+   \                                 In  segment DATA20_C, align 2, align-sorted
+     10          const uint32_t TIMER_PRECISON[TIMER_NUM]={TIMER_A0_PRECISON,TIMER_A1_PRECISON,TIMER_A2_PRECISON,TIMER_B0_PRECISON};
+   \                     TIMER_PRECISON:
+   \   000000   E8030000E803 DC32 1000, 1000, 1000, 1000
+   \            0000E8030000
+   \            E8030000    
+     11          //¶¨ÒåÍ¨µÀÒý½Å
+
+   \                                 In  segment DATA20_C, align 1, align-sorted
+     12          const IO_PIN TIMER_CH_PIN[TIMER_NUM][TIMER_CH_NUM]=
+   \                     TIMER_CH_PIN:
+   \   000000   000100020003 DC8 0, 1, 0, 2, 0, 3, 0, 4, 0, 5, 0, 0, 0, 0, 0, 7, 1, 0, 1, 1, 0, 0, 0
+   \            000400050000
+   \            000000070100
+   \            0101000000  
+   \   000017   000000000001 DC8 0, 0, 0, 0, 0, 1, 3, 1, 4, 1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 4, 6, 4, 7
+   \            030104010500
+   \            000000000000
+   \            0004060407  
+   \   00002E   060406050606 DC8 6, 4, 6, 5, 6, 6, 2, 5, 2, 6
+   \            02050206    
+     13          {// CH0    CH1    CH2    CH3    CH4    CH5    CH6
+     14            {{P1,1},{P1,2},{P1,3},{P1,4},{P1,5}},                  //TIMER_A0
+     15            {{P1,7},{P2,0},{P2,1}},                                //TIMER_A1
+     16            {{P2,3},{P2,4},{P2,5}},                                //TIMER_A2
+     17            {{P5,6},{P5,7},{P7,4},{P7,5},{P7,6},{P3,5},{P3,6}}     //TIMER_B0
+     18          };//Í¨µÀÒý½Å
+
+   \                                 In  segment DATA20_C, align 1, align-sorted
+     19          const IO_PIN TIMER_CLK_PIN[TIMER_NUM] =
+   \                     TIMER_CLK_PIN:
+   \   000000   000000060102 DC8 0, 0, 0, 6, 1, 2, 6, 7
+   \            0607        
+     20          {
+     21            {P1,0},                                                //TIMER_A0
+     22            {P1,6},                                                //TIMER_A1
+     23            {P2,2},                                                //TIMER_A2
+     24            {P7,7}                                                 //TIMER_B0
+     25          };//Íâ²¿Ê±ÖÓÊäÈëÒý½Å
+     26          /*******************************************************************************
+     27          *  º¯ÊýÃû³Æ£ºTIMER_PWM_MultiChannel_Init(TIMERn timer, uint32_t fre, uint8_t ChannelNum,...)
+     28          *  ¹¦ÄÜËµÃ÷£º¶¨Ê±Æ÷PWMÊä³ö³õÊ¼»¯(¿ÉÒÔ¶à¸öÍ¨µÀÍ¬Ê±³õÊ¼»¯)
+     29          *  ²ÎÊýËµÃ÷£ºTIMERn timer       £º¶¨Ê±Æ÷Ä£¿é
+     30                       uint32_t fre         £ºÆµÂÊ
+     31                       uint8_t ChannelNum   £ºÒª³õÊ¼»¯µÄÍ¨µÀÊý
+     32                       ...                £º³õÊ¼»¯µÄÍ¨µÀ
+     33          *  º¯Êý·µ»Ø£º²»³É¹¦Ôò·µ»ØERROR£¬³É¹¦Ôò·µ»ØSUCCEED
+     34          *  Ê¹ÓÃÀý³Ì£ºÊµÀýÒ»£º£¨Ê¹ÓÃº¯Êý³õÊ¼»¯Ê±ÐèÒªÊäÈë³õÊ¼»¯Í¨µÀÊý£¬³õÊ¼»¯Í¨µÀÊý¿ÉÒÔÎª0£¬Èç£ºTIMER_PWM_MultiChannel_Init(TIMER_A0, 1000, 0);£©
+     35                       TIMER_PWM_MultiChannel_Init(TIMER_A0, 1000, 3, TIMER_CH1, TIMER_CH2, TIMER_CH4);
+     36                       //¶¨Ê±Æ÷TIMER_A0³õÊ¼»¯Êä³öPWM²¨£¬ÆµÂÊÎª1000Hz,³õÊ¼»¯3¸öÍ¨µÀ£¬·Ö±ðÊÇ£ºTIMER_CH1,TIMER_CH2,TIMER_CH4
+     37                       ÊµÀý¶þ£º(Ê¹ÓÃºê¶¨Òå³õÊ¼»¯Ê±²»ÐèÒªÊäÈë³õÊ¼»¯Í¨µÀÊý)
+     38                       TIMER_PWM_Init(TIMER_B0,1000,TIMER_CH1,TIMER_CH2,TIMER_CH3,TIMER_CH4,TIMER_CH5,TIMER_CH6);
+     39                       //¶¨Ê±Æ÷TIMER_B0³õÊ¼»¯Êä³öPWM²¨£¬ÆµÂÊÎª1000Hz,³õÊ¼»¯6¸öÍ¨µÀ£ºTIMER_CH1,TIMER_CH2,TIMER_CH3,TIMER_CH4,TIMER_CH5,TIMER_CH6
+     40          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+     41          STATUS TIMER_PWM_MultiChannel_Init(TIMERn timer, uint32_t fre, uint8_t ChannelNum,...)
+   \                     TIMER_PWM_MultiChannel_Init:
+     42          {
+   \   000000   7B14         PUSHM.A #0x8, R11
+   \   000002   2182         SUB.W   #0x4, SP
+   \   000004   444C         MOV.B   R12, R4
+   \   000006   064E         MOV.W   R14, R6
+   \   000008   074F         MOV.W   R15, R7
+     43          #ifdef DELAY_TIMER
+     44            ASSERT((timer != DELAY_TIMER));       //²»ÔÊÐíÕâÖÖÇé¿öÏÂ»¹ºê¶¨Òå¸Ã¶¨Ê±Æ÷×÷ÎªÑÓÊ±ËùÓÃµÄ¶¨Ê±Æ÷£¬ÇëÔÚsystem.hÀïÐÞ¸ÄDELAY_TIMERºê¶¨Òå
+     45          #endif
+     46            ASSERT((timer==TIMER_A0&&ChannelNum<=TIMER_CH4)
+     47                 ||(timer==TIMER_A1&&ChannelNum<=TIMER_CH2)
+     48                 ||(timer==TIMER_A2&&ChannelNum<=TIMER_CH2)
+     49                 ||(timer==TIMER_B0&&ChannelNum<=TIMER_CH6)); //¶ÏÑÔ¼ì²âÊäÈë²ÎÊý*/
+     50            
+     51            va_list ap;
+     52            va_start(ap,ChanelNum);
+   \   00000A   0F41         MOV.W   SP, R15
+   \   00000C   3F502800     ADD.W   #0x28, R15
+   \   000010   710F0000     MOVA    R15, 0(SP)
+     53            for(int i=0;i < ChannelNum;i++)           //¸ù¾Ý³õÊ¼»¯µÄÍ¨µÀÊý£¬ÖðÒ»³õÊ¼»¯Í¨µÀ
+   \   000014   4D93         CMP.B   #0x0, R13
+   \   000016   3A24         JEQ     ??TIMER_PWM_MultiChannel_Init_1
+   \   000018   484D         MOV.B   R13, R8
+   \   00001A   4A4C         MOV.B   R12, R10
+   \   00001C   0B43         MOV.W   #0x0, R11
+     54            {
+     55              TIMER_CHn ch = va_arg(ap, TIMER_CHn);  //¶ÁÈ¡Òª³õÊ¼»¯µÄÍ¨µÀ
+   \                     ??TIMER_PWM_MultiChannel_Init_0:
+   \   00001E   0901         MOVA    @SP, R9
+   \   000020   E903         ADDA    #0x2, R9
+   \   000022   71090000     MOVA    R9, 0(SP)
+   \   000026   5949FEFF     MOV.B   -0x2(R9), R9
+     56              if((ch == TIMER_CH0) || (ch >= TIMER_CH_NUM))   //ÅÐ¶ÏÍ¨µÀÖµÊÇ·ñºÏÀí
+   \   00002A   4993         CMP.B   #0x0, R9
+   \   00002C   0324         JEQ     ??TIMER_PWM_MultiChannel_Init_2
+   \   00002E   79900700     CMP.B   #0x7, R9
+   \   000032   0228         JNC     ??TIMER_PWM_MultiChannel_Init_3
+     57              {
+     58                return ERROR;                                 //²»ºÏÀí·µ»ØERROR
+   \                     ??TIMER_PWM_MultiChannel_Init_2:
+   \   000034   4C43         MOV.B   #0x0, R12
+   \   000036   2F3C         JMP     ??TIMER_PWM_MultiChannel_Init_4
+     59              }
+     60              //³õÊ¼»¯¶Ë¿Ú
+     61              GPIO_Init(TIMER_CH_PIN[timer][ch].Port,TIMER_CH_PIN[timer][ch].Pin,GPO|SEL);
+   \                     ??TIMER_PWM_MultiChannel_Init_3:
+   \   000038   E909         ADDA    R9, R9
+   \   00003A   0C4A         MOV.W   R10, R12
+   \   00003C   0D43         MOV.W   #0x0, R13
+   \   00003E   ........     CALLA   #?Subroutine11
+   \                     ??CrossCallReturnLabel_21:
+   \   000042   1D15         PUSHM.W #0x2, R13
+   \   000044   0F16         POPM.A  #0x1, R15
+   \   000046   EF09         ADDA    R9, R15
+   \   000048   ........     ADDA    #TIMER_CH_PIN, R15
+   \   00004C   3E400201     MOV.W   #0x102, R14
+   \   000050   1D43         MOV.W   #0x1, R13
+   \   000052   5C4F0100     MOV.B   0x1(R15), R12
+   \   000056   5C83         SUB.B   #0x1, R12
+   \   000058   0230         JN      ??TIMER_PWM_MultiChannel_Init_5
+   \   00005A                RPT     R12
+   \   00005A   CC180D5D     RLAX.W  R13
+   \                     ??TIMER_PWM_MultiChannel_Init_5:
+   \   00005E   6C4F         MOV.B   @R15, R12
+   \   000060   ........     CALLA   #GPIO_MultiBits_Init
+     62              //³õÊ¼»¯Õ¼¿Õ±È¼°Êä³ö²¨ÐÎ
+     63              TIMERX[timer]->CCR[ch] = 0u;
+   \   000064   1B15         PUSHM.W #0x2, R11
+   \   000066   0F16         POPM.A  #0x1, R15
+   \   000068   4F06         RLAM.A  #0x2, R15
+   \   00006A   ....5E4F.... MOVX.A  TIMERX(R15), R14
+   \   000070   EE09         ADDA    R9, R14
+   \   000072   8E431200     MOV.W   #0x0, 0x12(R14)
+     64              TIMERX[timer]->CCTL[ch].IE = RESET;               //¹Ø±ÕÍ¨µÀÖÐ¶Ï
+   \   000076   BEC010000200 BIC.W   #0x10, 0x2(R14)
+     65              TIMERX[timer]->CCTL[ch].OUTMOD = PWM_OUTMOD;      //Êä³ö²¨ÐÎÉèÖÃ
+   \   00007C   BED0E0000200 BIS.W   #0xe0, 0x2(R14)
+     66              TIMERX[timer]->CCTL[ch].CAPMODE = RESET;          //±È½ÏÄ£Ê½
+   \   000082   BEC000010200 BIC.W   #0x100, 0x2(R14)
+     67            }
+   \   000088   3853         ADD.W   #0xffff, R8
+   \   00008A   C923         JNE     ??TIMER_PWM_MultiChannel_Init_0
+     68            va_end(ap);
+     69            
+     70            return TIMER_PWM_Freq_Set(timer,fre);
+   \                     ??TIMER_PWM_MultiChannel_Init_1:
+   \   00008C   0E46         MOV.W   R6, R14
+   \   00008E   0F47         MOV.W   R7, R15
+   \   000090   4C44         MOV.B   R4, R12
+   \   000092   ........     CALLA   #TIMER_PWM_Freq_Set
+   \                     ??TIMER_PWM_MultiChannel_Init_4:
+   \   000096   2152         ADD.W   #0x4, SP
+   \   000098   7416         POPM.A  #0x8, R11
+   \   00009A   1001         RETA
+     71          }
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine11:
+   \   000000   3E400E00     MOV.W   #0xe, R14
+   \   000004   0F43         MOV.W   #0x0, R15
+   \   000006   ........     BRA     #?Mul32
+     72          /*******************************************************************************
+     73          *  º¯ÊýÃû³Æ£ºTIMER_PWM_Freq_Set(TIMERn timer,uint32_t fre)
+     74          *  ¹¦ÄÜËµÃ÷£º¶¨Ê±Æ÷PWMÆµÂÊÉèÖÃ(×¢ÒâÕâÀïÃ»ÓÐ¸ü¸Ä¸÷¸öÍ¨µÀµÄÕ¼¿Õ±È£¬ËùÒÔÐÞ¸ÄÆµÂÊºóÕ¼¿Õ±È±äÁË£¬ÐèÒª´ÓÐÂÉèÖÃÕ¼¿Õ±È)
+     75          *  ²ÎÊýËµÃ÷£ºTIMERn timer       £º¶¨Ê±Æ÷Ä£¿é
+     76                       uint32_t fre         £ºÆµÂÊ
+     77          *  º¯Êý·µ»Ø£º²»³É¹¦Ôò·µ»ØERROR£¬³É¹¦Ôò·µ»ØSUCCEED
+     78          *  Ê¹ÓÃÀý³Ì£ºTIMER_PWM_Freq_Set(TIMER_B0,1000);       //½«¶¨Ê±Æ÷BÊä³öÆµÂÊÐÞ¸ÄÎª1000Hz
+     79          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+   \                     ??Subroutine16_0:
+   \   000000   3F40CFFF     MOV.W   #0xffcf, R15
+   \   000004   2FF8         AND.W   @R8, R15
+   \   000006   3FD01000     BIS.W   #0x10, R15
+   \   00000A   884F0000     MOV.W   R15, 0(R8)
+   \   00000E   1001         RETA
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine12:
+   \   000000   2F48         MOV.W   @R8, R15
+   \   000002   4E4F         MOV.B   R15, R14
+   \   000004                RPT     #0x6
+   \   000004   45194E10     RRUX.B  R14
+   \   000008   1E53         ADD.W   #0x1, R14
+   \   00000A                RPT     #0x6
+   \   00000A   45180E5E     RLAX.W  R14
+   \   00000E   3EF0C000     AND.W   #0xc0, R14
+   \   000012   3FF03FFF     AND.W   #0xff3f, R15
+   \   000016   0FDE         BIS.W   R14, R15
+   \   000018   884F0000     MOV.W   R15, 0(R8)
+   \   00001C   5D03         RRUM.W  #0x1, R13
+   \   00001E   0C10         RRC.W   R12
+   \   000020   2E48         MOV.W   @R8, R14
+   \   000022   7EF0C000     AND.B   #0xc0, R14
+   \   000026   7E90C000     CMP.B   #0xc0, R14
+   \   00002A   1001         RETA
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine10:
+   \   000000   2E48         MOV.W   @R8, R14
+   \   000002   8E10         SWPB    R14
+   \   000004   7EF00300     AND.B   #0x3, R14
+   \   000008   5E93         CMP.B   #0x1, R14
+   \   00000A   1001         RETA
+
+   \                                 In  segment CODE, align 2
+     80          STATUS  TIMER_PWM_Freq_Set(TIMERn timer,uint32_t fre)
+   \                     TIMER_PWM_Freq_Set:
+     81          {
+   \   000000   3B14         PUSHM.A #0x4, R11
+   \   000002   0A4E         MOV.W   R14, R10
+   \   000004   0B4F         MOV.W   R15, R11
+     82            if(fre == 0u)
+   \   000006   4C4C         MOV.B   R12, R12
+   \   000008   4C06         RLAM.A  #0x2, R12
+   \   00000A   ....584C.... MOVX.A  TIMERX(R12), R8
+   \   000010   0F4E         MOV.W   R14, R15
+   \   000012   0FDB         BIS.W   R11, R15
+   \   000014   0F93         CMP.W   #0x0, R15
+   \   000016   0420         JNE     ??TIMER_PWM_Freq_Set_2
+     83            {
+     84              TIMERX[timer]->MC = TIMER_MC_STOP;              //ÔÝÍ£Êä³öPWM²¨
+   \   000018   B8F0CFFF0000 AND.W   #0xffcf, 0(R8)
+     85              return SUCCEED;
+   \   00001E   3C3C         JMP     ??TIMER_PWM_Freq_Set_3
+     86            }
+     87            
+     88            TIMERX[timer]->CLR = SET;
+   \                     ??TIMER_PWM_Freq_Set_2:
+   \   000020   A8D20000     BIS.W   #0x4, 0(R8)
+     89            TIMERX[timer]->SSEL = TIMER_SSEL_SMCLK;           //ÏÈÑ¡ÔñÊ±ÖÓÔ´ÎªSMCLK
+   \   000024   3F40FFFC     MOV.W   #0xfcff, R15
+   \   000028   2FF8         AND.W   @R8, R15
+   \   00002A   3FD00002     BIS.W   #0x200, R15
+   \   00002E   884F0000     MOV.W   R15, 0(R8)
+     90            TIMERX[timer]->ID = 0u;                           //·ÖÆµÏµÊýÇåÁã
+   \   000032   B8F03FFF0000 AND.W   #0xff3f, 0(R8)
+     91            //Ê±ÖÓ´óÐ¡
+     92            uint32_t Counter_Value = g_sClock.SMCLK.CLK_HZ/fre;                 //¼ÆËã¼ÆÊýÖµ
+   \   000038   ....1C42.... MOVX.W  &g_sClock + 12, R12
+   \   00003E   ....1D42.... MOVX.W  &g_sClock + 14, R13
+   \   000044   143C         JMP     ??TIMER_PWM_Freq_Set_4
+     93            while(Counter_Value > 65536u)        //ÕâÀï²»ÊÇ0xffff£¬ÒòÎªºóÃæ»á-1£¬ËùÒÔÊÇ(0xffff+1)=65536
+     94            {  //·ÖÆµÒ»´Î
+     95               TIMERX[timer]->ID ++;          
+   \                     ??TIMER_PWM_Freq_Set_0:
+   \   000046   ........     CALLA   #?Subroutine12
+     96               Counter_Value >>= 1;          
+     97               
+     98               if((TIMERX[timer]->ID == 3u) && (Counter_Value > 65536))   //Õâ¸öÊ±ºòÒâÎ¶µÃÑ¡Ôñ¸üµÍÆµÂÊµÄÊ±ÖÓÁË
+   \                     ??CrossCallReturnLabel_24:
+   \   00004A   1420         JNE     ??TIMER_PWM_Freq_Set_5
+   \   00004C   1D93         CMP.W   #0x1, R13
+   \   00004E   1228         JNC     ??TIMER_PWM_Freq_Set_5
+   \   000050   0220         JNE     ??TIMER_PWM_Freq_Set_6
+   \   000052   1C93         CMP.W   #0x1, R12
+   \   000054   0F28         JNC     ??TIMER_PWM_Freq_Set_5
+     99               {
+    100                 if(TIMERX[timer]->SSEL == TIMER_SSEL_ACLK)   //Èç¹ûÊ±ÖÓÒÑ¾­ÊÇ×îµÍµÄACLKÁË£¬ÄÇÃ´ÒâÎ¶×ÅÉèÖÃµÄÆµÂÊÌ«µÍÁË£¬Ê§°Ü·µ»ØERROR
+   \                     ??TIMER_PWM_Freq_Set_6:
+   \   000056   ........     CALLA   #?Subroutine10
+   \                     ??CrossCallReturnLabel_19:
+   \   00005A   1524         JEQ     ??TIMER_PWM_Freq_Set_1
+    101                 {
+    102                   return ERROR;
+    103                 }
+    104                 //¸ü»»Îª¸üµÍµÄACLK£¬´ÓÐÂÅäÖÃ
+    105                 TIMERX[timer]->SSEL = TIMER_SSEL_ACLK;
+   \   00005C   ........     CALLA   #?Subroutine13
+    106                 TIMERX[timer]->ID = 0u;  
+    107                 Counter_Value = g_sClock.ACLK.CLK_HZ/fre; 
+   \                     ??CrossCallReturnLabel_26:
+   \   000060   ....1C42.... MOVX.W  &g_sClock + 24, R12
+   \   000066   ....1D42.... MOVX.W  &g_sClock + 26, R13
+   \   00006C   0E4A         MOV.W   R10, R14
+   \                     ??TIMER_PWM_Freq_Set_4:
+   \   00006E   0F4B         MOV.W   R11, R15
+   \   000070   ........     CALLA   #?DivMod32u
+    108                 continue;  
+    109               } 
+    110            }
+   \                     ??TIMER_PWM_Freq_Set_5:
+   \   000074   1D93         CMP.W   #0x1, R13
+   \   000076   0328         JNC     ??TIMER_PWM_Freq_Set_7
+   \   000078   E623         JNE     ??TIMER_PWM_Freq_Set_0
+   \   00007A   1C93         CMP.W   #0x1, R12
+   \   00007C   E42F         JC      ??TIMER_PWM_Freq_Set_0
+    111            if(Counter_Value <= 1)//³öÏÖÕâÖÖÇé¿ö,ËµÃ÷ÆµÂÊ²»ºÏÊÊ
+   \                     ??TIMER_PWM_Freq_Set_7:
+   \   00007E   0D93         CMP.W   #0x0, R13
+   \   000080   0420         JNE     ??TIMER_PWM_Freq_Set_8
+   \   000082   2C93         CMP.W   #0x2, R12
+   \   000084   022C         JC      ??TIMER_PWM_Freq_Set_8
+    112            {
+    113              return ERROR; 
+   \                     ??TIMER_PWM_Freq_Set_1:
+   \   000086   4C43         MOV.B   #0x0, R12
+   \   000088   083C         JMP     ??TIMER_PWM_Freq_Set_9
+    114            }
+    115          
+    116            TIMERX[timer]->CCR[0] = (uint16_t)(Counter_Value - 1u);//ÎªÊ²Ã´Òª¼õÒ»£¿£¿ÒòÎªTAR/TBR¼ÆÊýÆ÷´ÓCCR0±ä»¯µ½0»¹ÓÐÒ»¸ö¼ÆÊýÖÜÆÚ
+   \                     ??TIMER_PWM_Freq_Set_8:
+   \   00008A   3C53         ADD.W   #0xffff, R12
+   \   00008C   884C1200     MOV.W   R12, 0x12(R8)
+    117            TIMERX[timer]->IE = RESET;                      //¹Ø±ÕÖÐ¶Ï
+   \   000090   A8C30000     BIC.W   #0x2, 0(R8)
+    118            TIMERX[timer]->MC = TIMER_MC_UP;                //Ôö¼ÆÊýÄ£Ê½
+   \   000094   ........     CALLA   #??Subroutine16_0
+    119            
+    120            return SUCCEED;
+   \                     ??TIMER_PWM_Freq_Set_3:
+   \   000098   5C43         MOV.B   #0x1, R12
+   \                     ??TIMER_PWM_Freq_Set_9:
+   \   00009A   3816         POPM.A  #0x4, R11
+   \   00009C   1001         RETA
+    121          }
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine13:
+   \   000000   3F40FFFC     MOV.W   #0xfcff, R15
+   \   000004   2FF8         AND.W   @R8, R15
+   \   000006   3FD00001     BIS.W   #0x100, R15
+   \   00000A   884F0000     MOV.W   R15, 0(R8)
+   \   00000E   B8F03FFF0000 AND.W   #0xff3f, 0(R8)
+   \   000014   1001         RETA
+    122          /*******************************************************************************
+    123          *  º¯ÊýÃû³Æ£ºTIMER_PWM_Duty_Set(TIMERn timer,TIMER_CHn ch,uint32_t duty)
+    124          *  ¹¦ÄÜËµÃ÷£ºPWMÊä³öÕ¼¿Õ±ÈÉèÖÃ
+    125          *  ²ÎÊýËµÃ÷£ºTIMERn timer       £º¶¨Ê±Æ÷Ä£¿é
+    126                       TIMER_CHn ch       £º¶¨Ê±Æ÷Í¨µÀ
+    127                       uint32_t duty      £ºÕ¼¿Õ±È
+    128          *  º¯Êý·µ»Ø£ºÎÞ
+    129          *  Ê¹ÓÃÀý³Ì£ºTIMER_PWM_Duty_Set(TIMER_A0,TIMER_CH1,800);  //ÐÞ¸Ä¶¨Ê±Æ÷A0µÄTIMER_CH1Í¨µÀÕ¼¿Õ±ÈÎª(800/TIMAR_A0_PRECISON)*100%
+    130          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+    131          void  TIMER_PWM_Duty_Set(TIMERn timer,TIMER_CHn ch,uint32_t duty)
+   \                     TIMER_PWM_Duty_Set:
+    132          {
+   \   000000   3B14         PUSHM.A #0x4, R11
+   \   000002   4A4D         MOV.B   R13, R10
+    133            ASSERT((timer==TIMER_A0&&ch<=TIMER_CH4)
+    134                 ||(timer==TIMER_A1&&ch<=TIMER_CH2)
+    135                 ||(timer==TIMER_A2&&ch<=TIMER_CH2)
+    136                 ||(timer==TIMER_B0&&ch<=TIMER_CH6)); //¶ÏÑÔ¼ì²âÊäÈë²ÎÊý
+    137            
+    138            ASSERT(duty <= TIMER_PRECISON[timer]);      //ÓÃ¶ÏÑÔ¼ì²â Õ¼¿Õ±ÈÊÇ·ñºÏÀí
+    139            
+    140            TIMERX[timer]->CCR[ch] = (uint16_t)((duty * (TIMERX[timer]->CCR[0]+1))/TIMER_PRECISON[timer]);
+   \   000004   4C4C         MOV.B   R12, R12
+   \   000006   4C06         RLAM.A  #0x2, R12
+   \   000008   CB0C         MOVA    R12, R11
+   \   00000A   ....584C.... MOVX.A  TIMERX(R12), R8
+   \   000010   0C4E         MOV.W   R14, R12
+   \   000012   0D4F         MOV.W   R15, R13
+   \   000014   1E481200     MOV.W   0x12(R8), R14
+   \   000018   1E53         ADD.W   #0x1, R14
+   \   00001A   0F43         MOV.W   #0x0, R15
+   \   00001C   ........     CALLA   #?Mul32
+   \   000020   ....1E4B.... MOVX.W  TIMER_PRECISON(R11), R14
+   \   000026   ....1F4B.... MOVX.W  TIMER_PRECISON + 2(R11), R15
+   \   00002C   ........     CALLA   #?DivMod32u
+   \   000030   EA0A         ADDA    R10, R10
+   \   000032   E80A         ADDA    R10, R8
+   \   000034   884C1200     MOV.W   R12, 0x12(R8)
+    141          }
+   \   000038   3816         POPM.A  #0x4, R11
+   \   00003A   1001         RETA
+    142          /*******************************************************************************
+    143          *  º¯ÊýÃû³Æ£ºTIMER_Interval_Us(TIMERn timer,uint32_t us)
+    144          *  ¹¦ÄÜËµÃ÷£º¶¨Ê±Æ÷¶¨Ê±³õÊ¼»¯(µ¥Î»£ºus)
+    145          *  ²ÎÊýËµÃ÷£ºTIMERn timer       £º¶¨Ê±Æ÷Ä£¿é
+    146                       uint32_t us          : ¶¨Ê±Ê±¼ä
+    147          *  º¯Êý·µ»Ø£º²»³É¹¦Ôò·µ»ØERROR£¬³É¹¦Ôò·µ»ØSUCCEED
+    148          *  Ê¹ÓÃÀý³Ì£ºTIMER_Interval_Us(TIMER_B0,2500);  //TB¶¨Ê±¼ä¸ô2.5msÖÐ¶Ï
+    149          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2, keep-with-next
+   \                     ?Subroutine8:
+   \   000000   3C53         ADD.W   #0xffff, R12
+   \   000002   884C1200     MOV.W   R12, 0x12(R8)
+   \   000006   B8C000010200 BIC.W   #0x100, 0x2(R8)
+   \   00000C   A8C30000     BIC.W   #0x2, 0(R8)
+   \   000010   B8C010000200 BIC.W   #0x10, 0x2(R8)
+   \   000016                REQUIRE ??Subroutine16_0
+   \   000016                // Fall through to label ??Subroutine16_0
+
+   \                                 In  segment CODE, align 2
+    150          STATUS  TIMER_Interval_Us(TIMERn timer,uint32_t us)
+   \                     TIMER_Interval_Us:
+    151          {
+   \   000000   3B14         PUSHM.A #0x4, R11
+    152          #ifdef DELAY_TIMER
+    153            ASSERT((timer != DELAY_TIMER));       //²»ÔÊÐíÕâÖÖÇé¿öÏÂ»¹ºê¶¨Òå¸Ã¶¨Ê±Æ÷×÷ÎªÑÓÊ±ËùÓÃµÄ¶¨Ê±Æ÷£¬ÇëÔÚconf.hÀïÐÞ¸ÄDELAY_TIMERºê¶¨Òå
+    154          #endif
+    155            TIMERX[timer]->CLR = SET;
+   \   000002   ........     CALLA   #?Subroutine4
+    156            TIMERX[timer]->SSEL = TIMER_SSEL_SMCLK;
+    157            TIMERX[timer]->ID = 0u;
+    158            //¼ÆÊýÖµ
+    159            uint32_t Counter_Value = (uint32_t)(us * g_sClock.SMCLK.CLK_MHZ);
+   \                     ??CrossCallReturnLabel_0:
+   \   000006   0D3C         JMP     ??TIMER_Interval_Us_2
+    160            while(Counter_Value > 65536)
+    161            {
+    162               TIMERX[timer]->ID ++; 
+   \                     ??TIMER_Interval_Us_0:
+   \   000008   ........     CALLA   #?Subroutine12
+    163               Counter_Value >>= 1;  
+    164               if((TIMERX[timer]->ID == 3u) && (Counter_Value > 65536))   //Õâ¸öÊ±ºòÒâÎ¶µÃÑ¡Ôñ¸üµÍÆµÂÊµÄÊ±ÖÓÁË
+   \                     ??CrossCallReturnLabel_23:
+   \   00000C   0E20         JNE     ??TIMER_Interval_Us_3
+   \   00000E   1D93         CMP.W   #0x1, R13
+   \   000010   0C28         JNC     ??TIMER_Interval_Us_3
+   \   000012   0220         JNE     ??TIMER_Interval_Us_4
+   \   000014   1C93         CMP.W   #0x1, R12
+   \   000016   0928         JNC     ??TIMER_Interval_Us_3
+    165               {
+    166                if(TIMERX[timer]->SSEL == TIMER_SSEL_ACLK) //Èç¹ûÊ±ÖÓÒÑ¾­ÊÇ×îµÍµÄACLKÁË£¬ÄÇÃ´ÒâÎ¶×ÅÉèÖÃµÄÆµÂÊÌ«µÍÁË£¬Ê§°Ü·µ»ØERROR
+   \                     ??TIMER_Interval_Us_4:
+   \   000018   ........     CALLA   #?Subroutine10
+   \                     ??CrossCallReturnLabel_18:
+   \   00001C   0F24         JEQ     ??TIMER_Interval_Us_1
+    167                {
+    168                  return ERROR;
+    169                }
+    170                //¸ü»»Îª¸üµÍµÄACLK£¬´ÓÐÂÅäÖÃ
+    171                TIMERX[timer]->SSEL = TIMER_SSEL_ACLK;
+   \   00001E   ........     CALLA   #?Subroutine7
+    172                TIMERX[timer]->ID = 0u;  
+    173                Counter_Value = (uint32_t)(us * g_sClock.ACLK.CLK_MHZ);
+   \                     ??TIMER_Interval_Us_2:
+   \   000022   ........     CALLA   #_Mul32f
+   \   000026   ........     CALLA   #_Cast32fto32u
+    174                continue;  
+    175               } 
+    176            }
+   \                     ??TIMER_Interval_Us_3:
+   \   00002A   1D93         CMP.W   #0x1, R13
+   \   00002C   0328         JNC     ??TIMER_Interval_Us_5
+   \   00002E   EC23         JNE     ??TIMER_Interval_Us_0
+   \   000030   1C93         CMP.W   #0x1, R12
+   \   000032   EA2F         JC      ??TIMER_Interval_Us_0
+    177            if(Counter_Value <= 1)//³öÏÖÕâÖÖÇé¿ö,ËµÃ÷ÆµÂÊ²»ºÏÊÊ
+   \                     ??TIMER_Interval_Us_5:
+   \   000034   0D93         CMP.W   #0x0, R13
+   \   000036   0420         JNE     ??TIMER_Interval_Us_6
+   \   000038   2C93         CMP.W   #0x2, R12
+   \   00003A   022C         JC      ??TIMER_Interval_Us_6
+    178            {
+    179              return ERROR; 
+   \                     ??TIMER_Interval_Us_1:
+   \   00003C   4C43         MOV.B   #0x0, R12
+   \   00003E   033C         JMP     ??TIMER_Interval_Us_7
+    180            }
+    181            
+    182            TIMERX[timer]->CCR[0] = (uint16_t)(Counter_Value - 1u);//ÎªÊ²Ã´Òª¼õÒ»£¿£¿ÒòÎªTAR/TBR¼ÆÊýÆ÷´ÓCCR0±ä»¯µ½0»¹ÓÐÒ»¸ö¼ÆÊýÖÜÆÚ
+   \                     ??TIMER_Interval_Us_6:
+   \   000040   ........     CALLA   #?Subroutine8
+    183            TIMERX[timer]->CCTL[0].CAPMODE = RESET;          //±È½ÏÄ£Ê½
+    184            TIMERX[timer]->IE = RESET;             //¹Ø±ÕÒç³öÖÐ¶Ï
+    185            TIMERX[timer]->CCTL[0].IE = RESET;     //¹Ø±ÕÍ¨µÀÖÐ¶Ï
+    186            TIMERX[timer]->MC = TIMER_MC_UP;      //Ôö¼ÆÊýÄ£Ê½
+    187            
+    188            return SUCCEED;
+   \                     ??CrossCallReturnLabel_29:
+   \   000044   5C43         MOV.B   #0x1, R12
+   \                     ??TIMER_Interval_Us_7:
+   \   000046   3816         POPM.A  #0x4, R11
+   \   000048   1001         RETA
+    189          }
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine7:
+   \   000000   ........     CALLA   #?Subroutine13
+   \                     ??CrossCallReturnLabel_25:
+   \   000004   ....1E42.... MOVX.W  &g_sClock + 32, R14
+   \   00000A   ....1F42.... MOVX.W  &g_sClock + 34, R15
+   \   000010   0C4A         MOV.W   R10, R12
+   \   000012   0D4B         MOV.W   R11, R13
+   \   000014   1001         RETA
+
+   \                                 In  segment CODE, align 2, keep-with-next
+   \                     ?Subroutine4:
+   \   000000   4C4C         MOV.B   R12, R12
+   \   000002   4C06         RLAM.A  #0x2, R12
+   \   000004   ....584C.... MOVX.A  TIMERX(R12), R8
+   \   00000A   A8D20000     BIS.W   #0x4, 0(R8)
+   \   00000E   3B40FFFC     MOV.W   #0xfcff, R11
+   \   000012   2BF8         AND.W   @R8, R11
+   \   000014   3BD00002     BIS.W   #0x200, R11
+   \   000018   884B0000     MOV.W   R11, 0(R8)
+   \   00001C   B8F03FFF0000 AND.W   #0xff3f, 0(R8)
+   \   000022   0C4E         MOV.W   R14, R12
+   \   000024   0D4F         MOV.W   R15, R13
+   \   000026   ........     CALLA   #_Cast32uto32f
+   \   00002A   0A4C         MOV.W   R12, R10
+   \   00002C   0B4D         MOV.W   R13, R11
+   \   00002E                REQUIRE ?Subroutine14
+   \   00002E                // Fall through to label ?Subroutine14
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine14:
+   \   000000   ....1E42.... MOVX.W  &g_sClock + 20, R14
+   \   000006   ....1F42.... MOVX.W  &g_sClock + 22, R15
+   \   00000C   1001         RETA
+    190          /*******************************************************************************
+    191          *  º¯ÊýÃû³Æ£ºTIMER_Delay_Us(TIMERn timer,uint32_t us)
+    192          *  ¹¦ÄÜËµÃ÷£º¶¨Ê±Æ÷ÑÓÊ±£¨µ¥Î»£ºms£©
+    193          *  ²ÎÊýËµÃ÷£ºTIMERn timer       £º¶¨Ê±Æ÷Ä£¿é
+    194                       uint32_t us          : ¶¨Ê±Ê±¼ä
+    195          *  º¯Êý·µ»Ø£º²»³É¹¦Ôò·µ»ØERROR£¬³É¹¦Ôò·µ»ØSUCCEED
+    196          *  Ê¹ÓÃÀý³Ì£ºTIMER_Delay_Us(TIMER_B0 ,5000);      //ÔÚ´Ë´¦ÑÓÊ±5ms
+    197          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+    198          STATUS TIMER_Delay_Us(TIMERn timer,uint32_t us)
+   \                     TIMER_Delay_Us:
+    199          {
+   \   000000   3B14         PUSHM.A #0x4, R11
+    200            TIMERX[timer]->CLR = SET;
+   \   000002   ........     CALLA   #?Subroutine4
+    201            TIMERX[timer]->SSEL = TIMER_SSEL_SMCLK;
+    202            TIMERX[timer]->ID = 0u;
+    203            //¼ÆÊýÖµ
+    204            uint32_t Counter_Value = (uint32_t)(us * g_sClock.SMCLK.CLK_MHZ);
+   \                     ??CrossCallReturnLabel_1:
+   \   000006   0D3C         JMP     ??TIMER_Delay_Us_3
+    205            while(Counter_Value > 65536)
+    206            {
+    207               TIMERX[timer]->ID ++; 
+   \                     ??TIMER_Delay_Us_0:
+   \   000008   ........     CALLA   #?Subroutine12
+    208               Counter_Value >>= 1;  
+    209               if((TIMERX[timer]->ID == 3u) && (Counter_Value > 65536))   //Õâ¸öÊ±ºòÒâÎ¶µÃÑ¡Ôñ¸üµÍÆµÂÊµÄÊ±ÖÓÁË
+   \                     ??CrossCallReturnLabel_22:
+   \   00000C   0E20         JNE     ??TIMER_Delay_Us_4
+   \   00000E   1D93         CMP.W   #0x1, R13
+   \   000010   0C28         JNC     ??TIMER_Delay_Us_4
+   \   000012   0220         JNE     ??TIMER_Delay_Us_5
+   \   000014   1C93         CMP.W   #0x1, R12
+   \   000016   0928         JNC     ??TIMER_Delay_Us_4
+    210               {
+    211                if(TIMERX[timer]->SSEL == TIMER_SSEL_ACLK) //Èç¹ûÊ±ÖÓÒÑ¾­ÊÇ×îµÍµÄACLKÁË£¬ÄÇÃ´ÒâÎ¶×ÅÉèÖÃµÄÆµÂÊÌ«µÍÁË£¬Ê§°Ü·µ»ØERROR
+   \                     ??TIMER_Delay_Us_5:
+   \   000018   ........     CALLA   #?Subroutine10
+   \                     ??CrossCallReturnLabel_17:
+   \   00001C   0F24         JEQ     ??TIMER_Delay_Us_2
+    212                {
+    213                  return ERROR;
+    214                }
+    215                //¸ü»»Îª¸üµÍµÄACLK£¬´ÓÐÂÅäÖÃ
+    216                TIMERX[timer]->SSEL = TIMER_SSEL_ACLK;
+   \   00001E   ........     CALLA   #?Subroutine7
+    217                TIMERX[timer]->ID = 0u;  
+    218                Counter_Value = (uint32_t)(us * g_sClock.ACLK.CLK_MHZ);
+   \                     ??TIMER_Delay_Us_3:
+   \   000022   ........     CALLA   #_Mul32f
+   \   000026   ........     CALLA   #_Cast32fto32u
+    219                continue;  
+    220               } 
+    221            }
+   \                     ??TIMER_Delay_Us_4:
+   \   00002A   1D93         CMP.W   #0x1, R13
+   \   00002C   0328         JNC     ??TIMER_Delay_Us_6
+   \   00002E   EC23         JNE     ??TIMER_Delay_Us_0
+   \   000030   1C93         CMP.W   #0x1, R12
+   \   000032   EA2F         JC      ??TIMER_Delay_Us_0
+    222            if(Counter_Value <= 1)//³öÏÖÕâÖÖÇé¿ö,ËµÃ÷ÆµÂÊ²»ºÏÊÊ
+   \                     ??TIMER_Delay_Us_6:
+   \   000034   0D93         CMP.W   #0x0, R13
+   \   000036   0420         JNE     ??TIMER_Delay_Us_7
+   \   000038   2C93         CMP.W   #0x2, R12
+   \   00003A   022C         JC      ??TIMER_Delay_Us_7
+    223            {
+    224              return ERROR; 
+   \                     ??TIMER_Delay_Us_2:
+   \   00003C   4C43         MOV.B   #0x0, R12
+   \   00003E   0C3C         JMP     ??TIMER_Delay_Us_8
+    225            }
+    226            
+    227            TIMERX[timer]->CCR[0] = (uint16_t)(Counter_Value - 1u);//ÎªÊ²Ã´Òª¼õÒ»£¿£¿ÒòÎªTAR/TBR¼ÆÊýÆ÷´ÓCCR0±ä»¯µ½0»¹ÓÐÒ»¸ö¼ÆÊýÖÜÆÚ
+   \                     ??TIMER_Delay_Us_7:
+   \   000040   ........     CALLA   #?Subroutine8
+    228            TIMERX[timer]->CCTL[0].CAPMODE = RESET;          //±È½ÏÄ£Ê½
+    229            TIMERX[timer]->IE = RESET;             //¹Ø±ÕÒç³öÖÐ¶Ï
+    230            TIMERX[timer]->CCTL[0].IE = RESET;     //¹Ø±ÕÍ¨µÀÖÐ¶Ï
+    231            TIMERX[timer]->MC = TIMER_MC_UP;
+    232            
+    233            TIMERX[timer]->CCTL[0].CTL = 0;
+   \                     ??CrossCallReturnLabel_28:
+   \   000044   88430200     MOV.W   #0x0, 0x2(R8)
+    234            TIMERX[timer]->IFG = RESET;
+   \   000048   98C30000     BIC.W   #0x1, 0(R8)
+    235            while(TIMERX[timer]->IFG == RESET);
+   \                     ??TIMER_Delay_Us_1:
+   \   00004C   98B30000     BIT.W   #0x1, 0(R8)
+   \   000050   FD2B         JNC     ??TIMER_Delay_Us_1
+    236            TIMERX[timer]->CTL = 0;
+   \   000052   88430000     MOV.W   #0x0, 0(R8)
+    237            
+    238            return SUCCEED;
+   \   000056   5C43         MOV.B   #0x1, R12
+   \                     ??TIMER_Delay_Us_8:
+   \   000058   3816         POPM.A  #0x4, R11
+   \   00005A   1001         RETA
+    239          }
+    240          /*******************************************************************************
+    241          *  º¯ÊýÃû³Æ£ºTIMER_Pluse_Init    (TIMERn timer)
+    242          *  ¹¦ÄÜËµÃ÷£º¶¨Ê±Æ÷Âö³å¼ÆÊý³õÊ¼»¯
+    243          *  ²ÎÊýËµÃ÷£ºTIMERn timer       £º¶¨Ê±Æ÷Ä£¿é
+    244          *  º¯Êý·µ»Ø£º²»³É¹¦Ôò·µ»ØERROR£¬³É¹¦Ôò·µ»ØSUCCEED
+    245          *  Ê¹ÓÃÀý³Ì£ºTIMER_Pluse_Init    (TIMER_A1);    //¶¨Ê±Æ÷TA1³õÊ¼»¯ÎªÂö³å¼ÆÊý¹¦ÄÜ
+    246          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+    247          STATUS  TIMER_Pluse_Init    (TIMERn timer)
+   \                     TIMER_Pluse_Init:
+    248          { 
+   \   000000   1B14         PUSHM.A #0x2, R11
+    249          #ifdef DELAY_TIMER
+    250            ASSERT((timer != DELAY_TIMER));       //²»ÔÊÐíÕâÖÖÇé¿öÏÂ»¹ºê¶¨Òå¸Ã¶¨Ê±Æ÷×÷ÎªÑÓÊ±ËùÓÃµÄ¶¨Ê±Æ÷£¬ÇëÔÚconf.hÀïÐÞ¸ÄDELAY_TIMERºê¶¨Òå
+    251          #endif 
+    252            //¶Ë¿ÚÉèÖÃÎªÊäÈë·½Ïò//Ñ¡ÔñµÚ¶þ¹¦ÄÜ
+    253            GPIO_Init(TIMER_CLK_PIN[timer].Port,TIMER_CLK_PIN[timer].Pin,GPI|SEL);
+   \   000002   4A4C         MOV.B   R12, R10
+   \   000004   0B43         MOV.W   #0x0, R11
+   \   000006   0E4A         MOV.W   R10, R14
+   \   000008   0F43         MOV.W   #0x0, R15
+   \   00000A   0E5E         RLA.W   R14
+   \   00000C   1F15         PUSHM.W #0x2, R15
+   \   00000E   0F16         POPM.A  #0x1, R15
+   \   000010   3E400101     MOV.W   #0x101, R14
+   \   000014   1D43         MOV.W   #0x1, R13
+   \   000016   ....5C4F.... MOVX.B  TIMER_CLK_PIN + 1(R15), R12
+   \   00001C   5C83         SUB.B   #0x1, R12
+   \   00001E   0230         JN      ??TIMER_Pluse_Init_0
+   \   000020                RPT     R12
+   \   000020   CC180D5D     RLAX.W  R13
+   \                     ??TIMER_Pluse_Init_0:
+   \   000024   ....5C4F.... MOVX.B  TIMER_CLK_PIN(R15), R12
+   \   00002A   ........     CALLA   #GPIO_MultiBits_Init
+    254            
+    255            TIMERX[timer]->CLR = SET;                       
+   \   00002E   1B15         PUSHM.W #0x2, R11
+   \   000030   0F16         POPM.A  #0x1, R15
+   \   000032   4F06         RLAM.A  #0x2, R15
+   \   000034   ....5B4F.... MOVX.A  TIMERX(R15), R11
+   \   00003A   ABD20000     BIS.W   #0x4, 0(R11)
+    256            TIMERX[timer]->SSEL = TIMER_SSEL_INCLK;             //Ê±ÖÓÔ´Ñ¡ÔñÎªÍâ²¿ÊäÈë
+   \   00003E   BBD000030000 BIS.W   #0x300, 0(R11)
+    257            TIMERX[timer]->ID = 0u;                             //²»·ÖÆµ
+   \   000044   BBF03FFF0000 AND.W   #0xff3f, 0(R11)
+    258            TIMERX[timer]->MC = TIMER_MC_CONTINOUS;             //Á¬Ðø¼ÆÊýÄ£Ê½
+   \   00004A   ........     CALLA   #?Subroutine9
+    259            TIMERX[timer]->IE = RESET;                          //½ûÖ¹Òç³öÖÐ¶Ï
+   \                     ??CrossCallReturnLabel_16:
+   \   00004E   ABC30000     BIC.W   #0x2, 0(R11)
+    260            
+    261            return SUCCEED;
+   \   000052   5C43         MOV.B   #0x1, R12
+   \   000054   1A16         POPM.A  #0x2, R11
+   \   000056   1001         RETA
+    262          }
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine9:
+   \   000000   3F40CFFF     MOV.W   #0xffcf, R15
+   \   000004   2FFB         AND.W   @R11, R15
+   \   000006   3FD02000     BIS.W   #0x20, R15
+   \   00000A   8B4F0000     MOV.W   R15, 0(R11)
+   \   00000E   1001         RETA
+    263          /*******************************************************************************
+    264          *  º¯ÊýÃû³Æ£ºTIMER_Pluse_Read    (TIMERn timer,uint16_t overflowTime)
+    265          *  ¹¦ÄÜËµÃ÷£º¶¨Ê±Æ÷Âö³å¼ÆÊýÖµ»ñÈ¡
+    266          *  ²ÎÊýËµÃ÷£ºTIMERn timer       £º¶¨Ê±Æ÷Ä£¿é
+    267                       uint16_t overflowTime £º¼ÆÊýÆ÷Òç³ö´ÎÊý
+    268          *  º¯Êý·µ»Ø£º¶¨Ê±Æ÷Âö³å¼ÆÊýÖµ
+    269          *  Ê¹ÓÃÀý³Ì£º
+    270                       int32 pulse = TIMER_Pluse_Read    (TIMER_A1,0);    //ÔÚÃ»ÓÐ·¢ÉúÒç³öµÄÇé¿öÏÂ¶ÁÈ¡Âö³å¸öÊý
+    271                       TIMER_Pluse_Clear   (TIMER_A1);                    //¶ÁÈ¡ºóÓ¦¸ÃÒªÇåÁã
+    272          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2, keep-with-next
+   \                     ?Subroutine6:
+   \   000000   4C4C         MOV.B   R12, R12
+   \   000002   4C06         RLAM.A  #0x2, R12
+   \   000004   ....5F4C.... MOVX.A  TIMERX(R12), R15
+   \   00000A   1001         RETA
+
+   \                                 In  segment CODE, align 2, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   1C4F1000     MOV.W   0x10(R15), R12
+   \   000004   1001         RETA
+
+   \                                 In  segment CODE, align 2
+    273          uint32_t TIMER_Pluse_Read    (TIMERn timer,uint16_t overflowTime)
+   \                     TIMER_Pluse_Read:
+    274          {
+    275            return (TIMERX[timer]->R + (overflowTime*65536u));
+   \   000000   ........     CALLA   #?Subroutine6
+   \                     ??CrossCallReturnLabel_13:
+   \   000004   ....         JMP     ?Subroutine2
+   \   000006   0343         NOP
+    276          }
+    277          /*******************************************************************************
+    278          *  º¯ÊýÃû³Æ£ºTIMER_Pluse_Clear   (TIMERn timer)
+    279          *  ¹¦ÄÜËµÃ÷£º¶¨Ê±Æ÷Âö³å¼ÆÊýÖµÇåÁã
+    280          *  ²ÎÊýËµÃ÷£ºTIMERn timer       £º¶¨Ê±Æ÷Ä£¿é
+    281          *  º¯Êý·µ»Ø£ºÎÞ
+    282          *  Ê¹ÓÃÀý³Ì£º
+    283                       int32 pulse = TIMER_Pluse_Read    (TIMER_A1,0);    //ÔÚÃ»ÓÐ·¢ÉúÒç³öµÄÇé¿öÏÂ¶ÁÈ¡Âö³å¸öÊý
+    284                       TIMER_Pluse_Clear   (TIMER_A1);                    //¶ÁÈ¡ºóÓ¦¸ÃÒªÇåÁã
+    285          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   ........     CALLA   #?Subroutine6
+   \                     ??CrossCallReturnLabel_14:
+   \   000004                REQUIRE ??Subroutine15_0
+   \   000004                // Fall through to label ??Subroutine15_0
+
+   \                                 In  segment CODE, align 2, keep-with-next
+   \                     ??Subroutine15_0:
+   \   000000   8F431000     MOV.W   #0x0, 0x10(R15)
+   \   000004   1001         RETA
+
+   \                                 In  segment CODE, align 2, keep-with-next
+    286          void   TIMER_Pluse_Clear   (TIMERn timer)
+   \                     TIMER_Pluse_Clear:
+    287          {
+    288            TIMERX[timer]->R = 0;
+   \   000000   ....         JMP     ?Subroutine0
+   \   000002   0343         NOP
+    289          }
+    290          /*******************************************************************************
+    291          *  º¯ÊýÃû³Æ£ºTIMER_Capture_Init(TIMERn timer,TIMER_CHn ch,Capture_Mode capmode)
+    292          *  ¹¦ÄÜËµÃ÷£º¶¨Ê±Æ÷²¶»ñ³õÊ¼»¯
+    293          *  ²ÎÊýËµÃ÷£ºTIMERn timer        £º¶¨Ê±Æ÷Ä£¿é
+    294                       TIMER_CHn ch        £º¶¨Ê±Æ÷Í¨µÀ
+    295                       Capture_Mode capmode£º²¶»ñÄ£Ê½
+    296          *  º¯Êý·µ»Ø£º²»³É¹¦Ôò·µ»ØERROR£¬³É¹¦Ôò·µ»ØSUCCEED
+    297          *  Ê¹ÓÃÀý³Ì£ºTIMER_Capture_Init(TIMER_A0,TIMER_CH1,CAP_Rising);         //¶¨Ê±Æ÷TA0 CCR1Í¨µÀ³õÊ¼»¯Îª±ßÔµ²¶»ñ£¬ÉÏÉýÑØ²¶»ñ
+    298          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2, keep-with-next
+    299          STATUS TIMER_Capture_Init(TIMERn timer,TIMER_CHn ch,Capture_Mode capmode)
+   \                     TIMER_Capture_Init:
+    300          {
+   \   000000   3B14         PUSHM.A #0x4, R11
+   \   000002   4A4D         MOV.B   R13, R10
+    301          #ifdef DELAY_TIMER
+    302            ASSERT((timer != DELAY_TIMER));       //²»ÔÊÐíÕâÖÖÇé¿öÏÂ»¹ºê¶¨Òå¸Ã¶¨Ê±Æ÷×÷ÎªÑÓÊ±ËùÓÃµÄ¶¨Ê±Æ÷£¬ÇëÔÚconf.hÀïÐÞ¸ÄDELAY_TIMERºê¶¨Òå
+    303          #endif
+    304            ASSERT((timer==TIMER_A0&&ch<=TIMER_CH4)
+    305                 ||(timer==TIMER_A1&&ch<=TIMER_CH2)
+    306                 ||(timer==TIMER_A2&&ch<=TIMER_CH2)
+    307                 ||(timer==TIMER_B0&&ch<=TIMER_CH6)); //¶ÏÑÔ¼ì²âÊäÈë²ÎÊý
+    308           
+    309            TIMERX[timer]->CCTL[ch].CAPMODE = SET;                //ÉèÎª²¶»ñÄ£Ê½
+   \   000004   4C4C         MOV.B   R12, R12
+   \   000006   0D43         MOV.W   #0x0, R13
+   \   000008   1D15         PUSHM.W #0x2, R13
+   \   00000A   0B16         POPM.A  #0x1, R11
+   \   00000C   4B06         RLAM.A  #0x2, R11
+   \   00000E   ....5B4B.... MOVX.A  TIMERX(R11), R11
+   \   000014   EA0A         ADDA    R10, R10
+   \   000016   C80B         MOVA    R11, R8
+   \   000018   E80A         ADDA    R10, R8
+   \   00001A   CF08         MOVA    R8, R15
+   \   00001C   B8D000010200 BIS.W   #0x100, 0x2(R8)
+    310            TIMERX[timer]->CCTL[ch].CM = capmode;                 //Ñ¡Ôñ²¶»ñÑØ
+   \   000022   EF03         ADDA    #0x2, R15
+   \   000024                RPT     #0x6
+   \   000024   45184E5E     RLAX.B  R14
+   \   000028   8E10         SWPB    R14
+   \   00002A   3940FF3F     MOV.W   #0x3fff, R9
+   \   00002E   29FF         AND.W   @R15, R9
+   \   000030   09DE         BIS.W   R14, R9
+   \   000032   88490200     MOV.W   R9, 0x2(R8)
+    311            
+    312            TIMERX[timer]->CCTL[ch].CCIS = (timer == TIMER_B0) ? TIMER_CCIS_1 : TIMER_CCIS_0;
+   \   000036   7C900300     CMP.B   #0x3, R12
+   \   00003A   0120         JNE     ??TIMER_Capture_Init_1
+   \   00003C   5E43         MOV.B   #0x1, R14
+   \                     ??TIMER_Capture_Init_1:
+   \   00003E                RPT     #0x4
+   \   00003E   43184E5E     RLAX.B  R14
+   \   000042   8E10         SWPB    R14
+   \   000044   3940FFCF     MOV.W   #0xcfff, R9
+   \   000048   29FF         AND.W   @R15, R9
+   \   00004A   09DE         BIS.W   R14, R9
+   \   00004C   88490200     MOV.W   R9, 0x2(R8)
+    313            
+    314            TIMERX[timer]->CLR = SET;
+   \   000050   ABD20000     BIS.W   #0x4, 0(R11)
+    315            TIMERX[timer]->SSEL = TIMER_SSEL_SMCLK;
+   \   000054   3F40FFFC     MOV.W   #0xfcff, R15
+   \   000058   2FFB         AND.W   @R11, R15
+   \   00005A   3FD00002     BIS.W   #0x200, R15
+   \   00005E   8B4F0000     MOV.W   R15, 0(R11)
+    316            TIMERX[timer]->ID = 0u; //ÕâÀïÑ¡Ôñ×ÓÏµÍ³Ê±ÖÓ£¬³ý·ÇÆµÂÊÌØ±ðµÍÊ±²ÅÊ¹ÓÃ¸¨ÖúÊ±ÖÓ
+   \   000062   BBF03FFF0000 AND.W   #0xff3f, 0(R11)
+    317            TIMERX[timer]->IE = RESET;              //¹Ø±ÕÒç³öÖÐ¶Ï
+   \   000068   ABC30000     BIC.W   #0x2, 0(R11)
+    318            TIMERX[timer]->CCTL[ch].IE = RESET;     //¹Ø±ÕÍ¨µÀÖÐ¶Ï
+   \   00006C   B8C010000200 BIC.W   #0x10, 0x2(R8)
+    319            TIMERX[timer]->MC = TIMER_MC_CONTINOUS;             //Á¬Ðø¼ÆÊýÄ£Ê½
+   \   000072   ........     CALLA   #?Subroutine9
+    320            
+    321            //¶Ë¿ÚÉèÖÃÎªÊäÈë·½,Ñ¡ÔñµÚ¶þ¹¦ÄÜ
+    322            GPIO_Init(TIMER_CH_PIN[timer][ch].Port,TIMER_CH_PIN[timer][ch].Pin,GPI|SEL);
+   \                     ??CrossCallReturnLabel_15:
+   \   000076   ........     CALLA   #?Subroutine11
+   \                     ??CrossCallReturnLabel_20:
+   \   00007A   1D15         PUSHM.W #0x2, R13
+   \   00007C   0F16         POPM.A  #0x1, R15
+   \   00007E   EF0A         ADDA    R10, R15
+   \   000080   ........     ADDA    #TIMER_CH_PIN, R15
+   \   000084   3E400101     MOV.W   #0x101, R14
+   \   000088   1D43         MOV.W   #0x1, R13
+   \   00008A   5A4F0100     MOV.B   0x1(R15), R10
+   \   00008E   5A83         SUB.B   #0x1, R10
+   \   000090   0230         JN      ??TIMER_Capture_Init_2
+   \   000092                RPT     R10
+   \   000092   CA180D5D     RLAX.W  R13
+   \                     ??TIMER_Capture_Init_2:
+   \   000096   6C4F         MOV.B   @R15, R12
+   \   000098   ........     CALLA   #GPIO_MultiBits_Init
+    323            
+    324            return SUCCEED;
+   \   00009C   5C43         MOV.B   #0x1, R12
+   \   00009E   3816         POPM.A  #0x4, R11
+   \   0000A0   1001         RETA
+    325          }
+    326          /*******************************************************************************
+    327          *  º¯ÊýÃû³Æ£ºTIMER_Capture_Set_Mode   (TIMERn timer, TIMER_CHn ch, Capture_Mode cap_mode)
+    328          *  ¹¦ÄÜËµÃ÷£º¶¨Ê±Æ÷²¶»ñ±ßÑØÉèÖÃ
+    329          *  ²ÎÊýËµÃ÷£ºTIMERn timer        £º¶¨Ê±Æ÷Ä£¿é
+    330                       TIMER_CHn ch        £º¶¨Ê±Æ÷Í¨µÀ
+    331                       Capture_Mode capmode£º²¶»ñÄ£Ê½
+    332          *  º¯Êý·µ»Ø£ºÎÞ
+    333          *  Ê¹ÓÃÀý³Ì£ºTIMER_Capture_Set_Mode(TIMER_A0,TIMER_CH1,CAP_Rising);         //¶¨Ê±Æ÷TA0 CCR1Í¨µÀ³õÊ¼»¯Îª±ßÔµ²¶»ñ£¬ÉÏÉýÑØ²¶»ñ
+    334          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2, keep-with-next
+   \                     ?Subroutine5:
+   \   000000   4C4C         MOV.B   R12, R12
+   \   000002   4C06         RLAM.A  #0x2, R12
+   \   000004   ....5F4C.... MOVX.A  TIMERX(R12), R15
+   \   00000A   4D4D         MOV.B   R13, R13
+   \   00000C   ED0D         ADDA    R13, R13
+   \   00000E   EF0D         ADDA    R13, R15
+   \   000010   1001         RETA
+
+   \                                 In  segment CODE, align 2, keep-with-next
+    335          void   TIMER_Capture_Set_Mode   (TIMERn timer, TIMER_CHn ch, Capture_Mode cap_mode)
+   \                     TIMER_Capture_Set_Mode:
+    336          {
+    337             TIMERX[timer]->CCTL[ch].CM = cap_mode;                 //ÉèÖÃ²¶»ñÑØ
+   \   000000   ........     CALLA   #?Subroutine5
+   \                     ??CrossCallReturnLabel_5:
+   \   000004                RPT     #0x6
+   \   000004   45184E5E     RLAX.B  R14
+   \   000008   8E10         SWPB    R14
+   \   00000A   1D4F0200     MOV.W   0x2(R15), R13
+   \   00000E   3DF0FF3F     AND.W   #0x3fff, R13
+   \   000012   0DDE         BIS.W   R14, R13
+   \   000014   8F4D0200     MOV.W   R13, 0x2(R15)
+    338          }
+   \   000018   1001         RETA
+    339          /*******************************************************************************
+    340          *  º¯ÊýÃû³Æ£ºTIMER_Capture_Clear     (TIMERn timer,TIMER_CHn ch)
+    341          *  ¹¦ÄÜËµÃ÷£ºÄ³Ò»Í¨µÀ¶ÁÈ¡Êý¾ÝÇåÁã
+    342          *  ²ÎÊýËµÃ÷£ºTIMERn timer       £º¶¨Ê±Æ÷Ä£¿é
+    343                       TIMER_CHn ch       £º¶¨Ê±Æ÷Í¨µÀ
+    344          *  º¯Êý·µ»Ø£º
+    345          *  Ê¹ÓÃÀý³Ì£ºint16 overflowTime;  //¶¨Òå±äÁ¿£¬ÔÚ¶¨Ê±Æ÷Òç³öÖÐ¶ÏÀï¶Ô¸ÃÖµÔöÒ»
+    346                       ......
+    347                       data=TIMER_Capture_GetTime_Us(TIMER_A0,TIMER_CH1,overflowTime)
+    348                       TIMER_Capture_Clear(TIMER_A0,TIMER_CH1);  //ÇåÁã
+    349                       overflowTime=0;       //ÇåÁã
+    350          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2, keep-with-next
+    351          void   TIMER_Capture_Clear     (TIMERn timer,TIMER_CHn ch)
+   \                     TIMER_Capture_Clear:
+    352          {
+    353            ASSERT((timer==TIMER_A0&&ch<=TIMER_CH4)
+    354                 ||(timer==TIMER_A1&&ch<=TIMER_CH2)
+    355                 ||(timer==TIMER_A2&&ch<=TIMER_CH2)
+    356                 ||(timer==TIMER_B0&&ch<=TIMER_CH6)); //¶ÏÑÔ¼ì²âÊäÈë²ÎÊý
+    357            
+    358            TIMERX[timer]->CCR[ch] = 0u;
+   \   000000   ........     CALLA   #?Subroutine6
+   \                     ??CrossCallReturnLabel_12:
+   \   000004   4D4D         MOV.B   R13, R13
+   \   000006   ED0D         ADDA    R13, R13
+   \   000008   CE0F         MOVA    R15, R14
+   \   00000A   EE0D         ADDA    R13, R14
+   \   00000C   8E431200     MOV.W   #0x0, 0x12(R14)
+    359            TIMERX[timer]->R = 0u;
+   \   000010   ....         JMP     ??Subroutine15_0
+   \   000012   0343         NOP
+    360          }
+    361          /*******************************************************************************
+    362          *  º¯ÊýÃû³Æ£ºTIMER_Capture_GetTime_Us(TIMERn timer,TIMER_CHn ch,uint16_t overflowTime)
+    363          *  ¹¦ÄÜËµÃ÷£º¶ÁÈ¡·¢Éú²¶»ñÊ±¶¨Ê±Æ÷¸ÃÍ¨µÀ¼ÆÊýÖµ
+    364          *  ²ÎÊýËµÃ÷£ºTIMERn timer       £º¶¨Ê±Æ÷Ä£¿é
+    365                       TIMER_CHn ch       £º¶¨Ê±Æ÷Í¨µÀ
+    366                       uint16_t overflowTime £º¼ÆÊýÆ÷Òç³ö´ÎÊý
+    367          *  º¯Êý·µ»Ø£º
+    368          *  Ê¹ÓÃÀý³Ì£ºuint16 overflowTime;  //¶¨Òå±äÁ¿£¬ÔÚ¶¨Ê±Æ÷Òç³öÖÐ¶ÏÀï¶Ô¸ÃÖµÔöÒ»
+    369                       ......
+    370                       TIMER_Capture_GetTime_Us(TIMER_A0,TIMER_CH1,overflowTime);  //¶ÁÈ¡·¢Éú²¶»ñÊ±µÄÊ±¼ä
+    371                       overflowTime=0;       //ÇåÁã
+    372          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   ........     CALLA   #?Subroutine14
+   \                     ??CrossCallReturnLabel_27:
+   \   000004   ........     CALLA   #_Div32f
+   \   000008   ........     BRA     #_Cast32fto32u
+
+   \                                 In  segment CODE, align 2, keep-with-next
+    373          uint32_t TIMER_Capture_GetTime_Us(TIMERn timer,TIMER_CHn ch,uint16_t overflowTime)
+   \                     TIMER_Capture_GetTime_Us:
+    374          {
+    375            ASSERT((timer==TIMER_A0&&ch<=TIMER_CH4)
+    376                 ||(timer==TIMER_A1&&ch<=TIMER_CH2)
+    377                 ||(timer==TIMER_A2&&ch<=TIMER_CH2)
+    378                 ||(timer==TIMER_B0&&ch<=TIMER_CH6)); //¶ÏÑÔ¼ì²âÊäÈë²ÎÊý
+    379            
+    380            return (uint32_t)((TIMERX[timer]->CCR[ch] + overflowTime*65536)/g_sClock.SMCLK.CLK_MHZ);
+   \   000000   ........     CALLA   #?Subroutine5
+   \                     ??CrossCallReturnLabel_4:
+   \   000004   1C4F1200     MOV.W   0x12(R15), R12
+   \   000008   0D4E         MOV.W   R14, R13
+   \   00000A   ........     CALLA   #_Cast32sto32f
+   \   00000E   ....         JMP     ?Subroutine3
+   \   000010   0343         NOP
+    381          }
+    382          /*******************************************************************************
+    383          *  º¯ÊýÃû³Æ£ºTIMER_Timer_Init      (TIMERn timer)
+    384          *  ¹¦ÄÜËµÃ÷£º¼ÆÊ±¹¦ÄÜ³õÊ¼»¯
+    385          *  ²ÎÊýËµÃ÷£ºTIMERn timer       £º¶¨Ê±Æ÷Ä£¿é
+    386          *  º¯Êý·µ»Ø£º²»³É¹¦Ôò·µ»ØERROR£¬³É¹¦Ôò·µ»ØSUCCEED
+    387          *  Ê¹ÓÃÀý³Ì£ºTIMER_Timer_Init      (TIMER_A1);     //¶¨Ê±Æ÷TA1³õÊ¼»¯Îª¼ÆÊ±Æ÷
+    388          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2, keep-with-next
+    389          STATUS   TIMER_Timer_Init      (TIMERn timer)
+   \                     TIMER_Timer_Init:
+    390          {
+    391          #ifdef DELAY_TIMER
+    392            ASSERT((timer != DELAY_TIMER));       //²»ÔÊÐíÕâÖÖÇé¿öÏÂ»¹ºê¶¨Òå¸Ã¶¨Ê±Æ÷×÷ÎªÑÓÊ±ËùÓÃµÄ¶¨Ê±Æ÷£¬ÇëÔÚconf.hÀïÐÞ¸ÄDELAY_TIMERºê¶¨Òå
+    393          #endif
+    394            TIMERX[timer]->CLR = SET;
+   \   000000   4C4C         MOV.B   R12, R12
+   \   000002   4C06         RLAM.A  #0x2, R12
+   \   000004   ....5E4C.... MOVX.A  TIMERX(R12), R14
+   \   00000A   AED20000     BIS.W   #0x4, 0(R14)
+    395            TIMERX[timer]->SSEL = TIMER_SSEL_SMCLK;             //ÕâÀïÑ¡Ôñ×ÓÏµÍ³Ê±ÖÓ
+   \   00000E   3F40FFFC     MOV.W   #0xfcff, R15
+   \   000012   2FFE         AND.W   @R14, R15
+   \   000014   3FD00002     BIS.W   #0x200, R15
+   \   000018   8E4F0000     MOV.W   R15, 0(R14)
+    396            TIMERX[timer]->ID = 0u; 
+   \   00001C   BEF03FFF0000 AND.W   #0xff3f, 0(R14)
+    397            TIMERX[timer]->MC = TIMER_MC_STOP;                  //ÏÈÍ£Ö¹¼ÆÊý¼ÆÊý
+   \   000022   BEF0CFFF0000 AND.W   #0xffcf, 0(R14)
+    398            TIMERX[timer]->IE = RESET;                          //½ûÖ¹Òç³öÖÐ¶Ï
+   \   000028   AEC30000     BIC.W   #0x2, 0(R14)
+    399            
+    400            return SUCCEED;
+   \   00002C   5C43         MOV.B   #0x1, R12
+   \   00002E   1001         RETA
+    401          }
+    402          /*******************************************************************************
+    403          *  º¯ÊýÃû³Æ£ºTIMER_Timer_Start(TIMERn timer)
+    404          *  ¹¦ÄÜËµÃ÷£º¼ÆÊ±¹¦ÄÜ¿ªÊ¼¼ÆÊ±
+    405          *  ²ÎÊýËµÃ÷£ºTIMERn timer       £º¶¨Ê±Æ÷Ä£¿é
+    406          *  º¯Êý·µ»Ø£ºÎÞ
+    407          *  Ê¹ÓÃÀý³Ì£ºTIMER_Timer_Start(TIMER_A1);      //¼ÆÊ±Æ÷¿ªÊ¼¼ÆÊ±
+    408          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2, keep-with-next
+    409          void   TIMER_Timer_Start(TIMERn timer)
+   \                     TIMER_Timer_Start:
+    410          {
+    411            TIMERX[timer]->R = 0u;
+   \   000000   ........     CALLA   #?Subroutine6
+   \                     ??CrossCallReturnLabel_11:
+   \   000004   8F431000     MOV.W   #0x0, 0x10(R15)
+    412            TIMERX[timer]->MC = TIMER_MC_CONTINUOUS;
+   \   000008   3E40CFFF     MOV.W   #0xffcf, R14
+   \   00000C   2EFF         AND.W   @R15, R14
+   \   00000E   3ED02000     BIS.W   #0x20, R14
+   \   000012   8F4E0000     MOV.W   R14, 0(R15)
+    413          }
+   \   000016   1001         RETA
+    414          /*******************************************************************************
+    415          *  º¯ÊýÃû³Æ£ºTIMER_Timer_Stop (TIMERn timer)
+    416          *  ¹¦ÄÜËµÃ÷£º¼ÆÊ±¹¦ÄÜÍ£Ö¹¼ÆÊ±
+    417          *  ²ÎÊýËµÃ÷£ºTIMERn timer       £º¶¨Ê±Æ÷Ä£¿é
+    418          *  º¯Êý·µ»Ø£º·µ»Øµ±Ç°¼ÆÊýÖµ
+    419          *  Ê¹ÓÃÀý³Ì£ºTIMER_Timer_Stop (TIMER_A1);   //¼ÆÊ±Æ÷Í£Ö¹¼ÆÊ±
+    420          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2, keep-with-next
+    421          uint16_t   TIMER_Timer_Stop (TIMERn timer)
+   \                     TIMER_Timer_Stop:
+    422          {
+    423             TIMERX[timer]->MC = TIMER_MC_STOP;
+   \   000000   ........     CALLA   #?Subroutine6
+   \                     ??CrossCallReturnLabel_10:
+   \   000004   BFF0CFFF0000 AND.W   #0xffcf, 0(R15)
+    424             return TIMERX[timer]->R;
+   \   00000A                REQUIRE ?Subroutine2
+   \   00000A                // Fall through to label ?Subroutine2
+    425          }
+    426          /*******************************************************************************
+    427          *  º¯ÊýÃû³Æ£ºTIMER_Timer_GetTime_Us(TIMERn timer,uint16_t overflowTime)
+    428          *  ¹¦ÄÜËµÃ÷£º¼ÆÊ±Ê±¼ä¶ÁÈ¡
+    429          *  ²ÎÊýËµÃ÷£ºTIMERn timer       £º¶¨Ê±Æ÷Ä£¿é
+    430                       uint16_t overflowTime £º¼ÆÊýÆ÷Òç³ö´ÎÊý
+    431          *  º¯Êý·µ»Ø£º·µ»Ø¼ÆÊ±Ê±¼ä £¨µ¥Î»£ºus£©
+    432          *  Ê¹ÓÃÀý³Ì£ºint16 overflowTime;  //¶¨Òå±äÁ¿£¬ÔÚ¶¨Ê±Æ÷Òç³öÖÐ¶ÏÀï¶Ô¸ÃÖµÔöÒ»
+    433                       ......
+    434                       TIMER_Timer_GetTime_Us(TIMAER_A1,overflowTime);  //¶ÁÈ¡¼ÆÊ±Ê±¼ä
+    435                       overflowTime=0;       //ÇåÁã
+    436          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2, keep-with-next
+    437          uint32_t TIMER_Timer_GetTime_Us(TIMERn timer,uint16_t overflowTime)
+   \                     TIMER_Timer_GetTime_Us:
+    438          {
+    439            return (uint32_t)((TIMERX[timer]->R + overflowTime*65536u)/g_sClock.SMCLK.CLK_MHZ);
+   \   000000   ........     CALLA   #?Subroutine6
+   \                     ??CrossCallReturnLabel_9:
+   \   000004   1C4F1000     MOV.W   0x10(R15), R12
+   \   000008   ........     CALLA   #_Cast32uto32f
+   \   00000C                REQUIRE ?Subroutine3
+   \   00000C                // Fall through to label ?Subroutine3
+    440          }
+    441          /*******************************************************************************
+    442          *  º¯ÊýÃû³Æ£ºTIMER_Clear_Counter (TIMERn timer)
+    443          *  ¹¦ÄÜËµÃ÷£ºÇå³ý¶¨Ê±Æ÷¼ÆÊýÖµ
+    444          *  ²ÎÊýËµÃ÷£ºTIMERn timer       £º¶¨Ê±Æ÷Ä£¿é
+    445          *  º¯Êý·µ»Ø£ºÎÞ
+    446          *  Ê¹ÓÃÀý³Ì£ºTIMER_Clear_Counter (TIMAER_A1)£»  //Çå³ý¶¨Ê±Æ÷A1¼ÆÊýÖµ
+    447          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2, keep-with-next
+    448          void   TIMER_Clear_Counter (TIMERn timer)
+   \                     TIMER_Clear_Counter:
+    449          {
+    450            TIMERX[timer]->R = 0;
+   \   000000                REQUIRE ?Subroutine0
+   \   000000                // Fall through to label ?Subroutine0
+    451          }
+    452          /*******************************************************************************
+    453          *  º¯ÊýÃû³Æ£ºTIMER_GET_Channel_OUT(TIMERn timer, TIMER_CHn ch)
+    454          *  ¹¦ÄÜËµÃ÷£º»ñÈ¡Í¨µÀÊä³öÖµ
+    455          *  ²ÎÊýËµÃ÷£ºTIMERn timer       £º¶¨Ê±Æ÷Ä£¿é
+    456                       TIMER_CHn ch       £º¶¨Ê±Æ÷Í¨µÀ
+    457          *  º¯Êý·µ»Ø£ºSTATUS : SET-Êä³ö¸ßµçÆ½ RESET-Êä³öµÍµçÆ½
+    458          *  Ê¹ÓÃÀý³Ì£ºSTATUS status = TIMER_GET_Channel_OUT(TIMAER_A1, TIMER_CH1);  //¶ÁÈ¡¶¨Ê±Æ÷A1Í¨µÀ1Êä³öµçÆ½
+    459          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   4C7C         SUBC.B  R12, R12
+   \   000002   5C53         ADD.B   #0x1, R12
+   \   000004   1001         RETA
+
+   \                                 In  segment CODE, align 2
+    460          STATUS TIMER_GET_Channel_OUT(TIMERn timer, TIMER_CHn ch)
+   \                     TIMER_GET_Channel_OUT:
+    461          {
+    462            return (TIMERX[timer]->CCTL[ch].CH_OUT) ? SET : RESET;
+   \   000000   ........     CALLA   #?Subroutine5
+   \                     ??CrossCallReturnLabel_3:
+   \   000004   AFB20200     BIT.W   #0x4, 0x2(R15)
+   \   000008   ....         JMP     ?Subroutine1
+   \   00000A   0343         NOP
+    463          }
+    464          /*******************************************************************************
+    465          *  º¯ÊýÃû³Æ£ºTIMER_GET_Channel_IN (TIMERn timer, TIMER_CHn ch)
+    466          *  ¹¦ÄÜËµÃ÷£º»ñÈ¡Í¨µÀÊäÈëÖµ
+    467          *  ²ÎÊýËµÃ÷£ºTIMERn timer       £º¶¨Ê±Æ÷Ä£¿é
+    468                       TIMER_CHn ch       £º¶¨Ê±Æ÷Í¨µÀ
+    469          *  º¯Êý·µ»Ø£ºSTATUS : SET-ÊäÈë¸ßµçÆ½ RESET-ÊäÈëµÍµçÆ½
+    470          *  Ê¹ÓÃÀý³Ì£ºSTATUS status = TIMER_GET_Channel_IN(TIMAER_A1, TIMER_CH1);  //¶ÁÈ¡¶¨Ê±Æ÷A1Í¨µÀ1ÊäÈëµçÆ½
+    471          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2, keep-with-next
+    472          STATUS TIMER_GET_Channel_IN (TIMERn timer, TIMER_CHn ch)
+   \                     TIMER_GET_Channel_IN:
+    473          {
+    474            return (TIMERX[timer]->CCTL[ch].CH_CCI) ? SET : RESET;
+   \   000000   ........     CALLA   #?Subroutine5
+   \                     ??CrossCallReturnLabel_2:
+   \   000004   BFB20200     BIT.W   #0x8, 0x2(R15)
+   \   000008                REQUIRE ?Subroutine1
+   \   000008                // Fall through to label ?Subroutine1
+    475          }
+    476          /*******************************************************************************
+    477          *  º¯ÊýÃû³Æ£ºTIMER_ITConfig (TIMERn timer,TIMER_IRQn irqn,STATUS ITState)
+    478          *  ¹¦ÄÜËµÃ÷£ºÉèÖÃÊÇ·ñÊ¹ÄÜTIMERµÄÄ³Ò»¸öÖÐ¶Ï
+    479          *  ²ÎÊýËµÃ÷£ºTIMERn timer       £º¶¨Ê±Æ÷Ä£¿é
+    480                       TIMER_IRQn irqn    £ºÖÐ¶ÏÊÂ¼þ
+    481                       STATUS ITState     £ºÊÇ·ñÊ¹ÄÜÖÐ¶Ï
+    482          *  º¯Êý·µ»Ø£ºÎÞ
+    483          *  Ê¹ÓÃÀý³Ì£ºTIMER_ITConfig (TIMAER_A1,TIMER_CCR0_IRQn,ENABLE); //Ê¹ÄÜ¶¨Ê±Æ÷1Í¨µÀ0ÖÐ¶Ï£¬¼´¶¨Ê±ÖÐ¶Ï
+    484          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+    485          void  TIMER_ITConfig (TIMERn timer,TIMER_IRQn irqn,STATUS ITState)
+   \                     TIMER_ITConfig:
+    486          {
+    487            if(irqn == TIMER_OverFlow_IRQn)
+   \   000000   ........     CALLA   #?Subroutine6
+   \                     ??CrossCallReturnLabel_8:
+   \   000004   4E4E         MOV.B   R14, R14
+   \   000006   7D900700     CMP.B   #0x7, R13
+   \   00000A   0820         JNE     ??TIMER_ITConfig_2
+    488            {
+    489              TIMERX[timer]->IE = ITState;
+   \   00000C   1EB3         BIT.W   #0x1, R14
+   \   00000E   032C         JC      ??TIMER_ITConfig_3
+   \   000010   AFC30000     BIC.W   #0x2, 0(R15)
+   \   000014   1001         RETA
+   \                     ??TIMER_ITConfig_3:
+   \   000016   AFD30000     BIS.W   #0x2, 0(R15)
+   \   00001A   1001         RETA
+    490            }
+    491            else
+    492            {
+    493              TIMERX[timer]->CCTL[irqn].IE = ITState;
+   \                     ??TIMER_ITConfig_2:
+   \   00001C   4D4D         MOV.B   R13, R13
+   \   00001E   ED0D         ADDA    R13, R13
+   \   000020   EF0D         ADDA    R13, R15
+   \   000022   1EB3         BIT.W   #0x1, R14
+   \   000024   042C         JC      ??TIMER_ITConfig_4
+   \   000026   BFC010000200 BIC.W   #0x10, 0x2(R15)
+   \   00002C   1001         RETA
+   \                     ??TIMER_ITConfig_4:
+   \   00002E   BFD010000200 BIS.W   #0x10, 0x2(R15)
+    494            }
+    495          }
+   \   000034   1001         RETA
+    496          /*******************************************************************************
+    497          *  º¯ÊýÃû³Æ£ºTIMER_GetITStatus(TIMERn timer,TIMER_IRQn irqn)
+    498          *  ¹¦ÄÜËµÃ÷£º»ñÈ¡TIMERµÄÄ³Ò»¸öÖÐ¶Ï±êÖ¾
+    499          *  ²ÎÊýËµÃ÷£ºTIMERn timer       £º¶¨Ê±Æ÷Ä£¿é
+    500                       TIMER_IRQn irqn    £ºÖÐ¶ÏÊÂ¼þ
+    501          *  º¯Êý·µ»Ø£ºSTATUS : TRUE-ÖÐ¶ÏÊÂ¼þ·¢Éú FALSE-ÖÐ¶ÏÊÂ¼þÎ´·¢Éú
+    502          *  Ê¹ÓÃÀý³Ì£ºif(TRUE == TIMER_GetITStatus(TIMAER_A1,TIMER_CCR1_IRQn)){...} //ÅÐ¶Ï¶¨Ê±Æ÷A1Í¨µÀ1ÖÐ¶ÏÊÂ¼þÊÇ·ñ·¢Éú
+    503          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+    504          STATUS TIMER_GetITStatus(TIMERn timer,TIMER_IRQn irqn)
+   \                     TIMER_GetITStatus:
+    505          {
+    506            if(irqn == TIMER_OverFlow_IRQn)
+   \   000000   ........     CALLA   #?Subroutine6
+   \                     ??CrossCallReturnLabel_7:
+   \   000004   7D900700     CMP.B   #0x7, R13
+   \   000008   0320         JNE     ??TIMER_GetITStatus_0
+    507            {
+    508              return ((TIMERX[timer]->IFG == SET) ? TRUE : FALSE);
+   \   00000A   2C4F         MOV.W   @R15, R12
+   \   00000C   5CF3         AND.B   #0x1, R12
+   \   00000E   1001         RETA
+    509            }
+    510            else
+    511            {
+    512              return ((TIMERX[timer]->CCTL[irqn].IFG == SET) ? TRUE : FALSE);
+   \                     ??TIMER_GetITStatus_0:
+   \   000010   4D4D         MOV.B   R13, R13
+   \   000012   ED0D         ADDA    R13, R13
+   \   000014   EF0D         ADDA    R13, R15
+   \   000016   1C4F0200     MOV.W   0x2(R15), R12
+   \   00001A   5CF3         AND.B   #0x1, R12
+   \   00001C   1001         RETA
+    513            }
+    514          }
+    515          /*******************************************************************************
+    516          *  º¯ÊýÃû³Æ£ºTIMER_ClearITPendingBit(TIMERn timer,TIMER_IRQn irqn)
+    517          *  ¹¦ÄÜËµÃ÷£ºÇå³ýTIMERµÄÄ³Ò»¸öÖÐ¶Ï±êÖ¾
+    518          *  ²ÎÊýËµÃ÷£ºTIMERn timer       £º¶¨Ê±Æ÷Ä£¿é
+    519                       TIMER_IRQn irqn    £ºÖÐ¶ÏÊÂ¼þ
+    520          *  º¯Êý·µ»Ø£ºÎÞ
+    521          *  Ê¹ÓÃÀý³Ì£ºTIMER_ClearITPendingBit(TIMAER_A1,TIMER_CCR1_IRQn);   //Çå³ý¶¨Ê±Æ÷Í¨µÀ1ÖÐ¶Ï±êÖ¾Î»
+    522          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+    523          void  TIMER_ClearITPendingBit(TIMERn timer,TIMER_IRQn irqn)
+   \                     TIMER_ClearITPendingBit:
+    524          {
+    525            if(irqn == TIMER_OverFlow_IRQn)
+   \   000000   ........     CALLA   #?Subroutine6
+   \                     ??CrossCallReturnLabel_6:
+   \   000004   7D900700     CMP.B   #0x7, R13
+   \   000008   0320         JNE     ??TIMER_ClearITPendingBit_0
+    526            {
+    527              TIMERX[timer]->IFG = RESET;
+   \   00000A   9FC30000     BIC.W   #0x1, 0(R15)
+   \   00000E   1001         RETA
+    528            }
+    529            else
+    530            {
+    531              TIMERX[timer]->CCTL[irqn].IFG = RESET;
+   \                     ??TIMER_ClearITPendingBit_0:
+   \   000010   4D4D         MOV.B   R13, R13
+   \   000012   ED0D         ADDA    R13, R13
+   \   000014   EF0D         ADDA    R13, R15
+   \   000016   9FC30200     BIC.W   #0x1, 0x2(R15)
+    532            }
+    533          }
+   \   00001A   1001         RETA
+
+   Maximum stack usage in bytes:
+
+   CSTACK Function
+   ------ --------
+       4  TIMER_Capture_Clear
+       4  TIMER_Capture_GetTime_Us
+             4 -> _Cast32fto32u
+             4 -> _Cast32sto32f
+             4 -> _Div32f
+      20  TIMER_Capture_Init
+            20 -> GPIO_MultiBits_Init
+       4  TIMER_Capture_Set_Mode
+       4  TIMER_ClearITPendingBit
+       4  TIMER_Clear_Counter
+      20  TIMER_Delay_Us
+            20 -> _Cast32fto32u
+            20 -> _Cast32uto32f
+            20 -> _Mul32f
+       4  TIMER_GET_Channel_IN
+       4  TIMER_GET_Channel_OUT
+       4  TIMER_GetITStatus
+       4  TIMER_ITConfig
+      20  TIMER_Interval_Us
+            20 -> _Cast32fto32u
+            20 -> _Cast32uto32f
+            20 -> _Mul32f
+      20  TIMER_PWM_Duty_Set
+      20  TIMER_PWM_Freq_Set
+      40  TIMER_PWM_MultiChannel_Init
+            40 -> GPIO_MultiBits_Init
+            40 -> TIMER_PWM_Freq_Set
+       4  TIMER_Pluse_Clear
+      12  TIMER_Pluse_Init
+            12 -> GPIO_MultiBits_Init
+       4  TIMER_Pluse_Read
+       4  TIMER_Timer_GetTime_Us
+             4 -> _Cast32fto32u
+             4 -> _Cast32uto32f
+             4 -> _Div32f
+       4  TIMER_Timer_Init
+       4  TIMER_Timer_Start
+       4  TIMER_Timer_Stop
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       6  ??Subroutine15_0
+      16  ??Subroutine16_0
+       4  ?Subroutine0
+       6  ?Subroutine1
+      12  ?Subroutine10
+      10  ?Subroutine11
+      44  ?Subroutine12
+      22  ?Subroutine13
+      14  ?Subroutine14
+       6  ?Subroutine2
+      12  ?Subroutine3
+      46  ?Subroutine4
+      18  ?Subroutine5
+      12  ?Subroutine6
+      22  ?Subroutine7
+      22  ?Subroutine8
+      16  ?Subroutine9
+      16  TIMERX
+      56  TIMER_CH_PIN
+       8  TIMER_CLK_PIN
+      20  TIMER_Capture_Clear
+      18  TIMER_Capture_GetTime_Us
+     162  TIMER_Capture_Init
+      26  TIMER_Capture_Set_Mode
+      28  TIMER_ClearITPendingBit
+       0  TIMER_Clear_Counter
+      92  TIMER_Delay_Us
+       8  TIMER_GET_Channel_IN
+      12  TIMER_GET_Channel_OUT
+      30  TIMER_GetITStatus
+      54  TIMER_ITConfig
+      74  TIMER_Interval_Us
+      16  TIMER_PRECISON
+      60  TIMER_PWM_Duty_Set
+     158  TIMER_PWM_Freq_Set
+     156  TIMER_PWM_MultiChannel_Init
+       4  TIMER_Pluse_Clear
+      88  TIMER_Pluse_Init
+       8  TIMER_Pluse_Read
+      12  TIMER_Timer_GetTime_Us
+      48  TIMER_Timer_Init
+      24  TIMER_Timer_Start
+      10  TIMER_Timer_Stop
+
+ 
+ 1 380 bytes in segment CODE
+    96 bytes in segment DATA20_C
+ 
+ 1 380 bytes of CODE  memory
+    96 bytes of CONST memory
+
+Errors: none
+Warnings: none

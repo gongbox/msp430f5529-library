@@ -1,0 +1,13 @@
+C51 COMPILER V7.20   MAIN                                                                  06/16/2010 16:29:01 PAGE 1   
+
+
+C51 COMPILER V7.20, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: E:\单片机专用\keil UV3 C51绿色精简版\keil UV3 C51绿色精简版\keil UV3 C51绿色精简版\C51\BIN\C51.EXE 
+                    -main.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+*** ERROR C318 OF main.c: can't open file 'main.c'
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  1 ERROR(S)

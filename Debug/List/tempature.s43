@@ -1,0 +1,674 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+//                                                      18/Nov/2016  18:20:49 /
+// IAR C/C++ Compiler V5.50.1.20465/W32, Evaluation edition for MSP430        /
+// Copyright 1996-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    __rt_version  =  3                                                      /
+//    __double_size =  32                                                     /
+//    __reg_r4      =  free                                                   /
+//    __reg_r5      =  free                                                   /
+//    __pic         =  no                                                     /
+//    __core        =  430X                                                   /
+//    __data_model  =  large                                                  /
+//    Source file   =  E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\1 /
+//                     8b20\tempature.c                                       /
+//    Command line  =  E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\1 /
+//                     8b20\tempature.c -D DEBUG -D RAM_VECTOR -lA            /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Debug\List /
+//                     \ -o E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Debug /
+//                     \Obj\ --no_cse --no_unroll --no_inline                 /
+//                     --no_code_motion --no_tbaa --debug -D__MSP430F5529__   /
+//                     -e --double=32 --dlib_config "D:\Program Files\IAR     /
+//                     Systems\Embedded Workbench 6.4                         /
+//                     Evaluation\430\LIB\DLIB\dl430xlff.h" -I                /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\ -I        /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\in /
+//                     c\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Driv /
+//                     ers\src\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£° /
+//                     å\Drivers\src\USB\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C /
+//                     °æ\¹¤³ÌÄ£°å\Drivers\src\USB\USB_config\ -I             /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\USB\USB_User\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\ /
+//                     ¹¤³ÌÄ£°å\Drivers\srcUSB\USB_API\USB_CDC_API\ -I        /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\USB\USB_API\USB_HID_API\ -I                          /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\USB\USB_API\USB_MSC_API\ -I                          /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\  /
+//                     -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWar /
+//                     e\delay\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£° /
+//                     å\HardWare\18b20\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C° /
+//                     æ\¹¤³ÌÄ£°å\HardWare\KEY\ -I                            /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\L /
+//                     ED\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Har /
+//                     dWare\12864\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ /
+//                     ÌÄ£°å\HardWare\oled\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6 /
+//                     \C°æ\¹¤³ÌÄ£°å\HardWare\mpu6050\inc\ -I                 /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\m /
+//                     pu6050\src\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³Ì /
+//                     Ä£°å\HardWare\nokia5110\inc\ -I                        /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\n /
+//                     okia5110\src\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤ /
+//                     ³ÌÄ£°å\HardWare\LQ_1.8_TFT\ -I                         /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\L /
+//                     CD_API\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å /
+//                     \HardWare\2.2TFT\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C° /
+//                     æ\¹¤³ÌÄ£°å\HardWare\nrf24l01\ -I                       /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\System\    /
+//                     -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\System\ /
+//                     inc\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Sy /
+//                     stem\src\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£ /
+//                     °å\User\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£° /
+//                     å\User\USER\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ /
+//                     ÌÄ£°å\Lib\UCOSII\CONFIG\ -I                            /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII /
+//                     \App\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\L /
+//                     ib\uCOSII\CONFIHG\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C /
+//                     °æ\¹¤³ÌÄ£°å\Lib\uCOSII\PORT\ -I                        /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Lib\UCOSII /
+//                     \CORE\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\ /
+//                     Lib\FatFs\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ /
+//                     £°å\Lib\FatFs\option\ --core=430X --data_model=large   /
+//                     -On --multiplier=32 --multiplier_location=4C0          /
+//                     --hw_workaround=CPU40                                  /
+//    List file     =  E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Debug\List /
+//                     \tempature.s43                                         /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME tempature
+
+        RTMODEL "__SystemLibrary", "DLib"
+        RTMODEL "__core", "430X"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dlib_file_descriptor", "1"
+        RTMODEL "__double_size", "32"
+        RTMODEL "__pic", "no"
+        RTMODEL "__reg_r4", "free"
+        RTMODEL "__reg_r5", "free"
+        RTMODEL "__rt_version", "3"
+
+        RSEG CSTACK:DATA:SORT:NOROOT(0)
+
+        EXTERN ?Mul32
+        EXTERN ?cstart_init_zero20
+        EXTERN ?longjmp_r4
+        EXTERN ?longjmp_r5
+        EXTERN ?setjmp_r4
+        EXTERN ?setjmp_r5
+
+        PUBWEAK ?setjmp_save_r4
+        PUBWEAK ?setjmp_save_r5
+        PUBLIC B20_Init
+        FUNCTION B20_Init,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC B20_ReadByte
+        FUNCTION B20_ReadByte,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 12, STACK
+        PUBLIC B20_Read_temp
+        FUNCTION B20_Read_temp,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 28, STACK
+        PUBLIC B20_WriteByte
+        FUNCTION B20_WriteByte,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 12, STACK
+        PUBWEAK _A_PCIN_L
+        PUBWEAK _A_PCOUT_L
+        PUBLIC g_fTempatureValue
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA SP DATA
+          CFI Resource PC:20, SP:20, SR:16, R4L:16, R4H:4, R4:20, R5L:16, R5H:4
+          CFI Resource R5:20, R6L:16, R6H:4, R6:20, R7L:16, R7H:4, R7:20, R8L:16
+          CFI Resource R8H:4, R8:20, R9L:16, R9H:4, R9:20, R10L:16, R10H:4
+          CFI Resource R10:20, R11L:16, R11H:4, R11:20, R12L:16, R12H:4, R12:20
+          CFI Resource R13L:16, R13H:4, R13:20, R14L:16, R14H:4, R14:20, R15L:16
+          CFI Resource R15H:4, R15:20
+          CFI ResourceParts R4 R4H, R4L
+          CFI ResourceParts R5 R5H, R5L
+          CFI ResourceParts R6 R6H, R6L
+          CFI ResourceParts R7 R7H, R7L
+          CFI ResourceParts R8 R8H, R8L
+          CFI ResourceParts R9 R9H, R9L
+          CFI ResourceParts R10 R10H, R10L
+          CFI ResourceParts R11 R11H, R11L
+          CFI ResourceParts R12 R12H, R12L
+          CFI ResourceParts R13 R13H, R13L
+          CFI ResourceParts R14 R14H, R14L
+          CFI ResourceParts R15 R15H, R15L
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H SameValue
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H SameValue
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H SameValue
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H SameValue
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H SameValue
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H SameValue
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H SameValue
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H SameValue
+          CFI R11 Concat
+          CFI R12L Undefined
+          CFI R12H Undefined
+          CFI R12 Undefined
+          CFI R13L Undefined
+          CFI R13H Undefined
+          CFI R13 Undefined
+          CFI R14L Undefined
+          CFI R14H Undefined
+          CFI R14 Undefined
+          CFI R15L Undefined
+          CFI R15H Undefined
+          CFI R15 Undefined
+          CFI EndCommon cfiCommon0
+        
+        EXTERN GPIO_MultiBits_Init
+        FUNCTION GPIO_MultiBits_Init,0202H
+        EXTERN _Cast32uto32f
+        FUNCTION _Cast32uto32f,0202H
+        EXTERN _Mul32f
+        FUNCTION _Mul32f,0202H
+        EXTERN _Cast32fto32u
+        FUNCTION _Cast32fto32u,0202H
+
+// E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\18b20\tempature.c
+//    1 #include "tempature.h"
+
+        ASEGN DATA16_AN:DATA:NOROOT,0240H
+// union <unnamed> __data16 _A_PCIN_L
+_A_PCIN_L:
+        DS8 2
+
+        ASEGN DATA16_AN:DATA:NOROOT,0242H
+// union <unnamed> __data16 _A_PCOUT_L
+_A_PCOUT_L:
+        DS8 2
+//    2 #include "gpio.h"
+//    3 
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+//    4 volatile float g_fTempatureValue = 0.0; 
+g_fTempatureValue:
+        DS8 4
+//    5 /******************************************* 
+//    6 º¯ÊýÃû³Æ: B20_Init 
+//    7 ¹¦    ÄÜ: ¸´Î»DS18B20 
+//    8 ²Î    Êý: ÎÞ 
+//    9 ·µ»ØÖµ  : ÎÞ 
+//   10 ********************************************/ 
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   11 void B20_Init(void) 
+B20_Init:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function B20_Init
+//   12 { 
+//   13   GPIO_Init(DS18B20_PORT,DS18B20_PIN,GPO);
+        FUNCALL B20_Init, GPIO_MultiBits_Init
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL B20_Init, GPIO_MultiBits_Init
+        LOCFRAME CSTACK, 4, STACK
+        MOV.W   #0x2, R14
+        MOV.W   #0x20, R13
+        MOV.B   #0x5, R12
+        CALLA   #GPIO_MultiBits_Init
+//   14   
+//   15   DS18B20_OUT = 1;
+        BIS.B   #0x20, &0x243
+//   16   DELAY_US(10);
+        ////////////// Start of 160 cycles delay.
+        JMP     ??B20_Init_5
+??B20_Init_5:
+        MOV.W   #0x33, R15
+??B20_Init_2:
+        ADD.W   #0xffff, R15
+        JC      ??B20_Init_2
+        ////////////// End of delay code.
+//   17   DS18B20_OUT = 0;
+        BIC.B   #0x20, &0x243
+//   18   DELAY_US(750);
+        ////////////// Start of 12000 cycles delay.
+        NOP
+        MOV.W   #0xf9e, R15
+??B20_Init_3:
+        ADD.W   #0xffff, R15
+        JC      ??B20_Init_3
+        ////////////// End of delay code.
+//   19   DS18B20_OUT = 1; 
+        BIS.B   #0x20, &0x243
+//   20   DELAY_US(60);
+        ////////////// Start of 960 cycles delay.
+        NOP
+        MOV.W   #0x13e, R15
+??B20_Init_4:
+        ADD.W   #0xffff, R15
+        JC      ??B20_Init_4
+        ////////////// End of delay code.
+//   21  
+//   22   GPIO_Init(DS18B20_PORT,DS18B20_PIN,GPI);
+        MOV.W   #0x1, R14
+        MOV.W   #0x20, R13
+        MOV.B   #0x5, R12
+        CALLA   #GPIO_MultiBits_Init
+//   23  
+//   24   while(DS18B20_IN); //µÈ´ýDS18B20À­µÍ 
+??B20_Init_0:
+        MOV.B   &0x241, R14
+        RPT     #0x5
+        RRUX.B  R14
+        BIT.B   #0x1, R14
+        JNE     ??B20_Init_0
+//   25   while(!DS18B20_IN); //µÈ´ýDS18B20ÊÍ·Å×ÜÏß 
+??B20_Init_1:
+        MOV.B   &0x241, R14
+        RPT     #0x5
+        RRUX.B  R14
+        BIT.B   #0x1, R14
+        JEQ     ??B20_Init_1
+//   26 } 
+        RETA
+          CFI EndBlock cfiBlock0
+        REQUIRE _A_PCOUT_L
+        REQUIRE _A_PCIN_L
+//   27 /******************************************* 
+//   28 º¯ÊýÃû³Æ: B20_ReadByte 
+//   29 ¹¦    ÄÜ: ¶ÁÈ¡Ò»¸ö×Ö½ÚµÄÊý¾Ý 
+//   30 ²Î    Êý: ÎÞ 
+//   31 ·µ»ØÖµ  : data--·µ»ØµÄÒ»¸ö×Ö½ÚÊý¾Ý 
+//   32 ********************************************/ 
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   33 uint8_t B20_ReadByte(void) 
+B20_ReadByte:
+          CFI Block cfiBlock1 Using cfiCommon0
+          CFI Function B20_ReadByte
+//   34 { 
+        FUNCALL B20_ReadByte, GPIO_MultiBits_Init
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL B20_ReadByte, GPIO_MultiBits_Init
+        LOCFRAME CSTACK, 12, STACK
+        PUSHM.A #0x2, R11
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+12
+//   35  uint8_t i,data=0; 
+        MOV.B   #0x0, R11
+//   36  for(i=0;i < 8;i++)     //Î»¼ÆÊýÖµ 
+        MOV.B   #0x0, R10
+??B20_ReadByte_0:
+        CMP.B   #0x8, R10
+        JC      ??B20_ReadByte_1
+//   37  { 
+//   38   data>>=1;      //ÓÒÒÆ£¬×¼±¸½ÓÊÜÐÂµÄÊý¾ÝÎ»
+        RRUX.B  R11
+//   39 
+//   40   GPIO_Init(DS18B20_PORT,DS18B20_PIN,GPO);
+        MOV.W   #0x2, R14
+        MOV.W   #0x20, R13
+        MOV.B   #0x5, R12
+        CALLA   #GPIO_MultiBits_Init
+//   41 
+//   42   DS18B20_OUT = 0;//À­µÍ£¬Æô¶¯¶ÁÊý¾ÝÎ» 
+        BIC.B   #0x20, &0x243
+//   43   DS18B20_OUT = 1;  //ÊÍ·Å×ÜÏß 
+        BIS.B   #0x20, &0x243
+//   44   DELAY_US(5);      //µÈ´ý5Î¢Ãë 
+        ////////////// Start of 80 cycles delay.
+        MOV.W   #0x19, R15
+??B20_ReadByte_3:
+        ADD.W   #0xffff, R15
+        JC      ??B20_ReadByte_3
+        ////////////// End of delay code.
+//   45   // PIN_DIR(DS18B20_PORT,DS18B20_PIN) = 0; //ÅäÖÃÎªÊäÈë£¬¿ªÊ¼¶ÁÈ¡Êý¾ÝÎ»
+//   46   GPIO_Init(DS18B20_PORT,DS18B20_PIN,GPI);	 
+        MOV.W   #0x1, R14
+        MOV.W   #0x20, R13
+        MOV.B   #0x5, R12
+        CALLA   #GPIO_MultiBits_Init
+//   47   if(DS18B20_IN)//¸ÃÎ»ÊÇ·ñÎª¸ß 
+        MOV.B   &0x241, R14
+        RPT     #0x5
+        RRUX.B  R14
+        BIT.B   #0x1, R14
+        JEQ     ??B20_ReadByte_2
+//   48   { 
+//   49    data|=0x80;     //ÊÇ¾Í½«´ËÎ»ÖÃ¸ß 
+        BIS.B   #0x80, R11
+//   50   } 
+//   51   DELAY_US(50);     //µÈ´ý50Î¢Ãë 
+??B20_ReadByte_2:
+        ////////////// Start of 800 cycles delay.
+        MOV.W   #0x109, R15
+??B20_ReadByte_4:
+        ADD.W   #0xffff, R15
+        JC      ??B20_ReadByte_4
+        ////////////// End of delay code.
+//   52  } 
+        ADD.B   #0x1, R10
+        JMP     ??B20_ReadByte_0
+//   53  return data;     //½«¶Áµ½µÄÒ»¸ö×Ö½Ú·µ»Ø 
+??B20_ReadByte_1:
+        MOV.B   R11, R12
+        POPM.A  #0x2, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock1
+        REQUIRE _A_PCOUT_L
+        REQUIRE _A_PCIN_L
+//   54 } 
+//   55 /******************************************* 
+//   56 º¯ÊýÃû³Æ: B20_WriteByte 
+//   57 ¹¦    ÄÜ: Ð´ÈëÒ»¸ö×Ö½ÚµÄÊý¾Ý 
+//   58 ²Î    Êý: data--ÒªÐ´ÈëµÄÊý¾Ý 
+//   59 ·µ»ØÖµ  : ÎÞ 
+//   60 ********************************************/ 
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   61 void B20_WriteByte(uint8_t data) 
+B20_WriteByte:
+          CFI Block cfiBlock2 Using cfiCommon0
+          CFI Function B20_WriteByte
+//   62 { 
+        FUNCALL B20_WriteByte, GPIO_MultiBits_Init
+        LOCFRAME CSTACK, 12, STACK
+        PUSHM.A #0x2, R11
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+12
+        MOV.B   R12, R10
+//   63  uint8_t i; 
+//   64 	
+//   65  for(i=0;i<8;i++)            //Î»¼ÆÊýÖµ 
+        MOV.B   #0x0, R11
+??B20_WriteByte_0:
+        CMP.B   #0x8, R11
+        JC      ??B20_WriteByte_1
+//   66  { 
+//   67    GPIO_Init(DS18B20_PORT,DS18B20_PIN,GPO);
+        MOV.W   #0x2, R14
+        MOV.W   #0x20, R13
+        MOV.B   #0x5, R12
+        CALLA   #GPIO_MultiBits_Init
+//   68    //PIN_DIR(DS18B20_PORT,DS18B20_PIN) = 1; //ÅäÖÃÎªÊä³ö 
+//   69   DS18B20_OUT = 0;//À­µÍ£¬Æô¶¯Ð´Êý¾ÝÎ» 
+        BIC.B   #0x20, &0x243
+//   70   DELAY_US(1);      //µÈ´ý1Î¢Ãë 
+        ////////////// Start of 16 cycles delay.
+        RPT     #0xf
+        RRCX.W  R15
+        ////////////// End of delay code.
+//   71   if(data&0x01)     //´ËÎ»Êý¾ÝÊÇ·ñÎª¸ß 
+        BIT.B   #0x1, R10
+        JNC     ??B20_WriteByte_2
+//   72   { 
+//   73    DS18B20_OUT = 1;//ÊÇ¸ßÔò½«µ¥×ÜÏßÀ­¸ß 
+        BIS.B   #0x20, &0x243
+        JMP     ??B20_WriteByte_3
+//   74   } 
+//   75   else 
+//   76   { 
+//   77    DS18B20_OUT = 0;//ÊÇµÍÔò½«µ¥×ÜÏßÀ­µÍ 
+??B20_WriteByte_2:
+        BIC.B   #0x20, &0x243
+//   78   } 
+//   79   DELAY_US(50);      //µÈ´ý50Î¢Ãë 
+??B20_WriteByte_3:
+        ////////////// Start of 800 cycles delay.
+        MOV.W   #0x109, R15
+??B20_WriteByte_4:
+        ADD.W   #0xffff, R15
+        JC      ??B20_WriteByte_4
+        ////////////// End of delay code.
+//   80   DS18B20_OUT = 1;//ÊÍ·Å×ÜÏß 
+        BIS.B   #0x20, &0x243
+//   81   data>>=1;      //ÓÒÒÆ£¬ÎªÐ´ÈëÐÂµÄÊý¾ÝÎ»×ö×¼±¸ 
+        RRUX.B  R10
+//   82  } 
+        ADD.B   #0x1, R11
+        JMP     ??B20_WriteByte_0
+//   83  DELAY_US(50);      //µÈ´ý50Î¢Ãë 
+??B20_WriteByte_1:
+        ////////////// Start of 800 cycles delay.
+        MOV.W   #0x109, R15
+??B20_WriteByte_5:
+        ADD.W   #0xffff, R15
+        JC      ??B20_WriteByte_5
+        ////////////// End of delay code.
+//   84 } 
+        POPM.A  #0x2, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock2
+        REQUIRE _A_PCOUT_L
+//   85 /******************************************* 
+//   86 º¯ÊýÃû³Æ: B20_Read_temp 
+//   87 ¹¦    ÄÜ: ¶ÁÈ¡ÎÂ¶ÈÖµ 
+//   88 ²Î    Êý: ÎÞ 
+//   89 ·µ»ØÖµ  : ÎÂ¶ÈÖµ(µ¥Î»£ºÉãÊÏ¶È) 
+//   90 ********************************************/ 
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   91 float B20_Read_temp(void) 
+B20_Read_temp:
+          CFI Block cfiBlock3 Using cfiCommon0
+          CFI Function B20_Read_temp
+//   92 	
+//   93 { 
+        FUNCALL B20_Read_temp, B20_Init
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL B20_Read_temp, B20_WriteByte
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL B20_Read_temp, B20_WriteByte
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL B20_Read_temp, B20_Init
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL B20_Read_temp, B20_WriteByte
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL B20_Read_temp, B20_WriteByte
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL B20_Read_temp, B20_ReadByte
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL B20_Read_temp, B20_ReadByte
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL B20_Read_temp, _Cast32uto32f
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL B20_Read_temp, _Mul32f
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL B20_Read_temp, _Cast32fto32u
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL B20_Read_temp, _Cast32uto32f
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL B20_Read_temp, _Mul32f
+        LOCFRAME CSTACK, 28, STACK
+        PUSHM.A #0x6, R11
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+28
+//   94  uint8_t templ,temph; 
+//   95  uint16_t temp; 
+//   96  float tempature;
+//   97  B20_Init();       //³õÊ¼»¯£¬Ã¿´ÎÐ´ÃüÁî¶¼´Ó³õÊ¼»¯¿ªÊ¼ 
+        CALLA   #B20_Init
+//   98  B20_WriteByte(0xcc);    //Ìø¹ýROM 
+        MOV.B   #0xcc, R12
+        CALLA   #B20_WriteByte
+//   99  B20_WriteByte(0x44);    //Æô¶¯ÎÂ¶È×ª»» 
+        MOV.B   #0x44, R12
+        CALLA   #B20_WriteByte
+//  100  B20_Init();       //³õÊ¼»¯£¬Ã¿´ÎÐ´ÃüÁî¶¼´Ó³õÊ¼»¯¿ªÊ¼ 
+        CALLA   #B20_Init
+//  101  B20_WriteByte(0xcc);    //Ìø¹ýROM 
+        MOV.B   #0xcc, R12
+        CALLA   #B20_WriteByte
+//  102  B20_WriteByte(0xbe);    //¶Á¼Ä´æÆ÷ 
+        MOV.B   #0xbe, R12
+        CALLA   #B20_WriteByte
+//  103  templ=B20_ReadByte();   //¶ÁÎÂ¶ÈµÍ×Ö½Ú 
+        CALLA   #B20_ReadByte
+        MOV.B   R12, R8
+//  104  temph=B20_ReadByte();   //¶ÁÎÂ¶È¸ß×Ö½Ú 
+        CALLA   #B20_ReadByte
+        MOV.B   R12, R11
+//  105  if(((uint32_t)temph*256+templ) > 63488)//(1111 1xxx xxxx xxxx)>63488£¬´óÓÚ63488µÄ¶¼ÊÇ¸ºÊý
+        MOV.B   R11, R11
+        MOV.W   R11, R12
+        MOV.W   #0x0, R13
+        MOV.W   #0x100, R14
+        MOV.W   #0x0, R15
+        CALLA   #?Mul32
+        MOV.B   R8, R14
+        MOV.W   #0x0, R15
+        ADD.W   R14, R12
+        ADDC.W  R15, R13
+        CMP.W   #0x0, R13
+        JNC     ??B20_Read_temp_0
+        JNE     ??B20_Read_temp_1
+        CMP.W   #0xf801, R12
+        JNC     ??B20_Read_temp_0
+//  106  { 
+//  107    temph |= (1<<4);        //¸ºÎÂ¶È±êÖ¾Î»
+??B20_Read_temp_1:
+        BIS.B   #0x10, R11
+//  108    temp =~(temph*256+templ)+1;//È¡·´¼Ó1
+        MOV.B   R11, R15
+        AND.W   #0xff, R15
+        SWPB    R15
+        MOV.B   R8, R8
+        ADD.W   R8, R15
+        XOR.W   #0xffff, R15
+        ADD.W   #0x1, R15
+        MOV.W   R15, R10
+        JMP     ??B20_Read_temp_2
+//  109  }  
+//  110  else
+//  111  { 
+//  112    temph &=~(1<<4);       //ÕýÎÂ¶È±êÖ¾Î»
+??B20_Read_temp_0:
+        BIC.B   #0x10, R11
+//  113    temp = (temph*256+templ);
+        MOV.B   R11, R15
+        AND.W   #0xff, R15
+        SWPB    R15
+        MOV.B   R8, R8
+        ADD.W   R8, R15
+        MOV.W   R15, R10
+//  114  }
+//  115  temp *= 0.625; 
+??B20_Read_temp_2:
+        MOV.W   R10, R12
+        MOV.W   #0x0, R13
+        CALLA   #_Cast32uto32f
+        MOV.W   #0x0, R14
+        MOV.W   #0x3f20, R15
+        CALLA   #_Mul32f
+        CALLA   #_Cast32fto32u
+        MOV.W   R12, R10
+//  116  tempature = temp*0.1; //Êý×ÖÁ¿ÓëÎÂ¶È×ª»¯
+        MOV.W   R10, R12
+        MOV.W   #0x0, R13
+        CALLA   #_Cast32uto32f
+        MOV.W   #0xcccd, R14
+        MOV.W   #0x3dcc, R15
+        CALLA   #_Mul32f
+        MOV.W   R12, R6
+        MOV.W   R13, R7
+//  117  return ((temp==0x0352) ? 0.0f : tempature);   //¿ª»úÆô¶¯Ê±Îª85ËùÒÔ¸ÄÎª0,·µ»ØÎÂ¶ÈÖµ
+        CMP.W   #0x352, R10
+        JNE     ??B20_Read_temp_3
+        MOV.W   #0x0, R12
+        MOV.W   #0x0, R13
+        JMP     ??B20_Read_temp_4
+??B20_Read_temp_3:
+        MOV.W   R6, R12
+        MOV.W   R7, R13
+??B20_Read_temp_4:
+        POPM.A  #0x6, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock3
+//  118  
+//  119 }
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r4:
+        REQUIRE ?setjmp_r4
+        REQUIRE ?longjmp_r4
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r5:
+        REQUIRE ?setjmp_r5
+        REQUIRE ?longjmp_r5
+
+        END
+//  120 
+// 
+// 484 bytes in segment CODE
+//   4 bytes in segment DATA16_AN
+//   4 bytes in segment DATA20_Z
+// 
+// 484 bytes of CODE memory
+//   4 bytes of DATA memory (+ 4 bytes shared)
+//
+//Errors: none
+//Warnings: none

@@ -1,0 +1,882 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+//                                                      26/Nov/2016  11:15:15 /
+// IAR C/C++ Compiler V5.50.1.20465/W32, Evaluation edition for MSP430        /
+// Copyright 1996-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    __rt_version  =  3                                                      /
+//    __double_size =  32                                                     /
+//    __reg_r4      =  free                                                   /
+//    __reg_r5      =  free                                                   /
+//    __pic         =  no                                                     /
+//    __core        =  430X                                                   /
+//    __data_model  =  large                                                  /
+//    Source file   =  E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\uart.c                                               /
+//    Command line  =  E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\uart.c -D DEBUG -D RAM_VECTOR -lA                    /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Debug\List /
+//                     \ -o E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Debug /
+//                     \Obj\ --no_cse --no_unroll --no_inline                 /
+//                     --no_code_motion --no_tbaa --debug -D__MSP430F5529__   /
+//                     -e --double=32 --dlib_config "D:\Program Files\IAR     /
+//                     Systems\Embedded Workbench 6.4                         /
+//                     Evaluation\430\LIB\DLIB\dl430xlff.h" -I                /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\ -I        /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\in /
+//                     c\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Driv /
+//                     ers\src\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£° /
+//                     å\Drivers\src\USB\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C /
+//                     °æ\¹¤³ÌÄ£°å\Drivers\src\USB\USB_config\ -I             /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\USB\USB_User\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\ /
+//                     ¹¤³ÌÄ£°å\Drivers\srcUSB\USB_API\USB_CDC_API\ -I        /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\USB\USB_API\USB_HID_API\ -I                          /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\USB\USB_API\USB_MSC_API\ -I                          /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\  /
+//                     -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWar /
+//                     e\delay\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£° /
+//                     å\HardWare\18b20\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C° /
+//                     æ\¹¤³ÌÄ£°å\HardWare\KEY\ -I                            /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\L /
+//                     ED\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Har /
+//                     dWare\12864\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ /
+//                     ÌÄ£°å\HardWare\oled\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6 /
+//                     \C°æ\¹¤³ÌÄ£°å\HardWare\mpu6050\inc\ -I                 /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\m /
+//                     pu6050\src\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³Ì /
+//                     Ä£°å\HardWare\nokia5110\inc\ -I                        /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\n /
+//                     okia5110\src\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤ /
+//                     ³ÌÄ£°å\HardWare\LQ_1.8_TFT\ -I                         /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\L /
+//                     CD_API\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å /
+//                     \HardWare\2.2TFT\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C° /
+//                     æ\¹¤³ÌÄ£°å\HardWare\nrf24l01\ -I                       /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\System\    /
+//                     -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\System\ /
+//                     inc\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Sy /
+//                     stem\src\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£ /
+//                     °å\User\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£° /
+//                     å\User\USER\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ /
+//                     ÌÄ£°å\Lib\UCOSII\CONFIG\ -I                            /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII /
+//                     \App\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\L /
+//                     ib\uCOSII\CONFIHG\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C /
+//                     °æ\¹¤³ÌÄ£°å\Lib\uCOSII\PORT\ -I                        /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Lib\UCOSII /
+//                     \CORE\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\ /
+//                     Lib\FatFs\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ /
+//                     £°å\Lib\FatFs\option\ --core=430X --data_model=large   /
+//                     -On --multiplier=32 --multiplier_location=4C0          /
+//                     --hw_workaround=CPU40                                  /
+//    List file     =  E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Debug\List /
+//                     \uart.s43                                              /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME uart
+
+        RTMODEL "__SystemLibrary", "DLib"
+        RTMODEL "__core", "430X"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dlib_file_descriptor", "1"
+        RTMODEL "__double_size", "32"
+        RTMODEL "__iar_require _Printf", "unknown"
+        RTMODEL "__pic", "no"
+        RTMODEL "__reg_r4", "free"
+        RTMODEL "__reg_r5", "free"
+        RTMODEL "__rt_version", "3"
+
+        RSEG CSTACK:DATA:SORT:NOROOT(0)
+
+        EXTERN ?longjmp_r4
+        EXTERN ?longjmp_r5
+        EXTERN ?setjmp_r4
+        EXTERN ?setjmp_r5
+
+        PUBWEAK ?setjmp_save_r4
+        PUBWEAK ?setjmp_save_r5
+        PUBLIC UART_ClearITPendingBit
+        FUNCTION UART_ClearITPendingBit,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC UART_GetChar
+        FUNCTION UART_GetChar,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC UART_GetITStatus
+        FUNCTION UART_GetITStatus,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC UART_ITConfig
+        FUNCTION UART_ITConfig,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 8, STACK
+        PUBLIC UART_Init
+        FUNCTION UART_Init,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 16, STACK
+        PUBLIC UART_PIN
+        PUBLIC UART_Printf
+        FUNCTION UART_Printf,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 148, STACK
+        PUBLIC UART_PutChar
+        FUNCTION UART_PutChar,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC UART_PutNChar
+        FUNCTION UART_PutNChar,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 20, STACK
+        PUBLIC UART_PutString
+        FUNCTION UART_PutString,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 12, STACK
+        PUBLIC UART_SetBaudRate
+        FUNCTION UART_SetBaudRate,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 36, STACK
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA SP DATA
+          CFI Resource PC:20, SP:20, SR:16, R4L:16, R4H:4, R4:20, R5L:16, R5H:4
+          CFI Resource R5:20, R6L:16, R6H:4, R6:20, R7L:16, R7H:4, R7:20, R8L:16
+          CFI Resource R8H:4, R8:20, R9L:16, R9H:4, R9:20, R10L:16, R10H:4
+          CFI Resource R10:20, R11L:16, R11H:4, R11:20, R12L:16, R12H:4, R12:20
+          CFI Resource R13L:16, R13H:4, R13:20, R14L:16, R14H:4, R14:20, R15L:16
+          CFI Resource R15H:4, R15:20
+          CFI ResourceParts R4 R4H, R4L
+          CFI ResourceParts R5 R5H, R5L
+          CFI ResourceParts R6 R6H, R6L
+          CFI ResourceParts R7 R7H, R7L
+          CFI ResourceParts R8 R8H, R8L
+          CFI ResourceParts R9 R9H, R9L
+          CFI ResourceParts R10 R10H, R10L
+          CFI ResourceParts R11 R11H, R11L
+          CFI ResourceParts R12 R12H, R12L
+          CFI ResourceParts R13 R13H, R13L
+          CFI ResourceParts R14 R14H, R14L
+          CFI ResourceParts R15 R15H, R15L
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H SameValue
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H SameValue
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H SameValue
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H SameValue
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H SameValue
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H SameValue
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H SameValue
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H SameValue
+          CFI R11 Concat
+          CFI R12L Undefined
+          CFI R12H Undefined
+          CFI R12 Undefined
+          CFI R13L Undefined
+          CFI R13H Undefined
+          CFI R13 Undefined
+          CFI R14L Undefined
+          CFI R14H Undefined
+          CFI R14 Undefined
+          CFI R15L Undefined
+          CFI R15H Undefined
+          CFI R15 Undefined
+          CFI EndCommon cfiCommon0
+        
+        EXTERN USCIX
+        EXTERN vsprintf
+        FUNCTION vsprintf,010202H
+        EXTERN _Cast32uto32f
+        FUNCTION _Cast32uto32f,0202H
+        EXTERN g_sClock
+        EXTERN _Div32f
+        FUNCTION _Div32f,0202H
+        EXTERN _Cast32fto32u
+        FUNCTION _Cast32fto32u,0202H
+        EXTERN _Sub32f
+        FUNCTION _Sub32f,0202H
+        EXTERN _Mul32f
+        FUNCTION _Mul32f,0202H
+        EXTERN GPIO_MultiBits_Init
+        FUNCTION GPIO_MultiBits_Init,0202H
+
+// E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\src\uart.c
+//    1 #include "uart.h"
+//    2 #include "msp430f5529.h"
+//    3 #include "msp430f5529MemMap.h"
+//    4 #include "clock.h"
+//    5 #include "system.h"
+//    6 #include "gpio.h"
+//    7 #include <stdio.h>
+//    8 #include <stdarg.h>
+//    9 const struct
+//   10 {
+//   11   GPIO_PIN TX;
+//   12   GPIO_PIN RX;
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+//   13 }UART_PIN[]=
+UART_PIN:
+        DC8 2, 3, 2, 4, 3, 4, 3, 5
+//   14 {
+//   15   /*UART0*/{.TX={P3,3},.RX={P3,4}},        
+//   16   /*UART1*/{.TX={P4,4},.RX={P4,5}}
+//   17 }; //Òý½ÅÊý×é
+//   18 /*******************************************************************************
+//   19 *  º¯ÊýÃû³Æ£ºUART_Init(UARTn uartn,uint32_t BaudRate)
+//   20 *  ¹¦ÄÜËµÃ÷£º³õÊ¼»¯´®¿Ú£¬ÉèÖÃ²¨ÌØÂÊ
+//   21 *  ²ÎÊýËµÃ÷£ºUARTn uartn       Ä£¿éºÅ£¨UART0~UART1£©
+//   22              uint32_t BaudRate : ²¨ÌØÂÊ£¬Èç9600¡¢19200¡¢115200µÈ
+//   23 *  º¯Êý·µ»Ø£º²»³É¹¦Ôò·µ»ØERROR£¬³É¹¦Ôò·µ»ØSUCCESS
+//   24 *  Ê¹ÓÃÊ¾Àý£ºUART_Init(UART0,115200);   //³õÊ¼»¯Ò»¸öUARTÄ£¿é£¬²¨ÌØÂÊÎª115200
+//   25 *******************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   26 STATUS UART_Init(UARTn uartn,uint32_t BaudRate)
+UART_Init:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function UART_Init
+//   27 {      
+        FUNCALL UART_Init, GPIO_MultiBits_Init
+        LOCFRAME CSTACK, 16, STACK
+        FUNCALL UART_Init, GPIO_MultiBits_Init
+        LOCFRAME CSTACK, 16, STACK
+        FUNCALL UART_Init, UART_SetBaudRate
+        LOCFRAME CSTACK, 16, STACK
+        PUSHM.A #0x3, R10
+          CFI R8L Frame(CFA, -16)
+          CFI R8H Frame(CFA, -14)
+          CFI R9L Frame(CFA, -12)
+          CFI R9H Frame(CFA, -10)
+          CFI R10L Frame(CFA, -8)
+          CFI R10H Frame(CFA, -6)
+          CFI CFA SP+16
+        MOV.B   R12, R10
+        MOV.W   R14, R8
+        MOV.W   R15, R9
+//   28   //Òý½Å³õÊ¼»¯
+//   29   GPIO_Init(UART_PIN[uartn].TX.Port,UART_PIN[uartn].TX.Pin,SEL);
+        MOV.W   #0x100, R14
+        MOV.W   #0x1, R13
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.B  UART_PIN + 1(R15), R15
+        SUB.B   #0x1, R15
+        JN      ??UART_Init_0
+        RPT     R15
+        RLAX.W  R13
+??UART_Init_0:
+        ADD.B   #0x1, R15
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.B  UART_PIN(R15), R12
+        CALLA   #GPIO_MultiBits_Init
+//   30   GPIO_Init(UART_PIN[uartn].RX.Port,UART_PIN[uartn].RX.Pin,SEL);
+        MOV.W   #0x100, R14
+        MOV.W   #0x1, R13
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.B  UART_PIN + 3(R15), R15
+        SUB.B   #0x1, R15
+        JN      ??UART_Init_1
+        RPT     R15
+        RLAX.W  R13
+??UART_Init_1:
+        ADD.B   #0x1, R15
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.B  UART_PIN + 2(R15), R12
+        CALLA   #GPIO_MultiBits_Init
+//   31   
+//   32   UART_SetBaudRate (uartn, BaudRate);                            //ÉèÖÃ´®¿Ú²¨ÌØÂÊ
+        MOV.W   R8, R14
+        MOV.W   R9, R15
+        MOV.B   R10, R12
+        CALLA   #UART_SetBaudRate
+//   33   
+//   34   USCIX[uartn]->IE = 0u;                                         //¹Ø±ÕËùÓÐÖÐ¶Ï
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  USCIX(R15), R15
+        MOV.B   #0x0, 0x1c(R15)
+//   35   USCIX[uartn]->RXIFG = RESET;                                   //Çå³ý½ÓÊÕÊý¾Ý±êÖ¾
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  USCIX(R15), R15
+        BIC.B   #0x1, 0x1d(R15)
+//   36   USCIX[uartn]->TXIFG = BIT_SET;                                     //ÖÃÎ»·¢ËÍ»º³åÇøÎª¿Õ±êÖ¾
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  USCIX(R15), R15
+        BIS.B   #0x2, 0x1d(R15)
+//   37   
+//   38   return SUCCESS;
+        MOV.B   #0x1, R12
+        POPM.A  #0x3, R10
+          CFI R10H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock0
+//   39 }
+//   40 /*******************************************************************************
+//   41 *  º¯ÊýÃû³Æ£ºUART_SetBaudRate (UARTn uartn, uint32_t BaudRate)
+//   42 *  ¹¦ÄÜËµÃ÷£ºÉèÖÃ´®¿Ú²¨ÌØÂÊ
+//   43 *  ²ÎÊýËµÃ÷£ºUARTn uartn       Ä£¿éºÅ£¨UART0~UART1£©
+//   44              uint32_t BaudRate : ²¨ÌØÂÊ£¬Èç9600¡¢19200¡¢115200µÈ
+//   45 *  º¯Êý·µ»Ø£ºÎÞ
+//   46 *******************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   47 void UART_SetBaudRate (UARTn uartn, uint32_t BaudRate)
+UART_SetBaudRate:
+          CFI Block cfiBlock1 Using cfiCommon0
+          CFI Function UART_SetBaudRate
+//   48 {
+        FUNCALL UART_SetBaudRate, _Cast32uto32f
+        LOCFRAME CSTACK, 36, STACK
+        FUNCALL UART_SetBaudRate, _Cast32uto32f
+        LOCFRAME CSTACK, 36, STACK
+        FUNCALL UART_SetBaudRate, _Div32f
+        LOCFRAME CSTACK, 36, STACK
+        FUNCALL UART_SetBaudRate, _Cast32fto32u
+        LOCFRAME CSTACK, 36, STACK
+        FUNCALL UART_SetBaudRate, _Cast32fto32u
+        LOCFRAME CSTACK, 36, STACK
+        FUNCALL UART_SetBaudRate, _Cast32uto32f
+        LOCFRAME CSTACK, 36, STACK
+        FUNCALL UART_SetBaudRate, _Sub32f
+        LOCFRAME CSTACK, 36, STACK
+        FUNCALL UART_SetBaudRate, _Mul32f
+        LOCFRAME CSTACK, 36, STACK
+        FUNCALL UART_SetBaudRate, _Cast32fto32u
+        LOCFRAME CSTACK, 36, STACK
+        PUSHM.A #0x8, R11
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+36
+        MOV.B   R12, R6
+        MOV.W   R14, R4
+        MOV.W   R15, R5
+//   49   float BRTemp = (float)g_sClock.SMCLK.nHZ/(float)BaudRate;
+        MOV.W   R4, R12
+        MOV.W   R5, R13
+        CALLA   #_Cast32uto32f
+        MOV.W   R12, R10
+        MOV.W   R13, R11
+        MOVX.W  &g_sClock + 12, R12
+        MOVX.W  &g_sClock + 14, R13
+        CALLA   #_Cast32uto32f
+        MOV.W   R10, R14
+        MOV.W   R11, R15
+        CALLA   #_Div32f
+        MOV.W   R12, R8
+        MOV.W   R13, R9
+//   50   
+//   51   USCIX[uartn]->CTL1 = UCSSEL__SMCLK + UCSWRST;                //ÉèÖÃÊ±ÖÓÔ´
+        MOV.B   R6, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  USCIX(R15), R15
+        MOV.B   #0x81, 0(R15)
+//   52  
+//   53   USCIX[uartn]->BRW = (uint16_t)BRTemp;                                 //ÉèÖÃ²¨ÌØÂÊ
+        MOV.W   R8, R12
+        MOV.W   R9, R13
+        CALLA   #_Cast32fto32u
+        MOV.B   R6, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  USCIX(R15), R15
+        MOV.W   R12, 0x6(R15)
+//   54   USCIX[uartn]->BRS = (uint16_t)((BRTemp-(uint16_t)(BRTemp))*8.0);        //ÉèÖÃµ÷Õû²¨ÌØÂÊ
+        MOV.W   R8, R12
+        MOV.W   R9, R13
+        CALLA   #_Cast32fto32u
+        CALLA   #_Cast32uto32f
+        MOV.W   R12, R10
+        MOV.W   R13, R11
+        MOV.W   R10, R14
+        MOV.W   R11, R15
+        MOV.W   R8, R12
+        MOV.W   R9, R13
+        CALLA   #_Sub32f
+        MOV.W   #0x0, R14
+        MOV.W   #0x4100, R15
+        CALLA   #_Mul32f
+        MOV.W   R12, R10
+        MOV.W   R13, R11
+        MOV.W   R10, R12
+        MOV.W   R11, R13
+        CALLA   #_Cast32fto32u
+        RLA.B   R12
+        AND.B   #0xe, R12
+        MOV.B   R6, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  USCIX(R15), R15
+        MOV.B   0x8(R15), R14
+        AND.B   #0xf1, R14
+        BIS.B   R12, R14
+        MOV.B   R6, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  USCIX(R15), R15
+        MOV.B   R14, 0x8(R15)
+//   55   USCIX[uartn]->BRF = 0u;
+        MOV.B   R6, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  USCIX(R15), R15
+        AND.B   #0xf, 0x8(R15)
+//   56   
+//   57   //¹ý²ÉÑùÄ£Ê½
+//   58   /*
+//   59   USCIX[uartn]->BRW =(uint16_t)(BRTemp/16);                                 //ÉèÖÃ²¨ÌØÂÊ
+//   60   USCIX[uartn]->BRS = 0u;
+//   61   USCIX[uartn]->BRF =(uint16_t)((BRTemp/16.0-(uint16_t)(BRTemp/16.0))*16.0);  //ÉèÖÃµ÷Õû²¨ÌØÂÊ
+//   62   */
+//   63   USCIX[uartn]->CTL1 &= ~UCSWRST;       
+        MOV.B   R6, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  USCIX(R15), R15
+        BIC.B   #0x1, 0(R15)
+//   64 }
+        POPM.A  #0x8, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R4H SameValue
+          CFI R5H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R4L SameValue
+          CFI R5L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock1
+//   65 /*******************************************************************************
+//   66 *  º¯ÊýÃû³Æ£ºUART_GetChar    (UARTn uartn)
+//   67 *  ¹¦ÄÜËµÃ÷£ºÎÞÏÞÊ±¼äµÈ´ý´®¿Ú½ÓÊÜÒ»¸ö×Ö½Ú
+//   68 *  ²ÎÊýËµÃ÷£ºUARTn uartn     Ä£¿éºÅ£¨UART0~UART1£©
+//   69 *  º¯Êý·µ»Ø£º½ÓÊÕµ½µÄ×Ö½ÚÊý¾Ý
+//   70 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   71 char UART_GetChar    (UARTn uartn)
+UART_GetChar:
+??UART_GetChar_0:
+          CFI Block cfiBlock2 Using cfiCommon0
+          CFI Function UART_GetChar
+//   72 {
+//   73   while(USCIX[uartn]->RXIFG == RESET);               //µÈ´ý½ÓÊÕµ½Êý¾Ý
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  USCIX(R15), R15
+        BIT.B   #0x1, 0x1d(R15)
+        JNC     ??UART_GetChar_0
+//   74   return (USCIX[uartn]->RXBUF);
+        MOV.B   R12, R12
+        RLAM.A  #0x2, R12
+        MOVX.A  USCIX(R12), R15
+        MOV.B   0xc(R15), R12
+        RETA
+          CFI EndBlock cfiBlock2
+//   75 }
+//   76 /*************************************************************************
+//   77 *  º¯ÊýÃû³Æ£ºUART_PutChar
+//   78 *  ¹¦ÄÜËµÃ÷£º´®¿Ú·¢ËÍÒ»¸ö×Ö½Ú
+//   79 *  ²ÎÊýËµÃ÷£ºUARTn uartn      Ä£¿éºÅ£¨UART0~UART1£©
+//   80 *  º¯Êý·µ»Ø£ºÎÞ
+//   81 *  Ê¹ÓÃÊ¾Àý£ºUART_PutChar(UART0,0x02);   //·¢ËÍÒ»×Ö½ÚÊý¾Ý
+//   82 *************************************************************************/  
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   83 void UART_PutChar(UARTn uartn,char data)
+UART_PutChar:
+          CFI Block cfiBlock3 Using cfiCommon0
+          CFI Function UART_PutChar
+//   84 {
+//   85     if(data == '\n')
+        CMP.B   #0xa, R13
+        JNE     ??UART_PutChar_1
+//   86     {
+//   87       while (USCIX[uartn]->TXIFG == RESET);          //µÈ´ý·¢ËÍ»º³åÇøÎª¿Õ
+??UART_PutChar_0:
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  USCIX(R15), R15
+        MOV.B   0x1d(R15), R14
+        RRUX.B  R14
+        BIT.B   #0x1, R14
+        JEQ     ??UART_PutChar_0
+//   88       USCIX[uartn]->TXBUF = '\r';                    // 
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  USCIX(R15), R15
+        MOV.B   #0xd, 0xe(R15)
+//   89     }
+//   90     while (USCIX[uartn]->TXIFG == RESET);            //µÈ´ý·¢ËÍ»º³åÇøÎª¿Õ
+??UART_PutChar_1:
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  USCIX(R15), R15
+        MOV.B   0x1d(R15), R14
+        RRUX.B  R14
+        BIT.B   #0x1, R14
+        JEQ     ??UART_PutChar_1
+//   91     USCIX[uartn]->TXBUF = data;                      // 
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  USCIX(R15), R15
+        MOV.B   R13, 0xe(R15)
+//   92 }
+        RETA
+          CFI EndBlock cfiBlock3
+//   93 /*************************************************************************
+//   94 *  º¯ÊýÃû³Æ£ºUart_PutNChar
+//   95 *  ¹¦ÄÜËµÃ÷£º´®¿Ú·¢ËÍÖ¸¶¨³¤¶È¸ö×Ö½ÚÊý¾Ý
+//   96 *  ²ÎÊýËµÃ÷£ºUARTn uartn      Ä£¿éºÅ£¨UART0~UART1£©
+//   97 *  º¯Êý·µ»Ø£ºÎÞ
+//   98 *  Ê¹ÓÃÊ¾Àý£ºchar Buff[10];UART_PutNChar(UART0,&Buff[0],5);   //·¢ËÍÒ»¸ö×Ö·û´®µÄÇ°5¸ö×Ö½Ú
+//   99 *************************************************************************/ 
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  100 void UART_PutNChar(UARTn uartn,char * data,uint16_t Length)
+UART_PutNChar:
+          CFI Block cfiBlock4 Using cfiCommon0
+          CFI Function UART_PutNChar
+//  101 {
+        FUNCALL UART_PutNChar, UART_PutChar
+        LOCFRAME CSTACK, 20, STACK
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        MOV.B   R12, R11
+        MOVA    R13, R8
+        MOV.W   R14, R10
+//  102   for(int i=0; i < Length; i++)
+        MOV.W   #0x0, R9
+??UART_PutNChar_0:
+        CMP.W   R10, R9
+        JC      ??UART_PutNChar_1
+//  103   {
+//  104     UART_PutChar(uartn,*data++);
+        MOV.B   @R8, R13
+        MOV.B   R11, R12
+        CALLA   #UART_PutChar
+        ADDA    #0x1, R8
+//  105   }
+        ADD.W   #0x1, R9
+        JMP     ??UART_PutNChar_0
+//  106 }
+??UART_PutNChar_1:
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock4
+//  107 /*************************************************************************
+//  108 *  º¯ÊýÃû³Æ£ºUart_PutString
+//  109 *  ¹¦ÄÜËµÃ÷£º´®¿Ú·¢ËÍ×Ö·û´®
+//  110 *  ²ÎÊýËµÃ÷£ºUARTn uartn       Ä£¿éºÅ£¨UART0~UART1£©
+//  111 *  º¯Êý·µ»Ø£ºÎÞ
+//  112 *  Ê¹ÓÃÊ¾Àý£ºUART_PutString  (UART0 ,"Hello!");  //·¢ËÍÒ»¸ö×Ö·û´®
+//  113 *************************************************************************/  
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  114 void UART_PutString  (UARTn uartn ,const char * str)
+UART_PutString:
+          CFI Block cfiBlock5 Using cfiCommon0
+          CFI Function UART_PutString
+//  115 {
+        FUNCALL UART_PutString, UART_PutChar
+        LOCFRAME CSTACK, 12, STACK
+        PUSHM.A #0x2, R11
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+12
+        MOV.B   R12, R10
+        MOVA    R13, R11
+//  116     while(*str != '\0')
+??UART_PutString_0:
+        CMP.B   #0x0, 0(R11)
+        JEQ     ??UART_PutString_1
+//  117     {
+//  118       UART_PutChar(uartn,*str++);
+        MOV.B   @R11, R13
+        MOV.B   R10, R12
+        CALLA   #UART_PutChar
+        ADDA    #0x1, R11
+        JMP     ??UART_PutString_0
+//  119     }
+//  120 }
+??UART_PutString_1:
+        POPM.A  #0x2, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock5
+//  121 /*************************************************************************
+//  122 *  º¯ÊýÃû³Æ£ºUART_Printf
+//  123 *  ¹¦ÄÜËµÃ÷£º´®¿Ú·¢ËÍ×Ö·û´®
+//  124 *  ²ÎÊýËµÃ÷£ºUARTn uartn     Ä£¿éºÅ£¨UART0~UART1£©
+//  125 *  º¯Êý·µ»Ø£ºÎÞ
+//  126 *  Ê¹ÓÃÊ¾Àý£ºUART_Printf(UART0 ,"Hello!:i=%d,J=%f",i,1.0);  //·¢ËÍÒ»¸ö×Ö·û´®
+//  127 *************************************************************************/ 
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  128 void UART_Printf(UARTn uartn ,const char * fmt,...)
+UART_Printf:
+          CFI Block cfiBlock6 Using cfiCommon0
+          CFI Function UART_Printf
+//  129 {
+        FUNCALL UART_Printf, vsprintf
+        LOCFRAME CSTACK, 148, STACK
+        FUNCALL UART_Printf, UART_PutString
+        LOCFRAME CSTACK, 148, STACK
+        PUSHM.A #0x2, R11
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+12
+        SUB.W   #0x84, SP
+          CFI CFA SP+144
+        MOV.B   R12, R10
+        MOVA    R13, R11
+//  130   char UART_String[128];
+//  131   va_list ap;
+//  132   va_start(ap,fmt);
+        MOV.W   SP, R15
+        ADD.W   #0x90, R15
+        MOVA    R15, 0(SP)
+//  133   vsprintf(UART_String,fmt,ap);
+        PUSH.W  0x4(SP)
+          CFI CFA SP+146
+        PUSH.W  0x4(SP)
+          CFI CFA SP+148
+        MOVA    R11, R13
+        MOV.W   SP, R12
+        ADD.W   #0x8, R12
+        CALLA   #vsprintf
+//  134   UART_PutString  (uartn ,UART_String);
+        MOV.W   SP, R13
+        ADD.W   #0x8, R13
+        MOV.B   R10, R12
+        CALLA   #UART_PutString
+//  135   va_end(ap);
+//  136 }
+        ADD.W   #0x88, SP
+          CFI CFA SP+12
+        POPM.A  #0x2, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock6
+//  137 /*************************************************************************
+//  138 *  º¯ÊýÃû³Æ£ºUART_ITConfig      (UARTn uartn,UART_IRQn irqn,STATUS ITState)
+//  139 *  ¹¦ÄÜËµÃ÷£ºÉèÖÃ´®¿ÚÖÐ¶Ï
+//  140 *  ²ÎÊýËµÃ÷£ºUARTn uartn       Ä£¿éºÅ£¨UART0~UART1£©
+//  141              UART_IRQn irqn   £ºÖÐ¶ÏÊÂ¼þ
+//  142              STATUS ITState   £ºÊÇ·ñÊ¹ÄÜÖÐ¶Ï
+//  143 *  º¯Êý·µ»Ø£ºÎÞ
+//  144 *  Ê¹ÓÃÊ¾Àý£ºUART_ITConfig      (UART0,UART_RX_IRQn,ENABLE);  //ÉèÖÃUART0½ÓÊÕÖÐ¶ÏÔÊÐí
+//  145 *************************************************************************/ 
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  146 void  UART_ITConfig      (UARTn uartn,UART_IRQn irqn,STATUS ITState)
+UART_ITConfig:
+          CFI Block cfiBlock7 Using cfiCommon0
+          CFI Function UART_ITConfig
+//  147 {
+        PUSHM.A #0x1, R10
+          CFI R10L Frame(CFA, -8)
+          CFI R10H Frame(CFA, -6)
+          CFI CFA SP+8
+//  148   if(ITState != DISABLE)
+        CMP.B   #0x0, R14
+        JEQ     ??UART_ITConfig_0
+//  149   {
+//  150     USCIX[uartn]->IE |= irqn;
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  USCIX(R15), R15
+        BIS.B   R13, 0x1c(R15)
+        JMP     ??UART_ITConfig_1
+//  151   }
+//  152   else
+//  153   {
+//  154     USCIX[uartn]->IE &=~irqn;
+??UART_ITConfig_0:
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  USCIX(R15), R15
+        BIC.B   R13, 0x1c(R15)
+//  155   }
+//  156 }
+??UART_ITConfig_1:
+        POPM.A  #0x1, R10
+          CFI R10H SameValue
+          CFI R10L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock7
+//  157 /*************************************************************************
+//  158 *  º¯ÊýÃû³Æ£ºUART_GetITStatus  (UARTn uartn,UART_IRQn irqn)
+//  159 *  ¹¦ÄÜËµÃ÷£ºÇå³ý´®¿ÚÄ³Ò»¸öÖÐ¶Ï±êÖ¾
+//  160 *  ²ÎÊýËµÃ÷£ºUARTn uartn      Ä£¿éºÅ£¨UART0~UART1£©
+//  161              UART_IRQn irqn  £ºÖÐ¶ÏÊÂ¼þ
+//  162 *  º¯Êý·µ»Ø£ºSTATUS : TRUE-ÖÐ¶ÏÊÂ¼þ·¢Éú FALSE-ÖÐ¶ÏÊÂ¼þÎ´·¢Éú
+//  163 *  Ê¹ÓÃÊ¾Àý£ºif(TRUE == UART_GetITStatus  (UART0,UART_RX_IRQn)){...} //ÅÐ¶ÏUART0½ÓÊÕÖÐ¶ÏÊÂ¼þÊÇ·ñ·¢Éú
+//  164 *************************************************************************/ 
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  165 STATUS UART_GetITStatus  (UARTn uartn,UART_IRQn irqn)
+UART_GetITStatus:
+          CFI Block cfiBlock8 Using cfiCommon0
+          CFI Function UART_GetITStatus
+//  166 {
+//  167   return ((USCIX[uartn]->IFG & irqn) ? TRUE : FALSE);
+        MOV.B   R12, R12
+        RLAM.A  #0x2, R12
+        MOVX.A  USCIX(R12), R15
+        BIT.B   R13, 0x1d(R15)
+        JEQ     ??UART_GetITStatus_0
+        MOV.B   #0x1, R12
+        RETA
+??UART_GetITStatus_0:
+        MOV.B   #0x0, R12
+        RETA
+          CFI EndBlock cfiBlock8
+//  168 }
+//  169 /*************************************************************************
+//  170 *  º¯ÊýÃû³Æ£ºUART_ClearITPendingBit(UARTn uartn,UART_IRQn irqn)
+//  171 *  ¹¦ÄÜËµÃ÷£ºÇå³ý´®¿ÚÄ³Ò»¸öÖÐ¶Ï±êÖ¾
+//  172 *  ²ÎÊýËµÃ÷£ºUARTn uartn      Ä£¿éºÅ£¨UART0~UART1£©
+//  173              UART_IRQn irqn  £ºÖÐ¶ÏÊÂ¼þ
+//  174 *  º¯Êý·µ»Ø£ºÎÞ
+//  175 *  Ê¹ÓÃÊ¾Àý£ºUART_ClearITPendingBit(UART0,UART_RX_IRQn);  //Çå³ýUART0½ÓÊÕÖÐ¶Ï±êÖ¾Î»
+//  176 *************************************************************************/ 
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  177 void  UART_ClearITPendingBit(UARTn uartn,UART_IRQn irqn)
+UART_ClearITPendingBit:
+          CFI Block cfiBlock9 Using cfiCommon0
+          CFI Function UART_ClearITPendingBit
+//  178 {
+//  179   USCIX[uartn]->IFG &=~ irqn;
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  USCIX(R15), R15
+        BIC.B   R13, 0x1d(R15)
+//  180 }
+        RETA
+          CFI EndBlock cfiBlock9
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r4:
+        REQUIRE ?setjmp_r4
+        REQUIRE ?longjmp_r4
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r5:
+        REQUIRE ?setjmp_r5
+        REQUIRE ?longjmp_r5
+
+        END
+//  181 
+//  182 #if defined(DEBUG)&&defined(DEBUG_UART_PRINT)
+//  183 
+//  184 #ifdef __GNUC__
+//  185   /* With GCC/RAISONANCE, small printf (option LD Linker->Libraries->Small printf
+//  186      set to 'Yes') calls __io_putchar() */
+//  187   #define PUTCHAR_PROTOTYPE int __io_putchar(int ch)
+//  188 #else
+//  189   #define PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f)
+//  190 #endif /* __GNUC__ */
+//  191 
+//  192 PUTCHAR_PROTOTYPE
+//  193 {
+//  194   UART_PutChar(Print_UART,(char)ch);
+//  195   return ch;
+//  196 }
+//  197  
+//  198 #endif
+// 
+// 670 bytes in segment CODE
+//   8 bytes in segment DATA20_C
+// 
+// 670 bytes of CODE  memory
+//   8 bytes of CONST memory
+//
+//Errors: none
+//Warnings: none

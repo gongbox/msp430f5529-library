@@ -1,0 +1,879 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        08/22/2010  19:16:08  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\KEIL\C51\BIN\BL51.EXE NRF24L01.obj, DELAY.obj, 接收.obj, MAX232.obj, LCD12864.obj TO NRF24L01模块 RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  NRF24L01.obj (NRF24L01)
+  DELAY.obj (DELAY)
+  接收.obj (接收)
+  MAX232.obj (MAX232)
+  LCD12864.obj (LCD12864)
+  D:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  D:\KEIL\C51\LIB\C51S.LIB (?C?CLDPTR)
+  D:\KEIL\C51\LIB\C51S.LIB (?C?CLDOPTR)
+  D:\KEIL\C51\LIB\C51S.LIB (?C?CSTOPTR)
+
+
+LINK MAP OF MODULE:  NRF24L01模块 (NRF24L01)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     000FH     UNIT         _DATA_GROUP_
+            DATA    0017H     0003H     UNIT         ?DT?_NRFSETTXMODE?NRF24L01
+            DATA    001AH     0002H     UNIT         ?DT?_LCDWRITEDOT?LCD12864
+            DATA    001CH     0001H     UNIT         ?DT?MAX232
+                    001DH     0003H                  *** GAP ***
+            DATA    0020H     0001H     BIT_ADDR     ?BA?NRF24L01
+            DATA    0021H     000AH     UNIT         ?DT?NRF24L01
+            IDATA   002BH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     001FH     UNIT         ?PR?_NRFSPI?NRF24L01
+                    0022H     0001H                  *** GAP ***
+            CODE    0023H     0003H     ABSOLUTE     
+            CODE    0026H     0668H     UNIT         ?CO?LCD12864
+            CODE    068EH     00AFH     UNIT         ?PR?_LCDWRITECHSTR?LCD12864
+            CODE    073DH     0068H     UNIT         ?C?LIB_CODE
+            CODE    07A5H     0063H     UNIT         ?PR?_LCDWRITEASC816?LCD12864
+            CODE    0808H     005DH     UNIT         ?PR?_LCDWRITECH12?LCD12864
+            CODE    0865H     0059H     UNIT         ?PR?GETDATE?NRF24L01
+            CODE    08BEH     0047H     UNIT         ?PR?_NRFSETTXMODE?NRF24L01
+            CODE    0905H     0045H     UNIT         ?PR?NRFSETRXMODE?NRF24L01
+            CODE    094AH     0040H     UNIT         ?PR?_LCDWRITEDOT?LCD12864
+            CODE    098AH     0036H     UNIT         ?PR?MAX232SENDDATE?MAX232
+            CODE    09C0H     0036H     UNIT         ?PR?_LCDREADFROMSET?LCD12864
+            CODE    09F6H     0033H     UNIT         ?PR?MAIN?接收
+            CODE    0A29H     0032H     UNIT         ?PR?_NRFWRITETXDATE?NRF24L01
+            CODE    0A5BH     0031H     UNIT         ?PR?_NRFREADRXDATE?NRF24L01
+            CODE    0A8CH     002BH     UNIT         ?PR?LCDINT?LCD12864
+            CODE    0AB7H     0029H     UNIT         ?PR?_LCDWRITETOSET?LCD12864
+            CODE    0AE0H     0022H     UNIT         ?PR?_LCDCS?LCD12864
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/22/2010  19:16:08  PAGE 2
+
+
+            CODE    0B02H     001FH     UNIT         ?PR?_NRFWRITEREG?NRF24L01
+            CODE    0B21H     001EH     UNIT         ?PR?_NRFDELAY?DELAY
+            CODE    0B3FH     0019H     UNIT         ?PR?MAX232INT?MAX232
+            CODE    0B58H     0019H     UNIT         ?CO?MAX232
+            CODE    0B71H     0016H     UNIT         ?CO?接收
+            CODE    0B87H     0016H     UNIT         ?PR?LCDCLEAR?LCD12864
+            CODE    0B9DH     0013H     UNIT         ?PR?_MAX232SENDACHAR?MAX232
+            CODE    0BB0H     0012H     UNIT         ?PR?CHECKACK?NRF24L01
+            CODE    0BC2H     0011H     UNIT         ?PR?_LCDREADDATE?LCD12864
+            CODE    0BD3H     0010H     UNIT         ?PR?NRF24L01INT?NRF24L01
+            CODE    0BE3H     000EH     UNIT         ?PR?_LCDDELAY?DELAY
+            CODE    0BF1H     000EH     UNIT         ?PR?_LCDWRITECMD?LCD12864
+            CODE    0BFFH     000EH     UNIT         ?PR?_LCDWRITEDATE?LCD12864
+            CODE    0C0DH     000DH     UNIT         ?PR?_NRFREADREG?NRF24L01
+            CODE    0C1AH     000DH     UNIT         ?PR?EXINT?MAX232
+            CODE    0C27H     000CH     UNIT         ?PR?_MAX232SENDCHAR?MAX232
+            CODE    0C33H     000CH     UNIT         ?C_C51STARTUP
+            CODE    0C3FH     000AH     UNIT         ?CO?NRF24L01
+            CODE    0C49H     0007H     UNIT         ?PR?_PAGESET?LCD12864
+            CODE    0C50H     0007H     UNIT         ?PR?_YSET?LCD12864
+
+
+
+OVERLAY MAP OF MODULE:   NRF24L01模块 (NRF24L01)
+
+
+SEGMENT                                DATA_GROUP 
+  +--> CALLED SEGMENT                START    LENGTH
+----------------------------------------------------
+?C_C51STARTUP                        -----    -----
+  +--> ?PR?MAIN?接收
+
+?PR?MAIN?接收                        -----    -----
+  +--> ?PR?LCDINT?LCD12864
+  +--> ?PR?LCDCLEAR?LCD12864
+  +--> ?PR?MAX232INT?MAX232
+  +--> ?PR?NRF24L01INT?NRF24L01
+  +--> ?CO?接收
+  +--> ?PR?_LCDWRITECHSTR?LCD12864
+  +--> ?PR?NRFSETRXMODE?NRF24L01
+  +--> ?PR?GETDATE?NRF24L01
+
+?PR?LCDINT?LCD12864                  -----    -----
+  +--> ?PR?_LCDCS?LCD12864
+  +--> ?PR?_LCDWRITECMD?LCD12864
+
+?PR?_LCDWRITECMD?LCD12864            -----    -----
+  +--> ?PR?_LCDCS?LCD12864
+
+?PR?LCDCLEAR?LCD12864                -----    -----
+  +--> ?PR?_LCDWRITETOSET?LCD12864
+
+?PR?_LCDWRITETOSET?LCD12864          -----    -----
+  +--> ?PR?_PAGESET?LCD12864
+  +--> ?PR?_YSET?LCD12864
+  +--> ?PR?_LCDWRITEDATE?LCD12864
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/22/2010  19:16:08  PAGE 3
+
+
+?PR?_PAGESET?LCD12864                -----    -----
+  +--> ?PR?_LCDWRITECMD?LCD12864
+
+?PR?_YSET?LCD12864                   -----    -----
+  +--> ?PR?_LCDWRITECMD?LCD12864
+
+?PR?_LCDWRITEDATE?LCD12864           -----    -----
+  +--> ?PR?_LCDCS?LCD12864
+
+?PR?NRF24L01INT?NRF24L01             -----    -----
+  +--> ?PR?_NRFDELAY?DELAY
+
+?PR?_LCDWRITECHSTR?LCD12864          0008H    0009H
+  +--> ?PR?_LCDWRITEASC816?LCD12864
+  +--> ?CO?LCD12864
+  +--> ?PR?_LCDWRITECH12?LCD12864
+
+?PR?_LCDWRITEASC816?LCD12864         0011H    0002H
+  +--> ?CO?LCD12864
+  +--> ?PR?_LCDWRITETOSET?LCD12864
+
+?PR?_LCDWRITECH12?LCD12864           0011H    0006H
+  +--> ?PR?_LCDWRITETOSET?LCD12864
+
+?PR?NRFSETRXMODE?NRF24L01            -----    -----
+  +--> ?CO?NRF24L01
+  +--> ?PR?_NRFWRITETXDATE?NRF24L01
+  +--> ?PR?_NRFWRITEREG?NRF24L01
+  +--> ?PR?_NRFDELAY?DELAY
+
+?PR?_NRFWRITETXDATE?NRF24L01         0008H    0005H
+  +--> ?PR?_NRFSPI?NRF24L01
+
+?PR?_NRFWRITEREG?NRF24L01            -----    -----
+  +--> ?PR?_NRFSPI?NRF24L01
+
+?PR?GETDATE?NRF24L01                 -----    -----
+  +--> ?PR?_NRFREADREG?NRF24L01
+  +--> ?PR?_NRFREADRXDATE?NRF24L01
+  +--> ?PR?_LCDWRITECHSTR?LCD12864
+  +--> ?PR?_NRFWRITEREG?NRF24L01
+  +--> ?PR?_NRFSPI?NRF24L01
+
+?PR?_NRFREADREG?NRF24L01             -----    -----
+  +--> ?PR?_NRFSPI?NRF24L01
+
+?PR?_NRFREADRXDATE?NRF24L01          0008H    0005H
+  +--> ?PR?_NRFSPI?NRF24L01
+
+
+
+SYMBOL TABLE OF MODULE:  NRF24L01模块 (NRF24L01)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        NRF24L01
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/22/2010  19:16:08  PAGE 4
+
+
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  C:0C0DH         PUBLIC        _NRFReadReg
+  B:0090H.2       PUBLIC        CE
+  D:00A8H         PUBLIC        IE
+  C:0B10H         PUBLIC        _NRFWriteReg
+  D:00B8H         PUBLIC        IP
+  B:0020H.6       PUBLIC        RX_DR
+  C:0865H         PUBLIC        GetDate
+  B:0020H.5       PUBLIC        TX_DS
+  C:0BD3H         PUBLIC        NRF24L01Int
+  B:0090H.7       PUBLIC        SCLK
+  C:0BB0H         PUBLIC        CheckACK
+  C:0A5BH         PUBLIC        _NRFReadRxDate
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  B:0090H.6       PUBLIC        MISO
+  B:0090H.5       PUBLIC        MOSI
+  C:0A29H         PUBLIC        _NRFWriteTxDate
+  C:0905H         PUBLIC        NRFSetRXMode
+  D:0020H         PUBLIC        sta
+  C:0003H         PUBLIC        _NRFSPI
+  B:0090H.4       PUBLIC        CSN
+  D:00C8H         PUBLIC        T2CON
+  C:08BEH         PUBLIC        _NRFSetTxMode
+  B:0090H.3       PUBLIC        IRQ
+  B:0020H.4       PUBLIC        MAX_RT
+  C:0C3FH         PUBLIC        RxAddr0
+  D:0021H         PUBLIC        RevTempDate0
+  C:0C44H         PUBLIC        RxAddr1
+  D:0026H         PUBLIC        RevTempDate1
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          _NRFSPI
+  D:0007H         SYMBOL        date
+  -------         DO            
+  D:0006H         SYMBOL        i
+  -------         ENDDO         
+  C:0003H         LINE#         24
+  C:0003H         LINE#         25
+  C:0003H         LINE#         27
+  C:0005H         LINE#         28
+  C:0005H         LINE#         29
+  C:0009H         LINE#         30
+  C:000DH         LINE#         32
+  C:000FH         LINE#         33
+  C:0013H         LINE#         34
+  C:0015H         LINE#         35
+  C:0018H         LINE#         36
+  C:001BH         LINE#         37
+  C:001DH         LINE#         38
+  C:0021H         LINE#         39
+  C:0021H         LINE#         40
+  -------         ENDPROC       _NRFSPI
+  -------         PROC          NRF24L01INT
+  C:0BD3H         LINE#         42
+  C:0BD3H         LINE#         43
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/22/2010  19:16:08  PAGE 5
+
+
+  C:0BD3H         LINE#         44
+  C:0BDAH         LINE#         45
+  C:0BDCH         LINE#         46
+  C:0BDEH         LINE#         47
+  C:0BE0H         LINE#         48
+  C:0BE2H         LINE#         49
+  -------         ENDPROC       NRF24L01INT
+  -------         PROC          _NRFREADREG
+  D:0007H         SYMBOL        RegAddr
+  -------         DO            
+  D:0007H         SYMBOL        BackDate
+  -------         ENDDO         
+  C:0C0DH         LINE#         51
+  C:0C0DH         LINE#         52
+  C:0C0DH         LINE#         54
+  C:0C0FH         LINE#         55
+  C:0C12H         LINE#         56
+  C:0C17H         LINE#         57
+  C:0C19H         LINE#         58
+  C:0C19H         LINE#         59
+  -------         ENDPROC       _NRFREADREG
+  -------         PROC          L?0031
+  -------         ENDPROC       L?0031
+  -------         PROC          _NRFWRITEREG
+  D:0007H         SYMBOL        RegAddr
+  D:0005H         SYMBOL        date
+  -------         DO            
+  D:0004H         SYMBOL        BackDate
+  -------         ENDDO         
+  C:0B10H         LINE#         61
+  C:0B10H         LINE#         62
+  C:0B10H         LINE#         64
+  C:0B12H         LINE#         65
+  C:0B17H         LINE#         66
+  C:0B1CH         LINE#         67
+  C:0B1EH         LINE#         68
+  C:0B20H         LINE#         69
+  -------         ENDPROC       _NRFWRITEREG
+  -------         PROC          _NRFREADRXDATE
+  D:0007H         SYMBOL        RegAddr
+  D:0009H         SYMBOL        RxDate
+  D:000CH         SYMBOL        DateLen
+  -------         DO            
+  D:0005H         SYMBOL        BackDate
+  D:0004H         SYMBOL        i
+  -------         ENDDO         
+  C:0A5BH         LINE#         71
+  C:0A61H         LINE#         72
+  C:0A61H         LINE#         74
+  C:0A63H         LINE#         75
+  C:0A68H         LINE#         76
+  C:0A70H         LINE#         77
+  C:0A70H         LINE#         78
+  C:0A84H         LINE#         79
+  C:0A87H         LINE#         80
+  C:0A89H         LINE#         81
+  C:0A8BH         LINE#         82
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/22/2010  19:16:08  PAGE 6
+
+
+  -------         ENDPROC       _NRFREADRXDATE
+  -------         PROC          _NRFWRITETXDATE
+  D:0007H         SYMBOL        RegAddr
+  D:0009H         SYMBOL        TxDate
+  D:000CH         SYMBOL        DateLen
+  -------         DO            
+  D:0005H         SYMBOL        BackDate
+  D:0004H         SYMBOL        i
+  -------         ENDDO         
+  C:0A29H         LINE#         84
+  C:0A2FH         LINE#         85
+  C:0A2FH         LINE#         87
+  C:0A31H         LINE#         88
+  C:0A36H         LINE#         89
+  C:0A3EH         LINE#         90
+  C:0A3EH         LINE#         91
+  C:0A53H         LINE#         92
+  C:0A56H         LINE#         93
+  C:0A58H         LINE#         94
+  C:0A5AH         LINE#         95
+  -------         ENDPROC       _NRFWRITETXDATE
+  -------         PROC          _NRFSETTXMODE
+  D:0017H         SYMBOL        TxDate
+  C:08BEH         LINE#         97
+  C:08C4H         LINE#         98
+  C:08C4H         LINE#         99
+  C:08C6H         LINE#         100
+  C:08D4H         LINE#         101
+  C:08E2H         LINE#         103
+  C:08E9H         LINE#         104
+  C:08EEH         LINE#         105
+  C:08F2H         LINE#         106
+  C:08F2H         LINE#         107
+  C:08F5H         LINE#         108
+  C:08FCH         LINE#         109
+  C:08FEH         LINE#         110
+  -------         ENDPROC       _NRFSETTXMODE
+  -------         PROC          NRFSETRXMODE
+  C:0905H         LINE#         114
+  C:0905H         LINE#         115
+  C:0905H         LINE#         116
+  C:0907H         LINE#         117
+  C:0915H         LINE#         118
+  C:0923H         LINE#         120
+  C:092AH         LINE#         121
+  C:092FH         LINE#         123
+  C:0935H         LINE#         124
+  C:0937H         LINE#         126
+  C:0937H         LINE#         127
+  C:093AH         LINE#         128
+  C:0941H         LINE#         129
+  C:0943H         LINE#         130
+  -------         ENDPROC       NRFSETRXMODE
+  -------         PROC          CHECKACK
+  C:0BB0H         LINE#         133
+  C:0BB0H         LINE#         134
+  C:0BB0H         LINE#         135
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/22/2010  19:16:08  PAGE 7
+
+
+  C:0BB7H         LINE#         136
+  C:0BBAH         LINE#         137
+  C:0BC1H         LINE#         138
+  -------         ENDPROC       CHECKACK
+  -------         PROC          GETDATE
+  -------         DO            
+  D:0007H         SYMBOL        RX_P_NO
+  -------         ENDDO         
+  C:0865H         LINE#         140
+  C:0865H         LINE#         141
+  C:0865H         LINE#         143
+  C:086CH         LINE#         144
+  C:086FH         LINE#         145
+  C:086FH         LINE#         146
+  C:0873H         LINE#         147
+  C:0875H         LINE#         148
+  C:087DH         LINE#         149
+  C:087DH         LINE#         150
+  C:0885H         LINE#         151
+  C:0893H         LINE#         152
+  C:0893H         LINE#         153
+  C:0893H         LINE#         154
+  C:08A0H         LINE#         155
+  C:08ADH         LINE#         157
+  C:08B4H         LINE#         158
+  C:08B6H         LINE#         159
+  C:08BBH         LINE#         160
+  C:08BDH         LINE#         161
+  C:08BDH         LINE#         163
+  -------         ENDPROC       GETDATE
+  -------         ENDMOD        NRF24L01
+
+  -------         MODULE        DELAY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  C:0BE3H         PUBLIC        _LCDDelay
+  C:0B21H         PUBLIC        _NRFDelay
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          _LCDDELAY
+  D:0007H         SYMBOL        t
+  -------         DO            
+  D:0007H         SYMBOL        x
+  D:0006H         SYMBOL        y
+  -------         ENDDO         
+  C:0BE3H         LINE#         9
+  C:0BE3H         LINE#         10
+  C:0BE3H         LINE#         12
+  C:0BE9H         LINE#         13
+  C:0BF0H         LINE#         14
+  -------         ENDPROC       _LCDDELAY
+  -------         PROC          _NRFDELAY
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/22/2010  19:16:08  PAGE 8
+
+
+  D:0006H         SYMBOL        t
+  -------         DO            
+  D:0006H         SYMBOL        x
+  D:0004H         SYMBOL        y
+  -------         ENDDO         
+  C:0B21H         LINE#         16
+  C:0B21H         LINE#         17
+  C:0B21H         LINE#         19
+  C:0B2AH         LINE#         20
+  C:0B3EH         LINE#         21
+  -------         ENDPROC       _NRFDELAY
+  -------         ENDMOD        DELAY
+
+  -------         MODULE        接收
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  C:09F6H         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          MAIN
+  C:09F6H         LINE#         9
+  C:09F6H         LINE#         10
+  C:09F6H         LINE#         12
+  C:09F9H         LINE#         13
+  C:09FBH         LINE#         14
+  C:09FEH         LINE#         15
+  C:0A01H         LINE#         16
+  C:0A04H         LINE#         17
+  C:0A07H         LINE#         18
+  C:0A14H         LINE#         19
+  C:0A21H         LINE#         20
+  C:0A21H         LINE#         21
+  C:0A21H         LINE#         22
+  C:0A24H         LINE#         23
+  C:0A27H         LINE#         24
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        接收
+
+  -------         MODULE        MAX232
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  B:00A8H.7       PUBLIC        EA
+  C:098AH         PUBLIC        MAX232SendDate
+  D:00A8H         PUBLIC        IE
+  C:0B9DH         PUBLIC        _Max232SendAChar
+  B:00A8H.4       PUBLIC        ES
+  D:00B8H         PUBLIC        IP
+  B:0098H.0       PUBLIC        RI
+  B:0098H.1       PUBLIC        TI
+  D:001CH         PUBLIC        RevFlags
+  D:0099H         PUBLIC        SBUF
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/22/2010  19:16:08  PAGE 9
+
+
+  D:0087H         PUBLIC        PCON
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  C:0C27H         PUBLIC        _Max232SendChar
+  D:008DH         PUBLIC        TH1
+  B:0098H.7       PUBLIC        SM0
+  B:0098H.6       PUBLIC        SM1
+  D:008BH         PUBLIC        TL1
+  B:0088H.6       PUBLIC        TR1
+  B:0098H.4       PUBLIC        REN
+  D:00C8H         PUBLIC        T2CON
+  C:0C1AH         PUBLIC        ExInt
+  C:0B3FH         PUBLIC        Max232Int
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          MAX232INT
+  C:0B3FH         LINE#         10
+  C:0B3FH         LINE#         11
+  C:0B3FH         LINE#         12
+  C:0B42H         LINE#         13
+  C:0B45H         LINE#         14
+  C:0B48H         LINE#         15
+  C:0B4BH         LINE#         16
+  C:0B4DH         LINE#         17
+  C:0B4FH         LINE#         18
+  C:0B51H         LINE#         19
+  C:0B53H         LINE#         20
+  C:0B55H         LINE#         21
+  C:0B57H         LINE#         22
+  -------         ENDPROC       MAX232INT
+  -------         PROC          _MAX232SENDCHAR
+  D:0007H         SYMBOL        date
+  C:0C27H         LINE#         24
+  C:0C27H         LINE#         25
+  C:0C27H         LINE#         26
+  C:0C29H         LINE#         27
+  C:0C2BH         LINE#         28
+  C:0C2EH         LINE#         29
+  C:0C30H         LINE#         30
+  C:0C32H         LINE#         31
+  -------         ENDPROC       _MAX232SENDCHAR
+  -------         PROC          _MAX232SENDACHAR
+  D:0001H         SYMBOL        string
+  C:0B9DH         LINE#         33
+  C:0B9DH         LINE#         34
+  C:0B9DH         LINE#         35
+  C:0BA3H         LINE#         36
+  C:0BA3H         LINE#         37
+  C:0BA6H         LINE#         38
+  C:0BADH         LINE#         39
+  C:0BAFH         LINE#         40
+  -------         ENDPROC       _MAX232SENDACHAR
+  -------         PROC          EXINT
+  C:0C1AH         LINE#         42
+  C:0C1AH         LINE#         44
+  C:0C1CH         LINE#         45
+  C:0C1FH         LINE#         46
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/22/2010  19:16:08  PAGE 10
+
+
+  C:0C1FH         LINE#         47
+  C:0C21H         LINE#         48
+  C:0C24H         LINE#         49
+  C:0C24H         LINE#         50
+  C:0C26H         LINE#         51
+  -------         ENDPROC       EXINT
+  -------         PROC          MAX232SENDDATE
+  C:098AH         LINE#         53
+  C:098AH         LINE#         54
+  C:098AH         LINE#         55
+  C:0990H         LINE#         56
+  C:0990H         LINE#         57
+  C:0992H         LINE#         58
+  C:099AH         LINE#         59
+  C:09A3H         LINE#         60
+  C:09AAH         LINE#         61
+  C:09B1H         LINE#         62
+  C:09B8H         LINE#         63
+  C:09BFH         LINE#         64
+  C:09BFH         LINE#         66
+  -------         ENDPROC       MAX232SENDDATE
+  -------         ENDMOD        MAX232
+
+  -------         MODULE        LCD12864
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0B87H         PUBLIC        LcdClear
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  C:0C50H         PUBLIC        _YSet
+  C:068EH         PUBLIC        _LcdWriteChStr
+  D:00A8H         PUBLIC        IE
+  B:0080H.2       PUBLIC        EN
+  C:0BC2H         PUBLIC        _LcdReadDate
+  C:0AB7H         PUBLIC        _LcdWriteToSet
+  D:00B8H         PUBLIC        IP
+  C:0BFFH         PUBLIC        _LcdWriteDate
+  C:008EH         PUBLIC        nAsciiDot816
+  B:0080H.0       PUBLIC        RS
+  B:0080H.1       PUBLIC        RW
+  C:0AE0H         PUBLIC        _LcdCS
+  C:0C49H         PUBLIC        _PageSet
+  C:0808H         PUBLIC        _LcdWriteCh12
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  C:0BF1H         PUBLIC        _LcdWriteCmd
+  C:0A8CH         PUBLIC        LcdInt
+  B:0080H.3       PUBLIC        CS1
+  B:0080H.4       PUBLIC        CS2
+  C:094AH         PUBLIC        _LcdWriteDot
+  C:0026H         PUBLIC        GB_12
+  C:09C0H         PUBLIC        _LcdReadFromSet
+  C:07A5H         PUBLIC        _LcdWriteAsc816
+  D:00C8H         PUBLIC        T2CON
+  B:0080H.5       PUBLIC        RES
+  D:00D0H         PUBLIC        PSW
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/22/2010  19:16:08  PAGE 11
+
+
+  -------         PROC          _LCDCS
+  D:0007H         SYMBOL        num
+  C:0AE0H         LINE#         18
+  C:0AE0H         LINE#         19
+  C:0AE0H         LINE#         20
+  C:0AEEH         LINE#         21
+  C:0AEEH         LINE#         22
+  C:0AF3H         LINE#         23
+  C:0AF8H         LINE#         24
+  C:0AFDH         LINE#         25
+  C:0B01H         LINE#         26
+  C:0B01H         LINE#         27
+  C:0B01H         LINE#         28
+  -------         ENDPROC       _LCDCS
+  -------         PROC          _LCDWRITECMD
+  D:0007H         SYMBOL        num
+  D:0005H         SYMBOL        cmd
+  C:0BF1H         LINE#         30
+  C:0BF1H         LINE#         31
+  C:0BF1H         LINE#         33
+  C:0BF3H         LINE#         34
+  C:0BF5H         LINE#         35
+  C:0BF8H         LINE#         36
+  C:0BFAH         LINE#         37
+  C:0BFCH         LINE#         38
+  C:0BFEH         LINE#         39
+  -------         ENDPROC       _LCDWRITECMD
+  -------         PROC          _LCDWRITEDATE
+  D:0007H         SYMBOL        num
+  D:0005H         SYMBOL        date
+  C:0BFFH         LINE#         41
+  C:0BFFH         LINE#         42
+  C:0BFFH         LINE#         43
+  C:0C01H         LINE#         44
+  C:0C03H         LINE#         45
+  C:0C06H         LINE#         46
+  C:0C08H         LINE#         47
+  C:0C0AH         LINE#         48
+  C:0C0CH         LINE#         49
+  -------         ENDPROC       _LCDWRITEDATE
+  -------         PROC          _LCDREADDATE
+  D:0007H         SYMBOL        num
+  -------         DO            
+  D:0007H         SYMBOL        date
+  -------         ENDDO         
+  C:0BC2H         LINE#         51
+  C:0BC2H         LINE#         52
+  C:0BC2H         LINE#         54
+  C:0BC5H         LINE#         55
+  C:0BC7H         LINE#         56
+  C:0BC9H         LINE#         57
+  C:0BCCH         LINE#         58
+  C:0BCEH         LINE#         59
+  C:0BD0H         LINE#         60
+  C:0BD2H         LINE#         61
+  C:0BD2H         LINE#         62
+  -------         ENDPROC       _LCDREADDATE
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/22/2010  19:16:08  PAGE 12
+
+
+  -------         PROC          _PAGESET
+  D:0007H         SYMBOL        num
+  D:0005H         SYMBOL        page
+  C:0C49H         LINE#         64
+  C:0C49H         LINE#         65
+  C:0C49H         LINE#         66
+  -------         ENDPROC       _PAGESET
+  -------         PROC          _YSET
+  D:0007H         SYMBOL        num
+  D:0005H         SYMBOL        y
+  C:0C50H         LINE#         69
+  C:0C50H         LINE#         70
+  C:0C50H         LINE#         71
+  -------         ENDPROC       _YSET
+  -------         PROC          _LCDWRITETOSET
+  D:0003H         SYMBOL        x
+  D:0006H         SYMBOL        y
+  D:0004H         SYMBOL        date
+  C:0AB7H         LINE#         74
+  C:0ABDH         LINE#         75
+  C:0ABDH         LINE#         76
+  C:0AC5H         LINE#         77
+  C:0AC5H         LINE#         78
+  C:0ACAH         LINE#         79
+  C:0ACCH         LINE#         80
+  C:0ACCH         LINE#         81
+  C:0ACEH         LINE#         83
+  C:0ACEH         LINE#         84
+  C:0AD3H         LINE#         85
+  C:0ADAH         LINE#         86
+  C:0ADFH         LINE#         87
+  C:0ADFH         LINE#         88
+  -------         ENDPROC       _LCDWRITETOSET
+  -------         PROC          _LCDREADFROMSET
+  D:0003H         SYMBOL        x
+  D:0004H         SYMBOL        y
+  -------         DO            
+  D:0006H         SYMBOL        date
+  -------         ENDDO         
+  C:09C0H         LINE#         90
+  C:09C4H         LINE#         91
+  C:09C4H         LINE#         93
+  C:09CCH         LINE#         94
+  C:09CCH         LINE#         95
+  C:09D1H         LINE#         96
+  C:09D6H         LINE#         97
+  C:09DBH         LINE#         98
+  C:09DDH         LINE#         99
+  C:09DFH         LINE#         100
+  C:09DFH         LINE#         102
+  C:09DFH         LINE#         103
+  C:09E4H         LINE#         104
+  C:09EBH         LINE#         105
+  C:09F0H         LINE#         106
+  C:09F5H         LINE#         107
+  C:09F5H         LINE#         108
+  C:09F5H         LINE#         109
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/22/2010  19:16:08  PAGE 13
+
+
+  -------         ENDPROC       _LCDREADFROMSET
+  -------         PROC          _LCDWRITEDOT
+  D:0001H         SYMBOL        x
+  D:0002H         SYMBOL        y
+  D:001AH         SYMBOL        attr
+  -------         DO            
+  D:001BH         SYMBOL        yaddr
+  D:0003H         SYMBOL        tempdate1
+  D:0007H         SYMBOL        tempdate2
+  -------         ENDDO         
+  C:094AH         LINE#         111
+  C:0950H         LINE#         112
+  C:0950H         LINE#         114
+  C:095DH         LINE#         115
+  C:0965H         LINE#         116
+  C:0976H         LINE#         117
+  C:097AH         LINE#         118
+  C:097FH         LINE#         120
+  C:0983H         LINE#         121
+  -------         ENDPROC       _LCDWRITEDOT
+  -------         PROC          _LCDWRITECH12
+  D:0011H         SYMBOL        x
+  D:0012H         SYMBOL        y
+  D:0013H         SYMBOL        string
+  -------         DO            
+  D:0016H         SYMBOL        i
+  -------         ENDDO         
+  C:0808H         LINE#         124
+  C:0812H         LINE#         125
+  C:0812H         LINE#         127
+  C:0815H         LINE#         128
+  C:0837H         LINE#         129
+  C:083DH         LINE#         130
+  C:0840H         LINE#         131
+  C:0864H         LINE#         132
+  -------         ENDPROC       _LCDWRITECH12
+  -------         PROC          _LCDWRITEASC816
+  D:0011H         SYMBOL        x
+  D:0001H         SYMBOL        y
+  D:0012H         SYMBOL        string
+  -------         DO            
+  D:0002H         SYMBOL        i
+  -------         ENDDO         
+  C:07A5H         LINE#         141
+  C:07ABH         LINE#         142
+  C:07ABH         LINE#         144
+  C:07ADH         LINE#         145
+  C:07D6H         LINE#         146
+  C:07DAH         LINE#         147
+  C:07DCH         LINE#         148
+  C:0807H         LINE#         150
+  -------         ENDPROC       _LCDWRITEASC816
+  -------         PROC          _LCDWRITECHSTR
+  D:0008H         SYMBOL        x
+  D:0009H         SYMBOL        y
+  D:000AH         SYMBOL        string
+  -------         DO            
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/22/2010  19:16:08  PAGE 14
+
+
+  D:000DH         SYMBOL        ch1
+  D:000EH         SYMBOL        ch2
+  D:0007H         SYMBOL        i
+  D:000FH         SYMBOL        j
+  D:0010H         SYMBOL        length
+  -------         ENDDO         
+  C:068EH         LINE#         153
+  C:0698H         LINE#         154
+  C:0698H         LINE#         155
+  C:069BH         LINE#         156
+  C:06B2H         LINE#         158
+  C:06B2H         LINE#         159
+  C:06C3H         LINE#         160
+  C:06CFH         LINE#         161
+  C:06D6H         LINE#         162
+  C:06D6H         LINE#         163
+  C:06DFH         LINE#         164
+  C:06E1H         LINE#         165
+  C:06E3H         LINE#         166
+  C:06E5H         LINE#         168
+  C:06E5H         LINE#         169
+  C:06E7H         LINE#         170
+  C:06E7H         LINE#         171
+  C:070EH         LINE#         172
+  C:070EH         LINE#         173
+  C:0712H         LINE#         174
+  C:0728H         LINE#         175
+  C:072CH         LINE#         176
+  C:0732H         LINE#         177
+  C:0732H         LINE#         178
+  C:073CH         LINE#         179
+  -------         ENDPROC       _LCDWRITECHSTR
+  -------         PROC          LCDCLEAR
+  -------         DO            
+  D:0002H         SYMBOL        x
+  D:0001H         SYMBOL        y
+  -------         ENDDO         
+  C:0B87H         LINE#         192
+  C:0B87H         LINE#         193
+  C:0B87H         LINE#         195
+  C:0B89H         LINE#         196
+  C:0B89H         LINE#         197
+  C:0B8BH         LINE#         198
+  C:0B98H         LINE#         199
+  C:0B9CH         LINE#         200
+  -------         ENDPROC       LCDCLEAR
+  -------         PROC          LCDINT
+  C:0A8CH         LINE#         202
+  C:0A8CH         LINE#         203
+  C:0A8CH         LINE#         204
+  C:0A8EH         LINE#         205
+  C:0A90H         LINE#         206
+  C:0A92H         LINE#         207
+  C:0A94H         LINE#         208
+  C:0A96H         LINE#         209
+  C:0A9BH         LINE#         210
+  C:0AA2H         LINE#         211
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/22/2010  19:16:08  PAGE 15
+
+
+  C:0AA7H         LINE#         212
+  C:0AACH         LINE#         213
+  C:0AB2H         LINE#         214
+  -------         ENDPROC       LCDINT
+  -------         ENDMOD        LCD12864
+
+  -------         MODULE        ?C?CLDPTR
+  C:073DH         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+  -------         MODULE        ?C?CLDOPTR
+  C:0756H         PUBLIC        ?C?CLDOPTR
+  -------         ENDMOD        ?C?CLDOPTR
+
+  -------         MODULE        ?C?CSTOPTR
+  C:0783H         PUBLIC        ?C?CSTOPTR
+  -------         ENDMOD        ?C?CSTOPTR
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_NRFSETTXMODE?NRF24L01
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CHECKACK?NRF24L01
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDDELAY?DELAY
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MAX232SENDDATE?MAX232
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCDWRITEDOT?LCD12864
+
+Program Size: data=41.0 xdata=0 code=3158
+LINK/LOCATE RUN COMPLETE.  5 WARNING(S),  0 ERROR(S)

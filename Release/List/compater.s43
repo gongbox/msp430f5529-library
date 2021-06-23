@@ -1,0 +1,759 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+//                                                      06/Jun/2016  16:42:22 /
+// IAR C/C++ Compiler V5.50.1.20465/W32, Evaluation edition for MSP430        /
+// Copyright 1996-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    __rt_version  =  3                                                      /
+//    __double_size =  32                                                     /
+//    __reg_r4      =  free                                                   /
+//    __reg_r5      =  free                                                   /
+//    __pic         =  no                                                     /
+//    __core        =  430X                                                   /
+//    __data_model  =  large                                                  /
+//    Source file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\compater.c                         /
+//    Command line  =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\compater.c -D NDEBUG -D            /
+//                     RAM_VECTOR -lC C:\Users\615\Desktop\MSP430\MSP430F5529 /
+//                     ¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Release\List\ -lA               /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Release\List\ -o C:\Users\615\Desktop\MSP430\M /
+//                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Release\Obj\          /
+//                     -D__MSP430F5529__ -e --double=32 --dlib_config         /
+//                     "D:\Program Files (x86)\IAR Systems\Embedded           /
+//                     Workbench 6.4 Evaluation\430\LIB\DLIB\dl430xlfn.h" -I  /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\ -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº /
+//                     ¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\inc\ -I                    /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\ -I C:\Users\615\Desktop\MSP430\MS /
+//                     P430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\src\USB\ -I    /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_config\ -I                 /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_User\ -I                   /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\srcUSB\USB_API\USB_CDC_API\ -I         /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_API\USB_HID_API\ -I        /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_API\USB_MSC_API\ -I        /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\KEY\ -I C:\Users\615\Desktop\MSP430\M /
+//                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\LED\ -I      /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\12864\ -I                             /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\oled\ -I C:\Users\615\Desktop\MSP430\ /
+//                     MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\mpu6050\inc /
+//                     \ -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\ /
+//                     C°æ\¹¤³ÌÄ£°å\HardWare\mpu6050\src\ -I                  /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\nokia5110\inc\ -I                     /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\nokia5110\src\ -I                     /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\LQ_1.8_TFT\ -I                        /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\LCD_API\ -I                           /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\2.2TFT\ -I                            /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\delay\ -I                             /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\System\ -I C:\Users\615\Desktop\MSP430\MSP430F /
+//                     5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\inc\ -I              /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\System\src\ -I C:\Users\615\Desktop\MSP430\MSP /
+//                     430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\User\ -I                /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\User\USER\ -I C:\Users\615\Desktop\MSP430\MSP4 /
+//                     30F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\UCOSII\CONFIG\ -I    /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\uCOSII\App\ -I                             /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\uCOSII\CONFIHG\ -I                         /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\uCOSII\PORT\ -I                            /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\UCOSII\CORE\ -I                            /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\FatFs\ -I C:\Users\615\Desktop\MSP430\MSP4 /
+//                     30F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\FatFs\option\        /
+//                     --core=430X --data_model=large -Oh --multiplier=32     /
+//                     --multiplier_location=4C0 --hw_workaround=CPU40        /
+//    List file     =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Release\List\compater.s43                      /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME compater
+
+        RTMODEL "__SystemLibrary", "DLib"
+        RTMODEL "__core", "430X"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__double_size", "32"
+        RTMODEL "__pic", "no"
+        RTMODEL "__reg_r4", "free"
+        RTMODEL "__reg_r5", "free"
+        RTMODEL "__rt_version", "3"
+
+        RSEG CSTACK:DATA:SORT:NOROOT(0)
+
+        EXTERN ?longjmp_r4
+        EXTERN ?longjmp_r5
+        EXTERN ?setjmp_r4
+        EXTERN ?setjmp_r5
+
+        PUBWEAK ?setjmp_save_r4
+        PUBWEAK ?setjmp_save_r5
+        PUBLIC CB
+        PUBLIC CompaterB_ClearITPendingBit
+        FUNCTION CompaterB_ClearITPendingBit,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC CompaterB_Exchange_Chanel
+        FUNCTION CompaterB_Exchange_Chanel,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC CompaterB_GetITStatus
+        FUNCTION CompaterB_GetITStatus,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC CompaterB_ITConfig
+        FUNCTION CompaterB_ITConfig,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC CompaterB_Init
+        FUNCTION CompaterB_Init,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 20, STACK
+        PUBLIC CompatorB_GetValue
+        FUNCTION CompatorB_GetValue,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBWEAK _A_CBCTL2_L
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA SP DATA
+          CFI Resource PC:20, SP:20, SR:16, R4L:16, R4H:4, R4:20, R5L:16, R5H:4
+          CFI Resource R5:20, R6L:16, R6H:4, R6:20, R7L:16, R7H:4, R7:20, R8L:16
+          CFI Resource R8H:4, R8:20, R9L:16, R9H:4, R9:20, R10L:16, R10H:4
+          CFI Resource R10:20, R11L:16, R11H:4, R11:20, R12L:16, R12H:4, R12:20
+          CFI Resource R13L:16, R13H:4, R13:20, R14L:16, R14H:4, R14:20, R15L:16
+          CFI Resource R15H:4, R15:20
+          CFI ResourceParts R4 R4H, R4L
+          CFI ResourceParts R5 R5H, R5L
+          CFI ResourceParts R6 R6H, R6L
+          CFI ResourceParts R7 R7H, R7L
+          CFI ResourceParts R8 R8H, R8L
+          CFI ResourceParts R9 R9H, R9L
+          CFI ResourceParts R10 R10H, R10L
+          CFI ResourceParts R11 R11H, R11L
+          CFI ResourceParts R12 R12H, R12L
+          CFI ResourceParts R13 R13H, R13L
+          CFI ResourceParts R14 R14H, R14L
+          CFI ResourceParts R15 R15H, R15L
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H SameValue
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H SameValue
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H SameValue
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H SameValue
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H SameValue
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H SameValue
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H SameValue
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H SameValue
+          CFI R11 Concat
+          CFI R12L Undefined
+          CFI R12H Undefined
+          CFI R12 Undefined
+          CFI R13L Undefined
+          CFI R13H Undefined
+          CFI R13 Undefined
+          CFI R14L Undefined
+          CFI R14H Undefined
+          CFI R14 Undefined
+          CFI R15L Undefined
+          CFI R15H Undefined
+          CFI R15 Undefined
+          CFI EndCommon cfiCommon0
+        
+        
+          CFI Common cfiCommon1 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H SameValue
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H SameValue
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H SameValue
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H SameValue
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H SameValue
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H SameValue
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H SameValue
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H SameValue
+          CFI R11 Concat
+          CFI R12L SameValue
+          CFI R12H SameValue
+          CFI R12 Concat
+          CFI R13L SameValue
+          CFI R13H SameValue
+          CFI R13 Concat
+          CFI R14L SameValue
+          CFI R14H SameValue
+          CFI R14 Concat
+          CFI R15L SameValue
+          CFI R15H SameValue
+          CFI R15 Concat
+          CFI EndCommon cfiCommon1
+        
+        EXTERN GPIO_MultiBits_Init
+        FUNCTION GPIO_MultiBits_Init,0202H
+
+// C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\src\compater.c
+//    1 #include "compater.h"
+
+        ASEGN DATA16_AN:DATA:NOROOT,08c4H
+// union <unnamed> __data16 _A_CBCTL2_L
+_A_CBCTL2_L:
+        DS8 2
+//    2 #include "gpio.h"
+//    3 
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(1)
+//    4 const COMPB_MemMapPtr CB = COMPB_BASE_PTR;
+CB:
+        DC32 8C0H
+//    5 /*******************************************************************************
+//    6 *  º¯ÊýÃû³Æ£ºCompaterB_Init(CompaterB_CHn CB0,CompaterB_CHn CB1)
+//    7 *  ¹¦ÄÜËµÃ÷£º³õÊ¼»¯±È½ÏÆ÷ÊäÈëÔ´
+//    8 *  ²ÎÊýËµÃ÷£ºCompaterB_CHn CB0 :±È½ÏÆ÷ÊäÈëÍ¨µÀ+
+//    9              CompaterB_CHn CB1 :±È½ÏÆ÷ÊäÈëÍ¨µÀ-
+//   10 *  º¯Êý·µ»Ø£ºÎÞ
+//   11 *  ²Î¿¼×ÊÁÏ£ºhttp://www.docin.com/p-676623167.html
+//   12 *  Ê¹ÓÃÊ¾Àý£º CompaterB_Init(CB_CH0,CB_VREF_2_0V);    //³õÊ¼»¯±È½ÏÆ÷CB_CH0ÎªÕýÊäÈë¶Ë£¬CB_VREF_2_0VÎª¸ºÊäÈë¶Ë
+//   13 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   14 void CompaterB_Init(CompaterB_CHn CB0,CompaterB_CHn CB1)
+CompaterB_Init:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function CompaterB_Init
+//   15 {
+        FUNCALL CompaterB_Init, GPIO_MultiBits_Init
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL CompaterB_Init, GPIO_MultiBits_Init
+        LOCFRAME CSTACK, 20, STACK
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        MOV.B   R12, R10
+        MOV.B   R13, R11
+//   16   ASSERT((CB0<CB_CH11) || (CB1<CB_CH11));//Ö»ÄÜÓÐÒ»¸öÍ¨µÀÊ¹ÓÃ²Î¿¼µçÑ¹
+//   17   //ÉèÖÃÒý½Å  
+//   18   if(CB0 <= CB_CH11)
+        MOV.B   #0xc, R8
+        CMP.B   R8, R12
+        JC      ??CompaterB_Init_7
+//   19   { //³õÊ¼»¯Òý½ÅÎªµÚ¶þ¹¦ÄÜ
+//   20     GPIO_Init((CB0 < CB_CH8) ? P6 : P7, (CB0 < CB_CH8) ? CB0 : (CB0-8),GPI|SEL );
+        CMP.B   #0x8, R12
+        CALLA   #?Subroutine0
+??CrossCallReturnLabel_0:
+        MOV.B   R12, R13
+        JNE     ??CompaterB_Init_2
+        SUB.B   #0x8, R13
+??CompaterB_Init_2:
+        CMP.B   #0x8, R12
+        CALLA   #?Subroutine1
+//   21     CB->IPEN = SET;                 //ÊäÈëÍ¨µÀÊ¹ÄÜ
+??CrossCallReturnLabel_3:
+        BIS.W   #0x80, &0x8c0
+//   22     CB->IPSEL = CB0;                //ÊäÈëÍ¨µÀÑ¡Ôñ
+        MOV.B   R10, R15
+        AND.W   #0xf, R15
+        MOV.W   #0xfff0, R14
+        CALLA   #?Subroutine2
+//   23     CB->CTL3 |= (1<<CB0);           //¹Ø±ÕÊäÈë»º´æ
+//   24   }
+??CrossCallReturnLabel_4:
+        SUB.B   #0x1, R10
+        JN      ??CompaterB_Init_8
+        RPT     R10
+        RLAX.W  R15
+??CompaterB_Init_8:
+        ADD.B   #0x1, R10
+        BIS.W   R15, &0x8c6
+        JMP     ??CompaterB_Init_9
+//   25   else
+//   26   {
+//   27     CBCTL2 = 0u;
+??CompaterB_Init_7:
+        MOV.W   #0x0, &0x8c4
+//   28     CB->RSEL = RESET;                   //²Î¿¼µçÑ¹Ó¦ÓÃµ½±È½ÏÆ÷+¶Ë        
+        BIC.W   #0x20, &0x8c4
+//   29   }
+//   30 
+//   31   if(CB1 <= CB_CH11)
+??CompaterB_Init_9:
+        CMP.B   R8, R11
+        JC      ??CompaterB_Init_10
+//   32   { //³õÊ¼»¯Òý½ÅÎªµÚ¶þ¹¦ÄÜ
+//   33     GPIO_Init((CB1 < CB_CH8) ? P6 : P7, (CB1 < CB_CH8) ? CB1 : (CB1-8),GPI|SEL );
+        CMP.B   #0x8, R11
+        CALLA   #?Subroutine0
+??CrossCallReturnLabel_1:
+        MOV.B   R11, R13
+        JNE     ??CompaterB_Init_4
+        SUB.B   #0x8, R13
+??CompaterB_Init_4:
+        CMP.B   #0x8, R11
+        CALLA   #?Subroutine1
+//   34     CB->IMEN = SET;                 //ÊäÈëÍ¨µÀÊ¹ÄÜ
+??CrossCallReturnLabel_2:
+        BIS.W   #0x8000, &0x8c0
+//   35     CB->IMSEL = CB1;                //ÊäÈëÍ¨µÀÑ¡Ôñ
+        MOV.B   R11, R15
+        SWPB    R15
+        AND.W   #0xf00, R15
+        MOV.W   #0xf0ff, R14
+        CALLA   #?Subroutine2
+//   36     CB->CTL3 |= (1<<CB1);           //¹Ø±ÕÊäÈë»º´æ
+//   37   }
+??CrossCallReturnLabel_5:
+        SUB.B   #0x1, R11
+        JN      ??CompaterB_Init_11
+        RPT     R11
+        RLAX.W  R15
+??CompaterB_Init_11:
+        ADD.B   #0x1, R11
+        BIS.W   R15, &0x8c6
+//   38   else
+//   39   {
+//   40     CB->RSEL = SET;                   //²Î¿¼µçÑ¹Ó¦ÓÃµ½±È½ÏÆ÷-¶Ë
+//   41   }
+//   42 
+//   43   if((CB0>=CB_VREF_1_5V) || (CB1>=CB_VREF_1_5V))  //Èç¹ûÓÐÒ»¶ËÊ¹ÓÃ²Î¿¼µçÑ¹
+        CMP.B   R8, R10
+        JC      ??CompaterB_Init_12
+        JMP     ??CompaterB_Init_13
+??CompaterB_Init_10:
+        BIS.W   #0x20, &0x8c4
+//   44   {
+//   45     CB->MRVS = 0;
+??CompaterB_Init_12:
+        BIC.W   #0x1000, &0x8c2
+//   46     if((CB0==CB_VREF_VCC) || (CB1==CB_VREF_VCC))
+        CMP.B   #0xf, R10
+        JEQ     ??CompaterB_Init_14
+        CMP.B   #0xf, R11
+        JNE     ??CompaterB_Init_15
+//   47     {
+//   48       CB->REFL = 0;
+??CompaterB_Init_14:
+        AND.W   #0x9fff, &0x8c4
+//   49       CB->RS = 1;                                                    //Íâ²¿²Î¿¼µçÑ¹½ûÖ¹,Ê¹ÓÃVcc×÷Îª²Î¿¼µçÑ¹Ô´
+        MOV.W   #0xff3f, R15
+        AND.W   &0x8c4, R15
+        BIS.W   #0x40, R15
+        MOV.W   R15, &0x8c4
+        JMP     ??CompaterB_Init_16
+//   50     }
+//   51     else if((CB0==CB_VREF_1_5V) || (CB1==CB_VREF_1_5V)) //
+??CompaterB_Init_15:
+        CMP.B   R8, R10
+        JEQ     ??CompaterB_Init_17
+        CMP.B   R8, R11
+        JNE     ??CompaterB_Init_18
+//   52     {
+//   53       CB->REFL = 1;
+??CompaterB_Init_17:
+        MOV.W   #0x9fff, R15
+        AND.W   &0x8c4, R15
+        BIS.W   #0x2000, R15
+        JMP     ??CompaterB_Init_19
+//   54       CB->RS = 3;
+//   55       CB->REFACC = RESET;                                                //²Î¿¼µçÑ¹Îª1.5v,Ê¹ÓÃÍâ²¿²Î¿¼µçÑ¹·ÖÑ¹
+//   56     }
+//   57     else if((CB0==CB_VREF_2_0V) || (CB1==CB_VREF_2_0V)) //
+??CompaterB_Init_18:
+        CMP.B   #0xd, R10
+        JEQ     ??CompaterB_Init_20
+        CMP.B   #0xd, R11
+        JNE     ??CompaterB_Init_21
+//   58     {
+//   59       CB->REFL = 2;
+??CompaterB_Init_20:
+        MOV.W   #0x9fff, R15
+        AND.W   &0x8c4, R15
+        BIS.W   #0x4000, R15
+??CompaterB_Init_19:
+        MOV.W   R15, &0x8c4
+//   60       CB->RS = 3;
+        JMP     ??CompaterB_Init_0
+//   61       CB->REFACC = RESET;                                                //²Î¿¼µçÑ¹Îª2.0v,Ê¹ÓÃÍâ²¿²Î¿¼µçÑ¹·ÖÑ¹
+//   62     }
+//   63     else if((CB0==CB_VREF_2_5V) || (CB1==CB_VREF_2_5V)) //
+??CompaterB_Init_21:
+        CMP.B   #0xe, R10
+        JEQ     ??CompaterB_Init_22
+        CMP.B   #0xe, R11
+        JNE     ??CompaterB_Init_16
+//   64     {
+//   65       CB->REFL = 3;
+??CompaterB_Init_22:
+        BIS.W   #0x6000, &0x8c4
+//   66       CB->RS = 3;
+??CompaterB_Init_0:
+        BIS.W   #0xc0, &0x8c4
+//   67       CB->REFACC = RESET;                                               //²Î¿¼µçÑ¹Îª2.5v,Ê¹ÓÃÍâ²¿²Î¿¼µçÑ¹·ÖÑ¹
+        BIC.W   #0x8000, &0x8c4
+//   68     }
+//   69     CB->REF0 = 31;
+??CompaterB_Init_16:
+        BIS.W   #0x1f, &0x8c4
+//   70     CB->REF1 = 31;
+        BIS.W   #0x1f00, &0x8c4
+//   71   }
+//   72 
+//   73   CB->PWRMD = 1;                             //Õý³£µçÔ´Ä£Ê½ 
+??CompaterB_Init_13:
+        MOV.W   #0xfcff, R15
+        AND.W   &0x8c2, R15
+        BIS.W   #0x100, R15
+        MOV.W   R15, &0x8c2
+//   74   CB->ON = SET;                              // ´ò¿ª±È½ÏÆ÷B  
+        BIS.W   #0x400, &0x8c2
+//   75 }
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock0
+        REQUIRE _A_CBCTL2_L
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?Subroutine2:
+          CFI Block cfiCond1 Using cfiCommon0
+          CFI Function CompaterB_Init
+          CFI Conditional ??CrossCallReturnLabel_4
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+24
+          CFI Block cfiCond2 Using cfiCommon0
+          CFI (cfiCond2) Function CompaterB_Init
+          CFI (cfiCond2) Conditional ??CrossCallReturnLabel_5
+          CFI (cfiCond2) R8L Frame(CFA, -20)
+          CFI (cfiCond2) R8H Frame(CFA, -18)
+          CFI (cfiCond2) R9L Frame(CFA, -16)
+          CFI (cfiCond2) R9H Frame(CFA, -14)
+          CFI (cfiCond2) R10L Frame(CFA, -12)
+          CFI (cfiCond2) R10H Frame(CFA, -10)
+          CFI (cfiCond2) R11L Frame(CFA, -8)
+          CFI (cfiCond2) R11H Frame(CFA, -6)
+          CFI (cfiCond2) CFA SP+24
+          CFI Block cfiPicker3 Using cfiCommon1
+          CFI (cfiPicker3) NoFunction
+          CFI (cfiPicker3) Picker
+        AND.W   &0x8c0, R14
+        BIS.W   R15, R14
+        MOV.W   R14, &0x8c0
+        MOV.W   #0x1, R15
+        RETA
+          CFI EndBlock cfiCond1
+          CFI EndBlock cfiCond2
+          CFI EndBlock cfiPicker3
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?Subroutine1:
+          CFI Block cfiCond4 Using cfiCommon0
+          CFI Function CompaterB_Init
+          CFI Conditional ??CrossCallReturnLabel_3
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+24
+          CFI Block cfiCond5 Using cfiCommon0
+          CFI (cfiCond5) Function CompaterB_Init
+          CFI (cfiCond5) Conditional ??CrossCallReturnLabel_2
+          CFI (cfiCond5) R8L Frame(CFA, -20)
+          CFI (cfiCond5) R8H Frame(CFA, -18)
+          CFI (cfiCond5) R9L Frame(CFA, -16)
+          CFI (cfiCond5) R9H Frame(CFA, -14)
+          CFI (cfiCond5) R10L Frame(CFA, -12)
+          CFI (cfiCond5) R10H Frame(CFA, -10)
+          CFI (cfiCond5) R11L Frame(CFA, -8)
+          CFI (cfiCond5) R11H Frame(CFA, -6)
+          CFI (cfiCond5) CFA SP+24
+          CFI Block cfiPicker6 Using cfiCommon1
+          CFI (cfiPicker6) NoFunction
+          CFI (cfiPicker6) Picker
+        SUBC.B  R12, R12
+        ADD.B   #0x6, R12
+        MOV.W   #0x101, R14
+        BRA     #GPIO_MultiBits_Init
+          CFI EndBlock cfiCond4
+          CFI EndBlock cfiCond5
+          CFI EndBlock cfiPicker6
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?Subroutine0:
+          CFI Block cfiCond7 Using cfiCommon0
+          CFI Function CompaterB_Init
+          CFI Conditional ??CrossCallReturnLabel_0
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+24
+          CFI Block cfiCond8 Using cfiCommon0
+          CFI (cfiCond8) Function CompaterB_Init
+          CFI (cfiCond8) Conditional ??CrossCallReturnLabel_1
+          CFI (cfiCond8) R8L Frame(CFA, -20)
+          CFI (cfiCond8) R8H Frame(CFA, -18)
+          CFI (cfiCond8) R9L Frame(CFA, -16)
+          CFI (cfiCond8) R9H Frame(CFA, -14)
+          CFI (cfiCond8) R10L Frame(CFA, -12)
+          CFI (cfiCond8) R10H Frame(CFA, -10)
+          CFI (cfiCond8) R11L Frame(CFA, -8)
+          CFI (cfiCond8) R11H Frame(CFA, -6)
+          CFI (cfiCond8) CFA SP+24
+          CFI Block cfiPicker9 Using cfiCommon1
+          CFI (cfiPicker9) NoFunction
+          CFI (cfiPicker9) Picker
+        SUBC.B  R14, R14
+        AND.B   #0x1, R14
+        MOV.W   #0x1, R15
+        SUB.B   #0x1, R14
+        JN      ??CompaterB_Init_5
+        RPT     R14
+        RLAX.W  R15
+??CompaterB_Init_5:
+        CMP.W   #0x0, R15
+        RETA
+          CFI EndBlock cfiCond7
+          CFI EndBlock cfiCond8
+          CFI EndBlock cfiPicker9
+//   76 /*******************************************************************************
+//   77 *  º¯ÊýÃû³Æ: CompaterB_Exchange_Chanel(void)  
+//   78 *  ¹¦ÄÜËµÃ÷£º½»»»ÊäÈëÍ¨µÀ¼«ÐÔ
+//   79 *  ²ÎÊýËµÃ÷£ºÎÞ
+//   80 *  º¯Êý·µ»Ø£ºÎÞ
+//   81 *  Ê¹ÓÃÊ¾Àý£ºCompaterB_Exchange_Chanel();   //½»»»±È½ÏÆ÷ÊäÈëÍ¨µÀ   
+//   82 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   83 void  CompaterB_Exchange_Chanel(void)                                      
+CompaterB_Exchange_Chanel:
+          CFI Block cfiBlock10 Using cfiCommon0
+          CFI Function CompaterB_Exchange_Chanel
+//   84 {
+//   85   CB->EX = !CB->EX;
+        BIT.W   #0x20, &0x8c2
+        SUBC.W  R15, R15
+        AND.W   #0x1, R15
+        RPT     #0x5
+        RLAX.W  R15
+        MOV.W   #0xffdf, R14
+        AND.W   &0x8c2, R14
+        BIS.W   R15, R14
+        MOV.W   R14, &0x8c2
+//   86 }
+        RETA
+          CFI EndBlock cfiBlock10
+//   87 /*******************************************************************************
+//   88 *  º¯ÊýÃû³Æ£ºCompatorB_GetValue(void)
+//   89 *  ¹¦ÄÜËµÃ÷£º¶ÁÈ¡±È½ÏµÄ½á¹û
+//   90 *  ²ÎÊýËµÃ÷£ºÎÞ
+//   91 *  º¯Êý·µ»Ø£ºSTATUS :SET ÕýÊäÈë¶ËµçÑ¹´óÓÚ¸ºÊäÈë¶ËµçÑ¹£¬RESET ÕýÊäÈë¶ËµçÑ¹Ð¡ÓÚÓÚ¸ºÊäÈë¶ËµçÑ¹
+//   92 *  Ê¹ÓÃÊ¾Àý£º
+//   93 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   94 STATUS CompatorB_GetValue(void)
+CompatorB_GetValue:
+          CFI Block cfiBlock11 Using cfiCommon0
+          CFI Function CompatorB_GetValue
+//   95 {
+//   96   return ((CB->CB_OUT) ? SET : RESET);
+        MOV.W   &0x8c2, R12
+        AND.B   #0x1, R12
+        RETA
+          CFI EndBlock cfiBlock11
+//   97 }
+//   98 /*******************************************************************************
+//   99 *  º¯ÊýÃû³Æ: CompaterB_ITConfig (CompaterB_IRQn irqn, STATUS ITState)
+//  100 *  ¹¦ÄÜËµÃ÷£ºÉèÖÃÖÐ¶ÏÊÇ·ñÊ¹ÄÜ²¢ÅäÖÃÖÐ¶Ï´¥·¢ÑØ
+//  101 *  ²ÎÊýËµÃ÷£ºCompaterB_IRQn irqn:Ñ¡ÔñÎªÉÏÉýÑØ»¹ÊÇÏÂ½µÑØÖÐ¶Ï
+//  102              BOOL ITState       :ÊÇ·ñÊ¹ÄÜÖÐ¶Ï
+//  103 *  º¯Êý·µ»Ø£ºÎÞ
+//  104 *  Ê¹ÓÃÊ¾Àý£ºCompaterB_ITConfig (CB_RaisingIRQn, ENABLE);  //±È½ÏÆ÷ÉèÖÃÎªÉÏÉýÑØÖÐ¶Ï£¬²¢Ê¹ÄÜÖÐ¶Ï
+//  105 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  106 void CompaterB_ITConfig (CompaterB_IRQn irqn, STATUS ITState)
+CompaterB_ITConfig:
+          CFI Block cfiBlock12 Using cfiCommon0
+          CFI Function CompaterB_ITConfig
+//  107 {
+//  108   CB->IES = RESET;                 //ÉÏÉýÑØCBIFG£¬ÏÂ½µÑØCBIIFG
+        BIC.W   #0x8, &0x8c2
+//  109   if(ITState != DISABLE)//ÉèÖÃÊÇ·ñÔÊÐíÖÐ¶Ï
+        MOV.B   R12, R14
+        XOR.B   #0xff, R14
+        CMP.B   #0x0, R13
+        JEQ     ??CompaterB_ITConfig_0
+//  110   {
+//  111     CB->CB_IFG &=~irqn;              //ÇåÖÐ¶Ï±êÖ¾Î»
+        AND.B   R14, &0x8cc
+//  112     CB->CB_IE  |= irqn;
+        BIS.B   R12, &0x8cd
+        RETA
+//  113   }
+//  114   else
+//  115   {
+//  116     CB->CB_IE  &=~irqn;
+??CompaterB_ITConfig_0:
+        AND.B   R14, &0x8cd
+//  117   }                      
+//  118 }
+        RETA
+          CFI EndBlock cfiBlock12
+//  119 /*******************************************************************************
+//  120 *  º¯ÊýÃû³Æ£ºCompaterB_GetITStatus(CompaterB_IRQn irqn)
+//  121 *  ¹¦ÄÜËµÃ÷£º¶ÁÈ¡±È½ÏÖÐ¶Ï±êÖ¾×´Ì¬
+//  122 *  ²ÎÊýËµÃ÷£ºCompaterB_IRQn irqn:Ñ¡ÔñÎªÉÏÉýÑØ»¹ÊÇÏÂ½µÑØÖÐ¶Ï±êÖ¾
+//  123 *  º¯Êý·µ»Ø£ºSTATUS £ºÖÐ¶Ï±êÖ¾ÊÇ·ñÖÃÎ»
+//  124 *  Ê¹ÓÃÊ¾Àý£ºif(TRUE == CompaterB_GetITStatus(CB_RaisingIRQn)){...} //ÅÐ¶ÏÖÐ¶Ï±êÖ¾ÊÇ·ñÖÃÎ»
+//  125 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  126 STATUS  CompaterB_GetITStatus(CompaterB_IRQn irqn)
+CompaterB_GetITStatus:
+          CFI Block cfiBlock13 Using cfiCommon0
+          CFI Function CompaterB_GetITStatus
+//  127 {
+//  128   return ((CB->CB_IFG & irqn) ? TRUE : FALSE);
+        MOV.B   &0x8cc, R14
+        BIT.B   R12, R14
+        JNE     ??CompaterB_GetITStatus_0
+        MOV.B   #0x0, R12
+        RETA
+??CompaterB_GetITStatus_0:
+        MOV.B   #0x1, R12
+        RETA
+          CFI EndBlock cfiBlock13
+//  129 }
+//  130 /*******************************************************************************
+//  131 *  º¯ÊýÃû³Æ£ºCompaterB_ClearITPendingBit(CompaterB_IRQn irqn)
+//  132 *  ¹¦ÄÜËµÃ÷£ºÇå³ý±È½ÏÖÐ¶Ï±êÖ¾Î»
+//  133 *  ²ÎÊýËµÃ÷£ºCompaterB_IRQn irqn:Ñ¡ÔñÎªÉÏÉýÑØ»¹ÊÇÏÂ½µÑØÖÐ¶Ï±êÖ¾
+//  134 *  º¯Êý·µ»Ø£ºÎÞ
+//  135 *  Ê¹ÓÃÊ¾Àý£ºCompaterB_ClearITPendingBit(CB_RaisingIRQn);   //Çå³ýÉÏÉýÑØÖÐ¶Ï±êÖ¾
+//  136 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  137 void  CompaterB_ClearITPendingBit(CompaterB_IRQn irqn)
+CompaterB_ClearITPendingBit:
+          CFI Block cfiBlock14 Using cfiCommon0
+          CFI Function CompaterB_ClearITPendingBit
+//  138 {
+//  139   CB->CB_IFG &=~ irqn;
+        BIC.B   R12, &0x8cc
+//  140 }
+        RETA
+          CFI EndBlock cfiBlock14
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r4:
+        REQUIRE ?setjmp_r4
+        REQUIRE ?longjmp_r4
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r5:
+        REQUIRE ?setjmp_r5
+        REQUIRE ?longjmp_r5
+
+        END
+// 
+// 444 bytes in segment CODE
+//   2 bytes in segment DATA16_AN
+//   4 bytes in segment DATA20_C
+// 
+// 444 bytes of CODE  memory
+//   4 bytes of CONST memory
+//   0 bytes of DATA  memory (+ 2 bytes shared)
+//
+//Errors: none
+//Warnings: none

@@ -1,0 +1,327 @@
+###############################################################################
+#                                                                             #
+#                                                       06/Jun/2016  16:42:27 #
+# IAR C/C++ Compiler V5.50.1.20465/W32, Evaluation edition for MSP430         #
+# Copyright 1996-2012 IAR Systems AB.                                         #
+#                                                                             #
+#    __rt_version  =  3                                                       #
+#    __double_size =  32                                                      #
+#    __reg_r4      =  free                                                    #
+#    __reg_r5      =  free                                                    #
+#    __pic         =  no                                                      #
+#    __core        =  430X                                                    #
+#    __data_model  =  large                                                   #
+#    Source file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\User\main.c                                      #
+#    Command line  =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\User\main.c -D NDEBUG -D RAM_VECTOR -lC          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\List\ -lA C:\Users\615\Desktop\MSP430\MS #
+#                     P430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Release\List\ -o        #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\Obj\ -D__MSP430F5529__ -e --double=32    #
+#                     --dlib_config "D:\Program Files (x86)\IAR               #
+#                     Systems\Embedded Workbench 6.4                          #
+#                     Evaluation\430\LIB\DLIB\dl430xlfn.h" -I                 #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\ -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Ê #
+#                     ý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\inc\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\ -I C:\Users\615\Desktop\MSP430\MSP4 #
+#                     30F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\src\USB\ -I       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_config\ -I                   #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_User\ -I                     #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\srcUSB\USB_API\USB_CDC_API\ -I           #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_API\USB_HID_API\ -I          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_API\USB_MSC_API\ -I          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\KEY\ -I C:\Users\615\Desktop\MSP430\MSP #
+#                     430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\LED\ -I         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\12864\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\oled\ -I      #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\mpu6050\inc\ -I                         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\mpu6050\src\ -I                         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\nokia5110\inc\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\nokia5110\src\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\LQ_1.8_TFT\ -I                          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\LCD_API\ -I                             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\2.2TFT\ -I                              #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\delay\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\ -I             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\System\inc\ -I C:\Users\615\Desktop\MSP430\MSP43 #
+#                     0F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\src\ -I             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\User\ -I C:\Users\615\Desktop\MSP430\MSP430F5529 #
+#                     ¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\User\USER\ -I                    #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\UCOSII\CONFIG\ -I                            #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\uCOSII\App\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII\CONFIHG\    #
+#                     -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ #
+#                     \¹¤³ÌÄ£°å\Lib\uCOSII\PORT\ -I                           #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\UCOSII\CORE\ -I                              #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\FatFs\ -I C:\Users\615\Desktop\MSP430\MSP430 #
+#                     F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\FatFs\option\           #
+#                     --core=430X --data_model=large -Oh --multiplier=32      #
+#                     --multiplier_location=4C0 --hw_workaround=CPU40         #
+#    List file     =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\List\main.lst                            #
+#    Object file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\Obj\main.r43                             #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\User\main.c
+      1          /*!
+      2           *     COPYRIGHT NOTICE
+      3           *     Copyright (c) 2016,CTGU-GB
+      4           *     All rights reserved.
+      5           *
+      6           *
+      7           * @file       main.c
+      8          * @brief      MSP430F5529 Æ½Ì¨Ö÷³ÌÐò
+      9          
+     10           * @author     CTGU-GB
+     11           * @version    v2.1
+     12           * @date       2016-01-30
+     13           */
+     14          #include "include.h"
+
+   \                                 In  segment DATA16_AN, at 0x202
+   \   union <unnamed> __data16 _A_PAOUT_L
+   \                     _A_PAOUT_L:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_AN, at 0x222
+   \   union <unnamed> __data16 _A_PBOUT_L
+   \                     _A_PBOUT_L:
+   \   000000                DS8 2
+     15          
+
+   \                                 In  segment DATA20_I, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy20
+     16          uint16_t data=1000;
+   \                     data:
+   \   000000                DS8 2
+   \   000002                REQUIRE `?<Initializer for data>`
+
+   \                                 In  segment DATA20_I, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_copy20
+     17          float fdata=1.0; 
+   \                     fdata:
+   \   000000                DS8 4
+   \   000004                REQUIRE `?<Initializer for fdata>`
+
+   \                                 In  segment ISR_CODE, align 2
+     18          __interrupt void TIMER1_A0_IRQ_Handler()
+   \                     TIMER1_A0_IRQ_Handler:
+     19          {
+   \   000000   5F14         PUSHM.A #0x6, R15
+     20             PIN_OUT(P4,7) = !PIN_OUT(P4,7);
+   \   000002   F2B080002302 BIT.B   #0x80, &0x223
+   \   000008   0428         JNC     ??TIMER1_A0_IRQ_Handler_0
+   \   00000A   F2C080002302 BIC.B   #0x80, &0x223
+   \   000010   033C         JMP     ??TIMER1_A0_IRQ_Handler_1
+   \                     ??TIMER1_A0_IRQ_Handler_0:
+   \   000012   F2D080002302 BIS.B   #0x80, &0x223
+     21             data++;  
+   \                     ??TIMER1_A0_IRQ_Handler_1:
+   \   000018   ....9253.... ADDX.W  #0x1, &data
+     22             fdata+=0.1;
+   \   00001E   3E40CDCC     MOV.W   #0xcccd, R14
+   \   000022   3F40CC3D     MOV.W   #0x3dcc, R15
+   \   000026   ....1C42.... MOVX.W  &fdata, R12
+   \   00002C   ....1D42.... MOVX.W  &fdata + 2, R13
+   \   000032   ........     CALLA   #_Add32f
+   \   000036   ....824C.... MOVX.W  R12, &fdata
+   \   00003C   ....824D.... MOVX.W  R13, &fdata + 2
+     23          }
+   \   000042   5A16         POPM.A  #0x6, R15
+   \   000044   0013         RETI
+   \   000046                REQUIRE _A_PBOUT_L
+
+   \                                 In  segment CODE, align 2
+     24          void main()
+   \                     main:
+     25          {
+     26          
+     27            DisableInterrupts();            //½ûÖ¹×ÜÖÐ¶Ï
+   \   000000   32C2         DINT
+   \   000002   0343         NOP
+     28            SMCLK_OUT();
+   \   000004   3E400201     MOV.W   #0x102, R14
+   \   000008   6D42         MOV.B   #0x4, R13
+   \   00000A   5C43         MOV.B   #0x1, R12
+   \   00000C   ........     CALLA   #GPIO_MultiBits_Init
+     29            LED_Init(LED_ALL);              //LEDµÆ³õÊ¼»¯
+   \   000010   6C43         MOV.B   #0x2, R12
+   \   000012   ........     CALLA   #LED_Init
+     30            OLED_Init();                       //OLED³õÊ¼»¯
+   \   000016   ........     CALLA   #OLED_Init
+     31            //LCD_INIT();
+     32            
+     33            Set_Vector_Handler(VECTOR_TIMER_A1_CCR0, TIMER1_A0_IRQ_Handler);   //ÉèÖÃ¶¨Ê±Æ÷TA1µÄÖÐ¶Ï·þÎñ³ÌÐòÎª£ºTIMER1_A0_IRQ_Handler
+   \   00001A   ........     MOVA    #TIMER1_A0_IRQ_Handler, R13
+   \   00001E   7C403100     MOV.B   #0x31, R12
+   \   000022   ........     CALLA   #Set_Vector_Handler
+     34            TIMER_Interval_Ms(TIMER_A1, 500);    //ÉèÖÃTA1Îª¶¨Ê±ÖÐ¶Ï£¬ÖÐ¶ÏÊ±¼äÎª500Ms
+   \   000026   3E4020A1     MOV.W   #0xa120, R14
+   \   00002A   3F400700     MOV.W   #0x7, R15
+   \   00002E   5C43         MOV.B   #0x1, R12
+   \   000030   ........     CALLA   #TIMER_Interval_Us
+     35            TIMER_ITConfig (TIMER_A1, TIMER_CCR0_IRQn, ENABLE);            //Ê¹ÄÜTIMERµÄÄ³Ò»¸öÖÐ¶Ï
+   \   000034   5E43         MOV.B   #0x1, R14
+   \   000036   4D43         MOV.B   #0x0, R13
+   \   000038   5C43         MOV.B   #0x1, R12
+   \   00003A   ........     CALLA   #TIMER_ITConfig
+     36            
+     37            //OLEDÏÔÊ¾×Ö·û£¬×Ö·û´®£¬ÕûÊý£¬Ð¡Êý£¬Ò»¸öº¯Êý¾Í¹»ÁË
+     38            OLED_Printf_6x8(0,0,"A");//ÏÔÊ¾Ò»¸ö×Ö·û
+   \   00003E   ........     MOVA    #`?<Constant "A">`, R14
+   \   000042   4D43         MOV.B   #0x0, R13
+   \   000044   4C43         MOV.B   #0x0, R12
+   \   000046   ........     CALLA   #OLED_Printf_6x8
+     39            OLED_Printf_6x8(0,6,"BCDE!");//ÏÔÊ¾Ò»¸ö×Ö·û´®
+   \   00004A   ........     MOVA    #`?<Constant "BCDE!">`, R14
+   \   00004E   7D400600     MOV.B   #0x6, R13
+   \   000052   4C43         MOV.B   #0x0, R12
+   \   000054   ........     CALLA   #OLED_Printf_6x8
+     40            OLED_Printf_6x8(1,0,"%d",-100);//ÏÔÊ¾Ò»¸öÕûÊý
+   \   000058   30129CFF     PUSH.W  #0xff9c
+   \   00005C   ........     MOVA    #`?<Constant "%d">`, R14
+   \   000060   4D43         MOV.B   #0x0, R13
+   \   000062   5C43         MOV.B   #0x1, R12
+   \   000064   ........     CALLA   #OLED_Printf_6x8
+     41            OLED_Printf_6x8(2,0,"%.5f",-100.008310);//ÏÔÊ¾Ò»¸ö¸¡µãÊý
+   \   000068   3012C8C2     PUSH.W  #0xc2c8
+   \   00006C   30124104     PUSH.W  #0x441
+   \   000070   ........     MOVA    #`?<Constant "%.5f">`, R14
+   \   000074   4D43         MOV.B   #0x0, R13
+   \   000076   6C43         MOV.B   #0x2, R12
+   \   000078   ........     CALLA   #OLED_Printf_6x8
+     42            
+     43            EnableInterrupts();
+   \   00007C   32D2         EINT
+   \   00007E   31500600     ADD.W   #0x6, SP
+     44            while(1)
+     45            {  
+     46              //OLED_Printf_6x8(3,0,"data=%d\nfdata=%f",data,fdata);//ÏÔÊ¾¸üÐÂ 
+     47               DELAY_MS(500);
+   \                     ??main_0:
+   \   000082                ////////////// Start of 500000 cycles delay.
+   \   000082   3F4046E8     MOV.W   #0xe846, R15
+   \   000086   0343         NOP
+   \   000088   1E43         MOV.W   #0x1, R14
+   \                     ??main_3:
+   \   00008A   3F53         ADD.W   #0xffff, R15
+   \   00008C   3E63         ADDC.W  #0xffff, R14
+   \   00008E   FD2F         JC      ??main_3
+   \   000090                ////////////// End of delay code.
+     48               PIN_OUT(P1,0) = !PIN_OUT(P1,0);
+   \   000090   5E43         MOV.B   #0x1, R14
+   \   000092   5EE20202     XOR.B   &0x202, R14
+   \   000096   5EF3         AND.B   #0x1, R14
+   \   000098   D2B30202     BIT.B   #0x1, &0x202
+   \   00009C   0328         JNC     ??main_2
+   \   00009E   D2C30202     BIC.B   #0x1, &0x202
+   \   0000A2   EF3F         JMP     ??main_0
+   \                     ??main_2:
+   \   0000A4   D2D30202     BIS.B   #0x1, &0x202
+   \   0000A8   EC3F         JMP     ??main_0
+   \   0000AA   0343         NOP
+   \   0000AC                REQUIRE _A_PAOUT_L
+     49            }
+     50          }
+
+   \                                 In  segment DATA20_ID, align 2, align-sorted
+   \                     `?<Initializer for data>`:
+   \   000000   E803         DC16 1000
+
+   \                                 In  segment DATA20_ID, align 2, align-sorted
+   \                     `?<Initializer for fdata>`:
+   \   000000   0000803F     DC32 3F800000H
+
+   \                                 In  segment DATA20_C, align 1, align-sorted
+   \                     `?<Constant "A">`:
+   \   000000   4100         DC8 "A"
+
+   \                                 In  segment DATA20_C, align 1, align-sorted
+   \                     `?<Constant "BCDE!">`:
+   \   000000   424344452100 DC8 "BCDE!"
+
+   \                                 In  segment DATA20_C, align 1, align-sorted
+   \                     `?<Constant "%d">`:
+   \   000000   256400       DC8 "%d"
+
+   \                                 In  segment DATA20_C, align 1, align-sorted
+   \                     `?<Constant "%.5f">`:
+   \   000000   252E356600   DC8 "%.5f"
+
+   Maximum stack usage in bytes:
+
+   CSTACK Function
+   ------ --------
+      28  TIMER1_A0_IRQ_Handler
+            28 -> _Add32f
+      10  main
+             4 -> GPIO_MultiBits_Init
+             4 -> LED_Init
+             4 -> OLED_Init
+            10 -> OLED_Printf_6x8
+             4 -> OLED_Printf_6x8
+             6 -> OLED_Printf_6x8
+             4 -> Set_Vector_Handler
+             4 -> TIMER_ITConfig
+             4 -> TIMER_Interval_Us
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       5  ?<Constant "%.5f">
+       3  ?<Constant "%d">
+       2  ?<Constant "A">
+       6  ?<Constant "BCDE!">
+       2  ?<Initializer for data>
+       4  ?<Initializer for fdata>
+      70  TIMER1_A0_IRQ_Handler
+       2  _A_PAOUT_L
+       2  _A_PBOUT_L
+       2  data
+       4  fdata
+     172  main
+
+ 
+ 172 bytes in segment CODE
+   4 bytes in segment DATA16_AN
+  16 bytes in segment DATA20_C
+   6 bytes in segment DATA20_I
+   6 bytes in segment DATA20_ID
+  70 bytes in segment ISR_CODE
+ 
+ 242 bytes of CODE  memory
+  22 bytes of CONST memory
+   6 bytes of DATA  memory (+ 4 bytes shared)
+
+Errors: none
+Warnings: none

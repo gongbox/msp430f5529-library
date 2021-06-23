@@ -1,0 +1,441 @@
+###############################################################################
+#                                                                             #
+#                                                       06/Jun/2016  16:42:18 #
+# IAR C/C++ Compiler V5.50.1.20465/W32, Evaluation edition for MSP430         #
+# Copyright 1996-2012 IAR Systems AB.                                         #
+#                                                                             #
+#    __rt_version  =  3                                                       #
+#    __double_size =  32                                                      #
+#    __reg_r4      =  free                                                    #
+#    __reg_r5      =  free                                                    #
+#    __pic         =  no                                                      #
+#    __core        =  430X                                                    #
+#    __data_model  =  large                                                   #
+#    Source file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\LED\LED.c                               #
+#    Command line  =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\LED\LED.c -D NDEBUG -D RAM_VECTOR -lC   #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\List\ -lA C:\Users\615\Desktop\MSP430\MS #
+#                     P430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Release\List\ -o        #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\Obj\ -D__MSP430F5529__ -e --double=32    #
+#                     --dlib_config "D:\Program Files (x86)\IAR               #
+#                     Systems\Embedded Workbench 6.4                          #
+#                     Evaluation\430\LIB\DLIB\dl430xlfn.h" -I                 #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\ -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Ê #
+#                     ý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\inc\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\ -I C:\Users\615\Desktop\MSP430\MSP4 #
+#                     30F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\src\USB\ -I       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_config\ -I                   #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_User\ -I                     #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\srcUSB\USB_API\USB_CDC_API\ -I           #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_API\USB_HID_API\ -I          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_API\USB_MSC_API\ -I          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\KEY\ -I C:\Users\615\Desktop\MSP430\MSP #
+#                     430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\LED\ -I         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\12864\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\oled\ -I      #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\mpu6050\inc\ -I                         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\mpu6050\src\ -I                         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\nokia5110\inc\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\nokia5110\src\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\LQ_1.8_TFT\ -I                          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\LCD_API\ -I                             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\2.2TFT\ -I                              #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\delay\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\ -I             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\System\inc\ -I C:\Users\615\Desktop\MSP430\MSP43 #
+#                     0F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\src\ -I             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\User\ -I C:\Users\615\Desktop\MSP430\MSP430F5529 #
+#                     ¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\User\USER\ -I                    #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\UCOSII\CONFIG\ -I                            #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\uCOSII\App\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII\CONFIHG\    #
+#                     -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ #
+#                     \¹¤³ÌÄ£°å\Lib\uCOSII\PORT\ -I                           #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\UCOSII\CORE\ -I                              #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\FatFs\ -I C:\Users\615\Desktop\MSP430\MSP430 #
+#                     F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\FatFs\option\           #
+#                     --core=430X --data_model=large -Oh --multiplier=32      #
+#                     --multiplier_location=4C0 --hw_workaround=CPU40         #
+#    List file     =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\List\LED.lst                             #
+#    Object file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\Obj\LED.r43                              #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\LED\LED.c
+      1          #include "LED.h"
+      2          #include "gpio.h"
+      3          #include "system.h"
+      4          //¶¨ÒåLEDÒý½Å
+
+   \                                 In  segment DATA20_C, align 1, align-sorted
+      5          const IO_PIN LED_PIN[LED_NUM]=
+   \                     LED_PIN:
+   \   000000   00000006     DC8 0, 0, 0, 6
+      6          {
+      7            {LED0_PORT,LED0_PIN},
+      8            {LED1_PORT,LED1_PIN},
+      9          };//LEDÒý½Å
+     10          /*******************************************************************************
+     11          *  º¯ÊýÃû³Æ£ºLED_Init( LEDn led )
+     12          *  ¹¦ÄÜËµÃ÷£ºLEDµÆ³õÊ¼»¯
+     13          *  ²ÎÊýËµÃ÷£ºLEDn led :LED£¨LED0,LED1...£©
+     14          *  º¯Êý·µ»Ø£ºÎÞ
+     15          *  Ê¹ÓÃÊ¾Àý£ºLED_Init( LED0 );   //³õÊ¼»¯LED0
+     16          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+     17          void LED_Init( LEDn led )
+   \                     LED_Init:
+     18          {
+   \   000000   0A14         PUSHM.A #0x1, R10
+   \   000002   4A4C         MOV.B   R12, R10
+     19            if(led == LED_ALL)
+   \   000004   6C93         CMP.B   #0x2, R12
+   \   000006   0A20         JNE     ??LED_Init_0
+     20            {
+     21              for(led = LED0;led < LED_NUM;led++)
+     22              {
+     23                GPIO_Init(LED_PIN[led].Port, LED_PIN[led].Pin, GPO);
+   \   000008   2E43         MOV.W   #0x2, R14
+   \   00000A   5D43         MOV.B   #0x1, R13
+   \   00000C   4C43         MOV.B   #0x0, R12
+   \   00000E   ........     CALLA   #GPIO_MultiBits_Init
+   \   000012   2E43         MOV.W   #0x2, R14
+   \   000014   7D404000     MOV.B   #0x40, R13
+   \   000018   4C43         MOV.B   #0x0, R12
+   \   00001A   0E3C         JMP     ??LED_Init_1
+     24              }
+     25            }
+     26            else
+     27            {
+     28              GPIO_Init(LED_PIN[led].Port, LED_PIN[led].Pin, GPO);
+   \                     ??LED_Init_0:
+   \   00001C   4F4C         MOV.B   R12, R15
+   \   00001E   EF0F         ADDA    R15, R15
+   \   000020   2E43         MOV.W   #0x2, R14
+   \   000022   1D43         MOV.W   #0x1, R13
+   \   000024   ....5C4F.... MOVX.B  LED_PIN + 1(R15), R12
+   \   00002A   5C83         SUB.B   #0x1, R12
+   \   00002C   0230         JN      ??LED_Init_2
+   \   00002E                RPT     R12
+   \   00002E   CC180D5D     RLAX.W  R13
+   \                     ??LED_Init_2:
+   \   000032   ....5C4F.... MOVX.B  LED_PIN(R15), R12
+   \                     ??LED_Init_1:
+   \   000038   ........     CALLA   #GPIO_MultiBits_Init
+     29            }
+     30            LED_Off (led);
+   \   00003C   4C4A         MOV.B   R10, R12
+   \   00003E   ........     CALLA   #LED_Off
+     31          }
+   \   000042   0A16         POPM.A  #0x1, R10
+   \   000044   1001         RETA
+     32          /*******************************************************************************
+     33          *  º¯ÊýÃû³Æ£ºLED_SetStatus(LEDn led,STATUS status)
+     34          *  ¹¦ÄÜËµÃ÷£ºÉèÖÃLED×´Ì¬
+     35          *  ²ÎÊýËµÃ÷£ºLEDn led      :LED£¨LED0,LED1...£©
+     36                       STATUS status :ÉèÖÃÊÇ·ñµãÁÁLED
+     37          *  º¯Êý·µ»Ø£ºÎÞ
+     38          *  Ê¹ÓÃÊ¾Àý£ºLED_SetStatus(LED0,SET);  //LED0ÁÁ
+     39          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   ....5D4C.... MOVX.B  LED_PIN + 1(R12), R13
+   \   000006   ....5C4F.... MOVX.B  LED_PIN(R15), R12
+   \   00000C   1001         RETA
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine4:
+   \   000000   4D43         MOV.B   #0x0, R13
+   \   000002   4C43         MOV.B   #0x0, R12
+   \   000004   ........     BRA     #GPIO_Bit_Set
+
+   \                                 In  segment CODE, align 2
+     40          void LED_SetStatus(LEDn led,STATUS status)
+   \                     LED_SetStatus:
+     41          {
+   \   000000   0A14         PUSHM.A #0x1, R10
+     42            if(LED_ON == RESET)
+     43            {
+     44              status = !status;
+                            ^
+Warning[Pe188]: enumerated type mixed with another type
+   \   000002   4D93         CMP.B   #0x0, R13
+   \   000004   0220         JNE     ??LED_SetStatus_0
+   \   000006   5A43         MOV.B   #0x1, R10
+   \   000008   013C         JMP     ??LED_SetStatus_1
+   \                     ??LED_SetStatus_0:
+   \   00000A   4A43         MOV.B   #0x0, R10
+     45            }
+     46            if(led == LED_ALL)
+   \                     ??LED_SetStatus_1:
+   \   00000C   6C93         CMP.B   #0x2, R12
+   \   00000E   0820         JNE     ??LED_SetStatus_2
+     47            {
+     48              for(led = LED0;led < LED_NUM;led++)
+     49              {
+     50                GPIO_Bit_Set(LED_PIN[led].Port, LED_PIN[led].Pin, status);
+   \   000010   4E4A         MOV.B   R10, R14
+   \   000012   ........     CALLA   #?Subroutine4
+   \                     ??CrossCallReturnLabel_3:
+   \   000016   4E4A         MOV.B   R10, R14
+   \   000018   7D400600     MOV.B   #0x6, R13
+   \   00001C   4C43         MOV.B   #0x0, R12
+   \   00001E   063C         JMP     ??LED_SetStatus_3
+     51              }
+     52            }
+     53            else
+     54            {
+     55              GPIO_Bit_Set(LED_PIN[led].Port, LED_PIN[led].Pin, status);
+   \                     ??LED_SetStatus_2:
+   \   000020   4C4C         MOV.B   R12, R12
+   \   000022   EC0C         ADDA    R12, R12
+   \   000024   CF0C         MOVA    R12, R15
+   \   000026   4E4A         MOV.B   R10, R14
+   \   000028   ........     CALLA   #?Subroutine2
+     56            }
+   \                     ??LED_SetStatus_3:
+   \   00002C   ........     CALLA   #GPIO_Bit_Set
+     57          }
+   \   000030   0A16         POPM.A  #0x1, R10
+   \   000032   1001         RETA
+     58          /*******************************************************************************
+     59          *  º¯ÊýÃû³Æ£ºLED_Off (LEDn led)
+     60          *  ¹¦ÄÜËµÃ÷£º¹Ø±ÕlED
+     61          *  ²ÎÊýËµÃ÷£ºLEDn led      :LED£¨LED0,LED1...£©
+     62          *  º¯Êý·µ»Ø£ºÎÞ
+     63          *  Ê¹ÓÃÊ¾Àý£ºLED_Off(LED0);  //LED0Ãð
+     64          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   7D400600     MOV.B   #0x6, R13
+   \   000004   4C43         MOV.B   #0x0, R12
+   \   000006   ........     BRA     #GPIO_Bit_Set
+
+   \                                 In  segment CODE, align 2, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   ........     CALLA   #?Subroutine2
+   \                     ??CrossCallReturnLabel_1:
+   \   000004   ........     BRA     #GPIO_Bit_Set
+
+   \                                 In  segment CODE, align 2
+     65          void LED_Off (LEDn led)
+   \                     LED_Off:
+     66          {
+     67            if(led == LED_ALL)
+   \   000000   6C93         CMP.B   #0x2, R12
+   \   000002   0520         JNE     ??LED_Off_0
+     68            {
+     69              for(led = LED0;led < LED_NUM;led++)
+     70              {
+     71                GPIO_Bit_Set(LED_PIN[led].Port, LED_PIN[led].Pin, LED_OFF);
+   \   000004   5E43         MOV.B   #0x1, R14
+   \   000006   ........     CALLA   #?Subroutine4
+   \                     ??CrossCallReturnLabel_4:
+   \   00000A   5E43         MOV.B   #0x1, R14
+   \   00000C   ....         JMP     ?Subroutine1
+     72              }
+     73            }
+     74            else
+     75            {
+     76              GPIO_Bit_Set(LED_PIN[led].Port, LED_PIN[led].Pin, LED_OFF);
+   \                     ??LED_Off_0:
+   \   00000E   4C4C         MOV.B   R12, R12
+   \   000010   EC0C         ADDA    R12, R12
+   \   000012   CF0C         MOVA    R12, R15
+   \   000014   5E43         MOV.B   #0x1, R14
+   \   000016   ....         JMP     ?Subroutine0
+   \   000018   0343         NOP
+     77            }
+     78          }
+     79          /*******************************************************************************
+     80          *  º¯ÊýÃû³Æ£ºLED_On  (LEDn led)
+     81          *  ¹¦ÄÜËµÃ÷£ºµÆÁÁ
+     82          *  ²ÎÊýËµÃ÷£ºLEDn led      :LED£¨LED0,LED1...£©
+     83          *  º¯Êý·µ»Ø£ºÎÞ
+     84          *  Ê¹ÓÃÊ¾Àý£ºLED_On(LED0);  //LED0ÁÁ
+     85          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2, keep-with-next
+     86          void LED_On  (LEDn led)
+   \                     LED_On:
+     87          {
+     88            if(led == LED_ALL)
+   \   000000   6C93         CMP.B   #0x2, R12
+   \   000002   0520         JNE     ??LED_On_0
+     89            {
+     90              for(led = LED0;led < LED_NUM;led++)
+     91              {
+     92                GPIO_Bit_Set(LED_PIN[led].Port, LED_PIN[led].Pin, LED_ON);
+   \   000004   4E43         MOV.B   #0x0, R14
+   \   000006   ........     CALLA   #?Subroutine4
+   \                     ??CrossCallReturnLabel_5:
+   \   00000A   4E43         MOV.B   #0x0, R14
+   \   00000C   ....         JMP     ?Subroutine1
+     93              }
+     94            }
+     95            else
+     96            {
+     97              GPIO_Bit_Set(LED_PIN[led].Port, LED_PIN[led].Pin, LED_ON);
+   \                     ??LED_On_0:
+   \   00000E   4C4C         MOV.B   R12, R12
+   \   000010   EC0C         ADDA    R12, R12
+   \   000012   CF0C         MOVA    R12, R15
+   \   000014   4E43         MOV.B   #0x0, R14
+   \   000016   ....         JMP     ?Subroutine0
+   \   000018   0343         NOP
+     98            }
+     99          }
+    100          /*******************************************************************************
+    101          *  º¯ÊýÃû³Æ£ºLED_Turn(LEDn led)
+    102          *  ¹¦ÄÜËµÃ÷£ºµÆ·­×ª
+    103          *  ²ÎÊýËµÃ÷£ºLEDn led      :LED£¨LED0,LED1...£©
+    104          *  º¯Êý·µ»Ø£ºÎÞ
+    105          *  Ê¹ÓÃÊ¾Àý£ºLED_Turn(LED0);  //LED0Êä³ö·­×ª
+    106          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+    107          void LED_Turn(LEDn led)
+   \                     LED_Turn:
+    108          {
+    109            if(led == LED_ALL)
+   \   000000   6C93         CMP.B   #0x2, R12
+   \   000002   0920         JNE     ??LED_Turn_0
+    110            {
+    111              for(led = LED0;led < LED_NUM;led++)
+    112              {
+    113                GPIO_Bit_Turn(LED_PIN[led].Port, LED_PIN[led].Pin);
+   \   000004   4D43         MOV.B   #0x0, R13
+   \   000006   4C43         MOV.B   #0x0, R12
+   \   000008   ........     CALLA   #GPIO_Bit_Turn
+   \   00000C   7D400600     MOV.B   #0x6, R13
+   \   000010   4C43         MOV.B   #0x0, R12
+   \   000012   ........     BRA     #GPIO_Bit_Turn
+    114              }
+    115            }
+    116            else
+    117            {
+    118              GPIO_Bit_Turn(LED_PIN[led].Port, LED_PIN[led].Pin);
+   \                     ??LED_Turn_0:
+   \   000016   4C4C         MOV.B   R12, R12
+   \   000018   EC0C         ADDA    R12, R12
+   \   00001A   CF0C         MOVA    R12, R15
+   \   00001C   ........     CALLA   #?Subroutine2
+    119            }
+   \                     ??CrossCallReturnLabel_0:
+   \   000020   ........     BRA     #GPIO_Bit_Turn
+    120          }
+    121          /*******************************************************************************
+    122          *  º¯ÊýÃû³Æ£ºwater_lights(void)
+    123          *  ¹¦ÄÜËµÃ÷£ºÁ÷Ë®µÆ
+    124          *  ²ÎÊýËµÃ÷£ºÎÞ
+    125          *  º¯Êý·µ»Ø£ºÎÞ
+    126          *  Ê¹ÓÃÊ¾Àý£ºwater_lights(); //Á÷Ë®µÆÁÁÒ»´Î
+    127          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2, keep-with-next
+    128          void water_lights(void)
+   \                     water_lights:
+    129          {
+    130            LED_Turn(LED0);
+   \   000000   4C43         MOV.B   #0x0, R12
+   \   000002   ........     CALLA   #?Subroutine3
+    131            DELAY_MS(500);
+    132            LED_Turn(LED1);
+   \                     ??CrossCallReturnLabel_2:
+   \   000006   5C43         MOV.B   #0x1, R12
+   \   000008                REQUIRE ?Subroutine3
+   \   000008                // Fall through to label ?Subroutine3
+    133            DELAY_MS(500);
+    134          }
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine3:
+   \   000000   ........     CALLA   #LED_Turn
+   \   000004                ////////////// Start of 500000 cycles delay.
+   \   000004   3F4046E8     MOV.W   #0xe846, R15
+   \   000008   0343         NOP
+   \   00000A   1E43         MOV.W   #0x1, R14
+   \                     ??Subroutine3_1:
+   \   00000C   3F53         ADD.W   #0xffff, R15
+   \   00000E   3E63         ADDC.W  #0xffff, R14
+   \   000010   FD2F         JC      ??Subroutine3_1
+   \   000012                ////////////// End of delay code.
+   \   000012   1001         RETA
+
+   Maximum stack usage in bytes:
+
+   CSTACK Function
+   ------ --------
+       8  LED_Init
+            8 -> GPIO_MultiBits_Init
+            8 -> LED_Off
+       4  LED_Off
+            4 -> GPIO_Bit_Set
+       4  LED_On
+            4 -> GPIO_Bit_Set
+       8  LED_SetStatus
+            8 -> GPIO_Bit_Set
+       4  LED_Turn
+            4 -> GPIO_Bit_Turn
+       4  water_lights
+            4 -> LED_Turn
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       8  ?Subroutine0
+      10  ?Subroutine1
+      14  ?Subroutine2
+      20  ?Subroutine3
+       8  ?Subroutine4
+      70  LED_Init
+      26  LED_Off
+      26  LED_On
+       4  LED_PIN
+      52  LED_SetStatus
+      36  LED_Turn
+       8  water_lights
+
+ 
+ 278 bytes in segment CODE
+   4 bytes in segment DATA20_C
+ 
+ 278 bytes of CODE  memory
+   4 bytes of CONST memory
+
+Errors: none
+Warnings: 1

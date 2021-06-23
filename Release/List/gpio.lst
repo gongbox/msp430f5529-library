@@ -1,0 +1,516 @@
+###############################################################################
+#                                                                             #
+#                                                       06/Jun/2016  16:42:26 #
+# IAR C/C++ Compiler V5.50.1.20465/W32, Evaluation edition for MSP430         #
+# Copyright 1996-2012 IAR Systems AB.                                         #
+#                                                                             #
+#    __rt_version  =  3                                                       #
+#    __double_size =  32                                                      #
+#    __reg_r4      =  free                                                    #
+#    __reg_r5      =  free                                                    #
+#    __pic         =  no                                                      #
+#    __core        =  430X                                                    #
+#    __data_model  =  large                                                   #
+#    Source file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\gpio.c                               #
+#    Command line  =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\gpio.c -D NDEBUG -D RAM_VECTOR -lC   #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\List\ -lA C:\Users\615\Desktop\MSP430\MS #
+#                     P430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Release\List\ -o        #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\Obj\ -D__MSP430F5529__ -e --double=32    #
+#                     --dlib_config "D:\Program Files (x86)\IAR               #
+#                     Systems\Embedded Workbench 6.4                          #
+#                     Evaluation\430\LIB\DLIB\dl430xlfn.h" -I                 #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\ -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Ê #
+#                     ý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\inc\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\ -I C:\Users\615\Desktop\MSP430\MSP4 #
+#                     30F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\src\USB\ -I       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_config\ -I                   #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_User\ -I                     #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\srcUSB\USB_API\USB_CDC_API\ -I           #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_API\USB_HID_API\ -I          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_API\USB_MSC_API\ -I          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\KEY\ -I C:\Users\615\Desktop\MSP430\MSP #
+#                     430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\LED\ -I         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\12864\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\oled\ -I      #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\mpu6050\inc\ -I                         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\mpu6050\src\ -I                         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\nokia5110\inc\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\nokia5110\src\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\LQ_1.8_TFT\ -I                          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\LCD_API\ -I                             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\2.2TFT\ -I                              #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\delay\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\ -I             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\System\inc\ -I C:\Users\615\Desktop\MSP430\MSP43 #
+#                     0F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\src\ -I             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\User\ -I C:\Users\615\Desktop\MSP430\MSP430F5529 #
+#                     ¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\User\USER\ -I                    #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\UCOSII\CONFIG\ -I                            #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\uCOSII\App\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII\CONFIHG\    #
+#                     -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ #
+#                     \¹¤³ÌÄ£°å\Lib\uCOSII\PORT\ -I                           #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\UCOSII\CORE\ -I                              #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\FatFs\ -I C:\Users\615\Desktop\MSP430\MSP430 #
+#                     F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\FatFs\option\           #
+#                     --core=430X --data_model=large -Oh --multiplier=32      #
+#                     --multiplier_location=4C0 --hw_workaround=CPU40         #
+#    List file     =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\List\gpio.lst                            #
+#    Object file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\Obj\gpio.r43                             #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\src\gpio.c
+      1          #include "gpio.h"
+
+   \                                 In  segment DATA16_AN, at 0x200
+   \   union <unnamed> __data16 _A_PAIN_L
+   \                     _A_PAIN_L:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_AN, at 0x220
+   \   union <unnamed> __data16 _A_PBIN_L
+   \                     _A_PBIN_L:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_AN, at 0x240
+   \   union <unnamed> __data16 _A_PCIN_L
+   \                     _A_PCIN_L:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_AN, at 0x260
+   \   union <unnamed> __data16 _A_PDIN_L
+   \                     _A_PDIN_L:
+   \   000000                DS8 2
+      2          //¶¨Òå8¸öÖ¸ÕëÊý×é±£´æ GPIOX µÄµØÖ·
+
+   \                                 In  segment DATA20_C, align 2, align-sorted
+      3          const GPIO_MemMapPtr GPIOX[] ={P1_BASE_PTR,P2_BASE_PTR,P3_BASE_PTR,P4_BASE_PTR,P5_BASE_PTR,P6_BASE_PTR,P7_BASE_PTR,P8_BASE_PTR}; 
+   \                     GPIOX:
+   \   000000   ............ DC32 _A_PAIN_L, _A_PAIN_L + 1H, _A_PBIN_L, _A_PBIN_L + 1H, _A_PCIN_L
+   \            ............
+   \            ............
+   \            ....        
+   \   000014   ............ DC32 _A_PCIN_L + 1H, _A_PDIN_L, _A_PDIN_L + 1H
+   \            ............
+      4          /*********************************************************************************
+      5          º¯ÊýÃû£ºIO¿Ú³õÊ¼»¯
+      6          Èë¿Ú²ÎÊý£ºPORTn portn    ¶ÔÓ¦IO¶Ë¿Ú
+      7                    uint8_t pin     ¶ÔÓ¦IOÒý½ÅÎ»ÖÃ
+      8                    uint16_t config     
+      9                    ¶ÔÓ¦IO¿ÚÅäÖÃ {
+     10                                      GPI                   ,// ÊäÈë·½Ïò
+     11                                      GPO                   ,// Êä³ö·½Ïò
+     12                                      LDS                   ,// µÍÇý¶¯ÄÜÁ¦
+     13                                      HDS                   ,// ¸ßÇý¶¯ÄÜÁ¦
+     14                                      PULL_DOWN             ,// ÏÂÀ­
+     15                                      PULL_UP               ,// ÉÏÀ­
+     16                                      IRQ_RISING            ,// ÉÏÉýÑØ´¥·¢ÖÐ¶Ï
+     17                                      IRQ_FALLING           ,// ÏÂ½µÑØ´¥·¢ÖÐ¶Ï
+     18                                      SEL                   ,// µÚ¶þ¸´ÓÃ¹¦ÄÜ
+     19                                  }  
+     20          Ê¹ÓÃÀý³Ì:GPIO_MultiBits_Init(P2,BIT3,GPO|HDS);   //³õÊ¼»¯P2.3ÎªÊä³ö·ÅÏò£¬¸ßÇý¶¯ÄÜÁ¦
+     21          **********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+     22          void GPIO_MultiBits_Init(PORTn portn,uint8_t BITs,uint16_t config)
+   \                     GPIO_MultiBits_Init:
+     23          {
+   \   000000   0A14         PUSHM.A #0x1, R10
+     24            if((config & SEL) == SEL)
+   \   000002   4F4C         MOV.B   R12, R15
+   \   000004   4F06         RLAM.A  #0x2, R15
+   \   000006   ....5F4F.... MOVX.A  GPIOX(R15), R15
+   \   00000C   3EB00001     BIT.W   #0x100, R14
+   \   000010   0328         JNC     ??GPIO_MultiBits_Init_0
+     25            {
+     26              GPIOX[portn]->SEL |= BITs;                    //Ñ¡ÔñÎªµÚ¶þ¹¦ÄÜ
+   \   000012   CFDD0A00     BIS.B   R13, 0xa(R15)
+   \   000016   023C         JMP     ??GPIO_MultiBits_Init_1
+     27            }
+     28            else
+     29            {
+     30              GPIOX[portn]->SEL &=~BITs;                    //Ñ¡ÔñÎªIO¿Ú¹¦ÄÜ
+   \                     ??GPIO_MultiBits_Init_0:
+   \   000018   CFCD0A00     BIC.B   R13, 0xa(R15)
+     31            }
+     32            
+     33            if((config & GPO) == GPO)              //ÅÐ¶Ï·½Ïò
+   \                     ??GPIO_MultiBits_Init_1:
+   \   00001C   2EB3         BIT.W   #0x2, R14
+   \   00001E   0A28         JNC     ??GPIO_MultiBits_Init_2
+     34            {
+     35              GPIOX[portn]->PDIR |= BITs;       //ÉèÖÃÎªÊä³ö·½Ïò
+   \   000020   CFDD0400     BIS.B   R13, 0x4(R15)
+     36              
+     37              if((config&HDS) == HDS)            //ÅÐ¶ÏÇý¶¯ÄÜÁ¦
+   \   000024   3EB2         BIT.W   #0x8, R14
+   \   000026   0328         JNC     ??GPIO_MultiBits_Init_3
+     38              {
+     39                GPIOX[portn]->DS |= BITs;          //ÉèÎª¸ßÇý¶¯ÄÜÁ¦
+   \   000028   CFDD0800     BIS.B   R13, 0x8(R15)
+   \   00002C   253C         JMP     ??GPIO_MultiBits_Init_4
+     40              }
+     41              else
+     42              {
+     43                GPIOX[portn]->DS &=~BITs;          //ÉèÎªµÍÇý¶¯ÄÜÁ¦
+   \                     ??GPIO_MultiBits_Init_3:
+   \   00002E   CFCD0800     BIC.B   R13, 0x8(R15)
+   \   000032   223C         JMP     ??GPIO_MultiBits_Init_4
+     44              }
+     45            }
+     46            else   //Èç¹ûÊÇÊäÈë·½Ïò
+     47            {
+     48              GPIOX[portn]->PDIR &=~BITs;      //ÉèÖÃÎªÊäÈë·½Ïò
+   \                     ??GPIO_MultiBits_Init_2:
+   \   000034   4A4D         MOV.B   R13, R10
+   \   000036   7AE3         XOR.B   #0xff, R10
+   \   000038   CFFA0400     AND.B   R10, 0x4(R15)
+     49              
+     50              if((config & PULL_DOWN) == PULL_DOWN) //ÅÐ¶ÏÊÇ·ñ¿ªÆôÏÂÀ­
+   \   00003C   3EB01000     BIT.W   #0x10, R14
+   \   000040   0528         JNC     ??GPIO_MultiBits_Init_5
+     51              {
+     52                GPIOX[portn]->REN  |= BITs;             //¿ªÆôÉÏ\ÏÂÀ­
+   \   000042   CFDD0600     BIS.B   R13, 0x6(R15)
+     53                GPIOX[portn]->POUT &=~BITs;             //ÉèÖÃÎªÏÂÀ­
+   \   000046   CFFA0200     AND.B   R10, 0x2(R15)
+   \   00004A   0A3C         JMP     ??GPIO_MultiBits_Init_6
+     54              }
+     55              else if((config & PULL_UP) == PULL_UP)//ÅÐ¶ÏÊÇ·ñ¿ªÆôÉÏÀ­
+   \                     ??GPIO_MultiBits_Init_5:
+   \   00004C   3EB02000     BIT.W   #0x20, R14
+   \   000050   0528         JNC     ??GPIO_MultiBits_Init_7
+     56              {
+     57                GPIOX[portn]->REN  |= BITs;             //¿ªÆôÉÏ\ÏÂÀ­
+   \   000052   CFDD0600     BIS.B   R13, 0x6(R15)
+     58                GPIOX[portn]->POUT |= BITs;             //ÉèÖÃÎªÉÏÀ­
+   \   000056   CFDD0200     BIS.B   R13, 0x2(R15)
+   \   00005A   023C         JMP     ??GPIO_MultiBits_Init_6
+     59              }
+     60              else
+     61              {
+     62                GPIOX[portn]->REN &=~BITs;              //¹Ø±ÕÉÏ\ÏÂÀ­
+   \                     ??GPIO_MultiBits_Init_7:
+   \   00005C   CFFA0600     AND.B   R10, 0x6(R15)
+     63              }
+     64              
+     65              if(portn <= P2) //Ð¡ÓÚµÈÓÚP2Ôò¿ÉÄÜ»áÅäÖÃIO¿ÚÖÐ¶Ï
+   \                     ??GPIO_MultiBits_Init_6:
+   \   000060   6C93         CMP.B   #0x2, R12
+   \   000062   0A2C         JC      ??GPIO_MultiBits_Init_4
+     66              {
+     67                GPIOX[portn]->IE &=~BITs;                  //¹Ø±ÕÖÐ¶Ï
+   \   000064   CFFA1A00     AND.B   R10, 0x1a(R15)
+     68                if((config & IRQ_RISING) == IRQ_RISING)       //Èç¹ûÓÐÉÏÉýÑØ
+   \   000068   3EB04000     BIT.W   #0x40, R14
+   \   00006C   0328         JNC     ??GPIO_MultiBits_Init_8
+     69                {
+     70                  GPIOX[portn]->IES |= BITs;                  //ÉèÎªÉÏÉýÑØ
+   \   00006E   CFDD1800     BIS.B   R13, 0x18(R15)
+   \   000072   023C         JMP     ??GPIO_MultiBits_Init_4
+     71                }
+     72                else 
+     73                {
+     74                  GPIOX[portn]->IES &=~BITs ;                 //ÉèÎªÏÂ½µÑØ
+   \                     ??GPIO_MultiBits_Init_8:
+   \   000074   CFFA1800     AND.B   R10, 0x18(R15)
+     75                } 
+     76              }
+     77            }
+     78          }
+   \                     ??GPIO_MultiBits_Init_4:
+   \   000078   0A16         POPM.A  #0x1, R10
+   \   00007A   1001         RETA
+     79          /*******************************************************************************
+     80          º¯ÊýÃû³Æ£ºIO¿ÚÒ»Î»Êä³öÉèÖÃ
+     81          Èë¿Ú²ÎÊý£ºPORTn portn    ¶ÔÓ¦IO¶Ë¿Ú
+     82                    uint8_t pin     ¶ÔÓ¦IOÒý½ÅÎ»ÖÃ
+     83                    uint8_t level   ÉèÖÃÊä³öµçÆ½£¨SET £º¸ßµçÆ½  RESET£ºµÍµçÆ½£©
+     84          *  Ê¹ÓÃÊ¾Àý£º
+     85          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2, keep-with-next
+     86          void GPIO_Bit_Set(PORTn portn,uint8_t pin,BOOL level)
+   \                     GPIO_Bit_Set:
+     87          {
+     88            if(level != RESET)
+   \   000000   ........     CALLA   #?Subroutine1
+   \                     ??CrossCallReturnLabel_8:
+   \   000004   4E93         CMP.B   #0x0, R14
+   \   000006   0324         JEQ     ??GPIO_Bit_Set_1
+     89            {
+     90              GPIOX[portn]->POUT |= (1<<pin);            //
+   \   000008   CCDF0200     BIS.B   R15, 0x2(R12)
+   \   00000C   1001         RETA
+     91            }
+     92            else 
+     93            {
+     94              GPIOX[portn]->POUT &=~(1<<pin);            //
+   \                     ??GPIO_Bit_Set_1:
+   \   00000E   CCCF0200     BIC.B   R15, 0x2(R12)
+     95            }
+     96          }
+   \   000012   1001         RETA
+
+   \                                 In  segment CODE, align 2, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   4C4C         MOV.B   R12, R12
+   \   000002   4C06         RLAM.A  #0x2, R12
+   \   000004   ....5C4C.... MOVX.A  GPIOX(R12), R12
+   \   00000A                REQUIRE ?Subroutine3
+   \   00000A                // Fall through to label ?Subroutine3
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine3:
+   \   000000   1F43         MOV.W   #0x1, R15
+   \   000002   5D83         SUB.B   #0x1, R13
+   \   000004   0230         JN      ??GPIO_ClearITPendingBit_0
+   \   000006                RPT     R13
+   \   000006   CD180F5F     RLAX.W  R15
+   \                     ??GPIO_ClearITPendingBit_0:
+   \   00000A   1001         RETA
+     97          /*******************************************************************************
+     98          º¯ÊýÃû³Æ£ºIO¿ÚÒ»Î»ÊäÈë¶ÁÈ¡
+     99          Èë¿Ú²ÎÊý£ºPORTn portn    ¶ÔÓ¦IO¶Ë¿Ú
+    100                    uint8_t pin     ¶ÔÓ¦IOÒý½ÅÎ»ÖÃ
+    101          ·µ»Ø²ÎÊý£ºuint8 ÊäÈëµçÆ½£¨SET £º¸ßµçÆ½  RESET£ºµÍµçÆ½£©
+    102          *  Ê¹ÓÃÊ¾Àý£º
+    103          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   4C4C         MOV.B   R12, R12
+   \   000002   4C06         RLAM.A  #0x2, R12
+   \   000004   ....5F4C.... MOVX.A  GPIOX(R12), R15
+   \   00000A   1001         RETA
+
+   \                                 In  segment CODE, align 2, keep-with-next
+    104          STATUS GPIO_Bit_Get(PORTn portn,uint8_t pin)
+   \                     GPIO_Bit_Get:
+    105          {
+    106            return (GPIOX[portn]->IN & (1<<pin)) ? SET : RESET;
+   \   000000   ........     CALLA   #?Subroutine2
+   \                     ??CrossCallReturnLabel_5:
+   \   000004   6E4F         MOV.B   @R15, R14
+   \   000006   ........     CALLA   #?Subroutine3
+   \                     ??CrossCallReturnLabel_6:
+   \   00000A   4EBF         BIT.B   R15, R14
+   \   00000C   0220         JNE     ??GPIO_Bit_Get_1
+   \   00000E   4C43         MOV.B   #0x0, R12
+   \   000010   1001         RETA
+   \                     ??GPIO_Bit_Get_1:
+   \   000012   5C43         MOV.B   #0x1, R12
+   \   000014   1001         RETA
+    107          }
+    108          /*******************************************************************************
+    109          º¯ÊýÃû³Æ£ºIO¿ÚÒ»Î»Êä³ö·­×ª
+    110          Èë¿Ú²ÎÊý£ºPORTn portn    ¶ÔÓ¦IO¶Ë¿Ú
+    111                    uint8_t pin     ¶ÔÓ¦IOÒý½ÅÎ»ÖÃ
+    112          *  Ê¹ÓÃÊ¾Àý£º
+    113          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   4C4C         MOV.B   R12, R12
+   \   000002   4C06         RLAM.A  #0x2, R12
+   \   000004   ....5E4C.... MOVX.A  GPIOX(R12), R14
+   \   00000A   ........     BRA     #?Subroutine3
+
+   \                                 In  segment CODE, align 2, keep-with-next
+    114          void GPIO_Bit_Turn  (PORTn portn,uint8_t pin)
+   \                     GPIO_Bit_Turn:
+    115          {
+    116            GPIOX[portn]->POUT ^=(1<<pin);
+   \   000000   ........     CALLA   #?Subroutine0
+   \                     ??CrossCallReturnLabel_2:
+   \   000004   CEEF0200     XOR.B   R15, 0x2(R14)
+    117          }
+   \   000008   1001         RETA
+    118          /*******************************************************************************
+    119          º¯ÊýÃû³Æ£ºIO¿Ú8Î»Êä³öÉèÖÃ
+    120          Èë¿Ú²ÎÊý£ºPORTn portn    ¶ÔÓ¦IO¶Ë¿Ú
+    121                    uint8_t level   ÉèÖÃ8Î»Êä³öµçÆ½£¨SET £º¸ßµçÆ½  RESET£ºµÍµçÆ½£©
+    122          *  Ê¹ÓÃÊ¾Àý£º
+    123          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2, keep-with-next
+    124          void GPIO_Byte_Set(PORTn portn,uint8_t value)
+   \                     GPIO_Byte_Set:
+    125          {
+    126            GPIOX[portn]->POUT = value;            //
+   \   000000   ........     CALLA   #?Subroutine2
+   \                     ??CrossCallReturnLabel_4:
+   \   000004   CF4D0200     MOV.B   R13, 0x2(R15)
+    127          }
+   \   000008   1001         RETA
+    128          /*******************************************************************************
+    129          º¯ÊýÃû³Æ£ºIO¿Ú8Î»ÊäÈë¶ÁÈ¡
+    130          Èë¿Ú²ÎÊý£ºPORTn portn    ¶ÔÓ¦IO¶Ë¿Ú
+    131          ·µ»Ø²ÎÊý£ºuint8 8Î»ÊäÈëµçÆ½£¨SET £º¸ßµçÆ½  RESET£ºµÍµçÆ½£©
+    132          *  Ê¹ÓÃÊ¾Àý£º
+    133          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2, keep-with-next
+    134          uint8_t GPIO_Byte_Get(PORTn portn)
+   \                     GPIO_Byte_Get:
+    135          {
+    136           return (GPIOX[portn]->IN);            //
+   \   000000   ........     CALLA   #?Subroutine2
+   \                     ??CrossCallReturnLabel_3:
+   \   000004   6C4F         MOV.B   @R15, R12
+   \   000006   1001         RETA
+    137          }
+    138          /*******************************************************************************
+    139          º¯ÊýÃû³Æ£ºÉèÖÃÊÇ·ñÔÊÐíIO¿ÚÖÐ¶Ï
+    140          Èë¿Ú²ÎÊý£ºPORTn portn    ¶ÔÓ¦IO¶Ë¿Ú
+    141                    uint8_t pin     ¶ÔÓ¦IOÒý½ÅÎ»ÖÃ
+    142          *  Ê¹ÓÃÊ¾Àý£º
+    143          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2, keep-with-next
+    144          void GPIO_ITConfig(PORTn portn,uint8_t pin,STATUS ITState)
+   \                     GPIO_ITConfig:
+    145          {
+    146            ASSERT(portn <= P2);                             //¶ÏÑÔ¼ì²âÊäÈë²ÎÊý
+    147            if(ITState != DISABLE)
+   \   000000   ........     CALLA   #?Subroutine1
+   \                     ??CrossCallReturnLabel_7:
+   \   000004   4D4F         MOV.B   R15, R13
+   \   000006   7DE3         XOR.B   #0xff, R13
+   \   000008   4E93         CMP.B   #0x0, R14
+   \   00000A   0524         JEQ     ??GPIO_ITConfig_1
+    148            {
+    149              GPIOX[portn]->IFG &=~(1<<pin);                  //ÇåÖÐ¶Ï±êÖ¾
+   \   00000C   CCFD1C00     AND.B   R13, 0x1c(R12)
+    150              GPIOX[portn]->IE |= (1<<pin);
+   \   000010   CCDF1A00     BIS.B   R15, 0x1a(R12)
+   \   000014   1001         RETA
+    151            }
+    152            else
+    153            {
+    154              GPIOX[portn]->IE &=~(1<<pin);
+   \                     ??GPIO_ITConfig_1:
+   \   000016   CCFD1A00     AND.B   R13, 0x1a(R12)
+    155            }
+    156          }
+   \   00001A   1001         RETA
+    157          /*******************************************************************************
+    158          º¯ÊýÃû³Æ£º»ñÈ¡Ä³Ò»Î»¶Ë¿ÚÖÐ¶Ï±êÖ¾
+    159          Èë¿Ú²ÎÊý£ºPORTn portn    ¶ÔÓ¦IO¶Ë¿Ú
+    160                    uint8_t pin     ¶ÔÓ¦IOÒý½ÅÎ»ÖÃ
+    161          *  Ê¹ÓÃÊ¾Àý£º
+    162          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+    163          STATUS GPIO_GetITStatus(PORTn portn,uint8_t pin)
+   \                     GPIO_GetITStatus:
+    164          {
+    165             return ((GPIOX[portn]->IFG & (1<<pin)) ? TRUE : FALSE);
+   \   000000   ........     CALLA   #?Subroutine0
+   \                     ??CrossCallReturnLabel_1:
+   \   000004   CEBF1C00     BIT.B   R15, 0x1c(R14)
+   \   000008   0220         JNE     ??GPIO_GetITStatus_1
+   \   00000A   4C43         MOV.B   #0x0, R12
+   \   00000C   1001         RETA
+   \                     ??GPIO_GetITStatus_1:
+   \   00000E   5C43         MOV.B   #0x1, R12
+   \   000010   1001         RETA
+    166          }
+    167          /*******************************************************************************
+    168          º¯ÊýÃû³Æ£ºÇå³ý8Î»ÖÐ¶Ï±êÖ¾
+    169          Èë¿Ú²ÎÊý£ºPORTn portn    ¶ÔÓ¦IO¶Ë¿Ú
+    170                    uint8_t pin     ¶ÔÓ¦IOÒý½ÅÎ»ÖÃ
+    171          *  Ê¹ÓÃÊ¾Àý£º
+    172          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+    173          void  GPIO_ClearITPendingBit(PORTn portn,uint8_t pin)
+   \                     GPIO_ClearITPendingBit:
+    174          {
+    175             GPIOX[portn]->IFG &=~(1<<pin);
+   \   000000   ........     CALLA   #?Subroutine0
+   \                     ??CrossCallReturnLabel_0:
+   \   000004   CECF1C00     BIC.B   R15, 0x1c(R14)
+    176          }
+   \   000008   1001         RETA
+
+   Maximum stack usage in bytes:
+
+   CSTACK Function
+   ------ --------
+       4  GPIO_Bit_Get
+       4  GPIO_Bit_Set
+       4  GPIO_Bit_Turn
+       4  GPIO_Byte_Get
+       4  GPIO_Byte_Set
+       4  GPIO_ClearITPendingBit
+       4  GPIO_GetITStatus
+       4  GPIO_ITConfig
+       8  GPIO_MultiBits_Init
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      14  ?Subroutine0
+      10  ?Subroutine1
+      12  ?Subroutine2
+      12  ?Subroutine3
+      32  GPIOX
+      22  GPIO_Bit_Get
+      20  GPIO_Bit_Set
+      10  GPIO_Bit_Turn
+       8  GPIO_Byte_Get
+      10  GPIO_Byte_Set
+      10  GPIO_ClearITPendingBit
+      18  GPIO_GetITStatus
+      28  GPIO_ITConfig
+     124  GPIO_MultiBits_Init
+       2  _A_PAIN_L
+       2  _A_PBIN_L
+       2  _A_PCIN_L
+       2  _A_PDIN_L
+
+ 
+ 298 bytes in segment CODE
+   8 bytes in segment DATA16_AN
+  32 bytes in segment DATA20_C
+ 
+ 298 bytes of CODE  memory
+  32 bytes of CONST memory
+   0 bytes of DATA  memory (+ 8 bytes shared)
+
+Errors: none
+Warnings: none

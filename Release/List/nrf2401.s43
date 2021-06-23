@@ -1,0 +1,1381 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+//                                                      06/Jun/2016  16:42:28 /
+// IAR C/C++ Compiler V5.50.1.20465/W32, Evaluation edition for MSP430        /
+// Copyright 1996-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    __rt_version  =  3                                                      /
+//    __double_size =  32                                                     /
+//    __reg_r4      =  free                                                   /
+//    __reg_r5      =  free                                                   /
+//    __pic         =  no                                                     /
+//    __core        =  430X                                                   /
+//    __data_model  =  large                                                  /
+//    Source file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\nrf24l01\nrf2401.c                    /
+//    Command line  =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\nrf24l01\nrf2401.c -D NDEBUG -D       /
+//                     RAM_VECTOR -lC C:\Users\615\Desktop\MSP430\MSP430F5529 /
+//                     ¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Release\List\ -lA               /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Release\List\ -o C:\Users\615\Desktop\MSP430\M /
+//                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Release\Obj\          /
+//                     -D__MSP430F5529__ -e --double=32 --dlib_config         /
+//                     "D:\Program Files (x86)\IAR Systems\Embedded           /
+//                     Workbench 6.4 Evaluation\430\LIB\DLIB\dl430xlfn.h" -I  /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\ -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº /
+//                     ¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\inc\ -I                    /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\ -I C:\Users\615\Desktop\MSP430\MS /
+//                     P430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\src\USB\ -I    /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_config\ -I                 /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_User\ -I                   /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\srcUSB\USB_API\USB_CDC_API\ -I         /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_API\USB_HID_API\ -I        /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_API\USB_MSC_API\ -I        /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\KEY\ -I C:\Users\615\Desktop\MSP430\M /
+//                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\LED\ -I      /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\12864\ -I                             /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\oled\ -I C:\Users\615\Desktop\MSP430\ /
+//                     MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\mpu6050\inc /
+//                     \ -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\ /
+//                     C°æ\¹¤³ÌÄ£°å\HardWare\mpu6050\src\ -I                  /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\nokia5110\inc\ -I                     /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\nokia5110\src\ -I                     /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\LQ_1.8_TFT\ -I                        /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\LCD_API\ -I                           /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\2.2TFT\ -I                            /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\delay\ -I                             /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\System\ -I C:\Users\615\Desktop\MSP430\MSP430F /
+//                     5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\inc\ -I              /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\System\src\ -I C:\Users\615\Desktop\MSP430\MSP /
+//                     430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\User\ -I                /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\User\USER\ -I C:\Users\615\Desktop\MSP430\MSP4 /
+//                     30F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\UCOSII\CONFIG\ -I    /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\uCOSII\App\ -I                             /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\uCOSII\CONFIHG\ -I                         /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\uCOSII\PORT\ -I                            /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\UCOSII\CORE\ -I                            /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\FatFs\ -I C:\Users\615\Desktop\MSP430\MSP4 /
+//                     30F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\FatFs\option\        /
+//                     --core=430X --data_model=large -Oh --multiplier=32     /
+//                     --multiplier_location=4C0 --hw_workaround=CPU40        /
+//    List file     =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Release\List\nrf2401.s43                       /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME nrf2401
+
+        RTMODEL "__SystemLibrary", "DLib"
+        RTMODEL "__core", "430X"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__double_size", "32"
+        RTMODEL "__pic", "no"
+        RTMODEL "__reg_r4", "free"
+        RTMODEL "__reg_r5", "free"
+        RTMODEL "__rt_version", "3"
+
+        RSEG CSTACK:DATA:SORT:NOROOT(0)
+
+        EXTERN ?CopyMemoryBytes20
+        EXTERN ?CopyMemoryWords20
+        EXTERN ?cstart_init_zero20
+        EXTERN ?longjmp_r4
+        EXTERN ?longjmp_r5
+        EXTERN ?setjmp_r4
+        EXTERN ?setjmp_r5
+
+        PUBWEAK ?setjmp_save_r4
+        PUBWEAK ?setjmp_save_r5
+        PUBLIC NRF2401_IRQ_Handler
+        FUNCTION NRF2401_IRQ_Handler,061203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 12, STACK
+        PUBLIC NRF2401_Init
+        FUNCTION NRF2401_Init,061203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 12, STACK
+        FUNCTION NRF2401_ReadBuffer,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 20, STACK
+        FUNCTION NRF2401_ReadWriteReg,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 12, STACK
+        PUBLIC NRF2401_RecData
+        FUNCTION NRF2401_RecData,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 12, STACK
+        PUBLIC NRF2401_SendData
+        FUNCTION NRF2401_SendData,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC NRF2401_SetRXMode
+        FUNCTION NRF2401_SetRXMode,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC NRF2401_SetTXMode
+        FUNCTION NRF2401_SetTXMode,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        FUNCTION NRF2401_WriteBuffer,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 20, STACK
+        FUNCTION NRF24L01_Check,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 14, STACK
+        PUBLIC RX_ADDRESS
+        PUBLIC TX_ADDRESS
+        PUBWEAK _A_PBOUT_L
+        PUBWEAK _A_PDOUT_L
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA SP DATA
+          CFI Resource PC:20, SP:20, SR:16, R4L:16, R4H:4, R4:20, R5L:16, R5H:4
+          CFI Resource R5:20, R6L:16, R6H:4, R6:20, R7L:16, R7H:4, R7:20, R8L:16
+          CFI Resource R8H:4, R8:20, R9L:16, R9H:4, R9:20, R10L:16, R10H:4
+          CFI Resource R10:20, R11L:16, R11H:4, R11:20, R12L:16, R12H:4, R12:20
+          CFI Resource R13L:16, R13H:4, R13:20, R14L:16, R14H:4, R14:20, R15L:16
+          CFI Resource R15H:4, R15:20
+          CFI ResourceParts R4 R4H, R4L
+          CFI ResourceParts R5 R5H, R5L
+          CFI ResourceParts R6 R6H, R6L
+          CFI ResourceParts R7 R7H, R7L
+          CFI ResourceParts R8 R8H, R8L
+          CFI ResourceParts R9 R9H, R9L
+          CFI ResourceParts R10 R10H, R10L
+          CFI ResourceParts R11 R11H, R11L
+          CFI ResourceParts R12 R12H, R12L
+          CFI ResourceParts R13 R13H, R13L
+          CFI ResourceParts R14 R14H, R14L
+          CFI ResourceParts R15 R15H, R15L
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H SameValue
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H SameValue
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H SameValue
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H SameValue
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H SameValue
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H SameValue
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H SameValue
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H SameValue
+          CFI R11 Concat
+          CFI R12L Undefined
+          CFI R12H Undefined
+          CFI R12 Undefined
+          CFI R13L Undefined
+          CFI R13H Undefined
+          CFI R13 Undefined
+          CFI R14L Undefined
+          CFI R14H Undefined
+          CFI R14 Undefined
+          CFI R15L Undefined
+          CFI R15H Undefined
+          CFI R15 Undefined
+          CFI EndCommon cfiCommon0
+        
+        
+          CFI Common cfiCommon1 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H SameValue
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H SameValue
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H SameValue
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H SameValue
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H SameValue
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H SameValue
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H SameValue
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H SameValue
+          CFI R11 Concat
+          CFI R12L SameValue
+          CFI R12H SameValue
+          CFI R12 Concat
+          CFI R13L SameValue
+          CFI R13H SameValue
+          CFI R13 Concat
+          CFI R14L SameValue
+          CFI R14H SameValue
+          CFI R14 Concat
+          CFI R15L SameValue
+          CFI R15H SameValue
+          CFI R15 Concat
+          CFI EndCommon cfiCommon1
+        
+        EXTERN SPI_SendReadByte
+        FUNCTION SPI_SendReadByte,0202H
+        EXTERN GPIO_MultiBits_Init
+        FUNCTION GPIO_MultiBits_Init,0202H
+        EXTERN SPI_Master_Init
+        FUNCTION SPI_Master_Init,0202H
+
+// C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\nrf24l01\nrf2401.c
+//    1 #include "nrf2401.H"
+
+        ASEGN DATA16_AN:DATA:NOROOT,0222H
+// union <unnamed> __data16 _A_PBOUT_L
+_A_PBOUT_L:
+        DS8 2
+
+        ASEGN DATA16_AN:DATA:NOROOT,0262H
+// union <unnamed> __data16 _A_PDOUT_L
+_A_PDOUT_L:
+        DS8 2
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant {165, 165, 165, 165, 165}>`:
+        DC8 165, 165, 165, 165, 165
+//    2 //********************************************************************************************************************// 
+//    3 // SPI(nRF24L01) Ö¸Áî
+//    4 #define READ_REG    0x00   // ¶ÁÅäÖÃ¼Ä´æÆ÷
+//    5 #define WRITE_REG   0x20   // Ð´ÅäÖÃ¼Ä´æÆ÷
+//    6 #define RD_RX_PLOAD 0x61   // ¶ÁÈ¡RX FIFOÖÐµÄÊý¾Ý
+//    7 #define WR_TX_PLOAD 0xA0   // ÏòTX FIFOÖÐÐ´ÈëÊý¾Ý
+//    8 #define FLUSH_TX    0xE1   // Çå³ýTX FIFOÖÐµÄÊý¾Ý Ó¦ÓÃÓÚ·¢ÉäÄ£Ê½ÏÂ
+//    9 #define FLUSH_RX    0xE2   // Çå³ýRX FIFOÖÐµÄÊý¾Ý Ó¦ÓÃÓÚ½ÓÊÕÄ£Ê½ÏÂ
+//   10 #define REUSE_TX_PL 0xE3   // ÖØÐÂÊ¹ÓÃÉÏÒ»°üÓÐÐ§Êý¾Ý
+//   11 #define NOP         0xFF   // ±£Áô
+//   12 //********************************************************************************************************************// 
+//   13 // SPI(nRF24L01) ¼Ä´æÆ÷(µØÖ·)
+//   14 #define CONFIG      0x00  //ÅäÖÃ·¢ËÍ×´Ì¬£¬CRCÐ£ÑéÄ£Ê½ÒÔ¼°·¢ÊÕ·¢×´Ì¬ÏìÓ¦·½Ê½
+//   15 
+//   16 #define MASK_RX_DR  BIT6  //¿ÉÆÁ±ÎÖÐ¶Ï-½ÓÊÕÖÐ¶Ï 1£ºÆÁ±ÎÖÐ¶Ï
+//   17 #define MASK_TX_DS  BIT5  //¿ÉÆÁ±ÎÖÐ¶Ï-·¢ËÍÍê³ÉÖÐ¶Ï
+//   18 #define MASK_MAX_RT BIT4  //¿ÉÆÁ±ÎÖÐ¶Ï-´ïµ½×î´óÖØ·¢´ÎÊýÖÐ¶Ï
+//   19 #define EN_CRC      BIT3  //Ê¹ÄÜCRC
+//   20 #define CRCO        BIT2  //0£ºCRC8Î»: 1£º16Î»
+//   21 #define PWR_UP      BIT1  //1£ºÉÏµç 0£ºµôµç
+//   22 #define PRIM_RX     BIT0  //1£º½ÓÊÕÄ£Ê½ 0£º·¢ÉäÄ£Ê½
+//   23 
+//   24 #define EN_AA       0x01  //×Ô¶¯Ó¦´ð¹¦ÄÜÉèÖÃ
+//   25 #define EN_RXADDR   0x02  //¿ÉÓÃÐÅµÀÉèÖÃ
+//   26 #define SETUP_AW    0x03  //ÊÕ·¢µØÖ·¿í¶ÈÉèÖÃ
+//   27 #define SETUP_RETR  0x04  //×Ô¶¯ÖØ·¢¹¦ÄÜÉèÉèÖÃ
+//   28 #define RF_CH       0x05  //¹¤×÷ÆµÂÊÉè¶¨
+//   29 #define RF_SETUP    0x06  //
+//   30 #define STATUS      0x07  //
+//   31 #define OBSERVE_TX  0x08  //
+//   32 #define CD          0x09  //
+//   33 #define RX_ADDR_P0  0x0A
+//   34 #define RX_ADDR_P1  0x0B
+//   35 #define RX_ADDR_P2  0x0C
+//   36 #define RX_ADDR_P3  0x0D
+//   37 #define RX_ADDR_P4  0x0E
+//   38 #define RX_ADDR_P5  0x0F
+//   39 #define TX_ADDR     0x10
+//   40 #define RX_PW_P0    0x11
+//   41 #define RX_PW_P1    0x12
+//   42 #define RX_PW_P2    0x13
+//   43 #define RX_PW_P3    0x14
+//   44 #define RX_PW_P4    0x15
+//   45 #define RX_PW_P5    0x16
+//   46 #define FIFO_STATUS 0x17
+//   47 
+//   48 //¼¸¸öÖØÒªµÄ×´Ì¬±ê¼Ç
+//   49 #define STATUS_TX_FULL     0x01        //TX FIFO ¼Ä´æÆ÷Âú±êÖ¾¡£ 1 Îª Âú£¬0Îª ²»Âú
+//   50 #define STATUS_MAX_RT      0x10        //´ïµ½×î´óÖØ·¢´ÎÊýÖÐ¶Ï±êÖ¾Î»
+//   51 #define STATUS_TX_DS       0x20        //·¢ËÍÍê³ÉÖÐ¶Ï±êÖ¾Î»
+//   52 #define STATUS_RX_DR       0x40        //½ÓÊÕµ½Êý¾ÝÖÐ¶Ï±êÖ¾Î»
+//   53 
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+//   54 const uint8_t TX_ADDRESS[TX_ADR_WIDTH]={0xE1,0xE2,0xE3,0xE4,0xE5}; //·¢ËÍµØÖ·
+TX_ADDRESS:
+        DC8 225, 226, 227, 228, 229
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+//   55 const uint8_t RX_ADDRESS[RX_ADR_WIDTH]={0xE1,0xE2,0xE3,0xE4,0xE5}; //½ÓÊÕµØÖ·
+RX_ADDRESS:
+        DC8 225, 226, 227, 228, 229
+//   56 
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(1)
+        REQUIRE ?cstart_init_zero20
+//   57 static s_NRF24L01 s_nrf24l01;
+s_nrf24l01:
+        DS8 24
+
+        RSEG CODE:CODE:NOROOT(1)
+NRF2401_ReadBuffer:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function NRF2401_ReadBuffer
+        FUNCALL NRF2401_ReadBuffer, SPI_SendReadByte
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL NRF2401_ReadBuffer, SPI_SendReadByte
+        LOCFRAME CSTACK, 20, STACK
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        CALLA   #?Subroutine2
+??CrossCallReturnLabel_0:
+        JEQ     ??NRF2401_ReadBuffer_1
+??NRF2401_ReadBuffer_0:
+        MOV.B   #0x0, R13
+        CALLA   #?Subroutine3
+??CrossCallReturnLabel_5:
+        MOV.B   R12, 0(R11)
+        ADDA    #0x1, R11
+        ADD.B   #0xff, R10
+        JNE     ??NRF2401_ReadBuffer_0
+          CFI EndBlock cfiBlock0
+??NRF2401_ReadBuffer_1:
+        REQUIRE ?Subroutine1
+        REQUIRE _A_PDOUT_L
+        // Fall through to label ?Subroutine1
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine1:
+          CFI Block cfiBlock1 Using cfiCommon0
+          CFI NoFunction
+          CFI CFA SP+20
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+        BIS.B   #0x4, &0x263
+        MOV.B   R8, R12
+        POPM.A  #0x4, R11
+          CFI CFA SP+4
+          CFI R8L SameValue
+          CFI R8H SameValue
+          CFI R9L SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R10H SameValue
+          CFI R11L SameValue
+          CFI R11H SameValue
+        RETA
+          CFI EndBlock cfiBlock1
+//   58 /***********************************************************************************************
+//   59  ¹¦ÄÜ£ºNRF24L01 ¶ÁÐ´Ò»¸ö×Ö½Ú
+//   60  ÐÎ²Î£º·¢ËÍµÄÊý¾Ý
+//   61  ·µ»Ø£º¶Áµ½µÄÊý¾Ý
+//   62  Ïê½â£ºµ÷ÓÃSPIÄ£¿é
+//   63 ************************************************************************************************/
+//   64 static uint8_t NRF2401_ReadWriteByte(uint8_t data)
+//   65 {
+//   66 #if NRF24L01HardWareSPI
+//   67   return NRF2401HardWareSPI_SendByte(data);   //·¢ËÍ²¢¶ÁÈ¡Ò»×Ö½ÚÊý¾Ý
+//   68 #else
+//   69   for(uint8_t i=0;i < 8;i++)          // Ñ­»·8´Î
+//   70   {
+//   71     NRF2401_SIMO = (data&0x80) ? 1 : 0;//ÉÏÉýÑØ·¢ËÍÊý¾Ý// byte×î¸ßÎ»Êä³öµ½MOSI
+//   72     data <<= 1;             // µÍÒ»Î»ÒÆÎ»µ½×î¸ßÎ»
+//   73     NRF2401_SCL = 1; 
+//   74     if(NRF2401_SOMI)            // À­¸ßSCK£¬nRF24L01´ÓMOSI¶ÁÈë1Î»Êý¾Ý£¬Í¬Ê±´ÓMISOÊä³ö1Î»Êý¾Ý
+//   75       data |= 0x01;       	// ¶ÁMISOµ½byte×îµÍÎ»
+//   76     NRF2401_SCL = 0;            	// SCKÖÃµÍ
+//   77   }
+//   78   return(data);           	// ·µ»Ø¶Á³öµÄÒ»×Ö½Ú
+//   79 #endif
+//   80 }
+//   81 /***********************************************************************************************
+//   82  ¹¦ÄÜ£ºNRF24L01 Ð´¼Ä´æÆ÷
+//   83  ÐÎ²Î£ºreg: ¼Ä´æÆ÷
+//   84        value:Ð´ÈëµÄÖµ
+//   85  ·µ»Ø£º¶Áµ½µÄÊý¾Ý
+//   86  Ïê½â£ºÎÞ
+//   87 ************************************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(1)
+//   88 static uint8_t NRF2401_ReadWriteReg(uint8_t reg,uint8_t value)
+NRF2401_ReadWriteReg:
+          CFI Block cfiBlock2 Using cfiCommon0
+          CFI Function NRF2401_ReadWriteReg
+//   89 {
+        FUNCALL NRF2401_ReadWriteReg, SPI_SendReadByte
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL NRF2401_ReadWriteReg, SPI_SendReadByte
+        LOCFRAME CSTACK, 12, STACK
+        PUSHM.A #0x2, R11
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+12
+        MOV.B   R13, R10
+//   90 	NRF2401_CSN = 0;                   // CSN low, init SPI transaction
+        BIC.B   #0x4, &0x263
+//   91 	uint8_t status = NRF2401_ReadWriteByte(reg);      // select register
+        MOV.B   R12, R13
+        CALLA   #?Subroutine3
+??CrossCallReturnLabel_4:
+        MOV.B   R12, R11
+//   92 	NRF2401_ReadWriteByte(value);             // ..and write value to it..
+        MOV.B   R10, R13
+        CALLA   #?Subroutine3
+//   93 	NRF2401_CSN = 1;                   // CSN high again
+??CrossCallReturnLabel_3:
+        BIS.B   #0x4, &0x263
+//   94 	return(status);            // return nRF24L01 status byte
+        MOV.B   R11, R12
+        POPM.A  #0x2, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock2
+        REQUIRE _A_PDOUT_L
+//   95 }
+//   96 /***********************************************************************************************
+//   97  ¹¦ÄÜ£ºNRF24L01 Ð´¼Ä´æÆ÷
+//   98  ÐÎ²Î£ºreg: ¼Ä´æÆ÷
+//   99        value:Ð´ÈëµÄÖµ
+//  100  ·µ»Ø£º¶Áµ½µÄÊý¾Ý
+//  101  Ïê½â£ºÎÞ
+//  102 ************************************************************************************************/
+//  103 static uint8_t NRF2401_WriteBuffer(uint8_t reg,uint8_t *pBuf,uint8_t bytes)
+//  104 {
+//  105 	NRF2401_CSN = 0; 
+//  106 	uint8_t status = NRF2401_ReadWriteByte(reg);    // Select register to write to and read status byte
+//  107 	for(uint8_t i=0; i<bytes; i++) // then write all byte in buffer(*pBuf)
+//  108 	{
+//  109 		NRF2401_ReadWriteByte(*pBuf++);
+//  110 	}
+//  111 	NRF2401_CSN = 1;                 // Set CSN high again
+//  112 	return(status);          // return nRF24L01 status byte
+//  113 }
+//  114 /***********************************************************************************************
+//  115  ¹¦ÄÜ£ºNRF24L01 ¶ÁBuffer
+//  116  ÐÎ²Î£ºreg: ¼Ä´æÆ÷
+//  117        pBuf:Êý¾ÝÖ¸Õë
+//  118 		 	 bytes: Ð´ÈëµÄ×Ö½ÚÊý
+//  119  ·µ»Ø£º¶Á×´Ì¬
+//  120  Ïê½â£ºÎÞ
+//  121 ************************************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine3:
+          CFI Block cfiCond3 Using cfiCommon0
+          CFI Function NRF2401_ReadBuffer
+          CFI Conditional ??CrossCallReturnLabel_5
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+24
+          CFI Block cfiCond4 Using cfiCommon0
+          CFI (cfiCond4) Function NRF2401_ReadWriteReg
+          CFI (cfiCond4) Conditional ??CrossCallReturnLabel_4
+          CFI (cfiCond4) R10L Frame(CFA, -12)
+          CFI (cfiCond4) R10H Frame(CFA, -10)
+          CFI (cfiCond4) R11L Frame(CFA, -8)
+          CFI (cfiCond4) R11H Frame(CFA, -6)
+          CFI (cfiCond4) CFA SP+16
+          CFI Block cfiCond5 Using cfiCommon0
+          CFI (cfiCond5) Function NRF2401_ReadWriteReg
+          CFI (cfiCond5) Conditional ??CrossCallReturnLabel_3
+          CFI (cfiCond5) R10L Frame(CFA, -12)
+          CFI (cfiCond5) R10H Frame(CFA, -10)
+          CFI (cfiCond5) R11L Frame(CFA, -8)
+          CFI (cfiCond5) R11H Frame(CFA, -6)
+          CFI (cfiCond5) CFA SP+16
+          CFI Block cfiCond6 Using cfiCommon0
+          CFI (cfiCond6) Function NRF2401_WriteBuffer
+          CFI (cfiCond6) Conditional ??CrossCallReturnLabel_2
+          CFI (cfiCond6) R8L Frame(CFA, -20)
+          CFI (cfiCond6) R8H Frame(CFA, -18)
+          CFI (cfiCond6) R9L Frame(CFA, -16)
+          CFI (cfiCond6) R9H Frame(CFA, -14)
+          CFI (cfiCond6) R10L Frame(CFA, -12)
+          CFI (cfiCond6) R10H Frame(CFA, -10)
+          CFI (cfiCond6) R11L Frame(CFA, -8)
+          CFI (cfiCond6) R11H Frame(CFA, -6)
+          CFI (cfiCond6) CFA SP+24
+          CFI Block cfiPicker7 Using cfiCommon1
+          CFI (cfiPicker7) NoFunction
+          CFI (cfiPicker7) Picker
+//  122 static uint8_t NRF2401_ReadBuffer(uint8_t reg,uint8_t *pBuf,uint8_t bytes)
+//  123 {
+//  124 	NRF2401_CSN = 0;                    		// Set CSN low, init SPI tranaction
+//  125 	uint8_t status = NRF2401_ReadWriteByte(reg);       		// Select register to write to and read status byte
+//  126 	for(uint8_t i=0;i<bytes;i++)
+//  127 	{
+//  128 		pBuf[i] = NRF2401_ReadWriteByte(0);    // Perform SPI_RW to read byte from nRF24L01
+        MOV.B   #0x3, R12
+        BRA     #SPI_SendReadByte
+          CFI EndBlock cfiCond3
+          CFI EndBlock cfiCond4
+          CFI EndBlock cfiCond5
+          CFI EndBlock cfiCond6
+          CFI EndBlock cfiPicker7
+
+        RSEG CODE:CODE:NOROOT(1)
+NRF2401_IRQ_Handler:
+          CFI Block cfiBlock8 Using cfiCommon0
+          CFI Function NRF2401_IRQ_Handler
+        FUNCALL NRF2401_IRQ_Handler, NRF2401_ReadWriteReg
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL NRF2401_IRQ_Handler, NRF2401_ReadBuffer
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL NRF2401_IRQ_Handler
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL NRF2401_IRQ_Handler, NRF2401_ReadWriteReg
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL NRF2401_IRQ_Handler
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL NRF2401_IRQ_Handler
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL NRF2401_IRQ_Handler, NRF2401_ReadWriteReg
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL NRF2401_IRQ_Handler
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL NRF2401_IRQ_Handler, NRF2401_ReadWriteReg
+        LOCFRAME CSTACK, 12, STACK
+        PUSHM.A #0x2, R11
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+12
+        CALLA   #?Subroutine6
+??CrossCallReturnLabel_13:
+        MOV.B   R12, R10
+        MOVA    #s_nrf24l01, R11
+        BIT.B   #0x40, R12
+        JNC     ??NRF2401_IRQ_Handler_0
+        CALLA   #?Subroutine5
+??CrossCallReturnLabel_6:
+        MOVA    0x8(R11), R15
+        CMPA    #0x0, R15
+        JEQ     ??NRF2401_IRQ_Handler_1
+        MOV.B   #0x20, R14
+        MOVA    @R11, R13
+        MOV.B   #0x61, R12
+        CALLA   #NRF2401_ReadBuffer
+        MOVA    0x8(R11), R15
+        CALLA   R15
+??NRF2401_IRQ_Handler_1:
+        MOV.B   #0xff, R13
+        MOV.B   #0xe2, R12
+        CALLA   #?Subroutine4
+??NRF2401_IRQ_Handler_0:
+        BIT.B   #0x20, R10
+        JNC     ??NRF2401_IRQ_Handler_2
+        MOVA    0xc(R11), R15
+        CMPA    #0x0, R15
+        JEQ     ??NRF2401_IRQ_Handler_2
+        CALLA   R15
+??NRF2401_IRQ_Handler_2:
+        BIT.B   #0x10, R10
+        JNC     ??NRF2401_IRQ_Handler_3
+        MOVA    0x10(R11), R15
+        CMPA    #0x0, R15
+        JEQ     ??NRF2401_IRQ_Handler_4
+        CALLA   R15
+??NRF2401_IRQ_Handler_4:
+        MOV.B   #0xff, R13
+        MOV.B   #0xe1, R12
+        CALLA   #NRF2401_ReadWriteReg
+??NRF2401_IRQ_Handler_3:
+        BIT.B   #0x1, R10
+        JNC     ??NRF2401_IRQ_Handler_5
+        MOVA    0x14(R11), R15
+        CMPA    #0x0, R15
+        JEQ     ??NRF2401_IRQ_Handler_5
+        CALLA   R15
+??NRF2401_IRQ_Handler_5:
+        MOV.B   R10, R13
+        MOV.B   #0x27, R12
+        CALLA   #NRF2401_ReadWriteReg
+        POPM.A  #0x2, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock8
+        REQUIRE _A_PBOUT_L
+
+        RSEG CODE:CODE:NOROOT(1)
+NRF2401_RecData:
+          CFI Block cfiBlock9 Using cfiCommon0
+          CFI Function NRF2401_RecData
+        FUNCALL NRF2401_RecData, NRF2401_ReadWriteReg
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL NRF2401_RecData, NRF2401_ReadWriteReg
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL NRF2401_RecData, NRF2401_ReadBuffer
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL NRF2401_RecData, NRF2401_ReadWriteReg
+        LOCFRAME CSTACK, 12, STACK
+        PUSHM.A #0x2, R11
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+12
+        MOVA    R12, R10
+        CALLA   #?Subroutine6
+??CrossCallReturnLabel_12:
+        MOV.B   R12, R11
+        MOV.B   R12, R13
+        MOV.B   #0x27, R12
+        CALLA   #NRF2401_ReadWriteReg
+        BIT.B   #0x40, R11
+        JNC     ??NRF2401_RecData_0
+        MOV.B   #0x20, R14
+        MOVA    R10, R13
+        MOV.B   #0x61, R12
+        CALLA   #NRF2401_ReadBuffer
+        MOV.B   #0xff, R13
+        MOV.B   #0xe2, R12
+        CALLA   #NRF2401_ReadWriteReg
+        MOV.B   #0x40, R12
+        JMP     ??NRF2401_RecData_1
+??NRF2401_RecData_0:
+        MOV.B   #0xff, R12
+??NRF2401_RecData_1:
+        POPM.A  #0x2, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock9
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine6:
+          CFI Block cfiCond10 Using cfiCommon0
+          CFI Function NRF2401_IRQ_Handler
+          CFI Conditional ??CrossCallReturnLabel_13
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+16
+          CFI Block cfiCond11 Using cfiCommon0
+          CFI (cfiCond11) Function NRF2401_RecData
+          CFI (cfiCond11) Conditional ??CrossCallReturnLabel_12
+          CFI (cfiCond11) R10L Frame(CFA, -12)
+          CFI (cfiCond11) R10H Frame(CFA, -10)
+          CFI (cfiCond11) R11L Frame(CFA, -8)
+          CFI (cfiCond11) R11H Frame(CFA, -6)
+          CFI (cfiCond11) CFA SP+16
+          CFI Block cfiPicker12 Using cfiCommon1
+          CFI (cfiPicker12) NoFunction
+          CFI (cfiPicker12) Picker
+        MOV.B   #0xff, R13
+        MOV.B   #0x7, R12
+        BRA     #NRF2401_ReadWriteReg
+          CFI EndBlock cfiCond10
+          CFI EndBlock cfiCond11
+          CFI EndBlock cfiPicker12
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+NRF2401_WriteBuffer:
+          CFI Block cfiBlock13 Using cfiCommon0
+          CFI Function NRF2401_WriteBuffer
+        FUNCALL NRF2401_WriteBuffer, SPI_SendReadByte
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL NRF2401_WriteBuffer, SPI_SendReadByte
+        LOCFRAME CSTACK, 20, STACK
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        CALLA   #?Subroutine2
+??CrossCallReturnLabel_1:
+        JEQ     ??NRF2401_WriteBuffer_1
+??NRF2401_WriteBuffer_0:
+        MOV.B   @R11+, R13
+        CALLA   #?Subroutine3
+??CrossCallReturnLabel_2:
+        ADD.B   #0xff, R10
+        JNE     ??NRF2401_WriteBuffer_0
+??NRF2401_WriteBuffer_1:
+        JMP     ?Subroutine1
+        NOP
+          CFI EndBlock cfiBlock13
+        REQUIRE _A_PDOUT_L
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?Subroutine2:
+          CFI Block cfiCond14 Using cfiCommon0
+          CFI Function NRF2401_ReadBuffer
+          CFI Conditional ??CrossCallReturnLabel_0
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+24
+          CFI Block cfiCond15 Using cfiCommon0
+          CFI (cfiCond15) Function NRF2401_WriteBuffer
+          CFI (cfiCond15) Conditional ??CrossCallReturnLabel_1
+          CFI (cfiCond15) R8L Frame(CFA, -20)
+          CFI (cfiCond15) R8H Frame(CFA, -18)
+          CFI (cfiCond15) R9L Frame(CFA, -16)
+          CFI (cfiCond15) R9H Frame(CFA, -14)
+          CFI (cfiCond15) R10L Frame(CFA, -12)
+          CFI (cfiCond15) R10H Frame(CFA, -10)
+          CFI (cfiCond15) R11L Frame(CFA, -8)
+          CFI (cfiCond15) R11H Frame(CFA, -6)
+          CFI (cfiCond15) CFA SP+24
+          CFI Block cfiPicker16 Using cfiCommon1
+          CFI (cfiPicker16) NoFunction
+          CFI (cfiPicker16) Picker
+        MOVA    R13, R11
+        MOV.B   R14, R10
+        BIC.B   #0x4, &0x263
+        MOV.B   R12, R13
+        MOV.B   #0x3, R12
+        CALLA   #SPI_SendReadByte
+        MOV.B   R12, R8
+        CMP.B   #0x0, R10
+        RETA
+          CFI EndBlock cfiCond14
+          CFI EndBlock cfiCond15
+          CFI EndBlock cfiPicker16
+//  129 	}
+//  130 	NRF2401_CSN = 1;                           // Set CSN high again
+//  131 	return(status);                    // return nRF24L01 status byte
+//  132 }
+//  133 
+//  134 /***********************************************************************************************
+//  135  ¹¦ÄÜ£º¼ì²âNRF24L01 ÊÇ·ñ´æÔÚ
+//  136  ÐÎ²Î£º
+//  137  ·µ»Ø£ºNRF_OK : ³É¹¦   NRF_ERR:Ê§°Ü
+//  138  Ïê½â£ºÎÞ
+//  139 ************************************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  140 static uint8_t NRF24L01_Check(void)
+NRF24L01_Check:
+          CFI Block cfiBlock17 Using cfiCommon0
+          CFI Function NRF24L01_Check
+//  141 {
+        FUNCALL NRF24L01_Check, NRF2401_WriteBuffer
+        LOCFRAME CSTACK, 14, STACK
+        FUNCALL NRF24L01_Check, NRF2401_ReadBuffer
+        LOCFRAME CSTACK, 14, STACK
+        PUSHM.A #0x1, R10
+          CFI R10L Frame(CFA, -8)
+          CFI R10H Frame(CFA, -6)
+          CFI CFA SP+8
+        SUB.W   #0x6, SP
+          CFI CFA SP+14
+//  142 	uint8_t buf[5]={0XA5,0XA5,0XA5,0XA5,0XA5};
+        MOV.W   SP, R12
+        ADD.W   #0x0, R12
+        MOVA    #`?<Constant {165, 165, 165, 165, 165}>`, R14
+        MOVA    #0x5, R13
+        CALLA   #?CopyMemoryBytes20
+        MOV.W   SP, R10
+        ADD.W   #0x0, R10
+        MOV.B   #0x5, R14
+        MOVA    R10, R13
+        CALLA   #?Subroutine7
+//  143 	NRF2401_WriteBuffer(WRITE_REG+TX_ADDR,buf,5);//Ð´Èë5¸ö×Ö½ÚµÄµØÖ·.	
+//  144 	NRF2401_ReadBuffer(TX_ADDR,buf,5); //¶Á³öÐ´ÈëµÄµØÖ·  
+??CrossCallReturnLabel_14:
+        MOVA    R10, R13
+        MOV.B   #0x10, R12
+        CALLA   #NRF2401_ReadBuffer
+//  145 	for(uint8_t i=0;i < 5;i++)
+        MOV.B   #0xa5, R14
+//  146 	{
+//  147 		if(buf[i] != 0xA5) return NRF_ERR;
+        CMP.B   R14, 0(SP)
+        JEQ     ??NRF24L01_Check_1
+??NRF24L01_Check_0:
+        MOV.B   #0x1, R12
+        JMP     ??NRF24L01_Check_2
+??NRF24L01_Check_1:
+        CMP.B   R14, 0x1(SP)
+        JNE     ??NRF24L01_Check_0
+        CMP.B   R14, 0x2(SP)
+        JNE     ??NRF24L01_Check_0
+        CMP.B   R14, 0x3(SP)
+        JNE     ??NRF24L01_Check_0
+        CMP.B   R14, 0x4(SP)
+        JNE     ??NRF24L01_Check_0
+//  148 	}
+//  149 	return NRF_OK;
+        MOV.B   #0x0, R12
+??NRF24L01_Check_2:
+        ADD.W   #0x6, SP
+          CFI CFA SP+8
+        POPM.A  #0x1, R10
+          CFI R10H SameValue
+          CFI R10L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock17
+//  150 /*******************************************************************************
+//  151 *  º¯ÊýÃû³Æ£º
+//  152 *  ¹¦ÄÜËµÃ÷£ºNRF24L01³õÊ¼»¯
+//  153 *  ²ÎÊýËµÃ÷£º
+//  154 *  º¯Êý·µ»Ø£º
+//  155 *  Ê¹ÓÃÊ¾Àý£º
+//  156 ********************************************************************************/}
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?Subroutine7:
+          CFI Block cfiCond18 Using cfiCommon0
+          CFI Function NRF24L01_Check
+          CFI Conditional ??CrossCallReturnLabel_14
+          CFI R10L Frame(CFA, -8)
+          CFI R10H Frame(CFA, -6)
+          CFI CFA SP+18
+          CFI Block cfiCond19 Using cfiCommon0
+          CFI (cfiCond19) Function NRF2401_Init
+          CFI (cfiCond19) Conditional ??CrossCallReturnLabel_15
+          CFI (cfiCond19) R10L Frame(CFA, -8)
+          CFI (cfiCond19) R10H Frame(CFA, -6)
+          CFI (cfiCond19) CFA SP+12
+          CFI Block cfiPicker20 Using cfiCommon1
+          CFI (cfiPicker20) NoFunction
+          CFI (cfiPicker20) Picker
+//  157 uint8_t NRF2401_Init(s_NRF24L01 nrf24l01)
+//  158 {
+//  159         s_nrf24l01 = nrf24l01;
+//  160         
+//  161         GPIO_Init(NRF2401_CE_Port,NRF2401_CE_Pin,GPO);
+//  162         GPIO_Init(NRF2401_CSN_Port,NRF2401_CSN_Pin,GPO);
+//  163         //GPIO_Init(NRF2401_IRQ_Port,NRF2401_IRQ_Pin,GPI);
+//  164         
+//  165         nrf24l01.CallBack_IRQ_Init();
+//  166 #if NRF24L01HardWareSPI
+//  167         NRF2401HardWareSPI_Init();
+//  168 #else
+//  169         GPIO_Init(NRF2401_SCL_Port,NRF2401_SCL_Pin,GPO);
+//  170         GPIO_Init(NRF2401_SIMO_Port,NRF2401_SIMO_Pin,GPO);
+//  171         GPIO_Init(NRF2401_SOMI_Port,NRF2401_SOMI_Pin,GPI);
+//  172 #endif
+//  173         
+//  174 	NRF2401_CSN = 1;			// Spi disable	
+//  175         NRF2401_CE = 0;			        // chip enable
+//  176         //¼ì²âNRF2401 ÊÇ·ñ´æÔÚ
+//  177         uint8_t checkStatus = NRF24L01_Check();
+//  178         if(checkStatus == NRF_OK)
+//  179         {
+//  180           NRF2401_CE=0;
+//  181           
+//  182           NRF2401_ReadWriteReg(WRITE_REG+SETUP_AW, ADR_WIDTH - 2);          //ÉèÖÃµØÖ·³¤¶ÈÎª TX_ADR_WIDTH   	    
+//  183           NRF2401_WriteBuffer(WRITE_REG+TX_ADDR,(uint8_t*)TX_ADDRESS,TX_ADR_WIDTH);//Ð´TX½ÚµãµØÖ· 
+        MOV.B   #0x30, R12
+        CALLA   #NRF2401_WriteBuffer
+//  184           NRF2401_WriteBuffer(WRITE_REG+RX_ADDR_P0,(uint8_t*)RX_ADDRESS,RX_ADR_WIDTH); //ÉèÖÃTX½ÚµãµØÖ·,Ö÷ÒªÎªÁËÊ¹ÄÜACK	  
+        MOV.B   #0x5, R14
+        RETA
+          CFI EndBlock cfiCond18
+          CFI EndBlock cfiCond19
+          CFI EndBlock cfiPicker20
+
+        RSEG CODE:CODE:NOROOT(1)
+NRF2401_SendData:
+          CFI Block cfiBlock21 Using cfiCommon0
+          CFI Function NRF2401_SendData
+        FUNCALL NRF2401_SendData, NRF2401_WriteBuffer
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL NRF2401_SendData, NRF2401_ReadWriteReg
+        LOCFRAME CSTACK, 4, STACK
+        CALLA   #?Subroutine5
+??CrossCallReturnLabel_7:
+        MOV.B   #0x20, R14
+        MOVA    R12, R13
+        MOV.B   #0xa0, R12
+        CALLA   #NRF2401_WriteBuffer
+        MOV.B   #0x30, R13
+        MOV.B   #0x27, R12
+        JMP     ?Subroutine4
+        NOP
+          CFI EndBlock cfiBlock21
+        REQUIRE _A_PBOUT_L
+
+        RSEG CODE:CODE:NOROOT(1)
+NRF2401_SetTXMode:
+          CFI Block cfiBlock22 Using cfiCommon0
+          CFI Function NRF2401_SetTXMode
+        FUNCALL NRF2401_SetTXMode, NRF2401_ReadWriteReg
+        LOCFRAME CSTACK, 4, STACK
+        CALLA   #?Subroutine5
+??CrossCallReturnLabel_8:
+        MOV.B   #0xe, R13
+          CFI EndBlock cfiBlock22
+        REQUIRE ?Subroutine0
+        REQUIRE _A_PBOUT_L
+        // Fall through to label ?Subroutine0
+//  185           NRF2401_ReadWriteReg(WRITE_REG+EN_AA,0x01);     //Ê¹ÄÜÍ¨µÀ0µÄ×Ô¶¯Ó¦´ð    
+//  186           NRF2401_ReadWriteReg(WRITE_REG+EN_RXADDR,0x01); //Ê¹ÄÜÍ¨µÀ0µÄ½ÓÊÕµØÖ·  
+//  187           NRF2401_ReadWriteReg(WRITE_REG+RX_PW_P0,RX_PLOAD_WIDTH);//Ñ¡ÔñÍ¨µÀ0µÄÓÐÐ§Êý¾Ý¿í¶È
+//  188           NRF2401_ReadWriteReg(WRITE_REG+SETUP_RETR,0x1a);//ÉèÖÃ×Ô¶¯ÖØ·¢¼ä¸ôÊ±¼ä:500us + 86us;×î´ó×Ô¶¯ÖØ·¢´ÎÊý:10´Î
+//  189           NRF2401_ReadWriteReg(WRITE_REG+RF_CH,40);       //ÉèÖÃRFÍ¨µÀÎª40
+//  190           NRF2401_ReadWriteReg(WRITE_REG+RF_SETUP,0x0f);  //ÉèÖÃTX·¢Éä²ÎÊý,0dbÔöÒæ,2Mbps,µÍÔëÉùÔöÒæ¿ªÆô
+//  191           NRF2401_ReadWriteReg(WRITE_REG+CONFIG,0x0e);     //ÅäÖÃ»ù±¾¹¤×÷Ä£Ê½µÄ²ÎÊý;PWR_UP,EN_CRC,16BIT_CRC,½ÓÊÕÄ£Ê½,¿ªÆôËùÓÐÖÐ¶Ï
+//  192 
+//  193           NRF2401_CE=1;//CEÎª¸ß,10usºóÆô¶¯·¢ËÍ
+//  194         }
+//  195 	return checkStatus;
+//  196 }
+//  197 /*******************************************************************************
+//  198 *  º¯ÊýÃû³Æ£º
+//  199 *  ¹¦ÄÜËµÃ÷£º¸Ãº¯Êý³õÊ¼»¯NRF24L01µ½RXÄ£Ê½
+//  200              ÉèÖÃRXµØÖ·,Ð´RXÊý¾Ý¿í¶È,Ñ¡ÔñRFÆµµÀ,²¨ÌØÂÊºÍLNA HCURR
+//  201              µ±CE±ä¸ßºó,¼´½øÈëRXÄ£Ê½,²¢¿ÉÒÔ½ÓÊÕÊý¾ÝÁË
+//  202 *  ²ÎÊýËµÃ÷£º
+//  203 *  º¯Êý·µ»Ø£º
+//  204 *  Ê¹ÓÃÊ¾Àý£º
+//  205 ********************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine0:
+          CFI Block cfiBlock23 Using cfiCommon0
+          CFI NoFunction
+        MOV.B   #0x20, R12
+        BRA     #?Subroutine4
+          CFI EndBlock cfiBlock23
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine5:
+          CFI Block cfiCond24 Using cfiCommon0
+          CFI Function NRF2401_IRQ_Handler
+          CFI Conditional ??CrossCallReturnLabel_6
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+16
+          CFI Block cfiCond25 Using cfiCommon0
+          CFI (cfiCond25) Function NRF2401_SendData
+          CFI (cfiCond25) Conditional ??CrossCallReturnLabel_7
+          CFI (cfiCond25) CFA SP+8
+          CFI Block cfiCond26 Using cfiCommon0
+          CFI (cfiCond26) Function NRF2401_SetTXMode
+          CFI (cfiCond26) Conditional ??CrossCallReturnLabel_8
+          CFI (cfiCond26) CFA SP+8
+          CFI Block cfiCond27 Using cfiCommon0
+          CFI (cfiCond27) Function NRF2401_SetRXMode
+          CFI (cfiCond27) Conditional ??CrossCallReturnLabel_9
+          CFI (cfiCond27) CFA SP+8
+          CFI Block cfiCond28 Using cfiCommon0
+          CFI (cfiCond28) Function NRF2401_Init
+          CFI (cfiCond28) Conditional ??CrossCallReturnLabel_10
+          CFI (cfiCond28) R10L Frame(CFA, -8)
+          CFI (cfiCond28) R10H Frame(CFA, -6)
+          CFI (cfiCond28) CFA SP+16
+          CFI Block cfiCond29 Using cfiCommon0
+          CFI (cfiCond29) Function NRF2401_Init
+          CFI (cfiCond29) Conditional ??CrossCallReturnLabel_11
+          CFI (cfiCond29) R10L Frame(CFA, -8)
+          CFI (cfiCond29) R10H Frame(CFA, -6)
+          CFI (cfiCond29) CFA SP+12
+          CFI Block cfiPicker30 Using cfiCommon1
+          CFI (cfiPicker30) NoFunction
+          CFI (cfiPicker30) Picker
+        BIC.B   #0x80, &0x222
+        RETA
+          CFI EndBlock cfiCond24
+          CFI EndBlock cfiCond25
+          CFI EndBlock cfiCond26
+          CFI EndBlock cfiCond27
+          CFI EndBlock cfiCond28
+          CFI EndBlock cfiCond29
+          CFI EndBlock cfiPicker30
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine4:
+          CFI Block cfiCond31 Using cfiCommon0
+          CFI Function NRF2401_IRQ_Handler
+          CFI Conditional ??NRF2401_IRQ_Handler_0
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+16
+          CFI Block cfiCond32 Using cfiCommon0
+          CFI (cfiCond32) Function NRF2401_Init
+          CFI (cfiCond32) Conditional ??NRF2401_Init_0
+          CFI (cfiCond32) R10L Frame(CFA, -8)
+          CFI (cfiCond32) R10H Frame(CFA, -6)
+          CFI (cfiCond32) CFA SP+12
+          CFI Block cfiBlock33 Using cfiCommon0
+          CFI (cfiBlock33) NoFunction
+          CFI Block cfiPicker34 Using cfiCommon1
+          CFI (cfiPicker34) NoFunction
+          CFI (cfiPicker34) Picker
+        CALLA   #NRF2401_ReadWriteReg
+        BIS.B   #0x80, &0x222
+        RETA
+          CFI EndBlock cfiCond31
+          CFI EndBlock cfiCond32
+          CFI EndBlock cfiBlock33
+          CFI EndBlock cfiPicker34
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+NRF2401_SetRXMode:
+          CFI Block cfiBlock35 Using cfiCommon0
+          CFI Function NRF2401_SetRXMode
+        FUNCALL NRF2401_SetRXMode, NRF2401_ReadWriteReg
+        LOCFRAME CSTACK, 4, STACK
+        CALLA   #?Subroutine5
+??CrossCallReturnLabel_9:
+        MOV.B   #0xf, R13
+        JMP     ?Subroutine0
+        NOP
+          CFI EndBlock cfiBlock35
+        REQUIRE _A_PBOUT_L
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+NRF2401_Init:
+          CFI Block cfiBlock36 Using cfiCommon0
+          CFI Function NRF2401_Init
+        FUNCALL NRF2401_Init, GPIO_MultiBits_Init
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL NRF2401_Init, GPIO_MultiBits_Init
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL NRF2401_Init
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL NRF2401_Init, SPI_Master_Init
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL NRF2401_Init, NRF24L01_Check
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL NRF2401_Init, NRF2401_ReadWriteReg
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL NRF2401_Init, NRF2401_WriteBuffer
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL NRF2401_Init, NRF2401_WriteBuffer
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL NRF2401_Init, NRF2401_ReadWriteReg
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL NRF2401_Init, NRF2401_ReadWriteReg
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL NRF2401_Init, NRF2401_ReadWriteReg
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL NRF2401_Init, NRF2401_ReadWriteReg
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL NRF2401_Init, NRF2401_ReadWriteReg
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL NRF2401_Init, NRF2401_ReadWriteReg
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL NRF2401_Init, NRF2401_ReadWriteReg
+        LOCFRAME CSTACK, 8, STACK
+        PUSHM.A #0x1, R10
+          CFI R10L Frame(CFA, -8)
+          CFI R10H Frame(CFA, -6)
+          CFI CFA SP+8
+        MOVA    #s_nrf24l01, R12
+        MOV.W   SP, R14
+        ADD.W   #0x8, R14
+        MOVA    #0xc, R13
+        CALLA   #?CopyMemoryWords20
+        MOV.W   #0x2, R14
+        MOV.B   #0x80, R13
+        MOV.B   #0x2, R12
+        CALLA   #GPIO_MultiBits_Init
+        MOV.W   #0x2, R14
+        MOV.B   #0x4, R13
+        MOV.B   #0x7, R12
+        CALLA   #GPIO_MultiBits_Init
+        MOVA    0xc(SP), R15
+        CALLA   R15
+        PUSH.B  #0x2
+          CFI CFA SP+10
+        PUSH.B  #0x0
+          CFI CFA SP+12
+        MOV.B   #0x1, R13
+        MOV.W   #0x4b40, R14
+        MOV.W   #0x4c, R15
+        MOV.B   #0x3, R12
+        CALLA   #SPI_Master_Init
+        BIS.B   #0x4, &0x263
+        CALLA   #?Subroutine5
+??CrossCallReturnLabel_10:
+        CALLA   #NRF24L01_Check
+        MOV.B   R12, R10
+        ADD.W   #0x4, SP
+          CFI CFA SP+8
+        CMP.B   #0x0, R12
+        JNE     ??NRF2401_Init_0
+        CALLA   #?Subroutine5
+??CrossCallReturnLabel_11:
+        MOV.B   #0x3, R13
+        MOV.B   #0x23, R12
+        CALLA   #NRF2401_ReadWriteReg
+        MOV.B   #0x5, R14
+        MOVA    #TX_ADDRESS, R13
+        CALLA   #?Subroutine7
+??CrossCallReturnLabel_15:
+        MOVA    #RX_ADDRESS, R13
+        MOV.B   #0x2a, R12
+        CALLA   #NRF2401_WriteBuffer
+        MOV.B   #0x1, R13
+        MOV.B   #0x21, R12
+        CALLA   #NRF2401_ReadWriteReg
+        MOV.B   #0x1, R13
+        MOV.B   #0x22, R12
+        CALLA   #NRF2401_ReadWriteReg
+        MOV.B   #0x20, R13
+        MOV.B   #0x31, R12
+        CALLA   #NRF2401_ReadWriteReg
+        MOV.B   #0x1a, R13
+        MOV.B   #0x24, R12
+        CALLA   #NRF2401_ReadWriteReg
+        MOV.B   #0x28, R13
+        MOV.B   #0x25, R12
+        CALLA   #NRF2401_ReadWriteReg
+        MOV.B   #0xf, R13
+        MOV.B   #0x26, R12
+        CALLA   #NRF2401_ReadWriteReg
+        MOV.B   #0xe, R13
+        MOV.B   #0x20, R12
+        CALLA   #?Subroutine4
+??NRF2401_Init_0:
+        MOV.B   R10, R12
+        POPM.A  #0x1, R10
+          CFI R10H SameValue
+          CFI R10L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock36
+        REQUIRE _A_PDOUT_L
+        REQUIRE _A_PBOUT_L
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r4:
+        REQUIRE ?setjmp_r4
+        REQUIRE ?longjmp_r4
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r5:
+        REQUIRE ?setjmp_r5
+        REQUIRE ?longjmp_r5
+
+        END
+//  206 void NRF2401_SetRXMode(void)
+//  207 {
+//  208 	NRF2401_CE=0;
+//  209    
+//  210 	NRF2401_ReadWriteReg(WRITE_REG+CONFIG, 0x0f);//ÅäÖÃ»ù±¾¹¤×÷Ä£Ê½µÄ²ÎÊý;PWR_UP,EN_CRC,16BIT_CRC,½ÓÊÕÄ£Ê½
+//  211         
+//  212 	NRF2401_CE = 1; //CEÎª¸ß,½øÈë½ÓÊÕÄ£Ê½
+//  213 }	
+//  214 /*******************************************************************************
+//  215 *  º¯ÊýÃû³Æ£º
+//  216 *  ¹¦ÄÜËµÃ÷£º¸Ãº¯Êý³õÊ¼»¯NRF24L01µ½TXÄ£Ê½
+//  217              ÉèÖÃTXµØÖ·,Ð´TXÊý¾Ý¿í¶È,ÉèÖÃRX×Ô¶¯Ó¦´ðµÄµØÖ·,Ìî³äTX·¢ËÍÊý¾Ý,Ñ¡ÔñRFÆµµÀ,²¨ÌØÂÊºÍLNA HCURR
+//  218              PWR_UP,CRCÊ¹ÄÜ
+//  219              µ±CE±ä¸ßºó,¼´½øÈëRXÄ£Ê½,²¢¿ÉÒÔ½ÓÊÕÊý¾ÝÁË		   
+//  220              CEÎª¸ß´óÓÚ10us,ÔòÆô¶¯·¢ËÍ.	
+//  221 *  ²ÎÊýËµÃ÷£º
+//  222 *  º¯Êý·µ»Ø£º
+//  223 *  Ê¹ÓÃÊ¾Àý£º
+//  224 ********************************************************************************/
+//  225 void NRF2401_SetTXMode(void)
+//  226 {				
+//  227 	NRF2401_CE=0;
+//  228  
+//  229 	NRF2401_ReadWriteReg(WRITE_REG+CONFIG,0x0e);    //ÅäÖÃ»ù±¾¹¤×÷Ä£Ê½µÄ²ÎÊý;PWR_UP,EN_CRC,16BIT_CRC,½ÓÊÕÄ£Ê½,¿ªÆôËùÓÐÖÐ¶Ï
+//  230 	
+//  231         NRF2401_CE=1;//CEÎª¸ß,10usºóÆô¶¯·¢ËÍ
+//  232 }
+//  233 /*******************************************************************************
+//  234 *  º¯ÊýÃû³Æ£º
+//  235 *  ¹¦ÄÜËµÃ÷£ºÆô¶¯NRF24L01·¢ËÍÒ»´ÎÊý¾Ý
+//  236 *  ²ÎÊýËµÃ÷£ºtxbuf:´ý·¢ËÍÊý¾ÝÊ×µØÖ·
+//  237 *  º¯Êý·µ»Ø£º·µ»ØÖµ:·¢ËÍÍê³É×´¿ö
+//  238 *  Ê¹ÓÃÊ¾Àý£º
+//  239 ********************************************************************************/
+//  240 void NRF2401_SendData(uint8_t *txbuf)
+//  241 {
+//  242 	/*uint8_t sta;
+//  243 	NRF2401_CE=0;
+//  244 	NRF2401_WriteBuffer(WR_TX_PLOAD,txbuf,TX_PLOAD_WIDTH);//Ð´Êý¾Ýµ½TX BUF  32¸ö×Ö½Ú
+//  245  	NRF2401_CE=1;//Æô¶¯·¢ËÍ	  
+//  246 	while(NRF2401_IRQ!=0);//µÈ´ý·¢ËÍÍê³É
+//  247 	sta = NRF2401_ReadWriteReg(STATUS,0xFF);  //¶ÁÈ¡×´Ì¬¼Ä´æÆ÷µÄÖµ	
+//  248 	NRF2401_ReadWriteReg(WRITE_REG+STATUS,sta); //Çå³ýTX_DS»òMAX_RTÖÐ¶Ï±êÖ¾
+//  249 	
+//  250 	if(sta & MAX_TX)//´ïµ½×î´óÖØ·¢´ÎÊý
+//  251 	{
+//  252 		NRF2401_ReadWriteReg(FLUSH_TX,0xff);//Çå³ýTX FIFO¼Ä´æÆ÷ 
+//  253 		return MAX_TX; 
+//  254 	}
+//  255 	if(sta & TX_OK)//·¢ËÍÍê³É
+//  256 	{
+//  257 		return TX_OK;
+//  258 	}
+//  259 	return 0xff;//ÆäËûÔ­Òò·¢ËÍÊ§°Ü
+//  260         */
+//  261         NRF2401_CE = 0;			//StandBy IÄ£Ê½	
+//  262         
+//  263 	NRF2401_WriteBuffer(WR_TX_PLOAD, txbuf, TX_PLOAD_WIDTH); 			 // ×°ÔØÊý¾Ý	
+//  264         NRF2401_ReadWriteReg(WRITE_REG+STATUS,STATUS_TX_DS|STATUS_MAX_RT); //Çå³ýTX_DS»òMAX_RTÖÐ¶Ï±êÖ¾
+//  265         
+//  266         NRF2401_CE = 1;		 //ÖÃ¸ßCE£¬¼¤·¢Êý¾Ý·¢ËÍ
+//  267 }
+//  268 /*******************************************************************************
+//  269 *  º¯ÊýÃû³Æ£º
+//  270 *  ¹¦ÄÜËµÃ÷£ºÆô¶¯NRF24L01·¢ËÍÒ»´ÎÊý¾Ý
+//  271 *  ²ÎÊýËµÃ÷£ºtxbuf:´ý·¢ËÍÊý¾ÝÊ×µØÖ·
+//  272 *  º¯Êý·µ»Ø£º·µ»ØÖµ:0£¬½ÓÊÕÍê³É£»ÆäËû£¬´íÎó´úÂë
+//  273 *  Ê¹ÓÃÊ¾Àý£º
+//  274 ********************************************************************************/
+//  275 uint8_t NRF2401_RecData(uint8_t *rxbuf)
+//  276 {
+//  277 	uint8_t status = NRF2401_ReadWriteReg(STATUS,0xFF);  //¶ÁÈ¡×´Ì¬¼Ä´æÆ÷µÄÖµ    	 
+//  278 	NRF2401_ReadWriteReg(WRITE_REG+STATUS,status); //Çå³ýTX_DS»òMAX_RTÖÐ¶Ï±êÖ¾
+//  279         if(status & RX_OK)//½ÓÊÕµ½Êý¾Ý
+//  280 	{
+//  281 		NRF2401_ReadBuffer(RD_RX_PLOAD,rxbuf,RX_PLOAD_WIDTH);//¶ÁÈ¡Êý¾Ý
+//  282 		NRF2401_ReadWriteReg(FLUSH_RX,0xff);//Çå³ýRX FIFO¼Ä´æÆ÷ 
+//  283 		return RX_OK; 
+//  284 	}   
+//  285 	return 0xff;//Ã»ÊÕµ½ÈÎºÎÊý¾Ý
+//  286 }
+//  287 /*******************************************************************************
+//  288 *  º¯ÊýÃû³Æ£º
+//  289 *  ¹¦ÄÜËµÃ÷£ºNRF24L01ÖÐ¶Ï´¦Àíº¯Êý£¬ÇëÔÚÖÐ¶ÏÖÐÌí¼Ó¸Ãº¯Êý
+//  290 *  ²ÎÊýËµÃ÷£º
+//  291 *  º¯Êý·µ»Ø£º
+//  292 *  Ê¹ÓÃÊ¾Àý£º
+//  293 ********************************************************************************/
+//  294 void  NRF2401_IRQ_Handler()
+//  295 {
+//  296     /*¶ÁÈ¡status¼Ä´æÆ÷µÄÖµ  */
+//  297     uint8_t state = NRF2401_ReadWriteReg(STATUS,0xFF);  //¶ÁÈ¡×´Ì¬¼Ä´æÆ÷µÄÖµ   
+//  298     if(state & STATUS_RX_DR) //½ÓÊÕµ½Êý¾Ý
+//  299     {
+//  300        NRF2401_CE = 0;			//StandBy IÄ£Ê½	
+//  301        if(s_nrf24l01.CallBack_RecevieData != NULL)
+//  302        {
+//  303           NRF2401_ReadBuffer(RD_RX_PLOAD,(uint8_t *)s_nrf24l01.pReceiveData,RX_PLOAD_WIDTH);//¶ÁÈ¡Êý¾Ý
+//  304           s_nrf24l01.CallBack_RecevieData();
+//  305        }
+//  306        NRF2401_ReadWriteReg(FLUSH_RX,0xff);//Çå³ýRX FIFO¼Ä´æÆ÷ 
+//  307        NRF2401_CE = 1;		 //ÖÃ¸ßCE£¬¼¤·¢Êý¾Ý·¢ËÍ
+//  308     }
+//  309 
+//  310     if(state & STATUS_TX_DS) //·¢ËÍÍêÊý¾Ý
+//  311     {
+//  312         if(s_nrf24l01.CallBack_SendDataOk != NULL)
+//  313         {
+//  314           s_nrf24l01.CallBack_SendDataOk();
+//  315         }
+//  316     }
+//  317 
+//  318     if(state & STATUS_MAX_RT)      //·¢ËÍ³¬Ê±
+//  319     {
+//  320         if(s_nrf24l01.CallBack_SendOutTime != NULL)
+//  321         {
+//  322            s_nrf24l01.CallBack_SendOutTime();
+//  323         }
+//  324         NRF2401_ReadWriteReg(FLUSH_TX,0xff);//Çå³ýTX FIFO¼Ä´æÆ÷
+//  325     }
+//  326 
+//  327     if(state & STATUS_TX_FULL) //TX FIFO Âú
+//  328     {
+//  329         if(s_nrf24l01.CallBack_TxFull != NULL)
+//  330         {
+//  331            s_nrf24l01.CallBack_TxFull();
+//  332         }
+//  333     }
+//  334     NRF2401_ReadWriteReg(WRITE_REG+STATUS,state); //Çå³ýTX_DS»òMAX_RTÖÐ¶Ï±êÖ¾
+//  335 }
+//  336 
+//  337 
+// 
+// 726 bytes in segment CODE
+//   4 bytes in segment DATA16_AN
+//  15 bytes in segment DATA20_C
+//  24 bytes in segment DATA20_Z
+// 
+// 726 bytes of CODE  memory
+//  15 bytes of CONST memory
+//  24 bytes of DATA  memory (+ 4 bytes shared)
+//
+//Errors: none
+//Warnings: none

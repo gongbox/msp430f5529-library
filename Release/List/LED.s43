@@ -1,0 +1,710 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+//                                                      06/Jun/2016  16:42:18 /
+// IAR C/C++ Compiler V5.50.1.20465/W32, Evaluation edition for MSP430        /
+// Copyright 1996-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    __rt_version  =  3                                                      /
+//    __double_size =  32                                                     /
+//    __reg_r4      =  free                                                   /
+//    __reg_r5      =  free                                                   /
+//    __pic         =  no                                                     /
+//    __core        =  430X                                                   /
+//    __data_model  =  large                                                  /
+//    Source file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\LED\LED.c                             /
+//    Command line  =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\LED\LED.c -D NDEBUG -D RAM_VECTOR     /
+//                     -lC C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C /
+//                     °æ\¹¤³ÌÄ£°å\Release\List\ -lA                          /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Release\List\ -o C:\Users\615\Desktop\MSP430\M /
+//                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Release\Obj\          /
+//                     -D__MSP430F5529__ -e --double=32 --dlib_config         /
+//                     "D:\Program Files (x86)\IAR Systems\Embedded           /
+//                     Workbench 6.4 Evaluation\430\LIB\DLIB\dl430xlfn.h" -I  /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\ -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº /
+//                     ¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\inc\ -I                    /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\ -I C:\Users\615\Desktop\MSP430\MS /
+//                     P430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\src\USB\ -I    /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_config\ -I                 /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_User\ -I                   /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\srcUSB\USB_API\USB_CDC_API\ -I         /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_API\USB_HID_API\ -I        /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_API\USB_MSC_API\ -I        /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\KEY\ -I C:\Users\615\Desktop\MSP430\M /
+//                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\LED\ -I      /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\12864\ -I                             /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\oled\ -I C:\Users\615\Desktop\MSP430\ /
+//                     MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\mpu6050\inc /
+//                     \ -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\ /
+//                     C°æ\¹¤³ÌÄ£°å\HardWare\mpu6050\src\ -I                  /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\nokia5110\inc\ -I                     /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\nokia5110\src\ -I                     /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\LQ_1.8_TFT\ -I                        /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\LCD_API\ -I                           /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\2.2TFT\ -I                            /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\delay\ -I                             /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\System\ -I C:\Users\615\Desktop\MSP430\MSP430F /
+//                     5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\inc\ -I              /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\System\src\ -I C:\Users\615\Desktop\MSP430\MSP /
+//                     430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\User\ -I                /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\User\USER\ -I C:\Users\615\Desktop\MSP430\MSP4 /
+//                     30F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\UCOSII\CONFIG\ -I    /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\uCOSII\App\ -I                             /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\uCOSII\CONFIHG\ -I                         /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\uCOSII\PORT\ -I                            /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\UCOSII\CORE\ -I                            /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\FatFs\ -I C:\Users\615\Desktop\MSP430\MSP4 /
+//                     30F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\FatFs\option\        /
+//                     --core=430X --data_model=large -Oh --multiplier=32     /
+//                     --multiplier_location=4C0 --hw_workaround=CPU40        /
+//    List file     =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Release\List\LED.s43                           /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME LED
+
+        RTMODEL "__SystemLibrary", "DLib"
+        RTMODEL "__core", "430X"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__double_size", "32"
+        RTMODEL "__pic", "no"
+        RTMODEL "__reg_r4", "free"
+        RTMODEL "__reg_r5", "free"
+        RTMODEL "__rt_version", "3"
+
+        RSEG CSTACK:DATA:SORT:NOROOT(0)
+
+        EXTERN ?longjmp_r4
+        EXTERN ?longjmp_r5
+        EXTERN ?setjmp_r4
+        EXTERN ?setjmp_r5
+
+        PUBWEAK ?setjmp_save_r4
+        PUBWEAK ?setjmp_save_r5
+        PUBLIC LED_Init
+        FUNCTION LED_Init,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 8, STACK
+        PUBLIC LED_Off
+        FUNCTION LED_Off,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC LED_On
+        FUNCTION LED_On,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC LED_PIN
+        PUBLIC LED_SetStatus
+        FUNCTION LED_SetStatus,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 8, STACK
+        PUBLIC LED_Turn
+        FUNCTION LED_Turn,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC water_lights
+        FUNCTION water_lights,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA SP DATA
+          CFI Resource PC:20, SP:20, SR:16, R4L:16, R4H:4, R4:20, R5L:16, R5H:4
+          CFI Resource R5:20, R6L:16, R6H:4, R6:20, R7L:16, R7H:4, R7:20, R8L:16
+          CFI Resource R8H:4, R8:20, R9L:16, R9H:4, R9:20, R10L:16, R10H:4
+          CFI Resource R10:20, R11L:16, R11H:4, R11:20, R12L:16, R12H:4, R12:20
+          CFI Resource R13L:16, R13H:4, R13:20, R14L:16, R14H:4, R14:20, R15L:16
+          CFI Resource R15H:4, R15:20
+          CFI ResourceParts R4 R4H, R4L
+          CFI ResourceParts R5 R5H, R5L
+          CFI ResourceParts R6 R6H, R6L
+          CFI ResourceParts R7 R7H, R7L
+          CFI ResourceParts R8 R8H, R8L
+          CFI ResourceParts R9 R9H, R9L
+          CFI ResourceParts R10 R10H, R10L
+          CFI ResourceParts R11 R11H, R11L
+          CFI ResourceParts R12 R12H, R12L
+          CFI ResourceParts R13 R13H, R13L
+          CFI ResourceParts R14 R14H, R14L
+          CFI ResourceParts R15 R15H, R15L
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H SameValue
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H SameValue
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H SameValue
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H SameValue
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H SameValue
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H SameValue
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H SameValue
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H SameValue
+          CFI R11 Concat
+          CFI R12L Undefined
+          CFI R12H Undefined
+          CFI R12 Undefined
+          CFI R13L Undefined
+          CFI R13H Undefined
+          CFI R13 Undefined
+          CFI R14L Undefined
+          CFI R14H Undefined
+          CFI R14 Undefined
+          CFI R15L Undefined
+          CFI R15H Undefined
+          CFI R15 Undefined
+          CFI EndCommon cfiCommon0
+        
+        
+          CFI Common cfiCommon1 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H SameValue
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H SameValue
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H SameValue
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H SameValue
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H SameValue
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H SameValue
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H SameValue
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H SameValue
+          CFI R11 Concat
+          CFI R12L SameValue
+          CFI R12H SameValue
+          CFI R12 Concat
+          CFI R13L SameValue
+          CFI R13H SameValue
+          CFI R13 Concat
+          CFI R14L SameValue
+          CFI R14H SameValue
+          CFI R14 Concat
+          CFI R15L SameValue
+          CFI R15H SameValue
+          CFI R15 Concat
+          CFI EndCommon cfiCommon1
+        
+        EXTERN GPIO_Bit_Turn
+        FUNCTION GPIO_Bit_Turn,0202H
+        EXTERN GPIO_Bit_Set
+        FUNCTION GPIO_Bit_Set,0202H
+        EXTERN GPIO_MultiBits_Init
+        FUNCTION GPIO_MultiBits_Init,0202H
+
+// C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\LED\LED.c
+//    1 #include "LED.h"
+//    2 #include "gpio.h"
+//    3 #include "system.h"
+//    4 //¶¨ÒåLEDÒý½Å
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+//    5 const IO_PIN LED_PIN[LED_NUM]=
+LED_PIN:
+        DC8 0, 0, 0, 6
+//    6 {
+//    7   {LED0_PORT,LED0_PIN},
+//    8   {LED1_PORT,LED1_PIN},
+//    9 };//LEDÒý½Å
+//   10 /*******************************************************************************
+//   11 *  º¯ÊýÃû³Æ£ºLED_Init( LEDn led )
+//   12 *  ¹¦ÄÜËµÃ÷£ºLEDµÆ³õÊ¼»¯
+//   13 *  ²ÎÊýËµÃ÷£ºLEDn led :LED£¨LED0,LED1...£©
+//   14 *  º¯Êý·µ»Ø£ºÎÞ
+//   15 *  Ê¹ÓÃÊ¾Àý£ºLED_Init( LED0 );   //³õÊ¼»¯LED0
+//   16 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   17 void LED_Init( LEDn led )
+LED_Init:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function LED_Init
+//   18 {
+        FUNCALL LED_Init, GPIO_MultiBits_Init
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL LED_Init, GPIO_MultiBits_Init
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL LED_Init, GPIO_MultiBits_Init
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL LED_Init, LED_Off
+        LOCFRAME CSTACK, 8, STACK
+        PUSHM.A #0x1, R10
+          CFI R10L Frame(CFA, -8)
+          CFI R10H Frame(CFA, -6)
+          CFI CFA SP+8
+        MOV.B   R12, R10
+//   19   if(led == LED_ALL)
+        CMP.B   #0x2, R12
+        JNE     ??LED_Init_0
+//   20   {
+//   21     for(led = LED0;led < LED_NUM;led++)
+//   22     {
+//   23       GPIO_Init(LED_PIN[led].Port, LED_PIN[led].Pin, GPO);
+        MOV.W   #0x2, R14
+        MOV.B   #0x1, R13
+        MOV.B   #0x0, R12
+        CALLA   #GPIO_MultiBits_Init
+        MOV.W   #0x2, R14
+        MOV.B   #0x40, R13
+        MOV.B   #0x0, R12
+        JMP     ??LED_Init_1
+//   24     }
+//   25   }
+//   26   else
+//   27   {
+//   28     GPIO_Init(LED_PIN[led].Port, LED_PIN[led].Pin, GPO);
+??LED_Init_0:
+        MOV.B   R12, R15
+        ADDA    R15, R15
+        MOV.W   #0x2, R14
+        MOV.W   #0x1, R13
+        MOVX.B  LED_PIN + 1(R15), R12
+        SUB.B   #0x1, R12
+        JN      ??LED_Init_2
+        RPT     R12
+        RLAX.W  R13
+??LED_Init_2:
+        MOVX.B  LED_PIN(R15), R12
+??LED_Init_1:
+        CALLA   #GPIO_MultiBits_Init
+//   29   }
+//   30   LED_Off (led);
+        MOV.B   R10, R12
+        CALLA   #LED_Off
+//   31 }
+        POPM.A  #0x1, R10
+          CFI R10H SameValue
+          CFI R10L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock0
+
+        RSEG CODE:CODE:NOROOT(1)
+LED_On:
+          CFI Block cfiBlock1 Using cfiCommon0
+          CFI Function LED_On
+        FUNCALL LED_On, GPIO_Bit_Set
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LED_On, GPIO_Bit_Set
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LED_On, GPIO_Bit_Set
+        LOCFRAME CSTACK, 4, STACK
+        CMP.B   #0x2, R12
+        JNE     ??LED_On_0
+        MOV.B   #0x0, R14
+        CALLA   #?Subroutine4
+??CrossCallReturnLabel_5:
+        MOV.B   #0x0, R14
+        JMP     ?Subroutine1
+??LED_On_0:
+        MOV.B   R12, R12
+        ADDA    R12, R12
+        MOVA    R12, R15
+        MOV.B   #0x0, R14
+        JMP     ?Subroutine0
+        NOP
+          CFI EndBlock cfiBlock1
+//   32 /*******************************************************************************
+//   33 *  º¯ÊýÃû³Æ£ºLED_SetStatus(LEDn led,STATUS status)
+//   34 *  ¹¦ÄÜËµÃ÷£ºÉèÖÃLED×´Ì¬
+//   35 *  ²ÎÊýËµÃ÷£ºLEDn led      :LED£¨LED0,LED1...£©
+//   36              STATUS status :ÉèÖÃÊÇ·ñµãÁÁLED
+//   37 *  º¯Êý·µ»Ø£ºÎÞ
+//   38 *  Ê¹ÓÃÊ¾Àý£ºLED_SetStatus(LED0,SET);  //LED0ÁÁ
+//   39 ********************************************************************************/
+//   40 void LED_SetStatus(LEDn led,STATUS status)
+//   41 {
+//   42   if(LED_ON == RESET)
+//   43   {
+//   44     status = !status;
+//   45   }
+//   46   if(led == LED_ALL)
+//   47   {
+//   48     for(led = LED0;led < LED_NUM;led++)
+//   49     {
+//   50       GPIO_Bit_Set(LED_PIN[led].Port, LED_PIN[led].Pin, status);
+//   51     }
+//   52   }
+//   53   else
+//   54   {
+//   55     GPIO_Bit_Set(LED_PIN[led].Port, LED_PIN[led].Pin, status);
+//   56   }
+//   57 }
+//   58 /*******************************************************************************
+//   59 *  º¯ÊýÃû³Æ£ºLED_Off (LEDn led)
+//   60 *  ¹¦ÄÜËµÃ÷£º¹Ø±ÕlED
+//   61 *  ²ÎÊýËµÃ÷£ºLEDn led      :LED£¨LED0,LED1...£©
+//   62 *  º¯Êý·µ»Ø£ºÎÞ
+//   63 *  Ê¹ÓÃÊ¾Àý£ºLED_Off(LED0);  //LED0Ãð
+//   64 ********************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine1:
+          CFI Block cfiBlock2 Using cfiCommon0
+          CFI NoFunction
+        MOV.B   #0x6, R13
+        MOV.B   #0x0, R12
+        BRA     #GPIO_Bit_Set
+          CFI EndBlock cfiBlock2
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine0:
+          CFI Block cfiBlock3 Using cfiCommon0
+          CFI NoFunction
+        CALLA   #?Subroutine2
+??CrossCallReturnLabel_1:
+        BRA     #GPIO_Bit_Set
+          CFI EndBlock cfiBlock3
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine2:
+          CFI Block cfiCond4 Using cfiCommon0
+          CFI Function LED_Turn
+          CFI Conditional ??CrossCallReturnLabel_0
+          CFI CFA SP+8
+          CFI Block cfiCond5 Using cfiCommon0
+          CFI (cfiCond5) Function LED_On
+          CFI (cfiCond5) Conditional ??CrossCallReturnLabel_1
+          CFI (cfiCond5) CFA SP+8
+          CFI Block cfiCond6 Using cfiCommon0
+          CFI (cfiCond6) Function LED_Off
+          CFI (cfiCond6) Conditional ??CrossCallReturnLabel_1
+          CFI (cfiCond6) CFA SP+8
+          CFI Block cfiCond7 Using cfiCommon0
+          CFI (cfiCond7) Function LED_SetStatus
+          CFI (cfiCond7) Conditional ??LED_SetStatus_3
+          CFI (cfiCond7) R10L Frame(CFA, -8)
+          CFI (cfiCond7) R10H Frame(CFA, -6)
+          CFI (cfiCond7) CFA SP+12
+          CFI Block cfiPicker8 Using cfiCommon1
+          CFI (cfiPicker8) NoFunction
+          CFI (cfiPicker8) Picker
+        MOVX.B  LED_PIN + 1(R12), R13
+        MOVX.B  LED_PIN(R15), R12
+        RETA
+          CFI EndBlock cfiCond4
+          CFI EndBlock cfiCond5
+          CFI EndBlock cfiCond6
+          CFI EndBlock cfiCond7
+          CFI EndBlock cfiPicker8
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+LED_Off:
+          CFI Block cfiBlock9 Using cfiCommon0
+          CFI Function LED_Off
+        FUNCALL LED_Off, GPIO_Bit_Set
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LED_Off, GPIO_Bit_Set
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LED_Off, GPIO_Bit_Set
+        LOCFRAME CSTACK, 4, STACK
+        CMP.B   #0x2, R12
+        JNE     ??LED_Off_0
+        MOV.B   #0x1, R14
+        CALLA   #?Subroutine4
+??CrossCallReturnLabel_4:
+        MOV.B   #0x1, R14
+        JMP     ?Subroutine1
+??LED_Off_0:
+        MOV.B   R12, R12
+        ADDA    R12, R12
+        MOVA    R12, R15
+        MOV.B   #0x1, R14
+        JMP     ?Subroutine0
+        NOP
+          CFI EndBlock cfiBlock9
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?Subroutine4:
+          CFI Block cfiCond10 Using cfiCommon0
+          CFI Function LED_On
+          CFI Conditional ??CrossCallReturnLabel_5
+          CFI CFA SP+8
+          CFI Block cfiCond11 Using cfiCommon0
+          CFI (cfiCond11) Function LED_Off
+          CFI (cfiCond11) Conditional ??CrossCallReturnLabel_4
+          CFI (cfiCond11) CFA SP+8
+          CFI Block cfiCond12 Using cfiCommon0
+          CFI (cfiCond12) Function LED_SetStatus
+          CFI (cfiCond12) Conditional ??CrossCallReturnLabel_3
+          CFI (cfiCond12) R10L Frame(CFA, -8)
+          CFI (cfiCond12) R10H Frame(CFA, -6)
+          CFI (cfiCond12) CFA SP+12
+          CFI Block cfiPicker13 Using cfiCommon1
+          CFI (cfiPicker13) NoFunction
+          CFI (cfiPicker13) Picker
+        MOV.B   #0x0, R13
+        MOV.B   #0x0, R12
+        BRA     #GPIO_Bit_Set
+          CFI EndBlock cfiCond10
+          CFI EndBlock cfiCond11
+          CFI EndBlock cfiCond12
+          CFI EndBlock cfiPicker13
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+LED_SetStatus:
+          CFI Block cfiBlock14 Using cfiCommon0
+          CFI Function LED_SetStatus
+        FUNCALL LED_SetStatus, GPIO_Bit_Set
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL LED_SetStatus, GPIO_Bit_Set
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL LED_SetStatus, GPIO_Bit_Set
+        LOCFRAME CSTACK, 8, STACK
+        PUSHM.A #0x1, R10
+          CFI R10L Frame(CFA, -8)
+          CFI R10H Frame(CFA, -6)
+          CFI CFA SP+8
+        CMP.B   #0x0, R13
+        JNE     ??LED_SetStatus_0
+        MOV.B   #0x1, R10
+        JMP     ??LED_SetStatus_1
+??LED_SetStatus_0:
+        MOV.B   #0x0, R10
+??LED_SetStatus_1:
+        CMP.B   #0x2, R12
+        JNE     ??LED_SetStatus_2
+        MOV.B   R10, R14
+        CALLA   #?Subroutine4
+??CrossCallReturnLabel_3:
+        MOV.B   R10, R14
+        MOV.B   #0x6, R13
+        MOV.B   #0x0, R12
+        JMP     ??LED_SetStatus_3
+??LED_SetStatus_2:
+        MOV.B   R12, R12
+        ADDA    R12, R12
+        MOVA    R12, R15
+        MOV.B   R10, R14
+        CALLA   #?Subroutine2
+??LED_SetStatus_3:
+        CALLA   #GPIO_Bit_Set
+        POPM.A  #0x1, R10
+          CFI R10H SameValue
+          CFI R10L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock14
+//   65 void LED_Off (LEDn led)
+//   66 {
+//   67   if(led == LED_ALL)
+//   68   {
+//   69     for(led = LED0;led < LED_NUM;led++)
+//   70     {
+//   71       GPIO_Bit_Set(LED_PIN[led].Port, LED_PIN[led].Pin, LED_OFF);
+//   72     }
+//   73   }
+//   74   else
+//   75   {
+//   76     GPIO_Bit_Set(LED_PIN[led].Port, LED_PIN[led].Pin, LED_OFF);
+//   77   }
+//   78 }
+//   79 /*******************************************************************************
+//   80 *  º¯ÊýÃû³Æ£ºLED_On  (LEDn led)
+//   81 *  ¹¦ÄÜËµÃ÷£ºµÆÁÁ
+//   82 *  ²ÎÊýËµÃ÷£ºLEDn led      :LED£¨LED0,LED1...£©
+//   83 *  º¯Êý·µ»Ø£ºÎÞ
+//   84 *  Ê¹ÓÃÊ¾Àý£ºLED_On(LED0);  //LED0ÁÁ
+//   85 ********************************************************************************/
+//   86 void LED_On  (LEDn led)
+//   87 {
+//   88   if(led == LED_ALL)
+//   89   {
+//   90     for(led = LED0;led < LED_NUM;led++)
+//   91     {
+//   92       GPIO_Bit_Set(LED_PIN[led].Port, LED_PIN[led].Pin, LED_ON);
+//   93     }
+//   94   }
+//   95   else
+//   96   {
+//   97     GPIO_Bit_Set(LED_PIN[led].Port, LED_PIN[led].Pin, LED_ON);
+//   98   }
+//   99 }
+//  100 /*******************************************************************************
+//  101 *  º¯ÊýÃû³Æ£ºLED_Turn(LEDn led)
+//  102 *  ¹¦ÄÜËµÃ÷£ºµÆ·­×ª
+//  103 *  ²ÎÊýËµÃ÷£ºLEDn led      :LED£¨LED0,LED1...£©
+//  104 *  º¯Êý·µ»Ø£ºÎÞ
+//  105 *  Ê¹ÓÃÊ¾Àý£ºLED_Turn(LED0);  //LED0Êä³ö·­×ª
+//  106 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  107 void LED_Turn(LEDn led)
+LED_Turn:
+          CFI Block cfiBlock15 Using cfiCommon0
+          CFI Function LED_Turn
+//  108 {
+//  109   if(led == LED_ALL)
+        FUNCALL LED_Turn, GPIO_Bit_Turn
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LED_Turn, GPIO_Bit_Turn
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LED_Turn, GPIO_Bit_Turn
+        LOCFRAME CSTACK, 4, STACK
+        CMP.B   #0x2, R12
+        JNE     ??LED_Turn_0
+//  110   {
+//  111     for(led = LED0;led < LED_NUM;led++)
+//  112     {
+//  113       GPIO_Bit_Turn(LED_PIN[led].Port, LED_PIN[led].Pin);
+        MOV.B   #0x0, R13
+        MOV.B   #0x0, R12
+        CALLA   #GPIO_Bit_Turn
+        MOV.B   #0x6, R13
+        MOV.B   #0x0, R12
+        BRA     #GPIO_Bit_Turn
+//  114     }
+//  115   }
+//  116   else
+//  117   {
+//  118     GPIO_Bit_Turn(LED_PIN[led].Port, LED_PIN[led].Pin);
+??LED_Turn_0:
+        MOV.B   R12, R12
+        ADDA    R12, R12
+        MOVA    R12, R15
+        CALLA   #?Subroutine2
+//  119   }
+??CrossCallReturnLabel_0:
+        BRA     #GPIO_Bit_Turn
+          CFI EndBlock cfiBlock15
+//  120 }
+//  121 /*******************************************************************************
+//  122 *  º¯ÊýÃû³Æ£ºwater_lights(void)
+//  123 *  ¹¦ÄÜËµÃ÷£ºÁ÷Ë®µÆ
+//  124 *  ²ÎÊýËµÃ÷£ºÎÞ
+//  125 *  º¯Êý·µ»Ø£ºÎÞ
+//  126 *  Ê¹ÓÃÊ¾Àý£ºwater_lights(); //Á÷Ë®µÆÁÁÒ»´Î
+//  127 ********************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(1)
+//  128 void water_lights(void)
+water_lights:
+          CFI Block cfiBlock16 Using cfiCommon0
+          CFI Function water_lights
+//  129 {
+//  130   LED_Turn(LED0);
+        FUNCALL water_lights, LED_Turn
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL water_lights, LED_Turn
+        LOCFRAME CSTACK, 4, STACK
+        MOV.B   #0x0, R12
+        CALLA   #?Subroutine3
+//  131   DELAY_MS(500);
+//  132   LED_Turn(LED1);
+??CrossCallReturnLabel_2:
+        MOV.B   #0x1, R12
+          CFI EndBlock cfiBlock16
+        REQUIRE ?Subroutine3
+        // Fall through to label ?Subroutine3
+//  133   DELAY_MS(500);
+//  134 }
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?Subroutine3:
+          CFI Block cfiCond17 Using cfiCommon0
+          CFI Function water_lights
+          CFI Conditional ??CrossCallReturnLabel_2
+          CFI CFA SP+8
+          CFI Block cfiBlock18 Using cfiCommon0
+          CFI (cfiBlock18) NoFunction
+          CFI Block cfiPicker19 Using cfiCommon1
+          CFI (cfiPicker19) NoFunction
+          CFI (cfiPicker19) Picker
+        CALLA   #LED_Turn
+        ////////////// Start of 500000 cycles delay.
+        MOV.W   #0xe846, R15
+        NOP
+        MOV.W   #0x1, R14
+??Subroutine3_1:
+        ADD.W   #0xffff, R15
+        ADDC.W  #0xffff, R14
+        JC      ??Subroutine3_1
+        ////////////// End of delay code.
+        RETA
+          CFI EndBlock cfiCond17
+          CFI EndBlock cfiBlock18
+          CFI EndBlock cfiPicker19
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r4:
+        REQUIRE ?setjmp_r4
+        REQUIRE ?longjmp_r4
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r5:
+        REQUIRE ?setjmp_r5
+        REQUIRE ?longjmp_r5
+
+        END
+// 
+// 278 bytes in segment CODE
+//   4 bytes in segment DATA20_C
+// 
+// 278 bytes of CODE  memory
+//   4 bytes of CONST memory
+//
+//Errors: none
+//Warnings: 1

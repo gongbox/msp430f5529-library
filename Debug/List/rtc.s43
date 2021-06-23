@@ -1,0 +1,634 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+//                                                      26/Nov/2016  11:15:10 /
+// IAR C/C++ Compiler V5.50.1.20465/W32, Evaluation edition for MSP430        /
+// Copyright 1996-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    __rt_version  =  3                                                      /
+//    __double_size =  32                                                     /
+//    __reg_r4      =  free                                                   /
+//    __reg_r5      =  free                                                   /
+//    __pic         =  no                                                     /
+//    __core        =  430X                                                   /
+//    __data_model  =  large                                                  /
+//    Source file   =  E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\rtc.c                                                /
+//    Command line  =  E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\rtc.c -D DEBUG -D RAM_VECTOR -lA                     /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Debug\List /
+//                     \ -o E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Debug /
+//                     \Obj\ --no_cse --no_unroll --no_inline                 /
+//                     --no_code_motion --no_tbaa --debug -D__MSP430F5529__   /
+//                     -e --double=32 --dlib_config "D:\Program Files\IAR     /
+//                     Systems\Embedded Workbench 6.4                         /
+//                     Evaluation\430\LIB\DLIB\dl430xlff.h" -I                /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\ -I        /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\in /
+//                     c\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Driv /
+//                     ers\src\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£° /
+//                     å\Drivers\src\USB\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C /
+//                     °æ\¹¤³ÌÄ£°å\Drivers\src\USB\USB_config\ -I             /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\USB\USB_User\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\ /
+//                     ¹¤³ÌÄ£°å\Drivers\srcUSB\USB_API\USB_CDC_API\ -I        /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\USB\USB_API\USB_HID_API\ -I                          /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\USB\USB_API\USB_MSC_API\ -I                          /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\  /
+//                     -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWar /
+//                     e\delay\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£° /
+//                     å\HardWare\18b20\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C° /
+//                     æ\¹¤³ÌÄ£°å\HardWare\KEY\ -I                            /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\L /
+//                     ED\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Har /
+//                     dWare\12864\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ /
+//                     ÌÄ£°å\HardWare\oled\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6 /
+//                     \C°æ\¹¤³ÌÄ£°å\HardWare\mpu6050\inc\ -I                 /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\m /
+//                     pu6050\src\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³Ì /
+//                     Ä£°å\HardWare\nokia5110\inc\ -I                        /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\n /
+//                     okia5110\src\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤ /
+//                     ³ÌÄ£°å\HardWare\LQ_1.8_TFT\ -I                         /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\L /
+//                     CD_API\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å /
+//                     \HardWare\2.2TFT\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C° /
+//                     æ\¹¤³ÌÄ£°å\HardWare\nrf24l01\ -I                       /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\System\    /
+//                     -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\System\ /
+//                     inc\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Sy /
+//                     stem\src\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£ /
+//                     °å\User\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£° /
+//                     å\User\USER\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ /
+//                     ÌÄ£°å\Lib\UCOSII\CONFIG\ -I                            /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII /
+//                     \App\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\L /
+//                     ib\uCOSII\CONFIHG\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C /
+//                     °æ\¹¤³ÌÄ£°å\Lib\uCOSII\PORT\ -I                        /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Lib\UCOSII /
+//                     \CORE\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\ /
+//                     Lib\FatFs\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ /
+//                     £°å\Lib\FatFs\option\ --core=430X --data_model=large   /
+//                     -On --multiplier=32 --multiplier_location=4C0          /
+//                     --hw_workaround=CPU40                                  /
+//    List file     =  E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Debug\List /
+//                     \rtc.s43                                               /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME rtc
+
+        RTMODEL "__SystemLibrary", "DLib"
+        RTMODEL "__core", "430X"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dlib_file_descriptor", "1"
+        RTMODEL "__double_size", "32"
+        RTMODEL "__pic", "no"
+        RTMODEL "__reg_r4", "free"
+        RTMODEL "__reg_r5", "free"
+        RTMODEL "__rt_version", "3"
+
+        RSEG CSTACK:DATA:SORT:NOROOT(0)
+
+        EXTERN ?longjmp_r4
+        EXTERN ?longjmp_r5
+        EXTERN ?setjmp_r4
+        EXTERN ?setjmp_r5
+
+        PUBWEAK ?setjmp_save_r4
+        PUBWEAK ?setjmp_save_r5
+        PUBLIC RTC
+        PUBLIC RTC_ClearITPendingBit
+        FUNCTION RTC_ClearITPendingBit,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC RTC_GetITStatus
+        FUNCTION RTC_GetITStatus,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC RTC_GetTime
+        FUNCTION RTC_GetTime,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC RTC_ITConfig
+        FUNCTION RTC_ITConfig,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC RTC_Init
+        FUNCTION RTC_Init,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 12, STACK
+        PUBLIC RTC_SetAlarm
+        FUNCTION RTC_SetAlarm,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC RTC_SetTime
+        FUNCTION RTC_SetTime,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBWEAK _A_RTCADOWDAY_L
+        PUBWEAK _A_RTCAMINHR_L
+        PUBWEAK _A_RTCCTL01_L
+        PUBWEAK _A_RTCPS0CTL_L
+        PUBWEAK _A_RTCPS1CTL_L
+        PUBWEAK _A_RTCTIM0_L
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA SP DATA
+          CFI Resource PC:20, SP:20, SR:16, R4L:16, R4H:4, R4:20, R5L:16, R5H:4
+          CFI Resource R5:20, R6L:16, R6H:4, R6:20, R7L:16, R7H:4, R7:20, R8L:16
+          CFI Resource R8H:4, R8:20, R9L:16, R9H:4, R9:20, R10L:16, R10H:4
+          CFI Resource R10:20, R11L:16, R11H:4, R11:20, R12L:16, R12H:4, R12:20
+          CFI Resource R13L:16, R13H:4, R13:20, R14L:16, R14H:4, R14:20, R15L:16
+          CFI Resource R15H:4, R15:20
+          CFI ResourceParts R4 R4H, R4L
+          CFI ResourceParts R5 R5H, R5L
+          CFI ResourceParts R6 R6H, R6L
+          CFI ResourceParts R7 R7H, R7L
+          CFI ResourceParts R8 R8H, R8L
+          CFI ResourceParts R9 R9H, R9L
+          CFI ResourceParts R10 R10H, R10L
+          CFI ResourceParts R11 R11H, R11L
+          CFI ResourceParts R12 R12H, R12L
+          CFI ResourceParts R13 R13H, R13L
+          CFI ResourceParts R14 R14H, R14L
+          CFI ResourceParts R15 R15H, R15L
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H SameValue
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H SameValue
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H SameValue
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H SameValue
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H SameValue
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H SameValue
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H SameValue
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H SameValue
+          CFI R11 Concat
+          CFI R12L Undefined
+          CFI R12H Undefined
+          CFI R12 Undefined
+          CFI R13L Undefined
+          CFI R13H Undefined
+          CFI R13 Undefined
+          CFI R14L Undefined
+          CFI R14H Undefined
+          CFI R14 Undefined
+          CFI R15L Undefined
+          CFI R15H Undefined
+          CFI R15 Undefined
+          CFI EndCommon cfiCommon0
+        
+        EXTERN g_sClock
+        EXTERN assert_failed
+        FUNCTION assert_failed,0202H
+
+// E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\src\rtc.c
+//    1 #include "rtc.h"
+
+        ASEGN DATA16_AN:DATA:NOROOT,04a0H
+// union <unnamed> __data16 _A_RTCCTL01_L
+_A_RTCCTL01_L:
+        DS8 2
+
+        ASEGN DATA16_AN:DATA:NOROOT,04a8H
+// union <unnamed> __data16 _A_RTCPS0CTL_L
+_A_RTCPS0CTL_L:
+        DS8 2
+
+        ASEGN DATA16_AN:DATA:NOROOT,04aaH
+// union <unnamed> __data16 _A_RTCPS1CTL_L
+_A_RTCPS1CTL_L:
+        DS8 2
+
+        ASEGN DATA16_AN:DATA:NOROOT,04b0H
+// union <unnamed> __data16 _A_RTCTIM0_L
+_A_RTCTIM0_L:
+        DS8 2
+
+        ASEGN DATA16_AN:DATA:NOROOT,04b8H
+// union <unnamed> __data16 _A_RTCAMINHR_L
+_A_RTCAMINHR_L:
+        DS8 2
+
+        ASEGN DATA16_AN:DATA:NOROOT,04baH
+// union <unnamed> __data16 _A_RTCADOWDAY_L
+_A_RTCADOWDAY_L:
+        DS8 2
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "E:\\\\MSP430\\\\MSP430F5529...">`:
+        DC8 45H, 3AH, 5CH, 4DH, 53H, 50H, 34H, 33H
+        DC8 30H, 5CH, 4DH, 53H, 50H, 34H, 33H, 30H
+        DC8 46H, 35H, 35H, 32H, 39H, 0BFH, 0E2H, 0BAH
+        DC8 0AFH, 0CAH, 0FDH, 32H, 2EH, 36H, 5CH, 43H
+        DC8 0B0H, 0E6H, 5CH, 0B9H, 0A4H, 0B3H, 0CCH, 0C4H
+        DC8 0A3H, 0B0H, 0E5H, 5CH, 44H, 72H, 69H, 76H
+        DC8 65H, 72H, 73H, 5CH, 73H, 72H, 63H, 5CH
+        DC8 72H, 74H, 63H, 2EH, 63H, 0
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "RTC_Init">`:
+        DC8 "RTC_Init"
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "\\312\\261\\326\\323\\305\\344\\326\\303\\2`:
+        DC8 "\312\261\326\323\305\344\326\303\262\273\272\317\300\355\243\254\307\353\275\253ACLK\306\265\302\312\305\344\326\303\316\25232768HZ\243\241"
+//    2 #include "clock.h"
+//    3 #include "msp430f5529.h"
+//    4 #include "msp430f5529MemMap.h"
+//    5 
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(1)
+//    6 const RTC_MemMapPtr  RTC = RTC_BASE_PTR; 
+RTC:
+        DC32 4A0H
+//    7 /*******************************************************************************
+//    8 *  º¯ÊýÃû³Æ£ºRTC_Init(Calendar nowDate)
+//    9 *  ¹¦ÄÜËµÃ÷£ºRTC ³õÊ¼»¯²¢ÉèÖÃÊ±¼ä
+//   10 *  ²ÎÊýËµÃ÷£ºCalendar nowDate : ÉèÖÃµ±Ç°Ê±¼ä
+//   11 *  º¯Êý·µ»Ø£ºÎÞ
+//   12 *  Ê¹ÓÃÊ¾Àý£ºCalendar  nowDate;RTC_Init(nowDate);//³õÊ¼»¯RTC²¢ÉèÖÃRTCÊ±¼ä
+//   13 *  ×¢Òâ£ºÈÕÀúÄ£Ê½ÏÂÒªÇóACLKÎª32768HZ
+//   14 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   15 void RTC_Init(Calendar nowDate)
+RTC_Init:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function RTC_Init
+//   16 {
+//   17   ASSERT(g_sClock.ACLK.nHZ == 32768,"RTC_Init","Ê±ÖÓÅäÖÃ²»ºÏÀí£¬Çë½«ACLKÆµÂÊÅäÖÃÎª32768HZ£¡");                //ÈÕÀúÄ£Ê½ÏÂÒªÇóACLKÎª32768HZ
+        FUNCALL RTC_Init, assert_failed
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL RTC_Init, RTC_SetTime
+        LOCFRAME CSTACK, 12, STACK
+        CMPX.W  #0x8000, &g_sClock + 24
+        JNE     ??RTC_Init_1
+        CMPX.W  #0x0, &g_sClock + 26
+        JEQ     ??RTC_Init_2
+??RTC_Init_1:
+        MOVA    #`?<Constant "\\312\\261\\326\\323\\305\\344\\326\\303\\2`, R15
+        MOVA    #`?<Constant "RTC_Init">`, R14
+        MOV.W   #0x11, R13
+        MOVA    #`?<Constant "E:\\\\MSP430\\\\MSP430F5529...">`, R12
+        CALLA   #assert_failed
+//   18   /*uint32_t clock_div_result = g_sClock.ACLK.nHZ;          
+//   19   uint16_t clock_div_value = 0;//¶þ·ÖÆµ´ÎÊý
+//   20   while(clock_div_result>1)  //²»¶Ï·ÖÆµ£¬Ö±µ½·ÖÆµºóµÄÖµÎª1»òÐ¡ÓÚ1£¨ÒªÇóÎª1£©
+//   21   {
+//   22     clock_div_result = clock_div_result>>1; //¶þ·ÖÆµÒ»´Î
+//   23     clock_div_value++;                      //·ÖÆµÏµÊý¼ÓÒ»
+//   24   };
+//   25   ASSERT((clock_div_result==1)&&(clock_div_value>=2)&&(clock_div_value<=16));        //ÒªÇóÊ±ÖÓ¶þ·ÖÆµ×î¶à16´Î£¬ÇÒ×îÉÙ2´Î£¬ÇÒ·ÖÆµºóµÄÆµÂÊÖµÎª1HZ
+//   26   */
+//   27   RTCCTL01 = RTCHOLD + RTCMODE + RTCSSEL__RT1PS + RTC_TimeEvent;           //Ê¹ÄÜÈÕÀúÄ£Ê½
+??RTC_Init_2:
+        MOV.W   #0x6800, &0x4a0
+//   28   
+//   29   RTCPS0CTL =   RT0PSHOLD ;             //Ê¹ÓÃACLK×÷ÎªÊ±ÖÓ
+        MOV.W   #0x100, &0x4a8
+//   30   RTCPS1CTL  =  RT1PSHOLD + RT1SSEL_2; //Ê¹ÓÃ RTCPS0Êä³ö×÷ÎªÊ±ÖÓÔ´     
+        MOV.W   #0x8100, &0x4aa
+//   31   
+//   32   //RTC->RT1_PSDIV = (clock_div_value <= 9) ? (clock_div_value-2u) : 7u;
+//   33   //RTC->RT0_PSDIV = (clock_div_value >  9) ? (clock_div_value-9u) : 0u;
+//   34   
+//   35   RTC->HOLD = RESET;                 //´ò¿ªRTCÄ£¿é 
+        MOVA    &RTC, R15
+        BIC.W   #0x4000, 0(R15)
+//   36   RTC->RT0_PSHOLD = RESET;           //´ò¿ªRTCPS0CTL
+        MOVA    &RTC, R15
+        BIC.W   #0x100, 0x8(R15)
+//   37   RTC->RT1_PSHOLD = RESET;           //´ò¿ªRTCPS1CTL
+        MOVA    &RTC, R15
+        BIC.W   #0x100, 0xa(R15)
+//   38   
+//   39   RTC_SetTime(nowDate);    
+        MOV.W   #0x8, R15
+          CFI Invalid
+??RTC_Init_0:
+        PUSH.W  0xc(SP)
+        SUB.W   #0x2, R15
+        JNE     ??RTC_Init_0
+          CFI CFA SP+12
+          CFI Valid
+        CALLA   #RTC_SetTime
+//   40 }
+        ADD.W   #0x8, SP
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock0
+        REQUIRE _A_RTCCTL01_L
+        REQUIRE _A_RTCPS0CTL_L
+        REQUIRE _A_RTCPS1CTL_L
+//   41 /*******************************************************************************
+//   42 *  º¯ÊýÃû³Æ£ºRTC_SetTime(Calendar nowDate)
+//   43 *  ¹¦ÄÜËµÃ÷£ºÉèÖÃµ±Ç°Ê±¼ä
+//   44 *  ²ÎÊýËµÃ÷£ºCalendar nowDate : µ±Ç°Ê±¼ä
+//   45 *  º¯Êý·µ»Ø£ºÎÞ
+//   46 *  Ê¹ÓÃÊ¾Àý£ºRTC_SetTime(nowDate);  //ÉèÖÃRTCÊ±¼ä
+//   47 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   48 void RTC_SetTime(Calendar nowDate)
+RTC_SetTime:
+          CFI Block cfiBlock1 Using cfiCommon0
+          CFI Function RTC_SetTime
+//   49 {
+//   50   (*((Calendar *)(&RTCSEC))) = nowDate;  
+        MOV.W   SP, R15
+        ADD.W   #0x4, R15
+        MOV.W   @R15+, &0x4b0
+        MOV.W   @R15+, &0x4b2
+        MOV.W   @R15+, &0x4b4
+        MOV.W   @R15+, &0x4b6
+//   51 }
+        RETA
+          CFI EndBlock cfiBlock1
+        REQUIRE _A_RTCTIM0_L
+//   52 /*******************************************************************************
+//   53 *  º¯ÊýÃû³Æ£ºRTC_GetTime(void)
+//   54 *  ¹¦ÄÜËµÃ÷£º»ñÈ¡µ±Ç°Ê±¼ä
+//   55 *  ²ÎÊýËµÃ÷£ºÎÞ
+//   56 *  º¯Êý·µ»Ø£ºCalendar nowDate : µ±Ç°Ê±¼ä
+//   57 *  Ê¹ÓÃÊ¾Àý£ºCalendar nowDate = RTC_GetTime();  //»ñÈ¡µ±Ç°Ê±¼ä
+//   58 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   59 Calendar RTC_GetTime(void)
+RTC_GetTime:
+??RTC_GetTime_0:
+          CFI Block cfiBlock2 Using cfiCommon0
+          CFI Function RTC_GetTime
+//   60 {
+//   61   while(RTC->RDY == RESET);                  //µÈ´ýÊ±ÖÓ×¼±¸ºÃ¶Á
+        MOVA    &RTC, R15
+        MOV.W   @R15, R14
+        SWPB    R14
+        AND.W   #0xff, R14
+        RRA.W   R14
+        RRA.W   R14
+        RRA.W   R14
+        RRA.W   R14
+        AND.W   #0x1, R14
+        CMP.B   #0x0, R14
+        JEQ     ??RTC_GetTime_0
+        MOV.W   &0x4b0, 0(R12)
+        MOV.W   &0x4b2, 0x2(R12)
+        MOV.W   &0x4b4, 0x4(R12)
+        MOV.W   &0x4b6, 0x6(R12)
+        RETA
+          CFI EndBlock cfiBlock2
+        REQUIRE _A_RTCTIM0_L
+//   62   return (*((Calendar *)(&RTCSEC)));         //ÒòÎª¸Ã¼Ä´æÆ÷½á¹¹ÓëCalendar½á¹¹ÌåÏàÍ¬£¬Ö±½Ó½«¼Ä´æÆ÷Öµ·µ»Ø
+//   63 }
+//   64 /*******************************************************************************
+//   65 *  º¯ÊýÃû³Æ£ºRTC_SetAlarm    (Calendar alarm_Time,Alarm_Type alarm_type)
+//   66 *  ¹¦ÄÜËµÃ÷£ºÉèÖÃÄÖÖÓÊ±¼ä¼°ÀàÐÍ
+//   67 *  ²ÎÊýËµÃ÷£ºCalendar alarm_Time     :ÄÖÖÓÊ±¼ä
+//   68              Alarm_Type alarm_type   :ÄÖÖÓÀàÐÍ
+//   69 *  º¯Êý·µ»Ø£ºÎÞ
+//   70 *  Ê¹ÓÃÊ¾Àý£ºRTC_SetAlarm (alarm_Time,Every_Days); //ÄÖÖÓÊ±¼äÉèÖÃ£¬Ã¿Ìì´¥·¢Ò»´ÎÄÖÖÓÊÂ¼þ
+//   71 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   72 void RTC_SetAlarm    (Calendar alarm_Time,Alarm_Type alarm_type)
+RTC_SetAlarm:
+          CFI Block cfiBlock3 Using cfiCommon0
+          CFI Function RTC_SetAlarm
+//   73 {
+//   74   //Ð´ÈëÄÖÖÓÊ±¼ä
+//   75   RTCAMIN  = alarm_Time.Minutes    ;
+        MOV.B   0x5(SP), &0x4b8
+//   76   RTCAHOUR = alarm_Time.Hours      ;
+        MOV.B   0x6(SP), &0x4b9
+//   77   RTCADAY  = alarm_Time.DayOfMonth ; 
+        MOV.B   0x8(SP), &0x4bb
+//   78   
+//   79   BIT_VALUE_IN_BYTE(RTCAMIN,7) = BIT_SET;
+        BIS.B   #0x80, &0x4b8
+//   80   BIT_VALUE_IN_BYTE(RTCAHOUR,7) = (alarm_type == Every_Days  ||
+//   81                               alarm_type == Every_Weeks ||
+//   82                               alarm_type == Every_Months 
+//   83                               ) ? BIT_SET : RESET;
+        CMP.B   #0x1, R12
+        JEQ     ??RTC_SetAlarm_0
+        CMP.B   #0x2, R12
+        JEQ     ??RTC_SetAlarm_0
+        CMP.B   #0x3, R12
+        JNE     ??RTC_SetAlarm_1
+??RTC_SetAlarm_0:
+        MOV.B   #0x1, R14
+        JMP     ??RTC_SetAlarm_2
+??RTC_SetAlarm_1:
+        MOV.B   #0x0, R14
+??RTC_SetAlarm_2:
+        BIT.B   #0x1, R14
+        JC      ??RTC_SetAlarm_3
+        BIC.B   #0x80, &0x4b9
+        JMP     ??RTC_SetAlarm_4
+??RTC_SetAlarm_3:
+        BIS.B   #0x80, &0x4b9
+//   84   BIT_VALUE_IN_BYTE(RTCADOW,7) = alarm_type == Every_Weeks  ? BIT_SET : RESET;
+??RTC_SetAlarm_4:
+        CMP.B   #0x2, R12
+        JNE     ??RTC_SetAlarm_5
+        MOV.B   #0x1, R14
+        JMP     ??RTC_SetAlarm_6
+??RTC_SetAlarm_5:
+        MOV.B   #0x0, R14
+??RTC_SetAlarm_6:
+        BIT.B   #0x1, R14
+        JC      ??RTC_SetAlarm_7
+        BIC.B   #0x80, &0x4ba
+        JMP     ??RTC_SetAlarm_8
+??RTC_SetAlarm_7:
+        BIS.B   #0x80, &0x4ba
+//   85   BIT_VALUE_IN_BYTE(RTCADAY,7) = alarm_type == Every_Months ? BIT_SET : RESET;
+??RTC_SetAlarm_8:
+        CMP.B   #0x3, R12
+        JNE     ??RTC_SetAlarm_9
+        MOV.B   #0x1, R14
+        JMP     ??RTC_SetAlarm_10
+??RTC_SetAlarm_9:
+        MOV.B   #0x0, R14
+??RTC_SetAlarm_10:
+        BIT.B   #0x1, R14
+        JC      ??RTC_SetAlarm_11
+        BIC.B   #0x80, &0x4bb
+        RETA
+??RTC_SetAlarm_11:
+        BIS.B   #0x80, &0x4bb
+//   86 }
+        RETA
+          CFI EndBlock cfiBlock3
+        REQUIRE _A_RTCAMINHR_L
+        REQUIRE _A_RTCADOWDAY_L
+//   87 /*******************************************************************************
+//   88 *  º¯ÊýÃû³Æ£ºRTC_ITConfig   (RTC_IRQn irqn, STATUS ITState)
+//   89 *  ¹¦ÄÜËµÃ÷: ÉèÖÃRTCÄ³Ò»¸öÖÐ¶ÏÊÇ·ñÊ¹ÄÜ
+//   90 *  ²ÎÊýËµÃ÷£ºRTC_IRQn irqn   : ÖÐ¶ÏÊÂ¼þÑ¡Ôñ
+//   91              STATUS ITState  : ÊÇ·ñÊ¹ÄÜÖÐ¶Ï
+//   92 *  º¯Êý·µ»Ø£ºÎÞ
+//   93 *  Ê¹ÓÃÊ¾Àý£ºRTC_ITConfig   (RTC_Alarm_IRQn, ENABLE);  //Ê¹ÄÜÄÖÖÓÖÐ¶Ï
+//   94 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   95 void RTC_ITConfig   (RTC_IRQn irqn, STATUS ITState)
+RTC_ITConfig:
+          CFI Block cfiBlock4 Using cfiCommon0
+          CFI Function RTC_ITConfig
+//   96 {
+//   97   if(ITState != DISABLE)
+        CMP.B   #0x0, R13
+        JEQ     ??RTC_ITConfig_0
+//   98   {
+//   99     RTC->IE |= irqn;
+        MOVA    &RTC, R15
+        MOV.W   @R15, R15
+        PUSH.W  R14
+          CFI CFA SP+6
+        MOV.B   R15, 0(SP)
+        POP.W   R14
+          CFI CFA SP+4
+        RPT     #0x4
+        RRUX.B  R14
+        MOV.B   R14, R14
+        MOV.B   R12, R12
+        BIS.W   R12, R14
+        RLAM.W  #0x4, R14
+        AND.W   #0x70, R14
+        AND.W   #0xff8f, R15
+        BIS.W   R14, R15
+        MOVA    &RTC, R14
+        MOV.W   R15, 0(R14)
+        RETA
+//  100   }
+//  101   else
+//  102   {
+//  103     RTC->IE &=~ irqn;
+??RTC_ITConfig_0:
+        MOVA    &RTC, R15
+        MOV.W   @R15, R15
+        PUSH.W  R14
+          CFI CFA SP+6
+        MOV.B   R15, 0(SP)
+        POP.W   R14
+          CFI CFA SP+4
+        RPT     #0x4
+        RRUX.B  R14
+        MOV.B   R14, R14
+        MOV.B   R12, R12
+        BIC.W   R12, R14
+        RLAM.W  #0x4, R14
+        AND.W   #0x70, R14
+        AND.W   #0xff8f, R15
+        BIS.W   R14, R15
+        MOVA    &RTC, R14
+        MOV.W   R15, 0(R14)
+//  104   }
+//  105 }
+        RETA
+          CFI EndBlock cfiBlock4
+//  106 /*******************************************************************************
+//  107 *  º¯ÊýÃû³Æ£ºRTC_GetITStatus(RTC_IRQn irqn)
+//  108 *  ¹¦ÄÜËµÃ÷£º»ñÈ¡RTCÄ³Ò»Î»ÖÐ¶Ï±êÖ¾
+//  109 *  ²ÎÊýËµÃ÷£ºRTC_IRQn irqn : ÖÐ¶ÏÊÂ¼þÑ¡Ôñ
+//  110 *  º¯Êý·µ»Ø£ºSTATUS : TRUE ÖÐ¶ÏÊÂ¼þ·¢Éú£¬FALSE ÖÐ¶ÏÊÂ¼þÎ´·¢Éú
+//  111 *  Ê¹ÓÃÊ¾Àý£ºif(TRUE == RTC_GetITStatus(RTC_Alarm_IRQn)){...}  //ÅÐ¶ÏÄÖÖÓÊ±¼äÊÇ·ñ·¢Éú
+//  112 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  113 STATUS RTC_GetITStatus(RTC_IRQn irqn)
+RTC_GetITStatus:
+          CFI Block cfiBlock5 Using cfiCommon0
+          CFI Function RTC_GetITStatus
+//  114 {
+//  115   return ((RTC->IFG & irqn) ? TRUE : FALSE);
+        MOVA    &RTC, R15
+        MOV.W   #0x7, R14
+        AND.W   @R15, R14
+        BIT.B   R12, R14
+        JEQ     ??RTC_GetITStatus_0
+        MOV.B   #0x1, R12
+        RETA
+??RTC_GetITStatus_0:
+        MOV.B   #0x0, R12
+        RETA
+          CFI EndBlock cfiBlock5
+//  116 }
+//  117 /*******************************************************************************
+//  118 *  º¯ÊýÃû³Æ£ºRTC_ClearITPendingBit(RTC_IRQn irqn)
+//  119 *  ¹¦ÄÜËµÃ÷£ºÇå³ýRTCÄ³Ò»Î»ÖÐ¶Ï±êÖ¾
+//  120 *  ²ÎÊýËµÃ÷£ºRTC_IRQn irqn : ÖÐ¶ÏÊÂ¼þÑ¡Ôñ
+//  121 *  º¯Êý·µ»Ø£ºÎÞ
+//  122 *  Ê¹ÓÃÊ¾Àý£ºRTC_ClearITPendingBit(RTC_Alarm_IRQn); //Çå³ýRTCÄÖÖÓÖÐ¶Ï±êÖ¾Î»
+//  123 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  124 void RTC_ClearITPendingBit(RTC_IRQn irqn)
+RTC_ClearITPendingBit:
+          CFI Block cfiBlock6 Using cfiCommon0
+          CFI Function RTC_ClearITPendingBit
+//  125 {
+//  126   RTC->IFG &=~ irqn;
+        MOVA    &RTC, R15
+        MOV.W   @R15, R15
+        MOV.B   R12, R12
+        MOV.W   R15, R14
+        BIC.W   R12, R14
+        AND.W   #0x7, R14
+        AND.W   #0xfff8, R15
+        BIS.W   R14, R15
+        MOVA    &RTC, R14
+        MOV.W   R15, 0(R14)
+//  127 }
+        RETA
+          CFI EndBlock cfiBlock6
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r4:
+        REQUIRE ?setjmp_r4
+        REQUIRE ?longjmp_r4
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r5:
+        REQUIRE ?setjmp_r5
+        REQUIRE ?longjmp_r5
+
+        END
+// 
+// 450 bytes in segment CODE
+//  12 bytes in segment DATA16_AN
+// 119 bytes in segment DATA20_C
+// 
+// 450 bytes of CODE  memory
+// 119 bytes of CONST memory
+//   0 bytes of DATA  memory (+ 12 bytes shared)
+//
+//Errors: none
+//Warnings: none

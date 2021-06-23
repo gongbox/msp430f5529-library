@@ -1,0 +1,763 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+//                                                      26/Nov/2016  11:15:11 /
+// IAR C/C++ Compiler V5.50.1.20465/W32, Evaluation edition for MSP430        /
+// Copyright 1996-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    __rt_version  =  3                                                      /
+//    __double_size =  32                                                     /
+//    __reg_r4      =  free                                                   /
+//    __reg_r5      =  free                                                   /
+//    __pic         =  no                                                     /
+//    __core        =  430X                                                   /
+//    __data_model  =  large                                                  /
+//    Source file   =  E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\flash.c                                              /
+//    Command line  =  E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\flash.c -D DEBUG -D RAM_VECTOR -lA                   /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Debug\List /
+//                     \ -o E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Debug /
+//                     \Obj\ --no_cse --no_unroll --no_inline                 /
+//                     --no_code_motion --no_tbaa --debug -D__MSP430F5529__   /
+//                     -e --double=32 --dlib_config "D:\Program Files\IAR     /
+//                     Systems\Embedded Workbench 6.4                         /
+//                     Evaluation\430\LIB\DLIB\dl430xlff.h" -I                /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\ -I        /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\in /
+//                     c\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Driv /
+//                     ers\src\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£° /
+//                     å\Drivers\src\USB\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C /
+//                     °æ\¹¤³ÌÄ£°å\Drivers\src\USB\USB_config\ -I             /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\USB\USB_User\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\ /
+//                     ¹¤³ÌÄ£°å\Drivers\srcUSB\USB_API\USB_CDC_API\ -I        /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\USB\USB_API\USB_HID_API\ -I                          /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\USB\USB_API\USB_MSC_API\ -I                          /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\  /
+//                     -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWar /
+//                     e\delay\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£° /
+//                     å\HardWare\18b20\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C° /
+//                     æ\¹¤³ÌÄ£°å\HardWare\KEY\ -I                            /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\L /
+//                     ED\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Har /
+//                     dWare\12864\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ /
+//                     ÌÄ£°å\HardWare\oled\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6 /
+//                     \C°æ\¹¤³ÌÄ£°å\HardWare\mpu6050\inc\ -I                 /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\m /
+//                     pu6050\src\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³Ì /
+//                     Ä£°å\HardWare\nokia5110\inc\ -I                        /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\n /
+//                     okia5110\src\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤ /
+//                     ³ÌÄ£°å\HardWare\LQ_1.8_TFT\ -I                         /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\L /
+//                     CD_API\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å /
+//                     \HardWare\2.2TFT\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C° /
+//                     æ\¹¤³ÌÄ£°å\HardWare\nrf24l01\ -I                       /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\System\    /
+//                     -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\System\ /
+//                     inc\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Sy /
+//                     stem\src\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£ /
+//                     °å\User\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£° /
+//                     å\User\USER\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ /
+//                     ÌÄ£°å\Lib\UCOSII\CONFIG\ -I                            /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII /
+//                     \App\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\L /
+//                     ib\uCOSII\CONFIHG\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C /
+//                     °æ\¹¤³ÌÄ£°å\Lib\uCOSII\PORT\ -I                        /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Lib\UCOSII /
+//                     \CORE\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\ /
+//                     Lib\FatFs\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ /
+//                     £°å\Lib\FatFs\option\ --core=430X --data_model=large   /
+//                     -On --multiplier=32 --multiplier_location=4C0          /
+//                     --hw_workaround=CPU40                                  /
+//    List file     =  E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Debug\List /
+//                     \flash.s43                                             /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME flash
+
+        RTMODEL "__SystemLibrary", "DLib"
+        RTMODEL "__core", "430X"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dlib_file_descriptor", "1"
+        RTMODEL "__double_size", "32"
+        RTMODEL "__pic", "no"
+        RTMODEL "__reg_r4", "free"
+        RTMODEL "__reg_r5", "free"
+        RTMODEL "__rt_version", "3"
+
+        RSEG CSTACK:DATA:SORT:NOROOT(0)
+
+        EXTERN ?cstart_init_copy_ramfunc
+        EXTERN ?ShiftLeft32_9
+        EXTERN ?Mul32
+        EXTERN ?longjmp_r4
+        EXTERN ?longjmp_r5
+        EXTERN ?setjmp_r4
+        EXTERN ?setjmp_r5
+
+        PUBWEAK ?setjmp_save_r4
+        PUBWEAK ?setjmp_save_r5
+        PUBLIC Flash_Erase_Addr
+        FUNCTION Flash_Erase_Addr,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC Flash_Erase_Segment
+        FUNCTION Flash_Erase_Segment,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 8, STACK
+        PUBLIC Flash_Write_Byte
+        FUNCTION Flash_Write_Byte,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 20, STACK
+        PUBLIC Flash_Write_DWold
+        FUNCTION Flash_Write_DWold,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 28, STACK
+        PUBLIC Flash_Write_Word
+        FUNCTION Flash_Write_Word,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 20, STACK
+        PUBLIC Flash_Write_buf
+        FUNCTION Flash_Write_buf,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 28, STACK
+        PUBWEAK _A_FCTL1_L
+        PUBWEAK _A_FCTL3_L
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA SP DATA
+          CFI Resource PC:20, SP:20, SR:16, R4L:16, R4H:4, R4:20, R5L:16, R5H:4
+          CFI Resource R5:20, R6L:16, R6H:4, R6:20, R7L:16, R7H:4, R7:20, R8L:16
+          CFI Resource R8H:4, R8:20, R9L:16, R9H:4, R9:20, R10L:16, R10H:4
+          CFI Resource R10:20, R11L:16, R11H:4, R11:20, R12L:16, R12H:4, R12:20
+          CFI Resource R13L:16, R13H:4, R13:20, R14L:16, R14H:4, R14:20, R15L:16
+          CFI Resource R15H:4, R15:20
+          CFI ResourceParts R4 R4H, R4L
+          CFI ResourceParts R5 R5H, R5L
+          CFI ResourceParts R6 R6H, R6L
+          CFI ResourceParts R7 R7H, R7L
+          CFI ResourceParts R8 R8H, R8L
+          CFI ResourceParts R9 R9H, R9L
+          CFI ResourceParts R10 R10H, R10L
+          CFI ResourceParts R11 R11H, R11L
+          CFI ResourceParts R12 R12H, R12L
+          CFI ResourceParts R13 R13H, R13L
+          CFI ResourceParts R14 R14H, R14L
+          CFI ResourceParts R15 R15H, R15L
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H SameValue
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H SameValue
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H SameValue
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H SameValue
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H SameValue
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H SameValue
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H SameValue
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H SameValue
+          CFI R11 Concat
+          CFI R12L Undefined
+          CFI R12H Undefined
+          CFI R12 Undefined
+          CFI R13L Undefined
+          CFI R13H Undefined
+          CFI R13 Undefined
+          CFI R14L Undefined
+          CFI R14H Undefined
+          CFI R14 Undefined
+          CFI R15L Undefined
+          CFI R15H Undefined
+          CFI R15 Undefined
+          CFI EndCommon cfiCommon0
+        
+        EXTERN assert_failed
+        FUNCTION assert_failed,0202H
+
+// E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\src\flash.c
+//    1 #include "flash.h"
+
+        ASEGN DATA16_AN:DATA:NOROOT,0140H
+// union <unnamed> __data16 _A_FCTL1_L
+_A_FCTL1_L:
+        DS8 2
+
+        ASEGN DATA16_AN:DATA:NOROOT,0144H
+// union <unnamed> __data16 _A_FCTL3_L
+_A_FCTL3_L:
+        DS8 2
+//    2 #include "system.h"
+//    3 #include "msp430f5529.h"
+//    4 #include "msp430f5529MemMap.h"
+//    5 
+//    6 //×¢Òâ£ºÊ¹ÓÃflashÊ±Ó¦Ê¹ÓÃ¿¿ºóµÄµØÖ·£¬·ñÔò¿ÉÄÜ»áÆÆ»µ³ÌÐò
+//    7 /*******************************************************************************
+//    8 *  º¯ÊýÃû³Æ£º²Á³ýflashÖÐµÄÄ³Ò»¶Î
+//    9 *  ¹¦ÄÜËµÃ÷£º¶ÎÓ¦¸ÃÊÇÔÚ£¨MIN_SEGMENT - MAX_SEGMENT£©£¬Îª±£»¤³ÌÐò£¬×îºÃÈ¡×îºó¼¸¸ö¶Î£¬×¢Òâ²»Òª²Á³ýÖÐ¶ÏÏòÁ¿±í
+//   10 *  ²ÎÊýËµÃ÷£º±ØÐëÒ»´Î²Á³ý512×Ö½Ú£¬FlashÈÝÁ¿£¨128KB£©¶ÔÓ¦segmentNoÊýÁ¿£¨128*1024/512=256£©£¬Ê¹ÓÃÊ±½¨ÒéÈ¡¿¿ºóÃæµÄ¶ÎÎ»
+//   11 *  º¯Êý·µ»Ø£ºÎÞ
+//   12 *  Ê¹ÓÃÊ¾Àý£ºFlash_Erase_Segment(MAX_SEGMENT);                  //²Á³ýµÚMAX_SEGMENT¶Î
+//   13 ********************************************************************************/
+
+        RSEG CODE_I:DATA:REORDER:NOROOT(1)
+//   14 __ramfunc void Flash_Erase_Segment(uint16_t segmentNo)
+Flash_Erase_Segment:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function Flash_Erase_Segment
+        FUNCALL Flash_Erase_Segment, assert_failed
+        LOCFRAME CSTACK, 8, STACK
+        REQUIRE ?cstart_init_copy_ramfunc
+//   15 {
+        PUSHM.A #0x1, R10
+          CFI R10L Frame(CFA, -8)
+          CFI R10H Frame(CFA, -6)
+          CFI CFA SP+8
+        MOV.W   R12, R10
+//   16   ASSERT(segmentNo >= MIN_SEGMENT && segmentNo <= MAX_SEGMENT,"Flash_Erase_Segment","segmentNo²ÎÊý³¬³ö·¶Î§£¡");  //¶ÏÑÔ¼ì²â¶Î·¶Î§ÊÇ·ñÔÚFLASHÇø¼ä
+        CMP.W   #0x22, R10
+        JNC     ??Flash_Erase_Segment_1
+        CMP.W   #0x122, R10
+        JNC     ??Flash_Erase_Segment_2
+??Flash_Erase_Segment_1:
+        MOVA    #`?<Constant "segmentNo\\262\\316\\312\\375\\263\\254\\`, R15
+        MOVA    #`?<Constant "Flash_Erase_Segment">`, R14
+        MOV.W   #0x10, R13
+        MOVA    #`?<Constant "E:\\\\MSP430\\\\MSP430F5529...">`, R12
+        CALLA   #assert_failed
+//   17   
+//   18   uint16_t * Addr = (uint16_t *)((uint32_t)segmentNo*512);   //¼ÆËãµØÖ·
+??Flash_Erase_Segment_2:
+        MOV.W   R10, R12
+        MOV.W   #0x0, R13
+        MOV.W   #0x200, R14
+        MOV.W   #0x0, R15
+        CALLA   #?Mul32
+        PUSHM.W #0x2, R13
+          CFI CFA SP+12
+        POPM.A  #0x1, R15
+          CFI CFA SP+8
+//   19   
+//   20   FCTL3 = FWKEY;                              // Çå³ýËø¶¨
+        MOV.W   #0xa500, &0x144
+//   21   FCTL1 = FWKEY+ERASE;                        // ²Á³ýÒ»¶Î
+        MOV.W   #0xa502, &0x140
+//   22   *Addr = 0;                                  //¶Ô²Á³ýµÄµØÖ··¶Î§ÄÚÈÎÒâ×öÒ»´Î¿ÕÐ´Èë£¬ÓÃÒÔÆô¶¯²Á³ý²Ù×÷
+        MOV.W   #0x0, 0(R15)
+//   23   while (FCTL3 & BUSY);                       // µÈ´ýÔÊÐí²Ù×÷
+??Flash_Erase_Segment_0:
+        BIT.W   #0x1, &0x144
+        JC      ??Flash_Erase_Segment_0
+//   24   FCTL1 = FWKEY;                              //Çå³ý²Á³ýÎ»  
+        MOV.W   #0xa500, &0x140
+//   25   FCTL3 = FWKEY+LOCK;                         //¶ÔFLASH¼ÓËø£¬¿É¶Á£¬²»¿ÉÐ´£¬²»¿É²Á³ý
+        MOV.W   #0xa510, &0x144
+//   26 }
+        POPM.A  #0x1, R10
+          CFI R10H SameValue
+          CFI R10L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock0
+        REQUIRE _A_FCTL3_L
+        REQUIRE _A_FCTL1_L
+//   27 /*******************************************************************************
+//   28 *  º¯ÊýÃû³Æ£º²Á³ýflashÖÐµÄÄ³Ò»¹Ì¶¨Î»ÖÃ
+//   29 *  ¹¦ÄÜËµÃ÷£º
+//   30 *  ²ÎÊýËµÃ÷£º±ØÐëÒ»´Î²Á³ý512×Ö½Ú
+//   31 *  º¯Êý·µ»Ø£ºÎÞ
+//   32 *  Ê¹ÓÃÊ¾Àý£ºFlash_Erase_Addr(0x1800);
+//   33 ********************************************************************************/
+
+        RSEG CODE_I:DATA:REORDER:NOROOT(1)
+//   34 __ramfunc void Flash_Erase_Addr   (uint32_t addr)
+Flash_Erase_Addr:
+          CFI Block cfiBlock1 Using cfiCommon0
+          CFI Function Flash_Erase_Addr
+        REQUIRE ?cstart_init_copy_ramfunc
+//   35 {
+//   36   uint16_t * Addr = (uint16_t *)addr;
+        PUSHM.W #0x2, R13
+          CFI CFA SP+8
+        POPM.A  #0x1, R15
+          CFI CFA SP+4
+//   37   FCTL3 = FWKEY;                              // Çå³ýËø¶¨
+        MOV.W   #0xa500, &0x144
+//   38   FCTL1 = FWKEY+ERASE;                        // ²Á³ýÒ»¶Î
+        MOV.W   #0xa502, &0x140
+//   39   *Addr = 0;                                  //¶Ô²Á³ýµÄµØÖ··¶Î§ÄÚÈÎÒâ×öÒ»´Î¿ÕÐ´Èë£¬ÓÃÒÔÆô¶¯²Á³ý²Ù×÷
+        MOV.W   #0x0, 0(R15)
+//   40   while (FCTL3 & BUSY);                       // µÈ´ýÔÊÐí²Ù×÷
+??Flash_Erase_Addr_0:
+        BIT.W   #0x1, &0x144
+        JC      ??Flash_Erase_Addr_0
+//   41   FCTL1 = FWKEY;                              //Çå³ý²Á³ýÎ»  
+        MOV.W   #0xa500, &0x140
+//   42   FCTL3 = FWKEY+LOCK;                         //¶ÔFLASH¼ÓËø£¬¿É¶Á£¬²»¿ÉÐ´£¬²»¿É²Á³ý
+        MOV.W   #0xa510, &0x144
+//   43 }
+        RETA
+          CFI EndBlock cfiBlock1
+        REQUIRE _A_FCTL3_L
+        REQUIRE _A_FCTL1_L
+//   44 /*******************************************************************************
+//   45 *  º¯ÊýÃû³Æ£º
+//   46 *  ¹¦ÄÜËµÃ÷£ºÐ´ÈëÒ»¸ö×Ö½ÚÊý¾Ýµ½Flash
+//   47 *  ²ÎÊýËµÃ÷£ºuint16 segmentNo £º¶ÎÎ» uint16_t offset £ºÆ«ÒÆÁ¿£¬uint16 data £ºÒªÐ´ÈëµÄÊý¾Ý
+//   48 *  º¯Êý·µ»Ø£ºÎÞ
+//   49 *  Ê¹ÓÃÊ¾Àý£ºFlash_Write(200,0,0x10);    //ÔÚµÚ200¸ö¶ÎÎ»£¬Æ«ÒÆ0¸ö×Ö½Ú£¬Ð´ÈëÊý¾Ý0x10
+//   50 ********************************************************************************/
+
+        RSEG CODE_I:DATA:REORDER:NOROOT(1)
+//   51 __ramfunc void Flash_Write_Byte(uint16_t segmentNo,uint16_t offset,uint8_t data)
+Flash_Write_Byte:
+          CFI Block cfiBlock2 Using cfiCommon0
+          CFI Function Flash_Write_Byte
+        FUNCALL Flash_Write_Byte, assert_failed
+        LOCFRAME CSTACK, 20, STACK
+        REQUIRE ?cstart_init_copy_ramfunc
+//   52 {
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        MOV.W   R12, R10
+        MOV.W   R13, R8
+        MOV.B   R14, R11
+//   53   ASSERT(segmentNo >= MIN_SEGMENT && segmentNo <= MAX_SEGMENT,"Flash_Write_Byte","segmentNo²ÎÊý³¬³ö·¶Î§£¡");  //¶ÏÑÔ¼ì²â¶Î·¶Î§ÊÇ·ñÔÚFLASHÇø¼ä
+        CMP.W   #0x22, R10
+        JNC     ??Flash_Write_Byte_1
+        CMP.W   #0x122, R10
+        JNC     ??Flash_Write_Byte_2
+??Flash_Write_Byte_1:
+        MOVA    #`?<Constant "segmentNo\\262\\316\\312\\375\\263\\254\\`, R15
+        MOVA    #`?<Constant "Flash_Write_Byte">`, R14
+        MOV.W   #0x35, R13
+        MOVA    #`?<Constant "E:\\\\MSP430\\\\MSP430F5529...">`, R12
+        CALLA   #assert_failed
+//   54   
+//   55   uint8_t * Addr = (uint8_t *)((uint32_t)segmentNo*512 + offset);        //¼ÆËãµØÖ·
+??Flash_Write_Byte_2:
+        MOV.W   R10, R12
+        MOV.W   #0x0, R13
+        MOV.W   #0x200, R14
+        MOV.W   #0x0, R15
+        CALLA   #?Mul32
+        MOV.W   R8, R14
+        MOV.W   #0x0, R15
+        ADD.W   R14, R12
+        ADDC.W  R15, R13
+        PUSHM.W #0x2, R13
+          CFI CFA SP+24
+        POPM.A  #0x1, R15
+          CFI CFA SP+20
+//   56   
+//   57   FCTL3 = FWKEY;                            //Çå³ýËø¶¨ 
+        MOV.W   #0xa500, &0x144
+//   58   FCTL1 = FWKEY+WRT;                        //ÖÃÎ»±à³ÌÎ»
+        MOV.W   #0xa540, &0x140
+//   59   *Addr = data;                             //Ð´ÈëÒ»¸ö×Ö
+        MOV.B   R11, 0(R15)
+//   60   while (FCTL3 & BUSY);                     //µÈ´ý²Ù×÷Íê³É
+??Flash_Write_Byte_0:
+        BIT.W   #0x1, &0x144
+        JC      ??Flash_Write_Byte_0
+//   61   FCTL1 = FWKEY;                            //Çå³ýÐ´ÈëÎ»
+        MOV.W   #0xa500, &0x140
+//   62   FCTL3 = FWKEY+LOCK;                       //¶ÔFLASH¼ÓËø£¬¿É¶Á£¬²»¿ÉÐ´£¬²»¿É²Á³ý£¬±£»¤Êý¾Ý
+        MOV.W   #0xa510, &0x144
+//   63 }
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock2
+        REQUIRE _A_FCTL3_L
+        REQUIRE _A_FCTL1_L
+//   64 /*******************************************************************************
+//   65 *  º¯ÊýÃû³Æ£º
+//   66 *  ¹¦ÄÜËµÃ÷£ºÐ´ÈëÒ»¸ö×ÖÊý¾Ýµ½Flash
+//   67 *  ²ÎÊýËµÃ÷£ºuint16 segmentNo £º¶ÎÎ» uint16_t offset £ºÆ«ÒÆÁ¿£¬uint16 data £ºÒªÐ´ÈëµÄÊý¾Ý
+//   68 *  º¯Êý·µ»Ø£ºÎÞ
+//   69 *  Ê¹ÓÃÊ¾Àý£ºFlash_Write(200,0,0xf010);    //ÔÚµÚ200¸ö¶ÎÎ»£¬Æ«ÒÆ0¸ö×Ö½Ú£¬Ð´ÈëÊý¾Ý0xf010
+//   70 ********************************************************************************/
+
+        RSEG CODE_I:DATA:REORDER:NOROOT(1)
+//   71 __ramfunc void Flash_Write_Word(uint16_t segmentNo,uint16_t offset,uint16_t data)
+Flash_Write_Word:
+          CFI Block cfiBlock3 Using cfiCommon0
+          CFI Function Flash_Write_Word
+        FUNCALL Flash_Write_Word, assert_failed
+        LOCFRAME CSTACK, 20, STACK
+        REQUIRE ?cstart_init_copy_ramfunc
+//   72 {
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        MOV.W   R12, R10
+        MOV.W   R13, R8
+        MOV.W   R14, R11
+//   73   ASSERT(segmentNo >= MIN_SEGMENT && segmentNo <= MAX_SEGMENT,"Flash_Write_Word","segmentNo²ÎÊý³¬³ö·¶Î§£¡");  //¶ÏÑÔ¼ì²â¶Î·¶Î§ÊÇ·ñÔÚFLASHÇø¼ä
+        CMP.W   #0x22, R10
+        JNC     ??Flash_Write_Word_1
+        CMP.W   #0x122, R10
+        JNC     ??Flash_Write_Word_2
+??Flash_Write_Word_1:
+        MOVA    #`?<Constant "segmentNo\\262\\316\\312\\375\\263\\254\\`, R15
+        MOVA    #`?<Constant "Flash_Write_Word">`, R14
+        MOV.W   #0x49, R13
+        MOVA    #`?<Constant "E:\\\\MSP430\\\\MSP430F5529...">`, R12
+        CALLA   #assert_failed
+//   74   
+//   75   uint16_t * Addr=(uint16_t *)((uint32_t)segmentNo*512 + offset);        //¼ÆËãµØÖ·
+??Flash_Write_Word_2:
+        MOV.W   R10, R12
+        MOV.W   #0x0, R13
+        MOV.W   #0x200, R14
+        MOV.W   #0x0, R15
+        CALLA   #?Mul32
+        MOV.W   R8, R14
+        MOV.W   #0x0, R15
+        ADD.W   R14, R12
+        ADDC.W  R15, R13
+        PUSHM.W #0x2, R13
+          CFI CFA SP+24
+        POPM.A  #0x1, R15
+          CFI CFA SP+20
+//   76   
+//   77   FCTL3 = FWKEY;                            //Çå³ýËø¶¨ 
+        MOV.W   #0xa500, &0x144
+//   78   FCTL1 = FWKEY+BLKWRT;                     //ÖÃÎ»±à³ÌÎ»
+        MOV.W   #0xa580, &0x140
+//   79   *Addr = data;                             //Ð´ÈëÒ»¸ö×Ö
+        MOV.W   R11, 0(R15)
+//   80   while (FCTL3 & BUSY);                     //µÈ´ý²Ù×÷Íê³É
+??Flash_Write_Word_0:
+        BIT.W   #0x1, &0x144
+        JC      ??Flash_Write_Word_0
+//   81   FCTL1 = FWKEY;                            //Çå³ýÐ´ÈëÎ»
+        MOV.W   #0xa500, &0x140
+//   82   FCTL3 = FWKEY+LOCK;                       //¶ÔFLASH¼ÓËø£¬¿É¶Á£¬²»¿ÉÐ´£¬²»¿É²Á³ý£¬±£»¤Êý¾Ý
+        MOV.W   #0xa510, &0x144
+//   83 }
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock3
+        REQUIRE _A_FCTL3_L
+        REQUIRE _A_FCTL1_L
+//   84 /*******************************************************************************
+//   85 *  º¯ÊýÃû³Æ£º
+//   86 *  ¹¦ÄÜËµÃ÷£ºÐ´ÈëËÄ¸ö×Ö½ÚÊý¾Ýµ½Flash
+//   87 *  ²ÎÊýËµÃ÷£ºuint16 segmentNo £º¶ÎÎ» uint16_t offset £ºÆ«ÒÆÁ¿£¬int32 data £ºÒªÐ´ÈëµÄÊý¾Ý
+//   88 *  º¯Êý·µ»Ø£ºÎÞ
+//   89 *  Ê¹ÓÃÊ¾Àý£ºFlash_Write(200,0,0xf0e0d010);    //ÔÚµÚ200¸ö¶ÎÎ»£¬Æ«ÒÆ0¸ö×Ö½Ú£¬Ð´ÈëÊý¾Ý0xf0e0d010
+//   90 ********************************************************************************/
+
+        RSEG CODE_I:DATA:REORDER:NOROOT(1)
+//   91 __ramfunc void Flash_Write_DWold(uint16_t segmentNo,uint16_t offset,uint32_t data)
+Flash_Write_DWold:
+          CFI Block cfiBlock4 Using cfiCommon0
+          CFI Function Flash_Write_DWold
+        FUNCALL Flash_Write_DWold, assert_failed
+        LOCFRAME CSTACK, 28, STACK
+        REQUIRE ?cstart_init_copy_ramfunc
+//   92 {
+        PUSHM.A #0x6, R11
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+28
+        MOV.W   R12, R8
+        MOV.W   R13, R6
+        MOV.W   R14, R10
+        MOV.W   R15, R11
+//   93   ASSERT(segmentNo >= MIN_SEGMENT && segmentNo <= MAX_SEGMENT,"Flash_Write_DWold","segmentNo²ÎÊý³¬³ö·¶Î§£¡");  //¶ÏÑÔ¼ì²â¶Î·¶Î§ÊÇ·ñÔÚFLASHÇø¼ä
+        CMP.W   #0x22, R8
+        JNC     ??Flash_Write_DWold_1
+        CMP.W   #0x122, R8
+        JNC     ??Flash_Write_DWold_2
+??Flash_Write_DWold_1:
+        MOVA    #`?<Constant "segmentNo\\262\\316\\312\\375\\263\\254\\`, R15
+        MOVA    #`?<Constant "Flash_Write_DWold">`, R14
+        MOV.W   #0x5d, R13
+        MOVA    #`?<Constant "E:\\\\MSP430\\\\MSP430F5529...">`, R12
+        CALLA   #assert_failed
+//   94   
+//   95   uint32_t * Addr = (uint32_t *)((uint32_t)segmentNo*512 + offset);        //¼ÆËãµØÖ·
+??Flash_Write_DWold_2:
+        MOV.W   R8, R12
+        MOV.W   #0x0, R13
+        MOV.W   #0x200, R14
+        MOV.W   #0x0, R15
+        CALLA   #?Mul32
+        MOV.W   R6, R14
+        MOV.W   #0x0, R15
+        ADD.W   R14, R12
+        ADDC.W  R15, R13
+        PUSHM.W #0x2, R13
+          CFI CFA SP+32
+        POPM.A  #0x1, R15
+          CFI CFA SP+28
+//   96   
+//   97   FCTL3 = FWKEY;                            //Çå³ýËø¶¨ 
+        MOV.W   #0xa500, &0x144
+//   98   FCTL1 = FWKEY+BLKWRT;                     //ÖÃÎ»±à³ÌÎ»
+        MOV.W   #0xa580, &0x140
+//   99   *Addr = data;                             //Ð´ÈëÒ»¸ö×Ö
+        MOV.W   R10, 0(R15)
+        MOV.W   R11, 0x2(R15)
+//  100   while (FCTL3 & BUSY);                     //µÈ´ý²Ù×÷Íê³É
+??Flash_Write_DWold_0:
+        BIT.W   #0x1, &0x144
+        JC      ??Flash_Write_DWold_0
+//  101   FCTL1 = FWKEY;                            //Çå³ýÐ´ÈëÎ»
+        MOV.W   #0xa500, &0x140
+//  102   FCTL3 = FWKEY+LOCK;                       //¶ÔFLASH¼ÓËø£¬¿É¶Á£¬²»¿ÉÐ´£¬²»¿É²Á³ý£¬±£»¤Êý¾Ý
+        MOV.W   #0xa510, &0x144
+//  103 }
+        POPM.A  #0x6, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock4
+        REQUIRE _A_FCTL3_L
+        REQUIRE _A_FCTL1_L
+//  104 /*******************************************************************************
+//  105 *  º¯ÊýÃû³Æ£ºFlash_Write_buf(uint16_t segmentNo,uint16_t offset,uint16_t cnt,uint8_t buf[])
+//  106 *  ¹¦ÄÜËµÃ÷£ºÐ´Èë¶à¸ö×Ö½ÚÊý¾Ýµ½Flash
+//  107 *  ²ÎÊýËµÃ÷£ºuint16 segmentNo £º¶ÎÎ» uint16_t offset £ºÆðÊ¼Êý¾ÝÆ«ÒÆÁ¿£¬uint16 cnt £ºÐ´ÈëÊý¾ÝÊýÁ¿£¬uint8 buf[]ÒªÐ´ÈëµÄÊý¾Ý
+//  108 *  º¯Êý·µ»Ø£ºÎÞ
+//  109 *  Ê¹ÓÃÊ¾Àý£ºuint8 data[10];Flash_Write_buf(200,0,10,data);            //´ÓµÚ200¸ö¶ÎÎ»£¬Æ«ÒÆµØÖ·Îª0¿ªÊ¼£¬Á¬ÐøÐ´Èë10¸ö×Ö½Ú
+//  110 ********************************************************************************/
+
+        RSEG CODE_I:DATA:REORDER:NOROOT(1)
+//  111 __ramfunc void Flash_Write_buf(uint16_t segmentNo,uint16_t offset,uint16_t cnt,uint8_t buf[])
+Flash_Write_buf:
+          CFI Block cfiBlock5 Using cfiCommon0
+          CFI Function Flash_Write_buf
+        FUNCALL Flash_Write_buf, assert_failed
+        LOCFRAME CSTACK, 28, STACK
+        REQUIRE ?cstart_init_copy_ramfunc
+//  112 {
+        PUSHM.A #0x6, R11
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+28
+        MOV.W   R12, R10
+        MOV.W   R13, R6
+        MOV.W   R14, R11
+        MOVA    R15, R8
+//  113   ASSERT(segmentNo >= MIN_SEGMENT && segmentNo <= MAX_SEGMENT,"Flash_Write_buf","segmentNo²ÎÊý³¬³ö·¶Î§£¡");  //¶ÏÑÔ¼ì²â¶Î·¶Î§ÊÇ·ñÔÚFLASHÇø¼ä
+        CMP.W   #0x22, R10
+        JNC     ??Flash_Write_buf_2
+        CMP.W   #0x122, R10
+        JNC     ??Flash_Write_buf_3
+??Flash_Write_buf_2:
+        MOVA    #`?<Constant "segmentNo\\262\\316\\312\\375\\263\\254\\`, R15
+        MOVA    #`?<Constant "Flash_Write_buf">`, R14
+        MOV.W   #0x71, R13
+        MOVA    #`?<Constant "E:\\\\MSP430\\\\MSP430F5529...">`, R12
+        CALLA   #assert_failed
+//  114    
+//  115   uint8_t * Addr = (uint8_t *)((uint32_t)segmentNo*512 + offset);        //¼ÆËãµØÖ·
+??Flash_Write_buf_3:
+        MOV.W   R10, R12
+        MOV.W   #0x0, R13
+        MOV.W   #0x200, R14
+        MOV.W   #0x0, R15
+        CALLA   #?Mul32
+        MOV.W   R6, R14
+        MOV.W   #0x0, R15
+        ADD.W   R14, R12
+        ADDC.W  R15, R13
+        PUSHM.W #0x2, R13
+          CFI CFA SP+32
+        POPM.A  #0x1, R14
+          CFI CFA SP+28
+//  116    
+//  117   FCTL3 = FWKEY;                            //Çå³ýËø¶¨ 
+        MOV.W   #0xa500, &0x144
+//  118   FCTL1 = FWKEY + WRT ;                     //ÖÃÎ»±à³ÌÎ»
+        MOV.W   #0xa540, &0x140
+//  119   while(cnt--)                              
+??Flash_Write_buf_1:
+        MOV.W   R11, R15
+        MOV.W   R15, R11
+        ADD.W   #0xffff, R11
+        CMP.W   #0x0, R15
+        JEQ     ??Flash_Write_buf_4
+//  120   {
+//  121     while (FCTL3 & BUSY);                   //µÈ´ýÔÊÐí²Ù×÷
+??Flash_Write_buf_0:
+        BIT.W   #0x1, &0x144
+        JC      ??Flash_Write_buf_0
+//  122     *Addr++ = *buf++;                       //Ð´ÈëÊý¾ÝÊ±Æô¶¯Ê±Ðò·¢ÉúÆ÷
+        MOV.B   @R8, 0(R14)
+        ADDA    #0x1, R8
+        ADDA    #0x1, R14
+        JMP     ??Flash_Write_buf_1
+//  123   }
+//  124   FCTL1 = FWKEY;                            //Çå³ýÐ´ÈëÎ»
+??Flash_Write_buf_4:
+        MOV.W   #0xa500, &0x140
+//  125   FCTL3 = FWKEY+LOCK;                       //¶ÔFLASH¼ÓËø£¬¿É¶Á£¬²»¿ÉÐ´£¬²»¿É²Á³ý£¬±£»¤Êý¾Ý
+        MOV.W   #0xa510, &0x144
+//  126 }
+        POPM.A  #0x6, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock5
+        REQUIRE _A_FCTL3_L
+        REQUIRE _A_FCTL1_L
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r4:
+        REQUIRE ?setjmp_r4
+        REQUIRE ?longjmp_r4
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r5:
+        REQUIRE ?setjmp_r5
+        REQUIRE ?longjmp_r5
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "E:\\\\MSP430\\\\MSP430F5529...">`:
+        DC8 45H, 3AH, 5CH, 4DH, 53H, 50H, 34H, 33H
+        DC8 30H, 5CH, 4DH, 53H, 50H, 34H, 33H, 30H
+        DC8 46H, 35H, 35H, 32H, 39H, 0BFH, 0E2H, 0BAH
+        DC8 0AFH, 0CAH, 0FDH, 32H, 2EH, 36H, 5CH, 43H
+        DC8 0B0H, 0E6H, 5CH, 0B9H, 0A4H, 0B3H, 0CCH, 0C4H
+        DC8 0A3H, 0B0H, 0E5H, 5CH, 44H, 72H, 69H, 76H
+        DC8 65H, 72H, 73H, 5CH, 73H, 72H, 63H, 5CH
+        DC8 66H, 6CH, 61H, 73H, 68H, 2EH, 63H, 0
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "Flash_Erase_Segment">`:
+        DC8 "Flash_Erase_Segment"
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "segmentNo\\262\\316\\312\\375\\263\\254\\`:
+        DC8 "segmentNo\262\316\312\375\263\254\263\366\267\266\316\247\243\241"
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "Flash_Write_Byte">`:
+        DC8 "Flash_Write_Byte"
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "Flash_Write_Word">`:
+        DC8 "Flash_Write_Word"
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "Flash_Write_DWold">`:
+        DC8 "Flash_Write_DWold"
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "Flash_Write_buf">`:
+        DC8 "Flash_Write_buf"
+
+        END
+// 
+// 576 bytes in segment CODE_I
+//   4 bytes in segment DATA16_AN
+// 176 bytes in segment DATA20_C
+// 
+// 176 bytes of CONST memory
+// 576 bytes of DATA  memory (+ 4 bytes shared)
+//
+//Errors: none
+//Warnings: none

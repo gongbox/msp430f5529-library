@@ -1,0 +1,2521 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+//                                                      06/Jun/2016  16:42:27 /
+// IAR C/C++ Compiler V5.50.1.20465/W32, Evaluation edition for MSP430        /
+// Copyright 1996-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    __rt_version  =  3                                                      /
+//    __double_size =  32                                                     /
+//    __reg_r4      =  free                                                   /
+//    __reg_r5      =  free                                                   /
+//    __pic         =  no                                                     /
+//    __core        =  430X                                                   /
+//    __data_model  =  large                                                  /
+//    Source file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\FatFs\mmc.c                                /
+//    Command line  =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\FatFs\mmc.c -D NDEBUG -D RAM_VECTOR -lC    /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Release\List\ -lA C:\Users\615\Desktop\MSP430\ /
+//                     MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Release\List\ -o     /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Release\Obj\ -D__MSP430F5529__ -e --double=32  /
+//                     --dlib_config "D:\Program Files (x86)\IAR              /
+//                     Systems\Embedded Workbench 6.4                         /
+//                     Evaluation\430\LIB\DLIB\dl430xlfn.h" -I                /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\ -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº /
+//                     ¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\inc\ -I                    /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\ -I C:\Users\615\Desktop\MSP430\MS /
+//                     P430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\src\USB\ -I    /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_config\ -I                 /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_User\ -I                   /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\srcUSB\USB_API\USB_CDC_API\ -I         /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_API\USB_HID_API\ -I        /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_API\USB_MSC_API\ -I        /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\KEY\ -I C:\Users\615\Desktop\MSP430\M /
+//                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\LED\ -I      /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\12864\ -I                             /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\oled\ -I C:\Users\615\Desktop\MSP430\ /
+//                     MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\mpu6050\inc /
+//                     \ -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\ /
+//                     C°æ\¹¤³ÌÄ£°å\HardWare\mpu6050\src\ -I                  /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\nokia5110\inc\ -I                     /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\nokia5110\src\ -I                     /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\LQ_1.8_TFT\ -I                        /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\LCD_API\ -I                           /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\2.2TFT\ -I                            /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\delay\ -I                             /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\System\ -I C:\Users\615\Desktop\MSP430\MSP430F /
+//                     5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\inc\ -I              /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\System\src\ -I C:\Users\615\Desktop\MSP430\MSP /
+//                     430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\User\ -I                /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\User\USER\ -I C:\Users\615\Desktop\MSP430\MSP4 /
+//                     30F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\UCOSII\CONFIG\ -I    /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\uCOSII\App\ -I                             /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\uCOSII\CONFIHG\ -I                         /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\uCOSII\PORT\ -I                            /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\UCOSII\CORE\ -I                            /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\FatFs\ -I C:\Users\615\Desktop\MSP430\MSP4 /
+//                     30F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\FatFs\option\        /
+//                     --core=430X --data_model=large -Oh --multiplier=32     /
+//                     --multiplier_location=4C0 --hw_workaround=CPU40        /
+//    List file     =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Release\List\mmc.s43                           /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME mmc
+
+        RTMODEL "__SystemLibrary", "DLib"
+        RTMODEL "__core", "430X"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__double_size", "32"
+        RTMODEL "__pic", "no"
+        RTMODEL "__reg_r4", "free"
+        RTMODEL "__reg_r5", "free"
+        RTMODEL "__rt_version", "3"
+
+        RSEG CSTACK:DATA:SORT:NOROOT(0)
+
+        EXTERN ?ShiftLeft32_10
+        EXTERN ?ShiftLeft32
+        EXTERN ?ShiftLeft32_9
+        EXTERN ?cstart_init_copy20
+        EXTERN ?cstart_init_zero20
+        EXTERN ?longjmp_r4
+        EXTERN ?longjmp_r5
+        EXTERN ?setjmp_r4
+        EXTERN ?setjmp_r5
+
+        PUBWEAK ?setjmp_save_r4
+        PUBWEAK ?setjmp_save_r5
+        PUBLIC INS
+        FUNCTION deselect,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 6, STACK
+        PUBLIC detectCard
+        FUNCTION detectCard,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC disk_initialize
+        FUNCTION disk_initialize,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 24, STACK
+        PUBLIC disk_ioctl
+        FUNCTION disk_ioctl,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 28, STACK
+        PUBLIC disk_read
+        FUNCTION disk_read,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 20, STACK
+        PUBLIC disk_status
+        FUNCTION disk_status,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC disk_write
+        FUNCTION disk_write,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 20, STACK
+        PUBLIC get_fattime
+        FUNCTION get_fattime,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        FUNCTION rcvr_datablock,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 22, STACK
+        FUNCTION select,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 14, STACK
+        FUNCTION send_cmd,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 28, STACK
+        PUBLIC validateCSD
+        FUNCTION validateCSD,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 44, STACK
+        FUNCTION xmit_datablock,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 24, STACK
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA SP DATA
+          CFI Resource PC:20, SP:20, SR:16, R4L:16, R4H:4, R4:20, R5L:16, R5H:4
+          CFI Resource R5:20, R6L:16, R6H:4, R6:20, R7L:16, R7H:4, R7:20, R8L:16
+          CFI Resource R8H:4, R8:20, R9L:16, R9H:4, R9:20, R10L:16, R10H:4
+          CFI Resource R10:20, R11L:16, R11H:4, R11:20, R12L:16, R12H:4, R12:20
+          CFI Resource R13L:16, R13H:4, R13:20, R14L:16, R14H:4, R14:20, R15L:16
+          CFI Resource R15H:4, R15:20
+          CFI ResourceParts R4 R4H, R4L
+          CFI ResourceParts R5 R5H, R5L
+          CFI ResourceParts R6 R6H, R6L
+          CFI ResourceParts R7 R7H, R7L
+          CFI ResourceParts R8 R8H, R8L
+          CFI ResourceParts R9 R9H, R9L
+          CFI ResourceParts R10 R10H, R10L
+          CFI ResourceParts R11 R11H, R11L
+          CFI ResourceParts R12 R12H, R12L
+          CFI ResourceParts R13 R13H, R13L
+          CFI ResourceParts R14 R14H, R14L
+          CFI ResourceParts R15 R15H, R15L
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H SameValue
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H SameValue
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H SameValue
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H SameValue
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H SameValue
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H SameValue
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H SameValue
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H SameValue
+          CFI R11 Concat
+          CFI R12L Undefined
+          CFI R12H Undefined
+          CFI R12 Undefined
+          CFI R13L Undefined
+          CFI R13H Undefined
+          CFI R13 Undefined
+          CFI R14L Undefined
+          CFI R14H Undefined
+          CFI R14 Undefined
+          CFI R15L Undefined
+          CFI R15H Undefined
+          CFI R15 Undefined
+          CFI EndCommon cfiCommon0
+        
+        
+          CFI Common cfiCommon1 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H SameValue
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H SameValue
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H SameValue
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H SameValue
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H SameValue
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H SameValue
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H SameValue
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H SameValue
+          CFI R11 Concat
+          CFI R12L SameValue
+          CFI R12H SameValue
+          CFI R12 Concat
+          CFI R13L SameValue
+          CFI R13H SameValue
+          CFI R13 Concat
+          CFI R14L SameValue
+          CFI R14H SameValue
+          CFI R14 Concat
+          CFI R15L SameValue
+          CFI R15H SameValue
+          CFI R15 Concat
+          CFI EndCommon cfiCommon1
+        
+        EXTERN SDCard_setCSHigh
+        FUNCTION SDCard_setCSHigh,0202H
+        EXTERN SDCard_readFrame
+        FUNCTION SDCard_readFrame,0202H
+        EXTERN SDCard_setCSLow
+        FUNCTION SDCard_setCSLow,0202H
+        EXTERN SDCard_sendFrame
+        FUNCTION SDCard_sendFrame,0202H
+        EXTERN SDCard_init
+        FUNCTION SDCard_init,0202H
+        EXTERN SDCard_fastMode
+        FUNCTION SDCard_fastMode,0202H
+
+// C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\FatFs\mmc.c
+//    1 /*------------------------------------------------------------------------/
+//    2 /  Bitbanging MMCv3/SDv1/SDv2 (in SPI mode) control module
+//    3 /-------------------------------------------------------------------------/
+//    4 /
+//    5 /  Copyright (C) 2010, ChaN, all right reserved.
+//    6 /
+//    7 / * This software is a free software and there is NO WARRANTY.
+//    8 / * No restriction on use. You can use, modify and redistribute it for
+//    9 /   personal, non-profit or commercial products UNDER YOUR RESPONSIBILITY.
+//   10 / * Redistributions of source code must retain the above copyright notice.
+//   11 /
+//   12 ---------------------------------------------------------------------------*/
+//   13 
+//   14 #include <intrinsics.h>         /* Include MSP430-specific intrincs */
+//   15 #include "diskio.h"             /* Common include file for FatFs and disk I/O layer */
+//   16 #include "HAL_SDCard.h"         /* MSP-EXP430F5529 specific SD Card driver */
+//   17 
+//   18 /*-------------------------------------------------------------------------*/
+//   19 /* Platform dependent macros and functions needed to be modified           */
+//   20 /*-------------------------------------------------------------------------*/
+//   21 
+//   22 // CPU Frequency.
+//   23 #define MCLK_FREQ   25000000
+//   24 #define	INIT_PORT()     SDCard_init()       /* Initialize MMC control port */
+//   25 #define FAST_MODE()     SDCard_fastMode()   /* Maximize SD Card transfer speed */
+//   26 #define DLY_US(n)       __delay_cycles(n * (MCLK_FREQ/1000000))  // Delay n microseconds           // KLQ
+//   27 
+//   28 #define	CS_H()          SDCard_setCSHigh()  /* Set MMC CS "high" */
+//   29 #define CS_L()          SDCard_setCSLow()   /* Set MMC CS "low" */
+//   30 
+
+        RSEG DATA20_I:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_copy20
+//   31 BYTE INS = 1;    // KLQ
+INS:
+        DS8 1
+        REQUIRE `?<Initializer for INS>`
+//   32 #define	WP              (0)                 /* Card is write protected (yes:true, no:false, default:false) */
+//   33 
+//   34 /*-------------------------------------------------------------------------*/
+//   35 /* Platform dependent RTC Function for FatFs module                        */
+//   36 /*-------------------------------------------------------------------------*/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   37 DWORD get_fattime(void)
+get_fattime:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function get_fattime
+//   38 {
+//   39 	DWORD tmr;
+//   40 
+//   41     // TODO: Customize to use the MSP430 RTC
+//   42 
+//   43 	/* Pack date and time into a DWORD variable */
+//   44 	tmr =	  (((DWORD)2001 - 80) << 25)    // rtcYear
+//   45 			| ((DWORD)9 << 21)              // rtcMon
+//   46 			| ((DWORD)11 << 16)             // rtcMday
+//   47 			| (WORD)(4 << 11)               // rtcHour
+//   48 			| (WORD)(30 << 5)               // rtcMin
+//   49 			| (WORD)(0 >> 1);               // rtcSec
+//   50 
+//   51 	return tmr;
+        MOV.W   #0x23c0, R12
+        MOV.W   #0x32b, R13
+        RETA
+          CFI EndBlock cfiBlock0
+//   52 }
+//   53 
+//   54 /*--------------------------------------------------------------------------
+//   55    Module Private Functions
+//   56 ---------------------------------------------------------------------------*/
+//   57 
+//   58 /* MMC/SD command (SPI mode) */
+//   59 #define CMD0	(0)			/* GO_IDLE_STATE */
+//   60 #define CMD1	(1)			/* SEND_OP_COND */
+//   61 #define	ACMD41	(0x80+41)	/* SEND_OP_COND (SDC) */
+//   62 #define CMD8	(8)			/* SEND_IF_COND */
+//   63 #define CMD9	(9)			/* SEND_CSD */
+//   64 #define CMD10	(10)		/* SEND_CID */
+//   65 #define CMD12	(12)		/* STOP_TRANSMISSION */
+//   66 #define ACMD13	(0x80+13)	/* SD_STATUS (SDC) */
+//   67 #define CMD16	(16)		/* SET_BLOCKLEN */
+//   68 #define CMD17	(17)		/* READ_SINGLE_BLOCK */
+//   69 #define CMD18	(18)		/* READ_MULTIPLE_BLOCK */
+//   70 #define CMD23	(23)		/* SET_BLOCK_COUNT */
+//   71 #define	ACMD23	(0x80+23)	/* SET_WR_BLK_ERASE_COUNT (SDC) */
+//   72 #define CMD24	(24)		/* WRITE_BLOCK */
+//   73 #define CMD25	(25)		/* WRITE_MULTIPLE_BLOCK */
+//   74 #define CMD41	(41)		/* SEND_OP_COND (ACMD) */
+//   75 #define CMD55	(55)		/* APP_CMD */
+//   76 #define CMD58	(58)		/* READ_OCR */
+//   77 
+//   78 /* Card type flags (CardType) */
+//   79 #define CT_MMC		0x01		/* MMC ver 3 */
+//   80 #define CT_SD1		0x02		/* SD ver 1 */
+//   81 #define CT_SD2		0x04		/* SD ver 2 */
+//   82 #define CT_SDC		(CT_SD1|CT_SD2)	/* SD */
+//   83 #define CT_BLOCK	0x08		/* Block addressing */
+//   84 
+//   85 
+//   86 static
+
+        RSEG DATA20_I:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_copy20
+//   87 DSTATUS Stat = STA_NOINIT;	/* Disk status */
+Stat:
+        DS8 1
+        REQUIRE `?<Initializer for Stat>`
+//   88 
+//   89 static
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_zero20
+//   90 BYTE CardType;			/* b0:MMC, b1:SDv1, b2:SDv2, b3:Block addressing */
+CardType:
+        DS8 1
+//   91 
+//   92 
+//   93 
+//   94 /*-----------------------------------------------------------------------*/
+//   95 /* Transmit bytes to the MMC                                             */
+//   96 /*-----------------------------------------------------------------------*/
+//   97 
+//   98 static
+//   99 void xmit_mmc (
+//  100 	const BYTE* buff,               /* Data to be sent */
+//  101 	UINT bc                         /* Number of bytes to send */
+//  102 )
+//  103 {
+//  104     SDCard_sendFrame((uint8_t *)buff, bc);
+//  105 }
+//  106 
+//  107 /*-----------------------------------------------------------------------*/
+//  108 /* Receive bytes from the MMC                                            */
+//  109 /*-----------------------------------------------------------------------*/
+//  110 
+//  111 static
+//  112 void rcvr_mmc (
+//  113 	BYTE *buff,	/* Pointer to read buffer */
+//  114 	UINT bc		/* Number of bytes to receive */
+//  115 )
+//  116 {
+//  117 
+//  118     SDCard_readFrame(buff, bc);
+//  119 }
+//  120 
+//  121 
+//  122 /*-----------------------------------------------------------------------*/
+//  123 /* Wait for card ready                                                   */
+//  124 /*-----------------------------------------------------------------------*/
+//  125 
+//  126 static
+//  127 int wait_ready (void)    /* 1:OK, 0:Timeout */
+//  128 {
+//  129     BYTE d;
+//  130     UINT tmr;
+//  131 
+//  132 
+//  133     for (tmr = 5000; tmr; tmr--) {    /* Wait for ready in timeout of 500ms */
+//  134         rcvr_mmc(&d, 1);
+//  135         if (d == 0xFF) return 1;
+//  136         DLY_US(100);
+//  137     }
+//  138 
+//  139     return 0;
+//  140 }
+//  141 
+//  142 
+//  143 
+//  144 /*-----------------------------------------------------------------------*/
+//  145 /* Deselect the card and release SPI bus                                 */
+//  146 /*-----------------------------------------------------------------------*/
+//  147 
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  148 static
+//  149 void deselect (void)
+deselect:
+          CFI Block cfiBlock1 Using cfiCommon0
+          CFI Function deselect
+//  150 {
+        FUNCALL deselect, SDCard_setCSHigh
+        LOCFRAME CSTACK, 6, STACK
+        FUNCALL deselect, SDCard_readFrame
+        LOCFRAME CSTACK, 6, STACK
+        SUB.W   #0x2, SP
+          CFI CFA SP+6
+//  151     BYTE d;
+//  152 
+//  153     CS_H();
+        CALLA   #SDCard_setCSHigh
+//  154     rcvr_mmc(&d, 1);
+        CALLA   #?Subroutine3
+//  155 }
+??CrossCallReturnLabel_3:
+        ADD.W   #0x2, SP
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock1
+//  156 
+//  157 
+//  158 
+//  159 /*-----------------------------------------------------------------------*/
+//  160 /* Select the card and wait for ready                                    */
+//  161 /*-----------------------------------------------------------------------*/
+//  162 
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  163 static
+//  164 int select (void)    /* 1:OK, 0:Timeout */
+select:
+          CFI Block cfiBlock2 Using cfiCommon0
+          CFI Function select
+//  165 {
+        FUNCALL select, SDCard_setCSLow
+        LOCFRAME CSTACK, 14, STACK
+        FUNCALL select, SDCard_readFrame
+        LOCFRAME CSTACK, 14, STACK
+        FUNCALL select, deselect
+        LOCFRAME CSTACK, 14, STACK
+        PUSHM.A #0x2, R11
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+12
+        SUB.W   #0x2, SP
+          CFI CFA SP+14
+//  166     CS_L();
+        CALLA   #SDCard_setCSLow
+//  167     if (!wait_ready()) {
+        MOV.W   #0x1388, R11
+        MOV.W   SP, R10
+        ADD.W   #0x0, R10
+??select_0:
+        CALLA   #?Subroutine1
+??CrossCallReturnLabel_28:
+        CMP.B   #0xff, 0(SP)
+        JNE     ??select_1
+//  168         deselect();
+//  169         return 0;
+//  170     }
+//  171     return 1;
+        MOV.W   #0x1, R12
+        JMP     ??select_2
+??select_1:
+        ////////////// Start of 2500 cycles delay.
+        JMP     ??select_4
+??select_4:
+        MOV.W   #0x33f, R15
+??select_3:
+        ADD.W   #0xffff, R15
+        JC      ??select_3
+        ////////////// End of delay code.
+        ADD.W   #0xffff, R11
+        JNE     ??select_0
+        CALLA   #deselect
+        MOV.W   #0x0, R12
+??select_2:
+        ADD.W   #0x2, SP
+          CFI CFA SP+12
+        POPM.A  #0x2, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock2
+//  172 }
+
+        RSEG CODE:CODE:NOROOT(1)
+disk_initialize:
+          CFI Block cfiBlock3 Using cfiCommon0
+          CFI Function disk_initialize
+        FUNCALL disk_initialize, SDCard_init
+        LOCFRAME CSTACK, 24, STACK
+        FUNCALL disk_initialize, disk_status
+        LOCFRAME CSTACK, 24, STACK
+        FUNCALL disk_initialize, SDCard_setCSHigh
+        LOCFRAME CSTACK, 24, STACK
+        FUNCALL disk_initialize, SDCard_readFrame
+        LOCFRAME CSTACK, 24, STACK
+        FUNCALL disk_initialize, send_cmd
+        LOCFRAME CSTACK, 24, STACK
+        FUNCALL disk_initialize, send_cmd
+        LOCFRAME CSTACK, 24, STACK
+        FUNCALL disk_initialize, SDCard_readFrame
+        LOCFRAME CSTACK, 24, STACK
+        FUNCALL disk_initialize, send_cmd
+        LOCFRAME CSTACK, 24, STACK
+        FUNCALL disk_initialize, send_cmd
+        LOCFRAME CSTACK, 24, STACK
+        FUNCALL disk_initialize, SDCard_readFrame
+        LOCFRAME CSTACK, 24, STACK
+        FUNCALL disk_initialize, send_cmd
+        LOCFRAME CSTACK, 24, STACK
+        FUNCALL disk_initialize, send_cmd
+        LOCFRAME CSTACK, 24, STACK
+        FUNCALL disk_initialize, send_cmd
+        LOCFRAME CSTACK, 24, STACK
+        FUNCALL disk_initialize, deselect
+        LOCFRAME CSTACK, 24, STACK
+        FUNCALL disk_initialize, SDCard_fastMode
+        LOCFRAME CSTACK, 24, STACK
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        SUB.W   #0x4, SP
+          CFI CFA SP+24
+        MOV.B   R12, R10
+        CALLA   #SDCard_init
+        ////////////// Start of 2500 cycles delay.
+        JMP     ??disk_initialize_15
+??disk_initialize_15:
+        MOV.W   #0x33f, R15
+??disk_initialize_14:
+        ADD.W   #0xffff, R15
+        JC      ??disk_initialize_14
+        ////////////// End of delay code.
+        MOV.B   R10, R12
+        CALLA   #disk_status
+        MOV.B   R12, R11
+        BIT.B   #0x2, R12
+        JC      ??disk_initialize_6
+        CALLA   #SDCard_setCSHigh
+        MOV.B   #0xa, R8
+        MOV.W   SP, R10
+        ADD.W   #0x0, R10
+??disk_initialize_0:
+        CALLA   #?Subroutine1
+??CrossCallReturnLabel_27:
+        ADD.B   #0xff, R8
+        JNE     ??disk_initialize_0
+        MOV.B   #0x0, R8
+        MOV.W   #0x0, R14
+        MOV.W   #0x0, R15
+        MOV.B   #0x0, R12
+        CALLA   #send_cmd
+        CMP.B   #0x1, R12
+        JNE     ??disk_initialize_4
+        MOV.W   #0x1aa, R14
+        MOV.W   #0x0, R15
+        MOV.B   #0x8, R12
+        CALLA   #send_cmd
+        CMP.B   #0x1, R12
+        JNE     ??disk_initialize_7
+        MOV.W   #0x4, R13
+        CALLA   #??Subroutine1_0
+??CrossCallReturnLabel_25:
+        CMP.B   #0x1, 0x2(SP)
+        JNE     ??disk_initialize_4
+        CMP.B   #0xaa, 0x3(SP)
+        JNE     ??disk_initialize_4
+        MOV.W   #0x3e8, R9
+??disk_initialize_1:
+        MOV.W   #0x0, R14
+        MOV.W   #0x4000, R15
+        CALLA   #?Subroutine6
+??CrossCallReturnLabel_12:
+        JEQ     ??disk_initialize_8
+        CALLA   #?Subroutine8
+??CrossCallReturnLabel_8:
+        JEQ     ??disk_initialize_4
+        JMP     ??disk_initialize_1
+??disk_initialize_8:
+        CMP.W   #0x0, R9
+        JEQ     ??disk_initialize_4
+        MOV.W   #0x0, R14
+        MOV.W   #0x0, R15
+        MOV.B   #0x3a, R12
+        CALLA   #?Subroutine10
+??CrossCallReturnLabel_14:
+        JNE     ??disk_initialize_4
+        MOV.W   #0x4, R13
+        CALLA   #??Subroutine1_0
+??CrossCallReturnLabel_24:
+        BIT.B   #0x40, 0(SP)
+        JC      ??disk_initialize_9
+        MOV.B   #0x4, R8
+        JMP     ??disk_initialize_4
+??disk_initialize_9:
+        MOV.B   #0xc, R8
+        JMP     ??disk_initialize_4
+??disk_initialize_7:
+        MOV.W   #0x0, R14
+        MOV.W   #0x0, R15
+        MOV.B   #0xa9, R12
+        CALLA   #send_cmd
+        CMP.B   #0x2, R12
+        SUBC.B  #0x0, R8
+        XOR.B   #0xff, R8
+        ADD.B   #0x2, R8
+        MOV.W   #0x3e8, R9
+??disk_initialize_2:
+        MOV.W   #0x0, R14
+        MOV.W   #0x0, R15
+        CALLA   #?Subroutine6
+??CrossCallReturnLabel_13:
+        JEQ     ??disk_initialize_10
+        CALLA   #?Subroutine8
+??CrossCallReturnLabel_9:
+        JEQ     ??disk_initialize_11
+        JMP     ??disk_initialize_2
+??disk_initialize_10:
+        CMP.W   #0x0, R9
+        JEQ     ??disk_initialize_11
+        MOV.W   #0x200, R14
+        MOV.W   #0x0, R15
+        MOV.B   #0x10, R12
+        CALLA   #?Subroutine10
+??CrossCallReturnLabel_15:
+        JEQ     ??disk_initialize_4
+??disk_initialize_11:
+        MOV.B   #0x0, R8
+??disk_initialize_4:
+        MOVX.B  R8, &CardType
+        CALLA   #deselect
+        CMP.B   #0x0, R8
+        JEQ     ??disk_initialize_12
+        CALLA   #SDCard_fastMode
+        BIC.B   #0x1, R11
+        JMP     ??disk_initialize_13
+??disk_initialize_12:
+        BIS.B   #0x1, R11
+??disk_initialize_13:
+        MOVX.B  R11, &Stat
+        MOV.B   R11, R12
+          CFI EndBlock cfiBlock3
+??disk_initialize_6:
+        REQUIRE ?Subroutine0
+        // Fall through to label ?Subroutine0
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine0:
+          CFI Block cfiBlock4 Using cfiCommon0
+          CFI NoFunction
+          CFI CFA SP+24
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+        ADD.W   #0x4, SP
+          CFI CFA SP+20
+        POPM.A  #0x4, R11
+          CFI CFA SP+4
+          CFI R8L SameValue
+          CFI R8H SameValue
+          CFI R9L SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R10H SameValue
+          CFI R11L SameValue
+          CFI R11H SameValue
+        RETA
+          CFI EndBlock cfiBlock4
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine8:
+          CFI Block cfiCond5 Using cfiCommon0
+          CFI Function disk_initialize
+          CFI Conditional ??CrossCallReturnLabel_8
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+28
+          CFI Block cfiCond6 Using cfiCommon0
+          CFI (cfiCond6) Function disk_initialize
+          CFI (cfiCond6) Conditional ??CrossCallReturnLabel_9
+          CFI (cfiCond6) R8L Frame(CFA, -20)
+          CFI (cfiCond6) R8H Frame(CFA, -18)
+          CFI (cfiCond6) R9L Frame(CFA, -16)
+          CFI (cfiCond6) R9H Frame(CFA, -14)
+          CFI (cfiCond6) R10L Frame(CFA, -12)
+          CFI (cfiCond6) R10H Frame(CFA, -10)
+          CFI (cfiCond6) R11L Frame(CFA, -8)
+          CFI (cfiCond6) R11H Frame(CFA, -6)
+          CFI (cfiCond6) CFA SP+28
+          CFI Block cfiPicker7 Using cfiCommon1
+          CFI (cfiPicker7) NoFunction
+          CFI (cfiPicker7) Picker
+        ////////////// Start of 25000 cycles delay.
+        JMP     ??Subroutine8_1
+??Subroutine8_1:
+        MOV.W   #0x208b, R15
+??Subroutine8_0:
+        ADD.W   #0xffff, R15
+        JC      ??Subroutine8_0
+        ////////////// End of delay code.
+        ADD.W   #0xffff, R9
+        RETA
+          CFI EndBlock cfiCond5
+          CFI EndBlock cfiCond6
+          CFI EndBlock cfiPicker7
+//  173 
+//  174 
+//  175 
+//  176 /*-----------------------------------------------------------------------*/
+//  177 /* Receive a data packet from MMC                                        */
+//  178 /*-----------------------------------------------------------------------*/
+//  179 
+
+        RSEG CODE:CODE:NOROOT(1)
+//  180 static
+//  181 int rcvr_datablock (    /* 1:OK, 0:Failed */
+rcvr_datablock:
+          CFI Block cfiBlock8 Using cfiCommon0
+          CFI Function rcvr_datablock
+//  182     BYTE *buff,            /* Data buffer to store received data */
+//  183     UINT btr            /* Byte count */
+//  184 )
+//  185 {
+        FUNCALL rcvr_datablock, SDCard_readFrame
+        LOCFRAME CSTACK, 22, STACK
+        FUNCALL rcvr_datablock, SDCard_readFrame
+        LOCFRAME CSTACK, 22, STACK
+        FUNCALL rcvr_datablock, SDCard_readFrame
+        LOCFRAME CSTACK, 22, STACK
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        SUB.W   #0x2, SP
+          CFI CFA SP+22
+        MOVA    R12, R11
+        MOV.W   R13, R8
+//  186     BYTE d[2];
+//  187     UINT tmr;
+//  188 
+//  189 
+//  190     for (tmr = 1000; tmr; tmr--) {    /* Wait for data packet in timeout of 100ms */
+        MOV.W   #0x3e8, R9
+        MOV.W   SP, R10
+        ADD.W   #0x0, R10
+//  191         rcvr_mmc(d, 1);
+??rcvr_datablock_0:
+        CALLA   #?Subroutine1
+//  192         if (d[0] != 0xFF) break;
+??CrossCallReturnLabel_26:
+        CMP.B   #0xff, 0(SP)
+        JNE     ??rcvr_datablock_1
+//  193         DLY_US(100);
+        CALLA   #?Subroutine4
+//  194     }
+??CrossCallReturnLabel_4:
+        JNE     ??rcvr_datablock_0
+//  195     if (d[0] != 0xFE) return 0;        /* If not valid data token, retutn with error */
+??rcvr_datablock_1:
+        CMP.B   #0xfe, 0(SP)
+        JEQ     ??rcvr_datablock_2
+        MOV.W   #0x0, R12
+        JMP     ??rcvr_datablock_3
+//  196 
+//  197     rcvr_mmc(buff, btr);            /* Receive the data block into buffer */
+??rcvr_datablock_2:
+        MOV.W   R8, R13
+        MOVA    R11, R12
+        CALLA   #SDCard_readFrame
+//  198     rcvr_mmc(d, 2);                    /* Discard CRC */
+        MOV.W   #0x2, R13
+        CALLA   #??Subroutine1_0
+//  199 
+//  200     return 1;                        /* Return with success */
+??CrossCallReturnLabel_23:
+        MOV.W   #0x1, R12
+??rcvr_datablock_3:
+        ADD.W   #0x2, SP
+          CFI CFA SP+20
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock8
+//  201 }
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine1:
+          CFI Block cfiCond9 Using cfiCommon0
+          CFI Function select
+          CFI Conditional ??CrossCallReturnLabel_28
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+18
+          CFI Block cfiCond10 Using cfiCommon0
+          CFI (cfiCond10) Function disk_initialize
+          CFI (cfiCond10) Conditional ??CrossCallReturnLabel_27
+          CFI (cfiCond10) R8L Frame(CFA, -20)
+          CFI (cfiCond10) R8H Frame(CFA, -18)
+          CFI (cfiCond10) R9L Frame(CFA, -16)
+          CFI (cfiCond10) R9H Frame(CFA, -14)
+          CFI (cfiCond10) R10L Frame(CFA, -12)
+          CFI (cfiCond10) R10H Frame(CFA, -10)
+          CFI (cfiCond10) R11L Frame(CFA, -8)
+          CFI (cfiCond10) R11H Frame(CFA, -6)
+          CFI (cfiCond10) CFA SP+28
+          CFI Block cfiCond11 Using cfiCommon0
+          CFI (cfiCond11) Function rcvr_datablock
+          CFI (cfiCond11) Conditional ??CrossCallReturnLabel_26
+          CFI (cfiCond11) R8L Frame(CFA, -20)
+          CFI (cfiCond11) R8H Frame(CFA, -18)
+          CFI (cfiCond11) R9L Frame(CFA, -16)
+          CFI (cfiCond11) R9H Frame(CFA, -14)
+          CFI (cfiCond11) R10L Frame(CFA, -12)
+          CFI (cfiCond11) R10H Frame(CFA, -10)
+          CFI (cfiCond11) R11L Frame(CFA, -8)
+          CFI (cfiCond11) R11H Frame(CFA, -6)
+          CFI (cfiCond11) CFA SP+26
+          CFI Block cfiPicker12 Using cfiCommon1
+          CFI (cfiPicker12) NoFunction
+          CFI (cfiPicker12) Picker
+        MOV.W   #0x1, R13
+          CFI EndBlock cfiCond9
+          CFI EndBlock cfiCond10
+          CFI EndBlock cfiCond11
+          CFI EndBlock cfiPicker12
+        REQUIRE ??Subroutine1_0
+        // Fall through to label ??Subroutine1_0
+
+        RSEG CODE:CODE:NOROOT(1)
+??Subroutine1_0:
+          CFI Block cfiCond13 Using cfiCommon0
+          CFI Function disk_initialize
+          CFI Conditional ??CrossCallReturnLabel_25
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+28
+          CFI Block cfiCond14 Using cfiCommon0
+          CFI (cfiCond14) Function disk_initialize
+          CFI (cfiCond14) Conditional ??CrossCallReturnLabel_24
+          CFI (cfiCond14) R8L Frame(CFA, -20)
+          CFI (cfiCond14) R8H Frame(CFA, -18)
+          CFI (cfiCond14) R9L Frame(CFA, -16)
+          CFI (cfiCond14) R9H Frame(CFA, -14)
+          CFI (cfiCond14) R10L Frame(CFA, -12)
+          CFI (cfiCond14) R10H Frame(CFA, -10)
+          CFI (cfiCond14) R11L Frame(CFA, -8)
+          CFI (cfiCond14) R11H Frame(CFA, -6)
+          CFI (cfiCond14) CFA SP+28
+          CFI Block cfiCond15 Using cfiCommon0
+          CFI (cfiCond15) Function rcvr_datablock
+          CFI (cfiCond15) Conditional ??CrossCallReturnLabel_23
+          CFI (cfiCond15) R8L Frame(CFA, -20)
+          CFI (cfiCond15) R8H Frame(CFA, -18)
+          CFI (cfiCond15) R9L Frame(CFA, -16)
+          CFI (cfiCond15) R9H Frame(CFA, -14)
+          CFI (cfiCond15) R10L Frame(CFA, -12)
+          CFI (cfiCond15) R10H Frame(CFA, -10)
+          CFI (cfiCond15) R11L Frame(CFA, -8)
+          CFI (cfiCond15) R11H Frame(CFA, -6)
+          CFI (cfiCond15) CFA SP+26
+          CFI Block cfiCond16 Using cfiCommon0
+          CFI (cfiCond16) Function select
+          CFI (cfiCond16) Conditional ??CrossCallReturnLabel_28
+          CFI (cfiCond16) R10L Frame(CFA, -12)
+          CFI (cfiCond16) R10H Frame(CFA, -10)
+          CFI (cfiCond16) R11L Frame(CFA, -8)
+          CFI (cfiCond16) R11H Frame(CFA, -6)
+          CFI (cfiCond16) CFA SP+18
+          CFI Block cfiCond17 Using cfiCommon0
+          CFI (cfiCond17) Function disk_initialize
+          CFI (cfiCond17) Conditional ??CrossCallReturnLabel_27
+          CFI (cfiCond17) R8L Frame(CFA, -20)
+          CFI (cfiCond17) R8H Frame(CFA, -18)
+          CFI (cfiCond17) R9L Frame(CFA, -16)
+          CFI (cfiCond17) R9H Frame(CFA, -14)
+          CFI (cfiCond17) R10L Frame(CFA, -12)
+          CFI (cfiCond17) R10H Frame(CFA, -10)
+          CFI (cfiCond17) R11L Frame(CFA, -8)
+          CFI (cfiCond17) R11H Frame(CFA, -6)
+          CFI (cfiCond17) CFA SP+28
+          CFI Block cfiCond18 Using cfiCommon0
+          CFI (cfiCond18) Function rcvr_datablock
+          CFI (cfiCond18) Conditional ??CrossCallReturnLabel_26
+          CFI (cfiCond18) R8L Frame(CFA, -20)
+          CFI (cfiCond18) R8H Frame(CFA, -18)
+          CFI (cfiCond18) R9L Frame(CFA, -16)
+          CFI (cfiCond18) R9H Frame(CFA, -14)
+          CFI (cfiCond18) R10L Frame(CFA, -12)
+          CFI (cfiCond18) R10H Frame(CFA, -10)
+          CFI (cfiCond18) R11L Frame(CFA, -8)
+          CFI (cfiCond18) R11H Frame(CFA, -6)
+          CFI (cfiCond18) CFA SP+26
+          CFI Block cfiPicker19 Using cfiCommon1
+          CFI (cfiPicker19) NoFunction
+          CFI (cfiPicker19) Picker
+        MOVA    R10, R12
+        BRA     #SDCard_readFrame
+          CFI EndBlock cfiCond13
+          CFI EndBlock cfiCond14
+          CFI EndBlock cfiCond15
+          CFI EndBlock cfiCond16
+          CFI EndBlock cfiCond17
+          CFI EndBlock cfiCond18
+          CFI EndBlock cfiPicker19
+//  202 
+//  203 
+//  204 
+//  205 /*-----------------------------------------------------------------------*/
+//  206 /* Send a data packet to MMC                                             */
+//  207 /*-----------------------------------------------------------------------*/
+//  208 
+//  209 static
+//  210 int xmit_datablock (    /* 1:OK, 0:Failed */
+//  211     const BYTE *buff,    /* 512 byte data block to be transmitted */
+//  212     BYTE token            /* Data/Stop token */
+//  213 )
+//  214 {
+//  215     BYTE d[2];
+//  216 
+//  217 
+//  218     if (!wait_ready()) return 0;
+//  219 
+//  220     d[0] = token;
+//  221     xmit_mmc(d, 1);                /* Xmit a token */
+//  222     if (token != 0xFD) {        /* Is it data token? */
+//  223         xmit_mmc(buff, 512);    /* Xmit the 512 byte data block to MMC */
+//  224         rcvr_mmc(d, 2);            /* Dummy CRC (FF,FF) */
+//  225         rcvr_mmc(d, 1);            /* Receive data response */
+//  226         if ((d[0] & 0x1F) != 0x05)    /* If not accepted, return with error */
+//  227             return 0;
+//  228     }
+//  229 
+//  230     return 1;
+//  231 }
+//  232 
+//  233 
+//  234 
+//  235 /*-----------------------------------------------------------------------*/
+//  236 /* Send a command packet to MMC                                          */
+//  237 /*-----------------------------------------------------------------------*/
+//  238 
+//  239 static
+//  240 BYTE send_cmd (        /* Returns command response (bit7==1:Send failed)*/
+//  241     BYTE cmd,        /* Command byte */
+//  242     DWORD arg        /* Argument */
+//  243 )
+//  244 {
+//  245     BYTE n, d, buf[6];
+//  246 
+//  247 
+//  248     if (cmd & 0x80) {    /* ACMD<n> is the command sequense of CMD55-CMD<n> */
+//  249         cmd &= 0x7F;
+//  250         n = send_cmd(CMD55, 0);
+//  251         if (n > 1) return n;
+//  252     }
+//  253 
+//  254     /* Select the card and wait for ready */
+//  255     deselect();
+//  256     if (!select()) return 0xFF;
+//  257 
+//  258     /* Send a command packet */
+//  259     buf[0] = 0x40 | cmd;            /* Start + Command index */
+//  260     buf[1] = (BYTE)(arg >> 24);        /* Argument[31..24] */
+//  261     buf[2] = (BYTE)(arg >> 16);        /* Argument[23..16] */
+//  262     buf[3] = (BYTE)(arg >> 8);        /* Argument[15..8] */
+//  263     buf[4] = (BYTE)arg;                /* Argument[7..0] */
+//  264     n = 0x01;                        /* Dummy CRC + Stop */
+//  265     if (cmd == CMD0) n = 0x95;        /* (valid CRC for CMD0(0)) */
+//  266     if (cmd == CMD8) n = 0x87;        /* (valid CRC for CMD8(0x1AA)) */
+//  267     buf[5] = n;
+//  268     xmit_mmc(buf, 6);
+//  269 
+//  270     /* Receive command response */
+//  271     if (cmd == CMD12) rcvr_mmc(&d, 1);    /* Skip a stuff byte when stop reading */
+//  272     n = 10;                                /* Wait for a valid response in timeout of 10 attempts */
+//  273     do
+//  274         rcvr_mmc(&d, 1);
+//  275     while ((d & 0x80) && --n);
+//  276 
+//  277     return d;            /* Return with the response value */
+//  278 }
+//  279 
+//  280 
+//  281 
+//  282 /*--------------------------------------------------------------------------
+//  283 
+//  284    Public Functions
+//  285 
+//  286 ---------------------------------------------------------------------------*/
+//  287 
+//  288 
+//  289 /*-----------------------------------------------------------------------*/
+//  290 /* Get Disk Status                                                       */
+//  291 /*-----------------------------------------------------------------------*/
+//  292 
+//  293 DSTATUS disk_status (
+//  294     BYTE drv            /* Drive number (0) */
+//  295 )
+//  296 {
+//  297     DSTATUS s = Stat;
+//  298 
+//  299 
+//  300     if (drv || !INS) {
+//  301         s = STA_NODISK | STA_NOINIT;
+//  302     } else {
+//  303         s &= ~STA_NODISK;
+//  304         if (WP)
+//  305             s |= STA_PROTECT;
+//  306         else
+//  307             s &= ~STA_PROTECT;
+//  308     }
+//  309     Stat = s;
+//  310 
+//  311     return s;
+//  312 }
+//  313 
+//  314 
+//  315 
+//  316 /*-----------------------------------------------------------------------*/
+//  317 /* Initialize Disk Drive                                                 */
+//  318 /*-----------------------------------------------------------------------*/
+//  319 
+//  320 DSTATUS disk_initialize (
+//  321 	BYTE drv		/* Physical drive nmuber (0) */
+//  322 )
+//  323 {
+//  324 /* TI: Inserted pragma to supress IAR compiler warning incicating 'cmd'
+//  325  * is not used. If removed however the compile fails */
+//  326 #ifdef __IAR_SYSTEMS_ICC__
+//  327 #pragma diag_suppress=Pe550
+//  328 #endif
+//  329 #ifdef __TI_COMPILER_VERSION__
+//  330 #pragma diag_suppress 552
+//  331 #endif
+//  332 	BYTE n, ty, cmd, buf[4];
+//  333 #ifdef __IAR_SYSTEMS_ICC__
+//  334 #pragma diag_default=Pe550
+//  335 #endif
+//  336 //#ifdef __TI_COMPILER_VERSION__
+//  337 //#pragma diag_default 552
+//  338 //#endif
+//  339     UINT tmr;
+//  340     DSTATUS s;
+//  341 
+//  342 
+//  343     INIT_PORT();                /* Initialize control port */
+//  344 
+//  345     DLY_US(100);
+//  346 
+//  347     s = disk_status(drv);        /* Check if card is in the socket */
+//  348     if (s & STA_NODISK) return s;
+//  349 
+//  350     CS_H();
+//  351     for (n = 10; n; n--) rcvr_mmc(buf, 1);    /* 80 dummy clocks */
+//  352 
+//  353     ty = 0;
+//  354     if (send_cmd(CMD0, 0) == 1) {            /* Enter Idle state */
+//  355         if (send_cmd(CMD8, 0x1AA) == 1) {    /* SDv2? */
+//  356             rcvr_mmc(buf, 4);                            /* Get trailing return value of R7 resp */
+//  357             if (buf[2] == 0x01 && buf[3] == 0xAA) {        /* The card can work at vdd range of 2.7-3.6V */
+//  358                 for (tmr = 1000; tmr; tmr--) {            /* Wait for leaving idle state (ACMD41 with HCS bit) */
+//  359                     if (send_cmd(ACMD41, 1UL << 30) == 0) break;
+//  360                     DLY_US(1000);
+//  361                 }
+//  362                 if (tmr && send_cmd(CMD58, 0) == 0) {    /* Check CCS bit in the OCR */
+//  363                     rcvr_mmc(buf, 4);
+//  364                     ty = (buf[0] & 0x40) ? CT_SD2 | CT_BLOCK : CT_SD2;    /* SDv2 */
+//  365                 }
+//  366             }
+//  367         } else {                            /* SDv1 or MMCv3 */
+//  368             if (send_cmd(ACMD41, 0) <= 1)     {
+//  369                 ty = CT_SD1; cmd = ACMD41;    /* SDv1 */
+//  370             } else {
+//  371                 ty = CT_MMC; cmd = CMD1;    /* MMCv3 */
+//  372             }
+//  373             for (tmr = 1000; tmr; tmr--) {            /* Wait for leaving idle state */
+//  374                 if (send_cmd(ACMD41, 0) == 0) break;
+//  375                 DLY_US(1000);
+//  376             }
+//  377             if (!tmr || send_cmd(CMD16, 512) != 0)    /* Set R/W block length to 512 */
+//  378                 ty = 0;
+//  379         }
+//  380     }
+//  381     CardType = ty;
+//  382     deselect();
+//  383 
+//  384     if (ty) {      /* Initialization succeded */
+//  385         FAST_MODE();
+//  386         s &= ~STA_NOINIT;
+//  387     }
+//  388     else {       /* Initialization failed */
+//  389         s |= STA_NOINIT;
+//  390     }
+//  391     Stat = s;
+//  392 
+//  393 
+//  394     return s;
+//  395 }
+//  396 
+//  397 
+//  398 
+//  399 /*-----------------------------------------------------------------------*/
+//  400 /* Read Sector(s)                                                        */
+//  401 /*-----------------------------------------------------------------------*/
+//  402 
+//  403 DRESULT disk_read (
+//  404     BYTE drv,            /* Physical drive nmuber (0) */
+//  405     BYTE *buff,            /* Pointer to the data buffer to store read data */
+//  406     DWORD sector,        /* Start sector number (LBA) */
+//  407     BYTE count            /* Sector count (1..128) */
+//  408 )
+//  409 {
+//  410     DSTATUS s;
+//  411 
+//  412 
+//  413     s = disk_status(drv);
+//  414     if (s & STA_NOINIT) return RES_NOTRDY;
+//  415     if (!count) return RES_PARERR;
+//  416     if (!(CardType & CT_BLOCK)) sector *= 512;    /* Convert LBA to byte address if needed */
+//  417 
+//  418     if (count == 1) {    /* Single block read */
+//  419         if ((send_cmd(CMD17, sector) == 0)    /* READ_SINGLE_BLOCK */
+//  420             && rcvr_datablock(buff, 512))
+//  421             count = 0;
+//  422     }
+//  423     else {                /* Multiple block read */
+//  424         if (send_cmd(CMD18, sector) == 0) {    /* READ_MULTIPLE_BLOCK */
+//  425             do {
+//  426                 if (!rcvr_datablock(buff, 512)) break;
+//  427                 buff += 512;
+//  428             } while (--count);
+//  429             send_cmd(CMD12, 0);                /* STOP_TRANSMISSION */
+//  430         }
+//  431     }
+//  432     deselect();
+//  433 
+//  434     return count ? RES_ERROR : RES_OK;
+//  435 }
+//  436 
+//  437 
+//  438 
+//  439 /*-----------------------------------------------------------------------*/
+//  440 /* Write Sector(s)                                                       */
+//  441 /*-----------------------------------------------------------------------*/
+//  442 
+//  443 DRESULT disk_write (
+//  444     BYTE drv,            /* Physical drive nmuber (0) */
+//  445     const BYTE *buff,    /* Pointer to the data to be written */
+//  446     DWORD sector,        /* Start sector number (LBA) */
+//  447     BYTE count            /* Sector count (1..128) */
+//  448 )
+//  449 {
+//  450     DSTATUS s;
+//  451 
+//  452 
+//  453     s = disk_status(drv);
+//  454     if (s & STA_NOINIT) return RES_NOTRDY;
+//  455     if (s & STA_PROTECT) return RES_WRPRT;
+//  456     if (!count) return RES_PARERR;
+//  457     if (!(CardType & CT_BLOCK)) sector *= 512;    /* Convert LBA to byte address if needed */
+//  458 
+//  459     if (count == 1) {    /* Single block write */
+//  460         if ((send_cmd(CMD24, sector) == 0)    /* WRITE_BLOCK */
+//  461             && xmit_datablock(buff, 0xFE))
+//  462             count = 0;
+//  463     }
+//  464     else {                /* Multiple block write */
+//  465         if (CardType & CT_SDC) send_cmd(ACMD23, count);
+//  466         if (send_cmd(CMD25, sector) == 0) {    /* WRITE_MULTIPLE_BLOCK */
+//  467             do {
+//  468                 if (!xmit_datablock(buff, 0xFC)) break;
+//  469                 buff += 512;
+//  470             } while (--count);
+//  471             if (!xmit_datablock(0, 0xFD))    /* STOP_TRAN token */
+//  472                 count = 1;
+//  473         }
+//  474     }
+//  475     deselect();
+//  476 
+//  477     return count ? RES_ERROR : RES_OK;
+//  478 }
+//  479 
+//  480 
+//  481 
+//  482 /*-----------------------------------------------------------------------*/
+//  483 /* Miscellaneous Functions                                               */
+//  484 /*-----------------------------------------------------------------------*/
+//  485 
+//  486 DRESULT disk_ioctl (
+//  487     BYTE drv,        /* Physical drive nmuber (0) */
+//  488     BYTE ctrl,        /* Control code */
+//  489     void *buff        /* Buffer to send/receive control data */
+//  490 )
+//  491 {
+//  492     DRESULT res;
+//  493     BYTE n, csd[16];
+//  494     WORD cs;
+//  495 
+//  496 
+//  497     if (disk_status(drv) & STA_NOINIT)                    /* Check if card is in the socket */
+//  498         return RES_NOTRDY;
+//  499 
+//  500     res = RES_ERROR;
+//  501     switch (ctrl) {
+//  502         case CTRL_SYNC :        /* Make sure that no pending write process */
+//  503             if (select()) {
+//  504                 deselect();
+//  505                 res = RES_OK;
+//  506             }
+//  507             break;
+//  508 
+//  509         case GET_SECTOR_COUNT :    /* Get number of sectors on the disk (DWORD) */
+//  510             if ((send_cmd(CMD9, 0) == 0) && rcvr_datablock(csd, 16)) {
+//  511                 if ((csd[0] >> 6) == 1) {    /* SDC ver 2.00 */
+//  512                     cs= csd[9] + ((WORD)csd[8] << 8) + 1;
+//  513                     *(DWORD*)buff = (DWORD)cs << 10;
+//  514                 } else {                    /* SDC ver 1.XX or MMC */
+//  515                     n = (csd[5] & 15) + ((csd[10] & 128) >> 7) + ((csd[9] & 3) << 1) + 2;
+//  516                     cs = (csd[8] >> 6) + ((WORD)csd[7] << 2) + ((WORD)(csd[6] & 3) << 10) + 1;
+//  517                     *(DWORD*)buff = (DWORD)cs << (n - 9);
+//  518                 }
+//  519                 res = RES_OK;
+//  520             }
+//  521             break;
+//  522 
+//  523         case GET_BLOCK_SIZE :    /* Get erase block size in unit of sector (DWORD) */
+//  524             *(DWORD*)buff = 128;
+//  525             res = RES_OK;
+//  526             break;
+//  527 
+//  528         default:
+//  529             res = RES_PARERR;
+//  530     }
+//  531 
+//  532     deselect();
+//  533 
+//  534     return res;
+//  535 }
+//  536 
+//  537 
+//  538 
+//  539 // KLQ
+//  540 
+
+        RSEG CODE:CODE:NOROOT(1)
+//  541 uint8_t validateCSD(void)
+validateCSD:
+          CFI Block cfiBlock20 Using cfiCommon0
+          CFI Function validateCSD
+//  542 {
+        FUNCALL validateCSD, send_cmd
+        LOCFRAME CSTACK, 44, STACK
+        FUNCALL validateCSD, rcvr_datablock
+        LOCFRAME CSTACK, 44, STACK
+        FUNCALL validateCSD, send_cmd
+        LOCFRAME CSTACK, 44, STACK
+        FUNCALL validateCSD, rcvr_datablock
+        LOCFRAME CSTACK, 44, STACK
+        PUSHM.A #0x2, R11
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+12
+        SUB.W   #0x20, SP
+          CFI CFA SP+44
+//  543   BYTE csd0[16], csd1[16], i;
+//  544   WORD sum=0;
+        MOV.W   #0x0, R10
+//  545 
+//  546   // Pull the CSD -- twice.  If the response codes are invalid, then we know the card isn't there or initialized.
+//  547   if ((send_cmd(CMD9, 0) == 0) && rcvr_datablock(csd0, 16))
+        CALLA   #?Subroutine5
+??CrossCallReturnLabel_20:
+        JNE     ??validateCSD_2
+        MOV.W   SP, R11
+        ADD.W   #0x10, R11
+        MOV.W   #0x10, R13
+        MOV.W   R11, R12
+        CALLA   #rcvr_datablock
+        CMP.W   #0x0, R12
+        JEQ     ??validateCSD_2
+//  548     if ((send_cmd(CMD9, 0) == 0) && rcvr_datablock(csd1, 16))
+        CALLA   #?Subroutine5
+??CrossCallReturnLabel_21:
+        JNE     ??validateCSD_2
+        CALLA   #?Subroutine7
+??CrossCallReturnLabel_6:
+        JEQ     ??validateCSD_2
+//  549     {
+//  550       // The response codes were good -- but maybe the SPI input was just floating low.  Let's evaluate the CSD data.
+//  551       // First, look for all zero or all ones.  If the SPI input is floating, these are the most likely outcomes.
+//  552       for(i=0;i<=15;i++)
+        MOV.W   R11, R14
+//  553         sum += csd0[i];
+??validateCSD_0:
+        MOV.B   @R14+, R15
+        ADD.W   R15, R10
+        MOV.B   @R14+, R15
+        ADD.W   R15, R10
+        MOV.W   R11, R15
+        ADD.W   #0x10, R15
+        CMP.W   R15, R14
+        JNE     ??validateCSD_0
+//  554       if(!((sum == 0) || (sum == 4096)))
+        CMP.W   #0x0, R10
+        JEQ     ??validateCSD_2
+        CMP.W   #0x1000, R10
+        JEQ     ??validateCSD_2
+//  555       {
+//  556         // The response was a mix of 0's and 1's.  Floating inputs could still do that -- but it's unlikely they'd
+//  557         // produce the same pattern twice.  Compare to ensure the two are identical.
+//  558         i = 0;
+        MOV.B   #0x0, R14
+        ADD.W   #0xffe0, R15
+//  559         while(i<=15)
+//  560         {
+//  561           if(csd0[i] != csd1[i])
+??validateCSD_1:
+        MOV.B   @R11+, R13
+        CMP.B   @R15+, R13
+        JNE     ??validateCSD_3
+//  562             break;
+//  563           i++;
+        ADD.B   #0x1, R14
+        MOV.B   @R11+, R13
+        CMP.B   @R15+, R13
+        JNE     ??validateCSD_3
+        ADD.B   #0x1, R14
+//  564         }
+        CMP.B   #0x10, R14
+        JNC     ??validateCSD_1
+//  565         if(i>15)
+??validateCSD_3:
+        CMP.B   #0x10, R14
+        JNC     ??validateCSD_2
+//  566           return 1;
+        MOV.B   #0x1, R12
+        JMP     ??validateCSD_4
+//  567       }
+//  568     }
+//  569   return 0;
+??validateCSD_2:
+        MOV.B   #0x0, R12
+??validateCSD_4:
+        ADD.W   #0x20, SP
+          CFI CFA SP+12
+        POPM.A  #0x2, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock20
+//  570 }
+
+        RSEG CODE:CODE:NOROOT(1)
+detectCard:
+          CFI Block cfiBlock21 Using cfiCommon0
+          CFI Function detectCard
+        FUNCALL detectCard, validateCSD
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL detectCard, disk_status
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL detectCard, disk_initialize
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL detectCard, validateCSD
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL detectCard, disk_status
+        LOCFRAME CSTACK, 4, STACK
+        CALLA   #validateCSD
+        CMP.B   #0x0, R12
+        JEQ     ??detectCard_0
+        MOV.B   #0x0, R12
+        CALLA   #disk_status
+        MOV.B   #0x1, R12
+        RETA
+??detectCard_0:
+        MOVX.B  #0x1, &INS
+        MOV.B   #0x0, R12
+        CALLA   #disk_initialize
+        CALLA   #validateCSD
+        MOV.B   R12, R15
+        MOVX.B  R12, &INS
+        MOV.B   #0x0, R12
+        CALLA   #disk_status
+        MOV.B   R15, R12
+        RETA
+          CFI EndBlock cfiBlock21
+
+        RSEG CODE:CODE:NOROOT(1)
+disk_ioctl:
+          CFI Block cfiBlock22 Using cfiCommon0
+          CFI Function disk_ioctl
+        FUNCALL disk_ioctl, disk_status
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL disk_ioctl, select
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL disk_ioctl, deselect
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL disk_ioctl, send_cmd
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL disk_ioctl, rcvr_datablock
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL disk_ioctl, deselect
+        LOCFRAME CSTACK, 28, STACK
+        PUSHM.A #0x2, R11
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+12
+        SUB.W   #0x10, SP
+          CFI CFA SP+28
+        MOVA    R14, R10
+        CALLA   #disk_status
+        BIT.B   #0x1, R12
+        JNC     ??disk_ioctl_1
+        MOV.B   #0x3, R12
+        JMP     ??disk_ioctl_2
+??disk_ioctl_1:
+        MOV.B   #0x1, R11
+        SUB.B   #0x0, R13
+        JEQ     ??disk_ioctl_3
+        SUB.B   #0x1, R13
+        JEQ     ??disk_ioctl_4
+        SUB.B   #0x2, R13
+        JEQ     ??disk_ioctl_5
+        JMP     ??disk_ioctl_6
+??disk_ioctl_3:
+        CALLA   #select
+        CMP.W   #0x0, R12
+        JEQ     ??disk_ioctl_7
+        CALLA   #deselect
+        JMP     ??disk_ioctl_0
+??disk_ioctl_4:
+        CALLA   #?Subroutine5
+??CrossCallReturnLabel_22:
+        JNE     ??disk_ioctl_7
+        CALLA   #?Subroutine7
+??CrossCallReturnLabel_7:
+        JEQ     ??disk_ioctl_7
+        MOV.B   0x8(SP), R15
+        MOV.B   0x9(SP), R14
+        MOV.B   @SP, R13
+        AND.B   #0xc0, R13
+        CMP.B   #0x40, R13
+        JNE     ??disk_ioctl_8
+        MOV.B   R14, R12
+        SWPB    R15
+        ADD.W   R15, R12
+        ADD.W   #0x1, R12
+        MOV.W   #0x0, R13
+        CALLA   #?ShiftLeft32_10
+        JMP     ??disk_ioctl_9
+??disk_ioctl_8:
+        RPT     #0x6
+        RRUX.B  R15
+        MOV.B   R15, R12
+        MOV.B   0x7(SP), R15
+        RLAM.W  #0x2, R15
+        ADD.W   R15, R12
+        MOV.B   0x6(SP), R15
+        AND.B   #0x3, R15
+        RPT     #0x2
+        RLAX.B  R15
+        SWPB    R15
+        ADD.W   R15, R12
+        ADD.W   #0x1, R12
+        MOV.W   #0x0, R13
+        MOV.B   0x5(SP), R15
+        AND.B   #0xf, R15
+        BIT.B   #0x80, 0xa(SP)
+        SUBC.B  #0x1, R11
+        ADD.B   #0x1, R11
+        ADD.B   R11, R15
+        AND.B   #0x3, R14
+        RLA.B   R14
+        ADD.B   R14, R15
+        ADD.B   #0xf9, R15
+        MOV.B   R15, R14
+        CALLA   #?ShiftLeft32
+??disk_ioctl_9:
+        MOV.W   R12, 0(R10)
+        MOV.W   R13, 0x2(R10)
+        JMP     ??disk_ioctl_0
+??disk_ioctl_5:
+        MOV.W   #0x80, 0(R10)
+        MOV.W   #0x0, 0x2(R10)
+??disk_ioctl_0:
+        MOV.B   #0x0, R11
+        JMP     ??disk_ioctl_7
+??disk_ioctl_6:
+        MOV.B   #0x4, R11
+??disk_ioctl_7:
+        CALLA   #deselect
+        MOV.B   R11, R12
+??disk_ioctl_2:
+        ADD.W   #0x10, SP
+          CFI CFA SP+12
+        POPM.A  #0x2, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock22
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine7:
+          CFI Block cfiCond23 Using cfiCommon0
+          CFI Function validateCSD
+          CFI Conditional ??CrossCallReturnLabel_6
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+48
+          CFI Block cfiCond24 Using cfiCommon0
+          CFI (cfiCond24) Function disk_ioctl
+          CFI (cfiCond24) Conditional ??CrossCallReturnLabel_7
+          CFI (cfiCond24) R10L Frame(CFA, -12)
+          CFI (cfiCond24) R10H Frame(CFA, -10)
+          CFI (cfiCond24) R11L Frame(CFA, -8)
+          CFI (cfiCond24) R11H Frame(CFA, -6)
+          CFI (cfiCond24) CFA SP+32
+          CFI Block cfiPicker25 Using cfiCommon1
+          CFI (cfiPicker25) NoFunction
+          CFI (cfiPicker25) Picker
+        MOV.W   #0x10, R13
+        MOV.W   SP, R12
+        ADD.W   #0x4, R12
+        CALLA   #rcvr_datablock
+        CMP.W   #0x0, R12
+        RETA
+          CFI EndBlock cfiCond23
+          CFI EndBlock cfiCond24
+          CFI EndBlock cfiPicker25
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine5:
+          CFI Block cfiCond26 Using cfiCommon0
+          CFI Function validateCSD
+          CFI Conditional ??CrossCallReturnLabel_20
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+48
+          CFI Block cfiCond27 Using cfiCommon0
+          CFI (cfiCond27) Function validateCSD
+          CFI (cfiCond27) Conditional ??CrossCallReturnLabel_21
+          CFI (cfiCond27) R10L Frame(CFA, -12)
+          CFI (cfiCond27) R10H Frame(CFA, -10)
+          CFI (cfiCond27) R11L Frame(CFA, -8)
+          CFI (cfiCond27) R11H Frame(CFA, -6)
+          CFI (cfiCond27) CFA SP+48
+          CFI Block cfiCond28 Using cfiCommon0
+          CFI (cfiCond28) Function disk_ioctl
+          CFI (cfiCond28) Conditional ??CrossCallReturnLabel_22
+          CFI (cfiCond28) R10L Frame(CFA, -12)
+          CFI (cfiCond28) R10H Frame(CFA, -10)
+          CFI (cfiCond28) R11L Frame(CFA, -8)
+          CFI (cfiCond28) R11H Frame(CFA, -6)
+          CFI (cfiCond28) CFA SP+32
+          CFI Block cfiPicker29 Using cfiCommon1
+          CFI (cfiPicker29) NoFunction
+          CFI (cfiPicker29) Picker
+        MOV.W   #0x0, R14
+        MOV.W   #0x0, R15
+        MOV.B   #0x9, R12
+          CFI EndBlock cfiCond26
+          CFI EndBlock cfiCond27
+          CFI EndBlock cfiCond28
+          CFI EndBlock cfiPicker29
+        REQUIRE ?Subroutine10
+        // Fall through to label ?Subroutine10
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine10:
+          CFI Block cfiCond30 Using cfiCommon0
+          CFI Function validateCSD
+          CFI Conditional ??CrossCallReturnLabel_20
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+48
+          CFI Block cfiCond31 Using cfiCommon0
+          CFI (cfiCond31) Function validateCSD
+          CFI (cfiCond31) Conditional ??CrossCallReturnLabel_21
+          CFI (cfiCond31) R10L Frame(CFA, -12)
+          CFI (cfiCond31) R10H Frame(CFA, -10)
+          CFI (cfiCond31) R11L Frame(CFA, -8)
+          CFI (cfiCond31) R11H Frame(CFA, -6)
+          CFI (cfiCond31) CFA SP+48
+          CFI Block cfiCond32 Using cfiCommon0
+          CFI (cfiCond32) Function disk_ioctl
+          CFI (cfiCond32) Conditional ??CrossCallReturnLabel_22
+          CFI (cfiCond32) R10L Frame(CFA, -12)
+          CFI (cfiCond32) R10H Frame(CFA, -10)
+          CFI (cfiCond32) R11L Frame(CFA, -8)
+          CFI (cfiCond32) R11H Frame(CFA, -6)
+          CFI (cfiCond32) CFA SP+32
+          CFI Block cfiCond33 Using cfiCommon0
+          CFI (cfiCond33) Function disk_initialize
+          CFI (cfiCond33) Conditional ??CrossCallReturnLabel_12
+          CFI (cfiCond33) R8L Frame(CFA, -20)
+          CFI (cfiCond33) R8H Frame(CFA, -18)
+          CFI (cfiCond33) R9L Frame(CFA, -16)
+          CFI (cfiCond33) R9H Frame(CFA, -14)
+          CFI (cfiCond33) R10L Frame(CFA, -12)
+          CFI (cfiCond33) R10H Frame(CFA, -10)
+          CFI (cfiCond33) R11L Frame(CFA, -8)
+          CFI (cfiCond33) R11H Frame(CFA, -6)
+          CFI (cfiCond33) CFA SP+28
+          CFI Block cfiCond34 Using cfiCommon0
+          CFI (cfiCond34) Function disk_initialize
+          CFI (cfiCond34) Conditional ??CrossCallReturnLabel_13
+          CFI (cfiCond34) R8L Frame(CFA, -20)
+          CFI (cfiCond34) R8H Frame(CFA, -18)
+          CFI (cfiCond34) R9L Frame(CFA, -16)
+          CFI (cfiCond34) R9H Frame(CFA, -14)
+          CFI (cfiCond34) R10L Frame(CFA, -12)
+          CFI (cfiCond34) R10H Frame(CFA, -10)
+          CFI (cfiCond34) R11L Frame(CFA, -8)
+          CFI (cfiCond34) R11H Frame(CFA, -6)
+          CFI (cfiCond34) CFA SP+28
+          CFI Block cfiCond35 Using cfiCommon0
+          CFI (cfiCond35) Function disk_initialize
+          CFI (cfiCond35) Conditional ??CrossCallReturnLabel_14
+          CFI (cfiCond35) R8L Frame(CFA, -20)
+          CFI (cfiCond35) R8H Frame(CFA, -18)
+          CFI (cfiCond35) R9L Frame(CFA, -16)
+          CFI (cfiCond35) R9H Frame(CFA, -14)
+          CFI (cfiCond35) R10L Frame(CFA, -12)
+          CFI (cfiCond35) R10H Frame(CFA, -10)
+          CFI (cfiCond35) R11L Frame(CFA, -8)
+          CFI (cfiCond35) R11H Frame(CFA, -6)
+          CFI (cfiCond35) CFA SP+28
+          CFI Block cfiCond36 Using cfiCommon0
+          CFI (cfiCond36) Function disk_initialize
+          CFI (cfiCond36) Conditional ??CrossCallReturnLabel_15
+          CFI (cfiCond36) R8L Frame(CFA, -20)
+          CFI (cfiCond36) R8H Frame(CFA, -18)
+          CFI (cfiCond36) R9L Frame(CFA, -16)
+          CFI (cfiCond36) R9H Frame(CFA, -14)
+          CFI (cfiCond36) R10L Frame(CFA, -12)
+          CFI (cfiCond36) R10H Frame(CFA, -10)
+          CFI (cfiCond36) R11L Frame(CFA, -8)
+          CFI (cfiCond36) R11H Frame(CFA, -6)
+          CFI (cfiCond36) CFA SP+28
+          CFI Block cfiCond37 Using cfiCommon0
+          CFI (cfiCond37) Function disk_write
+          CFI (cfiCond37) Conditional ??CrossCallReturnLabel_16
+          CFI (cfiCond37) R8L Frame(CFA, -20)
+          CFI (cfiCond37) R8H Frame(CFA, -18)
+          CFI (cfiCond37) R9L Frame(CFA, -16)
+          CFI (cfiCond37) R9H Frame(CFA, -14)
+          CFI (cfiCond37) R10L Frame(CFA, -12)
+          CFI (cfiCond37) R10H Frame(CFA, -10)
+          CFI (cfiCond37) R11L Frame(CFA, -8)
+          CFI (cfiCond37) R11H Frame(CFA, -6)
+          CFI (cfiCond37) CFA SP+24
+          CFI Block cfiCond38 Using cfiCommon0
+          CFI (cfiCond38) Function disk_write
+          CFI (cfiCond38) Conditional ??CrossCallReturnLabel_17
+          CFI (cfiCond38) R8L Frame(CFA, -20)
+          CFI (cfiCond38) R8H Frame(CFA, -18)
+          CFI (cfiCond38) R9L Frame(CFA, -16)
+          CFI (cfiCond38) R9H Frame(CFA, -14)
+          CFI (cfiCond38) R10L Frame(CFA, -12)
+          CFI (cfiCond38) R10H Frame(CFA, -10)
+          CFI (cfiCond38) R11L Frame(CFA, -8)
+          CFI (cfiCond38) R11H Frame(CFA, -6)
+          CFI (cfiCond38) CFA SP+24
+          CFI Block cfiCond39 Using cfiCommon0
+          CFI (cfiCond39) Function disk_read
+          CFI (cfiCond39) Conditional ??CrossCallReturnLabel_18
+          CFI (cfiCond39) R8L Frame(CFA, -20)
+          CFI (cfiCond39) R8H Frame(CFA, -18)
+          CFI (cfiCond39) R9L Frame(CFA, -16)
+          CFI (cfiCond39) R9H Frame(CFA, -14)
+          CFI (cfiCond39) R10L Frame(CFA, -12)
+          CFI (cfiCond39) R10H Frame(CFA, -10)
+          CFI (cfiCond39) R11L Frame(CFA, -8)
+          CFI (cfiCond39) R11H Frame(CFA, -6)
+          CFI (cfiCond39) CFA SP+24
+          CFI Block cfiCond40 Using cfiCommon0
+          CFI (cfiCond40) Function disk_read
+          CFI (cfiCond40) Conditional ??CrossCallReturnLabel_19
+          CFI (cfiCond40) R8L Frame(CFA, -20)
+          CFI (cfiCond40) R8H Frame(CFA, -18)
+          CFI (cfiCond40) R9L Frame(CFA, -16)
+          CFI (cfiCond40) R9H Frame(CFA, -14)
+          CFI (cfiCond40) R10L Frame(CFA, -12)
+          CFI (cfiCond40) R10H Frame(CFA, -10)
+          CFI (cfiCond40) R11L Frame(CFA, -8)
+          CFI (cfiCond40) R11H Frame(CFA, -6)
+          CFI (cfiCond40) CFA SP+24
+          CFI Block cfiPicker41 Using cfiCommon1
+          CFI (cfiPicker41) NoFunction
+          CFI (cfiPicker41) Picker
+        CALLA   #send_cmd
+        CMP.B   #0x0, R12
+        RETA
+          CFI EndBlock cfiCond30
+          CFI EndBlock cfiCond31
+          CFI EndBlock cfiCond32
+          CFI EndBlock cfiCond33
+          CFI EndBlock cfiCond34
+          CFI EndBlock cfiCond35
+          CFI EndBlock cfiCond36
+          CFI EndBlock cfiCond37
+          CFI EndBlock cfiCond38
+          CFI EndBlock cfiCond39
+          CFI EndBlock cfiCond40
+          CFI EndBlock cfiPicker41
+
+        RSEG CODE:CODE:NOROOT(1)
+xmit_datablock:
+          CFI Block cfiBlock42 Using cfiCommon0
+          CFI Function xmit_datablock
+        FUNCALL xmit_datablock, SDCard_readFrame
+        LOCFRAME CSTACK, 24, STACK
+        FUNCALL xmit_datablock, SDCard_sendFrame
+        LOCFRAME CSTACK, 24, STACK
+        FUNCALL xmit_datablock, SDCard_sendFrame
+        LOCFRAME CSTACK, 24, STACK
+        FUNCALL xmit_datablock, SDCard_readFrame
+        LOCFRAME CSTACK, 24, STACK
+        FUNCALL xmit_datablock, SDCard_readFrame
+        LOCFRAME CSTACK, 24, STACK
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        SUB.W   #0x4, SP
+          CFI CFA SP+24
+        MOVA    R12, R8
+        MOV.B   R13, R10
+        MOV.W   #0x1388, R9
+        MOV.W   SP, R11
+        ADD.W   #0x0, R11
+??xmit_datablock_0:
+        CALLA   #?Subroutine2
+??CrossCallReturnLabel_2:
+        CMP.B   #0xff, 0(SP)
+        JNE     ??xmit_datablock_3
+        MOV.B   R10, 0x1(SP)
+        MOV.W   SP, R11
+        ADD.W   #0x1, R11
+        MOV.W   #0x1, R13
+        MOVA    R11, R12
+        CALLA   #SDCard_sendFrame
+        CMP.B   #0xfd, R10
+        JNE     ??xmit_datablock_4
+??xmit_datablock_1:
+        MOV.W   #0x1, R12
+??xmit_datablock_2:
+        JMP     ?Subroutine0
+??xmit_datablock_3:
+        CALLA   #?Subroutine4
+??CrossCallReturnLabel_5:
+        JEQ     ??xmit_datablock_5
+        JMP     ??xmit_datablock_0
+??xmit_datablock_4:
+        MOV.W   #0x200, R13
+        MOVA    R8, R12
+        CALLA   #SDCard_sendFrame
+        MOV.W   #0x2, R13
+        MOVA    R11, R12
+        CALLA   #SDCard_readFrame
+        CALLA   #?Subroutine2
+??CrossCallReturnLabel_0:
+        MOV.B   0x1(SP), R14
+        AND.B   #0x1f, R14
+        CMP.B   #0x5, R14
+        JEQ     ??xmit_datablock_1
+??xmit_datablock_5:
+        MOV.W   #0x0, R12
+        JMP     ??xmit_datablock_2
+        NOP
+          CFI EndBlock cfiBlock42
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine4:
+          CFI Block cfiCond43 Using cfiCommon0
+          CFI Function rcvr_datablock
+          CFI Conditional ??CrossCallReturnLabel_4
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+26
+          CFI Block cfiCond44 Using cfiCommon0
+          CFI (cfiCond44) Function xmit_datablock
+          CFI (cfiCond44) Conditional ??CrossCallReturnLabel_5
+          CFI (cfiCond44) R8L Frame(CFA, -20)
+          CFI (cfiCond44) R8H Frame(CFA, -18)
+          CFI (cfiCond44) R9L Frame(CFA, -16)
+          CFI (cfiCond44) R9H Frame(CFA, -14)
+          CFI (cfiCond44) R10L Frame(CFA, -12)
+          CFI (cfiCond44) R10H Frame(CFA, -10)
+          CFI (cfiCond44) R11L Frame(CFA, -8)
+          CFI (cfiCond44) R11H Frame(CFA, -6)
+          CFI (cfiCond44) CFA SP+28
+          CFI Block cfiPicker45 Using cfiCommon1
+          CFI (cfiPicker45) NoFunction
+          CFI (cfiPicker45) Picker
+        ////////////// Start of 2500 cycles delay.
+        JMP     ??Subroutine4_1
+??Subroutine4_1:
+        MOV.W   #0x33f, R15
+??Subroutine4_0:
+        ADD.W   #0xffff, R15
+        JC      ??Subroutine4_0
+        ////////////// End of delay code.
+        ADD.W   #0xffff, R9
+        RETA
+          CFI EndBlock cfiCond43
+          CFI EndBlock cfiCond44
+          CFI EndBlock cfiPicker45
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine2:
+          CFI Block cfiCond46 Using cfiCommon0
+          CFI Function send_cmd
+          CFI Conditional ??CrossCallReturnLabel_1
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+32
+          CFI Block cfiCond47 Using cfiCommon0
+          CFI (cfiCond47) Function xmit_datablock
+          CFI (cfiCond47) Conditional ??CrossCallReturnLabel_2
+          CFI (cfiCond47) R8L Frame(CFA, -20)
+          CFI (cfiCond47) R8H Frame(CFA, -18)
+          CFI (cfiCond47) R9L Frame(CFA, -16)
+          CFI (cfiCond47) R9H Frame(CFA, -14)
+          CFI (cfiCond47) R10L Frame(CFA, -12)
+          CFI (cfiCond47) R10H Frame(CFA, -10)
+          CFI (cfiCond47) R11L Frame(CFA, -8)
+          CFI (cfiCond47) R11H Frame(CFA, -6)
+          CFI (cfiCond47) CFA SP+28
+          CFI Block cfiCond48 Using cfiCommon0
+          CFI (cfiCond48) Function xmit_datablock
+          CFI (cfiCond48) Conditional ??CrossCallReturnLabel_0
+          CFI (cfiCond48) R8L Frame(CFA, -20)
+          CFI (cfiCond48) R8H Frame(CFA, -18)
+          CFI (cfiCond48) R9L Frame(CFA, -16)
+          CFI (cfiCond48) R9H Frame(CFA, -14)
+          CFI (cfiCond48) R10L Frame(CFA, -12)
+          CFI (cfiCond48) R10H Frame(CFA, -10)
+          CFI (cfiCond48) R11L Frame(CFA, -8)
+          CFI (cfiCond48) R11H Frame(CFA, -6)
+          CFI (cfiCond48) CFA SP+28
+          CFI Block cfiPicker49 Using cfiCommon1
+          CFI (cfiPicker49) NoFunction
+          CFI (cfiPicker49) Picker
+        MOV.W   #0x1, R13
+        MOVA    R11, R12
+        BRA     #SDCard_readFrame
+          CFI EndBlock cfiCond46
+          CFI EndBlock cfiCond47
+          CFI EndBlock cfiCond48
+          CFI EndBlock cfiPicker49
+
+        RSEG CODE:CODE:NOROOT(1)
+disk_write:
+          CFI Block cfiBlock50 Using cfiCommon0
+          CFI Function disk_write
+        FUNCALL disk_write, disk_status
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL disk_write, send_cmd
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL disk_write, xmit_datablock
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL disk_write, send_cmd
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL disk_write, send_cmd
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL disk_write, xmit_datablock
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL disk_write, xmit_datablock
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL disk_write, deselect
+        LOCFRAME CSTACK, 20, STACK
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        MOVA    R13, R9
+        MOV.W   R14, R10
+        MOV.W   R15, R11
+        CALLA   #disk_status
+        BIT.B   #0x1, R12
+        JNC     ??disk_write_2
+        MOV.B   #0x3, R12
+        JMP     ??disk_write_1
+??disk_write_2:
+        BIT.B   #0x4, R12
+        JNC     ??disk_write_3
+        MOV.B   #0x2, R12
+        JMP     ??disk_write_1
+??disk_write_3:
+        MOV.B   0x14(SP), R8
+        CMP.B   #0x0, R8
+        JNE     ??disk_write_4
+        MOV.B   #0x4, R12
+        JMP     ??disk_write_1
+??disk_write_4:
+        BITX.B  #0x8, &CardType
+        JC      ??disk_write_5
+        MOV.W   R10, R12
+        MOV.W   R15, R13
+        CALLA   #?ShiftLeft32_9
+        MOV.W   R12, R10
+        MOV.W   R13, R11
+??disk_write_5:
+        CMP.B   #0x1, R8
+        JNE     ??disk_write_6
+        MOV.W   R10, R14
+        MOV.W   R11, R15
+        MOV.B   #0x18, R12
+        CALLA   #?Subroutine10
+??CrossCallReturnLabel_16:
+        JNE     ??disk_write_7
+        MOV.B   #0xfe, R13
+        MOVA    R9, R12
+        CALLA   #xmit_datablock
+        CMP.W   #0x0, R12
+        JEQ     ??disk_write_7
+        MOV.B   #0x0, R8
+        JMP     ??disk_write_7
+??disk_write_6:
+        MOVX.B  &CardType, R14
+        BIT.B   #0x6, R14
+        JEQ     ??disk_write_8
+        MOV.B   R8, R14
+        MOV.W   #0x0, R15
+        MOV.B   #0x97, R12
+        CALLA   #send_cmd
+??disk_write_8:
+        MOV.W   R10, R14
+        MOV.W   R11, R15
+        MOV.B   #0x19, R12
+        CALLA   #?Subroutine10
+??CrossCallReturnLabel_17:
+        JNE     ??disk_write_7
+??disk_write_0:
+        MOV.B   #0xfc, R13
+        MOVA    R9, R12
+        CALLA   #xmit_datablock
+        CMP.W   #0x0, R12
+        JEQ     ??disk_write_9
+        ADDA    #0x200, R9
+        ADD.B   #0xff, R8
+        JNE     ??disk_write_0
+??disk_write_9:
+        MOV.B   #0xfd, R13
+        MOVA    #0x0, R12
+        CALLA   #xmit_datablock
+        CMP.W   #0x0, R12
+        JNE     ??disk_write_7
+        MOV.B   #0x1, R8
+??disk_write_7:
+        CALLA   #deselect
+        CMP.B   #0x0, R8
+        JNE     ??disk_write_10
+        MOV.B   #0x0, R12
+        JMP     ??disk_write_1
+??disk_write_10:
+        MOV.B   #0x1, R12
+??disk_write_1:
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock50
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?Subroutine6:
+          CFI Block cfiCond51 Using cfiCommon0
+          CFI Function disk_initialize
+          CFI Conditional ??CrossCallReturnLabel_12
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+28
+          CFI Block cfiCond52 Using cfiCommon0
+          CFI (cfiCond52) Function disk_initialize
+          CFI (cfiCond52) Conditional ??CrossCallReturnLabel_13
+          CFI (cfiCond52) R8L Frame(CFA, -20)
+          CFI (cfiCond52) R8H Frame(CFA, -18)
+          CFI (cfiCond52) R9L Frame(CFA, -16)
+          CFI (cfiCond52) R9H Frame(CFA, -14)
+          CFI (cfiCond52) R10L Frame(CFA, -12)
+          CFI (cfiCond52) R10H Frame(CFA, -10)
+          CFI (cfiCond52) R11L Frame(CFA, -8)
+          CFI (cfiCond52) R11H Frame(CFA, -6)
+          CFI (cfiCond52) CFA SP+28
+          CFI Block cfiPicker53 Using cfiCommon1
+          CFI (cfiPicker53) NoFunction
+          CFI (cfiPicker53) Picker
+        MOV.B   #0xa9, R12
+        JMP     ?Subroutine10
+        NOP
+          CFI EndBlock cfiCond51
+          CFI EndBlock cfiCond52
+          CFI EndBlock cfiPicker53
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+send_cmd:
+          CFI Block cfiBlock54 Using cfiCommon0
+          CFI Function send_cmd
+        FUNCALL send_cmd, send_cmd
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL send_cmd, deselect
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL send_cmd, select
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL send_cmd, SDCard_sendFrame
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL send_cmd, SDCard_readFrame
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL send_cmd, SDCard_readFrame
+        LOCFRAME CSTACK, 28, STACK
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        SUB.W   #0x8, SP
+          CFI CFA SP+28
+        MOV.B   R12, R8
+        MOV.W   R14, R10
+        MOV.W   R15, R11
+        CMP.B   #0x0, R12
+        JGE     ??send_cmd_1
+        BIC.B   #0x80, R8
+        MOV.W   #0x0, R14
+        MOV.W   #0x0, R15
+        MOV.B   #0x37, R12
+        CALLA   #send_cmd
+        CMP.B   #0x2, R12
+        JC      ??send_cmd_2
+??send_cmd_1:
+        CALLA   #deselect
+        CALLA   #select
+        CMP.W   #0x0, R12
+        JNE     ??send_cmd_3
+        MOV.B   #0xff, R12
+        JMP     ??send_cmd_2
+??send_cmd_3:
+        MOV.B   R8, R14
+        BIS.B   #0x40, R14
+        MOV.B   R14, 0x1(SP)
+        MOV.W   R11, R15
+        SWPB    R15
+        MOV.B   R15, R14
+        MOV.B   R14, 0x2(SP)
+        MOV.B   R11, 0x3(SP)
+        MOV.W   R10, R15
+        SWPB    R15
+        MOV.B   R15, 0x4(SP)
+        MOV.B   R10, 0x5(SP)
+        MOV.B   #0x1, R12
+        CMP.B   #0x0, R8
+        JNE     ??send_cmd_4
+        MOV.B   #0x95, R12
+        JMP     ??send_cmd_5
+??send_cmd_4:
+        CMP.B   #0x8, R8
+        JNE     ??send_cmd_5
+        MOV.B   #0x87, R12
+??send_cmd_5:
+        MOV.B   R12, 0x6(SP)
+        MOV.W   #0x6, R13
+        MOV.W   SP, R12
+        ADD.W   #0x1, R12
+        CALLA   #SDCard_sendFrame
+        CMP.B   #0xc, R8
+        JNE     ??send_cmd_6
+        CALLA   #?Subroutine3
+??send_cmd_6:
+        MOV.B   #0xa, R10
+        MOV.W   SP, R11
+        ADD.W   #0x0, R11
+??send_cmd_0:
+        CALLA   #?Subroutine2
+??CrossCallReturnLabel_1:
+        CMP.B   #0x0, 0(SP)
+        JGE     ??send_cmd_7
+        ADD.B   #0xff, R10
+        JNE     ??send_cmd_0
+??send_cmd_7:
+        MOV.B   @SP, R12
+??send_cmd_2:
+        ADD.W   #0x8, SP
+          CFI CFA SP+20
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock54
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+disk_status:
+          CFI Block cfiBlock55 Using cfiCommon0
+          CFI Function disk_status
+        MOVX.B  &Stat, R14
+        CMP.B   #0x0, R12
+        JNE     ??disk_status_0
+        CMPX.B  #0x0, &INS
+        JNE     ??disk_status_1
+??disk_status_0:
+        MOV.B   #0x3, R14
+        JMP     ??disk_status_2
+??disk_status_1:
+        AND.B   #0xf9, R14
+??disk_status_2:
+        MOVX.B  R14, &Stat
+        MOV.B   R14, R12
+        RETA
+          CFI EndBlock cfiBlock55
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+disk_read:
+          CFI Block cfiBlock56 Using cfiCommon0
+          CFI Function disk_read
+        FUNCALL disk_read, disk_status
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL disk_read, send_cmd
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL disk_read, rcvr_datablock
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL disk_read, send_cmd
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL disk_read, rcvr_datablock
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL disk_read, send_cmd
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL disk_read, deselect
+        LOCFRAME CSTACK, 20, STACK
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        MOVA    R13, R11
+        MOV.W   R14, R8
+        MOV.W   R15, R9
+        CALLA   #disk_status
+        BIT.B   #0x1, R12
+        JNC     ??disk_read_2
+        MOV.B   #0x3, R12
+        JMP     ??disk_read_1
+??disk_read_2:
+        MOV.B   0x14(SP), R10
+        CMP.B   #0x0, R10
+        JNE     ??disk_read_3
+        MOV.B   #0x4, R12
+        JMP     ??disk_read_1
+??disk_read_3:
+        BITX.B  #0x8, &CardType
+        JC      ??disk_read_4
+        MOV.W   R8, R12
+        MOV.W   R15, R13
+        CALLA   #?ShiftLeft32_9
+        MOV.W   R12, R8
+        MOV.W   R13, R9
+??disk_read_4:
+        CMP.B   #0x1, R10
+        MOV.W   R8, R14
+        MOV.W   R9, R15
+        JNE     ??disk_read_5
+        MOV.B   #0x11, R12
+        CALLA   #?Subroutine10
+??CrossCallReturnLabel_18:
+        JNE     ??disk_read_6
+        CALLA   #?Subroutine9
+??CrossCallReturnLabel_11:
+        CMP.W   #0x0, R12
+        JEQ     ??disk_read_6
+        MOV.B   #0x0, R10
+        JMP     ??disk_read_6
+??disk_read_5:
+        MOV.B   #0x12, R12
+        CALLA   #?Subroutine10
+??CrossCallReturnLabel_19:
+        JNE     ??disk_read_6
+??disk_read_0:
+        CALLA   #?Subroutine9
+??CrossCallReturnLabel_10:
+        CMP.W   #0x0, R12
+        JEQ     ??disk_read_7
+        ADDA    #0x200, R11
+        ADD.B   #0xff, R10
+        JNE     ??disk_read_0
+??disk_read_7:
+        MOV.W   #0x0, R14
+        MOV.W   #0x0, R15
+        MOV.B   #0xc, R12
+        CALLA   #send_cmd
+??disk_read_6:
+        CALLA   #deselect
+        CMP.B   #0x0, R10
+        JNE     ??disk_read_8
+        MOV.B   #0x0, R12
+        JMP     ??disk_read_1
+??disk_read_8:
+        MOV.B   #0x1, R12
+??disk_read_1:
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock56
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?Subroutine9:
+          CFI Block cfiCond57 Using cfiCommon0
+          CFI Function disk_read
+          CFI Conditional ??CrossCallReturnLabel_11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+24
+          CFI Block cfiCond58 Using cfiCommon0
+          CFI (cfiCond58) Function disk_read
+          CFI (cfiCond58) Conditional ??CrossCallReturnLabel_10
+          CFI (cfiCond58) R8L Frame(CFA, -20)
+          CFI (cfiCond58) R8H Frame(CFA, -18)
+          CFI (cfiCond58) R9L Frame(CFA, -16)
+          CFI (cfiCond58) R9H Frame(CFA, -14)
+          CFI (cfiCond58) R10L Frame(CFA, -12)
+          CFI (cfiCond58) R10H Frame(CFA, -10)
+          CFI (cfiCond58) R11L Frame(CFA, -8)
+          CFI (cfiCond58) R11H Frame(CFA, -6)
+          CFI (cfiCond58) CFA SP+24
+          CFI Block cfiPicker59 Using cfiCommon1
+          CFI (cfiPicker59) NoFunction
+          CFI (cfiPicker59) Picker
+        MOV.W   #0x200, R13
+        MOVA    R11, R12
+        BRA     #rcvr_datablock
+          CFI EndBlock cfiCond57
+          CFI EndBlock cfiCond58
+          CFI EndBlock cfiPicker59
+
+        RSEG DATA20_ID:CONST:SORT:NOROOT(0)
+`?<Initializer for INS>`:
+        DC8 1
+
+        RSEG DATA20_ID:CONST:SORT:NOROOT(0)
+`?<Initializer for Stat>`:
+        DC8 1
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?Subroutine3:
+          CFI Block cfiCond60 Using cfiCommon0
+          CFI Function deselect
+          CFI Conditional ??CrossCallReturnLabel_3
+          CFI CFA SP+10
+          CFI Block cfiCond61 Using cfiCommon0
+          CFI (cfiCond61) Function send_cmd
+          CFI (cfiCond61) Conditional ??send_cmd_6
+          CFI (cfiCond61) R8L Frame(CFA, -20)
+          CFI (cfiCond61) R8H Frame(CFA, -18)
+          CFI (cfiCond61) R9L Frame(CFA, -16)
+          CFI (cfiCond61) R9H Frame(CFA, -14)
+          CFI (cfiCond61) R10L Frame(CFA, -12)
+          CFI (cfiCond61) R10H Frame(CFA, -10)
+          CFI (cfiCond61) R11L Frame(CFA, -8)
+          CFI (cfiCond61) R11H Frame(CFA, -6)
+          CFI (cfiCond61) CFA SP+32
+          CFI Block cfiPicker62 Using cfiCommon1
+          CFI (cfiPicker62) NoFunction
+          CFI (cfiPicker62) Picker
+        MOV.W   #0x1, R13
+        MOV.W   SP, R12
+        ADD.W   #0x4, R12
+        BRA     #SDCard_readFrame
+          CFI EndBlock cfiCond60
+          CFI EndBlock cfiCond61
+          CFI EndBlock cfiPicker62
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r4:
+        REQUIRE ?setjmp_r4
+        REQUIRE ?longjmp_r4
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r5:
+        REQUIRE ?setjmp_r5
+        REQUIRE ?longjmp_r5
+
+        END
+//  571 
+//  572 
+//  573 // Attempt to detect the card by commanding it to return its CSD register and evaluating it.  Returns the
+//  574 // result, and also updates FatFs's internal INS variable.
+//  575 // The proper way to detect a card is by sensing its presence on the DAT3 signal.  The EXP board doesn't
+//  576 // contain the necessary h/w, so this s/w method works instead.
+//  577 uint8_t detectCard(void)
+//  578 {
+//  579   // Check for a valid CSD response
+//  580   if(validateCSD())
+//  581   {
+//  582     disk_status(0); // Update the INS variable
+//  583     return 1;       // Card is present
+//  584   }
+//  585 
+//  586   // We didn't get a valid response.  So we now know the status is one of two things:
+//  587   // a) The card isn't there at all;
+//  588   // b) or, it was just inserted recently, and needs to be initialized
+//  589 
+//  590   INS = 0x01;          // Trick disk_initialize into thinking it's inserted...
+//  591   disk_initialize(0);  // Attempt to initialize it
+//  592 
+//  593   INS = validateCSD(); // Try again
+//  594   disk_status(0);      // Update the INS variable
+//  595 
+//  596   return INS;          // 1 = card is present; 0 = not present
+//  597 }
+// 
+// 1 544 bytes in segment CODE
+//     2 bytes in segment DATA20_I
+//     2 bytes in segment DATA20_ID
+//     1 byte  in segment DATA20_Z
+// 
+// 1 544 bytes of CODE  memory
+//     2 bytes of CONST memory
+//     3 bytes of DATA  memory
+//
+//Errors: none
+//Warnings: none

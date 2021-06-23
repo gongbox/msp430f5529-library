@@ -1,0 +1,772 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+//                                                      06/Jun/2016  16:42:34 /
+// IAR C/C++ Compiler V5.50.1.20465/W32, Evaluation edition for MSP430        /
+// Copyright 1996-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    __rt_version  =  3                                                      /
+//    __double_size =  32                                                     /
+//    __reg_r4      =  free                                                   /
+//    __reg_r5      =  free                                                   /
+//    __pic         =  no                                                     /
+//    __core        =  430X                                                   /
+//    __data_model  =  large                                                  /
+//    Source file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\UCOSII\CORE\os_time.c                      /
+//    Command line  =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\UCOSII\CORE\os_time.c -D NDEBUG -D         /
+//                     RAM_VECTOR -lC C:\Users\615\Desktop\MSP430\MSP430F5529 /
+//                     ¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Release\List\ -lA               /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Release\List\ -o C:\Users\615\Desktop\MSP430\M /
+//                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Release\Obj\          /
+//                     -D__MSP430F5529__ -e --double=32 --dlib_config         /
+//                     "D:\Program Files (x86)\IAR Systems\Embedded           /
+//                     Workbench 6.4 Evaluation\430\LIB\DLIB\dl430xlfn.h" -I  /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\ -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº /
+//                     ¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\inc\ -I                    /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\ -I C:\Users\615\Desktop\MSP430\MS /
+//                     P430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\src\USB\ -I    /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_config\ -I                 /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_User\ -I                   /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\srcUSB\USB_API\USB_CDC_API\ -I         /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_API\USB_HID_API\ -I        /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_API\USB_MSC_API\ -I        /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\KEY\ -I C:\Users\615\Desktop\MSP430\M /
+//                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\LED\ -I      /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\12864\ -I                             /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\oled\ -I C:\Users\615\Desktop\MSP430\ /
+//                     MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\mpu6050\inc /
+//                     \ -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\ /
+//                     C°æ\¹¤³ÌÄ£°å\HardWare\mpu6050\src\ -I                  /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\nokia5110\inc\ -I                     /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\nokia5110\src\ -I                     /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\LQ_1.8_TFT\ -I                        /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\LCD_API\ -I                           /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\2.2TFT\ -I                            /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\delay\ -I                             /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\System\ -I C:\Users\615\Desktop\MSP430\MSP430F /
+//                     5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\inc\ -I              /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\System\src\ -I C:\Users\615\Desktop\MSP430\MSP /
+//                     430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\User\ -I                /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\User\USER\ -I C:\Users\615\Desktop\MSP430\MSP4 /
+//                     30F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\UCOSII\CONFIG\ -I    /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\uCOSII\App\ -I                             /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\uCOSII\CONFIHG\ -I                         /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\uCOSII\PORT\ -I                            /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\UCOSII\CORE\ -I                            /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\FatFs\ -I C:\Users\615\Desktop\MSP430\MSP4 /
+//                     30F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\FatFs\option\        /
+//                     --core=430X --data_model=large -Oh --multiplier=32     /
+//                     --multiplier_location=4C0 --hw_workaround=CPU40        /
+//    List file     =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Release\List\os_time.s43                       /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME os_time
+
+        RTMODEL "__SystemLibrary", "DLib"
+        RTMODEL "__core", "430X"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dlib_file_descriptor", "0"
+        RTMODEL "__dlib_full_locale_support", "0"
+        RTMODEL "__double_size", "32"
+        RTMODEL "__pic", "no"
+        RTMODEL "__reg_r4", "free"
+        RTMODEL "__reg_r5", "free"
+        RTMODEL "__rt_version", "3"
+
+        RSEG CSTACK:DATA:SORT:NOROOT(0)
+
+        EXTERN ?ShiftLeft32_5
+        EXTERN ?Mul32
+        EXTERN ?DivMod32u
+        EXTERN ?longjmp_r4
+        EXTERN ?longjmp_r5
+        EXTERN ?setjmp_r4
+        EXTERN ?setjmp_r5
+
+        PUBWEAK ?setjmp_save_r4
+        PUBWEAK ?setjmp_save_r5
+        PUBLIC OSTimeDly
+        FUNCTION OSTimeDly,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 12, STACK
+        PUBLIC OSTimeDlyHMSM
+        FUNCTION OSTimeDlyHMSM,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 28, STACK
+        PUBLIC OSTimeDlyResume
+        FUNCTION OSTimeDlyResume,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 8, STACK
+        PUBLIC OSTimeGet
+        FUNCTION OSTimeGet,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 12, STACK
+        PUBLIC OSTimeSet
+        FUNCTION OSTimeSet,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 12, STACK
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA SP DATA
+          CFI Resource PC:20, SP:20, SR:16, R4L:16, R4H:4, R4:20, R5L:16, R5H:4
+          CFI Resource R5:20, R6L:16, R6H:4, R6:20, R7L:16, R7H:4, R7:20, R8L:16
+          CFI Resource R8H:4, R8:20, R9L:16, R9H:4, R9:20, R10L:16, R10H:4
+          CFI Resource R10:20, R11L:16, R11H:4, R11:20, R12L:16, R12H:4, R12:20
+          CFI Resource R13L:16, R13H:4, R13:20, R14L:16, R14H:4, R14:20, R15L:16
+          CFI Resource R15H:4, R15:20
+          CFI ResourceParts R4 R4H, R4L
+          CFI ResourceParts R5 R5H, R5L
+          CFI ResourceParts R6 R6H, R6L
+          CFI ResourceParts R7 R7H, R7L
+          CFI ResourceParts R8 R8H, R8L
+          CFI ResourceParts R9 R9H, R9L
+          CFI ResourceParts R10 R10H, R10L
+          CFI ResourceParts R11 R11H, R11L
+          CFI ResourceParts R12 R12H, R12L
+          CFI ResourceParts R13 R13H, R13L
+          CFI ResourceParts R14 R14H, R14L
+          CFI ResourceParts R15 R15H, R15L
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H SameValue
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H SameValue
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H SameValue
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H SameValue
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H SameValue
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H SameValue
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H SameValue
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H SameValue
+          CFI R11 Concat
+          CFI R12L Undefined
+          CFI R12H Undefined
+          CFI R12 Undefined
+          CFI R13L Undefined
+          CFI R13H Undefined
+          CFI R13 Undefined
+          CFI R14L Undefined
+          CFI R14H Undefined
+          CFI R14 Undefined
+          CFI R15L Undefined
+          CFI R15H Undefined
+          CFI R15 Undefined
+          CFI EndCommon cfiCommon0
+        
+        EXTERN OSCPUSaveSR
+        FUNCTION OSCPUSaveSR,0202H
+        EXTERN OSTime
+        EXTERN OSCPURestoreSR
+        FUNCTION OSCPURestoreSR,0202H
+        EXTERN OSTCBPrioTbl
+        EXTERN OSRdyGrp
+        EXTERN OSRdyTbl
+        EXTERN OS_Sched
+        FUNCTION OS_Sched,0202H
+        EXTERN OSIntNesting
+        EXTERN OSLockNesting
+        EXTERN OSTCBCur
+
+// C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\UCOSII\CORE\os_time.c
+//    1 /*
+//    2 *********************************************************************************************************
+//    3 *                                                uC/OS-II
+//    4 *                                          The Real-Time Kernel
+//    5 *                                             TIME MANAGEMENT
+//    6 *
+//    7 *                              (c) Copyright 1992-2009, Micrium, Weston, FL
+//    8 *                                           All Rights Reserved
+//    9 *
+//   10 * File    : OS_TIME.C
+//   11 * By      : Jean J. Labrosse
+//   12 * Version : V2.91
+//   13 *
+//   14 * LICENSING TERMS:
+//   15 * ---------------
+//   16 *   uC/OS-II is provided in source form for FREE evaluation, for educational use or for peaceful research.
+//   17 * If you plan on using  uC/OS-II  in a commercial product you need to contact Micriµm to properly license
+//   18 * its use in your product. We provide ALL the source code for your convenience and to help you experience
+//   19 * uC/OS-II.   The fact that the  source is provided does  NOT  mean that you can use it without  paying a
+//   20 * licensing fee.
+//   21 *********************************************************************************************************
+//   22 */
+//   23 
+//   24 #ifndef  OS_MASTER_FILE
+//   25 #include "ucos_ii.h"
+//   26 #endif
+//   27 
+//   28 /*
+//   29 *********************************************************************************************************
+//   30 *                                       DELAY TASK 'n' TICKS
+//   31 *
+//   32 * Description: This function is called to delay execution of the currently running task until the
+//   33 *              specified number of system ticks expires.  This, of course, directly equates to delaying
+//   34 *              the current task for some time to expire.  No delay will result If the specified delay is
+//   35 *              0.  If the specified delay is greater than 0 then, a context switch will result.
+//   36 *
+//   37 * Arguments  : ticks     is the time delay that the task will be suspended in number of clock 'ticks'.
+//   38 *                        Note that by specifying 0, the task will not be delayed.
+//   39 *
+//   40 * Returns    : none
+//   41 *********************************************************************************************************
+//   42 */
+//   43 
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   44 void  OSTimeDly (INT32U ticks)
+OSTimeDly:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function OSTimeDly
+//   45 {
+        FUNCALL OSTimeDly, OSCPUSaveSR
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL OSTimeDly, OSCPURestoreSR
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL OSTimeDly, OS_Sched
+        LOCFRAME CSTACK, 12, STACK
+        PUSHM.A #0x2, R11
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+12
+        MOV.W   R12, R10
+        MOV.W   R13, R11
+//   46     INT8U      y;
+//   47 #if OS_CRITICAL_METHOD == 3u                     /* Allocate storage for CPU status register           */
+//   48     OS_CPU_SR  cpu_sr = 0u;
+//   49 #endif
+//   50 
+//   51 
+//   52 
+//   53     if (OSIntNesting > 0u) {                     /* See if trying to call from an ISR                  */
+        CMPX.B  #0x0, &OSIntNesting
+        JNE     ??OSTimeDly_0
+//   54         return;
+//   55     }
+//   56     if (OSLockNesting > 0u) {                    /* See if called with scheduler locked                */
+        CMPX.B  #0x0, &OSLockNesting
+        JNE     ??OSTimeDly_0
+//   57         return;
+//   58     }
+//   59     if (ticks > 0u) {                            /* 0 means no delay!                                  */
+        MOV.W   R12, R15
+        BIS.W   R13, R15
+        CMP.W   #0x0, R15
+        JEQ     ??OSTimeDly_0
+//   60         OS_ENTER_CRITICAL();
+        CALLA   #OSCPUSaveSR
+//   61         y            =  OSTCBCur->OSTCBY;        /* Delay current task                                 */
+        MOVA    &OSTCBCur, R14
+        MOV.B   0x32(R14), R15
+//   62         OSRdyTbl[y] &= (OS_PRIO)~OSTCBCur->OSTCBBitX;
+        BICX.B  0x33(R14), OSRdyTbl(R15)
+//   63         if (OSRdyTbl[y] == 0u) {
+        CMPX.B  #0x0, OSRdyTbl(R15)
+        JNE     ??OSTimeDly_1
+//   64             OSRdyGrp &= (OS_PRIO)~OSTCBCur->OSTCBBitY;
+        BICX.B  0x34(R14), &OSRdyGrp
+//   65         }
+//   66         OSTCBCur->OSTCBDly = ticks;              /* Load ticks in TCB                                  */
+??OSTimeDly_1:
+        MOV.W   R10, 0x2a(R14)
+        MOV.W   R11, 0x2c(R14)
+//   67         OS_EXIT_CRITICAL();
+        CALLA   #OSCPURestoreSR
+//   68         OS_Sched();                              /* Find next task to run!                             */
+        CALLA   #OS_Sched
+??OSTimeDly_0:
+        POPM.A  #0x2, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock0
+//   69     }
+//   70 }
+//   71 /*$PAGE*/
+//   72 /*
+//   73 *********************************************************************************************************
+//   74 *                                     DELAY TASK FOR SPECIFIED TIME
+//   75 *
+//   76 * Description: This function is called to delay execution of the currently running task until some time
+//   77 *              expires.  This call allows you to specify the delay time in HOURS, MINUTES, SECONDS and
+//   78 *              MILLISECONDS instead of ticks.
+//   79 *
+//   80 * Arguments  : hours     specifies the number of hours that the task will be delayed (max. is 255)
+//   81 *              minutes   specifies the number of minutes (max. 59)
+//   82 *              seconds   specifies the number of seconds (max. 59)
+//   83 *              ms        specifies the number of milliseconds (max. 999)
+//   84 *
+//   85 * Returns    : OS_ERR_NONE
+//   86 *              OS_ERR_TIME_INVALID_MINUTES
+//   87 *              OS_ERR_TIME_INVALID_SECONDS
+//   88 *              OS_ERR_TIME_INVALID_MS
+//   89 *              OS_ERR_TIME_ZERO_DLY
+//   90 *              OS_ERR_TIME_DLY_ISR
+//   91 *
+//   92 * Note(s)    : The resolution on the milliseconds depends on the tick rate.  For example, you can't do
+//   93 *              a 10 mS delay if the ticker interrupts every 100 mS.  In this case, the delay would be
+//   94 *              set to 0.  The actual delay is rounded to the nearest tick.
+//   95 *********************************************************************************************************
+//   96 */
+//   97 
+//   98 #if OS_TIME_DLY_HMSM_EN > 0u
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   99 INT8U  OSTimeDlyHMSM (INT8U   hours,
+OSTimeDlyHMSM:
+          CFI Block cfiBlock1 Using cfiCommon0
+          CFI Function OSTimeDlyHMSM
+//  100                       INT8U   minutes,
+//  101                       INT8U   seconds,
+//  102                       INT16U  ms)
+//  103 {
+        FUNCALL OSTimeDlyHMSM, OSTimeDly
+        LOCFRAME CSTACK, 28, STACK
+        PUSHM.A #0x6, R11
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+28
+        MOV.B   R13, R11
+        MOV.B   R14, R6
+        MOV.W   R15, R10
+//  104     INT32U ticks;
+//  105 
+//  106 
+//  107     if (OSIntNesting > 0u) {                     /* See if trying to call from an ISR                  */
+        CMPX.B  #0x0, &OSIntNesting
+        JEQ     ??OSTimeDlyHMSM_0
+//  108         return (OS_ERR_TIME_DLY_ISR);
+        MOV.B   #0x55, R12
+        JMP     ??OSTimeDlyHMSM_1
+//  109     }
+//  110     if (OSLockNesting > 0u) {                    /* See if called with scheduler locked                */
+??OSTimeDlyHMSM_0:
+        CMPX.B  #0x0, &OSLockNesting
+        JEQ     ??OSTimeDlyHMSM_2
+//  111         return (OS_ERR_SCHED_LOCKED);
+        MOV.B   #0x32, R12
+        JMP     ??OSTimeDlyHMSM_1
+//  112     }
+//  113 #if OS_ARG_CHK_EN > 0u
+//  114     if (hours == 0u) {
+//  115         if (minutes == 0u) {
+//  116             if (seconds == 0u) {
+//  117                 if (ms == 0u) {
+//  118                     return (OS_ERR_TIME_ZERO_DLY);
+//  119                 }
+//  120             }
+//  121         }
+//  122     }
+//  123     if (minutes > 59u) {
+//  124         return (OS_ERR_TIME_INVALID_MINUTES);    /* Validate arguments to be within range              */
+//  125     }
+//  126     if (seconds > 59u) {
+//  127         return (OS_ERR_TIME_INVALID_SECONDS);
+//  128     }
+//  129     if (ms > 999u) {
+//  130         return (OS_ERR_TIME_INVALID_MS);
+//  131     }
+//  132 #endif
+//  133                                                  /* Compute the total number of clock ticks required.. */
+//  134                                                  /* .. (rounded to the nearest tick)                   */
+//  135     ticks = ((INT32U)hours * 3600uL + (INT32U)minutes * 60uL + (INT32U)seconds) * OS_TICKS_PER_SEC
+//  136           + OS_TICKS_PER_SEC * ((INT32U)ms + 500uL / OS_TICKS_PER_SEC) / 1000uL;
+//  137     OSTimeDly(ticks);
+??OSTimeDlyHMSM_2:
+        MOV.B   R12, R12
+        MOV.W   #0x0, R13
+        MOV.W   #0xe10, R14
+        MOV.W   #0x0, R15
+        CALLA   #?Mul32
+        MOV.W   R12, R8
+        MOV.W   R13, R9
+        MOV.B   R11, R12
+        MOV.W   #0x0, R13
+        MOV.W   #0x3c, R14
+        MOV.W   #0x0, R15
+        CALLA   #?Mul32
+        ADD.W   R12, R8
+        ADDC.W  R13, R9
+        MOV.W   #0x0, R15
+        ADD.W   R6, R8
+        ADDC.W  #0x0, R9
+        MOV.W   R8, R12
+        MOV.W   R9, R13
+        MOV.W   #0x3e8, R14
+        CALLA   #?Mul32
+        MOV.W   R12, R8
+        MOV.W   R13, R9
+        MOV.W   R10, R12
+        MOV.W   #0x0, R13
+        MOV.W   #0x3e8, R14
+        MOV.W   #0x0, R15
+        CALLA   #?Mul32
+        MOV.W   #0x3e8, R14
+        MOV.W   #0x0, R15
+        CALLA   #?DivMod32u
+        ADD.W   R12, R8
+        MOV.W   R8, R12
+        ADDC.W  R9, R13
+        CALLA   #OSTimeDly
+//  138     return (OS_ERR_NONE);
+        MOV.B   #0x0, R12
+??OSTimeDlyHMSM_1:
+        POPM.A  #0x6, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock1
+//  139 }
+//  140 #endif
+//  141 /*$PAGE*/
+//  142 /*
+//  143 *********************************************************************************************************
+//  144 *                                         RESUME A DELAYED TASK
+//  145 *
+//  146 * Description: This function is used resume a task that has been delayed through a call to either
+//  147 *              OSTimeDly() or OSTimeDlyHMSM().  Note that you can call this function to resume a
+//  148 *              task that is waiting for an event with timeout.  This would make the task look
+//  149 *              like a timeout occurred.
+//  150 *
+//  151 * Arguments  : prio                      specifies the priority of the task to resume
+//  152 *
+//  153 * Returns    : OS_ERR_NONE               Task has been resumed
+//  154 *              OS_ERR_PRIO_INVALID       if the priority you specify is higher that the maximum allowed
+//  155 *                                        (i.e. >= OS_LOWEST_PRIO)
+//  156 *              OS_ERR_TIME_NOT_DLY       Task is not waiting for time to expire
+//  157 *              OS_ERR_TASK_NOT_EXIST     The desired task has not been created or has been assigned to a Mutex.
+//  158 *********************************************************************************************************
+//  159 */
+//  160 
+//  161 #if OS_TIME_DLY_RESUME_EN > 0u
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  162 INT8U  OSTimeDlyResume (INT8U prio)
+OSTimeDlyResume:
+          CFI Block cfiBlock2 Using cfiCommon0
+          CFI Function OSTimeDlyResume
+//  163 {
+        FUNCALL OSTimeDlyResume, OSCPUSaveSR
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL OSTimeDlyResume, OSCPURestoreSR
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL OSTimeDlyResume, OSCPURestoreSR
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL OSTimeDlyResume, OSCPURestoreSR
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL OSTimeDlyResume, OS_Sched
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL OSTimeDlyResume, OSCPURestoreSR
+        LOCFRAME CSTACK, 8, STACK
+        PUSHM.A #0x1, R10
+          CFI R10L Frame(CFA, -8)
+          CFI R10H Frame(CFA, -6)
+          CFI CFA SP+8
+        MOV.B   R12, R10
+//  164     OS_TCB    *ptcb;
+//  165 #if OS_CRITICAL_METHOD == 3u                                   /* Storage for CPU status register      */
+//  166     OS_CPU_SR  cpu_sr = 0u;
+//  167 #endif
+//  168 
+//  169 
+//  170 
+//  171     if (prio >= OS_LOWEST_PRIO) {
+        CMP.B   #0x3f, R12
+        JNC     ??OSTimeDlyResume_0
+//  172         return (OS_ERR_PRIO_INVALID);
+        MOV.B   #0x2a, R12
+        JMP     ??OSTimeDlyResume_1
+//  173     }
+//  174     OS_ENTER_CRITICAL();
+??OSTimeDlyResume_0:
+        CALLA   #OSCPUSaveSR
+//  175     ptcb = OSTCBPrioTbl[prio];                                 /* Make sure that task exist            */
+        RLAM.A  #0x2, R10
+        MOVX.A  OSTCBPrioTbl(R10), R14
+//  176     if (ptcb == (OS_TCB *)0) {
+        CMPA    #0x0, R14
+        JEQ     ??OSTimeDlyResume_2
+//  177         OS_EXIT_CRITICAL();
+//  178         return (OS_ERR_TASK_NOT_EXIST);                        /* The task does not exist              */
+//  179     }
+//  180     if (ptcb == OS_TCB_RESERVED) {
+        CMPA    #0x1, R14
+        JNE     ??OSTimeDlyResume_3
+//  181         OS_EXIT_CRITICAL();
+??OSTimeDlyResume_2:
+        CALLA   #OSCPURestoreSR
+//  182         return (OS_ERR_TASK_NOT_EXIST);                        /* The task does not exist              */
+        MOV.B   #0x43, R12
+        JMP     ??OSTimeDlyResume_1
+//  183     }
+//  184     if (ptcb->OSTCBDly == 0u) {                                /* See if task is delayed               */
+??OSTimeDlyResume_3:
+        MOV.W   0x2a(R14), R15
+        BIS.W   0x2c(R14), R15
+        CMP.W   #0x0, R15
+        JNE     ??OSTimeDlyResume_4
+//  185         OS_EXIT_CRITICAL();
+        CALLA   #OSCPURestoreSR
+//  186         return (OS_ERR_TIME_NOT_DLY);                          /* Indicate that task was not delayed   */
+        MOV.B   #0x50, R12
+        JMP     ??OSTimeDlyResume_1
+//  187     }
+//  188 
+//  189     ptcb->OSTCBDly = 0u;                                       /* Clear the time delay                 */
+??OSTimeDlyResume_4:
+        MOV.W   #0x0, 0x2a(R14)
+        MOV.W   #0x0, 0x2c(R14)
+//  190     if ((ptcb->OSTCBStat & OS_STAT_PEND_ANY) != OS_STAT_RDY) {
+        BIT.B   #0x37, 0x2e(R14)
+        JEQ     ??OSTimeDlyResume_5
+//  191         ptcb->OSTCBStat     &= ~OS_STAT_PEND_ANY;              /* Yes, Clear status flag               */
+        AND.B   #0xc8, 0x2e(R14)
+//  192         ptcb->OSTCBStatPend  =  OS_STAT_PEND_TO;               /* Indicate PEND timeout                */
+        MOV.B   #0x1, R15
+        JMP     ??OSTimeDlyResume_6
+//  193     } else {
+//  194         ptcb->OSTCBStatPend  =  OS_STAT_PEND_OK;
+??OSTimeDlyResume_5:
+        MOV.B   #0x0, R15
+??OSTimeDlyResume_6:
+        MOV.B   R15, 0x2f(R14)
+//  195     }
+//  196     if ((ptcb->OSTCBStat & OS_STAT_SUSPEND) == OS_STAT_RDY) {  /* Is task suspended?                   */
+        BIT.B   #0x8, 0x2e(R14)
+        JC      ??OSTimeDlyResume_7
+//  197         OSRdyGrp               |= ptcb->OSTCBBitY;             /* No,  Make ready                      */
+        BISX.B  0x34(R14), &OSRdyGrp
+//  198         OSRdyTbl[ptcb->OSTCBY] |= ptcb->OSTCBBitX;
+        MOV.B   0x32(R14), R15
+        BISX.B  0x33(R14), OSRdyTbl(R15)
+//  199         OS_EXIT_CRITICAL();
+        CALLA   #OSCPURestoreSR
+//  200         OS_Sched();                                            /* See if this is new highest priority  */
+        CALLA   #OS_Sched
+        JMP     ??OSTimeDlyResume_8
+//  201     } else {
+//  202         OS_EXIT_CRITICAL();                                    /* Task may be suspended                */
+??OSTimeDlyResume_7:
+        CALLA   #OSCPURestoreSR
+//  203     }
+//  204     return (OS_ERR_NONE);
+??OSTimeDlyResume_8:
+        MOV.B   #0x0, R12
+??OSTimeDlyResume_1:
+        POPM.A  #0x1, R10
+          CFI R10H SameValue
+          CFI R10L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock2
+//  205 }
+//  206 #endif
+//  207 /*$PAGE*/
+//  208 /*
+//  209 *********************************************************************************************************
+//  210 *                                         GET CURRENT SYSTEM TIME
+//  211 *
+//  212 * Description: This function is used by your application to obtain the current value of the 32-bit
+//  213 *              counter which keeps track of the number of clock ticks.
+//  214 *
+//  215 * Arguments  : none
+//  216 *
+//  217 * Returns    : The current value of OSTime
+//  218 *********************************************************************************************************
+//  219 */
+//  220 
+//  221 #if OS_TIME_GET_SET_EN > 0u
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  222 INT32U  OSTimeGet (void)
+OSTimeGet:
+          CFI Block cfiBlock3 Using cfiCommon0
+          CFI Function OSTimeGet
+//  223 {
+        FUNCALL OSTimeGet, OSCPUSaveSR
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL OSTimeGet, OSCPURestoreSR
+        LOCFRAME CSTACK, 12, STACK
+        PUSHM.A #0x2, R11
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+12
+//  224     INT32U     ticks;
+//  225 #if OS_CRITICAL_METHOD == 3u                     /* Allocate storage for CPU status register           */
+//  226     OS_CPU_SR  cpu_sr = 0u;
+//  227 #endif
+//  228 
+//  229 
+//  230 
+//  231     OS_ENTER_CRITICAL();
+        CALLA   #OSCPUSaveSR
+//  232     ticks = OSTime;
+        MOVX.W  &OSTime, R10
+        MOVX.W  &OSTime + 2, R11
+//  233     OS_EXIT_CRITICAL();
+        CALLA   #OSCPURestoreSR
+//  234     return (ticks);
+        MOV.W   R10, R12
+        MOV.W   R11, R13
+        POPM.A  #0x2, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock3
+//  235 }
+//  236 #endif
+//  237 
+//  238 /*
+//  239 *********************************************************************************************************
+//  240 *                                            SET SYSTEM CLOCK
+//  241 *
+//  242 * Description: This function sets the 32-bit counter which keeps track of the number of clock ticks.
+//  243 *
+//  244 * Arguments  : ticks      specifies the new value that OSTime needs to take.
+//  245 *
+//  246 * Returns    : none
+//  247 *********************************************************************************************************
+//  248 */
+//  249 
+//  250 #if OS_TIME_GET_SET_EN > 0u
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  251 void  OSTimeSet (INT32U ticks)
+OSTimeSet:
+          CFI Block cfiBlock4 Using cfiCommon0
+          CFI Function OSTimeSet
+//  252 {
+        FUNCALL OSTimeSet, OSCPUSaveSR
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL OSTimeSet, OSCPURestoreSR
+        LOCFRAME CSTACK, 12, STACK
+        PUSHM.A #0x2, R11
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+12
+        MOV.W   R12, R10
+        MOV.W   R13, R11
+//  253 #if OS_CRITICAL_METHOD == 3u                     /* Allocate storage for CPU status register           */
+//  254     OS_CPU_SR  cpu_sr = 0u;
+//  255 #endif
+//  256 
+//  257 
+//  258 
+//  259     OS_ENTER_CRITICAL();
+        CALLA   #OSCPUSaveSR
+//  260     OSTime = ticks;
+        MOVX.W  R10, &OSTime
+        MOVX.W  R11, &OSTime + 2
+//  261     OS_EXIT_CRITICAL();
+        CALLA   #OSCPURestoreSR
+//  262 }
+        POPM.A  #0x2, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock4
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r4:
+        REQUIRE ?setjmp_r4
+        REQUIRE ?longjmp_r4
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r5:
+        REQUIRE ?setjmp_r5
+        REQUIRE ?longjmp_r5
+
+        END
+//  263 #endif
+//  264 	 	   	  		 			 	    		   		 		 	 	 			 	    		   	 			 	  	 		 				 		  			 		 					 	  	  		      		  	   		      		  	 		 	      		   		 		  	 		 	      		  		  		  
+// 
+// 428 bytes in segment CODE
+// 
+// 428 bytes of CODE memory
+//
+//Errors: none
+//Warnings: 11

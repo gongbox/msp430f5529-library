@@ -1,0 +1,1007 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+//                                                      26/Nov/2016  11:15:13 /
+// IAR C/C++ Compiler V5.50.1.20465/W32, Evaluation edition for MSP430        /
+// Copyright 1996-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    __rt_version  =  3                                                      /
+//    __double_size =  32                                                     /
+//    __reg_r4      =  free                                                   /
+//    __reg_r5      =  free                                                   /
+//    __pic         =  no                                                     /
+//    __core        =  430X                                                   /
+//    __data_model  =  large                                                  /
+//    Source file   =  E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\gpio.c                                               /
+//    Command line  =  E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\gpio.c -D DEBUG -D RAM_VECTOR -lA                    /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Debug\List /
+//                     \ -o E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Debug /
+//                     \Obj\ --no_cse --no_unroll --no_inline                 /
+//                     --no_code_motion --no_tbaa --debug -D__MSP430F5529__   /
+//                     -e --double=32 --dlib_config "D:\Program Files\IAR     /
+//                     Systems\Embedded Workbench 6.4                         /
+//                     Evaluation\430\LIB\DLIB\dl430xlff.h" -I                /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\ -I        /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\in /
+//                     c\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Driv /
+//                     ers\src\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£° /
+//                     å\Drivers\src\USB\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C /
+//                     °æ\¹¤³ÌÄ£°å\Drivers\src\USB\USB_config\ -I             /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\USB\USB_User\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\ /
+//                     ¹¤³ÌÄ£°å\Drivers\srcUSB\USB_API\USB_CDC_API\ -I        /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\USB\USB_API\USB_HID_API\ -I                          /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\USB\USB_API\USB_MSC_API\ -I                          /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\  /
+//                     -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWar /
+//                     e\delay\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£° /
+//                     å\HardWare\18b20\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C° /
+//                     æ\¹¤³ÌÄ£°å\HardWare\KEY\ -I                            /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\L /
+//                     ED\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Har /
+//                     dWare\12864\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ /
+//                     ÌÄ£°å\HardWare\oled\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6 /
+//                     \C°æ\¹¤³ÌÄ£°å\HardWare\mpu6050\inc\ -I                 /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\m /
+//                     pu6050\src\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³Ì /
+//                     Ä£°å\HardWare\nokia5110\inc\ -I                        /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\n /
+//                     okia5110\src\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤ /
+//                     ³ÌÄ£°å\HardWare\LQ_1.8_TFT\ -I                         /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\L /
+//                     CD_API\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å /
+//                     \HardWare\2.2TFT\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C° /
+//                     æ\¹¤³ÌÄ£°å\HardWare\nrf24l01\ -I                       /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\System\    /
+//                     -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\System\ /
+//                     inc\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Sy /
+//                     stem\src\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£ /
+//                     °å\User\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£° /
+//                     å\User\USER\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ /
+//                     ÌÄ£°å\Lib\UCOSII\CONFIG\ -I                            /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII /
+//                     \App\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\L /
+//                     ib\uCOSII\CONFIHG\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C /
+//                     °æ\¹¤³ÌÄ£°å\Lib\uCOSII\PORT\ -I                        /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Lib\UCOSII /
+//                     \CORE\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\ /
+//                     Lib\FatFs\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ /
+//                     £°å\Lib\FatFs\option\ --core=430X --data_model=large   /
+//                     -On --multiplier=32 --multiplier_location=4C0          /
+//                     --hw_workaround=CPU40                                  /
+//    List file     =  E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Debug\List /
+//                     \gpio.s43                                              /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME gpio
+
+        RTMODEL "__SystemLibrary", "DLib"
+        RTMODEL "__core", "430X"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dlib_file_descriptor", "1"
+        RTMODEL "__double_size", "32"
+        RTMODEL "__pic", "no"
+        RTMODEL "__reg_r4", "free"
+        RTMODEL "__reg_r5", "free"
+        RTMODEL "__rt_version", "3"
+
+        RSEG CSTACK:DATA:SORT:NOROOT(0)
+
+        EXTERN ?longjmp_r4
+        EXTERN ?longjmp_r5
+        EXTERN ?setjmp_r4
+        EXTERN ?setjmp_r5
+
+        PUBWEAK ?setjmp_save_r4
+        PUBWEAK ?setjmp_save_r5
+        PUBLIC GPIOX
+        PUBLIC GPIO_ClearITPendingBit
+        FUNCTION GPIO_ClearITPendingBit,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 8, STACK
+        PUBLIC GPIO_GetITStatus
+        FUNCTION GPIO_GetITStatus,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 8, STACK
+        PUBLIC GPIO_ITConfig
+        FUNCTION GPIO_ITConfig,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 20, STACK
+        PUBLIC GPIO_MultiBits_Init
+        FUNCTION GPIO_MultiBits_Init,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 12, STACK
+        PUBLIC GPIO_ReadBit
+        FUNCTION GPIO_ReadBit,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 8, STACK
+        PUBLIC GPIO_ReadByte
+        FUNCTION GPIO_ReadByte,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC GPIO_ResetBits
+        FUNCTION GPIO_ResetBits,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC GPIO_SetBits
+        FUNCTION GPIO_SetBits,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC GPIO_TurnBit
+        FUNCTION GPIO_TurnBit,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 8, STACK
+        PUBLIC GPIO_WriteBit
+        FUNCTION GPIO_WriteBit,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 20, STACK
+        PUBLIC GPIO_WriteByte
+        FUNCTION GPIO_WriteByte,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBWEAK _A_PAIN_L
+        PUBWEAK _A_PBIN_L
+        PUBWEAK _A_PCIN_L
+        PUBWEAK _A_PDIN_L
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA SP DATA
+          CFI Resource PC:20, SP:20, SR:16, R4L:16, R4H:4, R4:20, R5L:16, R5H:4
+          CFI Resource R5:20, R6L:16, R6H:4, R6:20, R7L:16, R7H:4, R7:20, R8L:16
+          CFI Resource R8H:4, R8:20, R9L:16, R9H:4, R9:20, R10L:16, R10H:4
+          CFI Resource R10:20, R11L:16, R11H:4, R11:20, R12L:16, R12H:4, R12:20
+          CFI Resource R13L:16, R13H:4, R13:20, R14L:16, R14H:4, R14:20, R15L:16
+          CFI Resource R15H:4, R15:20
+          CFI ResourceParts R4 R4H, R4L
+          CFI ResourceParts R5 R5H, R5L
+          CFI ResourceParts R6 R6H, R6L
+          CFI ResourceParts R7 R7H, R7L
+          CFI ResourceParts R8 R8H, R8L
+          CFI ResourceParts R9 R9H, R9L
+          CFI ResourceParts R10 R10H, R10L
+          CFI ResourceParts R11 R11H, R11L
+          CFI ResourceParts R12 R12H, R12L
+          CFI ResourceParts R13 R13H, R13L
+          CFI ResourceParts R14 R14H, R14L
+          CFI ResourceParts R15 R15H, R15L
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H SameValue
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H SameValue
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H SameValue
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H SameValue
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H SameValue
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H SameValue
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H SameValue
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H SameValue
+          CFI R11 Concat
+          CFI R12L Undefined
+          CFI R12H Undefined
+          CFI R12 Undefined
+          CFI R13L Undefined
+          CFI R13H Undefined
+          CFI R13 Undefined
+          CFI R14L Undefined
+          CFI R14H Undefined
+          CFI R14 Undefined
+          CFI R15L Undefined
+          CFI R15H Undefined
+          CFI R15 Undefined
+          CFI EndCommon cfiCommon0
+        
+        EXTERN assert_failed
+        FUNCTION assert_failed,0202H
+
+// E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\src\gpio.c
+//    1 #include "gpio.h"
+
+        ASEGN DATA16_AN:DATA:NOROOT,0200H
+// union <unnamed> __data16 _A_PAIN_L
+_A_PAIN_L:
+        DS8 2
+
+        ASEGN DATA16_AN:DATA:NOROOT,0220H
+// union <unnamed> __data16 _A_PBIN_L
+_A_PBIN_L:
+        DS8 2
+
+        ASEGN DATA16_AN:DATA:NOROOT,0240H
+// union <unnamed> __data16 _A_PCIN_L
+_A_PCIN_L:
+        DS8 2
+
+        ASEGN DATA16_AN:DATA:NOROOT,0260H
+// union <unnamed> __data16 _A_PDIN_L
+_A_PDIN_L:
+        DS8 2
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "E:\\\\MSP430\\\\MSP430F5529...">`:
+        DC8 45H, 3AH, 5CH, 4DH, 53H, 50H, 34H, 33H
+        DC8 30H, 5CH, 4DH, 53H, 50H, 34H, 33H, 30H
+        DC8 46H, 35H, 35H, 32H, 39H, 0BFH, 0E2H, 0BAH
+        DC8 0AFH, 0CAH, 0FDH, 32H, 2EH, 36H, 5CH, 43H
+        DC8 0B0H, 0E6H, 5CH, 0B9H, 0A4H, 0B3H, 0CCH, 0C4H
+        DC8 0A3H, 0B0H, 0E5H, 5CH, 44H, 72H, 69H, 76H
+        DC8 65H, 72H, 73H, 5CH, 73H, 72H, 63H, 5CH
+        DC8 67H, 70H, 69H, 6FH, 2EH, 63H, 0
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "GPIO_ITConfig">`:
+        DC8 "GPIO_ITConfig"
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "\\266\\313\\277\\332\\311\\350\\326\\303\\2`:
+        DC8 "\266\313\277\332\311\350\326\303\262\273\272\317\300\355\243\241"
+//    2 #include "msp430f5529.h"
+//    3 #include "msp430f5529MemMap.h"
+//    4 
+//    5 //port£¬pin,BITs»ñÈ¡ºê¶¨Òå,ÓÉ´Ë¿ÉÖª£¬µ±Ê¹ÓÃ16Î»IO¶¨ÒåÊ±ÓÉÓÚ¼ÆËãport,pinÖµ»á½µµÍÖ´ÐÐÐ§ÂÊ
+//    6 #ifdef GPIO_PORT_SIZE_WORD
+//    7 #define GET_PORT(portn)        ((((portn) >= PORTA)&&((portn) <= PORTD)) ? ((PORTn)((portn) - PORTA)) : ((PORTn)((portn - PORT1) / 2)))
+//    8 #define GET_PIN(portn,pin)     ((((portn) >= PORTA)&&((portn) <= PORTD)) ? (pin)  : ((((portn - PORT1)%2) == 0) ? (pin)  : ((pin)+8u)))
+//    9 #define GET_BITs(portn,BITs)   ((((portn) >= PORTA)&&((portn) <= PORTD)) ? (BITs) : ((((portn - PORT1)%2) == 0) ? (BITs) : (((BITs)<<8u))))
+//   10 #else
+//   11 #define GET_PORT(portn)        (portn)
+//   12 #define GET_PIN(portn,pin)     (pin)
+//   13 #define GET_BITs(portn,BITs)   (BITs)
+//   14 #endif
+//   15 
+//   16 #ifdef GPIO_PORT_SIZE_WORD
+//   17 const GPIO_MemMapPtr GPIOX[] ={PA_BASE_PTR,PB_BASE_PTR,PC_BASE_PTR,PD_BASE_PTR}; 
+//   18 #else
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(1)
+//   19 const GPIO_MemMapPtr GPIOX[] ={P1_BASE_PTR,P2_BASE_PTR,P3_BASE_PTR,P4_BASE_PTR,P5_BASE_PTR,P6_BASE_PTR,P7_BASE_PTR,P8_BASE_PTR}; 
+GPIOX:
+        DC32 _A_PAIN_L, _A_PAIN_L + 1H, _A_PBIN_L, _A_PBIN_L + 1H, _A_PCIN_L
+        DC32 _A_PCIN_L + 1H, _A_PDIN_L, _A_PDIN_L + 1H
+//   20 #endif
+//   21 /*********************************************************************************
+//   22 º¯ÊýÃû£ºIO¿Ú³õÊ¼»¯
+//   23 Èë¿Ú²ÎÊý£ºPORTn portn    ¶ÔÓ¦IO¶Ë¿Ú
+//   24           uint16_t pin   ¶ÔÓ¦IOÒý½ÅÎ»ÖÃ
+//   25           uint16_t config     
+//   26           ¶ÔÓ¦IO¿ÚÅäÖÃ {
+//   27                             GPI                   ,// ÊäÈë·½Ïò
+//   28                             GPO                   ,// Êä³ö·½Ïò
+//   29                             LDS                   ,// µÍÇý¶¯ÄÜÁ¦
+//   30                             HDS                   ,// ¸ßÇý¶¯ÄÜÁ¦
+//   31                             PULL_DOWN             ,// ÏÂÀ­
+//   32                             PULL_UP               ,// ÉÏÀ­
+//   33                             IRQ_RISING            ,// ÉÏÉýÑØ´¥·¢ÖÐ¶Ï
+//   34                             IRQ_FALLING           ,// ÏÂ½µÑØ´¥·¢ÖÐ¶Ï
+//   35                             SEL                   ,// µÚ¶þ¸´ÓÃ¹¦ÄÜ
+//   36                         }  
+//   37 Ê¹ÓÃÀý³Ì:GPIO_MultiBits_Init(P2,BIT3,GPO|HDS);   //³õÊ¼»¯P2.3ÎªÊä³ö·ÅÏò£¬¸ßÇý¶¯ÄÜÁ¦
+//   38 **********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   39 void GPIO_MultiBits_Init(PORTn portn,uint16_t BITs,uint16_t config)
+GPIO_MultiBits_Init:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function GPIO_MultiBits_Init
+//   40 {
+        PUSHM.A #0x2, R11
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+12
+        MOV.W   R14, R15
+//   41   //»ñÈ¡port,pin
+//   42   PORTn    port = GET_PORT(portn);
+        MOV.B   R12, R14
+//   43   BITs = GET_BITs(portn,BITs);
+//   44   
+//   45   //ÅäÖÃIO¿Ú
+//   46   if((config & SEL) == SEL)
+        BIT.W   #0x100, R15
+        JNC     ??GPIO_MultiBits_Init_0
+//   47   {
+//   48     GPIOX[port]->SEL |= BITs;                    //Ñ¡ÔñÎªµÚ¶þ¹¦ÄÜ
+        MOV.B   R14, R10
+        RLAM.A  #0x2, R10
+        MOVX.A  GPIOX(R10), R11
+        BIS.B   R13, 0xa(R11)
+        JMP     ??GPIO_MultiBits_Init_1
+//   49   }
+//   50   else
+//   51   {
+//   52     GPIOX[port]->SEL &=~BITs;                    //Ñ¡ÔñÎªIO¿Ú¹¦ÄÜ
+??GPIO_MultiBits_Init_0:
+        MOV.B   R14, R11
+        RLAM.A  #0x2, R11
+        MOVX.A  GPIOX(R11), R11
+        BIC.B   R13, 0xa(R11)
+//   53   }
+//   54 
+//   55   if((config & GPO) == GPO)              //ÅÐ¶Ï·½Ïò
+??GPIO_MultiBits_Init_1:
+        BIT.W   #0x2, R15
+        JNC     ??GPIO_MultiBits_Init_2
+//   56   {
+//   57     GPIOX[port]->PDIR |= BITs;       //ÉèÖÃÎªÊä³ö·½Ïò
+        MOV.B   R14, R11
+        RLAM.A  #0x2, R11
+        MOVX.A  GPIOX(R11), R11
+        BIS.B   R13, 0x4(R11)
+//   58     
+//   59     if((config&HDS) == HDS)            //ÅÐ¶ÏÇý¶¯ÄÜÁ¦
+        BIT.W   #0x8, R15
+        JNC     ??GPIO_MultiBits_Init_3
+//   60     {
+//   61       GPIOX[port]->DS |= BITs;          //ÉèÎª¸ßÇý¶¯ÄÜÁ¦
+        MOV.B   R14, R11
+        RLAM.A  #0x2, R11
+        MOVX.A  GPIOX(R11), R11
+        BIS.B   R13, 0x8(R11)
+        JMP     ??GPIO_MultiBits_Init_4
+//   62     }
+//   63     else
+//   64     {
+//   65       GPIOX[port]->DS &=~BITs;          //ÉèÎªµÍÇý¶¯ÄÜÁ¦
+??GPIO_MultiBits_Init_3:
+        MOV.B   R14, R11
+        RLAM.A  #0x2, R11
+        MOVX.A  GPIOX(R11), R11
+        BIC.B   R13, 0x8(R11)
+        JMP     ??GPIO_MultiBits_Init_4
+//   66     }
+//   67   }
+//   68   else   //Èç¹ûÊÇÊäÈë·½Ïò
+//   69   {
+//   70     GPIOX[port]->PDIR &=~BITs;      //ÉèÖÃÎªÊäÈë·½Ïò
+??GPIO_MultiBits_Init_2:
+        MOV.B   R14, R11
+        RLAM.A  #0x2, R11
+        MOVX.A  GPIOX(R11), R11
+        BIC.B   R13, 0x4(R11)
+//   71     
+//   72     if((config & PULL_DOWN) == PULL_DOWN) //ÅÐ¶ÏÊÇ·ñ¿ªÆôÏÂÀ­
+        BIT.W   #0x10, R15
+        JNC     ??GPIO_MultiBits_Init_5
+//   73     {
+//   74       GPIOX[port]->REN  |= BITs;             //¿ªÆôÉÏ\ÏÂÀ­
+        MOV.B   R14, R11
+        RLAM.A  #0x2, R11
+        MOVX.A  GPIOX(R11), R11
+        BIS.B   R13, 0x6(R11)
+//   75       GPIOX[port]->POUT &=~BITs;             //ÉèÖÃÎªÏÂÀ­
+        MOV.B   R14, R11
+        RLAM.A  #0x2, R11
+        MOVX.A  GPIOX(R11), R11
+        BIC.B   R13, 0x2(R11)
+        JMP     ??GPIO_MultiBits_Init_6
+//   76     }
+//   77     else if((config & PULL_UP) == PULL_UP)//ÅÐ¶ÏÊÇ·ñ¿ªÆôÉÏÀ­
+??GPIO_MultiBits_Init_5:
+        BIT.W   #0x20, R15
+        JNC     ??GPIO_MultiBits_Init_7
+//   78     {
+//   79       GPIOX[port]->REN  |= BITs;             //¿ªÆôÉÏ\ÏÂÀ­
+        MOV.B   R14, R11
+        RLAM.A  #0x2, R11
+        MOVX.A  GPIOX(R11), R11
+        BIS.B   R13, 0x6(R11)
+//   80       GPIOX[port]->POUT |= BITs;             //ÉèÖÃÎªÉÏÀ­
+        MOV.B   R14, R11
+        RLAM.A  #0x2, R11
+        MOVX.A  GPIOX(R11), R11
+        BIS.B   R13, 0x2(R11)
+        JMP     ??GPIO_MultiBits_Init_6
+//   81     }
+//   82     else
+//   83     {
+//   84       GPIOX[port]->REN &=~BITs;              //¹Ø±ÕÉÏ\ÏÂÀ­
+??GPIO_MultiBits_Init_7:
+        MOV.B   R14, R11
+        RLAM.A  #0x2, R11
+        MOVX.A  GPIOX(R11), R11
+        BIC.B   R13, 0x6(R11)
+//   85     }
+//   86     
+//   87     if((portn == PORT1)||(portn == PORT2)
+//   88 #ifdef  GPIO_PORT_SIZE_WORD
+//   89        ||(portn == PORTA)
+//   90 #endif       
+//   91        );                 //Ð¡ÓÚµÈÓÚP2Ôò¿ÉÄÜ»áÅäÖÃIO¿ÚÖÐ¶Ï
+//   92     {
+//   93       GPIOX[port]->IE &=~BITs;                  //¹Ø±ÕÖÐ¶Ï
+??GPIO_MultiBits_Init_6:
+        MOV.B   R14, R11
+        RLAM.A  #0x2, R11
+        MOVX.A  GPIOX(R11), R11
+        BIC.B   R13, 0x1a(R11)
+//   94       if((config & IRQ_RISING) == IRQ_RISING)       //Èç¹ûÓÐÉÏÉýÑØ
+        BIT.W   #0x40, R15
+        JNC     ??GPIO_MultiBits_Init_8
+//   95       {
+//   96         GPIOX[port]->IES |= BITs;                  //ÉèÎªÉÏÉýÑØ
+        MOV.B   R14, R11
+        RLAM.A  #0x2, R11
+        MOVX.A  GPIOX(R11), R11
+        BIS.B   R13, 0x18(R11)
+        JMP     ??GPIO_MultiBits_Init_4
+//   97       }
+//   98       else 
+//   99       {
+//  100         GPIOX[port]->IES &=~BITs ;                 //ÉèÎªÏÂ½µÑØ
+??GPIO_MultiBits_Init_8:
+        MOV.B   R14, R11
+        RLAM.A  #0x2, R11
+        MOVX.A  GPIOX(R11), R11
+        BIC.B   R13, 0x18(R11)
+//  101       } 
+//  102     }
+//  103   }
+//  104 }
+??GPIO_MultiBits_Init_4:
+        POPM.A  #0x2, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock0
+//  105 /*******************************************************************************
+//  106 *  º¯ÊýÃû³Æ£º GPIO_SetBits  (PORTn portn, uint16_t BITs)
+//  107 *  ¹¦ÄÜËµÃ÷£ºÉèÖÃIO¿ÚÊä³öÎª¸ßµçÆ½
+//  108 *  ²ÎÊýËµÃ÷£º PORTn portn     ¶ÔÓ¦IO¶Ë¿Ú
+//  109               uint16_t BITs   ¶ÔÓ¦IOÒý½ÅÎ»ÖÃ
+//  110 *  º¯Êý·µ»Ø£ºÎÞ
+//  111 *  Ê¹ÓÃÊ¾Àý£º GPIO_SetBits  (PORT1, GPIO_Pin_0|GPIO_Pin_1); //P1.0,P1.1Êä³ö¸ßµçÆ½
+//  112 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  113 void     GPIO_SetBits  (PORTn portn, uint16_t BITs)
+GPIO_SetBits:
+          CFI Block cfiBlock1 Using cfiCommon0
+          CFI Function GPIO_SetBits
+//  114 {
+//  115   if((portn <= PORT8)) 
+        CMP.B   #0x8, R12
+        JC      ??GPIO_SetBits_0
+//  116     BITs = BITs & 0xFF;
+        AND.W   #0xff, R13
+//  117   //»ñÈ¡port,pin
+//  118   PORTn port = GET_PORT(portn);
+//  119   BITs = GET_BITs(portn,BITs);
+//  120   //IO¿Ú²Ù×÷
+//  121   GPIOX[port]->POUT |= BITs;            //
+??GPIO_SetBits_0:
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  GPIOX(R15), R15
+        BIS.B   R13, 0x2(R15)
+//  122 }
+        RETA
+          CFI EndBlock cfiBlock1
+//  123 /*******************************************************************************
+//  124 *  º¯ÊýÃû³Æ£º GPIO_ResetBits(PORTn portn, uint16_t BITs)
+//  125 *  ¹¦ÄÜËµÃ÷£ºÉèÖÃIO¿ÚÊä³öÎªµÍµçÆ½
+//  126 *  ²ÎÊýËµÃ÷£º PORTn portn     ¶ÔÓ¦IO¶Ë¿Ú
+//  127               uint16_t BITs   ¶ÔÓ¦IOÒý½ÅÎ»ÖÃ
+//  128 *  º¯Êý·µ»Ø£ºÎÞ
+//  129 *  Ê¹ÓÃÊ¾Àý£ºGPIO_ResetBits  (PORT1, GPIO_Pin_0|GPIO_Pin_1); //P1.0,P1.1Êä³öµÍµçÆ½
+//  130 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  131 void     GPIO_ResetBits(PORTn portn, uint16_t BITs)
+GPIO_ResetBits:
+          CFI Block cfiBlock2 Using cfiCommon0
+          CFI Function GPIO_ResetBits
+//  132 {
+//  133   //»ñÈ¡port,pin
+//  134   PORTn port = GET_PORT(portn);
+//  135   BITs = GET_BITs(portn,BITs);
+//  136   //IO¿Ú²Ù×÷
+//  137   GPIOX[port]->POUT &=~BITs;    
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  GPIOX(R15), R15
+        BIC.B   R13, 0x2(R15)
+//  138 }
+        RETA
+          CFI EndBlock cfiBlock2
+//  139 /*******************************************************************************
+//  140 º¯ÊýÃû³Æ£ºIO¿ÚÒ»Î»Êä³öÉèÖÃ
+//  141 Èë¿Ú²ÎÊý£ºPORTn portn    ¶ÔÓ¦IO¶Ë¿Ú
+//  142           uint8_t pin     ¶ÔÓ¦IOÒý½ÅÎ»ÖÃ
+//  143           STATUS level    ÉèÖÃÊä³öµçÆ½£¨SET £º¸ßµçÆ½  RESET£ºµÍµçÆ½£©
+//  144 *  Ê¹ÓÃÊ¾Àý£º
+//  145 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  146 void GPIO_WriteBit(PORTn portn,uint8_t pin,STATUS level)
+GPIO_WriteBit:
+          CFI Block cfiBlock3 Using cfiCommon0
+          CFI Function GPIO_WriteBit
+//  147 {
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+//  148   //»ñÈ¡port,pin
+//  149   PORTn   port = GET_PORT(portn);
+        MOV.B   R12, R10
+//  150   uint16_t BIT = (1u << GET_PIN(portn,pin));
+        MOV.W   #0x1, R15
+        SUB.B   #0x1, R13
+        JN      ??GPIO_WriteBit_0
+        RPT     R13
+        RLAX.W  R15
+??GPIO_WriteBit_0:
+        ADD.B   #0x1, R13
+//  151   //IO¿Ú²Ù×÷
+//  152   if(level != RESET)
+        CMP.B   #0x0, R14
+        JEQ     ??GPIO_WriteBit_1
+//  153   {
+//  154     GPIOX[port]->POUT |= BIT;            //
+        MOV.B   R10, R11
+        RLAM.A  #0x2, R11
+        MOVX.A  GPIOX(R11), R11
+        BIS.B   R15, 0x2(R11)
+        JMP     ??GPIO_WriteBit_2
+//  155   }
+//  156   else 
+//  157   {
+//  158     GPIOX[port]->POUT &=~BIT;            //
+??GPIO_WriteBit_1:
+        MOV.B   R10, R11
+        RLAM.A  #0x2, R11
+        MOVX.A  GPIOX(R11), R11
+        BIC.B   R15, 0x2(R11)
+//  159   }
+//  160 }
+??GPIO_WriteBit_2:
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock3
+//  161 /*******************************************************************************
+//  162 º¯ÊýÃû³Æ£ºIO¿ÚÒ»Î»ÊäÈë¶ÁÈ¡
+//  163 Èë¿Ú²ÎÊý£ºPORTn portn    ¶ÔÓ¦IO¶Ë¿Ú
+//  164           uint8_t pin    ¶ÔÓ¦IOÒý½ÅÎ»ÖÃ
+//  165 ·µ»Ø²ÎÊý£ºSTATUS         ÊäÈëµçÆ½£¨SET £º¸ßµçÆ½  RESET£ºµÍµçÆ½£©
+//  166 *  Ê¹ÓÃÊ¾Àý£º
+//  167 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  168 STATUS GPIO_ReadBit(PORTn portn,uint8_t pin)
+GPIO_ReadBit:
+          CFI Block cfiBlock4 Using cfiCommon0
+          CFI Function GPIO_ReadBit
+//  169 {
+        PUSHM.A #0x1, R10
+          CFI R10L Frame(CFA, -8)
+          CFI R10H Frame(CFA, -6)
+          CFI CFA SP+8
+//  170   //»ñÈ¡port,pin
+//  171   PORTn   port = GET_PORT(portn);
+//  172   uint16_t BIT = (1u << GET_PIN(portn,pin));
+        MOV.W   #0x1, R14
+        SUB.B   #0x1, R13
+        JN      ??GPIO_ReadBit_0
+        RPT     R13
+        RLAX.W  R14
+??GPIO_ReadBit_0:
+        ADD.B   #0x1, R13
+//  173   //IO¿Ú²Ù×÷
+//  174   return ((GPIOX[port]->IN & BIT) ? BIT_SET : RESET);
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  GPIOX(R15), R15
+        MOV.B   @R15, R15
+        BIT.B   R14, R15
+        JEQ     ??GPIO_ReadBit_1
+        MOV.B   #0x1, R12
+        JMP     ??GPIO_ReadBit_2
+??GPIO_ReadBit_1:
+        MOV.B   #0x0, R12
+??GPIO_ReadBit_2:
+        POPM.A  #0x1, R10
+          CFI R10H SameValue
+          CFI R10L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock4
+//  175 }
+//  176 /*******************************************************************************
+//  177 º¯ÊýÃû³Æ£ºIO¿ÚÒ»Î»Êä³ö·­×ª
+//  178 Èë¿Ú²ÎÊý£ºPORTn portn    ¶ÔÓ¦IO¶Ë¿Ú
+//  179           uint8_t pin     ¶ÔÓ¦IOÒý½ÅÎ»ÖÃ
+//  180 *  Ê¹ÓÃÊ¾Àý£º
+//  181 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  182 void GPIO_TurnBit  (PORTn portn,uint8_t pin)
+GPIO_TurnBit:
+          CFI Block cfiBlock5 Using cfiCommon0
+          CFI Function GPIO_TurnBit
+//  183 {
+        PUSHM.A #0x1, R10
+          CFI R10L Frame(CFA, -8)
+          CFI R10H Frame(CFA, -6)
+          CFI CFA SP+8
+//  184   //»ñÈ¡port,pin
+//  185   PORTn   port = GET_PORT(portn);
+//  186   uint16_t BIT = (1u << GET_PIN(portn,pin));
+        MOV.W   #0x1, R14
+        SUB.B   #0x1, R13
+        JN      ??GPIO_TurnBit_0
+        RPT     R13
+        RLAX.W  R14
+??GPIO_TurnBit_0:
+        ADD.B   #0x1, R13
+//  187   //IO¿Ú²Ù×÷
+//  188   GPIOX[port]->POUT ^= BIT;
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  GPIOX(R15), R15
+        XOR.B   R14, 0x2(R15)
+//  189 }
+        POPM.A  #0x1, R10
+          CFI R10H SameValue
+          CFI R10L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock5
+//  190 /*******************************************************************************
+//  191 º¯ÊýÃû³Æ£ºIO¿Ú8Î»Êä³öÉèÖÃ
+//  192 Èë¿Ú²ÎÊý£ºPORTn portn    ¶ÔÓ¦IO¶Ë¿Ú,±ØÐëÈ¡PORT1-PORT8
+//  193           uint8_t level   ÉèÖÃ8Î»Êä³öµçÆ½
+//  194 *  Ê¹ÓÃÊ¾Àý£º
+//  195 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  196 void GPIO_WriteByte(PORTn portn,uint8_t value)
+GPIO_WriteByte:
+          CFI Block cfiBlock6 Using cfiCommon0
+          CFI Function GPIO_WriteByte
+//  197 {
+//  198 #ifdef GPIO_PORT_SIZE_WORD
+//  199   
+//  200   ASSERT((portn <= PORT8),
+//  201          "GPIO_WriteByte",
+//  202          "¶Ë¿ÚÉèÖÃ²»ºÏÀí£¡"); //¶ÏÑÔ¼ì²âÊäÈë²ÎÊý
+//  203   
+//  204   PORTn port = GET_PORT(portn);
+//  205   
+//  206   if((portn%2) == 0) //Èç¹ûportnÊÇ»ùÊýÊ±
+//  207   {
+//  208     GPIOX[port]->POUT = GPIOX[port]->POUT & 0xFF00;
+//  209     GPIOX[port]->POUT |= value;
+//  210   }
+//  211   else
+//  212   {
+//  213     GPIOX[port]->POUT = GPIOX[port]->POUT & 0x00FF;
+//  214     GPIOX[port]->POUT |= ((uint16_t)value<<8u);
+//  215   }
+//  216 #else
+//  217   GPIOX[portn]->POUT = value;            //
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  GPIOX(R15), R15
+        MOV.B   R13, 0x2(R15)
+//  218 #endif
+//  219 }
+        RETA
+          CFI EndBlock cfiBlock6
+//  220 /*******************************************************************************
+//  221 º¯ÊýÃû³Æ£ºIO¿Ú8Î»ÊäÈë¶ÁÈ¡
+//  222 Èë¿Ú²ÎÊý£ºPORTn portn    ¶ÔÓ¦IO¶Ë¿Ú,±ØÐëÈ¡PORT1-PORT8
+//  223 ·µ»Ø²ÎÊý£ºuint8 8Î»ÊäÈëµçÆ½
+//  224 *  Ê¹ÓÃÊ¾Àý£º
+//  225 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  226 uint8_t GPIO_ReadByte(PORTn portn)
+GPIO_ReadByte:
+          CFI Block cfiBlock7 Using cfiCommon0
+          CFI Function GPIO_ReadByte
+//  227 {
+//  228 #ifdef GPIO_PORT_SIZE_WORD
+//  229   //Èç¹ûÊäÈë²ÎÊýÊ±P1-P8Ê±
+//  230   ASSERT((portn <= PORT8),
+//  231          "GPIO_ReadByte",
+//  232          "¶Ë¿ÚÉèÖÃ²»ºÏÀí£¡"); //¶ÏÑÔ¼ì²âÊäÈë²ÎÊý
+//  233   
+//  234   PORTn port = GET_PORT(portn);
+//  235   
+//  236   if((portn%2) == 0) //Èç¹ûportnÊÇ»ùÊýÊ±
+//  237   {
+//  238     return ((GPIOX[port]->IN) & 0x00FF);
+//  239   }
+//  240   else
+//  241   {
+//  242     return ((GPIOX[port]->IN) >> 8u);
+//  243   }
+//  244 #else
+//  245   return (GPIOX[portn]->IN);            //
+        MOV.B   R12, R12
+        RLAM.A  #0x2, R12
+        MOVX.A  GPIOX(R12), R15
+        MOV.B   @R15, R12
+        RETA
+          CFI EndBlock cfiBlock7
+//  246 #endif
+//  247 }
+//  248 #ifdef GPIO_PORT_SIZE_WORD
+//  249 /*******************************************************************************
+//  250 º¯ÊýÃû³Æ£ºIO¿Ú16Î»Êä³öÉèÖÃ
+//  251 Èë¿Ú²ÎÊý£ºPORTn portn     ¶ÔÓ¦IO¶Ë¿Ú,±ØÐëÈ¡PORTA-PORTD
+//  252           uint16_t level   ÉèÖÃ16Î»Êä³öµçÆ½
+//  253 *  Ê¹ÓÃÊ¾Àý£º
+//  254 ********************************************************************************/
+//  255 void    GPIO_WriteWord(PORTn portn, uint16_t value) 
+//  256 {
+//  257   //»ñÈ¡port,pin
+//  258   PORTn   port = GET_PORT(portn);
+//  259   
+//  260   GPIOX[port]->POUT = value;            //
+//  261 }
+//  262 /*******************************************************************************
+//  263 º¯ÊýÃû³Æ£ºIO¿Ú16Î»ÊäÈë¶ÁÈ¡
+//  264 Èë¿Ú²ÎÊý£ºPORTn portn    ¶ÔÓ¦IO¶Ë¿Ú,±ØÐëÈ¡PORTA-PORTD
+//  265 ·µ»Ø²ÎÊý£ºuint16 16Î»ÊäÈëµçÆ½
+//  266 *  Ê¹ÓÃÊ¾Àý£º
+//  267 ********************************************************************************/
+//  268 uint16_t GPIO_ReadWord(PORTn portn)
+//  269 {
+//  270   //»ñÈ¡port,pin
+//  271   PORTn   port = GET_PORT(portn);
+//  272   
+//  273   return (GPIOX[port]->IN);
+//  274 }
+//  275 #endif
+//  276 /*******************************************************************************
+//  277 º¯ÊýÃû³Æ£ºÉèÖÃÊÇ·ñÔÊÐíIO¿ÚÖÐ¶Ï
+//  278 Èë¿Ú²ÎÊý£ºPORTn portn    ¶ÔÓ¦IO¶Ë¿Ú
+//  279           uint8_t pin     ¶ÔÓ¦IOÒý½ÅÎ»ÖÃ
+//  280 *  Ê¹ÓÃÊ¾Àý£º
+//  281 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  282 void GPIO_ITConfig(PORTn portn,uint8_t pin,STATUS ITState)
+GPIO_ITConfig:
+          CFI Block cfiBlock8 Using cfiCommon0
+          CFI Function GPIO_ITConfig
+//  283 {
+        FUNCALL GPIO_ITConfig, assert_failed
+        LOCFRAME CSTACK, 20, STACK
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        MOV.B   R12, R10
+        MOV.B   R13, R11
+        MOV.B   R14, R8
+//  284   ASSERT(
+//  285 #ifdef  GPIO_PORT_SIZE_WORD
+//  286          (portn == PORTA)||
+//  287 #endif
+//  288          (portn == PORT1)||(portn == PORT2),
+//  289          "GPIO_ITConfig",
+//  290          "¶Ë¿ÚÉèÖÃ²»ºÏÀí£¡");                 //¶ÏÑÔ¼ì²âÊäÈë²ÎÊý
+        CMP.B   #0x0, R10
+        JEQ     ??GPIO_ITConfig_0
+        CMP.B   #0x1, R10
+        JEQ     ??GPIO_ITConfig_0
+        MOVA    #`?<Constant "\\266\\313\\277\\332\\311\\350\\326\\303\\2`, R15
+        MOVA    #`?<Constant "GPIO_ITConfig">`, R14
+        MOV.W   #0x122, R13
+        MOVA    #`?<Constant "E:\\\\MSP430\\\\MSP430F5529...">`, R12
+        CALLA   #assert_failed
+//  291 
+//  292   //»ñÈ¡port,pin
+//  293   PORTn   port = GET_PORT(portn);
+??GPIO_ITConfig_0:
+        MOV.B   R10, R14
+//  294   uint16_t BIT = (1u<<GET_PIN(portn,pin));
+        MOV.W   #0x1, R15
+        SUB.B   #0x1, R11
+        JN      ??GPIO_ITConfig_1
+        RPT     R11
+        RLAX.W  R15
+??GPIO_ITConfig_1:
+        ADD.B   #0x1, R11
+//  295   //IO¿Ú²Ù×÷
+//  296   
+//  297   if(ITState != DISABLE)
+        CMP.B   #0x0, R8
+        JEQ     ??GPIO_ITConfig_2
+//  298   {
+//  299     GPIOX[port]->IFG &=~BIT;                  //ÇåÖÐ¶Ï±êÖ¾
+        MOV.B   R14, R13
+        RLAM.A  #0x2, R13
+        MOVX.A  GPIOX(R13), R13
+        BIC.B   R15, 0x1c(R13)
+//  300     GPIOX[port]->IE |= BIT;
+        MOV.B   R14, R13
+        RLAM.A  #0x2, R13
+        MOVX.A  GPIOX(R13), R13
+        BIS.B   R15, 0x1a(R13)
+        JMP     ??GPIO_ITConfig_3
+//  301   }
+//  302   else
+//  303   {
+//  304     GPIOX[port]->IE &=~BIT;
+??GPIO_ITConfig_2:
+        MOV.B   R14, R13
+        RLAM.A  #0x2, R13
+        MOVX.A  GPIOX(R13), R13
+        BIC.B   R15, 0x1a(R13)
+//  305   }
+//  306 }
+??GPIO_ITConfig_3:
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock8
+//  307 /*******************************************************************************
+//  308 º¯ÊýÃû³Æ£º»ñÈ¡Ä³Ò»Î»¶Ë¿ÚÖÐ¶Ï±êÖ¾
+//  309 Èë¿Ú²ÎÊý£ºPORTn portn    ¶ÔÓ¦IO¶Ë¿Ú
+//  310           uint8_t pin     ¶ÔÓ¦IOÒý½ÅÎ»ÖÃ
+//  311 *  Ê¹ÓÃÊ¾Àý£º
+//  312 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  313 STATUS GPIO_GetITStatus(PORTn portn,uint8_t pin)
+GPIO_GetITStatus:
+          CFI Block cfiBlock9 Using cfiCommon0
+          CFI Function GPIO_GetITStatus
+//  314 {
+        PUSHM.A #0x1, R10
+          CFI R10L Frame(CFA, -8)
+          CFI R10H Frame(CFA, -6)
+          CFI CFA SP+8
+//  315   //»ñÈ¡port,pin
+//  316   PORTn   port = GET_PORT(portn);
+//  317   uint16_t BIT = (1u<<GET_PIN(portn,pin));
+        MOV.W   #0x1, R14
+        SUB.B   #0x1, R13
+        JN      ??GPIO_GetITStatus_0
+        RPT     R13
+        RLAX.W  R14
+??GPIO_GetITStatus_0:
+        ADD.B   #0x1, R13
+//  318   //IO¿Ú²Ù×÷
+//  319   return ((GPIOX[port]->IFG & BIT) ? TRUE : FALSE);
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  GPIOX(R15), R15
+        BIT.B   R14, 0x1c(R15)
+        JEQ     ??GPIO_GetITStatus_1
+        MOV.B   #0x1, R12
+        JMP     ??GPIO_GetITStatus_2
+??GPIO_GetITStatus_1:
+        MOV.B   #0x0, R12
+??GPIO_GetITStatus_2:
+        POPM.A  #0x1, R10
+          CFI R10H SameValue
+          CFI R10L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock9
+//  320 }
+//  321 /*******************************************************************************
+//  322 º¯ÊýÃû³Æ£ºÇå³ý8Î»ÖÐ¶Ï±êÖ¾
+//  323 Èë¿Ú²ÎÊý£ºPORTn portn    ¶ÔÓ¦IO¶Ë¿Ú
+//  324           uint8_t pin     ¶ÔÓ¦IOÒý½ÅÎ»ÖÃ
+//  325 *  Ê¹ÓÃÊ¾Àý£º
+//  326 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  327 void  GPIO_ClearITPendingBit(PORTn portn,uint8_t pin)
+GPIO_ClearITPendingBit:
+          CFI Block cfiBlock10 Using cfiCommon0
+          CFI Function GPIO_ClearITPendingBit
+//  328 {
+        PUSHM.A #0x1, R10
+          CFI R10L Frame(CFA, -8)
+          CFI R10H Frame(CFA, -6)
+          CFI CFA SP+8
+//  329   //»ñÈ¡port,pin
+//  330   PORTn   port = GET_PORT(portn);
+//  331   uint16_t BIT = (1u<<GET_PIN(portn,pin));
+        MOV.W   #0x1, R14
+        SUB.B   #0x1, R13
+        JN      ??GPIO_ClearITPendingBit_0
+        RPT     R13
+        RLAX.W  R14
+??GPIO_ClearITPendingBit_0:
+        ADD.B   #0x1, R13
+//  332   //IO¿Ú²Ù×÷
+//  333   GPIOX[port]->IFG &=~BIT;
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  GPIOX(R15), R15
+        BIC.B   R14, 0x1c(R15)
+//  334 }
+        POPM.A  #0x1, R10
+          CFI R10H SameValue
+          CFI R10L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock10
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r4:
+        REQUIRE ?setjmp_r4
+        REQUIRE ?longjmp_r4
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r5:
+        REQUIRE ?setjmp_r5
+        REQUIRE ?longjmp_r5
+
+        END
+// 
+// 620 bytes in segment CODE
+//   8 bytes in segment DATA16_AN
+// 126 bytes in segment DATA20_C
+// 
+// 620 bytes of CODE  memory
+// 126 bytes of CONST memory
+//   0 bytes of DATA  memory (+ 8 bytes shared)
+//
+//Errors: none
+//Warnings: none

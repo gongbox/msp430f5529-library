@@ -1,0 +1,2663 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+//                                                      06/Jun/2016  16:42:32 /
+// IAR C/C++ Compiler V5.50.1.20465/W32, Evaluation edition for MSP430        /
+// Copyright 1996-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    __rt_version  =  3                                                      /
+//    __double_size =  32                                                     /
+//    __reg_r4      =  free                                                   /
+//    __reg_r5      =  free                                                   /
+//    __pic         =  no                                                     /
+//    __core        =  430X                                                   /
+//    __data_model  =  large                                                  /
+//    Source file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\UCOSII\CORE\os_q.c                         /
+//    Command line  =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\UCOSII\CORE\os_q.c -D NDEBUG -D            /
+//                     RAM_VECTOR -lC C:\Users\615\Desktop\MSP430\MSP430F5529 /
+//                     ¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Release\List\ -lA               /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Release\List\ -o C:\Users\615\Desktop\MSP430\M /
+//                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Release\Obj\          /
+//                     -D__MSP430F5529__ -e --double=32 --dlib_config         /
+//                     "D:\Program Files (x86)\IAR Systems\Embedded           /
+//                     Workbench 6.4 Evaluation\430\LIB\DLIB\dl430xlfn.h" -I  /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\ -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº /
+//                     ¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\inc\ -I                    /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\ -I C:\Users\615\Desktop\MSP430\MS /
+//                     P430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\src\USB\ -I    /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_config\ -I                 /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_User\ -I                   /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\srcUSB\USB_API\USB_CDC_API\ -I         /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_API\USB_HID_API\ -I        /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_API\USB_MSC_API\ -I        /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\KEY\ -I C:\Users\615\Desktop\MSP430\M /
+//                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\LED\ -I      /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\12864\ -I                             /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\oled\ -I C:\Users\615\Desktop\MSP430\ /
+//                     MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\mpu6050\inc /
+//                     \ -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\ /
+//                     C°æ\¹¤³ÌÄ£°å\HardWare\mpu6050\src\ -I                  /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\nokia5110\inc\ -I                     /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\nokia5110\src\ -I                     /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\LQ_1.8_TFT\ -I                        /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\LCD_API\ -I                           /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\2.2TFT\ -I                            /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\delay\ -I                             /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\System\ -I C:\Users\615\Desktop\MSP430\MSP430F /
+//                     5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\inc\ -I              /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\System\src\ -I C:\Users\615\Desktop\MSP430\MSP /
+//                     430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\User\ -I                /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\User\USER\ -I C:\Users\615\Desktop\MSP430\MSP4 /
+//                     30F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\UCOSII\CONFIG\ -I    /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\uCOSII\App\ -I                             /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\uCOSII\CONFIHG\ -I                         /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\uCOSII\PORT\ -I                            /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\UCOSII\CORE\ -I                            /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\FatFs\ -I C:\Users\615\Desktop\MSP430\MSP4 /
+//                     30F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\FatFs\option\        /
+//                     --core=430X --data_model=large -Oh --multiplier=32     /
+//                     --multiplier_location=4C0 --hw_workaround=CPU40        /
+//    List file     =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Release\List\os_q.s43                          /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME os_q
+
+        RTMODEL "__SystemLibrary", "DLib"
+        RTMODEL "__core", "430X"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dlib_file_descriptor", "0"
+        RTMODEL "__dlib_full_locale_support", "0"
+        RTMODEL "__double_size", "32"
+        RTMODEL "__pic", "no"
+        RTMODEL "__reg_r4", "free"
+        RTMODEL "__reg_r5", "free"
+        RTMODEL "__rt_version", "3"
+
+        RSEG CSTACK:DATA:SORT:NOROOT(0)
+
+        EXTERN ?longjmp_r4
+        EXTERN ?longjmp_r5
+        EXTERN ?setjmp_r4
+        EXTERN ?setjmp_r5
+
+        PUBWEAK ?setjmp_save_r4
+        PUBWEAK ?setjmp_save_r5
+        PUBLIC OSQAccept
+        FUNCTION OSQAccept,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 12, STACK
+        PUBLIC OSQCreate
+        FUNCTION OSQCreate,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 28, STACK
+        PUBLIC OSQDel
+        FUNCTION OSQDel,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 28, STACK
+        PUBLIC OSQFlush
+        FUNCTION OSQFlush,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 8, STACK
+        PUBLIC OSQPend
+        FUNCTION OSQPend,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 28, STACK
+        PUBLIC OSQPendAbort
+        FUNCTION OSQPendAbort,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 28, STACK
+        PUBLIC OSQPost
+        FUNCTION OSQPost,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 20, STACK
+        PUBLIC OSQPostFront
+        FUNCTION OSQPostFront,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 20, STACK
+        PUBLIC OSQPostOpt
+        FUNCTION OSQPostOpt,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 20, STACK
+        PUBLIC OSQQuery
+        FUNCTION OSQQuery,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 12, STACK
+        PUBLIC OS_QInit
+        FUNCTION OS_QInit,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 8, STACK
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA SP DATA
+          CFI Resource PC:20, SP:20, SR:16, R4L:16, R4H:4, R4:20, R5L:16, R5H:4
+          CFI Resource R5:20, R6L:16, R6H:4, R6:20, R7L:16, R7H:4, R7:20, R8L:16
+          CFI Resource R8H:4, R8:20, R9L:16, R9H:4, R9:20, R10L:16, R10H:4
+          CFI Resource R10:20, R11L:16, R11H:4, R11:20, R12L:16, R12H:4, R12:20
+          CFI Resource R13L:16, R13H:4, R13:20, R14L:16, R14H:4, R14:20, R15L:16
+          CFI Resource R15H:4, R15:20
+          CFI ResourceParts R4 R4H, R4L
+          CFI ResourceParts R5 R5H, R5L
+          CFI ResourceParts R6 R6H, R6L
+          CFI ResourceParts R7 R7H, R7L
+          CFI ResourceParts R8 R8H, R8L
+          CFI ResourceParts R9 R9H, R9L
+          CFI ResourceParts R10 R10H, R10L
+          CFI ResourceParts R11 R11H, R11L
+          CFI ResourceParts R12 R12H, R12L
+          CFI ResourceParts R13 R13H, R13L
+          CFI ResourceParts R14 R14H, R14L
+          CFI ResourceParts R15 R15H, R15L
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H SameValue
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H SameValue
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H SameValue
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H SameValue
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H SameValue
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H SameValue
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H SameValue
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H SameValue
+          CFI R11 Concat
+          CFI R12L Undefined
+          CFI R12H Undefined
+          CFI R12 Undefined
+          CFI R13L Undefined
+          CFI R13H Undefined
+          CFI R13 Undefined
+          CFI R14L Undefined
+          CFI R14H Undefined
+          CFI R14 Undefined
+          CFI R15L Undefined
+          CFI R15H Undefined
+          CFI R15 Undefined
+          CFI EndCommon cfiCommon0
+        
+        
+          CFI Common cfiCommon1 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H SameValue
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H SameValue
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H SameValue
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H SameValue
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H SameValue
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H SameValue
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H SameValue
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H SameValue
+          CFI R11 Concat
+          CFI R12L SameValue
+          CFI R12H SameValue
+          CFI R12 Concat
+          CFI R13L SameValue
+          CFI R13H SameValue
+          CFI R13 Concat
+          CFI R14L SameValue
+          CFI R14H SameValue
+          CFI R14 Concat
+          CFI R15L SameValue
+          CFI R15H SameValue
+          CFI R15 Concat
+          CFI EndCommon cfiCommon1
+        
+        EXTERN OSQTbl
+        EXTERN OS_MemClr
+        FUNCTION OS_MemClr,0202H
+        EXTERN OSQFreeList
+        EXTERN OSCPUSaveSR
+        FUNCTION OSCPUSaveSR,0202H
+        EXTERN OSCPURestoreSR
+        FUNCTION OSCPURestoreSR,0202H
+        EXTERN OS_EventTaskRdy
+        FUNCTION OS_EventTaskRdy,0202H
+        EXTERN OS_Sched
+        FUNCTION OS_Sched,0202H
+        EXTERN OSIntNesting
+        EXTERN OSLockNesting
+        EXTERN OSTCBCur
+        EXTERN OS_EventTaskWait
+        FUNCTION OS_EventTaskWait,0202H
+        EXTERN OS_EventTaskRemove
+        FUNCTION OS_EventTaskRemove,0202H
+        EXTERN OSEventFreeList
+        EXTERN OS_EventWaitListInit
+        FUNCTION OS_EventWaitListInit,0202H
+
+// C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\UCOSII\CORE\os_q.c
+//    1 /*
+//    2 *********************************************************************************************************
+//    3 *                                                uC/OS-II
+//    4 *                                          The Real-Time Kernel
+//    5 *                                        MESSAGE QUEUE MANAGEMENT
+//    6 *
+//    7 *                              (c) Copyright 1992-2009, Micrium, Weston, FL
+//    8 *                                           All Rights Reserved
+//    9 *
+//   10 * File    : OS_Q.C
+//   11 * By      : Jean J. Labrosse
+//   12 * Version : V2.91
+//   13 *
+//   14 * LICENSING TERMS:
+//   15 * ---------------
+//   16 *   uC/OS-II is provided in source form for FREE evaluation, for educational use or for peaceful research.
+//   17 * If you plan on using  uC/OS-II  in a commercial product you need to contact Micriµm to properly license
+//   18 * its use in your product. We provide ALL the source code for your convenience and to help you experience
+//   19 * uC/OS-II.   The fact that the  source is provided does  NOT  mean that you can use it without  paying a
+//   20 * licensing fee.
+//   21 *********************************************************************************************************
+//   22 */
+//   23 
+//   24 #ifndef  OS_MASTER_FILE
+//   25 #include "ucos_ii.h"
+//   26 #endif
+//   27 
+//   28 #if (OS_Q_EN > 0u) && (OS_MAX_QS > 0u)
+//   29 /*
+//   30 *********************************************************************************************************
+//   31 *                                      ACCEPT MESSAGE FROM QUEUE
+//   32 *
+//   33 * Description: This function checks the queue to see if a message is available.  Unlike OSQPend(),
+//   34 *              OSQAccept() does not suspend the calling task if a message is not available.
+//   35 *
+//   36 * Arguments  : pevent        is a pointer to the event control block
+//   37 *
+//   38 *              perr          is a pointer to where an error message will be deposited.  Possible error
+//   39 *                            messages are:
+//   40 *
+//   41 *                            OS_ERR_NONE         The call was successful and your task received a
+//   42 *                                                message.
+//   43 *                            OS_ERR_EVENT_TYPE   You didn't pass a pointer to a queue
+//   44 *                            OS_ERR_PEVENT_NULL  If 'pevent' is a NULL pointer
+//   45 *                            OS_ERR_Q_EMPTY      The queue did not contain any messages
+//   46 *
+//   47 * Returns    : != (void *)0  is the message in the queue if one is available.  The message is removed
+//   48 *                            from the so the next time OSQAccept() is called, the queue will contain
+//   49 *                            one less entry.
+//   50 *              == (void *)0  if you received a NULL pointer message
+//   51 *                            if the queue is empty or,
+//   52 *                            if 'pevent' is a NULL pointer or,
+//   53 *                            if you passed an invalid event type
+//   54 *
+//   55 * Note(s)    : As of V2.60, you can now pass NULL pointers through queues.  Because of this, the argument
+//   56 *              'perr' has been added to the API to tell you about the outcome of the call.
+//   57 *********************************************************************************************************
+//   58 */
+//   59 
+//   60 #if OS_Q_ACCEPT_EN > 0u
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?Subroutine9:
+          CFI Block cfiCond0 Using cfiCommon0
+          CFI Function OSQPend
+          CFI Conditional ??OSQPend_6
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+32
+          CFI Block cfiCond1 Using cfiCommon0
+          CFI (cfiCond1) Function OSQFlush
+          CFI (cfiCond1) Conditional ??CrossCallReturnLabel_14
+          CFI (cfiCond1) R10L Frame(CFA, -8)
+          CFI (cfiCond1) R10H Frame(CFA, -6)
+          CFI (cfiCond1) CFA SP+12
+          CFI Block cfiCond2 Using cfiCommon0
+          CFI (cfiCond2) Function OSQAccept
+          CFI (cfiCond2) Conditional ??OSQAccept_3
+          CFI (cfiCond2) R10L Frame(CFA, -12)
+          CFI (cfiCond2) R10H Frame(CFA, -10)
+          CFI (cfiCond2) R11L Frame(CFA, -8)
+          CFI (cfiCond2) R11H Frame(CFA, -6)
+          CFI (cfiCond2) CFA SP+16
+          CFI Block cfiPicker3 Using cfiCommon1
+          CFI (cfiPicker3) NoFunction
+          CFI (cfiPicker3) Picker
+        MOVX.A  0x4(R15), 0x10(R15)
+        RETA
+          CFI EndBlock cfiCond0
+          CFI EndBlock cfiCond1
+          CFI EndBlock cfiCond2
+          CFI EndBlock cfiPicker3
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   61 void  *OSQAccept (OS_EVENT  *pevent,
+OSQAccept:
+          CFI Block cfiBlock4 Using cfiCommon0
+          CFI Function OSQAccept
+//   62                   INT8U     *perr)
+//   63 {
+        FUNCALL OSQAccept, OSCPUSaveSR
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL OSQAccept, OSCPURestoreSR
+        LOCFRAME CSTACK, 12, STACK
+        PUSHM.A #0x2, R11
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+12
+        MOVA    R12, R11
+        MOVA    R13, R10
+//   64     void      *pmsg;
+//   65     OS_Q      *pq;
+//   66 #if OS_CRITICAL_METHOD == 3u                     /* Allocate storage for CPU status register           */
+//   67     OS_CPU_SR  cpu_sr = 0u;
+//   68 #endif
+//   69 
+//   70 
+//   71 
+//   72 #ifdef OS_SAFETY_CRITICAL
+//   73     if (perr == (INT8U *)0) {
+//   74         OS_SAFETY_CRITICAL_EXCEPTION();
+//   75     }
+//   76 #endif
+//   77 
+//   78 #if OS_ARG_CHK_EN > 0u
+//   79     if (pevent == (OS_EVENT *)0) {               /* Validate 'pevent'                                  */
+//   80         *perr = OS_ERR_PEVENT_NULL;
+//   81         return ((void *)0);
+//   82     }
+//   83 #endif
+//   84     if (pevent->OSEventType != OS_EVENT_TYPE_Q) {/* Validate event block type                          */
+        CMP.B   #0x2, 0(R12)
+        JEQ     ??OSQAccept_0
+//   85         *perr = OS_ERR_EVENT_TYPE;
+        MOV.B   #0x1, 0(R13)
+//   86         return ((void *)0);
+        MOVA    #0x0, R12
+        JMP     ??OSQAccept_1
+//   87     }
+//   88     OS_ENTER_CRITICAL();
+??OSQAccept_0:
+        CALLA   #OSCPUSaveSR
+//   89     pq = (OS_Q *)pevent->OSEventPtr;             /* Point at queue control block                       */
+        MOVA    0x2(R11), R15
+//   90     if (pq->OSQEntries > 0u) {                   /* See if any messages in the queue                   */
+        CMP.W   #0x0, 0x16(R15)
+        JEQ     ??OSQAccept_2
+//   91         pmsg = *pq->OSQOut++;                    /* Yes, extract oldest message from the queue         */
+        CALLA   #?Subroutine8
+//   92         pq->OSQEntries--;                        /* Update the number of entries in the queue          */
+//   93         if (pq->OSQOut == pq->OSQEnd) {          /* Wrap OUT pointer if we are at the end of the queue */
+??CrossCallReturnLabel_13:
+        MOVA    0x10(R15), R14
+        MOVA    0x8(R15), R13
+        CMPA    R13, R14
+        JNE     ??OSQAccept_3
+//   94             pq->OSQOut = pq->OSQStart;
+        CALLA   #?Subroutine9
+//   95         }
+//   96         *perr = OS_ERR_NONE;
+??OSQAccept_3:
+        MOV.B   #0x0, R14
+        JMP     ??OSQAccept_4
+//   97     } else {
+//   98         *perr = OS_ERR_Q_EMPTY;
+??OSQAccept_2:
+        MOV.B   #0x1f, R14
+//   99         pmsg  = (void *)0;                       /* Queue is empty                                     */
+        MOVA    #0x0, R11
+??OSQAccept_4:
+        MOV.B   R14, 0(R10)
+//  100     }
+//  101     OS_EXIT_CRITICAL();
+        CALLA   #OSCPURestoreSR
+//  102     return (pmsg);                               /* Return message received (or NULL)                  */
+        MOVA    R11, R12
+??OSQAccept_1:
+        POPM.A  #0x2, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock4
+//  103 }
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?Subroutine8:
+          CFI Block cfiCond5 Using cfiCommon0
+          CFI Function OSQPend
+          CFI Conditional ??CrossCallReturnLabel_12
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+32
+          CFI Block cfiCond6 Using cfiCommon0
+          CFI (cfiCond6) Function OSQAccept
+          CFI (cfiCond6) Conditional ??CrossCallReturnLabel_13
+          CFI (cfiCond6) R10L Frame(CFA, -12)
+          CFI (cfiCond6) R10H Frame(CFA, -10)
+          CFI (cfiCond6) R11L Frame(CFA, -8)
+          CFI (cfiCond6) R11H Frame(CFA, -6)
+          CFI (cfiCond6) CFA SP+16
+          CFI Block cfiPicker7 Using cfiCommon1
+          CFI (cfiPicker7) NoFunction
+          CFI (cfiPicker7) Picker
+        MOVA    0x10(R15), R11
+        MOVA    @R11, R11
+        ADDX.A  #0x4, 0x10(R15)
+        ADD.W   #0xffff, 0x16(R15)
+        RETA
+          CFI EndBlock cfiCond5
+          CFI EndBlock cfiCond6
+          CFI EndBlock cfiPicker7
+//  104 #endif
+//  105 /*$PAGE*/
+//  106 /*
+//  107 *********************************************************************************************************
+//  108 *                                        CREATE A MESSAGE QUEUE
+//  109 *
+//  110 * Description: This function creates a message queue if free event control blocks are available.
+//  111 *
+//  112 * Arguments  : start         is a pointer to the base address of the message queue storage area.  The
+//  113 *                            storage area MUST be declared as an array of pointers to 'void' as follows
+//  114 *
+//  115 *                            void *MessageStorage[size]
+//  116 *
+//  117 *              size          is the number of elements in the storage area
+//  118 *
+//  119 * Returns    : != (OS_EVENT *)0  is a pointer to the event control clock (OS_EVENT) associated with the
+//  120 *                                created queue
+//  121 *              == (OS_EVENT *)0  if no event control blocks were available or an error was detected
+//  122 *********************************************************************************************************
+//  123 */
+//  124 
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  125 OS_EVENT  *OSQCreate (void    **start,
+OSQCreate:
+          CFI Block cfiBlock8 Using cfiCommon0
+          CFI Function OSQCreate
+//  126                       INT16U    size)
+//  127 {
+        FUNCALL OSQCreate, OSCPUSaveSR
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSQCreate, OSCPURestoreSR
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSQCreate, OSCPUSaveSR
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSQCreate, OSCPURestoreSR
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSQCreate, OS_EventWaitListInit
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSQCreate, OSCPURestoreSR
+        LOCFRAME CSTACK, 28, STACK
+        PUSHM.A #0x6, R11
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+28
+        MOVA    R12, R11
+        MOV.W   R13, R10
+//  128     OS_EVENT  *pevent;
+//  129     OS_Q      *pq;
+//  130 #if OS_CRITICAL_METHOD == 3u                     /* Allocate storage for CPU status register           */
+//  131     OS_CPU_SR  cpu_sr = 0u;
+//  132 #endif
+//  133 
+//  134 
+//  135 
+//  136 #ifdef OS_SAFETY_CRITICAL_IEC61508
+//  137     if (OSSafetyCriticalStartFlag == OS_TRUE) {
+//  138         OS_SAFETY_CRITICAL_EXCEPTION();
+//  139     }
+//  140 #endif
+//  141 
+//  142     if (OSIntNesting > 0u) {                     /* See if called from ISR ...                         */
+        CMPX.B  #0x0, &OSIntNesting
+        JEQ     ??OSQCreate_0
+//  143         return ((OS_EVENT *)0);                  /* ... can't CREATE from an ISR                       */
+        MOVA    #0x0, R12
+        JMP     ??OSQCreate_1
+//  144     }
+//  145     OS_ENTER_CRITICAL();
+??OSQCreate_0:
+        CALLA   #OSCPUSaveSR
+//  146     pevent = OSEventFreeList;                    /* Get next free event control block                  */
+        MOVA    #OSEventFreeList, R6
+        MOVA    @R6, R15
+        MOVA    @R6, R8
+//  147     if (OSEventFreeList != (OS_EVENT *)0) {      /* See if pool of free ECB pool was empty             */
+        CMPA    #0x0, R15
+        JEQ     ??OSQCreate_2
+//  148         OSEventFreeList = (OS_EVENT *)OSEventFreeList->OSEventPtr;
+        MOVX.A  0x2(R15), 0(R6)
+//  149     }
+//  150     OS_EXIT_CRITICAL();
+??OSQCreate_2:
+        CALLA   #OSCPURestoreSR
+//  151     if (pevent != (OS_EVENT *)0) {               /* See if we have an event control block              */
+        CMPA    #0x0, R8
+        JEQ     ??OSQCreate_3
+//  152         OS_ENTER_CRITICAL();
+        CALLA   #OSCPUSaveSR
+        MOVA    &OSQFreeList, R15
+        MOVA    R15, R9
+//  153         pq = OSQFreeList;                        /* Get a free queue control block                     */
+//  154         if (pq != (OS_Q *)0) {                   /* Were we able to get a queue control block ?        */
+        CMPA    #0x0, R15
+        JEQ     ??OSQCreate_4
+//  155             OSQFreeList            = OSQFreeList->OSQPtr; /* Yes, Adjust free list pointer to next free*/
+        MOVX.A  @R15, &OSQFreeList
+//  156             OS_EXIT_CRITICAL();
+        CALLA   #OSCPURestoreSR
+//  157             pq->OSQStart           = start;               /*      Initialize the queue                 */
+        MOVA    R11, 0x4(R9)
+//  158             pq->OSQEnd             = &start[size];
+        MOV.W   R10, R15
+        RLAM.A  #0x2, R15
+        MOVA    R11, R14
+        ADDA    R15, R14
+        MOVA    R14, 0x8(R9)
+//  159             pq->OSQIn              = start;
+        MOVA    R11, 0xc(R9)
+//  160             pq->OSQOut             = start;
+        MOVA    R11, 0x10(R9)
+//  161             pq->OSQSize            = size;
+        MOV.W   R10, 0x14(R9)
+//  162             pq->OSQEntries         = 0u;
+        MOV.W   #0x0, 0x16(R9)
+//  163             pevent->OSEventType    = OS_EVENT_TYPE_Q;
+        MOV.B   #0x2, 0(R8)
+//  164             pevent->OSEventCnt     = 0u;
+        MOV.W   #0x0, 0x6(R8)
+//  165             pevent->OSEventPtr     = pq;
+        MOVA    R9, 0x2(R8)
+//  166 #if OS_EVENT_NAME_EN > 0u
+//  167             pevent->OSEventName    = (INT8U *)(void *)"?";
+//  168 #endif
+//  169             OS_EventWaitListInit(pevent);                 /*      Initalize the wait list              */
+        MOVA    R8, R12
+        CALLA   #OS_EventWaitListInit
+        JMP     ??OSQCreate_3
+//  170         } else {
+//  171             pevent->OSEventPtr = (void *)OSEventFreeList; /* No,  Return event control block on error  */
+??OSQCreate_4:
+        MOVX.A  @R6, 0x2(R8)
+//  172             OSEventFreeList    = pevent;
+        MOVA    R8, 0(R6)
+//  173             OS_EXIT_CRITICAL();
+        CALLA   #OSCPURestoreSR
+//  174             pevent = (OS_EVENT *)0;
+        MOVA    #0x0, R8
+//  175         }
+//  176     }
+//  177     return (pevent);
+??OSQCreate_3:
+        MOVA    R8, R12
+??OSQCreate_1:
+        POPM.A  #0x6, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock8
+//  178 }
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine4:
+          CFI Block cfiCond9 Using cfiCommon0
+          CFI Function OSQPendAbort
+          CFI Conditional ??CrossCallReturnLabel_20
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+32
+          CFI Block cfiCond10 Using cfiCommon0
+          CFI (cfiCond10) Function OSQPendAbort
+          CFI (cfiCond10) Conditional ??CrossCallReturnLabel_19
+          CFI (cfiCond10) R6L Frame(CFA, -28)
+          CFI (cfiCond10) R6H Frame(CFA, -26)
+          CFI (cfiCond10) R7L Frame(CFA, -24)
+          CFI (cfiCond10) R7H Frame(CFA, -22)
+          CFI (cfiCond10) R8L Frame(CFA, -20)
+          CFI (cfiCond10) R8H Frame(CFA, -18)
+          CFI (cfiCond10) R9L Frame(CFA, -16)
+          CFI (cfiCond10) R9H Frame(CFA, -14)
+          CFI (cfiCond10) R10L Frame(CFA, -12)
+          CFI (cfiCond10) R10H Frame(CFA, -10)
+          CFI (cfiCond10) R11L Frame(CFA, -8)
+          CFI (cfiCond10) R11H Frame(CFA, -6)
+          CFI (cfiCond10) CFA SP+32
+          CFI Block cfiPicker11 Using cfiCommon1
+          CFI (cfiPicker11) NoFunction
+          CFI (cfiPicker11) Picker
+        MOV.B   #0x2, R15
+          CFI EndBlock cfiCond9
+          CFI EndBlock cfiCond10
+          CFI EndBlock cfiPicker11
+        REQUIRE ??Subroutine12_0
+        // Fall through to label ??Subroutine12_0
+//  179 /*$PAGE*/
+//  180 /*
+//  181 *********************************************************************************************************
+//  182 *                                        DELETE A MESSAGE QUEUE
+//  183 *
+//  184 * Description: This function deletes a message queue and readies all tasks pending on the queue.
+//  185 *
+//  186 * Arguments  : pevent        is a pointer to the event control block associated with the desired
+//  187 *                            queue.
+//  188 *
+//  189 *              opt           determines delete options as follows:
+//  190 *                            opt == OS_DEL_NO_PEND   Delete the queue ONLY if no task pending
+//  191 *                            opt == OS_DEL_ALWAYS    Deletes the queue even if tasks are waiting.
+//  192 *                                                    In this case, all the tasks pending will be readied.
+//  193 *
+//  194 *              perr          is a pointer to an error code that can contain one of the following values:
+//  195 *                            OS_ERR_NONE             The call was successful and the queue was deleted
+//  196 *                            OS_ERR_DEL_ISR          If you tried to delete the queue from an ISR
+//  197 *                            OS_ERR_INVALID_OPT      An invalid option was specified
+//  198 *                            OS_ERR_TASK_WAITING     One or more tasks were waiting on the queue
+//  199 *                            OS_ERR_EVENT_TYPE       If you didn't pass a pointer to a queue
+//  200 *                            OS_ERR_PEVENT_NULL      If 'pevent' is a NULL pointer.
+//  201 *
+//  202 * Returns    : pevent        upon error
+//  203 *              (OS_EVENT *)0 if the queue was successfully deleted.
+//  204 *
+//  205 * Note(s)    : 1) This function must be used with care.  Tasks that would normally expect the presence of
+//  206 *                 the queue MUST check the return code of OSQPend().
+//  207 *              2) OSQAccept() callers will not know that the intended queue has been deleted unless
+//  208 *                 they check 'pevent' to see that it's a NULL pointer.
+//  209 *              3) This call can potentially disable interrupts for a long time.  The interrupt disable
+//  210 *                 time is directly proportional to the number of tasks waiting on the queue.
+//  211 *              4) Because ALL tasks pending on the queue will be readied, you MUST be careful in
+//  212 *                 applications where the queue is used for mutual exclusion because the resource(s)
+//  213 *                 will no longer be guarded by the queue.
+//  214 *              5) If the storage for the message queue was allocated dynamically (i.e. using a malloc()
+//  215 *                 type call) then your application MUST release the memory storage by call the counterpart
+//  216 *                 call of the dynamic allocation scheme used.  If the queue storage was created statically
+//  217 *                 then, the storage can be reused.
+//  218 *********************************************************************************************************
+//  219 */
+//  220 
+//  221 #if OS_Q_DEL_EN > 0u
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+??Subroutine12_0:
+          CFI Block cfiCond12 Using cfiCommon0
+          CFI Function OSQDel
+          CFI Conditional ??OSQDel_8
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+32
+          CFI Block cfiCond13 Using cfiCommon0
+          CFI (cfiCond13) Function OSQPendAbort
+          CFI (cfiCond13) Conditional ??CrossCallReturnLabel_20
+          CFI (cfiCond13) R6L Frame(CFA, -28)
+          CFI (cfiCond13) R6H Frame(CFA, -26)
+          CFI (cfiCond13) R7L Frame(CFA, -24)
+          CFI (cfiCond13) R7H Frame(CFA, -22)
+          CFI (cfiCond13) R8L Frame(CFA, -20)
+          CFI (cfiCond13) R8H Frame(CFA, -18)
+          CFI (cfiCond13) R9L Frame(CFA, -16)
+          CFI (cfiCond13) R9H Frame(CFA, -14)
+          CFI (cfiCond13) R10L Frame(CFA, -12)
+          CFI (cfiCond13) R10H Frame(CFA, -10)
+          CFI (cfiCond13) R11L Frame(CFA, -8)
+          CFI (cfiCond13) R11H Frame(CFA, -6)
+          CFI (cfiCond13) CFA SP+32
+          CFI Block cfiCond14 Using cfiCommon0
+          CFI (cfiCond14) Function OSQPendAbort
+          CFI (cfiCond14) Conditional ??CrossCallReturnLabel_19
+          CFI (cfiCond14) R6L Frame(CFA, -28)
+          CFI (cfiCond14) R6H Frame(CFA, -26)
+          CFI (cfiCond14) R7L Frame(CFA, -24)
+          CFI (cfiCond14) R7H Frame(CFA, -22)
+          CFI (cfiCond14) R8L Frame(CFA, -20)
+          CFI (cfiCond14) R8H Frame(CFA, -18)
+          CFI (cfiCond14) R9L Frame(CFA, -16)
+          CFI (cfiCond14) R9H Frame(CFA, -14)
+          CFI (cfiCond14) R10L Frame(CFA, -12)
+          CFI (cfiCond14) R10H Frame(CFA, -10)
+          CFI (cfiCond14) R11L Frame(CFA, -8)
+          CFI (cfiCond14) R11H Frame(CFA, -6)
+          CFI (cfiCond14) CFA SP+32
+          CFI Block cfiPicker15 Using cfiCommon1
+          CFI (cfiPicker15) NoFunction
+          CFI (cfiPicker15) Picker
+        MOV.B   #0x4, R14
+        MOVA    #0x0, R13
+        MOVA    R11, R12
+        BRA     #OS_EventTaskRdy
+          CFI EndBlock cfiCond12
+          CFI EndBlock cfiCond13
+          CFI EndBlock cfiCond14
+          CFI EndBlock cfiPicker15
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?Subroutine2:
+          CFI Block cfiCond16 Using cfiCommon0
+          CFI Function OSQPost
+          CFI Conditional ??CrossCallReturnLabel_4
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+24
+          CFI Block cfiCond17 Using cfiCommon0
+          CFI (cfiCond17) Function OSQPendAbort
+          CFI (cfiCond17) Conditional ??CrossCallReturnLabel_5
+          CFI (cfiCond17) R6L Frame(CFA, -28)
+          CFI (cfiCond17) R6H Frame(CFA, -26)
+          CFI (cfiCond17) R7L Frame(CFA, -24)
+          CFI (cfiCond17) R7H Frame(CFA, -22)
+          CFI (cfiCond17) R8L Frame(CFA, -20)
+          CFI (cfiCond17) R8H Frame(CFA, -18)
+          CFI (cfiCond17) R9L Frame(CFA, -16)
+          CFI (cfiCond17) R9H Frame(CFA, -14)
+          CFI (cfiCond17) R10L Frame(CFA, -12)
+          CFI (cfiCond17) R10H Frame(CFA, -10)
+          CFI (cfiCond17) R11L Frame(CFA, -8)
+          CFI (cfiCond17) R11H Frame(CFA, -6)
+          CFI (cfiCond17) CFA SP+32
+          CFI Block cfiCond18 Using cfiCommon0
+          CFI (cfiCond18) Function OSQDel
+          CFI (cfiCond18) Conditional ??CrossCallReturnLabel_6
+          CFI (cfiCond18) R6L Frame(CFA, -28)
+          CFI (cfiCond18) R6H Frame(CFA, -26)
+          CFI (cfiCond18) R7L Frame(CFA, -24)
+          CFI (cfiCond18) R7H Frame(CFA, -22)
+          CFI (cfiCond18) R8L Frame(CFA, -20)
+          CFI (cfiCond18) R8H Frame(CFA, -18)
+          CFI (cfiCond18) R9L Frame(CFA, -16)
+          CFI (cfiCond18) R9H Frame(CFA, -14)
+          CFI (cfiCond18) R10L Frame(CFA, -12)
+          CFI (cfiCond18) R10H Frame(CFA, -10)
+          CFI (cfiCond18) R11L Frame(CFA, -8)
+          CFI (cfiCond18) R11H Frame(CFA, -6)
+          CFI (cfiCond18) CFA SP+32
+          CFI Block cfiPicker19 Using cfiCommon1
+          CFI (cfiPicker19) NoFunction
+          CFI (cfiPicker19) Picker
+        CALLA   #OSCPUSaveSR
+        MOV.W   R12, R10
+        CMP.B   #0x0, 0x8(R11)
+        RETA
+          CFI EndBlock cfiCond16
+          CFI EndBlock cfiCond17
+          CFI EndBlock cfiCond18
+          CFI EndBlock cfiPicker19
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  222 OS_EVENT  *OSQDel (OS_EVENT  *pevent,
+OSQDel:
+          CFI Block cfiBlock20 Using cfiCommon0
+          CFI Function OSQDel
+//  223                    INT8U      opt,
+//  224                    INT8U     *perr)
+//  225 {
+        FUNCALL OSQDel, OSCPUSaveSR
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSQDel, OSCPURestoreSR
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSQDel, OSCPURestoreSR
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSQDel, OS_EventTaskRdy
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSQDel, OSCPURestoreSR
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSQDel, OS_Sched
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSQDel, OSCPURestoreSR
+        LOCFRAME CSTACK, 28, STACK
+        PUSHM.A #0x6, R11
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+28
+        MOVA    R12, R11
+        MOV.B   R13, R6
+        MOVA    R14, R8
+//  226     BOOLEAN    tasks_waiting;
+//  227     OS_EVENT  *pevent_return;
+//  228     OS_Q      *pq;
+//  229 #if OS_CRITICAL_METHOD == 3u                               /* Allocate storage for CPU status register */
+//  230     OS_CPU_SR  cpu_sr = 0u;
+//  231 #endif
+//  232 
+//  233 
+//  234 
+//  235 #ifdef OS_SAFETY_CRITICAL
+//  236     if (perr == (INT8U *)0) {
+//  237         OS_SAFETY_CRITICAL_EXCEPTION();
+//  238     }
+//  239 #endif
+//  240 
+//  241 #if OS_ARG_CHK_EN > 0u
+//  242     if (pevent == (OS_EVENT *)0) {                         /* Validate 'pevent'                        */
+//  243         *perr = OS_ERR_PEVENT_NULL;
+//  244         return (pevent);
+//  245     }
+//  246 #endif
+//  247     if (pevent->OSEventType != OS_EVENT_TYPE_Q) {          /* Validate event block type                */
+        CMP.B   #0x2, 0(R12)
+        JEQ     ??OSQDel_3
+//  248         *perr = OS_ERR_EVENT_TYPE;
+        MOV.B   #0x1, 0(R14)
+//  249         return (pevent);
+        JMP     ??OSQDel_1
+//  250     }
+//  251     if (OSIntNesting > 0u) {                               /* See if called from ISR ...               */
+??OSQDel_3:
+        CMPX.B  #0x0, &OSIntNesting
+        JEQ     ??OSQDel_4
+//  252         *perr = OS_ERR_DEL_ISR;                            /* ... can't DELETE from an ISR             */
+        MOV.B   #0xf, 0(R14)
+//  253         return (pevent);
+        JMP     ??OSQDel_1
+//  254     }
+//  255     OS_ENTER_CRITICAL();
+??OSQDel_4:
+        CALLA   #?Subroutine2
+//  256     if (pevent->OSEventGrp != 0u) {                        /* See if any tasks waiting on queue        */
+??CrossCallReturnLabel_6:
+        JNE     ??OSQDel_5
+        MOV.B   #0x0, R9
+        JMP     ??OSQDel_6
+??OSQDel_5:
+        MOV.B   #0x1, R9
+//  257         tasks_waiting = OS_TRUE;                           /* Yes                                      */
+//  258     } else {
+//  259         tasks_waiting = OS_FALSE;                          /* No                                       */
+//  260     }
+//  261     switch (opt) {
+??OSQDel_6:
+        SUB.B   #0x0, R6
+        JEQ     ??OSQDel_7
+        SUB.B   #0x1, R6
+        JEQ     ??OSQDel_8
+        JMP     ??OSQDel_9
+//  262         case OS_DEL_NO_PEND:                               /* Delete queue only if no task waiting     */
+//  263              if (tasks_waiting == OS_FALSE) {
+??OSQDel_7:
+        BIT.B   #0x1, R9
+        JC      ??OSQDel_10
+//  264 #if OS_EVENT_NAME_EN > 0u
+//  265                  pevent->OSEventName    = (INT8U *)(void *)"?";
+//  266 #endif
+//  267                  pq                     = (OS_Q *)pevent->OSEventPtr;  /* Return OS_Q to free list     */
+        CALLA   #?Subroutine0
+//  268                  pq->OSQPtr             = OSQFreeList;
+//  269                  OSQFreeList            = pq;
+//  270                  pevent->OSEventType    = OS_EVENT_TYPE_UNUSED;
+//  271                  pevent->OSEventPtr     = OSEventFreeList; /* Return Event Control Block to free list  */
+//  272                  pevent->OSEventCnt     = 0u;
+//  273                  OSEventFreeList        = pevent;          /* Get next free event control block        */
+//  274                  OS_EXIT_CRITICAL();
+??CrossCallReturnLabel_0:
+        CALLA   #OSCPURestoreSR
+//  275                  *perr                  = OS_ERR_NONE;
+        JMP     ??OSQDel_2
+//  276                  pevent_return          = (OS_EVENT *)0;   /* Queue has been deleted                   */
+//  277              } else {
+//  278                  OS_EXIT_CRITICAL();
+??OSQDel_10:
+        CALLA   #OSCPURestoreSR
+//  279                  *perr                  = OS_ERR_TASK_WAITING;
+        MOV.B   #0x49, 0(R8)
+//  280                  pevent_return          = pevent;
+        JMP     ??OSQDel_11
+//  281              }
+//  282              break;
+//  283 
+//  284         case OS_DEL_ALWAYS:                                /* Always delete the queue                  */
+//  285              while (pevent->OSEventGrp != 0u) {            /* Ready ALL tasks waiting for queue        */
+//  286                  (void)OS_EventTaskRdy(pevent, (void *)0, OS_STAT_Q, OS_STAT_PEND_OK);
+??OSQDel_0:
+        MOV.B   #0x0, R15
+        CALLA   #??Subroutine12_0
+//  287              }
+??OSQDel_8:
+        CMP.B   #0x0, 0x8(R11)
+        JNE     ??OSQDel_0
+//  288 #if OS_EVENT_NAME_EN > 0u
+//  289              pevent->OSEventName    = (INT8U *)(void *)"?";
+//  290 #endif
+//  291              pq                     = (OS_Q *)pevent->OSEventPtr;   /* Return OS_Q to free list        */
+        CALLA   #?Subroutine0
+//  292              pq->OSQPtr             = OSQFreeList;
+//  293              OSQFreeList            = pq;
+//  294              pevent->OSEventType    = OS_EVENT_TYPE_UNUSED;
+//  295              pevent->OSEventPtr     = OSEventFreeList;     /* Return Event Control Block to free list  */
+//  296              pevent->OSEventCnt     = 0u;
+//  297              OSEventFreeList        = pevent;              /* Get next free event control block        */
+//  298              OS_EXIT_CRITICAL();
+??CrossCallReturnLabel_1:
+        MOV.W   R10, R12
+        CALLA   #OSCPURestoreSR
+//  299              if (tasks_waiting == OS_TRUE) {               /* Reschedule only if task(s) were waiting  */
+        BIT.B   #0x1, R9
+        JNC     ??OSQDel_2
+//  300                  OS_Sched();                               /* Find highest priority task ready to run  */
+        CALLA   #OS_Sched
+//  301              }
+//  302              *perr                  = OS_ERR_NONE;
+??OSQDel_2:
+        MOV.B   #0x0, 0(R8)
+//  303              pevent_return          = (OS_EVENT *)0;       /* Queue has been deleted                   */
+        MOVA    #0x0, R12
+//  304              break;
+        JMP     ??OSQDel_1
+//  305 
+//  306         default:
+//  307              OS_EXIT_CRITICAL();
+??OSQDel_9:
+        CALLA   #OSCPURestoreSR
+//  308              *perr                  = OS_ERR_INVALID_OPT;
+        MOV.B   #0x7, 0(R8)
+//  309              pevent_return          = pevent;
+??OSQDel_11:
+        MOVA    R11, R12
+//  310              break;
+//  311     }
+//  312     return (pevent_return);
+??OSQDel_1:
+        POPM.A  #0x6, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock20
+//  313 }
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?Subroutine0:
+          CFI Block cfiCond21 Using cfiCommon0
+          CFI Function OSQDel
+          CFI Conditional ??CrossCallReturnLabel_0
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+32
+          CFI Block cfiCond22 Using cfiCommon0
+          CFI (cfiCond22) Function OSQDel
+          CFI (cfiCond22) Conditional ??CrossCallReturnLabel_1
+          CFI (cfiCond22) R6L Frame(CFA, -28)
+          CFI (cfiCond22) R6H Frame(CFA, -26)
+          CFI (cfiCond22) R7L Frame(CFA, -24)
+          CFI (cfiCond22) R7H Frame(CFA, -22)
+          CFI (cfiCond22) R8L Frame(CFA, -20)
+          CFI (cfiCond22) R8H Frame(CFA, -18)
+          CFI (cfiCond22) R9L Frame(CFA, -16)
+          CFI (cfiCond22) R9H Frame(CFA, -14)
+          CFI (cfiCond22) R10L Frame(CFA, -12)
+          CFI (cfiCond22) R10H Frame(CFA, -10)
+          CFI (cfiCond22) R11L Frame(CFA, -8)
+          CFI (cfiCond22) R11H Frame(CFA, -6)
+          CFI (cfiCond22) CFA SP+32
+          CFI Block cfiPicker23 Using cfiCommon1
+          CFI (cfiPicker23) NoFunction
+          CFI (cfiPicker23) Picker
+        MOVA    0x2(R11), R15
+        MOVX.A  &OSQFreeList, 0(R15)
+        MOVA    R15, &OSQFreeList
+        MOV.B   #0x0, 0(R11)
+        MOVX.A  &OSEventFreeList, 0x2(R11)
+        MOV.W   #0x0, 0x6(R11)
+        MOVA    R11, &OSEventFreeList
+        RETA
+          CFI EndBlock cfiCond21
+          CFI EndBlock cfiCond22
+          CFI EndBlock cfiPicker23
+//  314 #endif
+//  315 
+//  316 /*$PAGE*/
+//  317 /*
+//  318 *********************************************************************************************************
+//  319 *                                             FLUSH QUEUE
+//  320 *
+//  321 * Description : This function is used to flush the contents of the message queue.
+//  322 *
+//  323 * Arguments   : none
+//  324 *
+//  325 * Returns     : OS_ERR_NONE         upon success
+//  326 *               OS_ERR_EVENT_TYPE   If you didn't pass a pointer to a queue
+//  327 *               OS_ERR_PEVENT_NULL  If 'pevent' is a NULL pointer
+//  328 *
+//  329 * WARNING     : You should use this function with great care because, when to flush the queue, you LOOSE
+//  330 *               the references to what the queue entries are pointing to and thus, you could cause
+//  331 *               'memory leaks'.  In other words, the data you are pointing to that's being referenced
+//  332 *               by the queue entries should, most likely, need to be de-allocated (i.e. freed).
+//  333 *********************************************************************************************************
+//  334 */
+//  335 
+//  336 #if OS_Q_FLUSH_EN > 0u
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  337 INT8U  OSQFlush (OS_EVENT *pevent)
+OSQFlush:
+          CFI Block cfiBlock24 Using cfiCommon0
+          CFI Function OSQFlush
+//  338 {
+        FUNCALL OSQFlush, OSCPUSaveSR
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL OSQFlush, OSCPURestoreSR
+        LOCFRAME CSTACK, 8, STACK
+        PUSHM.A #0x1, R10
+          CFI R10L Frame(CFA, -8)
+          CFI R10H Frame(CFA, -6)
+          CFI CFA SP+8
+        MOVA    R12, R10
+//  339     OS_Q      *pq;
+//  340 #if OS_CRITICAL_METHOD == 3u                          /* Allocate storage for CPU status register      */
+//  341     OS_CPU_SR  cpu_sr = 0u;
+//  342 #endif
+//  343 
+//  344 
+//  345 
+//  346 #if OS_ARG_CHK_EN > 0u
+//  347     if (pevent == (OS_EVENT *)0) {                    /* Validate 'pevent'                             */
+//  348         return (OS_ERR_PEVENT_NULL);
+//  349     }
+//  350     if (pevent->OSEventType != OS_EVENT_TYPE_Q) {     /* Validate event block type                     */
+//  351         return (OS_ERR_EVENT_TYPE);
+//  352     }
+//  353 #endif
+//  354     OS_ENTER_CRITICAL();
+        CALLA   #OSCPUSaveSR
+//  355     pq             = (OS_Q *)pevent->OSEventPtr;      /* Point to queue storage structure              */
+        MOVA    0x2(R10), R15
+//  356     pq->OSQIn      = pq->OSQStart;
+        MOVX.A  0x4(R15), 0xc(R15)
+//  357     pq->OSQOut     = pq->OSQStart;
+        CALLA   #?Subroutine9
+//  358     pq->OSQEntries = 0u;
+??CrossCallReturnLabel_14:
+        MOV.W   #0x0, 0x16(R15)
+//  359     OS_EXIT_CRITICAL();
+        CALLA   #OSCPURestoreSR
+//  360     return (OS_ERR_NONE);
+        MOV.B   #0x0, R12
+        POPM.A  #0x1, R10
+          CFI R10H SameValue
+          CFI R10L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock24
+//  361 }
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine3:
+          CFI Block cfiCond25 Using cfiCommon0
+          CFI Function OSQPostFront
+          CFI Conditional ??CrossCallReturnLabel_18
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+24
+          CFI Block cfiCond26 Using cfiCommon0
+          CFI (cfiCond26) Function OSQPost
+          CFI (cfiCond26) Conditional ??CrossCallReturnLabel_17
+          CFI (cfiCond26) R8L Frame(CFA, -20)
+          CFI (cfiCond26) R8H Frame(CFA, -18)
+          CFI (cfiCond26) R9L Frame(CFA, -16)
+          CFI (cfiCond26) R9H Frame(CFA, -14)
+          CFI (cfiCond26) R10L Frame(CFA, -12)
+          CFI (cfiCond26) R10H Frame(CFA, -10)
+          CFI (cfiCond26) R11L Frame(CFA, -8)
+          CFI (cfiCond26) R11H Frame(CFA, -6)
+          CFI (cfiCond26) CFA SP+24
+          CFI Block cfiPicker27 Using cfiCommon1
+          CFI (cfiPicker27) NoFunction
+          CFI (cfiPicker27) Picker
+        CALLA   #OS_EventTaskRdy
+          CFI EndBlock cfiCond25
+          CFI EndBlock cfiCond26
+          CFI EndBlock cfiPicker27
+        REQUIRE ??Subroutine10_0
+        // Fall through to label ??Subroutine10_0
+
+        RSEG CODE:CODE:NOROOT(1)
+??Subroutine10_0:
+          CFI Block cfiCond28 Using cfiCommon0
+          CFI Function OSQPendAbort
+          CFI Conditional ??CrossCallReturnLabel_16
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+32
+          CFI Block cfiCond29 Using cfiCommon0
+          CFI (cfiCond29) Function OSQPostFront
+          CFI (cfiCond29) Conditional ??CrossCallReturnLabel_18
+          CFI (cfiCond29) R8L Frame(CFA, -20)
+          CFI (cfiCond29) R8H Frame(CFA, -18)
+          CFI (cfiCond29) R9L Frame(CFA, -16)
+          CFI (cfiCond29) R9H Frame(CFA, -14)
+          CFI (cfiCond29) R10L Frame(CFA, -12)
+          CFI (cfiCond29) R10H Frame(CFA, -10)
+          CFI (cfiCond29) R11L Frame(CFA, -8)
+          CFI (cfiCond29) R11H Frame(CFA, -6)
+          CFI (cfiCond29) CFA SP+24
+          CFI Block cfiCond30 Using cfiCommon0
+          CFI (cfiCond30) Function OSQPost
+          CFI (cfiCond30) Conditional ??CrossCallReturnLabel_17
+          CFI (cfiCond30) R8L Frame(CFA, -20)
+          CFI (cfiCond30) R8H Frame(CFA, -18)
+          CFI (cfiCond30) R9L Frame(CFA, -16)
+          CFI (cfiCond30) R9H Frame(CFA, -14)
+          CFI (cfiCond30) R10L Frame(CFA, -12)
+          CFI (cfiCond30) R10H Frame(CFA, -10)
+          CFI (cfiCond30) R11L Frame(CFA, -8)
+          CFI (cfiCond30) R11H Frame(CFA, -6)
+          CFI (cfiCond30) CFA SP+24
+          CFI Block cfiPicker31 Using cfiCommon1
+          CFI (cfiPicker31) NoFunction
+          CFI (cfiPicker31) Picker
+        MOV.W   R10, R12
+          CFI EndBlock cfiCond28
+          CFI EndBlock cfiCond29
+          CFI EndBlock cfiCond30
+          CFI EndBlock cfiPicker31
+        REQUIRE ??Subroutine11_0
+        // Fall through to label ??Subroutine11_0
+//  362 #endif
+//  363 
+//  364 /*$PAGE*/
+//  365 /*
+//  366 *********************************************************************************************************
+//  367 *                                     PEND ON A QUEUE FOR A MESSAGE
+//  368 *
+//  369 * Description: This function waits for a message to be sent to a queue
+//  370 *
+//  371 * Arguments  : pevent        is a pointer to the event control block associated with the desired queue
+//  372 *
+//  373 *              timeout       is an optional timeout period (in clock ticks).  If non-zero, your task will
+//  374 *                            wait for a message to arrive at the queue up to the amount of time
+//  375 *                            specified by this argument.  If you specify 0, however, your task will wait
+//  376 *                            forever at the specified queue or, until a message arrives.
+//  377 *
+//  378 *              perr          is a pointer to where an error message will be deposited.  Possible error
+//  379 *                            messages are:
+//  380 *
+//  381 *                            OS_ERR_NONE         The call was successful and your task received a
+//  382 *                                                message.
+//  383 *                            OS_ERR_TIMEOUT      A message was not received within the specified 'timeout'.
+//  384 *                            OS_ERR_PEND_ABORT   The wait on the queue was aborted.
+//  385 *                            OS_ERR_EVENT_TYPE   You didn't pass a pointer to a queue
+//  386 *                            OS_ERR_PEVENT_NULL  If 'pevent' is a NULL pointer
+//  387 *                            OS_ERR_PEND_ISR     If you called this function from an ISR and the result
+//  388 *                                                would lead to a suspension.
+//  389 *                            OS_ERR_PEND_LOCKED  If you called this function with the scheduler is locked
+//  390 *
+//  391 * Returns    : != (void *)0  is a pointer to the message received
+//  392 *              == (void *)0  if you received a NULL pointer message or,
+//  393 *                            if no message was received or,
+//  394 *                            if 'pevent' is a NULL pointer or,
+//  395 *                            if you didn't pass a pointer to a queue.
+//  396 *
+//  397 * Note(s)    : As of V2.60, this function allows you to receive NULL pointer messages.
+//  398 *********************************************************************************************************
+//  399 */
+//  400 
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+??Subroutine11_0:
+          CFI Block cfiCond32 Using cfiCommon0
+          CFI Function OSQPend
+          CFI Conditional ??CrossCallReturnLabel_15
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+32
+          CFI Block cfiCond33 Using cfiCommon0
+          CFI (cfiCond33) Function OSQPendAbort
+          CFI (cfiCond33) Conditional ??CrossCallReturnLabel_16
+          CFI (cfiCond33) R6L Frame(CFA, -28)
+          CFI (cfiCond33) R6H Frame(CFA, -26)
+          CFI (cfiCond33) R7L Frame(CFA, -24)
+          CFI (cfiCond33) R7H Frame(CFA, -22)
+          CFI (cfiCond33) R8L Frame(CFA, -20)
+          CFI (cfiCond33) R8H Frame(CFA, -18)
+          CFI (cfiCond33) R9L Frame(CFA, -16)
+          CFI (cfiCond33) R9H Frame(CFA, -14)
+          CFI (cfiCond33) R10L Frame(CFA, -12)
+          CFI (cfiCond33) R10H Frame(CFA, -10)
+          CFI (cfiCond33) R11L Frame(CFA, -8)
+          CFI (cfiCond33) R11H Frame(CFA, -6)
+          CFI (cfiCond33) CFA SP+32
+          CFI Block cfiCond34 Using cfiCommon0
+          CFI (cfiCond34) Function OSQPostFront
+          CFI (cfiCond34) Conditional ??CrossCallReturnLabel_18
+          CFI (cfiCond34) R8L Frame(CFA, -20)
+          CFI (cfiCond34) R8H Frame(CFA, -18)
+          CFI (cfiCond34) R9L Frame(CFA, -16)
+          CFI (cfiCond34) R9H Frame(CFA, -14)
+          CFI (cfiCond34) R10L Frame(CFA, -12)
+          CFI (cfiCond34) R10H Frame(CFA, -10)
+          CFI (cfiCond34) R11L Frame(CFA, -8)
+          CFI (cfiCond34) R11H Frame(CFA, -6)
+          CFI (cfiCond34) CFA SP+24
+          CFI Block cfiCond35 Using cfiCommon0
+          CFI (cfiCond35) Function OSQPost
+          CFI (cfiCond35) Conditional ??CrossCallReturnLabel_17
+          CFI (cfiCond35) R8L Frame(CFA, -20)
+          CFI (cfiCond35) R8H Frame(CFA, -18)
+          CFI (cfiCond35) R9L Frame(CFA, -16)
+          CFI (cfiCond35) R9H Frame(CFA, -14)
+          CFI (cfiCond35) R10L Frame(CFA, -12)
+          CFI (cfiCond35) R10H Frame(CFA, -10)
+          CFI (cfiCond35) R11L Frame(CFA, -8)
+          CFI (cfiCond35) R11H Frame(CFA, -6)
+          CFI (cfiCond35) CFA SP+24
+          CFI Block cfiPicker36 Using cfiCommon1
+          CFI (cfiPicker36) NoFunction
+          CFI (cfiPicker36) Picker
+        CALLA   #OSCPURestoreSR
+        BRA     #OS_Sched
+          CFI EndBlock cfiCond32
+          CFI EndBlock cfiCond33
+          CFI EndBlock cfiCond34
+          CFI EndBlock cfiCond35
+          CFI EndBlock cfiPicker36
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  401 void  *OSQPend (OS_EVENT  *pevent,
+OSQPend:
+          CFI Block cfiBlock37 Using cfiCommon0
+          CFI Function OSQPend
+//  402                 INT32U     timeout,
+//  403                 INT8U     *perr)
+//  404 {
+        FUNCALL OSQPend, OSCPUSaveSR
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSQPend, OSCPURestoreSR
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSQPend, OS_EventTaskWait
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSQPend, OSCPURestoreSR
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSQPend, OS_Sched
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSQPend, OSCPUSaveSR
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSQPend, OS_EventTaskRemove
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSQPend, OSCPURestoreSR
+        LOCFRAME CSTACK, 28, STACK
+        PUSHM.A #0x6, R11
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+28
+        MOVA    R12, R9
+        MOV.W   R14, R10
+        MOV.W   R15, R11
+        MOVA    R13, R6
+//  405     void      *pmsg;
+//  406     OS_Q      *pq;
+//  407 #if OS_CRITICAL_METHOD == 3u                     /* Allocate storage for CPU status register           */
+//  408     OS_CPU_SR  cpu_sr = 0u;
+//  409 #endif
+//  410 
+//  411 
+//  412 
+//  413 #ifdef OS_SAFETY_CRITICAL
+//  414     if (perr == (INT8U *)0) {
+//  415         OS_SAFETY_CRITICAL_EXCEPTION();
+//  416     }
+//  417 #endif
+//  418 
+//  419 #if OS_ARG_CHK_EN > 0u
+//  420     if (pevent == (OS_EVENT *)0) {               /* Validate 'pevent'                                  */
+//  421         *perr = OS_ERR_PEVENT_NULL;
+//  422         return ((void *)0);
+//  423     }
+//  424 #endif
+//  425     if (pevent->OSEventType != OS_EVENT_TYPE_Q) {/* Validate event block type                          */
+        CMP.B   #0x2, 0(R12)
+        JEQ     ??OSQPend_1
+//  426         *perr = OS_ERR_EVENT_TYPE;
+        MOV.B   #0x1, 0(R13)
+//  427         return ((void *)0);
+        JMP     ??OSQPend_0
+//  428     }
+//  429     if (OSIntNesting > 0u) {                     /* See if called from ISR ...                         */
+??OSQPend_1:
+        CMPX.B  #0x0, &OSIntNesting
+        JEQ     ??OSQPend_2
+//  430         *perr = OS_ERR_PEND_ISR;                 /* ... can't PEND from an ISR                         */
+        MOV.B   #0x2, 0(R13)
+//  431         return ((void *)0);
+        JMP     ??OSQPend_0
+//  432     }
+//  433     if (OSLockNesting > 0u) {                    /* See if called with scheduler locked ...            */
+??OSQPend_2:
+        CMPX.B  #0x0, &OSLockNesting
+        JEQ     ??OSQPend_3
+//  434         *perr = OS_ERR_PEND_LOCKED;              /* ... can't PEND when locked                         */
+        MOV.B   #0xd, 0(R13)
+//  435         return ((void *)0);
+??OSQPend_0:
+        MOVA    #0x0, R12
+        JMP     ??OSQPend_4
+//  436     }
+//  437     OS_ENTER_CRITICAL();
+??OSQPend_3:
+        CALLA   #OSCPUSaveSR
+        MOV.W   R12, R8
+//  438     pq = (OS_Q *)pevent->OSEventPtr;             /* Point at queue control block                       */
+        MOVA    0x2(R9), R15
+//  439     if (pq->OSQEntries > 0u) {                   /* See if any messages in the queue                   */
+        CMP.W   #0x0, 0x16(R15)
+        JEQ     ??OSQPend_5
+//  440         pmsg = *pq->OSQOut++;                    /* Yes, extract oldest message from the queue         */
+        CALLA   #?Subroutine8
+//  441         pq->OSQEntries--;                        /* Update the number of entries in the queue          */
+//  442         if (pq->OSQOut == pq->OSQEnd) {          /* Wrap OUT pointer if we are at the end of the queue */
+??CrossCallReturnLabel_12:
+        MOVA    0x10(R15), R7
+        MOVA    0x8(R15), R14
+        CMPA    R14, R7
+        JNE     ??OSQPend_6
+//  443             pq->OSQOut = pq->OSQStart;
+        CALLA   #?Subroutine9
+//  444         }
+//  445         OS_EXIT_CRITICAL();
+??OSQPend_6:
+        CALLA   #OSCPURestoreSR
+//  446         *perr = OS_ERR_NONE;
+        MOV.B   #0x0, 0(R6)
+//  447         return (pmsg);                           /* Return message received                            */
+        JMP     ??OSQPend_7
+//  448     }
+//  449     OSTCBCur->OSTCBStat     |= OS_STAT_Q;        /* Task will have to pend for a message to be posted  */
+??OSQPend_5:
+        MOVA    #OSTCBCur, R7
+        MOVA    @R7, R15
+        BIS.B   #0x4, 0x2e(R15)
+//  450     OSTCBCur->OSTCBStatPend  = OS_STAT_PEND_OK;
+        MOVA    @R7, R15
+        MOV.B   #0x0, 0x2f(R15)
+//  451     OSTCBCur->OSTCBDly       = timeout;          /* Load timeout into TCB                              */
+        MOVA    @R7, R15
+        MOV.W   R10, 0x2a(R15)
+        MOV.W   R11, 0x2c(R15)
+//  452     OS_EventTaskWait(pevent);                    /* Suspend task until event or timeout occurs         */
+        MOVA    R9, R12
+        CALLA   #OS_EventTaskWait
+//  453     OS_EXIT_CRITICAL();
+        MOV.W   R8, R12
+        CALLA   #??Subroutine11_0
+//  454     OS_Sched();                                  /* Find next highest priority task ready to run       */
+//  455     OS_ENTER_CRITICAL();
+??CrossCallReturnLabel_15:
+        CALLA   #OSCPUSaveSR
+        MOV.W   R12, R8
+//  456     switch (OSTCBCur->OSTCBStatPend) {                /* See if we timed-out or aborted                */
+        MOVA    @R7, R15
+        MOV.B   0x2f(R15), R14
+        SUB.B   #0x0, R14
+        JEQ     ??OSQPend_8
+        SUB.B   #0x2, R14
+        JEQ     ??OSQPend_9
+        JMP     ??OSQPend_10
+//  457         case OS_STAT_PEND_OK:                         /* Extract message from TCB (Put there by QPost) */
+//  458              pmsg =  OSTCBCur->OSTCBMsg;
+??OSQPend_8:
+        MOVA    0x20(R15), R11
+//  459             *perr =  OS_ERR_NONE;
+        MOV.B   #0x0, 0(R6)
+//  460              break;
+        JMP     ??OSQPend_11
+//  461 
+//  462         case OS_STAT_PEND_ABORT:
+//  463              pmsg = (void *)0;
+??OSQPend_9:
+        MOVA    #0x0, R11
+//  464             *perr =  OS_ERR_PEND_ABORT;               /* Indicate that we aborted                      */
+        MOV.B   #0xe, 0(R6)
+//  465              break;
+        JMP     ??OSQPend_11
+//  466 
+//  467         case OS_STAT_PEND_TO:
+//  468         default:
+//  469              OS_EventTaskRemove(OSTCBCur, pevent);
+??OSQPend_10:
+        MOVA    R9, R13
+        MOVA    @R7, R12
+        CALLA   #OS_EventTaskRemove
+//  470              pmsg = (void *)0;
+        MOVA    #0x0, R11
+//  471             *perr =  OS_ERR_TIMEOUT;                  /* Indicate that we didn't get event within TO   */
+        MOV.B   #0xa, 0(R6)
+//  472              break;
+//  473     }
+//  474     OSTCBCur->OSTCBStat          =  OS_STAT_RDY;      /* Set   task  status to ready                   */
+??OSQPend_11:
+        MOVA    @R7, R15
+        MOV.B   #0x0, 0x2e(R15)
+//  475     OSTCBCur->OSTCBStatPend      =  OS_STAT_PEND_OK;  /* Clear pend  status                            */
+        MOVA    @R7, R15
+        MOV.B   #0x0, 0x2f(R15)
+//  476     OSTCBCur->OSTCBEventPtr      = (OS_EVENT  *)0;    /* Clear event pointers                          */
+        MOVA    @R7, R15
+        MOVX.A  #0x0, 0x1c(R15)
+//  477 #if (OS_EVENT_MULTI_EN > 0u)
+//  478     OSTCBCur->OSTCBEventMultiPtr = (OS_EVENT **)0;
+//  479 #endif
+//  480     OSTCBCur->OSTCBMsg           = (void      *)0;    /* Clear  received message                       */
+        MOVX.A  #0x0, 0x20(R15)
+//  481     OS_EXIT_CRITICAL();
+        MOV.W   R8, R12
+        CALLA   #OSCPURestoreSR
+//  482     return (pmsg);                                    /* Return received message                       */
+??OSQPend_7:
+        MOVA    R11, R12
+??OSQPend_4:
+        POPM.A  #0x6, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock37
+//  483 }
+//  484 /*$PAGE*/
+//  485 /*
+//  486 *********************************************************************************************************
+//  487 *                                      ABORT WAITING ON A MESSAGE QUEUE
+//  488 *
+//  489 * Description: This function aborts & readies any tasks currently waiting on a queue.  This function
+//  490 *              should be used to fault-abort the wait on the queue, rather than to normally signal
+//  491 *              the queue via OSQPost(), OSQPostFront() or OSQPostOpt().
+//  492 *
+//  493 * Arguments  : pevent        is a pointer to the event control block associated with the desired queue.
+//  494 *
+//  495 *              opt           determines the type of ABORT performed:
+//  496 *                            OS_PEND_OPT_NONE         ABORT wait for a single task (HPT) waiting on the
+//  497 *                                                     queue
+//  498 *                            OS_PEND_OPT_BROADCAST    ABORT wait for ALL tasks that are  waiting on the
+//  499 *                                                     queue
+//  500 *
+//  501 *              perr          is a pointer to where an error message will be deposited.  Possible error
+//  502 *                            messages are:
+//  503 *
+//  504 *                            OS_ERR_NONE         No tasks were     waiting on the queue.
+//  505 *                            OS_ERR_PEND_ABORT   At least one task waiting on the queue was readied
+//  506 *                                                and informed of the aborted wait; check return value
+//  507 *                                                for the number of tasks whose wait on the queue
+//  508 *                                                was aborted.
+//  509 *                            OS_ERR_EVENT_TYPE   If you didn't pass a pointer to a queue.
+//  510 *                            OS_ERR_PEVENT_NULL  If 'pevent' is a NULL pointer.
+//  511 *
+//  512 * Returns    : == 0          if no tasks were waiting on the queue, or upon error.
+//  513 *              >  0          if one or more tasks waiting on the queue are now readied and informed.
+//  514 *********************************************************************************************************
+//  515 */
+//  516 
+//  517 #if OS_Q_PEND_ABORT_EN > 0u
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  518 INT8U  OSQPendAbort (OS_EVENT  *pevent,
+OSQPendAbort:
+          CFI Block cfiBlock38 Using cfiCommon0
+          CFI Function OSQPendAbort
+//  519                      INT8U      opt,
+//  520                      INT8U     *perr)
+//  521 {
+        FUNCALL OSQPendAbort, OSCPUSaveSR
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSQPendAbort, OS_EventTaskRdy
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSQPendAbort, OS_EventTaskRdy
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSQPendAbort, OSCPURestoreSR
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSQPendAbort, OS_Sched
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSQPendAbort, OSCPURestoreSR
+        LOCFRAME CSTACK, 28, STACK
+        PUSHM.A #0x6, R11
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+28
+        MOVA    R12, R11
+        MOV.B   R13, R6
+        MOVA    R14, R8
+//  522     INT8U      nbr_tasks;
+//  523 #if OS_CRITICAL_METHOD == 3u                               /* Allocate storage for CPU status register */
+//  524     OS_CPU_SR  cpu_sr = 0u;
+//  525 #endif
+//  526 
+//  527 
+//  528 
+//  529 #ifdef OS_SAFETY_CRITICAL
+//  530     if (perr == (INT8U *)0) {
+//  531         OS_SAFETY_CRITICAL_EXCEPTION();
+//  532     }
+//  533 #endif
+//  534 
+//  535 #if OS_ARG_CHK_EN > 0u
+//  536     if (pevent == (OS_EVENT *)0) {                         /* Validate 'pevent'                        */
+//  537         *perr = OS_ERR_PEVENT_NULL;
+//  538         return (0u);
+//  539     }
+//  540 #endif
+//  541     if (pevent->OSEventType != OS_EVENT_TYPE_Q) {          /* Validate event block type                */
+        CMP.B   #0x2, 0(R12)
+        JEQ     ??OSQPendAbort_1
+//  542         *perr = OS_ERR_EVENT_TYPE;
+        MOV.B   #0x1, 0(R14)
+//  543         return (0u);
+        JMP     ??OSQPendAbort_2
+//  544     }
+//  545     OS_ENTER_CRITICAL();
+??OSQPendAbort_1:
+        CALLA   #?Subroutine2
+//  546     if (pevent->OSEventGrp != 0u) {                        /* See if any task waiting on queue?        */
+??CrossCallReturnLabel_5:
+        JEQ     ??OSQPendAbort_3
+//  547         nbr_tasks = 0u;
+        MOV.B   #0x0, R9
+//  548         switch (opt) {
+        CMP.B   #0x1, R6
+        JNE     ??OSQPendAbort_4
+//  549             case OS_PEND_OPT_BROADCAST:                    /* Do we need to abort ALL waiting tasks?   */
+//  550                  while (pevent->OSEventGrp != 0u) {        /* Yes, ready ALL tasks waiting on queue    */
+//  551                      (void)OS_EventTaskRdy(pevent, (void *)0, OS_STAT_Q, OS_STAT_PEND_ABORT);
+??OSQPendAbort_0:
+        CALLA   #?Subroutine4
+//  552                      nbr_tasks++;
+??CrossCallReturnLabel_20:
+        ADD.B   #0x1, R9
+//  553                  }
+        CMP.B   #0x0, 0x8(R11)
+        JEQ     ??OSQPendAbort_5
+        JMP     ??OSQPendAbort_0
+//  554                  break;
+//  555 
+//  556             case OS_PEND_OPT_NONE:
+//  557             default:                                       /* No,  ready HPT       waiting on queue    */
+//  558                  (void)OS_EventTaskRdy(pevent, (void *)0, OS_STAT_Q, OS_STAT_PEND_ABORT);
+??OSQPendAbort_4:
+        CALLA   #?Subroutine4
+//  559                  nbr_tasks++;
+??CrossCallReturnLabel_19:
+        MOV.B   #0x1, R9
+//  560                  break;
+//  561         }
+//  562         OS_EXIT_CRITICAL();
+??OSQPendAbort_5:
+        CALLA   #??Subroutine10_0
+//  563         OS_Sched();                                        /* Find HPT ready to run                    */
+//  564         *perr = OS_ERR_PEND_ABORT;
+??CrossCallReturnLabel_16:
+        MOV.B   #0xe, 0(R8)
+//  565         return (nbr_tasks);
+        MOV.B   R9, R12
+        JMP     ??OSQPendAbort_6
+//  566     }
+//  567     OS_EXIT_CRITICAL();
+??OSQPendAbort_3:
+        CALLA   #OSCPURestoreSR
+//  568     *perr = OS_ERR_NONE;
+        MOV.B   #0x0, 0(R8)
+//  569     return (0u);                                           /* No tasks waiting on queue                */
+??OSQPendAbort_2:
+        MOV.B   #0x0, R12
+??OSQPendAbort_6:
+        POPM.A  #0x6, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock38
+//  570 }
+//  571 #endif
+//  572 
+//  573 /*$PAGE*/
+//  574 /*
+//  575 *********************************************************************************************************
+//  576 *                                        POST MESSAGE TO A QUEUE
+//  577 *
+//  578 * Description: This function sends a message to a queue
+//  579 *
+//  580 * Arguments  : pevent        is a pointer to the event control block associated with the desired queue
+//  581 *
+//  582 *              pmsg          is a pointer to the message to send.
+//  583 *
+//  584 * Returns    : OS_ERR_NONE           The call was successful and the message was sent
+//  585 *              OS_ERR_Q_FULL         If the queue cannot accept any more messages because it is full.
+//  586 *              OS_ERR_EVENT_TYPE     If you didn't pass a pointer to a queue.
+//  587 *              OS_ERR_PEVENT_NULL    If 'pevent' is a NULL pointer
+//  588 *
+//  589 * Note(s)    : As of V2.60, this function allows you to send NULL pointer messages.
+//  590 *********************************************************************************************************
+//  591 */
+//  592 
+//  593 #if OS_Q_POST_EN > 0u
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?Subroutine6:
+          CFI Block cfiCond39 Using cfiCommon0
+          CFI Function OSQPostOpt
+          CFI Conditional ??CrossCallReturnLabel_8
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+24
+          CFI Block cfiCond40 Using cfiCommon0
+          CFI (cfiCond40) Function OSQPostFront
+          CFI (cfiCond40) Conditional ??CrossCallReturnLabel_9
+          CFI (cfiCond40) R8L Frame(CFA, -20)
+          CFI (cfiCond40) R8H Frame(CFA, -18)
+          CFI (cfiCond40) R9L Frame(CFA, -16)
+          CFI (cfiCond40) R9H Frame(CFA, -14)
+          CFI (cfiCond40) R10L Frame(CFA, -12)
+          CFI (cfiCond40) R10H Frame(CFA, -10)
+          CFI (cfiCond40) R11L Frame(CFA, -8)
+          CFI (cfiCond40) R11H Frame(CFA, -6)
+          CFI (cfiCond40) CFA SP+24
+          CFI Block cfiCond41 Using cfiCommon0
+          CFI (cfiCond41) Function OSQPost
+          CFI (cfiCond41) Conditional ??CrossCallReturnLabel_10
+          CFI (cfiCond41) R8L Frame(CFA, -20)
+          CFI (cfiCond41) R8H Frame(CFA, -18)
+          CFI (cfiCond41) R9L Frame(CFA, -16)
+          CFI (cfiCond41) R9H Frame(CFA, -14)
+          CFI (cfiCond41) R10L Frame(CFA, -12)
+          CFI (cfiCond41) R10H Frame(CFA, -10)
+          CFI (cfiCond41) R11L Frame(CFA, -8)
+          CFI (cfiCond41) R11H Frame(CFA, -6)
+          CFI (cfiCond41) CFA SP+24
+          CFI Block cfiPicker42 Using cfiCommon1
+          CFI (cfiPicker42) NoFunction
+          CFI (cfiPicker42) Picker
+        CALLA   #OSCPURestoreSR
+        MOV.B   #0x1e, R12
+        RETA
+          CFI EndBlock cfiCond39
+          CFI EndBlock cfiCond40
+          CFI EndBlock cfiCond41
+          CFI EndBlock cfiPicker42
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  594 INT8U  OSQPost (OS_EVENT  *pevent,
+OSQPost:
+          CFI Block cfiBlock43 Using cfiCommon0
+          CFI Function OSQPost
+//  595                 void      *pmsg)
+//  596 {
+        FUNCALL OSQPost, OSCPUSaveSR
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSQPost, OS_EventTaskRdy
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSQPost, OSCPURestoreSR
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSQPost, OS_Sched
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSQPost, OSCPURestoreSR
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSQPost, OSCPURestoreSR
+        LOCFRAME CSTACK, 20, STACK
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        MOVA    R12, R11
+        MOVA    R13, R8
+//  597     OS_Q      *pq;
+//  598 #if OS_CRITICAL_METHOD == 3u                           /* Allocate storage for CPU status register     */
+//  599     OS_CPU_SR  cpu_sr = 0u;
+//  600 #endif
+//  601 
+//  602 
+//  603 
+//  604 #if OS_ARG_CHK_EN > 0u
+//  605     if (pevent == (OS_EVENT *)0) {                     /* Validate 'pevent'                            */
+//  606         return (OS_ERR_PEVENT_NULL);
+//  607     }
+//  608 #endif
+//  609     if (pevent->OSEventType != OS_EVENT_TYPE_Q) {      /* Validate event block type                    */
+        CMP.B   #0x2, 0(R12)
+        JEQ     ??OSQPost_2
+//  610         return (OS_ERR_EVENT_TYPE);
+        MOV.B   #0x1, R12
+        JMP     ??OSQPost_3
+//  611     }
+//  612     OS_ENTER_CRITICAL();
+??OSQPost_2:
+        CALLA   #?Subroutine2
+//  613     if (pevent->OSEventGrp != 0u) {                    /* See if any task pending on queue             */
+??CrossCallReturnLabel_4:
+        JEQ     ??OSQPost_4
+//  614                                                        /* Ready highest priority task waiting on event */
+//  615         (void)OS_EventTaskRdy(pevent, pmsg, OS_STAT_Q, OS_STAT_PEND_OK);
+        MOV.B   #0x0, R15
+        MOV.B   #0x4, R14
+        MOVA    R8, R13
+        MOVA    R11, R12
+        CALLA   #?Subroutine3
+//  616         OS_EXIT_CRITICAL();
+//  617         OS_Sched();                                    /* Find highest priority task ready to run      */
+//  618         return (OS_ERR_NONE);
+??CrossCallReturnLabel_17:
+        JMP     ??OSQPost_5
+//  619     }
+//  620     pq = (OS_Q *)pevent->OSEventPtr;                   /* Point to queue control block                 */
+??OSQPost_4:
+        MOVA    0x2(R11), R15
+//  621     if (pq->OSQEntries >= pq->OSQSize) {               /* Make sure queue is not full                  */
+        CMP.W   0x14(R15), 0x16(R15)
+        JNC     ??OSQPost_6
+//  622         OS_EXIT_CRITICAL();
+        CALLA   #?Subroutine6
+//  623         return (OS_ERR_Q_FULL);
+//  624     }
+??CrossCallReturnLabel_10:
+        JMP     ??OSQPost_3
+//  625     *pq->OSQIn++ = pmsg;                               /* Insert message into queue                    */
+??OSQPost_6:
+        MOVA    0xc(R15), R11
+        MOVA    R8, 0(R11)
+        ADDX.A  #0x4, 0xc(R15)
+//  626     pq->OSQEntries++;                                  /* Update the nbr of entries in the queue       */
+        ADD.W   #0x1, 0x16(R15)
+//  627     if (pq->OSQIn == pq->OSQEnd) {                     /* Wrap IN ptr if we are at end of queue        */
+        CALLA   #?Subroutine7
+//  628         pq->OSQIn = pq->OSQStart;
+//  629     }
+//  630     OS_EXIT_CRITICAL();
+??CrossCallReturnLabel_11:
+        CALLA   #OSCPURestoreSR
+//  631     return (OS_ERR_NONE);
+??OSQPost_5:
+        MOV.B   #0x0, R12
+??OSQPost_3:
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock43
+//  632 }
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?Subroutine7:
+          CFI Block cfiCond44 Using cfiCommon0
+          CFI Function OSQPostOpt
+          CFI Conditional ??OSQPostOpt_4
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+24
+          CFI Block cfiCond45 Using cfiCommon0
+          CFI (cfiCond45) Function OSQPost
+          CFI (cfiCond45) Conditional ??CrossCallReturnLabel_11
+          CFI (cfiCond45) R8L Frame(CFA, -20)
+          CFI (cfiCond45) R8H Frame(CFA, -18)
+          CFI (cfiCond45) R9L Frame(CFA, -16)
+          CFI (cfiCond45) R9H Frame(CFA, -14)
+          CFI (cfiCond45) R10L Frame(CFA, -12)
+          CFI (cfiCond45) R10H Frame(CFA, -10)
+          CFI (cfiCond45) R11L Frame(CFA, -8)
+          CFI (cfiCond45) R11H Frame(CFA, -6)
+          CFI (cfiCond45) CFA SP+24
+          CFI Block cfiPicker46 Using cfiCommon1
+          CFI (cfiPicker46) NoFunction
+          CFI (cfiPicker46) Picker
+        MOVA    0xc(R15), R11
+        MOVA    0x8(R15), R14
+        CMPA    R14, R11
+        JNE     ??OSQPostOpt_5
+        MOVX.A  0x4(R15), 0xc(R15)
+??OSQPostOpt_5:
+        RETA
+          CFI EndBlock cfiCond44
+          CFI EndBlock cfiCond45
+          CFI EndBlock cfiPicker46
+//  633 #endif
+//  634 /*$PAGE*/
+//  635 /*
+//  636 *********************************************************************************************************
+//  637 *                                   POST MESSAGE TO THE FRONT OF A QUEUE
+//  638 *
+//  639 * Description: This function sends a message to a queue but unlike OSQPost(), the message is posted at
+//  640 *              the front instead of the end of the queue.  Using OSQPostFront() allows you to send
+//  641 *              'priority' messages.
+//  642 *
+//  643 * Arguments  : pevent        is a pointer to the event control block associated with the desired queue
+//  644 *
+//  645 *              pmsg          is a pointer to the message to send.
+//  646 *
+//  647 * Returns    : OS_ERR_NONE           The call was successful and the message was sent
+//  648 *              OS_ERR_Q_FULL         If the queue cannot accept any more messages because it is full.
+//  649 *              OS_ERR_EVENT_TYPE     If you didn't pass a pointer to a queue.
+//  650 *              OS_ERR_PEVENT_NULL    If 'pevent' is a NULL pointer
+//  651 *
+//  652 * Note(s)    : As of V2.60, this function allows you to send NULL pointer messages.
+//  653 *********************************************************************************************************
+//  654 */
+//  655 
+//  656 #if OS_Q_POST_FRONT_EN > 0u
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  657 INT8U  OSQPostFront (OS_EVENT  *pevent,
+OSQPostFront:
+          CFI Block cfiBlock47 Using cfiCommon0
+          CFI Function OSQPostFront
+//  658                      void      *pmsg)
+//  659 {
+        FUNCALL OSQPostFront, OSCPUSaveSR
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSQPostFront, OS_EventTaskRdy
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSQPostFront, OSCPURestoreSR
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSQPostFront, OS_Sched
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSQPostFront, OSCPURestoreSR
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSQPostFront, OSCPURestoreSR
+        LOCFRAME CSTACK, 20, STACK
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        MOVA    R12, R8
+        MOVA    R13, R11
+//  660     OS_Q      *pq;
+//  661 #if OS_CRITICAL_METHOD == 3u                          /* Allocate storage for CPU status register      */
+//  662     OS_CPU_SR  cpu_sr = 0u;
+//  663 #endif
+//  664 
+//  665 
+//  666 
+//  667 #if OS_ARG_CHK_EN > 0u
+//  668     if (pevent == (OS_EVENT *)0) {                    /* Validate 'pevent'                             */
+//  669         return (OS_ERR_PEVENT_NULL);
+//  670     }
+//  671 #endif
+//  672     if (pevent->OSEventType != OS_EVENT_TYPE_Q) {     /* Validate event block type                     */
+        CMP.B   #0x2, 0(R12)
+        JEQ     ??OSQPostFront_1
+//  673         return (OS_ERR_EVENT_TYPE);
+        MOV.B   #0x1, R12
+        JMP     ??OSQPostFront_2
+//  674     }
+//  675     OS_ENTER_CRITICAL();
+??OSQPostFront_1:
+        CALLA   #OSCPUSaveSR
+        MOV.W   R12, R10
+//  676     if (pevent->OSEventGrp != 0u) {                   /* See if any task pending on queue              */
+        CMP.B   #0x0, 0x8(R8)
+        JEQ     ??OSQPostFront_3
+//  677                                                       /* Ready highest priority task waiting on event  */
+//  678         (void)OS_EventTaskRdy(pevent, pmsg, OS_STAT_Q, OS_STAT_PEND_OK);
+        MOV.B   #0x0, R15
+        MOV.B   #0x4, R14
+        MOVA    R11, R13
+        MOVA    R8, R12
+        CALLA   #?Subroutine3
+//  679         OS_EXIT_CRITICAL();
+//  680         OS_Sched();                                   /* Find highest priority task ready to run       */
+//  681         return (OS_ERR_NONE);
+??CrossCallReturnLabel_18:
+        JMP     ??OSQPostFront_4
+//  682     }
+//  683     pq = (OS_Q *)pevent->OSEventPtr;                  /* Point to queue control block                  */
+??OSQPostFront_3:
+        MOVA    0x2(R8), R15
+//  684     if (pq->OSQEntries >= pq->OSQSize) {              /* Make sure queue is not full                   */
+        CMP.W   0x14(R15), 0x16(R15)
+        JNC     ??OSQPostFront_5
+//  685         OS_EXIT_CRITICAL();
+        CALLA   #?Subroutine6
+//  686         return (OS_ERR_Q_FULL);
+//  687     }
+??CrossCallReturnLabel_9:
+        JMP     ??OSQPostFront_2
+//  688     if (pq->OSQOut == pq->OSQStart) {                 /* Wrap OUT ptr if we are at the 1st queue entry */
+??OSQPostFront_5:
+        CALLA   #?Subroutine1
+//  689         pq->OSQOut = pq->OSQEnd;
+//  690     }
+//  691     pq->OSQOut--;
+//  692     *pq->OSQOut = pmsg;                               /* Insert message into queue                     */
+//  693     pq->OSQEntries++;                                 /* Update the nbr of entries in the queue        */
+??CrossCallReturnLabel_3:
+        ADD.W   #0x1, 0x16(R15)
+//  694     OS_EXIT_CRITICAL();
+        CALLA   #OSCPURestoreSR
+//  695     return (OS_ERR_NONE);
+??OSQPostFront_4:
+        MOV.B   #0x0, R12
+??OSQPostFront_2:
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock47
+//  696 }
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?Subroutine1:
+          CFI Block cfiCond48 Using cfiCommon0
+          CFI Function OSQPostOpt
+          CFI Conditional ??CrossCallReturnLabel_2
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+24
+          CFI Block cfiCond49 Using cfiCommon0
+          CFI (cfiCond49) Function OSQPostFront
+          CFI (cfiCond49) Conditional ??CrossCallReturnLabel_3
+          CFI (cfiCond49) R8L Frame(CFA, -20)
+          CFI (cfiCond49) R8H Frame(CFA, -18)
+          CFI (cfiCond49) R9L Frame(CFA, -16)
+          CFI (cfiCond49) R9H Frame(CFA, -14)
+          CFI (cfiCond49) R10L Frame(CFA, -12)
+          CFI (cfiCond49) R10H Frame(CFA, -10)
+          CFI (cfiCond49) R11L Frame(CFA, -8)
+          CFI (cfiCond49) R11H Frame(CFA, -6)
+          CFI (cfiCond49) CFA SP+24
+          CFI Block cfiPicker50 Using cfiCommon1
+          CFI (cfiPicker50) NoFunction
+          CFI (cfiPicker50) Picker
+        MOVA    0x10(R15), R14
+        MOVA    0x4(R15), R13
+        CMPA    R13, R14
+        JNE     ??OSQPostOpt_3
+        MOVX.A  0x8(R15), 0x10(R15)
+??OSQPostOpt_3:
+        SUBX.A  #0x4, 0x10(R15)
+        MOVA    0x10(R15), R14
+        MOVA    R11, 0(R14)
+        RETA
+          CFI EndBlock cfiCond48
+          CFI EndBlock cfiCond49
+          CFI EndBlock cfiPicker50
+//  697 #endif
+//  698 /*$PAGE*/
+//  699 /*
+//  700 *********************************************************************************************************
+//  701 *                                        POST MESSAGE TO A QUEUE
+//  702 *
+//  703 * Description: This function sends a message to a queue.  This call has been added to reduce code size
+//  704 *              since it can replace both OSQPost() and OSQPostFront().  Also, this function adds the
+//  705 *              capability to broadcast a message to ALL tasks waiting on the message queue.
+//  706 *
+//  707 * Arguments  : pevent        is a pointer to the event control block associated with the desired queue
+//  708 *
+//  709 *              pmsg          is a pointer to the message to send.
+//  710 *
+//  711 *              opt           determines the type of POST performed:
+//  712 *                            OS_POST_OPT_NONE         POST to a single waiting task
+//  713 *                                                     (Identical to OSQPost())
+//  714 *                            OS_POST_OPT_BROADCAST    POST to ALL tasks that are waiting on the queue
+//  715 *                            OS_POST_OPT_FRONT        POST as LIFO (Simulates OSQPostFront())
+//  716 *                            OS_POST_OPT_NO_SCHED     Indicates that the scheduler will NOT be invoked
+//  717 *
+//  718 * Returns    : OS_ERR_NONE           The call was successful and the message was sent
+//  719 *              OS_ERR_Q_FULL         If the queue cannot accept any more messages because it is full.
+//  720 *              OS_ERR_EVENT_TYPE     If you didn't pass a pointer to a queue.
+//  721 *              OS_ERR_PEVENT_NULL    If 'pevent' is a NULL pointer
+//  722 *
+//  723 * Warning    : Interrupts can be disabled for a long time if you do a 'broadcast'.  In fact, the
+//  724 *              interrupt disable time is proportional to the number of tasks waiting on the queue.
+//  725 *********************************************************************************************************
+//  726 */
+//  727 
+//  728 #if OS_Q_POST_OPT_EN > 0u
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  729 INT8U  OSQPostOpt (OS_EVENT  *pevent,
+OSQPostOpt:
+          CFI Block cfiBlock51 Using cfiCommon0
+          CFI Function OSQPostOpt
+//  730                    void      *pmsg,
+//  731                    INT8U      opt)
+//  732 {
+        FUNCALL OSQPostOpt, OSCPUSaveSR
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSQPostOpt, OS_EventTaskRdy
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSQPostOpt, OS_EventTaskRdy
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSQPostOpt, OSCPURestoreSR
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSQPostOpt, OS_Sched
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSQPostOpt, OSCPURestoreSR
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSQPostOpt, OSCPURestoreSR
+        LOCFRAME CSTACK, 20, STACK
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        MOVA    R12, R9
+        MOVA    R13, R11
+        MOV.B   R14, R8
+//  733     OS_Q      *pq;
+//  734 #if OS_CRITICAL_METHOD == 3u                          /* Allocate storage for CPU status register      */
+//  735     OS_CPU_SR  cpu_sr = 0u;
+//  736 #endif
+//  737 
+//  738 
+//  739 
+//  740 #if OS_ARG_CHK_EN > 0u
+//  741     if (pevent == (OS_EVENT *)0) {                    /* Validate 'pevent'                             */
+//  742         return (OS_ERR_PEVENT_NULL);
+//  743     }
+//  744 #endif
+//  745     if (pevent->OSEventType != OS_EVENT_TYPE_Q) {     /* Validate event block type                     */
+        CMP.B   #0x2, 0(R12)
+        JEQ     ??OSQPostOpt_6
+//  746         return (OS_ERR_EVENT_TYPE);
+        MOV.B   #0x1, R12
+        JMP     ??OSQPostOpt_7
+//  747     }
+//  748     OS_ENTER_CRITICAL();
+??OSQPostOpt_6:
+        CALLA   #OSCPUSaveSR
+        MOV.W   R12, R10
+//  749     if (pevent->OSEventGrp != 0x00u) {                /* See if any task pending on queue              */
+        CMP.B   #0x0, 0x8(R9)
+        JEQ     ??OSQPostOpt_8
+//  750         if ((opt & OS_POST_OPT_BROADCAST) != 0x00u) { /* Do we need to post msg to ALL waiting tasks ? */
+        BIT.B   #0x1, R8
+        JNC     ??OSQPostOpt_9
+//  751             while (pevent->OSEventGrp != 0u) {        /* Yes, Post to ALL tasks waiting on queue       */
+//  752                 (void)OS_EventTaskRdy(pevent, pmsg, OS_STAT_Q, OS_STAT_PEND_OK);
+??OSQPostOpt_0:
+        CALLA   #?Subroutine5
+//  753             }
+??CrossCallReturnLabel_7:
+        CMP.B   #0x0, 0x8(R9)
+        JEQ     ??OSQPostOpt_10
+        JMP     ??OSQPostOpt_0
+//  754         } else {                                      /* No,  Post to HPT waiting on queue             */
+//  755             (void)OS_EventTaskRdy(pevent, pmsg, OS_STAT_Q, OS_STAT_PEND_OK);
+??OSQPostOpt_9:
+        CALLA   #?Subroutine5
+//  756         }
+//  757         OS_EXIT_CRITICAL();
+??OSQPostOpt_10:
+        MOV.W   R10, R12
+        CALLA   #OSCPURestoreSR
+//  758         if ((opt & OS_POST_OPT_NO_SCHED) == 0u) {	  /* See if scheduler needs to be invoked          */
+        BIT.B   #0x4, R8
+        JC      ??OSQPostOpt_2
+//  759             OS_Sched();                               /* Find highest priority task ready to run       */
+        CALLA   #OS_Sched
+//  760         }
+//  761         return (OS_ERR_NONE);
+        JMP     ??OSQPostOpt_2
+//  762     }
+//  763     pq = (OS_Q *)pevent->OSEventPtr;                  /* Point to queue control block                  */
+??OSQPostOpt_8:
+        MOVA    0x2(R9), R15
+//  764     if (pq->OSQEntries >= pq->OSQSize) {              /* Make sure queue is not full                   */
+        CMP.W   0x14(R15), 0x16(R15)
+        JNC     ??OSQPostOpt_11
+//  765         OS_EXIT_CRITICAL();
+        CALLA   #?Subroutine6
+//  766         return (OS_ERR_Q_FULL);
+//  767     }
+??CrossCallReturnLabel_8:
+        JMP     ??OSQPostOpt_7
+//  768     if ((opt & OS_POST_OPT_FRONT) != 0x00u) {         /* Do we post to the FRONT of the queue?         */
+??OSQPostOpt_11:
+        BIT.B   #0x2, R8
+        JNC     ??OSQPostOpt_12
+//  769         if (pq->OSQOut == pq->OSQStart) {             /* Yes, Post as LIFO, Wrap OUT pointer if we ... */
+        CALLA   #?Subroutine1
+//  770             pq->OSQOut = pq->OSQEnd;                  /*      ... are at the 1st queue entry           */
+//  771         }
+//  772         pq->OSQOut--;
+//  773         *pq->OSQOut = pmsg;                           /*      Insert message into queue                */
+//  774     } else {                                          /* No,  Post as FIFO                             */
+??CrossCallReturnLabel_2:
+        JMP     ??OSQPostOpt_4
+//  775         *pq->OSQIn++ = pmsg;                          /*      Insert message into queue                */
+??OSQPostOpt_12:
+        MOVA    0xc(R15), R14
+        MOVA    R11, 0(R14)
+        ADDX.A  #0x4, 0xc(R15)
+//  776         if (pq->OSQIn == pq->OSQEnd) {                /*      Wrap IN ptr if we are at end of queue    */
+        CALLA   #?Subroutine7
+//  777             pq->OSQIn = pq->OSQStart;
+//  778         }
+//  779     }
+//  780     pq->OSQEntries++;                                 /* Update the nbr of entries in the queue        */
+??OSQPostOpt_4:
+        ADD.W   #0x1, 0x16(R15)
+//  781     OS_EXIT_CRITICAL();
+        CALLA   #OSCPURestoreSR
+//  782     return (OS_ERR_NONE);
+??OSQPostOpt_2:
+        MOV.B   #0x0, R12
+??OSQPostOpt_7:
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock51
+//  783 }
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?Subroutine5:
+          CFI Block cfiCond52 Using cfiCommon0
+          CFI Function OSQPostOpt
+          CFI Conditional ??CrossCallReturnLabel_7
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+24
+          CFI Block cfiCond53 Using cfiCommon0
+          CFI (cfiCond53) Function OSQPostOpt
+          CFI (cfiCond53) Conditional ??OSQPostOpt_10
+          CFI (cfiCond53) R8L Frame(CFA, -20)
+          CFI (cfiCond53) R8H Frame(CFA, -18)
+          CFI (cfiCond53) R9L Frame(CFA, -16)
+          CFI (cfiCond53) R9H Frame(CFA, -14)
+          CFI (cfiCond53) R10L Frame(CFA, -12)
+          CFI (cfiCond53) R10H Frame(CFA, -10)
+          CFI (cfiCond53) R11L Frame(CFA, -8)
+          CFI (cfiCond53) R11H Frame(CFA, -6)
+          CFI (cfiCond53) CFA SP+24
+          CFI Block cfiPicker54 Using cfiCommon1
+          CFI (cfiPicker54) NoFunction
+          CFI (cfiPicker54) Picker
+        MOV.B   #0x0, R15
+        MOV.B   #0x4, R14
+        MOVA    R11, R13
+        MOVA    R9, R12
+        BRA     #OS_EventTaskRdy
+          CFI EndBlock cfiCond52
+          CFI EndBlock cfiCond53
+          CFI EndBlock cfiPicker54
+//  784 #endif
+//  785 /*$PAGE*/
+//  786 /*
+//  787 *********************************************************************************************************
+//  788 *                                        QUERY A MESSAGE QUEUE
+//  789 *
+//  790 * Description: This function obtains information about a message queue.
+//  791 *
+//  792 * Arguments  : pevent        is a pointer to the event control block associated with the desired queue
+//  793 *
+//  794 *              p_q_data      is a pointer to a structure that will contain information about the message
+//  795 *                            queue.
+//  796 *
+//  797 * Returns    : OS_ERR_NONE         The call was successful and the message was sent
+//  798 *              OS_ERR_EVENT_TYPE   If you are attempting to obtain data from a non queue.
+//  799 *              OS_ERR_PEVENT_NULL  If 'pevent'   is a NULL pointer
+//  800 *              OS_ERR_PDATA_NULL   If 'p_q_data' is a NULL pointer
+//  801 *********************************************************************************************************
+//  802 */
+//  803 
+//  804 #if OS_Q_QUERY_EN > 0u
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  805 INT8U  OSQQuery (OS_EVENT  *pevent,
+OSQQuery:
+          CFI Block cfiBlock55 Using cfiCommon0
+          CFI Function OSQQuery
+//  806                  OS_Q_DATA *p_q_data)
+//  807 {
+        FUNCALL OSQQuery, OSCPUSaveSR
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL OSQQuery, OSCPURestoreSR
+        LOCFRAME CSTACK, 12, STACK
+        PUSHM.A #0x2, R11
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+12
+        MOVA    R12, R11
+        MOVA    R13, R10
+//  808     OS_Q       *pq;
+//  809     INT8U       i;
+//  810     OS_PRIO    *psrc;
+//  811     OS_PRIO    *pdest;
+//  812 #if OS_CRITICAL_METHOD == 3u                           /* Allocate storage for CPU status register     */
+//  813     OS_CPU_SR   cpu_sr = 0u;
+//  814 #endif
+//  815 
+//  816 
+//  817 
+//  818 #if OS_ARG_CHK_EN > 0u
+//  819     if (pevent == (OS_EVENT *)0) {                     /* Validate 'pevent'                            */
+//  820         return (OS_ERR_PEVENT_NULL);
+//  821     }
+//  822     if (p_q_data == (OS_Q_DATA *)0) {                  /* Validate 'p_q_data'                          */
+//  823         return (OS_ERR_PDATA_NULL);
+//  824     }
+//  825 #endif
+//  826     if (pevent->OSEventType != OS_EVENT_TYPE_Q) {      /* Validate event block type                    */
+        CMP.B   #0x2, 0(R12)
+        JEQ     ??OSQQuery_1
+//  827         return (OS_ERR_EVENT_TYPE);
+        MOV.B   #0x1, R12
+        JMP     ??OSQQuery_2
+//  828     }
+//  829     OS_ENTER_CRITICAL();
+??OSQQuery_1:
+        CALLA   #OSCPUSaveSR
+//  830     p_q_data->OSEventGrp = pevent->OSEventGrp;         /* Copy message queue wait list                 */
+        MOV.B   0x8(R11), 0x10(R10)
+//  831     psrc                 = &pevent->OSEventTbl[0];
+        MOVA    R11, R15
+        ADDA    #0x9, R15
+//  832     pdest                = &p_q_data->OSEventTbl[0];
+        MOVA    R10, R14
+        ADDA    #0x8, R14
+//  833     for (i = 0u; i < OS_EVENT_TBL_SIZE; i++) {
+        MOV.B   #0x4, R13
+//  834         *pdest++ = *psrc++;
+??OSQQuery_0:
+        MOV.B   @R15+, 0(R14)
+        ADDA    #0x1, R14
+        MOV.B   @R15+, 0(R14)
+        ADDA    #0x1, R14
+//  835     }
+        ADD.B   #0xff, R13
+        JNE     ??OSQQuery_0
+//  836     pq = (OS_Q *)pevent->OSEventPtr;
+        MOVA    0x2(R11), R15
+//  837     if (pq->OSQEntries > 0u) {
+        MOV.W   0x16(R15), R11
+        CMP.W   #0x0, R11
+        JEQ     ??OSQQuery_3
+//  838         p_q_data->OSMsg = *pq->OSQOut;                 /* Get next message to return if available      */
+        MOVA    0x10(R15), R14
+        MOVA    @R14, R14
+        JMP     ??OSQQuery_4
+//  839     } else {
+//  840         p_q_data->OSMsg = (void *)0;
+??OSQQuery_3:
+        MOVA    #0x0, R14
+??OSQQuery_4:
+        MOVA    R14, 0(R10)
+//  841     }
+//  842     p_q_data->OSNMsgs = pq->OSQEntries;
+        MOV.W   R11, 0x4(R10)
+//  843     p_q_data->OSQSize = pq->OSQSize;
+        MOV.W   0x14(R15), 0x6(R10)
+//  844     OS_EXIT_CRITICAL();
+        CALLA   #OSCPURestoreSR
+//  845     return (OS_ERR_NONE);
+        MOV.B   #0x0, R12
+??OSQQuery_2:
+        POPM.A  #0x2, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock55
+//  846 }
+//  847 #endif                                                 /* OS_Q_QUERY_EN                                */
+//  848 
+//  849 /*$PAGE*/
+//  850 /*
+//  851 *********************************************************************************************************
+//  852 *                                      QUEUE MODULE INITIALIZATION
+//  853 *
+//  854 * Description : This function is called by uC/OS-II to initialize the message queue module.  Your
+//  855 *               application MUST NOT call this function.
+//  856 *
+//  857 * Arguments   :  none
+//  858 *
+//  859 * Returns     : none
+//  860 *
+//  861 * Note(s)    : This function is INTERNAL to uC/OS-II and your application should not call it.
+//  862 *********************************************************************************************************
+//  863 */
+//  864 
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  865 void  OS_QInit (void)
+OS_QInit:
+          CFI Block cfiBlock56 Using cfiCommon0
+          CFI Function OS_QInit
+//  866 {
+        FUNCALL OS_QInit, OS_MemClr
+        LOCFRAME CSTACK, 8, STACK
+        PUSHM.A #0x1, R10
+          CFI R10L Frame(CFA, -8)
+          CFI R10H Frame(CFA, -6)
+          CFI CFA SP+8
+//  867 #if OS_MAX_QS == 1u
+//  868     OSQFreeList         = &OSQTbl[0];                /* Only ONE queue!                                */
+//  869     OSQFreeList->OSQPtr = (OS_Q *)0;
+//  870 #endif
+//  871 
+//  872 #if OS_MAX_QS >= 2u
+//  873     INT16U   ix;
+//  874     INT16U   ix_next;
+//  875     OS_Q    *pq1;
+//  876     OS_Q    *pq2;
+//  877 
+//  878 
+//  879 
+//  880     OS_MemClr((INT8U *)&OSQTbl[0], sizeof(OSQTbl));  /* Clear the queue table                          */
+        MOVA    #OSQTbl, R10
+        MOV.W   #0x78, R13
+        MOVA    R10, R12
+        CALLA   #OS_MemClr
+//  881     for (ix = 0u; ix < (OS_MAX_QS - 1u); ix++) {     /* Init. list of free QUEUE control blocks        */
+//  882         ix_next = ix + 1u;
+//  883         pq1 = &OSQTbl[ix];
+//  884         pq2 = &OSQTbl[ix_next];
+//  885         pq1->OSQPtr = pq2;
+        MOVX.A  #OSQTbl + 24, 0(R10)
+        MOVX.A  #OSQTbl + 48, 0x18(R10)
+        MOVX.A  #OSQTbl + 72, 0x30(R10)
+        MOVX.A  #OSQTbl + 96, 0x48(R10)
+//  886     }
+//  887     pq1         = &OSQTbl[ix];
+//  888     pq1->OSQPtr = (OS_Q *)0;
+        MOVX.A  #0x0, 0x60(R10)
+//  889     OSQFreeList = &OSQTbl[0];
+        MOVA    R10, &OSQFreeList
+//  890 #endif
+//  891 }
+        POPM.A  #0x1, R10
+          CFI R10H SameValue
+          CFI R10L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock56
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r4:
+        REQUIRE ?setjmp_r4
+        REQUIRE ?longjmp_r4
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r5:
+        REQUIRE ?setjmp_r5
+        REQUIRE ?longjmp_r5
+
+        END
+//  892 #endif                                               /* OS_Q_EN                                        */
+//  893 	 	   	  		 			 	    		   		 		 	 	 			 	    		   	 			 	  	 		 				 		  			 		 					 	  	  		      		  	   		      		  	 		 	      		   		 		  	 		 	      		  		  		  
+// 
+// 1 358 bytes in segment CODE
+// 
+// 1 358 bytes of CODE memory
+//
+//Errors: none
+//Warnings: 11

@@ -1,0 +1,4879 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+//                                                      06/Jun/2016  16:42:19 /
+// IAR C/C++ Compiler V5.50.1.20465/W32, Evaluation edition for MSP430        /
+// Copyright 1996-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    __rt_version  =  3                                                      /
+//    __double_size =  32                                                     /
+//    __reg_r4      =  free                                                   /
+//    __reg_r5      =  free                                                   /
+//    __pic         =  no                                                     /
+//    __core        =  430X                                                   /
+//    __data_model  =  large                                                  /
+//    Source file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\oled\OLED.c                           /
+//    Command line  =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\oled\OLED.c -D NDEBUG -D RAM_VECTOR   /
+//                     -lC C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C /
+//                     °æ\¹¤³ÌÄ£°å\Release\List\ -lA                          /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Release\List\ -o C:\Users\615\Desktop\MSP430\M /
+//                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Release\Obj\          /
+//                     -D__MSP430F5529__ -e --double=32 --dlib_config         /
+//                     "D:\Program Files (x86)\IAR Systems\Embedded           /
+//                     Workbench 6.4 Evaluation\430\LIB\DLIB\dl430xlfn.h" -I  /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\ -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº /
+//                     ¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\inc\ -I                    /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\ -I C:\Users\615\Desktop\MSP430\MS /
+//                     P430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\src\USB\ -I    /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_config\ -I                 /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_User\ -I                   /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\srcUSB\USB_API\USB_CDC_API\ -I         /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_API\USB_HID_API\ -I        /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_API\USB_MSC_API\ -I        /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\KEY\ -I C:\Users\615\Desktop\MSP430\M /
+//                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\LED\ -I      /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\12864\ -I                             /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\oled\ -I C:\Users\615\Desktop\MSP430\ /
+//                     MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\mpu6050\inc /
+//                     \ -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\ /
+//                     C°æ\¹¤³ÌÄ£°å\HardWare\mpu6050\src\ -I                  /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\nokia5110\inc\ -I                     /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\nokia5110\src\ -I                     /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\LQ_1.8_TFT\ -I                        /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\LCD_API\ -I                           /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\2.2TFT\ -I                            /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\delay\ -I                             /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\System\ -I C:\Users\615\Desktop\MSP430\MSP430F /
+//                     5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\inc\ -I              /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\System\src\ -I C:\Users\615\Desktop\MSP430\MSP /
+//                     430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\User\ -I                /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\User\USER\ -I C:\Users\615\Desktop\MSP430\MSP4 /
+//                     30F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\UCOSII\CONFIG\ -I    /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\uCOSII\App\ -I                             /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\uCOSII\CONFIHG\ -I                         /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\uCOSII\PORT\ -I                            /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\UCOSII\CORE\ -I                            /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\FatFs\ -I C:\Users\615\Desktop\MSP430\MSP4 /
+//                     30F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\FatFs\option\        /
+//                     --core=430X --data_model=large -Oh --multiplier=32     /
+//                     --multiplier_location=4C0 --hw_workaround=CPU40        /
+//    List file     =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Release\List\OLED.s43                          /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME OLED
+
+        RTMODEL "__SystemLibrary", "DLib"
+        RTMODEL "__core", "430X"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dlib_file_descriptor", "0"
+        RTMODEL "__double_size", "32"
+        RTMODEL "__iar_require _Printf", "unknown"
+        RTMODEL "__pic", "no"
+        RTMODEL "__reg_r4", "free"
+        RTMODEL "__reg_r5", "free"
+        RTMODEL "__rt_version", "3"
+
+        RSEG CSTACK:DATA:SORT:NOROOT(0)
+
+        EXTERN ?CopyMemoryWords20
+        EXTERN ?DivMod16u
+        EXTERN ?ShiftLeft32_5
+        EXTERN ?cstart_init_zero20
+        EXTERN ?longjmp_r4
+        EXTERN ?longjmp_r5
+        EXTERN ?setjmp_r4
+        EXTERN ?setjmp_r5
+
+        PUBWEAK ?setjmp_save_r4
+        PUBWEAK ?setjmp_save_r5
+        PUBLIC ASCII_6X8
+        PUBLIC ASCII_8X16
+        PUBLIC FONT_CHINESE
+        PUBLIC OLED_Init
+        FUNCTION OLED_Init,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC OLED_Port_Init
+        FUNCTION OLED_Port_Init,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC OLED_Printf
+        FUNCTION OLED_Printf,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 176, STACK
+        PUBLIC OLED_Printf_6x8
+        FUNCTION OLED_Printf_6x8,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 176, STACK
+        PUBLIC OLED_Printf_8x16
+        FUNCTION OLED_Printf_8x16,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 176, STACK
+        PUBLIC OLED_PutPixel
+        FUNCTION OLED_PutPixel,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 12, STACK
+        PUBLIC OLED_display_chinese
+        FUNCTION OLED_display_chinese,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 36, STACK
+        PUBLIC OLED_display_float_6x8
+        FUNCTION OLED_display_float_6x8,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 84, STACK
+        PUBLIC OLED_display_float_8x16
+        FUNCTION OLED_display_float_8x16,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 80, STACK
+        PUBLIC OLED_display_number_6x8
+        FUNCTION OLED_display_number_6x8,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 44, STACK
+        PUBLIC OLED_display_number_8x16
+        FUNCTION OLED_display_number_8x16,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 44, STACK
+        PUBLIC OLED_display_string_6x8
+        FUNCTION OLED_display_string_6x8,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 20, STACK
+        PUBLIC OLED_display_string_8x16
+        FUNCTION OLED_display_string_8x16,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 20, STACK
+        PUBLIC OLED_fill_part
+        FUNCTION OLED_fill_part,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 36, STACK
+        PUBLIC OLED_fill_ram
+        FUNCTION OLED_fill_ram,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 20, STACK
+        PUBLIC OLED_set_pos
+        FUNCTION OLED_set_pos,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 8, STACK
+        PUBLIC OLED_write_Line_6x8
+        FUNCTION OLED_write_Line_6x8,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 20, STACK
+        PUBLIC OLED_write_Line_8x16
+        FUNCTION OLED_write_Line_8x16,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 20, STACK
+        PUBLIC OLED_write_Nchar_6x8
+        FUNCTION OLED_write_Nchar_6x8,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 20, STACK
+        PUBLIC OLED_write_Nchar_8x16
+        FUNCTION OLED_write_Nchar_8x16,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 20, STACK
+        PUBLIC OLED_write_byte
+        FUNCTION OLED_write_byte,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 8, STACK
+        PUBLIC OLED_write_char_6x8
+        FUNCTION OLED_write_char_6x8,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 12, STACK
+        PUBLIC OLED_write_char_8x16
+        FUNCTION OLED_write_char_8x16,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 28, STACK
+        PUBWEAK _A_PBOUT_L
+        PUBWEAK _A_PDOUT_L
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA SP DATA
+          CFI Resource PC:20, SP:20, SR:16, R4L:16, R4H:4, R4:20, R5L:16, R5H:4
+          CFI Resource R5:20, R6L:16, R6H:4, R6:20, R7L:16, R7H:4, R7:20, R8L:16
+          CFI Resource R8H:4, R8:20, R9L:16, R9H:4, R9:20, R10L:16, R10H:4
+          CFI Resource R10:20, R11L:16, R11H:4, R11:20, R12L:16, R12H:4, R12:20
+          CFI Resource R13L:16, R13H:4, R13:20, R14L:16, R14H:4, R14:20, R15L:16
+          CFI Resource R15H:4, R15:20
+          CFI ResourceParts R4 R4H, R4L
+          CFI ResourceParts R5 R5H, R5L
+          CFI ResourceParts R6 R6H, R6L
+          CFI ResourceParts R7 R7H, R7L
+          CFI ResourceParts R8 R8H, R8L
+          CFI ResourceParts R9 R9H, R9L
+          CFI ResourceParts R10 R10H, R10L
+          CFI ResourceParts R11 R11H, R11L
+          CFI ResourceParts R12 R12H, R12L
+          CFI ResourceParts R13 R13H, R13L
+          CFI ResourceParts R14 R14H, R14L
+          CFI ResourceParts R15 R15H, R15L
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H SameValue
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H SameValue
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H SameValue
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H SameValue
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H SameValue
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H SameValue
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H SameValue
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H SameValue
+          CFI R11 Concat
+          CFI R12L Undefined
+          CFI R12H Undefined
+          CFI R12 Undefined
+          CFI R13L Undefined
+          CFI R13H Undefined
+          CFI R13 Undefined
+          CFI R14L Undefined
+          CFI R14H Undefined
+          CFI R14 Undefined
+          CFI R15L Undefined
+          CFI R15H Undefined
+          CFI R15 Undefined
+          CFI EndCommon cfiCommon0
+        
+        
+          CFI Common cfiCommon1 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H SameValue
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H SameValue
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H SameValue
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H SameValue
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H SameValue
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H SameValue
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H SameValue
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H SameValue
+          CFI R11 Concat
+          CFI R12L SameValue
+          CFI R12H SameValue
+          CFI R12 Concat
+          CFI R13L SameValue
+          CFI R13H SameValue
+          CFI R13 Concat
+          CFI R14L SameValue
+          CFI R14H SameValue
+          CFI R14 Concat
+          CFI R15L SameValue
+          CFI R15H SameValue
+          CFI R15 Concat
+          CFI EndCommon cfiCommon1
+        
+        EXTERN vsprintf
+        FUNCTION vsprintf,010202H
+        EXTERN strlen
+        FUNCTION strlen,010202H
+        EXTERN _CmpLt32f
+        FUNCTION _CmpLt32f,0202H
+        EXTERN _Add32f
+        FUNCTION _Add32f,0202H
+        EXTERN _Mul32f
+        FUNCTION _Mul32f,0202H
+        EXTERN _CmpGe32f
+        FUNCTION _CmpGe32f,0202H
+        EXTERN _Div32f
+        FUNCTION _Div32f,0202H
+        EXTERN _Cast32fto32s
+        FUNCTION _Cast32fto32s,0202H
+        EXTERN _Cast32sto32f
+        FUNCTION _Cast32sto32f,0202H
+        EXTERN _Cast32fto32u
+        FUNCTION _Cast32fto32u,0202H
+        EXTERN _Cast32uto32f
+        FUNCTION _Cast32uto32f,0202H
+        EXTERN _Sub32f
+        FUNCTION _Sub32f,0202H
+        EXTERN I2C_MasterInit
+        FUNCTION I2C_MasterInit,0202H
+        EXTERN GPIO_MultiBits_Init
+        FUNCTION GPIO_MultiBits_Init,0202H
+
+// C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\oled\OLED.c
+//    1 #include "OLED.h"
+
+        ASEGN DATA16_AN:DATA:NOROOT,0222H
+// union <unnamed> __data16 _A_PBOUT_L
+_A_PBOUT_L:
+        DS8 2
+
+        ASEGN DATA16_AN:DATA:NOROOT,0262H
+// union <unnamed> __data16 _A_PDOUT_L
+_A_PDOUT_L:
+        DS8 2
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(1)
+`?<Constant {(4.90000009E-1F), (5.00000007E-2F)`:
+        DC32 3EFAE148H, 3D4CCCCDH, 3BA3D70AH, 3A03126FH, 3851B717H, 36A7C5ACH
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(1)
+`?<Constant {(4.90000009E-1F), (5.00000007E-2F)_1`:
+        DC32 3EFAE148H, 3D4CCCCDH, 3BA3D70AH, 3A03126FH, 3851B717H, 36A7C5ACH
+//    2 #include "OLED_FONT.h"
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+// unsigned char const ASCII_6X8[95][6]
+ASCII_6X8:
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 47, 0, 0, 0, 0, 7, 0, 7, 0, 0, 20, 127
+        DC8 20, 127, 20, 0, 36, 42, 127, 42, 18, 0, 98, 100, 8, 19, 35, 0, 54
+        DC8 73, 85, 34, 80, 0, 0, 5, 3, 0, 0, 0, 0, 28, 34, 65, 0, 0, 0, 65, 34
+        DC8 28, 0, 0, 20, 8, 62, 8, 20, 0, 8, 8, 62, 8, 8, 0, 0, 0, 160, 96, 0
+        DC8 0, 8, 8, 8, 8, 8, 0, 0, 96, 96, 0, 0, 0, 32, 16, 8, 4, 2, 0, 62, 81
+        DC8 73, 69, 62, 0, 0, 66, 127, 64, 0, 0, 66, 97, 81, 73, 70, 0, 33, 65
+        DC8 69, 75, 49, 0, 24, 20, 18, 127, 16, 0, 39, 69, 69, 69, 57, 0, 60
+        DC8 74, 73, 73, 48, 0, 1, 113, 9, 5, 3, 0, 54, 73, 73, 73, 54, 0, 6, 73
+        DC8 73, 41, 30, 0, 0, 54, 54, 0, 0, 0, 0, 86, 54, 0, 0, 0, 8, 20, 34
+        DC8 65, 0, 0, 20, 20, 20, 20, 20, 0, 0, 65, 34, 20, 8, 0, 2, 1, 81, 9
+        DC8 6, 0, 50, 73, 89, 81, 62, 0, 124, 18, 17, 18, 124, 0, 127, 73, 73
+        DC8 73, 54, 0, 62, 65, 65, 65, 34, 0, 127, 65, 65, 34, 28, 0, 127, 73
+        DC8 73, 73, 65, 0, 127, 9, 9, 9, 1, 0, 62, 65, 73, 73, 122, 0, 127, 8
+        DC8 8, 8, 127, 0, 0, 65, 127, 65, 0, 0, 32, 64, 65, 63, 1, 0, 127, 8
+        DC8 20, 34, 65, 0, 127, 64, 64, 64, 64, 0, 127, 2, 12, 2, 127, 0, 127
+        DC8 4, 8, 16, 127, 0, 62, 65, 65, 65, 62, 0, 127, 9, 9, 9, 6, 0, 62, 65
+        DC8 81, 33, 94, 0, 127, 9, 25, 41, 70, 0, 70, 73, 73, 73, 49, 0, 1, 1
+        DC8 127, 1, 1, 0, 63, 64, 64, 64, 63, 0, 31, 32, 64, 32, 31, 0, 63, 64
+        DC8 56, 64, 63, 0, 99, 20, 8, 20, 99, 0, 7, 8, 112, 8, 7, 0, 97, 81, 73
+        DC8 69, 67, 0, 0, 127, 65, 65, 0, 0, 85, 42, 85, 42, 85, 0, 0, 65, 65
+        DC8 127, 0, 0, 4, 2, 1, 2, 4, 0, 64, 64, 64, 64, 64, 0, 0, 1, 2, 4, 0
+        DC8 0, 32, 84, 84, 84, 120, 0, 127, 72, 68, 68, 56, 0, 56, 68, 68, 68
+        DC8 32, 0, 56, 68, 68, 72, 127, 0, 56, 84, 84, 84, 24, 0, 8, 126, 9, 1
+        DC8 2, 0, 24, 164, 164, 164, 124, 0, 127, 8, 4, 4, 120, 0, 0, 68, 125
+        DC8 64, 0, 0, 64, 128, 132, 125, 0, 0, 127, 16, 40, 68, 0, 0, 0, 65
+        DC8 127, 64, 0, 0, 124, 4, 24, 4, 120, 0, 124, 8, 4, 4, 120, 0, 56, 68
+        DC8 68, 68, 56, 0, 252, 36, 36, 36, 24, 0, 24, 36, 36, 24, 252, 0, 124
+        DC8 8, 4, 4, 8, 0, 72, 84, 84, 84, 32, 0, 4, 63, 68, 64, 32, 0, 60, 64
+        DC8 64, 32, 124, 0, 28, 32, 64, 32, 28, 0, 60, 64, 48, 64, 60, 0, 68
+        DC8 40, 16, 40, 68, 0, 28, 160, 160, 160, 124, 0, 68, 100, 84, 76, 68
+        DC8 0, 0, 8, 118, 66, 0, 0, 0, 0, 126, 0, 0, 0, 0, 66, 118, 8, 0, 0, 4
+        DC8 2, 4, 2, 1
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+// unsigned char const ASCII_8X16[95][16]
+ASCII_8X16:
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 248, 0, 0
+        DC8 0, 0, 0, 0, 0, 51, 48, 0, 0, 0, 0, 16, 12, 6, 16, 12, 6, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 64, 192, 120, 64, 192, 120, 64, 0, 4, 63, 4, 4, 63
+        DC8 4, 4, 0, 0, 112, 136, 252, 8, 48, 0, 0, 0, 24, 32, 255, 33, 30, 0
+        DC8 0, 240, 8, 240, 0, 224, 24, 0, 0, 0, 33, 28, 3, 30, 33, 30, 0, 0
+        DC8 240, 8, 136, 112, 0, 0, 0, 30, 33, 35, 36, 25, 39, 33, 16, 16, 22
+        DC8 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 224, 24, 4, 2
+        DC8 0, 0, 0, 0, 7, 24, 32, 64, 0, 0, 2, 4, 24, 224, 0, 0, 0, 0, 64, 32
+        DC8 24, 7, 0, 0, 0, 64, 64, 128, 240, 128, 64, 64, 0, 2, 2, 1, 15, 1, 2
+        DC8 2, 0, 0, 0, 0, 240, 0, 0, 0, 0, 1, 1, 1, 31, 1, 1, 1, 0, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 128, 176, 112, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 48, 48, 0, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 128, 96, 24, 4, 0, 96, 24, 6, 1, 0, 0, 0, 0, 224, 16
+        DC8 8, 8, 16, 224, 0, 0, 15, 16, 32, 32, 16, 15, 0, 0, 16, 16, 248, 0
+        DC8 0, 0, 0, 0, 32, 32, 63, 32, 32, 0, 0, 0, 112, 8, 8, 8, 136, 112, 0
+        DC8 0, 48, 40, 36, 34, 33, 48, 0, 0, 48, 8, 136, 136, 72, 48, 0, 0, 24
+        DC8 32, 32, 32, 17, 14, 0, 0, 0, 192, 32, 16, 248, 0, 0, 0, 7, 4, 36
+        DC8 36, 63, 36, 0, 0, 248, 8, 136, 136, 8, 8, 0, 0, 25, 33, 32, 32, 17
+        DC8 14, 0, 0, 224, 16, 136, 136, 24, 0, 0, 0, 15, 17, 32, 32, 17, 14, 0
+        DC8 0, 56, 8, 8, 200, 56, 8, 0, 0, 0, 0, 63, 0, 0, 0, 0, 0, 112, 136, 8
+        DC8 8, 136, 112, 0, 0, 28, 34, 33, 33, 34, 28, 0, 0, 224, 16, 8, 8, 16
+        DC8 224, 0, 0, 0, 49, 34, 34, 17, 15, 0, 0, 0, 0, 192, 192, 0, 0, 0, 0
+        DC8 0, 0, 48, 48, 0, 0, 0, 0, 0, 0, 128, 0, 0, 0, 0, 0, 0, 128, 96, 0
+        DC8 0, 0, 0, 0, 0, 128, 64, 32, 16, 8, 0, 0, 1, 2, 4, 8, 16, 32, 0, 64
+        DC8 64, 64, 64, 64, 64, 64, 0, 4, 4, 4, 4, 4, 4, 4, 0, 0, 8, 16, 32, 64
+        DC8 128, 0, 0, 0, 32, 16, 8, 4, 2, 1, 0, 0, 112, 72, 8, 8, 8, 240, 0, 0
+        DC8 0, 0, 48, 54, 1, 0, 0, 192, 48, 200, 40, 232, 16, 224, 0, 7, 24, 39
+        DC8 36, 35, 20, 11, 0, 0, 0, 192, 56, 224, 0, 0, 0, 32, 60, 35, 2, 2
+        DC8 39, 56, 32, 8, 248, 136, 136, 136, 112, 0, 0, 32, 63, 32, 32, 32
+        DC8 17, 14, 0, 192, 48, 8, 8, 8, 8, 56, 0, 7, 24, 32, 32, 32, 16, 8, 0
+        DC8 8, 248, 8, 8, 8, 16, 224, 0, 32, 63, 32, 32, 32, 16, 15, 0, 8, 248
+        DC8 136, 136, 232, 8, 16, 0, 32, 63, 32, 32, 35, 32, 24, 0, 8, 248, 136
+        DC8 136, 232, 8, 16, 0, 32, 63, 32, 0, 3, 0, 0, 0, 192, 48, 8, 8, 8, 56
+        DC8 0, 0, 7, 24, 32, 32, 34, 30, 2, 0, 8, 248, 8, 0, 0, 8, 248, 8, 32
+        DC8 63, 33, 1, 1, 33, 63, 32, 0, 8, 8, 248, 8, 8, 0, 0, 0, 32, 32, 63
+        DC8 32, 32, 0, 0, 0, 0, 8, 8, 248, 8, 8, 0, 192, 128, 128, 128, 127, 0
+        DC8 0, 0, 8, 248, 136, 192, 40, 24, 8, 0, 32, 63, 32, 1, 38, 56, 32, 0
+        DC8 8, 248, 8, 0, 0, 0, 0, 0, 32, 63, 32, 32, 32, 32, 48, 0, 8, 248
+        DC8 248, 0, 248, 248, 8, 0, 32, 63, 0, 63, 0, 63, 32, 0, 8, 248, 48
+        DC8 192, 0, 8, 248, 8, 32, 63, 32, 0, 7, 24, 63, 0, 224, 16, 8, 8, 8
+        DC8 16, 224, 0, 15, 16, 32, 32, 32, 16, 15, 0, 8, 248, 8, 8, 8, 8, 240
+        DC8 0, 32, 63, 33, 1, 1, 1, 0, 0, 224, 16, 8, 8, 8, 16, 224, 0, 15, 24
+        DC8 36, 36, 56, 80, 79, 0, 8, 248, 136, 136, 136, 136, 112, 0, 32, 63
+        DC8 32, 0, 3, 12, 48, 32, 0, 112, 136, 8, 8, 8, 56, 0, 0, 56, 32, 33
+        DC8 33, 34, 28, 0, 24, 8, 8, 248, 8, 8, 24, 0, 0, 0, 32, 63, 32, 0, 0
+        DC8 0, 8, 248, 8, 0, 0, 8, 248, 8, 0, 31, 32, 32, 32, 32, 31, 0, 8, 120
+        DC8 136, 0, 0, 200, 56, 8, 0, 0, 7, 56, 14, 1, 0, 0, 248, 8, 0, 248, 0
+        DC8 8, 248, 0, 3, 60, 7, 0, 7, 60, 3, 0, 8, 24, 104, 128, 128, 104, 24
+        DC8 8, 32, 48, 44, 3, 3, 44, 48, 32, 8, 56, 200, 0, 200, 56, 8, 0, 0, 0
+        DC8 32, 63, 32, 0, 0, 0, 16, 8, 8, 8, 200, 56, 8, 0, 32, 56, 38, 33, 32
+        DC8 32, 24, 0, 0, 0, 0, 254, 2, 2, 2, 0, 0, 0, 0, 127, 64, 64, 64, 0, 0
+        DC8 12, 48, 192, 0, 0, 0, 0, 0, 0, 0, 1, 6, 56, 192, 0, 0, 2, 2, 2, 254
+        DC8 0, 0, 0, 0, 64, 64, 64, 127, 0, 0, 0, 0, 0, 4, 2, 2, 2, 4, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 128, 128, 128, 128
+        DC8 128, 128, 128, 0, 2, 2, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 128, 128, 128, 128, 0, 0, 0, 25, 36, 34, 34, 34, 63, 32, 8, 248, 0
+        DC8 128, 128, 0, 0, 0, 0, 63, 17, 32, 32, 17, 14, 0, 0, 0, 0, 128, 128
+        DC8 128, 0, 0, 0, 14, 17, 32, 32, 32, 17, 0, 0, 0, 0, 128, 128, 136
+        DC8 248, 0, 0, 14, 17, 32, 32, 16, 63, 32, 0, 0, 128, 128, 128, 128, 0
+        DC8 0, 0, 31, 34, 34, 34, 34, 19, 0, 0, 128, 128, 240, 136, 136, 136
+        DC8 24, 0, 32, 32, 63, 32, 32, 0, 0, 0, 0, 128, 128, 128, 128, 128, 0
+        DC8 0, 107, 148, 148, 148, 147, 96, 0, 8, 248, 0, 128, 128, 128, 0, 0
+        DC8 32, 63, 33, 0, 0, 32, 63, 32, 0, 128, 152, 152, 0, 0, 0, 0, 0, 32
+        DC8 32, 63, 32, 32, 0, 0, 0, 0, 0, 128, 152, 152, 0, 0, 0, 192, 128
+        DC8 128, 128, 127, 0, 0, 8, 248, 0, 0, 128, 128, 128, 0, 32, 63, 36, 2
+        DC8 45, 48, 32, 0, 0, 8, 8, 248, 0, 0, 0, 0, 0, 32, 32, 63, 32, 32, 0
+        DC8 0, 128, 128, 128, 128, 128, 128, 128, 0, 32, 63, 32, 0, 63, 32, 0
+        DC8 63, 128, 128, 0, 128, 128, 128, 0, 0, 32, 63, 33, 0, 0, 32, 63, 32
+        DC8 0, 0, 128, 128, 128, 128, 0, 0, 0, 31, 32, 32, 32, 32, 31, 0, 128
+        DC8 128, 0, 128, 128, 0, 0, 0, 128, 255, 161, 32, 32, 17, 14, 0, 0, 0
+        DC8 0, 128, 128, 128, 128, 0, 0, 14, 17, 32, 32, 160, 255, 128, 128
+        DC8 128, 128, 0, 128, 128, 128, 0, 32, 32, 63, 33, 32, 0, 1, 0, 0, 0
+        DC8 128, 128, 128, 128, 128, 0, 0, 51, 36, 36, 36, 36, 25, 0, 0, 128
+        DC8 128, 224, 128, 128, 0, 0, 0, 0, 0, 31, 32, 32, 0, 0, 128, 128, 0, 0
+        DC8 0, 128, 128, 0, 0, 31, 32, 32, 32, 16, 63, 32, 128, 128, 128, 0, 0
+        DC8 128, 128, 128, 0, 1, 14, 48, 8, 6, 1, 0, 128, 128, 0, 128, 0, 128
+        DC8 128, 128, 15, 48, 12, 3, 12, 48, 15, 0, 0, 128, 128, 0, 128, 128
+        DC8 128, 0, 0, 32, 49, 46, 14, 49, 32, 0, 128, 128, 128, 0, 0, 128, 128
+        DC8 128, 128, 129, 142, 112, 24, 6, 1, 0, 0, 128, 128, 128, 128, 128
+        DC8 128, 0, 0, 33, 48, 44, 34, 33, 48, 0, 0, 0, 0, 0, 128, 124, 2, 2, 0
+        DC8 0, 0, 0, 0, 63, 64, 64, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 255
+        DC8 0, 0, 0, 0, 2, 2, 124, 128, 0, 0, 0, 0, 64, 64, 63, 0, 0, 0, 0, 0
+        DC8 6, 1, 1, 2, 2, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0
+//    3 #include "OLED_FONT_CHINESE.h"
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+// unsigned char const FONT_CHINESE[576]
+FONT_CHINESE:
+        DC8 128, 128, 128, 128, 255, 128, 128, 160, 144, 136, 132, 130, 128
+        DC8 128, 128, 0, 0, 0, 0, 0, 255, 64, 33, 18, 4, 8, 16, 32, 32, 64, 64
+        DC8 0, 128, 144, 140, 132, 132, 132, 245, 134, 132, 132, 132, 132, 148
+        DC8 140, 128, 0, 0, 128, 128, 132, 70, 73, 40, 16, 16, 44, 35, 64, 128
+        DC8 0, 0, 0, 32, 32, 32, 32, 32, 32, 32, 255, 32, 32, 32, 32, 32, 32
+        DC8 32, 0, 128, 128, 64, 32, 16, 12, 3, 0, 3, 12, 16, 32, 64, 128, 128
+        DC8 0, 64, 48, 17, 150, 144, 144, 145, 150, 144, 144, 152, 20, 19, 80
+        DC8 48, 0, 4, 4, 4, 4, 4, 68, 132, 126, 6, 5, 4, 4, 4, 4, 4, 0, 0, 128
+        DC8 96, 248, 7, 0, 4, 36, 36, 37, 38, 36, 36, 36, 4, 0, 1, 0, 0, 255, 0
+        DC8 0, 0, 249, 73, 73, 73, 73, 73, 249, 0, 0, 0, 0, 0, 252, 84, 84, 86
+        DC8 85, 84, 84, 84, 252, 0, 0, 0, 0, 64, 48, 0, 3, 57, 65, 65, 69, 89
+        DC8 65, 65, 115, 0, 8, 48, 0, 0, 4, 4, 4, 4, 4, 4, 252, 4, 4, 4, 4, 4
+        DC8 4, 0, 0, 32, 32, 32, 32, 32, 32, 32, 63, 32, 32, 32, 32, 32, 32, 32
+        DC8 0, 36, 36, 164, 254, 35, 34, 0, 62, 34, 34, 34, 34, 34, 62, 0, 0, 8
+        DC8 6, 1, 255, 1, 6, 64, 73, 73, 73, 127, 73, 73, 73, 65, 0, 64, 48, 17
+        DC8 150, 144, 144, 145, 150, 144, 144, 152, 20, 19, 80, 48, 0, 4, 4, 4
+        DC8 4, 4, 68, 132, 126, 6, 5, 4, 4, 4, 4, 4, 0, 0, 254, 34, 90, 134, 16
+        DC8 12, 36, 36, 37, 38, 36, 36, 20, 12, 0, 0, 255, 4, 8, 7, 128, 65, 49
+        DC8 15, 1, 1, 63, 65, 65, 113, 0, 0, 0, 0, 136, 136, 136, 136, 136, 136
+        DC8 140, 132, 140, 8, 0, 0, 0, 0, 16, 16, 16, 16, 16, 16, 16, 16, 16
+        DC8 16, 16, 16, 16, 0, 0, 0, 224, 226, 254, 252, 240, 80, 208, 254, 254
+        DC8 242, 240, 80, 0, 0, 0, 0, 7, 7, 71, 103, 119, 58, 31, 7, 7, 29, 57
+        DC8 97, 97, 64, 0, 0, 64, 64, 64, 64, 64, 240, 254, 222, 64, 64, 96, 96
+        DC8 64, 0, 0, 0, 64, 96, 48, 28, 15, 7, 1, 3, 15, 60, 48, 32, 32, 32, 0
+        DC8 0, 64, 112, 180, 188, 184, 166, 174, 184, 252, 254, 114, 112, 16, 0
+        DC8 0, 0, 4, 4, 4, 20, 52, 39, 63, 63, 2, 2, 2, 2, 2, 0, 0, 0, 8, 8, 8
+        DC8 12, 12, 4, 252, 252, 224, 184, 152, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        DC8 3, 15, 28, 56, 48, 60, 60, 0, 0, 0, 0, 0, 254, 254, 164, 180, 252
+        DC8 252, 244, 254, 254, 0, 0, 0, 0, 0, 16, 28, 14, 14, 28, 59, 55, 38
+        DC8 56, 58, 38, 14, 12, 0, 0, 0, 128, 128, 128, 128, 128, 254, 254, 146
+        DC8 144, 216, 88, 64, 192, 0, 0, 0, 0, 0, 0, 0, 0, 63, 63, 3, 2, 6, 4
+        DC8 0, 0, 0, 0, 0, 0, 192, 224, 248, 158, 22, 242, 240, 144, 112, 120
+        DC8 24, 16, 0, 0, 0, 17, 25, 14, 7, 19, 49, 63, 63, 1, 3, 7, 6, 4, 0, 0
+//    4 #include <stdarg.h>
+//    5 #include <string.h>
+//    6 #include <stdio.h>
+//    7 #include "i2c.h"
+//    8 typedef enum
+//    9 {
+//   10   CMD   =0u,//ÃüÁîÊ±ÎªµÍµçÆ½
+//   11   DATA  =1u,//Êý¾ÝÊ±Îª¸ßµçÆ½
+//   12 }CMD_OR_DATA;
+//   13 //IO¿Ú»òSPI³õÊ¼»¯³ÌÐò
+//   14 void OLED_Port_Init(void)
+//   15 {
+//   16   I2C_MasterInit (I2C1, 0x00,100KHZ);            //³õÊ¼»¯I2CÄ£¿é£¨Ö÷»úÄ£Ê½£©
+//   17 #if(OLEDHardWareSPI)
+//   18   OLEDHardWareSPI_Init();
+//   19 #else
+//   20   GPIO_Init(OLED_SCL_Port,OLED_SCL_Pin,GPO);
+//   21   GPIO_Init(OLED_SDA_Port,OLED_SDA_Pin,GPO);
+//   22 #endif
+//   23   GPIO_Init(OLED_RST_Port,OLED_RST_Pin,GPO);
+//   24   GPIO_Init(OLED_DC_Port,OLED_DC_Pin,GPO);
+//   25 }
+//   26 /********************************************************************
+//   27 º¯Êý¹¦ÄÜ:ÏòOLEDÐ´Ò»¸ö×Ö½ÚÊý¾Ý
+//   28 º¯ÊýÃû³Æ:OLED_write_byte
+//   29 ÐÎÊ½²ÎÊý:DCvalue:Ö¸Áî,È¡Öµ·¶Î§:0/1 0ÊÇÃüÁî,1ÊÇÊý¾Ý  data:8Î»Êý¾Ý
+//   30 ·µ»ØÖµ:  ¿Õ
+//   31 ÐÞ¸ÄÈË:  CTGU-GB2013
+//   32 ÐÞ¸ÄÊ±¼ä:2014/5/12
+//   33 *********************************************************************/
+//   34 void OLED_write_byte(CMD_OR_DATA DCvalue,uint8_t data)
+//   35 {
+//   36   OLED_DC = DCvalue; //DCvalueÊÇ1DC¾ÍÎª1 ²»ÊÇ1DC¾ÍÎª0  1ÊÇÊý¾Ý 0ÊÇÃü?
+//   37 #if(OLEDHardWareSPI)
+//   38   OLEDHardWareSPI_SendByte(data);
+//   39 #else
+//   40   OLED_SCL=0;
+//   41   for(uint8_t i=0;i<8;i++)
+//   42   {
+//   43     OLED_SDA=(data&0x80)==0x80 ? 1 : 0;//ÉÏÉýÑØ·¢ËÍÊý¾Ý
+//   44     OLED_SCL=1;
+//   45     OLED_SCL=0;		
+//   46     data<<=1;    
+//   47   }
+//   48 #endif
+//   49 }
+//   50 /********************************************************************
+//   51 º¯Êý¹¦ÄÜ:ÉèÖÃOLEDµÄÏÔÊ¾Î»ÖÃ
+//   52 º¯ÊýÃû³Æ:OLED_set_pos
+//   53 ÐÎÊ½²ÎÊý:y ÐÐ È¡Öµ·¶Î§:0-7  x ÁÐ È¡Öµ·¶Î§0-127
+//   54 ·µ»ØÖµ:  ¿Õ
+//   55 ÐÞ¸ÄÈË:  kofee
+//   56 ÐÞ¸ÄÊ±¼ä:2014/5/12
+//   57 *********************************************************************/
+//   58 void OLED_set_pos(uint8_t y,uint8_t x)
+//   59 {
+//   60     OLED_write_byte(CMD,0xB0+y);            //ÉèÖÃÐÐ        
+//   61     OLED_write_byte(CMD,x&0x0F);            //ÉèÖÃÄ³ÁÐµÄµÍËÄÎ»µØÖ· 0x00-0x0F
+//   62     OLED_write_byte(CMD,(x>>4)|0x10);       //ÉèÖÃÄ³ÁÐµÄ¸ßËÄÎ»µØÖ· 0x10-0x1F
+//   63 }
+//   64 /********************************************************************
+//   65 º¯Êý¹¦ÄÜ:ÓÃÄ³Ò»Êý¾ÝÌî³äOLEDµÄRAMÇø
+//   66 º¯ÊýÃû³Æ:OLED_fill_ram
+//   67 ÐÎÊ½²ÎÊý:data:ÒªÌî³äµÄÊý¾Ý
+//   68 ·µ»ØÖµ:  ¿Õ
+//   69 ÐÞ¸ÄÈË:  kofee
+//   70 ÐÞ¸ÄÊ±¼ä:2014/5/12
+//   71 *********************************************************************/
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine8:
+          CFI Block cfiCond0 Using cfiCommon0
+          CFI Function OLED_fill_ram
+          CFI Conditional ??CrossCallReturnLabel_63
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+24
+          CFI Block cfiCond1 Using cfiCommon0
+          CFI (cfiCond1) Function OLED_Init
+          CFI (cfiCond1) Conditional ??CrossCallReturnLabel_62
+          CFI (cfiCond1) CFA SP+8
+          CFI Block cfiPicker2 Using cfiCommon1
+          CFI (cfiPicker2) NoFunction
+          CFI (cfiPicker2) Picker
+//   72 void OLED_fill_ram(uint8_t data)
+//   73 {
+//   74     uint8_t y,x;
+//   75     for(y=0;y<8;y++)
+//   76     {
+//   77         OLED_write_byte(CMD,0xB0+y);  //Ã¿ÐÐ
+//   78         OLED_write_byte(CMD,0x00);      //µÚÒ»ÁÐ
+//   79         OLED_write_byte(CMD,0x10);
+//   80         {
+//   81             for(x=0;x<128;x++)
+//   82             {
+//   83                 OLED_write_byte(DATA,data);  //Ð´ÈëÊý¾Ý
+//   84             }
+//   85         }
+//   86     }
+//   87 }
+//   88 /********************************************************************
+//   89 º¯Êý¹¦ÄÜ:ÓÃÄ³Ò»Êý¾ÝÌî³äOLEDµÄÄ³Ò»ÇøÓò
+//   90 º¯ÊýÃû³Æ:OLED_fill_part
+//   91 ÐÎÊ½²ÎÊý:data:ÒªÌî³äµÄÊý¾Ý
+//   92 ·µ»ØÖµ:  ¿Õ
+//   93 ÐÞ¸ÄÈË:  CTGU-GB2013
+//   94 ÐÞ¸ÄÊ±¼ä:2014/5/12
+//   95 *********************************************************************/
+//   96 void OLED_fill_part(uint8_t xs,uint8_t ys,uint8_t xe,uint8_t ye,uint8_t data)
+//   97 {
+//   98     uint8_t y,x;
+//   99     for(y=ys;y<ye;y++)
+//  100     {
+//  101         OLED_write_byte(CMD,0xB0+y);  //Ã¿ÐÐ
+//  102         OLED_write_byte(CMD,xs&0x0F);            //ÉèÖÃÄ³ÁÐµÄµÍËÄÎ»µØÖ· 0x00-0x0F
+//  103         OLED_write_byte(CMD,(xs>>4)|0x10);       //ÉèÖÃÄ³ÁÐµÄ¸ßËÄÎ»µØÖ· 0x10-0x1F
+//  104         for(x=xs;x<xe;x++)
+//  105         {
+//  106           OLED_write_byte(DATA,data);  //Ð´ÈëÊý¾Ý
+//  107         }
+//  108     }
+//  109 }
+//  110 /********************************************************************
+//  111 º¯Êý¹¦ÄÜ:³õÊ¼»¯OLED
+//  112 º¯ÊýÃû³Æ:OLED_init
+//  113 ÐÎÊ½²ÎÊý:¿Õ
+//  114 ·µ»ØÖµ:  ¿Õ
+//  115 ÐÞ¸ÄÈË:  kofee
+//  116 ÐÞ¸ÄÊ±¼ä:2014/5/12
+//  117 *********************************************************************/
+//  118 void OLED_Init(void)
+//  119 {
+//  120   uint16_t i;
+//  121     OLED_Port_Init();
+//  122     // OLED_CS  = 0;  //Ð¾Æ¬Ñ¡ÔñÊäÈë µÍµçÆ½Ê¹ÄÜ
+//  123     OLED_RST=0;  //¸´Î»ÐÅºÅ,²»¿ÉÊ¡ÂÔ
+//  124     for(i=0;i<10000;i++);
+//  125     OLED_RST=1;
+//  126     
+//  127    
+//  128     OLED_write_byte(CMD,0xA8);    //set Multiplex Ratio
+//  129     OLED_write_byte(CMD,0x3F);  
+//  130     
+//  131     OLED_write_byte(CMD,0xD3);    //ÉèÖÃÏÔÊ¾Æ«ÒÆ
+//  132     OLED_write_byte(CMD,0x00);
+        MOV.B   #0x0, R13
+          CFI EndBlock cfiCond0
+          CFI EndBlock cfiCond1
+          CFI EndBlock cfiPicker2
+        REQUIRE ?Subroutine24
+        // Fall through to label ?Subroutine24
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine24:
+          CFI Block cfiCond3 Using cfiCommon0
+          CFI Function OLED_fill_ram
+          CFI Conditional ??CrossCallReturnLabel_63
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+24
+          CFI Block cfiCond4 Using cfiCommon0
+          CFI (cfiCond4) Function OLED_Init
+          CFI (cfiCond4) Conditional ??CrossCallReturnLabel_62
+          CFI (cfiCond4) CFA SP+8
+          CFI Block cfiCond5 Using cfiCommon0
+          CFI (cfiCond5) Function OLED_fill_ram
+          CFI (cfiCond5) Conditional ??CrossCallReturnLabel_61
+          CFI (cfiCond5) R8L Frame(CFA, -20)
+          CFI (cfiCond5) R8H Frame(CFA, -18)
+          CFI (cfiCond5) R9L Frame(CFA, -16)
+          CFI (cfiCond5) R9H Frame(CFA, -14)
+          CFI (cfiCond5) R10L Frame(CFA, -12)
+          CFI (cfiCond5) R10H Frame(CFA, -10)
+          CFI (cfiCond5) R11L Frame(CFA, -8)
+          CFI (cfiCond5) R11H Frame(CFA, -6)
+          CFI (cfiCond5) CFA SP+24
+          CFI Block cfiCond6 Using cfiCommon0
+          CFI (cfiCond6) Function OLED_set_pos
+          CFI (cfiCond6) Conditional ??CrossCallReturnLabel_60
+          CFI (cfiCond6) R10L Frame(CFA, -8)
+          CFI (cfiCond6) R10H Frame(CFA, -6)
+          CFI (cfiCond6) CFA SP+12
+          CFI Block cfiCond7 Using cfiCommon0
+          CFI (cfiCond7) Function OLED_set_pos
+          CFI (cfiCond7) Conditional ??CrossCallReturnLabel_59
+          CFI (cfiCond7) R10L Frame(CFA, -8)
+          CFI (cfiCond7) R10H Frame(CFA, -6)
+          CFI (cfiCond7) CFA SP+12
+          CFI Block cfiCond8 Using cfiCommon0
+          CFI (cfiCond8) Function OLED_set_pos
+          CFI (cfiCond8) Conditional ??CrossCallReturnLabel_58
+          CFI (cfiCond8) R10L Frame(CFA, -8)
+          CFI (cfiCond8) R10H Frame(CFA, -6)
+          CFI (cfiCond8) CFA SP+12
+          CFI Block cfiCond9 Using cfiCommon0
+          CFI (cfiCond9) Function OLED_PutPixel
+          CFI (cfiCond9) Conditional ??CrossCallReturnLabel_57
+          CFI (cfiCond9) R10L Frame(CFA, -12)
+          CFI (cfiCond9) R10H Frame(CFA, -10)
+          CFI (cfiCond9) R11L Frame(CFA, -8)
+          CFI (cfiCond9) R11H Frame(CFA, -6)
+          CFI (cfiCond9) CFA SP+16
+          CFI Block cfiCond10 Using cfiCommon0
+          CFI (cfiCond10) Function OLED_PutPixel
+          CFI (cfiCond10) Conditional ??CrossCallReturnLabel_56
+          CFI (cfiCond10) R10L Frame(CFA, -12)
+          CFI (cfiCond10) R10H Frame(CFA, -10)
+          CFI (cfiCond10) R11L Frame(CFA, -8)
+          CFI (cfiCond10) R11H Frame(CFA, -6)
+          CFI (cfiCond10) CFA SP+16
+          CFI Block cfiCond11 Using cfiCommon0
+          CFI (cfiCond11) Function OLED_PutPixel
+          CFI (cfiCond11) Conditional ??CrossCallReturnLabel_55
+          CFI (cfiCond11) R10L Frame(CFA, -12)
+          CFI (cfiCond11) R10H Frame(CFA, -10)
+          CFI (cfiCond11) R11L Frame(CFA, -8)
+          CFI (cfiCond11) R11H Frame(CFA, -6)
+          CFI (cfiCond11) CFA SP+16
+          CFI Block cfiCond12 Using cfiCommon0
+          CFI (cfiCond12) Function OLED_Init
+          CFI (cfiCond12) Conditional ??CrossCallReturnLabel_54
+          CFI (cfiCond12) CFA SP+8
+          CFI Block cfiCond13 Using cfiCommon0
+          CFI (cfiCond13) Function OLED_Init
+          CFI (cfiCond13) Conditional ??CrossCallReturnLabel_53
+          CFI (cfiCond13) CFA SP+8
+          CFI Block cfiCond14 Using cfiCommon0
+          CFI (cfiCond14) Function OLED_Init
+          CFI (cfiCond14) Conditional ??CrossCallReturnLabel_52
+          CFI (cfiCond14) CFA SP+8
+          CFI Block cfiCond15 Using cfiCommon0
+          CFI (cfiCond15) Function OLED_Init
+          CFI (cfiCond15) Conditional ??CrossCallReturnLabel_51
+          CFI (cfiCond15) CFA SP+8
+          CFI Block cfiCond16 Using cfiCommon0
+          CFI (cfiCond16) Function OLED_Init
+          CFI (cfiCond16) Conditional ??CrossCallReturnLabel_50
+          CFI (cfiCond16) CFA SP+8
+          CFI Block cfiCond17 Using cfiCommon0
+          CFI (cfiCond17) Function OLED_Init
+          CFI (cfiCond17) Conditional ??CrossCallReturnLabel_49
+          CFI (cfiCond17) CFA SP+8
+          CFI Block cfiCond18 Using cfiCommon0
+          CFI (cfiCond18) Function OLED_Init
+          CFI (cfiCond18) Conditional ??CrossCallReturnLabel_48
+          CFI (cfiCond18) CFA SP+8
+          CFI Block cfiCond19 Using cfiCommon0
+          CFI (cfiCond19) Function OLED_Init
+          CFI (cfiCond19) Conditional ??CrossCallReturnLabel_47
+          CFI (cfiCond19) CFA SP+8
+          CFI Block cfiCond20 Using cfiCommon0
+          CFI (cfiCond20) Function OLED_Init
+          CFI (cfiCond20) Conditional ??CrossCallReturnLabel_46
+          CFI (cfiCond20) CFA SP+8
+          CFI Block cfiCond21 Using cfiCommon0
+          CFI (cfiCond21) Function OLED_Init
+          CFI (cfiCond21) Conditional ??CrossCallReturnLabel_45
+          CFI (cfiCond21) CFA SP+8
+          CFI Block cfiCond22 Using cfiCommon0
+          CFI (cfiCond22) Function OLED_Init
+          CFI (cfiCond22) Conditional ??CrossCallReturnLabel_44
+          CFI (cfiCond22) CFA SP+8
+          CFI Block cfiCond23 Using cfiCommon0
+          CFI (cfiCond23) Function OLED_Init
+          CFI (cfiCond23) Conditional ??CrossCallReturnLabel_43
+          CFI (cfiCond23) CFA SP+8
+          CFI Block cfiCond24 Using cfiCommon0
+          CFI (cfiCond24) Function OLED_Init
+          CFI (cfiCond24) Conditional ??CrossCallReturnLabel_42
+          CFI (cfiCond24) CFA SP+8
+          CFI Block cfiCond25 Using cfiCommon0
+          CFI (cfiCond25) Function OLED_Init
+          CFI (cfiCond25) Conditional ??CrossCallReturnLabel_41
+          CFI (cfiCond25) CFA SP+8
+          CFI Block cfiCond26 Using cfiCommon0
+          CFI (cfiCond26) Function OLED_Init
+          CFI (cfiCond26) Conditional ??CrossCallReturnLabel_40
+          CFI (cfiCond26) CFA SP+8
+          CFI Block cfiCond27 Using cfiCommon0
+          CFI (cfiCond27) Function OLED_Init
+          CFI (cfiCond27) Conditional ??CrossCallReturnLabel_39
+          CFI (cfiCond27) CFA SP+8
+          CFI Block cfiCond28 Using cfiCommon0
+          CFI (cfiCond28) Function OLED_Init
+          CFI (cfiCond28) Conditional ??CrossCallReturnLabel_38
+          CFI (cfiCond28) CFA SP+8
+          CFI Block cfiCond29 Using cfiCommon0
+          CFI (cfiCond29) Function OLED_fill_part
+          CFI (cfiCond29) Conditional ??CrossCallReturnLabel_37
+          CFI (cfiCond29) R4L Frame(CFA, -36)
+          CFI (cfiCond29) R4H Frame(CFA, -34)
+          CFI (cfiCond29) R5L Frame(CFA, -32)
+          CFI (cfiCond29) R5H Frame(CFA, -30)
+          CFI (cfiCond29) R6L Frame(CFA, -28)
+          CFI (cfiCond29) R6H Frame(CFA, -26)
+          CFI (cfiCond29) R7L Frame(CFA, -24)
+          CFI (cfiCond29) R7H Frame(CFA, -22)
+          CFI (cfiCond29) R8L Frame(CFA, -20)
+          CFI (cfiCond29) R8H Frame(CFA, -18)
+          CFI (cfiCond29) R9L Frame(CFA, -16)
+          CFI (cfiCond29) R9H Frame(CFA, -14)
+          CFI (cfiCond29) R10L Frame(CFA, -12)
+          CFI (cfiCond29) R10H Frame(CFA, -10)
+          CFI (cfiCond29) R11L Frame(CFA, -8)
+          CFI (cfiCond29) R11H Frame(CFA, -6)
+          CFI (cfiCond29) CFA SP+40
+          CFI Block cfiCond30 Using cfiCommon0
+          CFI (cfiCond30) Function OLED_fill_part
+          CFI (cfiCond30) Conditional ??CrossCallReturnLabel_36
+          CFI (cfiCond30) R4L Frame(CFA, -36)
+          CFI (cfiCond30) R4H Frame(CFA, -34)
+          CFI (cfiCond30) R5L Frame(CFA, -32)
+          CFI (cfiCond30) R5H Frame(CFA, -30)
+          CFI (cfiCond30) R6L Frame(CFA, -28)
+          CFI (cfiCond30) R6H Frame(CFA, -26)
+          CFI (cfiCond30) R7L Frame(CFA, -24)
+          CFI (cfiCond30) R7H Frame(CFA, -22)
+          CFI (cfiCond30) R8L Frame(CFA, -20)
+          CFI (cfiCond30) R8H Frame(CFA, -18)
+          CFI (cfiCond30) R9L Frame(CFA, -16)
+          CFI (cfiCond30) R9H Frame(CFA, -14)
+          CFI (cfiCond30) R10L Frame(CFA, -12)
+          CFI (cfiCond30) R10H Frame(CFA, -10)
+          CFI (cfiCond30) R11L Frame(CFA, -8)
+          CFI (cfiCond30) R11H Frame(CFA, -6)
+          CFI (cfiCond30) CFA SP+40
+          CFI Block cfiCond31 Using cfiCommon0
+          CFI (cfiCond31) Function OLED_fill_ram
+          CFI (cfiCond31) Conditional ??CrossCallReturnLabel_35
+          CFI (cfiCond31) R8L Frame(CFA, -20)
+          CFI (cfiCond31) R8H Frame(CFA, -18)
+          CFI (cfiCond31) R9L Frame(CFA, -16)
+          CFI (cfiCond31) R9H Frame(CFA, -14)
+          CFI (cfiCond31) R10L Frame(CFA, -12)
+          CFI (cfiCond31) R10H Frame(CFA, -10)
+          CFI (cfiCond31) R11L Frame(CFA, -8)
+          CFI (cfiCond31) R11H Frame(CFA, -6)
+          CFI (cfiCond31) CFA SP+24
+          CFI Block cfiCond32 Using cfiCommon0
+          CFI (cfiCond32) Function OLED_fill_part
+          CFI (cfiCond32) Conditional ??CrossCallReturnLabel_34
+          CFI (cfiCond32) R4L Frame(CFA, -36)
+          CFI (cfiCond32) R4H Frame(CFA, -34)
+          CFI (cfiCond32) R5L Frame(CFA, -32)
+          CFI (cfiCond32) R5H Frame(CFA, -30)
+          CFI (cfiCond32) R6L Frame(CFA, -28)
+          CFI (cfiCond32) R6H Frame(CFA, -26)
+          CFI (cfiCond32) R7L Frame(CFA, -24)
+          CFI (cfiCond32) R7H Frame(CFA, -22)
+          CFI (cfiCond32) R8L Frame(CFA, -20)
+          CFI (cfiCond32) R8H Frame(CFA, -18)
+          CFI (cfiCond32) R9L Frame(CFA, -16)
+          CFI (cfiCond32) R9H Frame(CFA, -14)
+          CFI (cfiCond32) R10L Frame(CFA, -12)
+          CFI (cfiCond32) R10H Frame(CFA, -10)
+          CFI (cfiCond32) R11L Frame(CFA, -8)
+          CFI (cfiCond32) R11H Frame(CFA, -6)
+          CFI (cfiCond32) CFA SP+40
+          CFI Block cfiPicker33 Using cfiCommon1
+          CFI (cfiPicker33) NoFunction
+          CFI (cfiPicker33) Picker
+//  133     
+//  134     OLED_write_byte(CMD,0x40);    //ÉèÖÃ¿ªÊ¼ÏÔÊ¾ÐÐ 
+//  135     
+//  136     OLED_write_byte(CMD,0xA1);    //ÉèÖÃ¶ÎÖØÓ³Éä  A0h/A1h
+//  137     
+//  138     OLED_write_byte(CMD,0xC8);    //ÉèÖÃCOMµÄÉ¨Ãè·½Ïò  C0h/C8h
+//  139     
+//  140     OLED_write_byte(CMD,0xDA);    //ÉèÖÃCOM¹Ü½ÅµÄÓ²¼þÅäÖÃ
+//  141     OLED_write_byte(CMD,0x12);
+//  142     
+//  143     OLED_write_byte(CMD,0x81);    //ÉèÖÃ¶Ô±È¶È
+//  144     OLED_write_byte(CMD,0x7F);
+//  145     
+//  146     OLED_write_byte(CMD,0xA4);    //½ûÖ¹ÆÁÄ»ÏÔÊ¾
+//  147     
+//  148     OLED_write_byte(CMD,0xA6);    //ÉèÖÃÕý³£ÏÔÊ¾
+//  149     
+//  150     OLED_write_byte(CMD,0xD5);    //ÉèÖÃOSCÆµÂÊ
+//  151     OLED_write_byte(CMD,0x80);
+//  152     
+//  153     OLED_write_byte(CMD,0x8D);    //Enable charge pupm regulator
+//  154     OLED_write_byte(CMD,0x14);
+//  155     
+//  156     OLED_write_byte(CMD,0xAF);    //¿ªÏÔÊ¾
+        MOV.B   #0x0, R12
+        BRA     #OLED_write_byte
+          CFI EndBlock cfiCond3
+          CFI EndBlock cfiCond4
+          CFI EndBlock cfiCond5
+          CFI EndBlock cfiCond6
+          CFI EndBlock cfiCond7
+          CFI EndBlock cfiCond8
+          CFI EndBlock cfiCond9
+          CFI EndBlock cfiCond10
+          CFI EndBlock cfiCond11
+          CFI EndBlock cfiCond12
+          CFI EndBlock cfiCond13
+          CFI EndBlock cfiCond14
+          CFI EndBlock cfiCond15
+          CFI EndBlock cfiCond16
+          CFI EndBlock cfiCond17
+          CFI EndBlock cfiCond18
+          CFI EndBlock cfiCond19
+          CFI EndBlock cfiCond20
+          CFI EndBlock cfiCond21
+          CFI EndBlock cfiCond22
+          CFI EndBlock cfiCond23
+          CFI EndBlock cfiCond24
+          CFI EndBlock cfiCond25
+          CFI EndBlock cfiCond26
+          CFI EndBlock cfiCond27
+          CFI EndBlock cfiCond28
+          CFI EndBlock cfiCond29
+          CFI EndBlock cfiCond30
+          CFI EndBlock cfiCond31
+          CFI EndBlock cfiCond32
+          CFI EndBlock cfiPicker33
+//  157     
+//  158     OLED_fill_ram(0x00);          //ÇåÆÁ  
+//  159 }
+//  160 
+//  161 /********************************************************************
+//  162 º¯Êý¹¦ÄÜ:ÏòOLEDÐ´ÈëÒ»¸ö6*8×Ö·û
+//  163 º¯ÊýÃû³Æ:OLED_write_char_6x8
+//  164 ÐÎÊ½²ÎÊý:ascii:±ê×¼ASCII×Ö·û
+//  165 ·µ»ØÖµ:  ¿Õ
+//  166 ÐÞ¸ÄÈË:  CTGU-GB2013
+//  167 ÐÞ¸ÄÊ±¼ä:2014/5/12
+//  168 *********************************************************************/
+//  169 void OLED_write_char_6x8(uint8_t y,uint8_t x,char ascii)
+//  170 {
+//  171     uint8_t temp,i;
+//  172     if(ascii<' '||ascii>'~')return;
+//  173     OLED_set_pos(y,x);
+//  174     temp = (uint8_t)(ascii - ' ');
+//  175     for(i=0;i<6;i++)
+//  176     {
+//  177         OLED_write_byte(DATA,ASCII_6X8[temp][i]);
+//  178     }
+//  179 }
+//  180 /********************************************************************
+//  181 º¯Êý¹¦ÄÜ:ÏòOLEDÐ´ÈëÒ»¸ö8*16×Ö·û
+//  182 º¯ÊýÃû³Æ:OLED_write_char_8x16
+//  183 ÐÎÊ½²ÎÊý:ascii:±ê×¼ASCII×Ö·û
+//  184 ·µ»ØÖµ:  ¿Õ
+//  185 ÐÞ¸ÄÈË:  CTGU-GB2013
+//  186 ÐÞ¸ÄÊ±¼ä:2014/5/12
+//  187 *********************************************************************/
+//  188 void OLED_write_Nchar_6x8(uint8_t y,uint8_t x,char *str,uint8_t num)
+//  189 {
+//  190     while(num--)
+//  191     {
+//  192         OLED_write_char_6x8(y,x,*str++);
+//  193         x+=6;
+//  194         if(x>122)
+//  195         {
+//  196           x=0;
+//  197           y++;
+//  198           if(y>7)y=0;
+//  199         }
+//  200     }
+//  201 }
+//  202 /********************************************************************
+//  203 º¯Êý¹¦ÄÜ:ÏòOLEDÐ´ÈëÒ»6*8×Ö·û´®
+//  204 º¯ÊýÃû³Æ:OLED_display_string_6x8
+//  205 ÐÎÊ½²ÎÊý:y:ÐÐ 0-7 x:ÁÐ 0-127  
+//  206          *str:±ê×¼ASCII×Ö·û´® Ã¿ÁÐ×î¶à21¸ö×Ö·û,¶àÓà×Ö·û»áÑ­»·µ½µ±Ç°ÐÐµÄ¿ªÊ¼Î»ÖÃ,¸²¸ÇÖ®Ç°µÄÊä³ö
+//  207 ·µ»ØÖµ:  ¿Õ
+//  208 ÐÞ¸ÄÈË:  CTGU-GB2013
+//  209 ÐÞ¸ÄÊ±¼ä:2014/5/12
+//  210 *********************************************************************/
+//  211 void OLED_display_string_6x8(uint8_t y,uint8_t x,char * str)
+//  212 {
+//  213     while(*str != '\0')
+//  214     {
+//  215         OLED_write_char_6x8(y,x,*str++);
+//  216         x+=6;
+//  217         if(x>122)
+//  218         {
+//  219           x=0;
+//  220           y++;
+//  221           if(y>7)y=0;
+//  222         }
+//  223     }
+//  224 }
+//  225 void OLED_write_Line_6x8(uint8_t y,uint8_t x,char *str)
+//  226 {
+//  227     while(*str != '\0')
+//  228     {
+//  229         OLED_write_char_6x8(y,x,*str++);
+//  230         x+=6;
+//  231         if(x>122)
+//  232         {
+//  233           x=0;
+//  234           y++;
+//  235           if(y>7)y=0;
+//  236         }
+//  237     }
+//  238     //¶Ô¸ÄÐÐÊ£ÓàÏÔÊ¾ÇøÓòÇåÁã
+//  239     while(x < OLED_W)
+//  240     {
+//  241       OLED_write_char_6x8(y,x,' ');
+//  242       x+=6;
+//  243     }
+//  244 }
+//  245 /********************************************************************
+//  246 º¯Êý¹¦ÄÜ:ÏòOLEDÐ´ÈëÒ»¸ö8*16×Ö·û
+//  247 º¯ÊýÃû³Æ:OLED_write_char_8x16
+//  248 ÐÎÊ½²ÎÊý:ascii:±ê×¼ASCII×Ö·û
+//  249 ·µ»ØÖµ:  ¿Õ
+//  250 ÐÞ¸ÄÈË:  CTGU-GB2013
+//  251 ÐÞ¸ÄÊ±¼ä:2014/5/12
+//  252 *********************************************************************/
+//  253 void OLED_write_char_8x16(uint8_t y,uint8_t x,char ascii)
+//  254 {
+//  255     uint8_t temp,i;
+//  256     if(ascii<' '||ascii>'~')return;
+//  257     temp = (uint8_t)(ascii - ' ');
+//  258     OLED_set_pos(y,x);                     //ÏÈÐ´ÉÏ°ë²¿·Ö 
+//  259     for(i=0;i<8;i++)
+//  260     {
+//  261       OLED_write_byte(DATA,ASCII_8X16[temp][i]);
+//  262     }
+//  263     OLED_set_pos(y+1,x);                   //ÔÙÐ´ÏÂ°ë²¿·Ö 
+//  264     for(i=0;i<8;i++)
+//  265     {
+//  266        OLED_write_byte(DATA,ASCII_8X16[temp][8+i]);
+//  267     }
+//  268 }
+//  269 /********************************************************************
+//  270 º¯Êý¹¦ÄÜ:ÏòOLEDÐ´ÈëÒ»¸ö8*16×Ö·û
+//  271 º¯ÊýÃû³Æ:OLED_write_char_8x16
+//  272 ÐÎÊ½²ÎÊý:ascii:±ê×¼ASCII×Ö·û
+//  273 ·µ»ØÖµ:  ¿Õ
+//  274 ÐÞ¸ÄÈË:  CTGU-GB2013
+//  275 ÐÞ¸ÄÊ±¼ä:2014/5/12
+//  276 *********************************************************************/
+//  277 void OLED_write_Nchar_8x16(uint8_t y,uint8_t x,char *str,uint8_t num)
+//  278 {
+//  279     while(num--)
+//  280     {
+//  281         OLED_write_char_8x16(y,x,*str++);
+//  282         x+=8;
+//  283         if(x>120)
+//  284         {
+//  285           x=0;
+//  286           y=y+2;
+//  287           if(y>6)y=0;
+//  288         }
+//  289     }
+//  290 }
+//  291 /********************************************************************
+//  292 º¯Êý¹¦ÄÜ:ÏòOLEDÐ´ÈëÒ»8*16×Ö·û´®
+//  293 º¯ÊýÃû³Æ:OLED_display_string_8x16
+//  294 ÐÎÊ½²ÎÊý:y:ÐÐ 0-6 ÏàÁÚÁ½ÐÐ²îÖµÎª1 ±ÈÈçµÚÒ»ÐÐÊÇ0 ÔòµÚ¶þÐÐÎª2 ·ñÔò»á¸²¸ÇµÚÒ»ÐÐÏÂ°ë²¿·Ö
+//  295          x:ÁÐ 0-127  
+//  296          *str:±ê×¼ASCII×Ö·û´®  Ã¿ÁÐ×î¶à16¸ö×Ö·û ¶àÓà×Ö·û»áÑ­»·»Øµ½µ±Ç°ÐÐµÄ¿ªÊ¼Î»ÖÃ,¸²¸ÇÖ®Ç°µÄÊä³ö
+//  297 ·µ»ØÖµ:  ¿Õ
+//  298 ÐÞ¸ÄÈË:  CTGU-GB2013
+//  299 ÐÞ¸ÄÊ±¼ä:2014/5/13
+//  300 *********************************************************************/
+
+        RSEG CODE:CODE:NOROOT(1)
+//  301 void OLED_display_string_8x16(uint8_t y,uint8_t x,char * str)
+OLED_display_string_8x16:
+          CFI Block cfiBlock34 Using cfiCommon0
+          CFI Function OLED_display_string_8x16
+//  302 {
+        FUNCALL OLED_display_string_8x16, OLED_write_char_8x16
+        LOCFRAME CSTACK, 20, STACK
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        CALLA   #?Subroutine4
+//  303     while(*str != '\0')
+//  304     {
+//  305         OLED_write_char_8x16(y,x,*str++);
+//  306         x+=8;
+//  307         if(x>120)
+//  308         {
+//  309           x=0;
+//  310           y=y+2;
+//  311           if(y>6)y=0;
+//  312         }
+//  313     }
+//  314 }    
+??CrossCallReturnLabel_4:
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock34
+
+        RSEG CODE:CODE:NOROOT(1)
+OLED_display_float_8x16:
+          CFI Block cfiBlock35 Using cfiCommon0
+          CFI Function OLED_display_float_8x16
+        FUNCALL OLED_display_float_8x16, _CmpLt32f
+        LOCFRAME CSTACK, 80, STACK
+        FUNCALL OLED_display_float_8x16, _Add32f
+        LOCFRAME CSTACK, 80, STACK
+        FUNCALL OLED_display_float_8x16, _Mul32f
+        LOCFRAME CSTACK, 80, STACK
+        FUNCALL OLED_display_float_8x16, _CmpGe32f
+        LOCFRAME CSTACK, 80, STACK
+        FUNCALL OLED_display_float_8x16, _Div32f
+        LOCFRAME CSTACK, 80, STACK
+        FUNCALL OLED_display_float_8x16, _Add32f
+        LOCFRAME CSTACK, 80, STACK
+        FUNCALL OLED_display_float_8x16, _Cast32fto32s
+        LOCFRAME CSTACK, 80, STACK
+        FUNCALL OLED_display_float_8x16, _Cast32sto32f
+        LOCFRAME CSTACK, 80, STACK
+        FUNCALL OLED_display_float_8x16, _Div32f
+        LOCFRAME CSTACK, 80, STACK
+        FUNCALL OLED_display_float_8x16, _Cast32fto32u
+        LOCFRAME CSTACK, 80, STACK
+        FUNCALL OLED_display_float_8x16, _Cast32uto32f
+        LOCFRAME CSTACK, 80, STACK
+        FUNCALL OLED_display_float_8x16, _Mul32f
+        LOCFRAME CSTACK, 80, STACK
+        FUNCALL OLED_display_float_8x16, _Sub32f
+        LOCFRAME CSTACK, 80, STACK
+        FUNCALL OLED_display_float_8x16, OLED_display_string_8x16
+        LOCFRAME CSTACK, 80, STACK
+        FUNCALL OLED_display_float_8x16, _Mul32f
+        LOCFRAME CSTACK, 80, STACK
+        FUNCALL OLED_display_float_8x16, _Cast32fto32u
+        LOCFRAME CSTACK, 80, STACK
+        FUNCALL OLED_display_float_8x16, _Cast32uto32f
+        LOCFRAME CSTACK, 80, STACK
+        FUNCALL OLED_display_float_8x16, _Sub32f
+        LOCFRAME CSTACK, 80, STACK
+        FUNCALL OLED_display_float_8x16, OLED_display_string_8x16
+        LOCFRAME CSTACK, 80, STACK
+        PUSHM.A #0x8, R11
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+36
+        PUSH.B  R12
+          CFI CFA SP+38
+        PUSH.B  R13
+          CFI CFA SP+40
+        SUB.W   #0x28, SP
+          CFI CFA SP+80
+        MOV.W   R14, R10
+        MOV.W   R15, R11
+        MOV.W   SP, R12
+        ADD.W   #0x10, R12
+        MOVA    #`?<Constant {(4.90000009E-1F), (5.00000007E-2F)_1`, R14
+        CALLA   #?Subroutine11
+??CrossCallReturnLabel_10:
+        MOV.B   0x50(SP), R4
+        CALLA   #?Subroutine20
+??CrossCallReturnLabel_26:
+        ADD.W   SP, R15
+        MOV.W   0x10(R15), R14
+        MOV.W   0x12(R15), R15
+        CALLA   #?Subroutine18
+??CrossCallReturnLabel_22:
+        CALLA   #?Subroutine2
+??CrossCallReturnLabel_0:
+        MOV.B   0x28(SP), R13
+        MOV.B   0x2a(SP), R12
+        CALLA   #OLED_display_string_8x16
+        ADD.W   #0x2c, SP
+          CFI CFA SP+36
+        POPM.A  #0x8, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R4H SameValue
+          CFI R5H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R4L SameValue
+          CFI R5L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock35
+
+        RSEG CODE:CODE:NOROOT(1)
+OLED_display_string_6x8:
+          CFI Block cfiBlock36 Using cfiCommon0
+          CFI Function OLED_display_string_6x8
+        FUNCALL OLED_display_string_6x8, OLED_write_char_6x8
+        LOCFRAME CSTACK, 20, STACK
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        CALLA   #?Subroutine5
+??CrossCallReturnLabel_6:
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock36
+
+        RSEG CODE:CODE:NOROOT(1)
+OLED_display_float_6x8:
+          CFI Block cfiBlock37 Using cfiCommon0
+          CFI Function OLED_display_float_6x8
+        FUNCALL OLED_display_float_6x8, _CmpLt32f
+        LOCFRAME CSTACK, 84, STACK
+        FUNCALL OLED_display_float_6x8, _Add32f
+        LOCFRAME CSTACK, 84, STACK
+        FUNCALL OLED_display_float_6x8, _Mul32f
+        LOCFRAME CSTACK, 84, STACK
+        FUNCALL OLED_display_float_6x8, _CmpGe32f
+        LOCFRAME CSTACK, 84, STACK
+        FUNCALL OLED_display_float_6x8, _Div32f
+        LOCFRAME CSTACK, 84, STACK
+        FUNCALL OLED_display_float_6x8, _Add32f
+        LOCFRAME CSTACK, 84, STACK
+        FUNCALL OLED_display_float_6x8, _Cast32fto32s
+        LOCFRAME CSTACK, 84, STACK
+        FUNCALL OLED_display_float_6x8, _Cast32sto32f
+        LOCFRAME CSTACK, 84, STACK
+        FUNCALL OLED_display_float_6x8, _Div32f
+        LOCFRAME CSTACK, 84, STACK
+        FUNCALL OLED_display_float_6x8, _Cast32fto32u
+        LOCFRAME CSTACK, 84, STACK
+        FUNCALL OLED_display_float_6x8, _Cast32uto32f
+        LOCFRAME CSTACK, 84, STACK
+        FUNCALL OLED_display_float_6x8, _Mul32f
+        LOCFRAME CSTACK, 84, STACK
+        FUNCALL OLED_display_float_6x8, _Sub32f
+        LOCFRAME CSTACK, 84, STACK
+        FUNCALL OLED_display_float_6x8, OLED_display_string_6x8
+        LOCFRAME CSTACK, 84, STACK
+        FUNCALL OLED_display_float_6x8, _Mul32f
+        LOCFRAME CSTACK, 84, STACK
+        FUNCALL OLED_display_float_6x8, _Cast32fto32u
+        LOCFRAME CSTACK, 84, STACK
+        FUNCALL OLED_display_float_6x8, _Cast32uto32f
+        LOCFRAME CSTACK, 84, STACK
+        FUNCALL OLED_display_float_6x8, _Sub32f
+        LOCFRAME CSTACK, 84, STACK
+        FUNCALL OLED_display_float_6x8, OLED_display_string_6x8
+        LOCFRAME CSTACK, 84, STACK
+        PUSHM.A #0x8, R11
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+36
+        PUSH.B  R12
+          CFI CFA SP+38
+        PUSH.B  R13
+          CFI CFA SP+40
+        SUB.W   #0x2c, SP
+          CFI CFA SP+84
+        MOV.W   R14, R10
+        MOV.W   R15, R11
+        MOV.W   SP, R12
+        ADD.W   #0x14, R12
+        MOVA    #`?<Constant {(4.90000009E-1F), (5.00000007E-2F)`, R14
+        CALLA   #?Subroutine11
+??CrossCallReturnLabel_11:
+        MOV.B   0x54(SP), R4
+        CALLA   #?Subroutine20
+??CrossCallReturnLabel_27:
+        ADD.W   SP, R15
+        MOV.W   0x14(R15), R14
+        MOV.W   0x16(R15), R15
+        CALLA   #?Subroutine18
+??CrossCallReturnLabel_23:
+        CALLA   #?Subroutine2
+??CrossCallReturnLabel_1:
+        MOV.B   0x2c(SP), R13
+        MOV.B   0x2e(SP), R12
+        CALLA   #OLED_display_string_6x8
+        ADD.W   #0x30, SP
+          CFI CFA SP+36
+        POPM.A  #0x8, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R4H SameValue
+          CFI R5H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R4L SameValue
+          CFI R5L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock37
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine20:
+          CFI Block cfiCond38 Using cfiCommon0
+          CFI Function OLED_display_float_8x16
+          CFI Conditional ??CrossCallReturnLabel_26
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+84
+          CFI Block cfiCond39 Using cfiCommon0
+          CFI (cfiCond39) Function OLED_display_float_6x8
+          CFI (cfiCond39) Conditional ??CrossCallReturnLabel_27
+          CFI (cfiCond39) R4L Frame(CFA, -36)
+          CFI (cfiCond39) R4H Frame(CFA, -34)
+          CFI (cfiCond39) R5L Frame(CFA, -32)
+          CFI (cfiCond39) R5H Frame(CFA, -30)
+          CFI (cfiCond39) R6L Frame(CFA, -28)
+          CFI (cfiCond39) R6H Frame(CFA, -26)
+          CFI (cfiCond39) R7L Frame(CFA, -24)
+          CFI (cfiCond39) R7H Frame(CFA, -22)
+          CFI (cfiCond39) R8L Frame(CFA, -20)
+          CFI (cfiCond39) R8H Frame(CFA, -18)
+          CFI (cfiCond39) R9L Frame(CFA, -16)
+          CFI (cfiCond39) R9H Frame(CFA, -14)
+          CFI (cfiCond39) R10L Frame(CFA, -12)
+          CFI (cfiCond39) R10H Frame(CFA, -10)
+          CFI (cfiCond39) R11L Frame(CFA, -8)
+          CFI (cfiCond39) R11H Frame(CFA, -6)
+          CFI (cfiCond39) CFA SP+88
+          CFI Block cfiPicker40 Using cfiCommon1
+          CFI (cfiPicker40) NoFunction
+          CFI (cfiPicker40) Picker
+        CMP.B   #0x6, R4
+        JNC     ??OLED_display_float_8x16_8
+        MOV.B   #0x5, R4
+??OLED_display_float_8x16_8:
+        MOV.B   R4, R15
+        RLAM.W  #0x2, R15
+        RETA
+          CFI EndBlock cfiCond38
+          CFI EndBlock cfiCond39
+          CFI EndBlock cfiPicker40
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine18:
+          CFI Block cfiCond41 Using cfiCommon0
+          CFI Function OLED_display_float_8x16
+          CFI Conditional ??CrossCallReturnLabel_22
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+84
+          CFI Block cfiCond42 Using cfiCommon0
+          CFI (cfiCond42) Function OLED_display_float_6x8
+          CFI (cfiCond42) Conditional ??CrossCallReturnLabel_23
+          CFI (cfiCond42) R4L Frame(CFA, -36)
+          CFI (cfiCond42) R4H Frame(CFA, -34)
+          CFI (cfiCond42) R5L Frame(CFA, -32)
+          CFI (cfiCond42) R5H Frame(CFA, -30)
+          CFI (cfiCond42) R6L Frame(CFA, -28)
+          CFI (cfiCond42) R6H Frame(CFA, -26)
+          CFI (cfiCond42) R7L Frame(CFA, -24)
+          CFI (cfiCond42) R7H Frame(CFA, -22)
+          CFI (cfiCond42) R8L Frame(CFA, -20)
+          CFI (cfiCond42) R8H Frame(CFA, -18)
+          CFI (cfiCond42) R9L Frame(CFA, -16)
+          CFI (cfiCond42) R9H Frame(CFA, -14)
+          CFI (cfiCond42) R10L Frame(CFA, -12)
+          CFI (cfiCond42) R10H Frame(CFA, -10)
+          CFI (cfiCond42) R11L Frame(CFA, -8)
+          CFI (cfiCond42) R11H Frame(CFA, -6)
+          CFI (cfiCond42) CFA SP+88
+          CFI Block cfiPicker43 Using cfiCommon1
+          CFI (cfiPicker43) NoFunction
+          CFI (cfiPicker43) Picker
+        MOV.W   R10, R12
+        MOV.W   R11, R13
+        CALLA   #_Add32f
+        MOV.W   R12, R10
+        MOV.W   R13, R11
+        MOV.B   #0x0, R9
+        MOV.W   #0x0, R6
+        MOV.W   #0x3f80, R7
+        JMP     ??OLED_display_float_8x16_7
+??OLED_display_float_8x16_0:
+        MOV.W   #0x0, R14
+        MOV.W   #0x4120, R15
+        MOV.W   R6, R12
+        MOV.W   R7, R13
+        CALLA   #_Mul32f
+        MOV.W   R12, R6
+        MOV.W   R13, R7
+        ADD.B   #0x1, R9
+??OLED_display_float_8x16_7:
+        MOV.W   R6, R14
+        MOV.W   R7, R15
+        MOV.W   R10, R12
+        MOV.W   R11, R13
+        CALLA   #_CmpGe32f
+        CMP.W   #0x0, R12
+        JNE     ??OLED_display_float_8x16_0
+        RETA
+          CFI EndBlock cfiCond41
+          CFI EndBlock cfiCond42
+          CFI EndBlock cfiPicker43
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine11:
+          CFI Block cfiCond44 Using cfiCommon0
+          CFI Function OLED_display_float_8x16
+          CFI Conditional ??CrossCallReturnLabel_10
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+84
+          CFI Block cfiCond45 Using cfiCommon0
+          CFI (cfiCond45) Function OLED_display_float_6x8
+          CFI (cfiCond45) Conditional ??CrossCallReturnLabel_11
+          CFI (cfiCond45) R4L Frame(CFA, -36)
+          CFI (cfiCond45) R4H Frame(CFA, -34)
+          CFI (cfiCond45) R5L Frame(CFA, -32)
+          CFI (cfiCond45) R5H Frame(CFA, -30)
+          CFI (cfiCond45) R6L Frame(CFA, -28)
+          CFI (cfiCond45) R6H Frame(CFA, -26)
+          CFI (cfiCond45) R7L Frame(CFA, -24)
+          CFI (cfiCond45) R7H Frame(CFA, -22)
+          CFI (cfiCond45) R8L Frame(CFA, -20)
+          CFI (cfiCond45) R8H Frame(CFA, -18)
+          CFI (cfiCond45) R9L Frame(CFA, -16)
+          CFI (cfiCond45) R9H Frame(CFA, -14)
+          CFI (cfiCond45) R10L Frame(CFA, -12)
+          CFI (cfiCond45) R10H Frame(CFA, -10)
+          CFI (cfiCond45) R11L Frame(CFA, -8)
+          CFI (cfiCond45) R11H Frame(CFA, -6)
+          CFI (cfiCond45) CFA SP+88
+          CFI Block cfiPicker46 Using cfiCommon1
+          CFI (cfiPicker46) NoFunction
+          CFI (cfiPicker46) Picker
+        MOVA    #0xc, R13
+        CALLA   #?CopyMemoryWords20
+        MOV.W   SP, R5
+        ADD.W   #0x4, R5
+        MOVA    R5, R8
+        MOV.W   #0x0, R14
+        MOV.W   #0x0, R15
+        MOV.W   R10, R12
+        MOV.W   R11, R13
+        CALLA   #_CmpLt32f
+        CMP.W   #0x0, R12
+        JEQ     ??OLED_display_float_8x16_6
+        XOR.W   #0x8000, R11
+        MOV.B   #0x2d, 0(R5)
+        ADDA    #0x1, R8
+??OLED_display_float_8x16_6:
+        RETA
+          CFI EndBlock cfiCond44
+          CFI EndBlock cfiCond45
+          CFI EndBlock cfiPicker46
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine2:
+          CFI Block cfiCond47 Using cfiCommon0
+          CFI Function OLED_display_float_8x16
+          CFI Conditional ??CrossCallReturnLabel_0
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+84
+          CFI Block cfiCond48 Using cfiCommon0
+          CFI (cfiCond48) Function OLED_display_float_6x8
+          CFI (cfiCond48) Conditional ??CrossCallReturnLabel_1
+          CFI (cfiCond48) R4L Frame(CFA, -36)
+          CFI (cfiCond48) R4H Frame(CFA, -34)
+          CFI (cfiCond48) R5L Frame(CFA, -32)
+          CFI (cfiCond48) R5H Frame(CFA, -30)
+          CFI (cfiCond48) R6L Frame(CFA, -28)
+          CFI (cfiCond48) R6H Frame(CFA, -26)
+          CFI (cfiCond48) R7L Frame(CFA, -24)
+          CFI (cfiCond48) R7H Frame(CFA, -22)
+          CFI (cfiCond48) R8L Frame(CFA, -20)
+          CFI (cfiCond48) R8H Frame(CFA, -18)
+          CFI (cfiCond48) R9L Frame(CFA, -16)
+          CFI (cfiCond48) R9H Frame(CFA, -14)
+          CFI (cfiCond48) R10L Frame(CFA, -12)
+          CFI (cfiCond48) R10H Frame(CFA, -10)
+          CFI (cfiCond48) R11L Frame(CFA, -8)
+          CFI (cfiCond48) R11H Frame(CFA, -6)
+          CFI (cfiCond48) CFA SP+88
+          CFI Block cfiPicker49 Using cfiCommon1
+          CFI (cfiPicker49) NoFunction
+          CFI (cfiPicker49) Picker
+        CMP.B   #0x0, R9
+        JNE     ??OLED_display_float_8x16_1
+        MOV.B   #0x30, 0(R8)
+        ADDA    #0x1, R8
+        JMP     ??OLED_display_float_8x16_5
+??OLED_display_float_8x16_1:
+        ADD.B   #0xff, R9
+        MOV.W   #0x0, R14
+        MOV.W   #0x4120, R15
+        MOV.W   R6, R12
+        MOV.W   R7, R13
+        CALLA   #_Div32f
+        MOV.W   #0x0, R14
+        MOV.W   #0x3f00, R15
+        CALLA   #_Add32f
+        CALLA   #_Cast32fto32s
+        CALLA   #_Cast32sto32f
+        MOV.W   R12, R6
+        MOV.W   R13, R7
+        MOV.W   R12, R14
+        MOV.W   R13, R15
+        MOV.W   R10, R12
+        MOV.W   R11, R13
+        CALLA   #_Div32f
+        CALLA   #?Subroutine22
+??CrossCallReturnLabel_31:
+        MOV.W   R6, R14
+        MOV.W   R7, R15
+        CALLA   #_Mul32f
+        CALLA   #?Subroutine23
+??CrossCallReturnLabel_32:
+        CMP.B   #0x0, R9
+        JNE     ??OLED_display_float_8x16_1
+??OLED_display_float_8x16_5:
+        CMP.B   #0x0, R4
+        JEQ     ??OLED_display_float_8x16_4
+        MOV.B   #0x2e, 0(R8)
+        ADDA    #0x1, R8
+??OLED_display_float_8x16_2:
+        ADD.B   #0xff, R4
+        MOV.W   #0x0, R14
+        MOV.W   #0x4120, R15
+        MOV.W   R10, R12
+        MOV.W   R11, R13
+        CALLA   #_Mul32f
+        MOV.W   R12, R10
+        MOV.W   R13, R11
+        CALLA   #?Subroutine22
+??CrossCallReturnLabel_30:
+        CALLA   #?Subroutine23
+??CrossCallReturnLabel_33:
+        CMP.B   #0x0, R4
+        JNE     ??OLED_display_float_8x16_2
+??OLED_display_float_8x16_4:
+        MOV.B   #0x0, 0(R8)
+        MOVA    R5, R14
+        RETA
+          CFI EndBlock cfiCond47
+          CFI EndBlock cfiCond48
+          CFI EndBlock cfiPicker49
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine23:
+          CFI Block cfiCond50 Using cfiCommon0
+          CFI Function OLED_display_float_8x16
+          CFI Conditional ??CrossCallReturnLabel_32, ??CrossCallReturnLabel_0
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+88
+          CFI Block cfiCond51 Using cfiCommon0
+          CFI (cfiCond51) Function OLED_display_float_6x8
+          CFI (cfiCond51) Conditional ??CrossCallReturnLabel_32, ??CrossCallReturnLabel_1
+          CFI (cfiCond51) R4L Frame(CFA, -36)
+          CFI (cfiCond51) R4H Frame(CFA, -34)
+          CFI (cfiCond51) R5L Frame(CFA, -32)
+          CFI (cfiCond51) R5H Frame(CFA, -30)
+          CFI (cfiCond51) R6L Frame(CFA, -28)
+          CFI (cfiCond51) R6H Frame(CFA, -26)
+          CFI (cfiCond51) R7L Frame(CFA, -24)
+          CFI (cfiCond51) R7H Frame(CFA, -22)
+          CFI (cfiCond51) R8L Frame(CFA, -20)
+          CFI (cfiCond51) R8H Frame(CFA, -18)
+          CFI (cfiCond51) R9L Frame(CFA, -16)
+          CFI (cfiCond51) R9H Frame(CFA, -14)
+          CFI (cfiCond51) R10L Frame(CFA, -12)
+          CFI (cfiCond51) R10H Frame(CFA, -10)
+          CFI (cfiCond51) R11L Frame(CFA, -8)
+          CFI (cfiCond51) R11H Frame(CFA, -6)
+          CFI (cfiCond51) CFA SP+92
+          CFI Block cfiCond52 Using cfiCommon0
+          CFI (cfiCond52) Function OLED_display_float_8x16
+          CFI (cfiCond52) Conditional ??CrossCallReturnLabel_33, ??CrossCallReturnLabel_0
+          CFI (cfiCond52) R4L Frame(CFA, -36)
+          CFI (cfiCond52) R4H Frame(CFA, -34)
+          CFI (cfiCond52) R5L Frame(CFA, -32)
+          CFI (cfiCond52) R5H Frame(CFA, -30)
+          CFI (cfiCond52) R6L Frame(CFA, -28)
+          CFI (cfiCond52) R6H Frame(CFA, -26)
+          CFI (cfiCond52) R7L Frame(CFA, -24)
+          CFI (cfiCond52) R7H Frame(CFA, -22)
+          CFI (cfiCond52) R8L Frame(CFA, -20)
+          CFI (cfiCond52) R8H Frame(CFA, -18)
+          CFI (cfiCond52) R9L Frame(CFA, -16)
+          CFI (cfiCond52) R9H Frame(CFA, -14)
+          CFI (cfiCond52) R10L Frame(CFA, -12)
+          CFI (cfiCond52) R10H Frame(CFA, -10)
+          CFI (cfiCond52) R11L Frame(CFA, -8)
+          CFI (cfiCond52) R11H Frame(CFA, -6)
+          CFI (cfiCond52) CFA SP+88
+          CFI Block cfiCond53 Using cfiCommon0
+          CFI (cfiCond53) Function OLED_display_float_6x8
+          CFI (cfiCond53) Conditional ??CrossCallReturnLabel_33, ??CrossCallReturnLabel_1
+          CFI (cfiCond53) R4L Frame(CFA, -36)
+          CFI (cfiCond53) R4H Frame(CFA, -34)
+          CFI (cfiCond53) R5L Frame(CFA, -32)
+          CFI (cfiCond53) R5H Frame(CFA, -30)
+          CFI (cfiCond53) R6L Frame(CFA, -28)
+          CFI (cfiCond53) R6H Frame(CFA, -26)
+          CFI (cfiCond53) R7L Frame(CFA, -24)
+          CFI (cfiCond53) R7H Frame(CFA, -22)
+          CFI (cfiCond53) R8L Frame(CFA, -20)
+          CFI (cfiCond53) R8H Frame(CFA, -18)
+          CFI (cfiCond53) R9L Frame(CFA, -16)
+          CFI (cfiCond53) R9H Frame(CFA, -14)
+          CFI (cfiCond53) R10L Frame(CFA, -12)
+          CFI (cfiCond53) R10H Frame(CFA, -10)
+          CFI (cfiCond53) R11L Frame(CFA, -8)
+          CFI (cfiCond53) R11H Frame(CFA, -6)
+          CFI (cfiCond53) CFA SP+92
+          CFI Block cfiPicker54 Using cfiCommon1
+          CFI (cfiPicker54) NoFunction
+          CFI (cfiPicker54) Picker
+        MOV.W   R12, R14
+        MOV.W   R13, R15
+        MOV.W   R10, R12
+        MOV.W   R11, R13
+        CALLA   #_Sub32f
+        MOV.W   R12, R10
+        MOV.W   R13, R11
+        RETA
+          CFI EndBlock cfiCond50
+          CFI EndBlock cfiCond51
+          CFI EndBlock cfiCond52
+          CFI EndBlock cfiCond53
+          CFI EndBlock cfiPicker54
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine22:
+          CFI Block cfiCond55 Using cfiCommon0
+          CFI Function OLED_display_float_8x16
+          CFI Conditional ??CrossCallReturnLabel_31, ??CrossCallReturnLabel_0
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+88
+          CFI Block cfiCond56 Using cfiCommon0
+          CFI (cfiCond56) Function OLED_display_float_6x8
+          CFI (cfiCond56) Conditional ??CrossCallReturnLabel_31, ??CrossCallReturnLabel_1
+          CFI (cfiCond56) R4L Frame(CFA, -36)
+          CFI (cfiCond56) R4H Frame(CFA, -34)
+          CFI (cfiCond56) R5L Frame(CFA, -32)
+          CFI (cfiCond56) R5H Frame(CFA, -30)
+          CFI (cfiCond56) R6L Frame(CFA, -28)
+          CFI (cfiCond56) R6H Frame(CFA, -26)
+          CFI (cfiCond56) R7L Frame(CFA, -24)
+          CFI (cfiCond56) R7H Frame(CFA, -22)
+          CFI (cfiCond56) R8L Frame(CFA, -20)
+          CFI (cfiCond56) R8H Frame(CFA, -18)
+          CFI (cfiCond56) R9L Frame(CFA, -16)
+          CFI (cfiCond56) R9H Frame(CFA, -14)
+          CFI (cfiCond56) R10L Frame(CFA, -12)
+          CFI (cfiCond56) R10H Frame(CFA, -10)
+          CFI (cfiCond56) R11L Frame(CFA, -8)
+          CFI (cfiCond56) R11H Frame(CFA, -6)
+          CFI (cfiCond56) CFA SP+92
+          CFI Block cfiCond57 Using cfiCommon0
+          CFI (cfiCond57) Function OLED_display_float_8x16
+          CFI (cfiCond57) Conditional ??CrossCallReturnLabel_30, ??CrossCallReturnLabel_0
+          CFI (cfiCond57) R4L Frame(CFA, -36)
+          CFI (cfiCond57) R4H Frame(CFA, -34)
+          CFI (cfiCond57) R5L Frame(CFA, -32)
+          CFI (cfiCond57) R5H Frame(CFA, -30)
+          CFI (cfiCond57) R6L Frame(CFA, -28)
+          CFI (cfiCond57) R6H Frame(CFA, -26)
+          CFI (cfiCond57) R7L Frame(CFA, -24)
+          CFI (cfiCond57) R7H Frame(CFA, -22)
+          CFI (cfiCond57) R8L Frame(CFA, -20)
+          CFI (cfiCond57) R8H Frame(CFA, -18)
+          CFI (cfiCond57) R9L Frame(CFA, -16)
+          CFI (cfiCond57) R9H Frame(CFA, -14)
+          CFI (cfiCond57) R10L Frame(CFA, -12)
+          CFI (cfiCond57) R10H Frame(CFA, -10)
+          CFI (cfiCond57) R11L Frame(CFA, -8)
+          CFI (cfiCond57) R11H Frame(CFA, -6)
+          CFI (cfiCond57) CFA SP+88
+          CFI Block cfiCond58 Using cfiCommon0
+          CFI (cfiCond58) Function OLED_display_float_6x8
+          CFI (cfiCond58) Conditional ??CrossCallReturnLabel_30, ??CrossCallReturnLabel_1
+          CFI (cfiCond58) R4L Frame(CFA, -36)
+          CFI (cfiCond58) R4H Frame(CFA, -34)
+          CFI (cfiCond58) R5L Frame(CFA, -32)
+          CFI (cfiCond58) R5H Frame(CFA, -30)
+          CFI (cfiCond58) R6L Frame(CFA, -28)
+          CFI (cfiCond58) R6H Frame(CFA, -26)
+          CFI (cfiCond58) R7L Frame(CFA, -24)
+          CFI (cfiCond58) R7H Frame(CFA, -22)
+          CFI (cfiCond58) R8L Frame(CFA, -20)
+          CFI (cfiCond58) R8H Frame(CFA, -18)
+          CFI (cfiCond58) R9L Frame(CFA, -16)
+          CFI (cfiCond58) R9H Frame(CFA, -14)
+          CFI (cfiCond58) R10L Frame(CFA, -12)
+          CFI (cfiCond58) R10H Frame(CFA, -10)
+          CFI (cfiCond58) R11L Frame(CFA, -8)
+          CFI (cfiCond58) R11H Frame(CFA, -6)
+          CFI (cfiCond58) CFA SP+92
+          CFI Block cfiPicker59 Using cfiCommon1
+          CFI (cfiPicker59) NoFunction
+          CFI (cfiPicker59) Picker
+        CALLA   #_Cast32fto32u
+        MOV.B   R12, R14
+        ADD.B   #0x30, R14
+        MOV.B   R14, 0(R8)
+        ADDA    #0x1, R8
+        MOV.B   R12, R12
+        MOV.W   #0x0, R13
+        BRA     #_Cast32uto32f
+          CFI EndBlock cfiCond55
+          CFI EndBlock cfiCond56
+          CFI EndBlock cfiCond57
+          CFI EndBlock cfiCond58
+          CFI EndBlock cfiPicker59
+
+        RSEG CODE:CODE:NOROOT(1)
+OLED_display_number_8x16:
+          CFI Block cfiBlock60 Using cfiCommon0
+          CFI Function OLED_display_number_8x16
+        FUNCALL OLED_display_number_8x16, OLED_display_string_8x16
+        LOCFRAME CSTACK, 44, STACK
+        PUSHM.A #0x8, R11
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+36
+        SUB.W   #0x8, SP
+          CFI CFA SP+44
+        CALLA   #?Subroutine3
+??CrossCallReturnLabel_2:
+        CALLA   #OLED_display_string_8x16
+          CFI EndBlock cfiBlock60
+        REQUIRE ?Subroutine1
+        // Fall through to label ?Subroutine1
+//  315 void OLED_write_Line_8x16(uint8_t y,uint8_t x,char *str)
+//  316 {
+//  317   while(*str != '\0')
+//  318     {
+//  319         OLED_write_char_8x16(y,x,*str++);
+//  320         x+=8;
+//  321         if(x>120)
+//  322         {
+//  323           x=0;
+//  324           y=y+2;
+//  325           if(y>6)y=0;
+//  326         }
+//  327     }
+//  328     //¶Ô¸ÄÐÐÊ£ÓàÏÔÊ¾ÇøÓòÇåÁã
+//  329     while(x < OLED_W)
+//  330     {
+//  331       OLED_write_char_8x16(y,x,' ');
+//  332       x+=8;
+//  333     }
+//  334 }
+//  335 /********************************************************************
+//  336 º¯Êý¹¦ÄÜ:ÔÚµÚyÐÐµÚxÁÐÏÔÊ¾ÖÐÎÄ  ÏÔÊ¾µÄÄÚÈÝÔÚFONT_CHINESE.hÖÐµÄ FONT_CHINESE[]Êý×éÖÐ
+//  337 º¯ÊýÃû³Æ:OLED_display_chinese
+//  338 ÐÎÊ½²ÎÊý:y:ÐÐ 0-6 ÏàÁÚÁ½ÐÐ²îÖµÎª1 ±ÈÈçµÚÒ»ÐÐÊÇ0 ÔòµÚ¶þÐÐÎª2 ·ñÔò»á¸²¸ÇµÚÒ»ÐÐÏÂ°ë²¿·Ö
+//  339          x:ÁÐ 0-127
+//  340          start ´ÓµÚ¼¸¸öºº×Ó¿ªÊ¼ÏÔÊ¾
+//  341          len  ÏÔÊ¾ºº×ÖµÄ³¤¶È
+//  342 ·µ»ØÖµ:  ¿Õ
+//  343 ÐÞ¸ÄÈË:  CTGU-GB2013
+//  344 ÐÞ¸ÄÊ±¼ä:2014/5/13
+//  345 *********************************************************************/
+//  346 void OLED_display_chinese(uint8_t y,uint8_t x,uint8_t start,uint8_t len)
+//  347 {
+//  348     uint8_t i,j;
+//  349     for(i=start;i<start+len;i++)
+//  350     {
+//  351         OLED_set_pos(y,x);
+//  352         for(j=0;j<16;j++)                             //ÏÔÊ¾ºº×ÖµÄÉÏ°ë²¿·Ö
+//  353         {
+//  354             OLED_write_byte(DATA,FONT_CHINESE[j+i*32]);
+//  355         }
+//  356         OLED_set_pos(y+1,x);                      //ÏÔÊ¾ºº×ÖµÄÏÂ°ë²¿·Ö
+//  357         for(j=16;j<32;j++)
+//  358         {
+//  359             OLED_write_byte(DATA,FONT_CHINESE[j+i*32]);
+//  360         }
+//  361         x += 16;
+//  362     }
+//  363 }
+//  364 
+//  365 /********************************************************************
+//  366 º¯Êý¹¦ÄÜ:ÔÚµÚyÐÐµÚxÁÐÏÔÊ¾Ò»¸ö6*8µÄÕûÊý,¿ÉÒÔ´ø·ûºÅ,int16ÐÍµÄ
+//  367 º¯ÊýÃû³Æ:OLED_display_number_6x8
+//  368 ÐÎÊ½²ÎÊý:y:ÐÐ 0-7 
+//  369          x:ÁÐ 0-127
+//  370          number ÒªÏÔÊ¾µÄÕûÊý
+//  371 ·µ»ØÖµ:  ¿Õ
+//  372 ÐÞ¸ÄÈË:  CTGU-GB2013
+//  373 ÐÞ¸ÄÊ±¼ä:2014/5/13
+//  374 *********************************************************************/
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine1:
+          CFI Block cfiBlock61 Using cfiCommon0
+          CFI NoFunction
+          CFI CFA SP+44
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+        ADD.W   #0x8, SP
+          CFI CFA SP+36
+        POPM.A  #0x8, R11
+          CFI CFA SP+4
+          CFI R4L SameValue
+          CFI R4H SameValue
+          CFI R5L SameValue
+          CFI R5H SameValue
+          CFI R6L SameValue
+          CFI R6H SameValue
+          CFI R7L SameValue
+          CFI R7H SameValue
+          CFI R8L SameValue
+          CFI R8H SameValue
+          CFI R9L SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R10H SameValue
+          CFI R11L SameValue
+          CFI R11H SameValue
+        RETA
+          CFI EndBlock cfiBlock61
+
+        RSEG CODE:CODE:NOROOT(1)
+OLED_display_number_6x8:
+          CFI Block cfiBlock62 Using cfiCommon0
+          CFI Function OLED_display_number_6x8
+        FUNCALL OLED_display_number_6x8, OLED_display_string_6x8
+        LOCFRAME CSTACK, 44, STACK
+        PUSHM.A #0x8, R11
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+36
+        SUB.W   #0x8, SP
+          CFI CFA SP+44
+        CALLA   #?Subroutine3
+??CrossCallReturnLabel_3:
+        CALLA   #OLED_display_string_6x8
+        JMP     ?Subroutine1
+        NOP
+          CFI EndBlock cfiBlock62
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine3:
+          CFI Block cfiCond63 Using cfiCommon0
+          CFI Function OLED_display_number_8x16
+          CFI Conditional ??CrossCallReturnLabel_2
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+48
+          CFI Block cfiCond64 Using cfiCommon0
+          CFI (cfiCond64) Function OLED_display_number_6x8
+          CFI (cfiCond64) Conditional ??CrossCallReturnLabel_3
+          CFI (cfiCond64) R4L Frame(CFA, -36)
+          CFI (cfiCond64) R4H Frame(CFA, -34)
+          CFI (cfiCond64) R5L Frame(CFA, -32)
+          CFI (cfiCond64) R5H Frame(CFA, -30)
+          CFI (cfiCond64) R6L Frame(CFA, -28)
+          CFI (cfiCond64) R6H Frame(CFA, -26)
+          CFI (cfiCond64) R7L Frame(CFA, -24)
+          CFI (cfiCond64) R7H Frame(CFA, -22)
+          CFI (cfiCond64) R8L Frame(CFA, -20)
+          CFI (cfiCond64) R8H Frame(CFA, -18)
+          CFI (cfiCond64) R9L Frame(CFA, -16)
+          CFI (cfiCond64) R9H Frame(CFA, -14)
+          CFI (cfiCond64) R10L Frame(CFA, -12)
+          CFI (cfiCond64) R10H Frame(CFA, -10)
+          CFI (cfiCond64) R11L Frame(CFA, -8)
+          CFI (cfiCond64) R11H Frame(CFA, -6)
+          CFI (cfiCond64) CFA SP+48
+          CFI Block cfiPicker65 Using cfiCommon1
+          CFI (cfiPicker65) NoFunction
+          CFI (cfiPicker65) Picker
+        MOV.B   R12, R10
+        MOV.B   R13, R11
+        MOV.W   R14, R8
+        MOV.B   #0x0, R9
+        MOV.W   #0x2710, R6
+        CMP.W   #0x0, R14
+        JGE     ??OLED_display_number_8x16_1
+        MOV.B   #0x2d, 0x4(SP)
+        XOR.W   #0xffff, R8
+        ADD.W   #0x1, R8
+        JMP     ??OLED_display_number_8x16_2
+??OLED_display_number_8x16_1:
+        MOV.B   #0x20, 0x4(SP)
+??OLED_display_number_8x16_2:
+        MOV.B   #0x1, R7
+        MOV.W   SP, R4
+        ADD.W   #0x5, R4
+??OLED_display_number_8x16_0:
+        MOV.W   R8, R12
+        MOV.W   R6, R14
+        CALLA   #?DivMod16u
+        MOV.W   #0xa, R14
+        CALLA   #?DivMod16u
+        CMP.B   #0x0, R14
+        JNE     ??OLED_display_number_8x16_3
+        BIT.B   #0x1, R9
+        JC      ??OLED_display_number_8x16_3
+        CMP.B   #0x5, R7
+        JC      ??OLED_display_number_8x16_3
+        MOV.B   #0x20, R14
+        JMP     ??OLED_display_number_8x16_4
+??OLED_display_number_8x16_3:
+        MOV.B   #0x1, R9
+        ADD.B   #0x30, R14
+??OLED_display_number_8x16_4:
+        MOV.B   R14, 0(R4)
+        MOV.W   R6, R12
+        MOV.W   #0xa, R14
+        CALLA   #?DivMod16u
+        MOV.W   R12, R6
+        ADD.B   #0x1, R7
+        ADD.W   #0x1, R4
+        CMP.B   #0x6, R7
+        JNC     ??OLED_display_number_8x16_0
+        MOV.B   #0x0, 0xa(SP)
+        MOV.W   SP, R14
+        ADD.W   #0x4, R14
+        MOV.B   R11, R13
+        MOV.B   R10, R12
+        RETA
+          CFI EndBlock cfiCond63
+          CFI EndBlock cfiCond64
+          CFI EndBlock cfiPicker65
+
+        RSEG CODE:CODE:NOROOT(1)
+OLED_display_chinese:
+          CFI Block cfiBlock66 Using cfiCommon0
+          CFI Function OLED_display_chinese
+        FUNCALL OLED_display_chinese, OLED_set_pos
+        LOCFRAME CSTACK, 36, STACK
+        FUNCALL OLED_display_chinese, OLED_write_byte
+        LOCFRAME CSTACK, 36, STACK
+        FUNCALL OLED_display_chinese, OLED_set_pos
+        LOCFRAME CSTACK, 36, STACK
+        FUNCALL OLED_display_chinese, OLED_write_byte
+        LOCFRAME CSTACK, 36, STACK
+        PUSHM.A #0x8, R11
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+36
+        MOV.B   R12, R4
+        MOV.B   R13, R11
+        MOV.B   R14, R10
+        MOV.B   R14, R14
+        MOV.B   R15, R15
+        MOV.W   R14, R8
+        ADD.W   R15, R8
+        CMP.W   R8, R14
+        JGE     ??OLED_display_chinese_3
+        MOV.B   R10, R9
+        RPT     #0x5
+        RLAX.A  R9
+        ADDA    #FONT_CHINESE, R9
+        MOV.B   R12, R5
+        ADD.B   #0x1, R5
+        JMP     ??OLED_display_chinese_4
+??OLED_display_chinese_2:
+        MOV.B   R11, R13
+        MOV.B   R4, R12
+        CALLA   #OLED_set_pos
+        MOVA    R9, R6
+        MOVA    R9, R7
+        ADDA    #0x10, R7
+??OLED_display_chinese_0:
+        MOV.B   @R6+, R13
+        CALLA   #??Subroutine9_0
+??CrossCallReturnLabel_66:
+        CMPA    R7, R6
+        JNE     ??OLED_display_chinese_0
+        MOV.B   R11, R13
+        MOV.B   R5, R12
+        CALLA   #OLED_set_pos
+        MOVA    R9, R7
+        ADDA    #0x10, R7
+        MOVA    R7, R6
+        ADDA    #0x10, R6
+??OLED_display_chinese_1:
+        MOV.B   @R7+, R13
+        CALLA   #??Subroutine9_0
+??CrossCallReturnLabel_65:
+        CMPA    R6, R7
+        JNE     ??OLED_display_chinese_1
+        ADD.B   #0x10, R11
+        ADD.B   #0x1, R10
+        ADDA    #0x20, R9
+??OLED_display_chinese_4:
+        CMP.W   R8, R10
+        JL      ??OLED_display_chinese_2
+??OLED_display_chinese_3:
+        POPM.A  #0x8, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R4H SameValue
+          CFI R5H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R4L SameValue
+          CFI R5L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock66
+
+        RSEG CODE:CODE:NOROOT(1)
+OLED_write_Line_8x16:
+          CFI Block cfiBlock67 Using cfiCommon0
+          CFI Function OLED_write_Line_8x16
+        FUNCALL OLED_write_Line_8x16, OLED_write_char_8x16
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OLED_write_Line_8x16, OLED_write_char_8x16
+        LOCFRAME CSTACK, 20, STACK
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        CALLA   #?Subroutine4
+??CrossCallReturnLabel_5:
+        CMP.B   #0x80, R11
+        JC      ??OLED_write_Line_8x16_3
+??OLED_write_Line_8x16_1:
+        MOV.B   #0x20, R14
+        MOV.B   R11, R13
+        MOV.B   R10, R12
+        CALLA   #OLED_write_char_8x16
+        ADD.B   #0x8, R11
+        CMP.B   #0x80, R11
+        JNC     ??OLED_write_Line_8x16_1
+??OLED_write_Line_8x16_3:
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock67
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine4:
+          CFI Block cfiCond68 Using cfiCommon0
+          CFI Function OLED_display_string_8x16
+          CFI Conditional ??CrossCallReturnLabel_4
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+24
+          CFI Block cfiCond69 Using cfiCommon0
+          CFI (cfiCond69) Function OLED_write_Line_8x16
+          CFI (cfiCond69) Conditional ??CrossCallReturnLabel_5
+          CFI (cfiCond69) R8L Frame(CFA, -20)
+          CFI (cfiCond69) R8H Frame(CFA, -18)
+          CFI (cfiCond69) R9L Frame(CFA, -16)
+          CFI (cfiCond69) R9H Frame(CFA, -14)
+          CFI (cfiCond69) R10L Frame(CFA, -12)
+          CFI (cfiCond69) R10H Frame(CFA, -10)
+          CFI (cfiCond69) R11L Frame(CFA, -8)
+          CFI (cfiCond69) R11H Frame(CFA, -6)
+          CFI (cfiCond69) CFA SP+24
+          CFI Block cfiPicker70 Using cfiCommon1
+          CFI (cfiPicker70) NoFunction
+          CFI (cfiPicker70) Picker
+        MOV.B   R12, R10
+        MOV.B   R13, R11
+        MOVA    R14, R8
+        JMP     ??OLED_display_string_8x16_1
+??OLED_display_string_8x16_0:
+        MOV.B   @R8+, R14
+        MOV.B   R11, R13
+        MOV.B   R10, R12
+        CALLA   #OLED_write_char_8x16
+        ADD.B   #0x8, R11
+        CMP.B   #0x79, R11
+        JNC     ??OLED_display_string_8x16_1
+        MOV.B   #0x0, R11
+        ADD.B   #0x2, R10
+        CMP.B   #0x7, R10
+        JNC     ??OLED_display_string_8x16_1
+        MOV.B   #0x0, R10
+??OLED_display_string_8x16_1:
+        CMP.B   #0x0, 0(R8)
+        JNE     ??OLED_display_string_8x16_0
+        RETA
+          CFI EndBlock cfiCond68
+          CFI EndBlock cfiCond69
+          CFI EndBlock cfiPicker70
+
+        RSEG CODE:CODE:NOROOT(1)
+OLED_write_Line_6x8:
+          CFI Block cfiBlock71 Using cfiCommon0
+          CFI Function OLED_write_Line_6x8
+        FUNCALL OLED_write_Line_6x8, OLED_write_char_6x8
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OLED_write_Line_6x8, OLED_write_char_6x8
+        LOCFRAME CSTACK, 20, STACK
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        CALLA   #?Subroutine5
+??CrossCallReturnLabel_7:
+        CMP.B   #0x80, R11
+        JC      ??OLED_write_Line_6x8_3
+??OLED_write_Line_6x8_1:
+        MOV.B   #0x20, R14
+        CALLA   #?Subroutine21
+??CrossCallReturnLabel_28:
+        CMP.B   #0x80, R11
+        JNC     ??OLED_write_Line_6x8_1
+??OLED_write_Line_6x8_3:
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock71
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine5:
+          CFI Block cfiCond72 Using cfiCommon0
+          CFI Function OLED_display_string_6x8
+          CFI Conditional ??CrossCallReturnLabel_6
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+24
+          CFI Block cfiCond73 Using cfiCommon0
+          CFI (cfiCond73) Function OLED_write_Line_6x8
+          CFI (cfiCond73) Conditional ??CrossCallReturnLabel_7
+          CFI (cfiCond73) R8L Frame(CFA, -20)
+          CFI (cfiCond73) R8H Frame(CFA, -18)
+          CFI (cfiCond73) R9L Frame(CFA, -16)
+          CFI (cfiCond73) R9H Frame(CFA, -14)
+          CFI (cfiCond73) R10L Frame(CFA, -12)
+          CFI (cfiCond73) R10H Frame(CFA, -10)
+          CFI (cfiCond73) R11L Frame(CFA, -8)
+          CFI (cfiCond73) R11H Frame(CFA, -6)
+          CFI (cfiCond73) CFA SP+24
+          CFI Block cfiPicker74 Using cfiCommon1
+          CFI (cfiPicker74) NoFunction
+          CFI (cfiPicker74) Picker
+        MOV.B   R12, R10
+        MOV.B   R13, R11
+        MOVA    R14, R8
+        JMP     ??OLED_display_string_6x8_1
+??OLED_display_string_6x8_0:
+        MOV.B   @R8+, R14
+        CALLA   #?Subroutine21
+??CrossCallReturnLabel_29:
+        CMP.B   #0x7b, R11
+        JNC     ??OLED_display_string_6x8_1
+        MOV.B   #0x0, R11
+        ADD.B   #0x1, R10
+        CMP.B   #0x8, R10
+        JNC     ??OLED_display_string_6x8_1
+        MOV.B   #0x0, R10
+??OLED_display_string_6x8_1:
+        CMP.B   #0x0, 0(R8)
+        JNE     ??OLED_display_string_6x8_0
+        RETA
+          CFI EndBlock cfiCond72
+          CFI EndBlock cfiCond73
+          CFI EndBlock cfiPicker74
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine21:
+          CFI Block cfiCond75 Using cfiCommon0
+          CFI Function OLED_write_Line_6x8
+          CFI Conditional ??CrossCallReturnLabel_28
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+24
+          CFI Block cfiCond76 Using cfiCommon0
+          CFI (cfiCond76) Function OLED_display_string_6x8
+          CFI (cfiCond76) Conditional ??CrossCallReturnLabel_29, ??CrossCallReturnLabel_6
+          CFI (cfiCond76) R8L Frame(CFA, -20)
+          CFI (cfiCond76) R8H Frame(CFA, -18)
+          CFI (cfiCond76) R9L Frame(CFA, -16)
+          CFI (cfiCond76) R9H Frame(CFA, -14)
+          CFI (cfiCond76) R10L Frame(CFA, -12)
+          CFI (cfiCond76) R10H Frame(CFA, -10)
+          CFI (cfiCond76) R11L Frame(CFA, -8)
+          CFI (cfiCond76) R11H Frame(CFA, -6)
+          CFI (cfiCond76) CFA SP+28
+          CFI Block cfiCond77 Using cfiCommon0
+          CFI (cfiCond77) Function OLED_write_Line_6x8
+          CFI (cfiCond77) Conditional ??CrossCallReturnLabel_29, ??CrossCallReturnLabel_7
+          CFI (cfiCond77) R8L Frame(CFA, -20)
+          CFI (cfiCond77) R8H Frame(CFA, -18)
+          CFI (cfiCond77) R9L Frame(CFA, -16)
+          CFI (cfiCond77) R9H Frame(CFA, -14)
+          CFI (cfiCond77) R10L Frame(CFA, -12)
+          CFI (cfiCond77) R10H Frame(CFA, -10)
+          CFI (cfiCond77) R11L Frame(CFA, -8)
+          CFI (cfiCond77) R11H Frame(CFA, -6)
+          CFI (cfiCond77) CFA SP+28
+          CFI Block cfiPicker78 Using cfiCommon1
+          CFI (cfiPicker78) NoFunction
+          CFI (cfiPicker78) Picker
+        MOV.B   R11, R13
+        MOV.B   R10, R12
+        CALLA   #OLED_write_char_6x8
+        ADD.B   #0x6, R11
+        RETA
+          CFI EndBlock cfiCond75
+          CFI EndBlock cfiCond76
+          CFI EndBlock cfiCond77
+          CFI EndBlock cfiPicker78
+
+        RSEG CODE:CODE:NOROOT(1)
+OLED_Port_Init:
+          CFI Block cfiBlock79 Using cfiCommon0
+          CFI Function OLED_Port_Init
+        FUNCALL OLED_Port_Init, I2C_MasterInit
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL OLED_Port_Init, GPIO_MultiBits_Init
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL OLED_Port_Init, GPIO_MultiBits_Init
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL OLED_Port_Init, GPIO_MultiBits_Init
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL OLED_Port_Init, GPIO_MultiBits_Init
+        LOCFRAME CSTACK, 4, STACK
+        MOV.W   #0x86a0, R14
+        MOV.W   #0x1, R15
+        MOV.W   #0x0, R13
+        MOV.B   #0x3, R12
+        CALLA   #I2C_MasterInit
+        MOV.W   #0x2, R14
+        MOV.B   #0x8, R13
+        MOV.B   #0x3, R12
+        CALLA   #GPIO_MultiBits_Init
+        MOV.W   #0x2, R14
+        MOV.B   #0x1, R13
+        MOV.B   #0x3, R12
+        CALLA   #GPIO_MultiBits_Init
+        MOV.W   #0x2, R14
+        MOV.B   #0x80, R13
+        MOV.B   #0x2, R12
+        CALLA   #GPIO_MultiBits_Init
+        MOV.W   #0x2, R14
+        MOV.B   #0x4, R13
+        MOV.B   #0x7, R12
+        BRA     #GPIO_MultiBits_Init
+          CFI EndBlock cfiBlock79
+
+        RSEG CODE:CODE:NOROOT(1)
+OLED_Init:
+          CFI Block cfiBlock80 Using cfiCommon0
+          CFI Function OLED_Init
+        FUNCALL OLED_Init, OLED_Port_Init
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL OLED_Init, OLED_write_byte
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL OLED_Init, OLED_write_byte
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL OLED_Init, OLED_write_byte
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL OLED_Init, OLED_write_byte
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL OLED_Init, OLED_write_byte
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL OLED_Init, OLED_write_byte
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL OLED_Init, OLED_write_byte
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL OLED_Init, OLED_write_byte
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL OLED_Init, OLED_write_byte
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL OLED_Init, OLED_write_byte
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL OLED_Init, OLED_write_byte
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL OLED_Init, OLED_write_byte
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL OLED_Init, OLED_write_byte
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL OLED_Init, OLED_write_byte
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL OLED_Init, OLED_write_byte
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL OLED_Init, OLED_write_byte
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL OLED_Init, OLED_write_byte
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL OLED_Init, OLED_write_byte
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL OLED_Init, OLED_fill_ram
+        LOCFRAME CSTACK, 4, STACK
+        CALLA   #OLED_Port_Init
+        BIS.B   #0x80, &0x222
+        MOV.B   #0xa8, R13
+        CALLA   #?Subroutine24
+??CrossCallReturnLabel_54:
+        MOV.B   #0x3f, R13
+        CALLA   #?Subroutine24
+??CrossCallReturnLabel_53:
+        MOV.B   #0xd3, R13
+        CALLA   #?Subroutine24
+??CrossCallReturnLabel_52:
+        CALLA   #?Subroutine8
+??CrossCallReturnLabel_62:
+        MOV.B   #0x40, R13
+        CALLA   #?Subroutine24
+??CrossCallReturnLabel_51:
+        MOV.B   #0xa1, R13
+        CALLA   #?Subroutine24
+??CrossCallReturnLabel_50:
+        MOV.B   #0xc8, R13
+        CALLA   #?Subroutine24
+??CrossCallReturnLabel_49:
+        MOV.B   #0xda, R13
+        CALLA   #?Subroutine24
+??CrossCallReturnLabel_48:
+        MOV.B   #0x12, R13
+        CALLA   #?Subroutine24
+??CrossCallReturnLabel_47:
+        MOV.B   #0x81, R13
+        CALLA   #?Subroutine24
+??CrossCallReturnLabel_46:
+        MOV.B   #0x7f, R13
+        CALLA   #?Subroutine24
+??CrossCallReturnLabel_45:
+        MOV.B   #0xa4, R13
+        CALLA   #?Subroutine24
+??CrossCallReturnLabel_44:
+        MOV.B   #0xa6, R13
+        CALLA   #?Subroutine24
+??CrossCallReturnLabel_43:
+        MOV.B   #0xd5, R13
+        CALLA   #?Subroutine24
+??CrossCallReturnLabel_42:
+        MOV.B   #0x80, R13
+        CALLA   #?Subroutine24
+??CrossCallReturnLabel_41:
+        MOV.B   #0x8d, R13
+        CALLA   #?Subroutine24
+??CrossCallReturnLabel_40:
+        MOV.B   #0x14, R13
+        CALLA   #?Subroutine24
+??CrossCallReturnLabel_39:
+        MOV.B   #0xaf, R13
+        CALLA   #?Subroutine24
+??CrossCallReturnLabel_38:
+        MOV.B   #0x0, R12
+        BRA     #OLED_fill_ram
+          CFI EndBlock cfiBlock80
+        REQUIRE _A_PBOUT_L
+
+        RSEG CODE:CODE:NOROOT(1)
+OLED_fill_part:
+          CFI Block cfiBlock81 Using cfiCommon0
+          CFI Function OLED_fill_part
+        FUNCALL OLED_fill_part, OLED_write_byte
+        LOCFRAME CSTACK, 36, STACK
+        FUNCALL OLED_fill_part, OLED_write_byte
+        LOCFRAME CSTACK, 36, STACK
+        FUNCALL OLED_fill_part, OLED_write_byte
+        LOCFRAME CSTACK, 36, STACK
+        FUNCALL OLED_fill_part, OLED_write_byte
+        LOCFRAME CSTACK, 36, STACK
+        PUSHM.A #0x8, R11
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+36
+        MOV.B   R12, R9
+        MOV.B   R14, R10
+        MOV.B   R15, R11
+        MOV.B   R13, R8
+        CMP.B   R15, R13
+        JC      ??OLED_fill_part_2
+        MOV.B   R12, R4
+        RPT     #0x4
+        RRUX.B  R4
+        BIS.B   #0x10, R4
+        MOV.B   R12, R6
+        AND.B   #0xf, R6
+        MOV.B   0x24(SP), R5
+??OLED_fill_part_1:
+        MOV.B   R8, R13
+        CALLA   #?Subroutine7
+??CrossCallReturnLabel_34:
+        MOV.B   R6, R13
+        CALLA   #?Subroutine24
+??CrossCallReturnLabel_37:
+        MOV.B   R4, R13
+        CALLA   #?Subroutine24
+??CrossCallReturnLabel_36:
+        MOV.B   R9, R7
+        CMP.B   R10, R9
+        JC      ??OLED_fill_part_3
+??OLED_fill_part_0:
+        MOV.B   R5, R13
+        CALLA   #??Subroutine9_0
+??CrossCallReturnLabel_64:
+        ADD.B   #0x1, R7
+        CMP.B   R10, R7
+        JNC     ??OLED_fill_part_0
+??OLED_fill_part_3:
+        ADD.B   #0x1, R8
+        CMP.B   R11, R8
+        JNC     ??OLED_fill_part_1
+??OLED_fill_part_2:
+        POPM.A  #0x8, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R4H SameValue
+          CFI R5H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R4L SameValue
+          CFI R5L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock81
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?Subroutine7:
+          CFI Block cfiCond82 Using cfiCommon0
+          CFI Function OLED_fill_ram
+          CFI Conditional ??CrossCallReturnLabel_35
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+24
+          CFI Block cfiCond83 Using cfiCommon0
+          CFI (cfiCond83) Function OLED_fill_part
+          CFI (cfiCond83) Conditional ??CrossCallReturnLabel_34
+          CFI (cfiCond83) R4L Frame(CFA, -36)
+          CFI (cfiCond83) R4H Frame(CFA, -34)
+          CFI (cfiCond83) R5L Frame(CFA, -32)
+          CFI (cfiCond83) R5H Frame(CFA, -30)
+          CFI (cfiCond83) R6L Frame(CFA, -28)
+          CFI (cfiCond83) R6H Frame(CFA, -26)
+          CFI (cfiCond83) R7L Frame(CFA, -24)
+          CFI (cfiCond83) R7H Frame(CFA, -22)
+          CFI (cfiCond83) R8L Frame(CFA, -20)
+          CFI (cfiCond83) R8H Frame(CFA, -18)
+          CFI (cfiCond83) R9L Frame(CFA, -16)
+          CFI (cfiCond83) R9H Frame(CFA, -14)
+          CFI (cfiCond83) R10L Frame(CFA, -12)
+          CFI (cfiCond83) R10H Frame(CFA, -10)
+          CFI (cfiCond83) R11L Frame(CFA, -8)
+          CFI (cfiCond83) R11H Frame(CFA, -6)
+          CFI (cfiCond83) CFA SP+40
+          CFI Block cfiPicker84 Using cfiCommon1
+          CFI (cfiPicker84) NoFunction
+          CFI (cfiPicker84) Picker
+        ADD.B   #0xb0, R13
+        BRA     #?Subroutine24
+          CFI EndBlock cfiCond82
+          CFI EndBlock cfiCond83
+          CFI EndBlock cfiPicker84
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+OLED_write_byte:
+          CFI Block cfiBlock85 Using cfiCommon0
+          CFI Function OLED_write_byte
+        PUSHM.A #0x1, R10
+          CFI R10L Frame(CFA, -8)
+          CFI R10H Frame(CFA, -6)
+          CFI CFA SP+8
+        BIT.B   #0x1, R12
+        JC      ??OLED_write_byte_1
+        BIC.B   #0x4, &0x263
+        JMP     ??OLED_write_byte_2
+??OLED_write_byte_1:
+        BIS.B   #0x4, &0x263
+??OLED_write_byte_2:
+        MOV.W   #0x223, R15
+        MOV.W   R15, R14
+        BIC.B   #0x8, 0(R14)
+        MOV.B   #0x8, R14
+??OLED_write_byte_0:
+        BIT.B   #0x80, R13
+        SUBC.B  R12, R12
+        ADD.B   #0x1, R12
+        AND.B   #0xf6, 0(R15)
+        MOV.B   #0xfe, R10
+        AND.B   @R15, R10
+        BIS.B   R12, R10
+        MOV.B   R10, 0(R15)
+        RLA.B   R13
+        ADD.B   #0xff, R14
+        JNE     ??OLED_write_byte_0
+        POPM.A  #0x1, R10
+          CFI R10H SameValue
+          CFI R10L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock85
+        REQUIRE _A_PDOUT_L
+        REQUIRE _A_PBOUT_L
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+OLED_set_pos:
+          CFI Block cfiBlock86 Using cfiCommon0
+          CFI Function OLED_set_pos
+        FUNCALL OLED_set_pos, OLED_write_byte
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL OLED_set_pos, OLED_write_byte
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL OLED_set_pos, OLED_write_byte
+        LOCFRAME CSTACK, 8, STACK
+        PUSHM.A #0x1, R10
+          CFI R10L Frame(CFA, -8)
+          CFI R10H Frame(CFA, -6)
+          CFI CFA SP+8
+        MOV.B   R13, R10
+        ADD.B   #0xb0, R12
+        MOV.B   R12, R13
+        CALLA   #?Subroutine24
+??CrossCallReturnLabel_60:
+        MOV.B   R10, R13
+        AND.B   #0xf, R13
+        CALLA   #?Subroutine24
+??CrossCallReturnLabel_59:
+        RPT     #0x4
+        RRUX.B  R10
+        BIS.B   #0x10, R10
+        MOV.B   R10, R13
+        CALLA   #?Subroutine24
+??CrossCallReturnLabel_58:
+        POPM.A  #0x1, R10
+          CFI R10H SameValue
+          CFI R10L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock86
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+OLED_fill_ram:
+          CFI Block cfiBlock87 Using cfiCommon0
+          CFI Function OLED_fill_ram
+        FUNCALL OLED_fill_ram, OLED_write_byte
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OLED_fill_ram, OLED_write_byte
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OLED_fill_ram, OLED_write_byte
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OLED_fill_ram, OLED_write_byte
+        LOCFRAME CSTACK, 20, STACK
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        MOV.B   R12, R10
+        MOV.B   #0x0, R11
+??OLED_fill_ram_1:
+        MOV.B   R11, R13
+        CALLA   #?Subroutine7
+??CrossCallReturnLabel_35:
+        CALLA   #?Subroutine8
+??CrossCallReturnLabel_63:
+        MOV.B   #0x10, R13
+        CALLA   #?Subroutine24
+??CrossCallReturnLabel_61:
+        MOV.B   #0x80, R8
+??OLED_fill_ram_0:
+        MOV.B   R10, R13
+        CALLA   #??Subroutine9_0
+??CrossCallReturnLabel_75:
+        ADD.B   #0xff, R8
+        JNE     ??OLED_fill_ram_0
+        ADD.B   #0x1, R11
+        CMP.B   #0x8, R11
+        JNC     ??OLED_fill_ram_1
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock87
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_zero20
+??data1:
+        DS8 1
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine9:
+          CFI Block cfiCond88 Using cfiCommon0
+          CFI Function OLED_Printf
+          CFI Conditional ??CrossCallReturnLabel_77
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+176
+          CFI Block cfiCond89 Using cfiCommon0
+          CFI (cfiCond89) Function OLED_Printf
+          CFI (cfiCond89) Conditional ??CrossCallReturnLabel_76
+          CFI (cfiCond89) R4L Frame(CFA, -36)
+          CFI (cfiCond89) R4H Frame(CFA, -34)
+          CFI (cfiCond89) R5L Frame(CFA, -32)
+          CFI (cfiCond89) R5H Frame(CFA, -30)
+          CFI (cfiCond89) R6L Frame(CFA, -28)
+          CFI (cfiCond89) R6H Frame(CFA, -26)
+          CFI (cfiCond89) R7L Frame(CFA, -24)
+          CFI (cfiCond89) R7H Frame(CFA, -22)
+          CFI (cfiCond89) R8L Frame(CFA, -20)
+          CFI (cfiCond89) R8H Frame(CFA, -18)
+          CFI (cfiCond89) R9L Frame(CFA, -16)
+          CFI (cfiCond89) R9H Frame(CFA, -14)
+          CFI (cfiCond89) R10L Frame(CFA, -12)
+          CFI (cfiCond89) R10H Frame(CFA, -10)
+          CFI (cfiCond89) R11L Frame(CFA, -8)
+          CFI (cfiCond89) R11H Frame(CFA, -6)
+          CFI (cfiCond89) CFA SP+176
+          CFI Block cfiPicker90 Using cfiCommon1
+          CFI (cfiPicker90) NoFunction
+          CFI (cfiPicker90) Picker
+        MOV.B   #0x0, R13
+          CFI EndBlock cfiCond88
+          CFI EndBlock cfiCond89
+          CFI EndBlock cfiPicker90
+        REQUIRE ??Subroutine9_0
+        // Fall through to label ??Subroutine9_0
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+??Subroutine9_0:
+          CFI Block cfiCond91 Using cfiCommon0
+          CFI Function OLED_fill_ram
+          CFI Conditional ??CrossCallReturnLabel_75
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+24
+          CFI Block cfiCond92 Using cfiCommon0
+          CFI (cfiCond92) Function OLED_write_char_6x8
+          CFI (cfiCond92) Conditional ??CrossCallReturnLabel_74
+          CFI (cfiCond92) R10L Frame(CFA, -12)
+          CFI (cfiCond92) R10H Frame(CFA, -10)
+          CFI (cfiCond92) R11L Frame(CFA, -8)
+          CFI (cfiCond92) R11H Frame(CFA, -6)
+          CFI (cfiCond92) CFA SP+16
+          CFI Block cfiCond93 Using cfiCommon0
+          CFI (cfiCond93) Function OLED_write_char_6x8
+          CFI (cfiCond93) Conditional ??CrossCallReturnLabel_73
+          CFI (cfiCond93) R10L Frame(CFA, -12)
+          CFI (cfiCond93) R10H Frame(CFA, -10)
+          CFI (cfiCond93) R11L Frame(CFA, -8)
+          CFI (cfiCond93) R11H Frame(CFA, -6)
+          CFI (cfiCond93) CFA SP+16
+          CFI Block cfiCond94 Using cfiCommon0
+          CFI (cfiCond94) Function OLED_write_char_6x8
+          CFI (cfiCond94) Conditional ??CrossCallReturnLabel_72
+          CFI (cfiCond94) R10L Frame(CFA, -12)
+          CFI (cfiCond94) R10H Frame(CFA, -10)
+          CFI (cfiCond94) R11L Frame(CFA, -8)
+          CFI (cfiCond94) R11H Frame(CFA, -6)
+          CFI (cfiCond94) CFA SP+16
+          CFI Block cfiCond95 Using cfiCommon0
+          CFI (cfiCond95) Function OLED_write_char_6x8
+          CFI (cfiCond95) Conditional ??CrossCallReturnLabel_71
+          CFI (cfiCond95) R10L Frame(CFA, -12)
+          CFI (cfiCond95) R10H Frame(CFA, -10)
+          CFI (cfiCond95) R11L Frame(CFA, -8)
+          CFI (cfiCond95) R11H Frame(CFA, -6)
+          CFI (cfiCond95) CFA SP+16
+          CFI Block cfiCond96 Using cfiCommon0
+          CFI (cfiCond96) Function OLED_write_char_6x8
+          CFI (cfiCond96) Conditional ??CrossCallReturnLabel_70
+          CFI (cfiCond96) R10L Frame(CFA, -12)
+          CFI (cfiCond96) R10H Frame(CFA, -10)
+          CFI (cfiCond96) R11L Frame(CFA, -8)
+          CFI (cfiCond96) R11H Frame(CFA, -6)
+          CFI (cfiCond96) CFA SP+16
+          CFI Block cfiCond97 Using cfiCommon0
+          CFI (cfiCond97) Function OLED_write_char_6x8
+          CFI (cfiCond97) Conditional ??OLED_write_char_6x8_0
+          CFI (cfiCond97) R10L Frame(CFA, -12)
+          CFI (cfiCond97) R10H Frame(CFA, -10)
+          CFI (cfiCond97) R11L Frame(CFA, -8)
+          CFI (cfiCond97) R11H Frame(CFA, -6)
+          CFI (cfiCond97) CFA SP+16
+          CFI Block cfiCond98 Using cfiCommon0
+          CFI (cfiCond98) Function OLED_write_char_8x16
+          CFI (cfiCond98) Conditional ??CrossCallReturnLabel_69
+          CFI (cfiCond98) R6L Frame(CFA, -28)
+          CFI (cfiCond98) R6H Frame(CFA, -26)
+          CFI (cfiCond98) R7L Frame(CFA, -24)
+          CFI (cfiCond98) R7H Frame(CFA, -22)
+          CFI (cfiCond98) R8L Frame(CFA, -20)
+          CFI (cfiCond98) R8H Frame(CFA, -18)
+          CFI (cfiCond98) R9L Frame(CFA, -16)
+          CFI (cfiCond98) R9H Frame(CFA, -14)
+          CFI (cfiCond98) R10L Frame(CFA, -12)
+          CFI (cfiCond98) R10H Frame(CFA, -10)
+          CFI (cfiCond98) R11L Frame(CFA, -8)
+          CFI (cfiCond98) R11H Frame(CFA, -6)
+          CFI (cfiCond98) CFA SP+32
+          CFI Block cfiCond99 Using cfiCommon0
+          CFI (cfiCond99) Function OLED_write_char_8x16
+          CFI (cfiCond99) Conditional ??CrossCallReturnLabel_68
+          CFI (cfiCond99) R6L Frame(CFA, -28)
+          CFI (cfiCond99) R6H Frame(CFA, -26)
+          CFI (cfiCond99) R7L Frame(CFA, -24)
+          CFI (cfiCond99) R7H Frame(CFA, -22)
+          CFI (cfiCond99) R8L Frame(CFA, -20)
+          CFI (cfiCond99) R8H Frame(CFA, -18)
+          CFI (cfiCond99) R9L Frame(CFA, -16)
+          CFI (cfiCond99) R9H Frame(CFA, -14)
+          CFI (cfiCond99) R10L Frame(CFA, -12)
+          CFI (cfiCond99) R10H Frame(CFA, -10)
+          CFI (cfiCond99) R11L Frame(CFA, -8)
+          CFI (cfiCond99) R11H Frame(CFA, -6)
+          CFI (cfiCond99) CFA SP+32
+          CFI Block cfiCond100 Using cfiCommon0
+          CFI (cfiCond100) Function OLED_PutPixel
+          CFI (cfiCond100) Conditional ??CrossCallReturnLabel_67
+          CFI (cfiCond100) R10L Frame(CFA, -12)
+          CFI (cfiCond100) R10H Frame(CFA, -10)
+          CFI (cfiCond100) R11L Frame(CFA, -8)
+          CFI (cfiCond100) R11H Frame(CFA, -6)
+          CFI (cfiCond100) CFA SP+16
+          CFI Block cfiCond101 Using cfiCommon0
+          CFI (cfiCond101) Function OLED_display_chinese
+          CFI (cfiCond101) Conditional ??CrossCallReturnLabel_66
+          CFI (cfiCond101) R4L Frame(CFA, -36)
+          CFI (cfiCond101) R4H Frame(CFA, -34)
+          CFI (cfiCond101) R5L Frame(CFA, -32)
+          CFI (cfiCond101) R5H Frame(CFA, -30)
+          CFI (cfiCond101) R6L Frame(CFA, -28)
+          CFI (cfiCond101) R6H Frame(CFA, -26)
+          CFI (cfiCond101) R7L Frame(CFA, -24)
+          CFI (cfiCond101) R7H Frame(CFA, -22)
+          CFI (cfiCond101) R8L Frame(CFA, -20)
+          CFI (cfiCond101) R8H Frame(CFA, -18)
+          CFI (cfiCond101) R9L Frame(CFA, -16)
+          CFI (cfiCond101) R9H Frame(CFA, -14)
+          CFI (cfiCond101) R10L Frame(CFA, -12)
+          CFI (cfiCond101) R10H Frame(CFA, -10)
+          CFI (cfiCond101) R11L Frame(CFA, -8)
+          CFI (cfiCond101) R11H Frame(CFA, -6)
+          CFI (cfiCond101) CFA SP+40
+          CFI Block cfiCond102 Using cfiCommon0
+          CFI (cfiCond102) Function OLED_display_chinese
+          CFI (cfiCond102) Conditional ??CrossCallReturnLabel_65
+          CFI (cfiCond102) R4L Frame(CFA, -36)
+          CFI (cfiCond102) R4H Frame(CFA, -34)
+          CFI (cfiCond102) R5L Frame(CFA, -32)
+          CFI (cfiCond102) R5H Frame(CFA, -30)
+          CFI (cfiCond102) R6L Frame(CFA, -28)
+          CFI (cfiCond102) R6H Frame(CFA, -26)
+          CFI (cfiCond102) R7L Frame(CFA, -24)
+          CFI (cfiCond102) R7H Frame(CFA, -22)
+          CFI (cfiCond102) R8L Frame(CFA, -20)
+          CFI (cfiCond102) R8H Frame(CFA, -18)
+          CFI (cfiCond102) R9L Frame(CFA, -16)
+          CFI (cfiCond102) R9H Frame(CFA, -14)
+          CFI (cfiCond102) R10L Frame(CFA, -12)
+          CFI (cfiCond102) R10H Frame(CFA, -10)
+          CFI (cfiCond102) R11L Frame(CFA, -8)
+          CFI (cfiCond102) R11H Frame(CFA, -6)
+          CFI (cfiCond102) CFA SP+40
+          CFI Block cfiCond103 Using cfiCommon0
+          CFI (cfiCond103) Function OLED_fill_part
+          CFI (cfiCond103) Conditional ??CrossCallReturnLabel_64
+          CFI (cfiCond103) R4L Frame(CFA, -36)
+          CFI (cfiCond103) R4H Frame(CFA, -34)
+          CFI (cfiCond103) R5L Frame(CFA, -32)
+          CFI (cfiCond103) R5H Frame(CFA, -30)
+          CFI (cfiCond103) R6L Frame(CFA, -28)
+          CFI (cfiCond103) R6H Frame(CFA, -26)
+          CFI (cfiCond103) R7L Frame(CFA, -24)
+          CFI (cfiCond103) R7H Frame(CFA, -22)
+          CFI (cfiCond103) R8L Frame(CFA, -20)
+          CFI (cfiCond103) R8H Frame(CFA, -18)
+          CFI (cfiCond103) R9L Frame(CFA, -16)
+          CFI (cfiCond103) R9H Frame(CFA, -14)
+          CFI (cfiCond103) R10L Frame(CFA, -12)
+          CFI (cfiCond103) R10H Frame(CFA, -10)
+          CFI (cfiCond103) R11L Frame(CFA, -8)
+          CFI (cfiCond103) R11H Frame(CFA, -6)
+          CFI (cfiCond103) CFA SP+40
+          CFI Block cfiCond104 Using cfiCommon0
+          CFI (cfiCond104) Function OLED_Printf
+          CFI (cfiCond104) Conditional ??CrossCallReturnLabel_77
+          CFI (cfiCond104) R4L Frame(CFA, -36)
+          CFI (cfiCond104) R4H Frame(CFA, -34)
+          CFI (cfiCond104) R5L Frame(CFA, -32)
+          CFI (cfiCond104) R5H Frame(CFA, -30)
+          CFI (cfiCond104) R6L Frame(CFA, -28)
+          CFI (cfiCond104) R6H Frame(CFA, -26)
+          CFI (cfiCond104) R7L Frame(CFA, -24)
+          CFI (cfiCond104) R7H Frame(CFA, -22)
+          CFI (cfiCond104) R8L Frame(CFA, -20)
+          CFI (cfiCond104) R8H Frame(CFA, -18)
+          CFI (cfiCond104) R9L Frame(CFA, -16)
+          CFI (cfiCond104) R9H Frame(CFA, -14)
+          CFI (cfiCond104) R10L Frame(CFA, -12)
+          CFI (cfiCond104) R10H Frame(CFA, -10)
+          CFI (cfiCond104) R11L Frame(CFA, -8)
+          CFI (cfiCond104) R11H Frame(CFA, -6)
+          CFI (cfiCond104) CFA SP+176
+          CFI Block cfiCond105 Using cfiCommon0
+          CFI (cfiCond105) Function OLED_Printf
+          CFI (cfiCond105) Conditional ??CrossCallReturnLabel_76
+          CFI (cfiCond105) R4L Frame(CFA, -36)
+          CFI (cfiCond105) R4H Frame(CFA, -34)
+          CFI (cfiCond105) R5L Frame(CFA, -32)
+          CFI (cfiCond105) R5H Frame(CFA, -30)
+          CFI (cfiCond105) R6L Frame(CFA, -28)
+          CFI (cfiCond105) R6H Frame(CFA, -26)
+          CFI (cfiCond105) R7L Frame(CFA, -24)
+          CFI (cfiCond105) R7H Frame(CFA, -22)
+          CFI (cfiCond105) R8L Frame(CFA, -20)
+          CFI (cfiCond105) R8H Frame(CFA, -18)
+          CFI (cfiCond105) R9L Frame(CFA, -16)
+          CFI (cfiCond105) R9H Frame(CFA, -14)
+          CFI (cfiCond105) R10L Frame(CFA, -12)
+          CFI (cfiCond105) R10H Frame(CFA, -10)
+          CFI (cfiCond105) R11L Frame(CFA, -8)
+          CFI (cfiCond105) R11H Frame(CFA, -6)
+          CFI (cfiCond105) CFA SP+176
+          CFI Block cfiPicker106 Using cfiCommon1
+          CFI (cfiPicker106) NoFunction
+          CFI (cfiPicker106) Picker
+        MOV.B   #0x1, R12
+        BRA     #OLED_write_byte
+          CFI EndBlock cfiCond91
+          CFI EndBlock cfiCond92
+          CFI EndBlock cfiCond93
+          CFI EndBlock cfiCond94
+          CFI EndBlock cfiCond95
+          CFI EndBlock cfiCond96
+          CFI EndBlock cfiCond97
+          CFI EndBlock cfiCond98
+          CFI EndBlock cfiCond99
+          CFI EndBlock cfiCond100
+          CFI EndBlock cfiCond101
+          CFI EndBlock cfiCond102
+          CFI EndBlock cfiCond103
+          CFI EndBlock cfiCond104
+          CFI EndBlock cfiCond105
+          CFI EndBlock cfiPicker106
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+OLED_write_char_6x8:
+          CFI Block cfiBlock107 Using cfiCommon0
+          CFI Function OLED_write_char_6x8
+        FUNCALL OLED_write_char_6x8, OLED_set_pos
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL OLED_write_char_6x8, OLED_write_byte
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL OLED_write_char_6x8, OLED_write_byte
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL OLED_write_char_6x8, OLED_write_byte
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL OLED_write_char_6x8, OLED_write_byte
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL OLED_write_char_6x8, OLED_write_byte
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL OLED_write_char_6x8, OLED_write_byte
+        LOCFRAME CSTACK, 12, STACK
+        PUSHM.A #0x2, R11
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+12
+        MOV.B   R14, R11
+        ADD.B   #0xe0, R11
+        CMP.B   #0x5f, R11
+        JC      ??OLED_write_char_6x8_0
+        CALLA   #OLED_set_pos
+        ADDA    R11, R11
+        MOVA    R11, R15
+        ADDA    R11, R11
+        ADDA    R15, R11
+        MOVX.B  ASCII_6X8(R11), R13
+        CALLA   #??Subroutine9_0
+??CrossCallReturnLabel_74:
+        MOVX.B  ASCII_6X8 + 1(R11), R13
+        CALLA   #??Subroutine9_0
+??CrossCallReturnLabel_73:
+        MOVX.B  ASCII_6X8 + 2(R11), R13
+        CALLA   #??Subroutine9_0
+??CrossCallReturnLabel_72:
+        MOVX.B  ASCII_6X8 + 3(R11), R13
+        CALLA   #??Subroutine9_0
+??CrossCallReturnLabel_71:
+        MOVX.B  ASCII_6X8 + 4(R11), R13
+        CALLA   #??Subroutine9_0
+??CrossCallReturnLabel_70:
+        MOVX.B  ASCII_6X8 + 5(R11), R13
+        CALLA   #??Subroutine9_0
+??OLED_write_char_6x8_0:
+        POPM.A  #0x2, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock107
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+OLED_write_Nchar_6x8:
+          CFI Block cfiBlock108 Using cfiCommon0
+          CFI Function OLED_write_Nchar_6x8
+        FUNCALL OLED_write_Nchar_6x8, OLED_write_char_6x8
+        LOCFRAME CSTACK, 20, STACK
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        MOV.B   R12, R11
+        MOV.B   R13, R8
+        MOVA    R14, R9
+        MOV.B   R15, R10
+        JMP     ??OLED_write_Nchar_6x8_1
+??OLED_write_Nchar_6x8_0:
+        ADD.B   #0xff, R10
+        MOV.B   @R9+, R14
+        MOV.B   R8, R13
+        MOV.B   R11, R12
+        CALLA   #OLED_write_char_6x8
+        ADD.B   #0x6, R8
+        CMP.B   #0x7b, R8
+        JNC     ??OLED_write_Nchar_6x8_1
+        MOV.B   #0x0, R8
+        ADD.B   #0x1, R11
+        CMP.B   #0x8, R11
+        JNC     ??OLED_write_Nchar_6x8_1
+        MOV.B   #0x0, R11
+??OLED_write_Nchar_6x8_1:
+        CMP.B   #0x0, R10
+        JNE     ??OLED_write_Nchar_6x8_0
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock108
+
+        RSEG CODE:CODE:NOROOT(1)
+OLED_Printf:
+          CFI Block cfiBlock109 Using cfiCommon0
+          CFI Function OLED_Printf
+        FUNCALL OLED_Printf, vsprintf
+        LOCFRAME CSTACK, 176, STACK
+        FUNCALL OLED_Printf, strlen
+        LOCFRAME CSTACK, 176, STACK
+        FUNCALL OLED_Printf, OLED_write_Nchar_6x8
+        LOCFRAME CSTACK, 172, STACK
+        FUNCALL OLED_Printf, OLED_fill_ram
+        LOCFRAME CSTACK, 172, STACK
+        FUNCALL OLED_Printf, OLED_write_Nchar_6x8
+        LOCFRAME CSTACK, 172, STACK
+        FUNCALL OLED_Printf, OLED_write_byte
+        LOCFRAME CSTACK, 172, STACK
+        FUNCALL OLED_Printf, OLED_fill_ram
+        LOCFRAME CSTACK, 172, STACK
+        FUNCALL OLED_Printf, OLED_write_Nchar_6x8
+        LOCFRAME CSTACK, 172, STACK
+        FUNCALL OLED_Printf, OLED_fill_ram
+        LOCFRAME CSTACK, 172, STACK
+        FUNCALL OLED_Printf, OLED_write_byte
+        LOCFRAME CSTACK, 172, STACK
+        PUSHM.A #0x8, R11
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+36
+        SUB.W   #0x88, SP
+          CFI CFA SP+172
+        MOV.W   SP, R15
+        ADD.W   #0xac, R15
+        MOVA    R15, 0x4(SP)
+        MOV.W   SP, R10
+        ADD.W   #0x8, R10
+        PUSH.W  #0x0
+          CFI CFA SP+174
+        PUSH.W  R15
+          CFI CFA SP+176
+        MOVA    R12, R13
+        MOVA    R10, R12
+        CALLA   #vsprintf
+        MOV.B   #0x0, R11
+        MOVA    R10, R12
+        CALLA   #strlen
+        MOV.W   R12, 0x6(SP)
+        MOV.W   #0x0, R7
+        MOVX.B  &??y, R9
+        ADD.W   #0x4, SP
+          CFI CFA SP+172
+        CMP.W   #0x0, R12
+        JL      ??OLED_Printf_9
+        MOV.W   R10, R5
+        MOVA    #??x, R8
+??OLED_Printf_2:
+        CMP.B   #0xa, 0(R5)
+        JNE     ??OLED_Printf_6
+        MOV.B   R7, 0(SP)
+        MOV.B   R7, R6
+        SUB.W   R11, R6
+        MOV.W   R10, R4
+        ADD.W   R11, R4
+        JMP     ??OLED_Printf_10
+??OLED_Printf_0:
+        MOV.B   #0x15, R15
+        MOV.W   R4, R14
+        CALLA   #?Subroutine15
+??CrossCallReturnLabel_20:
+        CALLA   #?Subroutine16
+??CrossCallReturnLabel_21:
+        MOV.B   #0x0, 0(R8)
+        ADD.B   #0x15, R11
+        ADD.W   #0x15, R4
+        ADD.W   #0xffeb, R6
+??OLED_Printf_10:
+        CMP.B   @SP, R11
+        JC      ??OLED_Printf_11
+        CMP.W   #0x16, R6
+        JGE     ??OLED_Printf_0
+        MOV.B   @SP, R6
+        SUB.B   R11, R6
+        MOV.B   R6, R15
+        MOV.W   R10, R14
+        ADD.W   R11, R14
+        CALLA   #?Subroutine15
+??CrossCallReturnLabel_19:
+        MOV.B   R6, R14
+        RPT     #0x5
+        ADDX.B  R6, R14
+        ADD.B   R14, 0(R8)
+        CMP.B   #0x80, 0(R8)
+        JC      ??OLED_Printf_11
+        MOV.B   #0x80, R11
+        SUB.B   @R8, R11
+??OLED_Printf_1:
+        CALLA   #?Subroutine9
+??CrossCallReturnLabel_77:
+        ADD.B   #0xff, R11
+        JNE     ??OLED_Printf_1
+??OLED_Printf_11:
+        MOV.B   @SP, R11
+        ADD.B   #0x1, R11
+        MOV.B   #0x0, 0(R8)
+        CALLA   #?Subroutine16
+??OLED_Printf_6:
+        ADD.W   #0x1, R7
+        ADD.W   #0x1, R5
+        CMP.W   R7, 0x2(SP)
+        JGE     ??OLED_Printf_2
+??OLED_Printf_9:
+        MOV.B   R11, R7
+        CMP.W   0x2(SP), R7
+        JGE     ??OLED_Printf_12
+        MOV.B   0x2(SP), R6
+        SUB.B   R11, R6
+        MOVA    #??x, R8
+        MOV.B   R6, R15
+        ADD.W   R7, R10
+        MOV.W   R10, R14
+        CALLA   #?Subroutine15
+??CrossCallReturnLabel_18:
+        MOV.B   @R8, R10
+        RPT     #0x6
+        ADDX.B  R6, R10
+??OLED_Printf_3:
+        CMP.B   #0x7e, R10
+        JNC     ??OLED_Printf_13
+        ADD.B   #0x82, R10
+        ADD.B   #0x1, R9
+        CMP.B   #0x8, R9
+        JNC     ??OLED_Printf_3
+        MOV.B   #0x0, R9
+        MOV.B   #0x0, R10
+        MOV.B   #0x0, R12
+        CALLA   #OLED_fill_ram
+??OLED_Printf_13:
+        MOV.B   R10, 0(R8)
+        MOV.W   #0x80, R11
+        MOV.B   R10, R15
+        SUB.W   R15, R11
+??OLED_Printf_4:
+        CALLA   #?Subroutine9
+??CrossCallReturnLabel_76:
+        ADD.W   #0xffff, R11
+        JNE     ??OLED_Printf_4
+??OLED_Printf_12:
+        MOVX.B  R9, &??y
+          CFI EndBlock cfiBlock109
+        REQUIRE ?Subroutine0
+        // Fall through to label ?Subroutine0
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine0:
+          CFI Block cfiBlock110 Using cfiCommon0
+          CFI NoFunction
+          CFI CFA SP+172
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+        ADD.W   #0x88, SP
+          CFI CFA SP+36
+        POPM.A  #0x8, R11
+          CFI CFA SP+4
+          CFI R4L SameValue
+          CFI R4H SameValue
+          CFI R5L SameValue
+          CFI R5H SameValue
+          CFI R6L SameValue
+          CFI R6H SameValue
+          CFI R7L SameValue
+          CFI R7H SameValue
+          CFI R8L SameValue
+          CFI R8H SameValue
+          CFI R9L SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R10H SameValue
+          CFI R11L SameValue
+          CFI R11H SameValue
+        RETA
+          CFI EndBlock cfiBlock110
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine16:
+          CFI Block cfiCond111 Using cfiCommon0
+          CFI Function OLED_Printf
+          CFI Conditional ??CrossCallReturnLabel_21
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+176
+          CFI Block cfiCond112 Using cfiCommon0
+          CFI (cfiCond112) Function OLED_Printf
+          CFI (cfiCond112) Conditional ??OLED_Printf_6
+          CFI (cfiCond112) R4L Frame(CFA, -36)
+          CFI (cfiCond112) R4H Frame(CFA, -34)
+          CFI (cfiCond112) R5L Frame(CFA, -32)
+          CFI (cfiCond112) R5H Frame(CFA, -30)
+          CFI (cfiCond112) R6L Frame(CFA, -28)
+          CFI (cfiCond112) R6H Frame(CFA, -26)
+          CFI (cfiCond112) R7L Frame(CFA, -24)
+          CFI (cfiCond112) R7H Frame(CFA, -22)
+          CFI (cfiCond112) R8L Frame(CFA, -20)
+          CFI (cfiCond112) R8H Frame(CFA, -18)
+          CFI (cfiCond112) R9L Frame(CFA, -16)
+          CFI (cfiCond112) R9H Frame(CFA, -14)
+          CFI (cfiCond112) R10L Frame(CFA, -12)
+          CFI (cfiCond112) R10H Frame(CFA, -10)
+          CFI (cfiCond112) R11L Frame(CFA, -8)
+          CFI (cfiCond112) R11H Frame(CFA, -6)
+          CFI (cfiCond112) CFA SP+176
+          CFI Block cfiPicker113 Using cfiCommon1
+          CFI (cfiPicker113) NoFunction
+          CFI (cfiPicker113) Picker
+        ADD.B   #0x1, R9
+        CMP.B   #0x8, R9
+        JNC     ??OLED_Printf_7
+        MOV.B   #0x0, R9
+        MOV.B   #0x0, R12
+        CALLA   #OLED_fill_ram
+??OLED_Printf_7:
+        RETA
+          CFI EndBlock cfiCond111
+          CFI EndBlock cfiCond112
+          CFI EndBlock cfiPicker113
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine15:
+          CFI Block cfiCond114 Using cfiCommon0
+          CFI Function OLED_Printf
+          CFI Conditional ??CrossCallReturnLabel_20
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+176
+          CFI Block cfiCond115 Using cfiCommon0
+          CFI (cfiCond115) Function OLED_Printf
+          CFI (cfiCond115) Conditional ??CrossCallReturnLabel_19
+          CFI (cfiCond115) R4L Frame(CFA, -36)
+          CFI (cfiCond115) R4H Frame(CFA, -34)
+          CFI (cfiCond115) R5L Frame(CFA, -32)
+          CFI (cfiCond115) R5H Frame(CFA, -30)
+          CFI (cfiCond115) R6L Frame(CFA, -28)
+          CFI (cfiCond115) R6H Frame(CFA, -26)
+          CFI (cfiCond115) R7L Frame(CFA, -24)
+          CFI (cfiCond115) R7H Frame(CFA, -22)
+          CFI (cfiCond115) R8L Frame(CFA, -20)
+          CFI (cfiCond115) R8H Frame(CFA, -18)
+          CFI (cfiCond115) R9L Frame(CFA, -16)
+          CFI (cfiCond115) R9H Frame(CFA, -14)
+          CFI (cfiCond115) R10L Frame(CFA, -12)
+          CFI (cfiCond115) R10H Frame(CFA, -10)
+          CFI (cfiCond115) R11L Frame(CFA, -8)
+          CFI (cfiCond115) R11H Frame(CFA, -6)
+          CFI (cfiCond115) CFA SP+176
+          CFI Block cfiCond116 Using cfiCommon0
+          CFI (cfiCond116) Function OLED_Printf
+          CFI (cfiCond116) Conditional ??CrossCallReturnLabel_18
+          CFI (cfiCond116) R4L Frame(CFA, -36)
+          CFI (cfiCond116) R4H Frame(CFA, -34)
+          CFI (cfiCond116) R5L Frame(CFA, -32)
+          CFI (cfiCond116) R5H Frame(CFA, -30)
+          CFI (cfiCond116) R6L Frame(CFA, -28)
+          CFI (cfiCond116) R6H Frame(CFA, -26)
+          CFI (cfiCond116) R7L Frame(CFA, -24)
+          CFI (cfiCond116) R7H Frame(CFA, -22)
+          CFI (cfiCond116) R8L Frame(CFA, -20)
+          CFI (cfiCond116) R8H Frame(CFA, -18)
+          CFI (cfiCond116) R9L Frame(CFA, -16)
+          CFI (cfiCond116) R9H Frame(CFA, -14)
+          CFI (cfiCond116) R10L Frame(CFA, -12)
+          CFI (cfiCond116) R10H Frame(CFA, -10)
+          CFI (cfiCond116) R11L Frame(CFA, -8)
+          CFI (cfiCond116) R11H Frame(CFA, -6)
+          CFI (cfiCond116) CFA SP+176
+          CFI Block cfiPicker117 Using cfiCommon1
+          CFI (cfiPicker117) NoFunction
+          CFI (cfiPicker117) Picker
+        MOV.B   @R8, R13
+        MOV.B   R9, R12
+        BRA     #OLED_write_Nchar_6x8
+          CFI EndBlock cfiCond114
+          CFI EndBlock cfiCond115
+          CFI EndBlock cfiCond116
+          CFI EndBlock cfiPicker117
+
+        RSEG CODE:CODE:NOROOT(1)
+OLED_write_char_8x16:
+          CFI Block cfiBlock118 Using cfiCommon0
+          CFI Function OLED_write_char_8x16
+        FUNCALL OLED_write_char_8x16, OLED_set_pos
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OLED_write_char_8x16, OLED_write_byte
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OLED_write_char_8x16, OLED_set_pos
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OLED_write_char_8x16, OLED_write_byte
+        LOCFRAME CSTACK, 28, STACK
+        PUSHM.A #0x6, R11
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+28
+        MOV.B   R12, R11
+        MOV.B   R13, R8
+        MOV.B   R14, R10
+        ADD.B   #0xe0, R10
+        CMP.B   #0x5f, R10
+        JC      ??OLED_write_char_8x16_2
+        CALLA   #OLED_set_pos
+        RLAM.A  #0x4, R10
+        MOVA    R10, R9
+        ADDA    #ASCII_8X16, R10
+        MOVA    R10, R6
+        ADDA    #0x8, R6
+??OLED_write_char_8x16_0:
+        MOV.B   @R10+, R13
+        CALLA   #??Subroutine9_0
+??CrossCallReturnLabel_69:
+        CMPA    R6, R10
+        JNE     ??OLED_write_char_8x16_0
+        MOV.B   R8, R13
+        ADD.B   #0x1, R11
+        MOV.B   R11, R12
+        CALLA   #OLED_set_pos
+        ADDA    #ASCII_8X16 + 8, R9
+        MOVA    R9, R11
+        ADDA    #0x8, R11
+??OLED_write_char_8x16_1:
+        MOV.B   @R9+, R13
+        CALLA   #??Subroutine9_0
+??CrossCallReturnLabel_68:
+        CMPA    R11, R9
+        JNE     ??OLED_write_char_8x16_1
+??OLED_write_char_8x16_2:
+        POPM.A  #0x6, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock118
+
+        RSEG CODE:CODE:NOROOT(1)
+OLED_write_Nchar_8x16:
+          CFI Block cfiBlock119 Using cfiCommon0
+          CFI Function OLED_write_Nchar_8x16
+        FUNCALL OLED_write_Nchar_8x16, OLED_write_char_8x16
+        LOCFRAME CSTACK, 20, STACK
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        MOV.B   R12, R11
+        MOV.B   R13, R8
+        MOVA    R14, R9
+        MOV.B   R15, R10
+        JMP     ??OLED_write_Nchar_8x16_1
+??OLED_write_Nchar_8x16_0:
+        ADD.B   #0xff, R10
+        MOV.B   @R9+, R14
+        MOV.B   R8, R13
+        MOV.B   R11, R12
+        CALLA   #OLED_write_char_8x16
+        ADD.B   #0x8, R8
+        CMP.B   #0x79, R8
+        JNC     ??OLED_write_Nchar_8x16_1
+        CALLA   #?Subroutine17
+??OLED_write_Nchar_8x16_1:
+        CMP.B   #0x0, R10
+        JNE     ??OLED_write_Nchar_8x16_0
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock119
+
+        RSEG CODE:CODE:NOROOT(1)
+OLED_Printf_8x16:
+          CFI Block cfiBlock120 Using cfiCommon0
+          CFI Function OLED_Printf_8x16
+        FUNCALL OLED_Printf_8x16, vsprintf
+        LOCFRAME CSTACK, 176, STACK
+        FUNCALL OLED_Printf_8x16, strlen
+        LOCFRAME CSTACK, 176, STACK
+        FUNCALL OLED_Printf_8x16, OLED_write_Nchar_8x16
+        LOCFRAME CSTACK, 172, STACK
+        FUNCALL OLED_Printf_8x16, OLED_write_Nchar_8x16
+        LOCFRAME CSTACK, 172, STACK
+        FUNCALL OLED_Printf_8x16, OLED_write_byte
+        LOCFRAME CSTACK, 172, STACK
+        FUNCALL OLED_Printf_8x16, OLED_write_Nchar_8x16
+        LOCFRAME CSTACK, 172, STACK
+        PUSHM.A #0x8, R11
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+36
+        SUB.W   #0x88, SP
+          CFI CFA SP+172
+        CALLA   #?Subroutine10
+??CrossCallReturnLabel_8:
+        PUSH.W  #0x0
+          CFI CFA SP+174
+        PUSH.W  R15
+          CFI CFA SP+176
+        MOVA    R14, R13
+        MOVA    R9, R12
+        CALLA   #vsprintf
+        CALLA   #?Subroutine19
+??CrossCallReturnLabel_24:
+        ADD.W   #0x4, SP
+          CFI CFA SP+172
+        CMP.W   #0x0, R12
+        JL      ??OLED_Printf_8x16_7
+        MOV.W   R9, R4
+??OLED_Printf_8x16_2:
+        CMP.B   #0xa, 0(R4)
+        JNE     ??OLED_Printf_8x16_5
+        CALLA   #?Subroutine12
+??CrossCallReturnLabel_12:
+        JMP     ??OLED_Printf_8x16_8
+??OLED_Printf_8x16_0:
+        MOV.B   #0x10, R15
+        MOV.W   0x2(SP), R14
+        CALLA   #?Subroutine13
+??CrossCallReturnLabel_15:
+        ADD.B   #0x2, R11
+        MOV.B   #0x0, R8
+        ADD.B   #0x10, R10
+        MOV.W   0x2(SP), R15
+        ADD.W   #0x10, R15
+        MOV.W   R15, 0x2(SP)
+        ADD.W   #0xfff0, R6
+??OLED_Printf_8x16_8:
+        CMP.B   @SP, R10
+        JC      ??OLED_Printf_8x16_3
+        CMP.W   #0x11, R6
+        JGE     ??OLED_Printf_8x16_0
+        MOV.B   @SP, R6
+        SUB.B   R10, R6
+        MOV.B   R6, R15
+        MOV.W   R9, R14
+        ADD.W   R10, R14
+        CALLA   #?Subroutine13
+??CrossCallReturnLabel_14:
+        RPT     #0x3
+        RLAX.B  R6
+        ADD.B   R6, R8
+        CALLA   #?Subroutine6
+??OLED_Printf_8x16_3:
+        MOV.B   @SP, R10
+        ADD.B   #0x1, R10
+        CALLA   #?Subroutine17
+??OLED_Printf_8x16_5:
+        ADD.W   #0x1, R7
+        ADD.W   #0x1, R4
+        CMP.W   R7, R5
+        JGE     ??OLED_Printf_8x16_2
+??OLED_Printf_8x16_7:
+        MOV.B   R10, R7
+        CMP.W   R5, R7
+        JGE     ??OLED_Printf_8x16_9
+        MOV.B   R5, R15
+        SUB.B   R10, R15
+        ADD.W   R7, R9
+        MOV.W   R9, R14
+        CALLA   #?Subroutine13
+??OLED_Printf_8x16_9:
+        JMP     ?Subroutine0
+        NOP
+          CFI EndBlock cfiBlock120
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine17:
+          CFI Block cfiCond121 Using cfiCommon0
+          CFI Function OLED_write_Nchar_8x16
+          CFI Conditional ??OLED_write_Nchar_8x16_1
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+24
+          CFI Block cfiCond122 Using cfiCommon0
+          CFI (cfiCond122) Function OLED_Printf_8x16
+          CFI (cfiCond122) Conditional ??OLED_Printf_8x16_5
+          CFI (cfiCond122) R4L Frame(CFA, -36)
+          CFI (cfiCond122) R4H Frame(CFA, -34)
+          CFI (cfiCond122) R5L Frame(CFA, -32)
+          CFI (cfiCond122) R5H Frame(CFA, -30)
+          CFI (cfiCond122) R6L Frame(CFA, -28)
+          CFI (cfiCond122) R6H Frame(CFA, -26)
+          CFI (cfiCond122) R7L Frame(CFA, -24)
+          CFI (cfiCond122) R7H Frame(CFA, -22)
+          CFI (cfiCond122) R8L Frame(CFA, -20)
+          CFI (cfiCond122) R8H Frame(CFA, -18)
+          CFI (cfiCond122) R9L Frame(CFA, -16)
+          CFI (cfiCond122) R9H Frame(CFA, -14)
+          CFI (cfiCond122) R10L Frame(CFA, -12)
+          CFI (cfiCond122) R10H Frame(CFA, -10)
+          CFI (cfiCond122) R11L Frame(CFA, -8)
+          CFI (cfiCond122) R11H Frame(CFA, -6)
+          CFI (cfiCond122) CFA SP+176
+          CFI Block cfiPicker123 Using cfiCommon1
+          CFI (cfiPicker123) NoFunction
+          CFI (cfiPicker123) Picker
+        MOV.B   #0x0, R8
+        ADD.B   #0x2, R11
+        CMP.B   #0x7, R11
+        JNC     ??OLED_write_Nchar_8x16_2
+        MOV.B   #0x0, R11
+??OLED_write_Nchar_8x16_2:
+        RETA
+          CFI EndBlock cfiCond121
+          CFI EndBlock cfiCond122
+          CFI EndBlock cfiPicker123
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine13:
+          CFI Block cfiCond124 Using cfiCommon0
+          CFI Function OLED_Printf_8x16
+          CFI Conditional ??CrossCallReturnLabel_15
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+176
+          CFI Block cfiCond125 Using cfiCommon0
+          CFI (cfiCond125) Function OLED_Printf_8x16
+          CFI (cfiCond125) Conditional ??CrossCallReturnLabel_14
+          CFI (cfiCond125) R4L Frame(CFA, -36)
+          CFI (cfiCond125) R4H Frame(CFA, -34)
+          CFI (cfiCond125) R5L Frame(CFA, -32)
+          CFI (cfiCond125) R5H Frame(CFA, -30)
+          CFI (cfiCond125) R6L Frame(CFA, -28)
+          CFI (cfiCond125) R6H Frame(CFA, -26)
+          CFI (cfiCond125) R7L Frame(CFA, -24)
+          CFI (cfiCond125) R7H Frame(CFA, -22)
+          CFI (cfiCond125) R8L Frame(CFA, -20)
+          CFI (cfiCond125) R8H Frame(CFA, -18)
+          CFI (cfiCond125) R9L Frame(CFA, -16)
+          CFI (cfiCond125) R9H Frame(CFA, -14)
+          CFI (cfiCond125) R10L Frame(CFA, -12)
+          CFI (cfiCond125) R10H Frame(CFA, -10)
+          CFI (cfiCond125) R11L Frame(CFA, -8)
+          CFI (cfiCond125) R11H Frame(CFA, -6)
+          CFI (cfiCond125) CFA SP+176
+          CFI Block cfiCond126 Using cfiCommon0
+          CFI (cfiCond126) Function OLED_Printf_8x16
+          CFI (cfiCond126) Conditional ??OLED_Printf_8x16_9
+          CFI (cfiCond126) R4L Frame(CFA, -36)
+          CFI (cfiCond126) R4H Frame(CFA, -34)
+          CFI (cfiCond126) R5L Frame(CFA, -32)
+          CFI (cfiCond126) R5H Frame(CFA, -30)
+          CFI (cfiCond126) R6L Frame(CFA, -28)
+          CFI (cfiCond126) R6H Frame(CFA, -26)
+          CFI (cfiCond126) R7L Frame(CFA, -24)
+          CFI (cfiCond126) R7H Frame(CFA, -22)
+          CFI (cfiCond126) R8L Frame(CFA, -20)
+          CFI (cfiCond126) R8H Frame(CFA, -18)
+          CFI (cfiCond126) R9L Frame(CFA, -16)
+          CFI (cfiCond126) R9H Frame(CFA, -14)
+          CFI (cfiCond126) R10L Frame(CFA, -12)
+          CFI (cfiCond126) R10H Frame(CFA, -10)
+          CFI (cfiCond126) R11L Frame(CFA, -8)
+          CFI (cfiCond126) R11H Frame(CFA, -6)
+          CFI (cfiCond126) CFA SP+176
+          CFI Block cfiPicker127 Using cfiCommon1
+          CFI (cfiPicker127) NoFunction
+          CFI (cfiPicker127) Picker
+        MOV.B   R8, R13
+        MOV.B   R11, R12
+        BRA     #OLED_write_Nchar_8x16
+          CFI EndBlock cfiCond124
+          CFI EndBlock cfiCond125
+          CFI EndBlock cfiCond126
+          CFI EndBlock cfiPicker127
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+OLED_Printf_6x8:
+          CFI Block cfiBlock128 Using cfiCommon0
+          CFI Function OLED_Printf_6x8
+        FUNCALL OLED_Printf_6x8, vsprintf
+        LOCFRAME CSTACK, 176, STACK
+        FUNCALL OLED_Printf_6x8, strlen
+        LOCFRAME CSTACK, 176, STACK
+        FUNCALL OLED_Printf_6x8, OLED_write_Nchar_6x8
+        LOCFRAME CSTACK, 172, STACK
+        FUNCALL OLED_Printf_6x8, OLED_write_Nchar_6x8
+        LOCFRAME CSTACK, 172, STACK
+        FUNCALL OLED_Printf_6x8, OLED_write_byte
+        LOCFRAME CSTACK, 172, STACK
+        FUNCALL OLED_Printf_6x8, OLED_write_Nchar_6x8
+        LOCFRAME CSTACK, 172, STACK
+        PUSHM.A #0x8, R11
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+36
+        SUB.W   #0x88, SP
+          CFI CFA SP+172
+        CALLA   #?Subroutine10
+??CrossCallReturnLabel_9:
+        PUSH.W  #0x0
+          CFI CFA SP+174
+        PUSH.W  R15
+          CFI CFA SP+176
+        MOVA    R14, R13
+        MOVA    R9, R12
+        CALLA   #vsprintf
+        CALLA   #?Subroutine19
+??CrossCallReturnLabel_25:
+        ADD.W   #0x4, SP
+          CFI CFA SP+172
+        CMP.W   #0x0, R12
+        JL      ??OLED_Printf_6x8_5
+        MOV.W   R9, R4
+??OLED_Printf_6x8_2:
+        CMP.B   #0xa, 0(R4)
+        JNE     ??OLED_Printf_6x8_6
+        CALLA   #?Subroutine12
+??CrossCallReturnLabel_13:
+        JMP     ??OLED_Printf_6x8_7
+??OLED_Printf_6x8_0:
+        MOV.B   #0x15, R15
+        MOV.W   0x2(SP), R14
+        CALLA   #?Subroutine14
+??CrossCallReturnLabel_17:
+        ADD.B   #0x1, R11
+        MOV.B   #0x0, R8
+        ADD.B   #0x15, R10
+        MOV.W   0x2(SP), R15
+        ADD.W   #0x15, R15
+        MOV.W   R15, 0x2(SP)
+        ADD.W   #0xffeb, R6
+??OLED_Printf_6x8_7:
+        CMP.B   @SP, R10
+        JC      ??OLED_Printf_6x8_3
+        CMP.W   #0x16, R6
+        JGE     ??OLED_Printf_6x8_0
+        MOV.B   @SP, R6
+        SUB.B   R10, R6
+        MOV.B   R6, R15
+        MOV.W   R9, R14
+        ADD.W   R10, R14
+        CALLA   #?Subroutine14
+??CrossCallReturnLabel_16:
+        RPT     #0x6
+        ADDX.B  R6, R8
+        CALLA   #?Subroutine6
+??OLED_Printf_6x8_3:
+        MOV.B   @SP, R10
+        ADD.B   #0x1, R10
+        MOV.B   #0x0, R8
+        ADD.B   #0x1, R11
+        CMP.B   #0x8, R11
+        JNC     ??OLED_Printf_6x8_6
+        MOV.B   #0x0, R11
+??OLED_Printf_6x8_6:
+        ADD.W   #0x1, R7
+        ADD.W   #0x1, R4
+        CMP.W   R7, R5
+        JGE     ??OLED_Printf_6x8_2
+??OLED_Printf_6x8_5:
+        MOV.B   R10, R7
+        CMP.W   R5, R7
+        JGE     ??OLED_Printf_6x8_8
+        MOV.B   R5, R15
+        SUB.B   R10, R15
+        ADD.W   R7, R9
+        MOV.W   R9, R14
+        CALLA   #?Subroutine14
+??OLED_Printf_6x8_8:
+        JMP     ?Subroutine0
+        NOP
+          CFI EndBlock cfiBlock128
+//  375 void OLED_display_number_6x8(uint8_t y,uint8_t x,int16_t number)
+//  376 {
+//  377   char str[7],j,k=0,i;
+//  378   unsigned int c=10000;
+//  379   if(number<0)
+//  380     {str[0]='-';number=-number;}
+//  381   else str[0]=' ';
+//  382   for( i=1;i<=5;i++)
+//  383   {
+//  384     j=number/c%10;
+//  385     if(j==0&&k==0&&i<5)
+//  386     {
+//  387       str[i]=' ';
+//  388     }
+//  389     else
+//  390     {
+//  391       k=1;
+//  392       str[i]=j+'0';
+//  393     }
+//  394     c/=10;
+//  395   }
+//  396   str[6]='\0';
+//  397   OLED_display_string_6x8(y,x,str);
+//  398 }
+//  399 /********************************************************************
+//  400 º¯Êý¹¦ÄÜ:ÔÚµÚyÐÐµÚxÁÐÏÔÊ¾Ò»¸ö8*16µÄÕûÊý,¿ÉÒÔ´ø·ûºÅ,int16ÐÍµÄ
+//  401 º¯ÊýÃû³Æ:OLED_display_number_8x16
+//  402 ÐÎÊ½²ÎÊý:y:ÐÐ 0-6 ÏàÁÚÁ½ÐÐ²îÖµÎª1 ±ÈÈçµÚÒ»ÐÐÊÇ0 ÔòµÚ¶þÐÐÎª2 ·ñÔò»á¸²¸ÇµÚÒ»ÐÐÏÂ°ë²¿·Ö
+//  403          x:ÁÐ 0-127  
+//  404          number ÒªÏÔÊ¾µÄÕûÊý
+//  405 ·µ»ØÖµ:  ¿Õ
+//  406 ÐÞ¸ÄÈË:  CTGU-GB2013
+//  407 ÐÞ¸ÄÊ±¼ä:2014/5/13
+//  408 *********************************************************************/
+//  409 void OLED_display_number_8x16(uint8_t y,uint8_t x,int16_t number)
+//  410 {        
+//  411   char str[7],j,k=0,i;
+//  412   unsigned int c=10000;
+//  413   if(number<0)
+//  414     {str[0]='-';number=-number;}
+//  415   else str[0]=' ';
+//  416   for( i=1;i<=5;i++)
+//  417   {
+//  418     j=number/c%10;
+//  419     if(j==0&&k==0&&i<5)
+//  420     {
+//  421       str[i]=' ';
+//  422     }
+//  423     else
+//  424     {
+//  425       k=1;
+//  426       str[i]=j+'0';
+//  427     }
+//  428     c/=10;
+//  429   }
+//  430   str[6]='\0';
+//  431   OLED_display_string_8x16(y,x,str);
+//  432 }
+//  433 /*************************************************************************
+//  434 //ÏÔÊ¾¸¡µãÊý
+//  435 *  º¯ÊýÃû³Æ£ºOLED_display_float_6x8
+//  436 *  ¹¦ÄÜËµÃ÷£ºÏÔÊ¾×Ö·û´®
+//  437 *  ²ÎÊýËµÃ÷£º
+//  438             x,y:Æðµã×ø±ê  
+//  439             number:ÒªÏÔÊ¾µÄÊý×Ö
+//  440             decimal:Òª±£ÁôµÄÐ¡ÊýÎ»
+//  441 *  º¯Êý·µ»Ø£ºÎÞ
+//  442 *  Ê¹ÓÃÊ¾Àý£ºOLED_display_float_6x8(0,0,1.0,3);  //ÏÔÊ¾1.0£¬3Î»Ð¡ÊýÏÔÊ¾
+//  443 *************************************************************************/  
+//  444 void OLED_display_float_6x8(unsigned char y,unsigned char x,float number,unsigned char decimals)
+//  445 {
+//  446   const float _fround[6]={0.49,0.05,0.005,0.0005,0.00005,0.000005};
+//  447   char Str[20];
+//  448   char * str=Str;
+//  449   float scale;
+//  450   unsigned char i,d;
+//  451   if (number<0.0) {number=-number; *str++='-';};
+//  452   if (decimals>5) decimals=5;
+//  453   number=number+_fround[decimals];
+//  454   i=0;
+//  455   scale=1.0;
+//  456   while (number>=scale) {scale=scale*10.0; ++i;};
+//  457   if (i==0) *str++='0';
+//  458   else
+//  459   {
+//  460     while (i--)
+//  461     {
+//  462       scale=(float)((int)(0.5+scale/10.0));
+//  463       d=(unsigned char) (number/scale);
+//  464       *str++=d+'0';
+//  465       number=number-scale*d;
+//  466      };
+//  467   }
+//  468   if (decimals==0) {*str=0; OLED_display_string_6x8(y,x,Str);return;};
+//  469   *str++='.';
+//  470   while (decimals--)
+//  471   {
+//  472     number=number*10.0;
+//  473     d=(unsigned char)number;
+//  474     *str++=d+'0';
+//  475     number=number-d;
+//  476   }
+//  477   *str=0;
+//  478   OLED_display_string_6x8(y,x,Str);
+//  479 }
+//  480 /*************************************************************************
+//  481 //ÏÔÊ¾¸¡µãÊý
+//  482 *  º¯ÊýÃû³Æ£ºOLED_display_float_8x16
+//  483 *  ¹¦ÄÜËµÃ÷£ºÏÔÊ¾×Ö·û´®
+//  484 *  ²ÎÊýËµÃ÷£º
+//  485             x,y:Æðµã×ø±ê  
+//  486             number:ÒªÏÔÊ¾µÄÊý×Ö
+//  487             decimal:Òª±£ÁôµÄÐ¡ÊýÎ»
+//  488 *  º¯Êý·µ»Ø£ºÎÞ
+//  489 *  Ê¹ÓÃÊ¾Àý£ºOLED_display_float_8x16(0,0,1.0,3);  //ÏÔÊ¾1.0£¬3Î»Ð¡ÊýÏÔÊ¾
+//  490 *************************************************************************/  
+//  491 void OLED_display_float_8x16(unsigned char y,unsigned char x,float number,unsigned char decimals)
+//  492 {
+//  493   const float _fround[6]={0.49,0.05,0.005,0.0005,0.00005,0.000005};
+//  494   char Str[15];
+//  495   char * str=Str;
+//  496   float scale;
+//  497   unsigned char i,d;
+//  498   if (number<0.0) 
+//  499   {
+//  500     number=-number;
+//  501     *str++='-';
+//  502   };
+//  503   if (decimals>5)
+//  504     decimals=5;
+//  505   number=number+_fround[decimals];
+//  506   i=0;
+//  507   scale=1.0;
+//  508   while (number>=scale) {scale=scale*10.0; ++i;};
+//  509   if (i==0)
+//  510   {
+//  511     *str++='0';
+//  512   }
+//  513   else
+//  514   {
+//  515     while (i--)
+//  516     {
+//  517       scale=(float)((int)(0.5+scale/10.0));
+//  518       d=(unsigned char) (number/scale);
+//  519       *str++=d+'0';
+//  520       number=number-scale*d;
+//  521      };
+//  522   }
+//  523   if (decimals==0) {*str=0; OLED_display_string_8x16(y,x,Str);return;};
+//  524   *str++='.';
+//  525   while (decimals--)
+//  526   {
+//  527     number=number*10.0;
+//  528     d=(unsigned char)number;
+//  529     *str++=d+'0';
+//  530     number=number-d;
+//  531   }
+//  532   *str=0;
+//  533   OLED_display_string_8x16(y,x,Str);
+//  534 }
+//  535 /********************************************************************
+//  536 º¯Êý¹¦ÄÜ:»æÖÆÒ»¸öµã
+//  537 º¯ÊýÃû³Æ:OLED_PutPixel
+//  538 ÐÎÊ½²ÎÊý:y:ÐÐ
+//  539          x:ÁÐ 0-127 
+//  540 ·µ»ØÖµ:  ¿Õ
+//  541 ÐÞ¸ÄÈË:  kofee
+//  542 ÐÞ¸ÄÊ±¼ä:2014/5/13
+//  543 *********************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  544 void OLED_PutPixel(uint8_t y,uint8_t x)
+OLED_PutPixel:
+          CFI Block cfiBlock129 Using cfiCommon0
+          CFI Function OLED_PutPixel
+//  545 {
+        FUNCALL OLED_PutPixel, OLED_set_pos
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL OLED_PutPixel, OLED_write_byte
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL OLED_PutPixel, OLED_write_byte
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL OLED_PutPixel, OLED_write_byte
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL OLED_PutPixel, OLED_write_byte
+        LOCFRAME CSTACK, 12, STACK
+        PUSHM.A #0x2, R11
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+12
+        MOV.B   R12, R10
+        MOV.B   R13, R11
+//  546     static unsigned char data1; //data1 µ±Ç°µãµÄÊý¾Ý
+//  547     OLED_set_pos(y,x);
+        CALLA   #OLED_set_pos
+//  548     data1 |= 0x01<<(x%8);
+        MOV.B   #0x1, R15
+        MOV.B   R11, R14
+        AND.B   #0x7, R14
+        SUB.B   #0x1, R14
+        JN      ??OLED_PutPixel_0
+        RPT     R14
+        RLAX.B  R15
+??OLED_PutPixel_0:
+        BISX.B  R15, &??data1
+//  549     OLED_write_byte(CMD,0xb0+(x>>3));
+        RPT     #0x3
+        RRUX.B  R11
+        ADD.B   #0xb0, R11
+        MOV.B   R11, R13
+        CALLA   #?Subroutine24
+//  550     OLED_write_byte(CMD,((y&0xf0)>>4)|0x10);
+??CrossCallReturnLabel_57:
+        MOV.B   R10, R13
+        RPT     #0x4
+        RRUX.B  R13
+        BIS.B   #0x10, R13
+        CALLA   #?Subroutine24
+//  551     OLED_write_byte(CMD,(y&0x0f)|0x00);
+??CrossCallReturnLabel_56:
+        AND.B   #0xf, R10
+        MOV.B   R10, R13
+        CALLA   #?Subroutine24
+//  552     OLED_write_byte(DATA,data1);
+??CrossCallReturnLabel_55:
+        MOVX.B  &??data1, R13
+        CALLA   #??Subroutine9_0
+//  553 }
+??CrossCallReturnLabel_67:
+        POPM.A  #0x2, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock129
+//  554 /*************************************************************************
+//  555 *  º¯ÊýÃû³Æ£ºOLED_Printf_6x8
+//  556 *  ¹¦ÄÜËµÃ÷£ºÏÔÊ¾×Ö·û´®
+//  557 *  ²ÎÊýËµÃ÷£º
+//  558 *  º¯Êý·µ»Ø£ºÎÞ
+//  559 *  Ê¹ÓÃÊ¾Àý£ºOLED_Printf_6x8(0,0,"Hello!:i=%d,J=%f",i,1.0);  //·¢ËÍÒ»¸ö×Ö·û´®
+//  560 *************************************************************************/  
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?Subroutine19:
+          CFI Block cfiCond130 Using cfiCommon0
+          CFI Function OLED_Printf_8x16
+          CFI Conditional ??CrossCallReturnLabel_24
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+180
+          CFI Block cfiCond131 Using cfiCommon0
+          CFI (cfiCond131) Function OLED_Printf_6x8
+          CFI (cfiCond131) Conditional ??CrossCallReturnLabel_25
+          CFI (cfiCond131) R4L Frame(CFA, -36)
+          CFI (cfiCond131) R4H Frame(CFA, -34)
+          CFI (cfiCond131) R5L Frame(CFA, -32)
+          CFI (cfiCond131) R5H Frame(CFA, -30)
+          CFI (cfiCond131) R6L Frame(CFA, -28)
+          CFI (cfiCond131) R6H Frame(CFA, -26)
+          CFI (cfiCond131) R7L Frame(CFA, -24)
+          CFI (cfiCond131) R7H Frame(CFA, -22)
+          CFI (cfiCond131) R8L Frame(CFA, -20)
+          CFI (cfiCond131) R8H Frame(CFA, -18)
+          CFI (cfiCond131) R9L Frame(CFA, -16)
+          CFI (cfiCond131) R9H Frame(CFA, -14)
+          CFI (cfiCond131) R10L Frame(CFA, -12)
+          CFI (cfiCond131) R10H Frame(CFA, -10)
+          CFI (cfiCond131) R11L Frame(CFA, -8)
+          CFI (cfiCond131) R11H Frame(CFA, -6)
+          CFI (cfiCond131) CFA SP+180
+          CFI Block cfiPicker132 Using cfiCommon1
+          CFI (cfiPicker132) NoFunction
+          CFI (cfiPicker132) Picker
+//  561 void OLED_Printf_6x8(uint8_t y,uint8_t x,const char * fmt,...)
+//  562 {
+//  563   char OLED_String[128];
+//  564   va_list ap;
+//  565   va_start(ap,fmt);
+//  566   vsprintf(OLED_String,fmt,ap);
+//  567   uint8_t lastposition=0;
+//  568   int length=strlen(OLED_String);
+//  569   int TEXT_SIZE=OLED_W/6;
+//  570   for(int i=0;i<=length;i++)
+//  571   {
+//  572     if(OLED_String[i]=='\n')
+//  573     {
+//  574       uint8_t position=i;
+//  575       while(position>lastposition)
+//  576       {
+//  577         if((position-lastposition)>TEXT_SIZE)//Èç¹ûÒ»ÐÐÒªÏÔÊ¾µÄ×Ö·û´®ÊýÁ¿´óÓÚ16£¬ÔòÐèÒª»»ÐÐ
+//  578         {
+//  579            OLED_write_Nchar_6x8(y,x,&OLED_String[lastposition],TEXT_SIZE);
+//  580            y++;//»»ÐÐ
+//  581            x=0;
+//  582            lastposition+=TEXT_SIZE;
+//  583         }
+//  584         else
+//  585         {
+//  586            OLED_write_Nchar_6x8(y,x,&OLED_String[lastposition],(position-lastposition));
+//  587            for(x+=(position-lastposition)*6;x < OLED_W;x++)   //½«¸ÃÐÐÎ´ÏÔÊ¾µÄ²¿·ÖÇåÁã
+//  588            {
+//  589              OLED_write_byte(DATA,0);  //Ð´ÈëÊý¾Ý
+//  590            }
+//  591            break;
+//  592         }
+//  593       } 
+//  594       lastposition=position+1;
+//  595       //»»ÐÐºóX=0,yÏÂÒÆÒ»ÐÐ
+//  596       x=0;
+//  597       y++;
+//  598       if(y>7)y=0;
+//  599     }
+//  600   }
+//  601   if(lastposition<length)
+//  602   {
+//  603     OLED_write_Nchar_6x8(y,x,&OLED_String[lastposition],(length-lastposition));
+//  604   }
+//  605   va_end(ap);
+//  606 }
+//  607 /*************************************************************************
+//  608 *  º¯ÊýÃû³Æ£ºOLED_Printf_8x16
+//  609 *  ¹¦ÄÜËµÃ÷£ºÏÔÊ¾×Ö·û´®
+//  610 *  ²ÎÊýËµÃ÷£º
+//  611 *  º¯Êý·µ»Ø£ºÎÞ
+//  612 *  Ê¹ÓÃÊ¾Àý£ºOLED_Printf_8x16(0,0,"Hello!:i=%d,J=%f",i,1.0);  //·¢ËÍÒ»¸ö×Ö·û´®
+//  613 *************************************************************************/  
+//  614 void OLED_Printf_8x16(uint8_t y,uint8_t x,const char * fmt,...)
+//  615 {
+//  616   char OLED_String[128];
+//  617   va_list ap;
+//  618   va_start(ap,fmt);
+//  619   vsprintf(OLED_String,fmt,ap);
+//  620   uint8_t lastposition=0;
+        MOV.B   #0x0, R10
+//  621   int length=strlen(OLED_String);
+        MOVA    R9, R12
+        CALLA   #strlen
+        MOV.W   R12, R5
+//  622   int TEXT_SIZE=OLED_W/8;
+//  623   for(int i=0;i<=length;i++)
+        MOV.W   #0x0, R7
+        RETA
+          CFI EndBlock cfiCond130
+          CFI EndBlock cfiCond131
+          CFI EndBlock cfiPicker132
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?Subroutine14:
+          CFI Block cfiCond133 Using cfiCommon0
+          CFI Function OLED_Printf_6x8
+          CFI Conditional ??CrossCallReturnLabel_17
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+176
+          CFI Block cfiCond134 Using cfiCommon0
+          CFI (cfiCond134) Function OLED_Printf_6x8
+          CFI (cfiCond134) Conditional ??CrossCallReturnLabel_16
+          CFI (cfiCond134) R4L Frame(CFA, -36)
+          CFI (cfiCond134) R4H Frame(CFA, -34)
+          CFI (cfiCond134) R5L Frame(CFA, -32)
+          CFI (cfiCond134) R5H Frame(CFA, -30)
+          CFI (cfiCond134) R6L Frame(CFA, -28)
+          CFI (cfiCond134) R6H Frame(CFA, -26)
+          CFI (cfiCond134) R7L Frame(CFA, -24)
+          CFI (cfiCond134) R7H Frame(CFA, -22)
+          CFI (cfiCond134) R8L Frame(CFA, -20)
+          CFI (cfiCond134) R8H Frame(CFA, -18)
+          CFI (cfiCond134) R9L Frame(CFA, -16)
+          CFI (cfiCond134) R9H Frame(CFA, -14)
+          CFI (cfiCond134) R10L Frame(CFA, -12)
+          CFI (cfiCond134) R10H Frame(CFA, -10)
+          CFI (cfiCond134) R11L Frame(CFA, -8)
+          CFI (cfiCond134) R11H Frame(CFA, -6)
+          CFI (cfiCond134) CFA SP+176
+          CFI Block cfiCond135 Using cfiCommon0
+          CFI (cfiCond135) Function OLED_Printf_6x8
+          CFI (cfiCond135) Conditional ??OLED_Printf_6x8_8
+          CFI (cfiCond135) R4L Frame(CFA, -36)
+          CFI (cfiCond135) R4H Frame(CFA, -34)
+          CFI (cfiCond135) R5L Frame(CFA, -32)
+          CFI (cfiCond135) R5H Frame(CFA, -30)
+          CFI (cfiCond135) R6L Frame(CFA, -28)
+          CFI (cfiCond135) R6H Frame(CFA, -26)
+          CFI (cfiCond135) R7L Frame(CFA, -24)
+          CFI (cfiCond135) R7H Frame(CFA, -22)
+          CFI (cfiCond135) R8L Frame(CFA, -20)
+          CFI (cfiCond135) R8H Frame(CFA, -18)
+          CFI (cfiCond135) R9L Frame(CFA, -16)
+          CFI (cfiCond135) R9H Frame(CFA, -14)
+          CFI (cfiCond135) R10L Frame(CFA, -12)
+          CFI (cfiCond135) R10H Frame(CFA, -10)
+          CFI (cfiCond135) R11L Frame(CFA, -8)
+          CFI (cfiCond135) R11H Frame(CFA, -6)
+          CFI (cfiCond135) CFA SP+176
+          CFI Block cfiPicker136 Using cfiCommon1
+          CFI (cfiPicker136) NoFunction
+          CFI (cfiPicker136) Picker
+        MOV.B   R8, R13
+        MOV.B   R11, R12
+        BRA     #OLED_write_Nchar_6x8
+          CFI EndBlock cfiCond133
+          CFI EndBlock cfiCond134
+          CFI EndBlock cfiCond135
+          CFI EndBlock cfiPicker136
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?Subroutine12:
+          CFI Block cfiCond137 Using cfiCommon0
+          CFI Function OLED_Printf_8x16
+          CFI Conditional ??CrossCallReturnLabel_12
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+176
+          CFI Block cfiCond138 Using cfiCommon0
+          CFI (cfiCond138) Function OLED_Printf_6x8
+          CFI (cfiCond138) Conditional ??CrossCallReturnLabel_13
+          CFI (cfiCond138) R4L Frame(CFA, -36)
+          CFI (cfiCond138) R4H Frame(CFA, -34)
+          CFI (cfiCond138) R5L Frame(CFA, -32)
+          CFI (cfiCond138) R5H Frame(CFA, -30)
+          CFI (cfiCond138) R6L Frame(CFA, -28)
+          CFI (cfiCond138) R6H Frame(CFA, -26)
+          CFI (cfiCond138) R7L Frame(CFA, -24)
+          CFI (cfiCond138) R7H Frame(CFA, -22)
+          CFI (cfiCond138) R8L Frame(CFA, -20)
+          CFI (cfiCond138) R8H Frame(CFA, -18)
+          CFI (cfiCond138) R9L Frame(CFA, -16)
+          CFI (cfiCond138) R9H Frame(CFA, -14)
+          CFI (cfiCond138) R10L Frame(CFA, -12)
+          CFI (cfiCond138) R10H Frame(CFA, -10)
+          CFI (cfiCond138) R11L Frame(CFA, -8)
+          CFI (cfiCond138) R11H Frame(CFA, -6)
+          CFI (cfiCond138) CFA SP+176
+          CFI Block cfiPicker139 Using cfiCommon1
+          CFI (cfiPicker139) NoFunction
+          CFI (cfiPicker139) Picker
+//  624   {
+//  625     if(OLED_String[i]=='\n')
+//  626     {
+//  627       uint8_t position=i;
+        MOV.B   R7, 0x4(SP)
+        MOV.B   R7, R6
+        SUB.W   R10, R6
+        MOV.W   R9, R15
+        ADD.W   R10, R15
+        MOV.W   R15, 0x6(SP)
+        RETA
+          CFI EndBlock cfiCond137
+          CFI EndBlock cfiCond138
+          CFI EndBlock cfiPicker139
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?Subroutine10:
+          CFI Block cfiCond140 Using cfiCommon0
+          CFI Function OLED_Printf_8x16
+          CFI Conditional ??CrossCallReturnLabel_8
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+176
+          CFI Block cfiCond141 Using cfiCommon0
+          CFI (cfiCond141) Function OLED_Printf_6x8
+          CFI (cfiCond141) Conditional ??CrossCallReturnLabel_9
+          CFI (cfiCond141) R4L Frame(CFA, -36)
+          CFI (cfiCond141) R4H Frame(CFA, -34)
+          CFI (cfiCond141) R5L Frame(CFA, -32)
+          CFI (cfiCond141) R5H Frame(CFA, -30)
+          CFI (cfiCond141) R6L Frame(CFA, -28)
+          CFI (cfiCond141) R6H Frame(CFA, -26)
+          CFI (cfiCond141) R7L Frame(CFA, -24)
+          CFI (cfiCond141) R7H Frame(CFA, -22)
+          CFI (cfiCond141) R8L Frame(CFA, -20)
+          CFI (cfiCond141) R8H Frame(CFA, -18)
+          CFI (cfiCond141) R9L Frame(CFA, -16)
+          CFI (cfiCond141) R9H Frame(CFA, -14)
+          CFI (cfiCond141) R10L Frame(CFA, -12)
+          CFI (cfiCond141) R10H Frame(CFA, -10)
+          CFI (cfiCond141) R11L Frame(CFA, -8)
+          CFI (cfiCond141) R11H Frame(CFA, -6)
+          CFI (cfiCond141) CFA SP+176
+          CFI Block cfiPicker142 Using cfiCommon1
+          CFI (cfiPicker142) NoFunction
+          CFI (cfiPicker142) Picker
+        MOV.B   R12, R11
+        MOV.B   R13, R8
+        MOV.W   SP, R15
+        ADD.W   #0xb0, R15
+        MOVA    R15, 0x8(SP)
+        MOV.W   SP, R9
+        ADD.W   #0xc, R9
+        RETA
+          CFI EndBlock cfiCond140
+          CFI EndBlock cfiCond141
+          CFI EndBlock cfiPicker142
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?Subroutine6:
+          CFI Block cfiCond143 Using cfiCommon0
+          CFI Function OLED_Printf_8x16
+          CFI Conditional ??OLED_Printf_8x16_3
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+176
+          CFI Block cfiCond144 Using cfiCommon0
+          CFI (cfiCond144) Function OLED_Printf_6x8
+          CFI (cfiCond144) Conditional ??OLED_Printf_6x8_3
+          CFI (cfiCond144) R4L Frame(CFA, -36)
+          CFI (cfiCond144) R4H Frame(CFA, -34)
+          CFI (cfiCond144) R5L Frame(CFA, -32)
+          CFI (cfiCond144) R5H Frame(CFA, -30)
+          CFI (cfiCond144) R6L Frame(CFA, -28)
+          CFI (cfiCond144) R6H Frame(CFA, -26)
+          CFI (cfiCond144) R7L Frame(CFA, -24)
+          CFI (cfiCond144) R7H Frame(CFA, -22)
+          CFI (cfiCond144) R8L Frame(CFA, -20)
+          CFI (cfiCond144) R8H Frame(CFA, -18)
+          CFI (cfiCond144) R9L Frame(CFA, -16)
+          CFI (cfiCond144) R9H Frame(CFA, -14)
+          CFI (cfiCond144) R10L Frame(CFA, -12)
+          CFI (cfiCond144) R10H Frame(CFA, -10)
+          CFI (cfiCond144) R11L Frame(CFA, -8)
+          CFI (cfiCond144) R11H Frame(CFA, -6)
+          CFI (cfiCond144) CFA SP+176
+          CFI Block cfiPicker145 Using cfiCommon1
+          CFI (cfiPicker145) NoFunction
+          CFI (cfiPicker145) Picker
+//  628       while(position>lastposition)
+//  629       {
+//  630         if((position-lastposition)>TEXT_SIZE)//Èç¹ûÒ»ÐÐÒªÏÔÊ¾µÄ×Ö·û´®ÊýÁ¿´óÓÚ16£¬ÔòÐèÒª»»ÐÐ
+//  631         {
+//  632            OLED_write_Nchar_8x16(y,x,&OLED_String[lastposition],TEXT_SIZE);
+//  633            y+=2;//»»ÐÐ
+//  634            x=0;
+//  635            lastposition+=TEXT_SIZE;
+//  636         }
+//  637         else
+//  638         {
+//  639           OLED_write_Nchar_8x16(y,x,&OLED_String[lastposition],(position-lastposition)); 
+//  640           for(x+=(position-lastposition)*8;x < OLED_W;x++)   //½«¸ÃÐÐÎ´ÏÔÊ¾µÄ²¿·ÖÇåÁã
+        CMP.B   #0x80, R8
+        JC      ??OLED_Printf_8x16_4
+        MOV.B   #0x80, R10
+        SUB.B   R8, R10
+//  641           {
+//  642              OLED_write_byte(DATA,0);  //Ð´ÈëÊý¾Ý
+??OLED_Printf_8x16_1:
+        MOV.B   #0x0, R13
+        MOV.B   #0x1, R12
+        CALLA   #OLED_write_byte
+        ADD.B   #0xff, R10
+        JNE     ??OLED_Printf_8x16_1
+??OLED_Printf_8x16_4:
+        RETA
+          CFI EndBlock cfiCond143
+          CFI EndBlock cfiCond144
+          CFI EndBlock cfiPicker145
+//  643           }
+//  644           break;
+//  645         }
+//  646       } 
+//  647       lastposition=position+1;
+//  648       //»»ÐÐºóX=0,yÏÂÒÆÒ»ÐÐ
+//  649       x=0;
+//  650       y+=2;
+//  651       if(y>6)y=0;
+//  652     }
+//  653   }
+//  654   if(lastposition<length)
+//  655     OLED_write_Nchar_8x16(y,x,&OLED_String[lastposition],(length-lastposition));
+//  656   va_end(ap);
+//  657 }
+//  658 /*************************************************************************
+//  659 *  º¯ÊýÃû³Æ£ºOLED_Printf
+//  660 *  ¹¦ÄÜËµÃ÷£ºÏÔÊ¾×Ö·û´®
+//  661 *  ²ÎÊýËµÃ÷£º
+//  662 *  º¯Êý·µ»Ø£ºÎÞ
+//  663 *  Ê¹ÓÃÊ¾Àý£ºOLED_Printf("Hello!:i=%d,J=%f",i,1.0);  //·¢ËÍÒ»¸ö×Ö·û´®
+//  664 *************************************************************************/  
+//  665 void OLED_Printf(const char * fmt,...)
+//  666 {
+//  667   char OLED_String[128];
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_zero20
+//  668   static uint8_t x=0,y=0;
+??x:
+        DS8 1
+
+        RSEG DATA20_Z:DATA:SORT:NOROOT(0)
+        REQUIRE ?cstart_init_zero20
+??y:
+        DS8 1
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r4:
+        REQUIRE ?setjmp_r4
+        REQUIRE ?longjmp_r4
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r5:
+        REQUIRE ?setjmp_r5
+        REQUIRE ?longjmp_r5
+
+        END
+//  669   va_list ap; 
+//  670   va_start(ap,fmt);
+//  671   vsprintf(OLED_String,fmt,ap);
+//  672   uint8_t lastposition=0;
+//  673   int length=strlen(OLED_String);
+//  674   int TEXT_SIZE=OLED_W/6;
+//  675   for(int i=0;i<=length;i++)//²éÕÒ»»ÐÐ·û
+//  676   {
+//  677     if(OLED_String[i] == '\n')
+//  678     {
+//  679       uint8_t position=i;
+//  680       while(position>lastposition)
+//  681       {
+//  682         if((position-lastposition)>TEXT_SIZE)//Èç¹ûÒ»ÐÐÒªÏÔÊ¾µÄ×Ö·û´®ÊýÁ¿´óÓÚTEXT_SIZE£¬ÔòÒ²ÐèÒª»»ÐÐ
+//  683         {
+//  684            OLED_write_Nchar_6x8(y,x,&OLED_String[lastposition],TEXT_SIZE);
+//  685            y++;//»»ÐÐ
+//  686            if(y>7)
+//  687            {
+//  688              y=0;
+//  689              OLED_fill_ram(0x00);                                                 //È«ÆÁÌî³äÊý¾Ý
+//  690            }
+//  691            x=0;
+//  692            lastposition+=TEXT_SIZE;
+//  693         }
+//  694         else
+//  695         {
+//  696            OLED_write_Nchar_6x8(y,x,&OLED_String[lastposition],(position-lastposition));  //ÏÔÊ¾¸ÃÐÐ×Ö·û´®
+//  697            for(x+=(position-lastposition)*6;x < OLED_W;x++)   //½«¸ÃÐÐÎ´ÏÔÊ¾µÄ²¿·ÖÇåÁã
+//  698            {
+//  699              OLED_write_byte(DATA,0);  //Ð´ÈëÊý¾Ý
+//  700            }
+//  701            break;
+//  702         }
+//  703       } 
+//  704       lastposition=position+1;
+//  705       //»»ÐÐºóX=0,yÏÂÒÆÒ»ÐÐ
+//  706       x=0;
+//  707       y++;
+//  708       if(y>7)
+//  709       {
+//  710          y=0;
+//  711          OLED_fill_ram(0x00);                                                 //È«ÆÁÌî³äÊý¾Ý
+//  712       }
+//  713     }
+//  714   }
+//  715   if(lastposition<length)//Ã»ÓÐ»»ÐÐ·û»òÓÐÊ£Óà²¿·ÖÃ»ÓÐÏÔÊ¾Ê±
+//  716   {
+//  717     OLED_write_Nchar_6x8(y,x,&OLED_String[lastposition],(length-lastposition));
+//  718     x+=(length-lastposition)*6u;
+//  719     while(x>=(TEXT_SIZE*6))
+//  720     {
+//  721        x-=(TEXT_SIZE*6);
+//  722        y++;
+//  723        if(y>7)
+//  724        {
+//  725          y=0;
+//  726          x=0;
+//  727          OLED_fill_ram(0x00);                                                 //È«ÆÁÌî³äÊý¾Ý
+//  728        }
+//  729     }
+//  730     for(int i=x;i < OLED_W;i++)   //½«¸ÃÐÐÎ´ÏÔÊ¾µÄ²¿·ÖÇåÁã
+//  731     {
+//  732       OLED_write_byte(DATA,0);  //Ð´ÈëÊý¾Ý
+//  733     }
+//  734   }
+//  735   va_end(ap);
+//  736 }
+// 
+// 2 472 bytes in segment CODE
+//     4 bytes in segment DATA16_AN
+// 2 714 bytes in segment DATA20_C
+//     3 bytes in segment DATA20_Z
+// 
+// 2 472 bytes of CODE  memory
+// 2 714 bytes of CONST memory
+//     3 bytes of DATA  memory (+ 4 bytes shared)
+//
+//Errors: none
+//Warnings: none

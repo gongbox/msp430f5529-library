@@ -1,0 +1,3320 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+//                                                      06/Jun/2016  16:42:33 /
+// IAR C/C++ Compiler V5.50.1.20465/W32, Evaluation edition for MSP430        /
+// Copyright 1996-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    __rt_version  =  3                                                      /
+//    __double_size =  32                                                     /
+//    __reg_r4      =  free                                                   /
+//    __reg_r5      =  free                                                   /
+//    __pic         =  no                                                     /
+//    __core        =  430X                                                   /
+//    __data_model  =  large                                                  /
+//    Source file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\UCOSII\CORE\os_task.c                      /
+//    Command line  =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\UCOSII\CORE\os_task.c -D NDEBUG -D         /
+//                     RAM_VECTOR -lC C:\Users\615\Desktop\MSP430\MSP430F5529 /
+//                     ¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Release\List\ -lA               /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Release\List\ -o C:\Users\615\Desktop\MSP430\M /
+//                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Release\Obj\          /
+//                     -D__MSP430F5529__ -e --double=32 --dlib_config         /
+//                     "D:\Program Files (x86)\IAR Systems\Embedded           /
+//                     Workbench 6.4 Evaluation\430\LIB\DLIB\dl430xlfn.h" -I  /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\ -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº /
+//                     ¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\inc\ -I                    /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\ -I C:\Users\615\Desktop\MSP430\MS /
+//                     P430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\src\USB\ -I    /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_config\ -I                 /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_User\ -I                   /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\srcUSB\USB_API\USB_CDC_API\ -I         /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_API\USB_HID_API\ -I        /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_API\USB_MSC_API\ -I        /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\KEY\ -I C:\Users\615\Desktop\MSP430\M /
+//                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\LED\ -I      /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\12864\ -I                             /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\oled\ -I C:\Users\615\Desktop\MSP430\ /
+//                     MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\mpu6050\inc /
+//                     \ -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\ /
+//                     C°æ\¹¤³ÌÄ£°å\HardWare\mpu6050\src\ -I                  /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\nokia5110\inc\ -I                     /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\nokia5110\src\ -I                     /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\LQ_1.8_TFT\ -I                        /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\LCD_API\ -I                           /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\2.2TFT\ -I                            /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\delay\ -I                             /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\System\ -I C:\Users\615\Desktop\MSP430\MSP430F /
+//                     5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\inc\ -I              /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\System\src\ -I C:\Users\615\Desktop\MSP430\MSP /
+//                     430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\User\ -I                /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\User\USER\ -I C:\Users\615\Desktop\MSP430\MSP4 /
+//                     30F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\UCOSII\CONFIG\ -I    /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\uCOSII\App\ -I                             /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\uCOSII\CONFIHG\ -I                         /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\uCOSII\PORT\ -I                            /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\UCOSII\CORE\ -I                            /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\FatFs\ -I C:\Users\615\Desktop\MSP430\MSP4 /
+//                     30F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\FatFs\option\        /
+//                     --core=430X --data_model=large -Oh --multiplier=32     /
+//                     --multiplier_location=4C0 --hw_workaround=CPU40        /
+//    List file     =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Release\List\os_task.s43                       /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME os_task
+
+        RTMODEL "__SystemLibrary", "DLib"
+        RTMODEL "__core", "430X"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dlib_file_descriptor", "0"
+        RTMODEL "__dlib_full_locale_support", "0"
+        RTMODEL "__double_size", "32"
+        RTMODEL "__pic", "no"
+        RTMODEL "__reg_r4", "free"
+        RTMODEL "__reg_r5", "free"
+        RTMODEL "__rt_version", "3"
+
+        RSEG CSTACK:DATA:SORT:NOROOT(0)
+
+        EXTERN ?OneBitMask32
+        EXTERN ?longjmp_r4
+        EXTERN ?longjmp_r5
+        EXTERN ?setjmp_r4
+        EXTERN ?setjmp_r5
+
+        PUBWEAK ?setjmp_save_r4
+        PUBWEAK ?setjmp_save_r5
+        PUBLIC OSTaskChangePrio
+        FUNCTION OSTaskChangePrio,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 36, STACK
+        PUBLIC OSTaskCreate
+        FUNCTION OSTaskCreate,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 38, STACK
+        PUBLIC OSTaskCreateExt
+        FUNCTION OSTaskCreateExt,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 58, STACK
+        PUBLIC OSTaskDel
+        FUNCTION OSTaskDel,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 20, STACK
+        PUBLIC OSTaskDelReq
+        FUNCTION OSTaskDelReq,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 8, STACK
+        PUBLIC OSTaskNameGet
+        FUNCTION OSTaskNameGet,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 20, STACK
+        PUBLIC OSTaskNameSet
+        FUNCTION OSTaskNameSet,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 20, STACK
+        PUBLIC OSTaskQuery
+        FUNCTION OSTaskQuery,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 20, STACK
+        PUBLIC OSTaskRegGet
+        FUNCTION OSTaskRegGet,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 20, STACK
+        PUBLIC OSTaskRegSet
+        FUNCTION OSTaskRegSet,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 28, STACK
+        PUBLIC OSTaskResume
+        FUNCTION OSTaskResume,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 8, STACK
+        PUBLIC OSTaskStkChk
+        FUNCTION OSTaskStkChk,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 28, STACK
+        PUBLIC OSTaskSuspend
+        FUNCTION OSTaskSuspend,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 12, STACK
+        PUBLIC OS_TaskReturn
+        FUNCTION OS_TaskReturn,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC OS_TaskStkClr
+        FUNCTION OS_TaskStkClr,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA SP DATA
+          CFI Resource PC:20, SP:20, SR:16, R4L:16, R4H:4, R4:20, R5L:16, R5H:4
+          CFI Resource R5:20, R6L:16, R6H:4, R6:20, R7L:16, R7H:4, R7:20, R8L:16
+          CFI Resource R8H:4, R8:20, R9L:16, R9H:4, R9:20, R10L:16, R10H:4
+          CFI Resource R10:20, R11L:16, R11H:4, R11:20, R12L:16, R12H:4, R12:20
+          CFI Resource R13L:16, R13H:4, R13:20, R14L:16, R14H:4, R14:20, R15L:16
+          CFI Resource R15H:4, R15:20
+          CFI ResourceParts R4 R4H, R4L
+          CFI ResourceParts R5 R5H, R5L
+          CFI ResourceParts R6 R6H, R6L
+          CFI ResourceParts R7 R7H, R7L
+          CFI ResourceParts R8 R8H, R8L
+          CFI ResourceParts R9 R9H, R9L
+          CFI ResourceParts R10 R10H, R10L
+          CFI ResourceParts R11 R11H, R11L
+          CFI ResourceParts R12 R12H, R12L
+          CFI ResourceParts R13 R13H, R13L
+          CFI ResourceParts R14 R14H, R14L
+          CFI ResourceParts R15 R15H, R15L
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H SameValue
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H SameValue
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H SameValue
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H SameValue
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H SameValue
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H SameValue
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H SameValue
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H SameValue
+          CFI R11 Concat
+          CFI R12L Undefined
+          CFI R12H Undefined
+          CFI R12 Undefined
+          CFI R13L Undefined
+          CFI R13H Undefined
+          CFI R13 Undefined
+          CFI R14L Undefined
+          CFI R14H Undefined
+          CFI R14 Undefined
+          CFI R15L Undefined
+          CFI R15H Undefined
+          CFI R15 Undefined
+          CFI EndCommon cfiCommon0
+        
+        
+          CFI Common cfiCommon1 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H SameValue
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H SameValue
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H SameValue
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H SameValue
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H SameValue
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H SameValue
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H SameValue
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H SameValue
+          CFI R11 Concat
+          CFI R12L SameValue
+          CFI R12H SameValue
+          CFI R12 Concat
+          CFI R13L SameValue
+          CFI R13H SameValue
+          CFI R13 Concat
+          CFI R14L SameValue
+          CFI R14H SameValue
+          CFI R14 Concat
+          CFI R15L SameValue
+          CFI R15H SameValue
+          CFI R15 Concat
+          CFI EndCommon cfiCommon1
+        
+        EXTERN OSIntNesting
+        EXTERN OSCPUSaveSR
+        FUNCTION OSCPUSaveSR,0202H
+        EXTERN OSTCBCur
+        EXTERN OSTCBPrioTbl
+        EXTERN OSCPURestoreSR
+        FUNCTION OSCPURestoreSR,0202H
+        EXTERN OSRdyTbl
+        EXTERN OSRdyGrp
+        EXTERN OS_EventTaskRemove
+        FUNCTION OS_EventTaskRemove,0202H
+        EXTERN OS_FlagUnlink
+        FUNCTION OS_FlagUnlink,0202H
+        EXTERN OSLockNesting
+        EXTERN OS_Dummy
+        FUNCTION OS_Dummy,0202H
+        EXTERN OSTaskDelHook
+        FUNCTION OSTaskDelHook,0202H
+        EXTERN OSTaskCtr
+        EXTERN OSTCBList
+        EXTERN OSTCBFreeList
+        EXTERN OSRunning
+        EXTERN OS_Sched
+        FUNCTION OS_Sched,0202H
+        EXTERN OSTaskReturnHook
+        FUNCTION OSTaskReturnHook,0202H
+        EXTERN OS_MemCopy
+        FUNCTION OS_MemCopy,0202H
+        EXTERN OS_StrLen
+        FUNCTION OS_StrLen,0202H
+        EXTERN OSTaskStkInit
+        FUNCTION OSTaskStkInit,0202H
+        EXTERN OS_TCBInit
+        FUNCTION OS_TCBInit,0202H
+
+// C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\UCOSII\CORE\os_task.c
+//    1 /*
+//    2 *********************************************************************************************************
+//    3 *                                                uC/OS-II
+//    4 *                                          The Real-Time Kernel
+//    5 *                                            TASK MANAGEMENT
+//    6 *
+//    7 *                              (c) Copyright 1992-2009, Micrium, Weston, FL
+//    8 *                                           All Rights Reserved
+//    9 *
+//   10 * File    : OS_TASK.C
+//   11 * By      : Jean J. Labrosse
+//   12 * Version : V2.91
+//   13 *
+//   14 * LICENSING TERMS:
+//   15 * ---------------
+//   16 *   uC/OS-II is provided in source form for FREE evaluation, for educational use or for peaceful research.
+//   17 * If you plan on using  uC/OS-II  in a commercial product you need to contact Micriµm to properly license
+//   18 * its use in your product. We provide ALL the source code for your convenience and to help you experience
+//   19 * uC/OS-II.   The fact that the  source is provided does  NOT  mean that you can use it without  paying a
+//   20 * licensing fee.
+//   21 *********************************************************************************************************
+//   22 */
+//   23 
+//   24 #ifndef  OS_MASTER_FILE
+//   25 #include "ucos_ii.h"
+//   26 #endif
+//   27 
+//   28 /*$PAGE*/
+//   29 /*
+//   30 *********************************************************************************************************
+//   31 *                                        CHANGE PRIORITY OF A TASK
+//   32 *
+//   33 * Description: This function allows you to change the priority of a task dynamically.  Note that the new
+//   34 *              priority MUST be available.
+//   35 *
+//   36 * Arguments  : oldp     is the old priority
+//   37 *
+//   38 *              newp     is the new priority
+//   39 *
+//   40 * Returns    : OS_ERR_NONE            is the call was successful
+//   41 *              OS_ERR_PRIO_INVALID    if the priority you specify is higher that the maximum allowed
+//   42 *                                     (i.e. >= OS_LOWEST_PRIO)
+//   43 *              OS_ERR_PRIO_EXIST      if the new priority already exist.
+//   44 *              OS_ERR_PRIO            there is no task with the specified OLD priority (i.e. the OLD task does
+//   45 *                                     not exist.
+//   46 *              OS_ERR_TASK_NOT_EXIST  if the task is assigned to a Mutex PIP.
+//   47 *********************************************************************************************************
+//   48 */
+//   49 
+//   50 #if OS_TASK_CHANGE_PRIO_EN > 0u
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?Subroutine3:
+          CFI Block cfiCond0 Using cfiCommon0
+          CFI Function OSTaskDel
+          CFI Conditional ??CrossCallReturnLabel_5
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+24
+          CFI Block cfiCond1 Using cfiCommon0
+          CFI (cfiCond1) Function OSTaskQuery
+          CFI (cfiCond1) Conditional ??CrossCallReturnLabel_6
+          CFI (cfiCond1) R8L Frame(CFA, -20)
+          CFI (cfiCond1) R8H Frame(CFA, -18)
+          CFI (cfiCond1) R9L Frame(CFA, -16)
+          CFI (cfiCond1) R9H Frame(CFA, -14)
+          CFI (cfiCond1) R10L Frame(CFA, -12)
+          CFI (cfiCond1) R10H Frame(CFA, -10)
+          CFI (cfiCond1) R11L Frame(CFA, -8)
+          CFI (cfiCond1) R11H Frame(CFA, -6)
+          CFI (cfiCond1) CFA SP+24
+          CFI Block cfiCond2 Using cfiCommon0
+          CFI (cfiCond2) Function OSTaskSuspend
+          CFI (cfiCond2) Conditional ??CrossCallReturnLabel_7
+          CFI (cfiCond2) R10L Frame(CFA, -12)
+          CFI (cfiCond2) R10H Frame(CFA, -10)
+          CFI (cfiCond2) R11L Frame(CFA, -8)
+          CFI (cfiCond2) R11H Frame(CFA, -6)
+          CFI (cfiCond2) CFA SP+16
+          CFI Block cfiCond3 Using cfiCommon0
+          CFI (cfiCond3) Function OSTaskStkChk
+          CFI (cfiCond3) Conditional ??CrossCallReturnLabel_8
+          CFI (cfiCond3) R6L Frame(CFA, -28)
+          CFI (cfiCond3) R6H Frame(CFA, -26)
+          CFI (cfiCond3) R7L Frame(CFA, -24)
+          CFI (cfiCond3) R7H Frame(CFA, -22)
+          CFI (cfiCond3) R8L Frame(CFA, -20)
+          CFI (cfiCond3) R8H Frame(CFA, -18)
+          CFI (cfiCond3) R9L Frame(CFA, -16)
+          CFI (cfiCond3) R9H Frame(CFA, -14)
+          CFI (cfiCond3) R10L Frame(CFA, -12)
+          CFI (cfiCond3) R10H Frame(CFA, -10)
+          CFI (cfiCond3) R11L Frame(CFA, -8)
+          CFI (cfiCond3) R11H Frame(CFA, -6)
+          CFI (cfiCond3) CFA SP+32
+          CFI Block cfiCond4 Using cfiCommon0
+          CFI (cfiCond4) Function OSTaskResume
+          CFI (cfiCond4) Conditional ??CrossCallReturnLabel_9
+          CFI (cfiCond4) R10L Frame(CFA, -8)
+          CFI (cfiCond4) R10H Frame(CFA, -6)
+          CFI (cfiCond4) CFA SP+12
+          CFI Block cfiCond5 Using cfiCommon0
+          CFI (cfiCond5) Function OSTaskDelReq
+          CFI (cfiCond5) Conditional ??CrossCallReturnLabel_10
+          CFI (cfiCond5) R10L Frame(CFA, -8)
+          CFI (cfiCond5) R10H Frame(CFA, -6)
+          CFI (cfiCond5) CFA SP+12
+          CFI Block cfiCond6 Using cfiCommon0
+          CFI (cfiCond6) Function OSTaskChangePrio
+          CFI (cfiCond6) Conditional ??CrossCallReturnLabel_11
+          CFI (cfiCond6) R4L Frame(CFA, -36)
+          CFI (cfiCond6) R4H Frame(CFA, -34)
+          CFI (cfiCond6) R5L Frame(CFA, -32)
+          CFI (cfiCond6) R5H Frame(CFA, -30)
+          CFI (cfiCond6) R6L Frame(CFA, -28)
+          CFI (cfiCond6) R6H Frame(CFA, -26)
+          CFI (cfiCond6) R7L Frame(CFA, -24)
+          CFI (cfiCond6) R7H Frame(CFA, -22)
+          CFI (cfiCond6) R8L Frame(CFA, -20)
+          CFI (cfiCond6) R8H Frame(CFA, -18)
+          CFI (cfiCond6) R9L Frame(CFA, -16)
+          CFI (cfiCond6) R9H Frame(CFA, -14)
+          CFI (cfiCond6) R10L Frame(CFA, -12)
+          CFI (cfiCond6) R10H Frame(CFA, -10)
+          CFI (cfiCond6) R11L Frame(CFA, -8)
+          CFI (cfiCond6) R11H Frame(CFA, -6)
+          CFI (cfiCond6) CFA SP+40
+          CFI Block cfiPicker7 Using cfiCommon1
+          CFI (cfiPicker7) NoFunction
+          CFI (cfiPicker7) Picker
+        CALLA   #OSCPURestoreSR
+        MOV.B   #0x43, R12
+        RETA
+          CFI EndBlock cfiCond0
+          CFI EndBlock cfiCond1
+          CFI EndBlock cfiCond2
+          CFI EndBlock cfiCond3
+          CFI EndBlock cfiCond4
+          CFI EndBlock cfiCond5
+          CFI EndBlock cfiCond6
+          CFI EndBlock cfiPicker7
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?Subroutine6:
+          CFI Block cfiCond8 Using cfiCommon0
+          CFI Function OSTaskCreateExt
+          CFI Conditional ??OSTaskCreateExt_1
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+52
+          CFI Block cfiCond9 Using cfiCommon0
+          CFI (cfiCond9) Function OSTaskCreate
+          CFI (cfiCond9) Conditional ??OSTaskCreate_1
+          CFI (cfiCond9) R6L Frame(CFA, -28)
+          CFI (cfiCond9) R6H Frame(CFA, -26)
+          CFI (cfiCond9) R7L Frame(CFA, -24)
+          CFI (cfiCond9) R7H Frame(CFA, -22)
+          CFI (cfiCond9) R8L Frame(CFA, -20)
+          CFI (cfiCond9) R8H Frame(CFA, -18)
+          CFI (cfiCond9) R9L Frame(CFA, -16)
+          CFI (cfiCond9) R9H Frame(CFA, -14)
+          CFI (cfiCond9) R10L Frame(CFA, -12)
+          CFI (cfiCond9) R10H Frame(CFA, -10)
+          CFI (cfiCond9) R11L Frame(CFA, -8)
+          CFI (cfiCond9) R11H Frame(CFA, -6)
+          CFI (cfiCond9) CFA SP+32
+          CFI Block cfiCond10 Using cfiCommon0
+          CFI (cfiCond10) Function OSTaskChangePrio
+          CFI (cfiCond10) Conditional ??CrossCallReturnLabel_14
+          CFI (cfiCond10) R4L Frame(CFA, -36)
+          CFI (cfiCond10) R4H Frame(CFA, -34)
+          CFI (cfiCond10) R5L Frame(CFA, -32)
+          CFI (cfiCond10) R5H Frame(CFA, -30)
+          CFI (cfiCond10) R6L Frame(CFA, -28)
+          CFI (cfiCond10) R6H Frame(CFA, -26)
+          CFI (cfiCond10) R7L Frame(CFA, -24)
+          CFI (cfiCond10) R7H Frame(CFA, -22)
+          CFI (cfiCond10) R8L Frame(CFA, -20)
+          CFI (cfiCond10) R8H Frame(CFA, -18)
+          CFI (cfiCond10) R9L Frame(CFA, -16)
+          CFI (cfiCond10) R9H Frame(CFA, -14)
+          CFI (cfiCond10) R10L Frame(CFA, -12)
+          CFI (cfiCond10) R10H Frame(CFA, -10)
+          CFI (cfiCond10) R11L Frame(CFA, -8)
+          CFI (cfiCond10) R11H Frame(CFA, -6)
+          CFI (cfiCond10) CFA SP+40
+          CFI Block cfiPicker11 Using cfiCommon1
+          CFI (cfiPicker11) NoFunction
+          CFI (cfiPicker11) Picker
+        CALLA   #OSCPURestoreSR
+        MOV.B   #0x28, R12
+        RETA
+          CFI EndBlock cfiCond8
+          CFI EndBlock cfiCond9
+          CFI EndBlock cfiCond10
+          CFI EndBlock cfiPicker11
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   51 INT8U  OSTaskChangePrio (INT8U  oldprio,
+OSTaskChangePrio:
+          CFI Block cfiBlock12 Using cfiCommon0
+          CFI Function OSTaskChangePrio
+//   52                          INT8U  newprio)
+//   53 {
+        FUNCALL OSTaskChangePrio, OSCPUSaveSR
+        LOCFRAME CSTACK, 36, STACK
+        FUNCALL OSTaskChangePrio, OSCPURestoreSR
+        LOCFRAME CSTACK, 36, STACK
+        FUNCALL OSTaskChangePrio, OSCPURestoreSR
+        LOCFRAME CSTACK, 36, STACK
+        FUNCALL OSTaskChangePrio, OSCPURestoreSR
+        LOCFRAME CSTACK, 36, STACK
+        FUNCALL OSTaskChangePrio, OSCPURestoreSR
+        LOCFRAME CSTACK, 36, STACK
+        FUNCALL OSTaskChangePrio, OS_Sched
+        LOCFRAME CSTACK, 36, STACK
+        PUSHM.A #0x8, R11
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+36
+        MOV.B   R12, R11
+        MOV.B   R13, R10
+//   54 #if (OS_EVENT_EN)
+//   55     OS_EVENT  *pevent;
+//   56 #if (OS_EVENT_MULTI_EN > 0u)
+//   57     OS_EVENT **pevents;
+//   58 #endif
+//   59 #endif
+//   60     OS_TCB    *ptcb;
+//   61     INT8U      y_new;
+//   62     INT8U      x_new;
+//   63     INT8U      y_old;
+//   64     OS_PRIO    bity_new;
+//   65     OS_PRIO    bitx_new;
+//   66     OS_PRIO    bity_old;
+//   67     OS_PRIO    bitx_old;
+//   68 #if OS_CRITICAL_METHOD == 3u
+//   69     OS_CPU_SR  cpu_sr = 0u;                                 /* Storage for CPU status register         */
+//   70 #endif
+//   71 
+//   72 
+//   73 /*$PAGE*/
+//   74 #if OS_ARG_CHK_EN > 0u
+//   75     if (oldprio >= OS_LOWEST_PRIO) {
+//   76         if (oldprio != OS_PRIO_SELF) {
+//   77             return (OS_ERR_PRIO_INVALID);
+//   78         }
+//   79     }
+//   80     if (newprio >= OS_LOWEST_PRIO) {
+//   81         return (OS_ERR_PRIO_INVALID);
+//   82     }
+//   83 #endif
+//   84     OS_ENTER_CRITICAL();
+        CALLA   #OSCPUSaveSR
+        MOV.W   R12, R15
+//   85     if (OSTCBPrioTbl[newprio] != (OS_TCB *)0) {             /* New priority must not already exist     */
+        MOV.B   R10, R6
+        RLAM.A  #0x2, R6
+        MOVX.A  OSTCBPrioTbl(R6), R7
+        CMPA    #0x0, R7
+        JEQ     ??OSTaskChangePrio_1
+//   86         OS_EXIT_CRITICAL();
+        CALLA   #?Subroutine6
+//   87         return (OS_ERR_PRIO_EXIST);
+//   88     }
+??CrossCallReturnLabel_14:
+        JMP     ??OSTaskChangePrio_2
+//   89     if (oldprio == OS_PRIO_SELF) {                          /* See if changing self                    */
+??OSTaskChangePrio_1:
+        CMP.B   #0xff, R11
+        JNE     ??OSTaskChangePrio_3
+//   90         oldprio = OSTCBCur->OSTCBPrio;                      /* Yes, get priority                       */
+        MOVA    &OSTCBCur, R11
+        MOV.B   0x30(R11), R11
+//   91     }
+//   92     ptcb = OSTCBPrioTbl[oldprio];
+??OSTaskChangePrio_3:
+        RLAM.A  #0x2, R11
+        MOVA    R11, R7
+        MOVX.A  OSTCBPrioTbl(R11), R8
+//   93     if (ptcb == (OS_TCB *)0) {                              /* Does task to change exist?              */
+        CMPA    #0x0, R8
+        JNE     ??OSTaskChangePrio_4
+//   94         OS_EXIT_CRITICAL();                                 /* No, can't change its priority!          */
+        CALLA   #OSCPURestoreSR
+//   95         return (OS_ERR_PRIO);
+        MOV.B   #0x29, R12
+        JMP     ??OSTaskChangePrio_2
+//   96     }
+//   97     if (ptcb == OS_TCB_RESERVED) {                          /* Is task assigned to Mutex               */
+??OSTaskChangePrio_4:
+        CMPA    #0x1, R8
+        JNE     ??OSTaskChangePrio_5
+//   98         OS_EXIT_CRITICAL();                                 /* No, can't change its priority!          */
+        CALLA   #?Subroutine3
+//   99         return (OS_ERR_TASK_NOT_EXIST);
+//  100     }
+??CrossCallReturnLabel_11:
+        JMP     ??OSTaskChangePrio_2
+//  101 #if OS_LOWEST_PRIO <= 63u
+//  102     y_new                 = (INT8U)(newprio >> 3u);         /* Yes, compute new TCB fields             */
+??OSTaskChangePrio_5:
+        MOV.B   R10, R11
+        RPT     #0x3
+        RRUX.B  R11
+//  103     x_new                 = (INT8U)(newprio & 0x07u);
+        MOV.B   R10, R9
+        AND.B   #0x7, R9
+//  104 #else
+//  105     y_new                 = (INT8U)((INT8U)(newprio >> 4u) & 0x0Fu);
+//  106     x_new                 = (INT8U)(newprio & 0x0Fu);
+//  107 #endif
+//  108     bity_new              = (OS_PRIO)(1uL << y_new);
+        MOV.B   R11, R12
+        CALLA   #?OneBitMask32
+//  109     bitx_new              = (OS_PRIO)(1uL << x_new);
+        MOV.B   #0x1, R13
+        SUB.B   #0x1, R9
+        JN      ??OSTaskChangePrio_6
+        RPT     R9
+        RLAX.B  R13
+??OSTaskChangePrio_6:
+        ADD.B   #0x1, R9
+//  110 
+//  111     OSTCBPrioTbl[oldprio] = (OS_TCB *)0;                    /* Remove TCB from old priority            */
+        MOVX.A  #0x0, OSTCBPrioTbl(R7)
+//  112     OSTCBPrioTbl[newprio] =  ptcb;                          /* Place pointer to TCB @ new priority     */
+        MOVX.A  R8, OSTCBPrioTbl(R6)
+//  113     y_old                 =  ptcb->OSTCBY;
+        MOV.B   0x32(R8), R7
+//  114     bity_old              =  ptcb->OSTCBBitY;
+        MOV.B   0x34(R8), R14
+//  115     bitx_old              =  ptcb->OSTCBBitX;
+        MOV.B   0x33(R8), R4
+//  116     if ((OSRdyTbl[y_old] &   bitx_old) != 0u) {             /* If task is ready make it not            */
+        MOVX.B  OSRdyTbl(R7), R6
+        BIT.B   R4, R6
+        JEQ     ??OSTaskChangePrio_7
+//  117          OSRdyTbl[y_old] &= (OS_PRIO)~bitx_old;
+        BICX.B  R4, OSRdyTbl(R7)
+//  118          if (OSRdyTbl[y_old] == 0u) {
+        CMPX.B  #0x0, OSRdyTbl(R7)
+        JNE     ??OSTaskChangePrio_8
+//  119              OSRdyGrp &= (OS_PRIO)~bity_old;
+        BICX.B  R14, &OSRdyGrp
+//  120          }
+//  121          OSRdyGrp        |= bity_new;                       /* Make new priority ready to run          */
+??OSTaskChangePrio_8:
+        BISX.B  R12, &OSRdyGrp
+//  122          OSRdyTbl[y_new] |= bitx_new;
+        MOV.B   R11, R6
+        BISX.B  R13, OSRdyTbl(R6)
+//  123     }
+//  124 
+//  125 #if (OS_EVENT_EN)
+//  126     pevent = ptcb->OSTCBEventPtr;
+??OSTaskChangePrio_7:
+        MOVA    0x1c(R8), R6
+//  127     if (pevent != (OS_EVENT *)0) {
+        CMPA    #0x0, R6
+        JEQ     ??OSTaskChangePrio_9
+//  128         pevent->OSEventTbl[y_old] &= (OS_PRIO)~bitx_old;    /* Remove old task prio from wait list     */
+        MOVA    R6, R5
+        ADDA    R7, R5
+        BIC.B   R4, 0x9(R5)
+//  129         if (pevent->OSEventTbl[y_old] == 0u) {
+        CMP.B   #0x0, 0x9(R5)
+        JNE     ??OSTaskChangePrio_10
+//  130             pevent->OSEventGrp    &= (OS_PRIO)~bity_old;
+        BIC.B   R14, 0x8(R6)
+//  131         }
+//  132         pevent->OSEventGrp        |= bity_new;              /* Add    new task prio to   wait list     */
+??OSTaskChangePrio_10:
+        BIS.B   R12, 0x8(R6)
+//  133         pevent->OSEventTbl[y_new] |= bitx_new;
+        MOV.B   R11, R14
+        ADDA    R14, R6
+        BIS.B   R13, 0x9(R6)
+//  134     }
+//  135 #if (OS_EVENT_MULTI_EN > 0u)
+//  136     if (ptcb->OSTCBEventMultiPtr != (OS_EVENT **)0) {
+//  137         pevents =  ptcb->OSTCBEventMultiPtr;
+//  138         pevent  = *pevents;
+//  139         while (pevent != (OS_EVENT *)0) {
+//  140             pevent->OSEventTbl[y_old] &= (OS_PRIO)~bitx_old;   /* Remove old task prio from wait lists */
+//  141             if (pevent->OSEventTbl[y_old] == 0u) {
+//  142                 pevent->OSEventGrp    &= (OS_PRIO)~bity_old;
+//  143             }
+//  144             pevent->OSEventGrp        |= bity_new;          /* Add    new task prio to   wait lists    */
+//  145             pevent->OSEventTbl[y_new] |= bitx_new;
+//  146             pevents++;
+//  147             pevent                     = *pevents;
+//  148         }
+//  149     }
+//  150 #endif
+//  151 #endif
+//  152 
+//  153     ptcb->OSTCBPrio = newprio;                              /* Set new task priority                   */
+??OSTaskChangePrio_9:
+        MOV.B   R10, 0x30(R8)
+//  154     ptcb->OSTCBY    = y_new;
+        MOV.B   R11, 0x32(R8)
+//  155     ptcb->OSTCBX    = x_new;
+        MOV.B   R9, 0x31(R8)
+//  156     ptcb->OSTCBBitY = bity_new;
+        MOV.B   R12, 0x34(R8)
+//  157     ptcb->OSTCBBitX = bitx_new;
+        MOV.B   R13, 0x33(R8)
+//  158     OS_EXIT_CRITICAL();
+        MOV.W   R15, R12
+        CALLA   #?Subroutine4
+//  159     if (OSRunning == OS_TRUE) {
+//  160         OS_Sched();                                         /* Find new highest priority task          */
+//  161     }
+//  162     return (OS_ERR_NONE);
+??OSTaskChangePrio_2:
+        POPM.A  #0x8, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R4H SameValue
+          CFI R5H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R4L SameValue
+          CFI R5L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock12
+//  163 }
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?Subroutine4:
+          CFI Block cfiCond13 Using cfiCommon0
+          CFI Function OSTaskDel
+          CFI Conditional ??OSTaskDel_3
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+24
+          CFI Block cfiCond14 Using cfiCommon0
+          CFI (cfiCond14) Function OSTaskChangePrio
+          CFI (cfiCond14) Conditional ??OSTaskChangePrio_2
+          CFI (cfiCond14) R4L Frame(CFA, -36)
+          CFI (cfiCond14) R4H Frame(CFA, -34)
+          CFI (cfiCond14) R5L Frame(CFA, -32)
+          CFI (cfiCond14) R5H Frame(CFA, -30)
+          CFI (cfiCond14) R6L Frame(CFA, -28)
+          CFI (cfiCond14) R6H Frame(CFA, -26)
+          CFI (cfiCond14) R7L Frame(CFA, -24)
+          CFI (cfiCond14) R7H Frame(CFA, -22)
+          CFI (cfiCond14) R8L Frame(CFA, -20)
+          CFI (cfiCond14) R8H Frame(CFA, -18)
+          CFI (cfiCond14) R9L Frame(CFA, -16)
+          CFI (cfiCond14) R9H Frame(CFA, -14)
+          CFI (cfiCond14) R10L Frame(CFA, -12)
+          CFI (cfiCond14) R10H Frame(CFA, -10)
+          CFI (cfiCond14) R11L Frame(CFA, -8)
+          CFI (cfiCond14) R11H Frame(CFA, -6)
+          CFI (cfiCond14) CFA SP+40
+          CFI Block cfiPicker15 Using cfiCommon1
+          CFI (cfiPicker15) NoFunction
+          CFI (cfiPicker15) Picker
+        CALLA   #OSCPURestoreSR
+        CMPX.B  #0x1, &OSRunning
+        JNE     ??OSTaskDel_1
+        CALLA   #OS_Sched
+??OSTaskDel_1:
+        MOV.B   #0x0, R12
+        RETA
+          CFI EndBlock cfiCond13
+          CFI EndBlock cfiCond14
+          CFI EndBlock cfiPicker15
+//  164 #endif
+//  165 /*$PAGE*/
+//  166 /*
+//  167 *********************************************************************************************************
+//  168 *                                            CREATE A TASK
+//  169 *
+//  170 * Description: This function is used to have uC/OS-II manage the execution of a task.  Tasks can either
+//  171 *              be created prior to the start of multitasking or by a running task.  A task cannot be
+//  172 *              created by an ISR.
+//  173 *
+//  174 * Arguments  : task     is a pointer to the task's code
+//  175 *
+//  176 *              p_arg    is a pointer to an optional data area which can be used to pass parameters to
+//  177 *                       the task when the task first executes.  Where the task is concerned it thinks
+//  178 *                       it was invoked and passed the argument 'p_arg' as follows:
+//  179 *
+//  180 *                           void Task (void *p_arg)
+//  181 *                           {
+//  182 *                               for (;;) {
+//  183 *                                   Task code;
+//  184 *                               }
+//  185 *                           }
+//  186 *
+//  187 *              ptos     is a pointer to the task's top of stack.  If the configuration constant
+//  188 *                       OS_STK_GROWTH is set to 1, the stack is assumed to grow downward (i.e. from high
+//  189 *                       memory to low memory).  'pstk' will thus point to the highest (valid) memory
+//  190 *                       location of the stack.  If OS_STK_GROWTH is set to 0, 'pstk' will point to the
+//  191 *                       lowest memory location of the stack and the stack will grow with increasing
+//  192 *                       memory locations.
+//  193 *
+//  194 *              prio     is the task's priority.  A unique priority MUST be assigned to each task and the
+//  195 *                       lower the number, the higher the priority.
+//  196 *
+//  197 * Returns    : OS_ERR_NONE             if the function was successful.
+//  198 *              OS_PRIO_EXIT            if the task priority already exist
+//  199 *                                      (each task MUST have a unique priority).
+//  200 *              OS_ERR_PRIO_INVALID     if the priority you specify is higher that the maximum allowed
+//  201 *                                      (i.e. >= OS_LOWEST_PRIO)
+//  202 *              OS_ERR_TASK_CREATE_ISR  if you tried to create a task from an ISR.
+//  203 *********************************************************************************************************
+//  204 */
+//  205 
+//  206 #if OS_TASK_CREATE_EN > 0u
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine2:
+          CFI Block cfiCond16 Using cfiCommon0
+          CFI Function OSTaskCreateExt
+          CFI Conditional ??CrossCallReturnLabel_17
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+52
+          CFI Block cfiCond17 Using cfiCommon0
+          CFI (cfiCond17) Function OSTaskCreate
+          CFI (cfiCond17) Conditional ??CrossCallReturnLabel_18
+          CFI (cfiCond17) R6L Frame(CFA, -28)
+          CFI (cfiCond17) R6H Frame(CFA, -26)
+          CFI (cfiCond17) R7L Frame(CFA, -24)
+          CFI (cfiCond17) R7H Frame(CFA, -22)
+          CFI (cfiCond17) R8L Frame(CFA, -20)
+          CFI (cfiCond17) R8H Frame(CFA, -18)
+          CFI (cfiCond17) R9L Frame(CFA, -16)
+          CFI (cfiCond17) R9H Frame(CFA, -14)
+          CFI (cfiCond17) R10L Frame(CFA, -12)
+          CFI (cfiCond17) R10H Frame(CFA, -10)
+          CFI (cfiCond17) R11L Frame(CFA, -8)
+          CFI (cfiCond17) R11H Frame(CFA, -6)
+          CFI (cfiCond17) CFA SP+32
+          CFI Block cfiPicker18 Using cfiCommon1
+          CFI (cfiPicker18) NoFunction
+          CFI (cfiPicker18) Picker
+        CALLA   #OSCPUSaveSR
+          CFI EndBlock cfiCond16
+          CFI EndBlock cfiCond17
+          CFI EndBlock cfiPicker18
+        REQUIRE ??Subroutine2_0
+        // Fall through to label ??Subroutine2_0
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+??Subroutine2_0:
+          CFI Block cfiCond19 Using cfiCommon0
+          CFI Function OSTaskDel
+          CFI Conditional ??CrossCallReturnLabel_19
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+24
+          CFI Block cfiCond20 Using cfiCommon0
+          CFI (cfiCond20) Function OSTaskNameSet
+          CFI (cfiCond20) Conditional ??CrossCallReturnLabel_20
+          CFI (cfiCond20) R8L Frame(CFA, -20)
+          CFI (cfiCond20) R8H Frame(CFA, -18)
+          CFI (cfiCond20) R9L Frame(CFA, -16)
+          CFI (cfiCond20) R9H Frame(CFA, -14)
+          CFI (cfiCond20) R10L Frame(CFA, -12)
+          CFI (cfiCond20) R10H Frame(CFA, -10)
+          CFI (cfiCond20) R11L Frame(CFA, -8)
+          CFI (cfiCond20) R11H Frame(CFA, -6)
+          CFI (cfiCond20) CFA SP+24
+          CFI Block cfiCond21 Using cfiCommon0
+          CFI (cfiCond21) Function OSTaskNameGet
+          CFI (cfiCond21) Conditional ??CrossCallReturnLabel_21
+          CFI (cfiCond21) R8L Frame(CFA, -20)
+          CFI (cfiCond21) R8H Frame(CFA, -18)
+          CFI (cfiCond21) R9L Frame(CFA, -16)
+          CFI (cfiCond21) R9H Frame(CFA, -14)
+          CFI (cfiCond21) R10L Frame(CFA, -12)
+          CFI (cfiCond21) R10H Frame(CFA, -10)
+          CFI (cfiCond21) R11L Frame(CFA, -8)
+          CFI (cfiCond21) R11H Frame(CFA, -6)
+          CFI (cfiCond21) CFA SP+24
+          CFI Block cfiCond22 Using cfiCommon0
+          CFI (cfiCond22) Function OSTaskCreateExt
+          CFI (cfiCond22) Conditional ??CrossCallReturnLabel_17
+          CFI (cfiCond22) R4L Frame(CFA, -36)
+          CFI (cfiCond22) R4H Frame(CFA, -34)
+          CFI (cfiCond22) R5L Frame(CFA, -32)
+          CFI (cfiCond22) R5H Frame(CFA, -30)
+          CFI (cfiCond22) R6L Frame(CFA, -28)
+          CFI (cfiCond22) R6H Frame(CFA, -26)
+          CFI (cfiCond22) R7L Frame(CFA, -24)
+          CFI (cfiCond22) R7H Frame(CFA, -22)
+          CFI (cfiCond22) R8L Frame(CFA, -20)
+          CFI (cfiCond22) R8H Frame(CFA, -18)
+          CFI (cfiCond22) R9L Frame(CFA, -16)
+          CFI (cfiCond22) R9H Frame(CFA, -14)
+          CFI (cfiCond22) R10L Frame(CFA, -12)
+          CFI (cfiCond22) R10H Frame(CFA, -10)
+          CFI (cfiCond22) R11L Frame(CFA, -8)
+          CFI (cfiCond22) R11H Frame(CFA, -6)
+          CFI (cfiCond22) CFA SP+52
+          CFI Block cfiCond23 Using cfiCommon0
+          CFI (cfiCond23) Function OSTaskCreate
+          CFI (cfiCond23) Conditional ??CrossCallReturnLabel_18
+          CFI (cfiCond23) R6L Frame(CFA, -28)
+          CFI (cfiCond23) R6H Frame(CFA, -26)
+          CFI (cfiCond23) R7L Frame(CFA, -24)
+          CFI (cfiCond23) R7H Frame(CFA, -22)
+          CFI (cfiCond23) R8L Frame(CFA, -20)
+          CFI (cfiCond23) R8H Frame(CFA, -18)
+          CFI (cfiCond23) R9L Frame(CFA, -16)
+          CFI (cfiCond23) R9H Frame(CFA, -14)
+          CFI (cfiCond23) R10L Frame(CFA, -12)
+          CFI (cfiCond23) R10H Frame(CFA, -10)
+          CFI (cfiCond23) R11L Frame(CFA, -8)
+          CFI (cfiCond23) R11H Frame(CFA, -6)
+          CFI (cfiCond23) CFA SP+32
+          CFI Block cfiPicker24 Using cfiCommon1
+          CFI (cfiPicker24) NoFunction
+          CFI (cfiPicker24) Picker
+        CMPX.B  #0x0, &OSIntNesting
+        RETA
+          CFI EndBlock cfiCond19
+          CFI EndBlock cfiCond20
+          CFI EndBlock cfiCond21
+          CFI EndBlock cfiCond22
+          CFI EndBlock cfiCond23
+          CFI EndBlock cfiPicker24
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  207 INT8U  OSTaskCreate (void   (*task)(void *p_arg),
+OSTaskCreate:
+          CFI Block cfiBlock25 Using cfiCommon0
+          CFI Function OSTaskCreate
+//  208                      void    *p_arg,
+//  209                      OS_STK  *ptos,
+//  210                      INT8U    prio)
+//  211 {
+        FUNCALL OSTaskCreate, OSCPUSaveSR
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSTaskCreate, OSCPURestoreSR
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSTaskCreate, OSCPURestoreSR
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSTaskCreate, OSTaskStkInit
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSTaskCreate, OS_TCBInit
+        LOCFRAME CSTACK, 38, STACK
+        FUNCALL OSTaskCreate, OS_Sched
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSTaskCreate, OSCPUSaveSR
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSTaskCreate, OSCPURestoreSR
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSTaskCreate, OSCPURestoreSR
+        LOCFRAME CSTACK, 28, STACK
+        PUSHM.A #0x6, R11
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+28
+        MOVA    R12, R8
+        MOVA    R13, R9
+        MOVA    R14, R6
+        MOV.B   R15, R10
+//  212     OS_STK    *psp;
+//  213     INT8U      err;
+//  214 #if OS_CRITICAL_METHOD == 3u                 /* Allocate storage for CPU status register               */
+//  215     OS_CPU_SR  cpu_sr = 0u;
+//  216 #endif
+//  217 
+//  218 
+//  219 
+//  220 #ifdef OS_SAFETY_CRITICAL_IEC61508
+//  221     if (OSSafetyCriticalStartFlag == OS_TRUE) {
+//  222         OS_SAFETY_CRITICAL_EXCEPTION();
+//  223     }
+//  224 #endif
+//  225 
+//  226 #if OS_ARG_CHK_EN > 0u
+//  227     if (prio > OS_LOWEST_PRIO) {             /* Make sure priority is within allowable range           */
+//  228         return (OS_ERR_PRIO_INVALID);
+//  229     }
+//  230 #endif
+//  231     OS_ENTER_CRITICAL();
+        CALLA   #?Subroutine2
+//  232     if (OSIntNesting > 0u) {                 /* Make sure we don't create the task from within an ISR  */
+??CrossCallReturnLabel_18:
+        JEQ     ??OSTaskCreate_0
+//  233         OS_EXIT_CRITICAL();
+        CALLA   #OSCPURestoreSR
+//  234         return (OS_ERR_TASK_CREATE_ISR);
+        MOV.B   #0x3c, R12
+        JMP     ??OSTaskCreate_1
+//  235     }
+//  236     if (OSTCBPrioTbl[prio] == (OS_TCB *)0) { /* Make sure task doesn't already exist at this priority  */
+??OSTaskCreate_0:
+        MOV.B   R10, R11
+        RLAM.A  #0x2, R11
+        MOVX.A  OSTCBPrioTbl(R11), R15
+        CMPA    #0x0, R15
+        JNE     ??OSTaskCreate_2
+//  237         OSTCBPrioTbl[prio] = OS_TCB_RESERVED;/* Reserve the priority to prevent others from doing ...  */
+        MOVX.A  #0x1, OSTCBPrioTbl(R11)
+//  238                                              /* ... the same thing until task is created.              */
+//  239         OS_EXIT_CRITICAL();
+        CALLA   #OSCPURestoreSR
+//  240         psp = OSTaskStkInit(task, p_arg, ptos, 0u);             /* Initialize the task's stack         */
+        MOV.W   #0x0, R15
+        MOVA    R6, R14
+        MOVA    R9, R13
+        MOVA    R8, R12
+        CALLA   #OSTaskStkInit
+//  241         err = OS_TCBInit(prio, psp, (OS_STK *)0, 0u, 0u, (void *)0, 0u);
+        PUSH.W  #0x0
+          CFI CFA SP+30
+        PUSHX.A #0x0
+          CFI CFA SP+34
+        PUSH.W  #0x0
+          CFI CFA SP+36
+        PUSH.W  #0x0
+          CFI CFA SP+38
+        MOV.W   #0x0, R15
+        MOVA    #0x0, R14
+        MOVA    R12, R13
+        MOV.B   R10, R12
+        CALLA   #OS_TCBInit
+        MOV.B   R12, R10
+//  242         if (err == OS_ERR_NONE) {
+        ADD.W   #0xa, SP
+          CFI CFA SP+28
+        CMP.B   #0x0, R12
+        JNE     ??OSTaskCreate_3
+//  243             if (OSRunning == OS_TRUE) {      /* Find highest priority task if multitasking has started */
+        CMPX.B  #0x1, &OSRunning
+        JNE     ??OSTaskCreate_4
+//  244                 OS_Sched();
+        CALLA   #OS_Sched
+        JMP     ??OSTaskCreate_4
+//  245             }
+//  246         } else {
+//  247             OS_ENTER_CRITICAL();
+??OSTaskCreate_3:
+        CALLA   #OSCPUSaveSR
+//  248             OSTCBPrioTbl[prio] = (OS_TCB *)0;/* Make this priority available to others                 */
+        MOVX.A  #0x0, OSTCBPrioTbl(R11)
+//  249             OS_EXIT_CRITICAL();
+        CALLA   #OSCPURestoreSR
+//  250         }
+//  251         return (err);
+??OSTaskCreate_4:
+        MOV.B   R10, R12
+        JMP     ??OSTaskCreate_1
+//  252     }
+//  253     OS_EXIT_CRITICAL();
+??OSTaskCreate_2:
+        CALLA   #?Subroutine6
+//  254     return (OS_ERR_PRIO_EXIST);
+??OSTaskCreate_1:
+        POPM.A  #0x6, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock25
+//  255 }
+//  256 #endif
+//  257 /*$PAGE*/
+//  258 /*
+//  259 *********************************************************************************************************
+//  260 *                                     CREATE A TASK (Extended Version)
+//  261 *
+//  262 * Description: This function is used to have uC/OS-II manage the execution of a task.  Tasks can either
+//  263 *              be created prior to the start of multitasking or by a running task.  A task cannot be
+//  264 *              created by an ISR.  This function is similar to OSTaskCreate() except that it allows
+//  265 *              additional information about a task to be specified.
+//  266 *
+//  267 * Arguments  : task      is a pointer to the task's code
+//  268 *
+//  269 *              p_arg     is a pointer to an optional data area which can be used to pass parameters to
+//  270 *                        the task when the task first executes.  Where the task is concerned it thinks
+//  271 *                        it was invoked and passed the argument 'p_arg' as follows:
+//  272 *
+//  273 *                            void Task (void *p_arg)
+//  274 *                            {
+//  275 *                                for (;;) {
+//  276 *                                    Task code;
+//  277 *                                }
+//  278 *                            }
+//  279 *
+//  280 *              ptos      is a pointer to the task's top of stack.  If the configuration constant
+//  281 *                        OS_STK_GROWTH is set to 1, the stack is assumed to grow downward (i.e. from high
+//  282 *                        memory to low memory).  'ptos' will thus point to the highest (valid) memory
+//  283 *                        location of the stack.  If OS_STK_GROWTH is set to 0, 'ptos' will point to the
+//  284 *                        lowest memory location of the stack and the stack will grow with increasing
+//  285 *                        memory locations.  'ptos' MUST point to a valid 'free' data item.
+//  286 *
+//  287 *              prio      is the task's priority.  A unique priority MUST be assigned to each task and the
+//  288 *                        lower the number, the higher the priority.
+//  289 *
+//  290 *              id        is the task's ID (0..65535)
+//  291 *
+//  292 *              pbos      is a pointer to the task's bottom of stack.  If the configuration constant
+//  293 *                        OS_STK_GROWTH is set to 1, the stack is assumed to grow downward (i.e. from high
+//  294 *                        memory to low memory).  'pbos' will thus point to the LOWEST (valid) memory
+//  295 *                        location of the stack.  If OS_STK_GROWTH is set to 0, 'pbos' will point to the
+//  296 *                        HIGHEST memory location of the stack and the stack will grow with increasing
+//  297 *                        memory locations.  'pbos' MUST point to a valid 'free' data item.
+//  298 *
+//  299 *              stk_size  is the size of the stack in number of elements.  If OS_STK is set to INT8U,
+//  300 *                        'stk_size' corresponds to the number of bytes available.  If OS_STK is set to
+//  301 *                        INT16U, 'stk_size' contains the number of 16-bit entries available.  Finally, if
+//  302 *                        OS_STK is set to INT32U, 'stk_size' contains the number of 32-bit entries
+//  303 *                        available on the stack.
+//  304 *
+//  305 *              pext      is a pointer to a user supplied memory location which is used as a TCB extension.
+//  306 *                        For example, this user memory can hold the contents of floating-point registers
+//  307 *                        during a context switch, the time each task takes to execute, the number of times
+//  308 *                        the task has been switched-in, etc.
+//  309 *
+//  310 *              opt       contains additional information (or options) about the behavior of the task.  The
+//  311 *                        LOWER 8-bits are reserved by uC/OS-II while the upper 8 bits can be application
+//  312 *                        specific.  See OS_TASK_OPT_??? in uCOS-II.H.  Current choices are:
+//  313 *
+//  314 *                        OS_TASK_OPT_STK_CHK      Stack checking to be allowed for the task
+//  315 *                        OS_TASK_OPT_STK_CLR      Clear the stack when the task is created
+//  316 *                        OS_TASK_OPT_SAVE_FP      If the CPU has floating-point registers, save them
+//  317 *                                                 during a context switch.
+//  318 *
+//  319 * Returns    : OS_ERR_NONE             if the function was successful.
+//  320 *              OS_PRIO_EXIT            if the task priority already exist
+//  321 *                                      (each task MUST have a unique priority).
+//  322 *              OS_ERR_PRIO_INVALID     if the priority you specify is higher that the maximum allowed
+//  323 *                                      (i.e. > OS_LOWEST_PRIO)
+//  324 *              OS_ERR_TASK_CREATE_ISR  if you tried to create a task from an ISR.
+//  325 *********************************************************************************************************
+//  326 */
+//  327 /*$PAGE*/
+//  328 #if OS_TASK_CREATE_EXT_EN > 0u
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  329 INT8U  OSTaskCreateExt (void   (*task)(void *p_arg),
+OSTaskCreateExt:
+          CFI Block cfiBlock26 Using cfiCommon0
+          CFI Function OSTaskCreateExt
+//  330                         void    *p_arg,
+//  331                         OS_STK  *ptos,
+//  332                         INT8U    prio,
+//  333                         INT16U   id,
+//  334                         OS_STK  *pbos,
+//  335                         INT32U   stk_size,
+//  336                         void    *pext,
+//  337                         INT16U   opt)
+//  338 {
+        FUNCALL OSTaskCreateExt, OSCPUSaveSR
+        LOCFRAME CSTACK, 48, STACK
+        FUNCALL OSTaskCreateExt, OSCPURestoreSR
+        LOCFRAME CSTACK, 48, STACK
+        FUNCALL OSTaskCreateExt, OSCPURestoreSR
+        LOCFRAME CSTACK, 48, STACK
+        FUNCALL OSTaskCreateExt, OS_TaskStkClr
+        LOCFRAME CSTACK, 48, STACK
+        FUNCALL OSTaskCreateExt, OSTaskStkInit
+        LOCFRAME CSTACK, 48, STACK
+        FUNCALL OSTaskCreateExt, OS_TCBInit
+        LOCFRAME CSTACK, 58, STACK
+        FUNCALL OSTaskCreateExt, OS_Sched
+        LOCFRAME CSTACK, 48, STACK
+        FUNCALL OSTaskCreateExt, OSCPUSaveSR
+        LOCFRAME CSTACK, 48, STACK
+        FUNCALL OSTaskCreateExt, OSCPURestoreSR
+        LOCFRAME CSTACK, 48, STACK
+        FUNCALL OSTaskCreateExt, OSCPURestoreSR
+        LOCFRAME CSTACK, 48, STACK
+        PUSHM.A #0x8, R11
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+36
+        PUSHM.A #0x1, R12
+          CFI CFA SP+40
+        PUSHM.A #0x1, R13
+          CFI CFA SP+44
+        PUSHM.A #0x1, R14
+          CFI CFA SP+48
+        MOV.B   R15, R7
+        MOV.W   0x30(SP), R5
+        MOVA    0x3a(SP), R4
+//  339     OS_STK    *psp;
+//  340     INT8U      err;
+//  341 #if OS_CRITICAL_METHOD == 3u                 /* Allocate storage for CPU status register               */
+//  342     OS_CPU_SR  cpu_sr = 0u;
+//  343 #endif
+//  344 
+//  345 
+//  346 
+//  347 #ifdef OS_SAFETY_CRITICAL_IEC61508
+//  348     if (OSSafetyCriticalStartFlag == OS_TRUE) {
+//  349         OS_SAFETY_CRITICAL_EXCEPTION();
+//  350     }
+//  351 #endif
+//  352 
+//  353 #if OS_ARG_CHK_EN > 0u
+//  354     if (prio > OS_LOWEST_PRIO) {             /* Make sure priority is within allowable range           */
+//  355         return (OS_ERR_PRIO_INVALID);
+//  356     }
+//  357 #endif
+//  358     OS_ENTER_CRITICAL();
+        CALLA   #?Subroutine2
+//  359     if (OSIntNesting > 0u) {                 /* Make sure we don't create the task from within an ISR  */
+??CrossCallReturnLabel_17:
+        JEQ     ??OSTaskCreateExt_0
+//  360         OS_EXIT_CRITICAL();
+        CALLA   #OSCPURestoreSR
+//  361         return (OS_ERR_TASK_CREATE_ISR);
+        MOV.B   #0x3c, R12
+        JMP     ??OSTaskCreateExt_1
+//  362     }
+//  363     if (OSTCBPrioTbl[prio] == (OS_TCB *)0) { /* Make sure task doesn't already exist at this priority  */
+??OSTaskCreateExt_0:
+        MOV.B   R7, R8
+        RLAM.A  #0x2, R8
+        MOVX.A  OSTCBPrioTbl(R8), R15
+        CMPA    #0x0, R15
+        JNE     ??OSTaskCreateExt_2
+//  364         OSTCBPrioTbl[prio] = OS_TCB_RESERVED;/* Reserve the priority to prevent others from doing ...  */
+        MOVX.A  #0x1, OSTCBPrioTbl(R8)
+//  365                                              /* ... the same thing until task is created.              */
+//  366         OS_EXIT_CRITICAL();
+        CALLA   #OSCPURestoreSR
+        MOVA    0x32(SP), R6
+        MOV.W   0x36(SP), R10
+        MOV.W   0x38(SP), R11
+        MOV.W   0x3e(SP), R9
+//  367 
+//  368 #if (OS_TASK_STAT_STK_CHK_EN > 0u)
+//  369         OS_TaskStkClr(pbos, stk_size, opt);                    /* Clear the task stack (if needed)     */
+        MOV.W   R9, R13
+        MOV.W   R10, R14
+        MOV.W   R11, R15
+        MOVA    R6, R12
+        CALLA   #OS_TaskStkClr
+//  370 #endif
+//  371 
+//  372         psp = OSTaskStkInit(task, p_arg, ptos, opt);           /* Initialize the task's stack          */
+        MOV.W   R9, R15
+        MOVA    @SP, R14
+        MOVA    0x4(SP), R13
+        MOVA    0x8(SP), R12
+        CALLA   #OSTaskStkInit
+//  373         err = OS_TCBInit(prio, psp, pbos, id, stk_size, pext, opt);
+        PUSH.W  R9
+          CFI CFA SP+50
+        PUSHM.A #0x1, R4
+          CFI CFA SP+54
+        PUSH.W  R11
+          CFI CFA SP+56
+        PUSH.W  R10
+          CFI CFA SP+58
+        MOV.W   R5, R15
+        MOVA    R6, R14
+        MOVA    R12, R13
+        MOV.B   R7, R12
+        CALLA   #OS_TCBInit
+        MOV.B   R12, R10
+//  374         if (err == OS_ERR_NONE) {
+        ADD.W   #0xa, SP
+          CFI CFA SP+48
+        CMP.B   #0x0, R12
+        JNE     ??OSTaskCreateExt_3
+//  375             if (OSRunning == OS_TRUE) {                        /* Find HPT if multitasking has started */
+        CMPX.B  #0x1, &OSRunning
+        JNE     ??OSTaskCreateExt_4
+//  376                 OS_Sched();
+        CALLA   #OS_Sched
+        JMP     ??OSTaskCreateExt_4
+//  377             }
+//  378         } else {
+//  379             OS_ENTER_CRITICAL();
+??OSTaskCreateExt_3:
+        CALLA   #OSCPUSaveSR
+//  380             OSTCBPrioTbl[prio] = (OS_TCB *)0;                  /* Make this priority avail. to others  */
+        MOVX.A  #0x0, OSTCBPrioTbl(R8)
+//  381             OS_EXIT_CRITICAL();
+        CALLA   #OSCPURestoreSR
+//  382         }
+//  383         return (err);
+??OSTaskCreateExt_4:
+        MOV.B   R10, R12
+        JMP     ??OSTaskCreateExt_1
+//  384     }
+//  385     OS_EXIT_CRITICAL();
+??OSTaskCreateExt_2:
+        CALLA   #?Subroutine6
+//  386     return (OS_ERR_PRIO_EXIST);
+??OSTaskCreateExt_1:
+        ADD.W   #0xc, SP
+          CFI CFA SP+36
+        POPM.A  #0x8, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R4H SameValue
+          CFI R5H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R4L SameValue
+          CFI R5L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock26
+//  387 }
+//  388 #endif
+//  389 /*$PAGE*/
+//  390 /*
+//  391 *********************************************************************************************************
+//  392 *                                            DELETE A TASK
+//  393 *
+//  394 * Description: This function allows you to delete a task.  The calling task can delete itself by
+//  395 *              its own priority number.  The deleted task is returned to the dormant state and can be
+//  396 *              re-activated by creating the deleted task again.
+//  397 *
+//  398 * Arguments  : prio    is the priority of the task to delete.  Note that you can explicitely delete
+//  399 *                      the current task without knowing its priority level by setting 'prio' to
+//  400 *                      OS_PRIO_SELF.
+//  401 *
+//  402 * Returns    : OS_ERR_NONE             if the call is successful
+//  403 *              OS_ERR_TASK_DEL_IDLE    if you attempted to delete uC/OS-II's idle task
+//  404 *              OS_ERR_PRIO_INVALID     if the priority you specify is higher that the maximum allowed
+//  405 *                                      (i.e. >= OS_LOWEST_PRIO) or, you have not specified OS_PRIO_SELF.
+//  406 *              OS_ERR_TASK_DEL         if the task is assigned to a Mutex PIP.
+//  407 *              OS_ERR_TASK_NOT_EXIST   if the task you want to delete does not exist.
+//  408 *              OS_ERR_TASK_DEL_ISR     if you tried to delete a task from an ISR
+//  409 *
+//  410 * Notes      : 1) To reduce interrupt latency, OSTaskDel() 'disables' the task:
+//  411 *                    a) by making it not ready
+//  412 *                    b) by removing it from any wait lists
+//  413 *                    c) by preventing OSTimeTick() from making the task ready to run.
+//  414 *                 The task can then be 'unlinked' from the miscellaneous structures in uC/OS-II.
+//  415 *              2) The function OS_Dummy() is called after OS_EXIT_CRITICAL() because, on most processors,
+//  416 *                 the next instruction following the enable interrupt instruction is ignored.
+//  417 *              3) An ISR cannot delete a task.
+//  418 *              4) The lock nesting counter is incremented because, for a brief instant, if the current
+//  419 *                 task is being deleted, the current task would not be able to be rescheduled because it
+//  420 *                 is removed from the ready list.  Incrementing the nesting counter prevents another task
+//  421 *                 from being schedule.  This means that an ISR would return to the current task which is
+//  422 *                 being deleted.  The rest of the deletion would thus be able to be completed.
+//  423 *********************************************************************************************************
+//  424 */
+//  425 
+//  426 #if OS_TASK_DEL_EN > 0u
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  427 INT8U  OSTaskDel (INT8U prio)
+OSTaskDel:
+          CFI Block cfiBlock27 Using cfiCommon0
+          CFI Function OSTaskDel
+//  428 {
+        FUNCALL OSTaskDel, OSCPUSaveSR
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSTaskDel, OSCPURestoreSR
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSTaskDel, OSCPURestoreSR
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSTaskDel, OS_EventTaskRemove
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSTaskDel, OS_FlagUnlink
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSTaskDel, OSCPURestoreSR
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSTaskDel, OS_Dummy
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSTaskDel, OSCPUSaveSR
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSTaskDel, OSTaskDelHook
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSTaskDel, OSCPURestoreSR
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSTaskDel, OS_Sched
+        LOCFRAME CSTACK, 20, STACK
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        MOV.B   R12, R11
+//  429 #if (OS_FLAG_EN > 0u) && (OS_MAX_FLAGS > 0u)
+//  430     OS_FLAG_NODE *pnode;
+//  431 #endif
+//  432     OS_TCB       *ptcb;
+//  433 #if OS_CRITICAL_METHOD == 3u                            /* Allocate storage for CPU status register    */
+//  434     OS_CPU_SR     cpu_sr = 0u;
+//  435 #endif
+//  436 
+//  437 
+//  438 
+//  439     if (OSIntNesting > 0u) {                            /* See if trying to delete from ISR            */
+        CALLA   #??Subroutine2_0
+??CrossCallReturnLabel_19:
+        JEQ     ??OSTaskDel_2
+//  440         return (OS_ERR_TASK_DEL_ISR);
+        MOV.B   #0x40, R12
+        JMP     ??OSTaskDel_3
+//  441     }
+//  442     if (prio == OS_TASK_IDLE_PRIO) {                    /* Not allowed to delete idle task             */
+??OSTaskDel_2:
+        CMP.B   #0x3f, R12
+        JNE     ??OSTaskDel_4
+//  443         return (OS_ERR_TASK_DEL_IDLE);
+        MOV.B   #0x3e, R12
+        JMP     ??OSTaskDel_3
+//  444     }
+//  445 #if OS_ARG_CHK_EN > 0u
+//  446     if (prio >= OS_LOWEST_PRIO) {                       /* Task priority valid ?                       */
+//  447         if (prio != OS_PRIO_SELF) {
+//  448             return (OS_ERR_PRIO_INVALID);
+//  449         }
+//  450     }
+//  451 #endif
+//  452 
+//  453 /*$PAGE*/
+//  454     OS_ENTER_CRITICAL();
+??OSTaskDel_4:
+        CALLA   #?Subroutine0
+//  455     if (prio == OS_PRIO_SELF) {                         /* See if requesting to delete self            */
+//  456         prio = OSTCBCur->OSTCBPrio;                     /* Set priority to delete to current           */
+//  457     }
+//  458     ptcb = OSTCBPrioTbl[prio];
+??CrossCallReturnLabel_0:
+        MOVA    R11, R8
+        MOVX.A  OSTCBPrioTbl(R8), R11
+//  459     if (ptcb == (OS_TCB *)0) {                          /* Task to delete must exist                   */
+        CMPA    #0x0, R11
+        JNE     ??OSTaskDel_5
+//  460         OS_EXIT_CRITICAL();
+        CALLA   #?Subroutine3
+//  461         return (OS_ERR_TASK_NOT_EXIST);
+//  462     }
+??CrossCallReturnLabel_5:
+        JMP     ??OSTaskDel_3
+//  463     if (ptcb == OS_TCB_RESERVED) {                      /* Must not be assigned to Mutex               */
+??OSTaskDel_5:
+        CMPA    #0x1, R11
+        JNE     ??OSTaskDel_6
+//  464         OS_EXIT_CRITICAL();
+        CALLA   #OSCPURestoreSR
+//  465         return (OS_ERR_TASK_DEL);
+        MOV.B   #0x3d, R12
+        JMP     ??OSTaskDel_3
+//  466     }
+//  467 
+//  468     OSRdyTbl[ptcb->OSTCBY] &= (OS_PRIO)~ptcb->OSTCBBitX;
+??OSTaskDel_6:
+        MOV.B   0x32(R11), R15
+        BICX.B  0x33(R11), OSRdyTbl(R15)
+//  469     if (OSRdyTbl[ptcb->OSTCBY] == 0u) {                 /* Make task not ready                         */
+        MOV.B   0x32(R11), R15
+        CMPX.B  #0x0, OSRdyTbl(R15)
+        JNE     ??OSTaskDel_7
+//  470         OSRdyGrp           &= (OS_PRIO)~ptcb->OSTCBBitY;
+        BICX.B  0x34(R11), &OSRdyGrp
+//  471     }
+//  472 
+//  473 #if (OS_EVENT_EN)
+//  474     if (ptcb->OSTCBEventPtr != (OS_EVENT *)0) {
+??OSTaskDel_7:
+        MOVA    0x1c(R11), R13
+        CMPA    #0x0, R13
+        JEQ     ??OSTaskDel_8
+//  475         OS_EventTaskRemove(ptcb, ptcb->OSTCBEventPtr);  /* Remove this task from any event   wait list */
+        MOVA    R11, R12
+        CALLA   #OS_EventTaskRemove
+//  476     }
+//  477 #if (OS_EVENT_MULTI_EN > 0u)
+//  478     if (ptcb->OSTCBEventMultiPtr != (OS_EVENT **)0) {   /* Remove this task from any events' wait lists*/
+//  479         OS_EventTaskRemoveMulti(ptcb, ptcb->OSTCBEventMultiPtr);
+//  480     }
+//  481 #endif
+//  482 #endif
+//  483 
+//  484 #if (OS_FLAG_EN > 0u) && (OS_MAX_FLAGS > 0u)
+//  485     pnode = ptcb->OSTCBFlagNode;
+??OSTaskDel_8:
+        MOVA    0x24(R11), R12
+//  486     if (pnode != (OS_FLAG_NODE *)0) {                   /* If task is waiting on event flag            */
+        CMPA    #0x0, R12
+        JEQ     ??OSTaskDel_9
+//  487         OS_FlagUnlink(pnode);                           /* Remove from wait list                       */
+        CALLA   #OS_FlagUnlink
+//  488     }
+//  489 #endif
+//  490 
+//  491     ptcb->OSTCBDly      = 0u;                           /* Prevent OSTimeTick() from updating          */
+??OSTaskDel_9:
+        MOV.W   #0x0, 0x2a(R11)
+        MOV.W   #0x0, 0x2c(R11)
+//  492     ptcb->OSTCBStat     = OS_STAT_RDY;                  /* Prevent task from being resumed             */
+        MOV.B   #0x0, 0x2e(R11)
+//  493     ptcb->OSTCBStatPend = OS_STAT_PEND_OK;
+        MOV.B   #0x0, 0x2f(R11)
+//  494     if (OSLockNesting < 255u) {                         /* Make sure we don't context switch           */
+        MOVA    #OSLockNesting, R9
+        CMP.B   #0xff, 0(R9)
+        JEQ     ??OSTaskDel_10
+//  495         OSLockNesting++;
+        ADD.B   #0x1, 0(R9)
+//  496     }
+//  497     OS_EXIT_CRITICAL();                                 /* Enabling INT. ignores next instruc.         */
+??OSTaskDel_10:
+        MOV.W   R10, R12
+        CALLA   #OSCPURestoreSR
+//  498     OS_Dummy();                                         /* ... Dummy ensures that INTs will be         */
+        CALLA   #OS_Dummy
+//  499     OS_ENTER_CRITICAL();                                /* ... disabled HERE!                          */
+        CALLA   #OSCPUSaveSR
+        MOV.W   R12, R10
+//  500     if (OSLockNesting > 0u) {                           /* Remove context switch lock                  */
+        CMP.B   #0x0, 0(R9)
+        JEQ     ??OSTaskDel_11
+//  501         OSLockNesting--;
+        ADD.B   #0xff, 0(R9)
+//  502     }
+//  503     OSTaskDelHook(ptcb);                                /* Call user defined hook                      */
+??OSTaskDel_11:
+        MOVA    R11, R12
+        CALLA   #OSTaskDelHook
+//  504     OSTaskCtr--;                                        /* One less task being managed                 */
+        ADDX.B  #0xff, &OSTaskCtr
+//  505     OSTCBPrioTbl[prio] = (OS_TCB *)0;                   /* Clear old priority entry                    */
+        MOVX.A  #0x0, OSTCBPrioTbl(R8)
+//  506     if (ptcb->OSTCBPrev == (OS_TCB *)0) {               /* Remove from TCB chain                       */
+        MOVA    R11, R15
+        ADDA    #0x14, R15
+        MOVA    0x18(R11), R14
+        CMPA    #0x0, R14
+        JNE     ??OSTaskDel_12
+//  507         ptcb->OSTCBNext->OSTCBPrev = (OS_TCB *)0;
+        MOVA    @R15, R14
+        MOVX.A  #0x0, 0x18(R14)
+//  508         OSTCBList                  = ptcb->OSTCBNext;
+        MOVX.A  @R15, &OSTCBList
+        JMP     ??OSTaskDel_13
+//  509     } else {
+//  510         ptcb->OSTCBPrev->OSTCBNext = ptcb->OSTCBNext;
+??OSTaskDel_12:
+        MOVX.A  @R15, 0x14(R14)
+//  511         ptcb->OSTCBNext->OSTCBPrev = ptcb->OSTCBPrev;
+        MOVA    @R15, R15
+        MOVX.A  0x18(R11), 0x18(R15)
+//  512     }
+//  513     ptcb->OSTCBNext     = OSTCBFreeList;                /* Return TCB to free TCB list                 */
+??OSTaskDel_13:
+        MOVX.A  &OSTCBFreeList, 0x14(R11)
+//  514     OSTCBFreeList       = ptcb;
+        MOVA    R11, &OSTCBFreeList
+//  515 #if OS_TASK_NAME_EN > 0u
+//  516     ptcb->OSTCBTaskName = (INT8U *)(void *)"?";
+        MOVX.A  #`?<Constant "?">`, 0x4a(R11)
+//  517 #endif
+//  518     OS_EXIT_CRITICAL();
+        MOV.W   R10, R12
+        CALLA   #?Subroutine4
+//  519     if (OSRunning == OS_TRUE) {
+//  520         OS_Sched();                                     /* Find new highest priority task              */
+//  521     }
+//  522     return (OS_ERR_NONE);
+??OSTaskDel_3:
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock27
+//  523 }
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?Subroutine0:
+          CFI Block cfiCond28 Using cfiCommon0
+          CFI Function OSTaskDel
+          CFI Conditional ??CrossCallReturnLabel_0
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+24
+          CFI Block cfiCond29 Using cfiCommon0
+          CFI (cfiCond29) Function OSTaskQuery
+          CFI (cfiCond29) Conditional ??CrossCallReturnLabel_1
+          CFI (cfiCond29) R8L Frame(CFA, -20)
+          CFI (cfiCond29) R8H Frame(CFA, -18)
+          CFI (cfiCond29) R9L Frame(CFA, -16)
+          CFI (cfiCond29) R9H Frame(CFA, -14)
+          CFI (cfiCond29) R10L Frame(CFA, -12)
+          CFI (cfiCond29) R10H Frame(CFA, -10)
+          CFI (cfiCond29) R11L Frame(CFA, -8)
+          CFI (cfiCond29) R11H Frame(CFA, -6)
+          CFI (cfiCond29) CFA SP+24
+          CFI Block cfiCond30 Using cfiCommon0
+          CFI (cfiCond30) Function OSTaskNameGet
+          CFI (cfiCond30) Conditional ??CrossCallReturnLabel_2
+          CFI (cfiCond30) R8L Frame(CFA, -20)
+          CFI (cfiCond30) R8H Frame(CFA, -18)
+          CFI (cfiCond30) R9L Frame(CFA, -16)
+          CFI (cfiCond30) R9H Frame(CFA, -14)
+          CFI (cfiCond30) R10L Frame(CFA, -12)
+          CFI (cfiCond30) R10H Frame(CFA, -10)
+          CFI (cfiCond30) R11L Frame(CFA, -8)
+          CFI (cfiCond30) R11H Frame(CFA, -6)
+          CFI (cfiCond30) CFA SP+24
+          CFI Block cfiPicker31 Using cfiCommon1
+          CFI (cfiPicker31) NoFunction
+          CFI (cfiPicker31) Picker
+        CALLA   #OSCPUSaveSR
+        MOV.W   R12, R10
+        CMP.B   #0xff, R11
+        JNE     ??OSTaskDel_0
+        MOVA    &OSTCBCur, R15
+        MOV.B   0x30(R15), R11
+??OSTaskDel_0:
+        RLAM.A  #0x2, R11
+        RETA
+          CFI EndBlock cfiCond28
+          CFI EndBlock cfiCond29
+          CFI EndBlock cfiCond30
+          CFI EndBlock cfiPicker31
+//  524 #endif
+//  525 /*$PAGE*/
+//  526 /*
+//  527 *********************************************************************************************************
+//  528 *                                    REQUEST THAT A TASK DELETE ITSELF
+//  529 *
+//  530 * Description: This function is used to:
+//  531 *                   a) notify a task to delete itself.
+//  532 *                   b) to see if a task requested that the current task delete itself.
+//  533 *              This function is a little tricky to understand.  Basically, you have a task that needs
+//  534 *              to be deleted however, this task has resources that it has allocated (memory buffers,
+//  535 *              semaphores, mailboxes, queues etc.).  The task cannot be deleted otherwise these
+//  536 *              resources would not be freed.  The requesting task calls OSTaskDelReq() to indicate that
+//  537 *              the task needs to be deleted.  Deleting of the task is however, deferred to the task to
+//  538 *              be deleted.  For example, suppose that task #10 needs to be deleted.  The requesting task
+//  539 *              example, task #5, would call OSTaskDelReq(10).  When task #10 gets to execute, it calls
+//  540 *              this function by specifying OS_PRIO_SELF and monitors the returned value.  If the return
+//  541 *              value is OS_ERR_TASK_DEL_REQ, another task requested a task delete.  Task #10 would look like
+//  542 *              this:
+//  543 *
+//  544 *                   void Task(void *p_arg)
+//  545 *                   {
+//  546 *                       .
+//  547 *                       .
+//  548 *                       while (1) {
+//  549 *                           OSTimeDly(1);
+//  550 *                           if (OSTaskDelReq(OS_PRIO_SELF) == OS_ERR_TASK_DEL_REQ) {
+//  551 *                               Release any owned resources;
+//  552 *                               De-allocate any dynamic memory;
+//  553 *                               OSTaskDel(OS_PRIO_SELF);
+//  554 *                           }
+//  555 *                       }
+//  556 *                   }
+//  557 *
+//  558 * Arguments  : prio    is the priority of the task to request the delete from
+//  559 *
+//  560 * Returns    : OS_ERR_NONE            if the task exist and the request has been registered
+//  561 *              OS_ERR_TASK_NOT_EXIST  if the task has been deleted.  This allows the caller to know whether
+//  562 *                                     the request has been executed.
+//  563 *              OS_ERR_TASK_DEL        if the task is assigned to a Mutex.
+//  564 *              OS_ERR_TASK_DEL_IDLE   if you requested to delete uC/OS-II's idle task
+//  565 *              OS_ERR_PRIO_INVALID    if the priority you specify is higher that the maximum allowed
+//  566 *                                     (i.e. >= OS_LOWEST_PRIO) or, you have not specified OS_PRIO_SELF.
+//  567 *              OS_ERR_TASK_DEL_REQ    if a task (possibly another task) requested that the running task be
+//  568 *                                     deleted.
+//  569 *********************************************************************************************************
+//  570 */
+//  571 /*$PAGE*/
+//  572 #if OS_TASK_DEL_EN > 0u
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?Subroutine7:
+          CFI Block cfiCond32 Using cfiCommon0
+          CFI Function OSTaskRegGet
+          CFI Conditional ??OSTaskRegGet_1
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+24
+          CFI Block cfiCond33 Using cfiCommon0
+          CFI (cfiCond33) Function OSTaskStkChk
+          CFI (cfiCond33) Conditional ??CrossCallReturnLabel_16, ??CrossCallReturnLabel_3
+          CFI (cfiCond33) R6L Frame(CFA, -28)
+          CFI (cfiCond33) R6H Frame(CFA, -26)
+          CFI (cfiCond33) R7L Frame(CFA, -24)
+          CFI (cfiCond33) R7H Frame(CFA, -22)
+          CFI (cfiCond33) R8L Frame(CFA, -20)
+          CFI (cfiCond33) R8H Frame(CFA, -18)
+          CFI (cfiCond33) R9L Frame(CFA, -16)
+          CFI (cfiCond33) R9H Frame(CFA, -14)
+          CFI (cfiCond33) R10L Frame(CFA, -12)
+          CFI (cfiCond33) R10H Frame(CFA, -10)
+          CFI (cfiCond33) R11L Frame(CFA, -8)
+          CFI (cfiCond33) R11H Frame(CFA, -6)
+          CFI (cfiCond33) CFA SP+36
+          CFI Block cfiCond34 Using cfiCommon0
+          CFI (cfiCond34) Function OSTaskNameSet
+          CFI (cfiCond34) Conditional ??CrossCallReturnLabel_16, ??CrossCallReturnLabel_4
+          CFI (cfiCond34) R8L Frame(CFA, -20)
+          CFI (cfiCond34) R8H Frame(CFA, -18)
+          CFI (cfiCond34) R9L Frame(CFA, -16)
+          CFI (cfiCond34) R9H Frame(CFA, -14)
+          CFI (cfiCond34) R10L Frame(CFA, -12)
+          CFI (cfiCond34) R10H Frame(CFA, -10)
+          CFI (cfiCond34) R11L Frame(CFA, -8)
+          CFI (cfiCond34) R11H Frame(CFA, -6)
+          CFI (cfiCond34) CFA SP+28
+          CFI Block cfiCond35 Using cfiCommon0
+          CFI (cfiCond35) Function OSTaskDelReq
+          CFI (cfiCond35) Conditional ??CrossCallReturnLabel_15
+          CFI (cfiCond35) R10L Frame(CFA, -8)
+          CFI (cfiCond35) R10H Frame(CFA, -6)
+          CFI (cfiCond35) CFA SP+12
+          CFI Block cfiPicker36 Using cfiCommon1
+          CFI (cfiPicker36) NoFunction
+          CFI (cfiPicker36) Picker
+        RLAM.A  #0x2, R10
+        MOVX.A  OSTCBPrioTbl(R10), R15
+        RETA
+          CFI EndBlock cfiCond32
+          CFI EndBlock cfiCond33
+          CFI EndBlock cfiCond34
+          CFI EndBlock cfiCond35
+          CFI EndBlock cfiPicker36
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  573 INT8U  OSTaskDelReq (INT8U prio)
+OSTaskDelReq:
+          CFI Block cfiBlock37 Using cfiCommon0
+          CFI Function OSTaskDelReq
+//  574 {
+        FUNCALL OSTaskDelReq, OSCPUSaveSR
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL OSTaskDelReq, OSCPURestoreSR
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL OSTaskDelReq, OSCPUSaveSR
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL OSTaskDelReq, OSCPURestoreSR
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL OSTaskDelReq, OSCPURestoreSR
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL OSTaskDelReq, OSCPURestoreSR
+        LOCFRAME CSTACK, 8, STACK
+        PUSHM.A #0x1, R10
+          CFI R10L Frame(CFA, -8)
+          CFI R10H Frame(CFA, -6)
+          CFI CFA SP+8
+        MOV.B   R12, R10
+//  575     INT8U      stat;
+//  576     OS_TCB    *ptcb;
+//  577 #if OS_CRITICAL_METHOD == 3u                     /* Allocate storage for CPU status register           */
+//  578     OS_CPU_SR  cpu_sr = 0u;
+//  579 #endif
+//  580 
+//  581 
+//  582 
+//  583     if (prio == OS_TASK_IDLE_PRIO) {                            /* Not allowed to delete idle task     */
+        CMP.B   #0x3f, R12
+        JNE     ??OSTaskDelReq_0
+//  584         return (OS_ERR_TASK_DEL_IDLE);
+        MOV.B   #0x3e, R12
+        JMP     ??OSTaskDelReq_1
+//  585     }
+//  586 #if OS_ARG_CHK_EN > 0u
+//  587     if (prio >= OS_LOWEST_PRIO) {                               /* Task priority valid ?               */
+//  588         if (prio != OS_PRIO_SELF) {
+//  589             return (OS_ERR_PRIO_INVALID);
+//  590         }
+//  591     }
+//  592 #endif
+//  593     if (prio == OS_PRIO_SELF) {                                 /* See if a task is requesting to ...  */
+??OSTaskDelReq_0:
+        CMP.B   #0xff, R12
+        JNE     ??OSTaskDelReq_2
+//  594         OS_ENTER_CRITICAL();                                    /* ... this task to delete itself      */
+        CALLA   #OSCPUSaveSR
+//  595         stat = OSTCBCur->OSTCBDelReq;                           /* Return request status to caller     */
+        MOVA    &OSTCBCur, R15
+        MOV.B   0x35(R15), R10
+//  596         OS_EXIT_CRITICAL();
+        CALLA   #OSCPURestoreSR
+//  597         return (stat);
+        MOV.B   R10, R12
+        JMP     ??OSTaskDelReq_1
+//  598     }
+//  599     OS_ENTER_CRITICAL();
+??OSTaskDelReq_2:
+        CALLA   #OSCPUSaveSR
+//  600     ptcb = OSTCBPrioTbl[prio];
+        CALLA   #?Subroutine7
+//  601     if (ptcb == (OS_TCB *)0) {                                  /* Task to delete must exist           */
+??CrossCallReturnLabel_15:
+        CMPA    #0x0, R15
+        JNE     ??OSTaskDelReq_3
+//  602         OS_EXIT_CRITICAL();
+        CALLA   #?Subroutine3
+//  603         return (OS_ERR_TASK_NOT_EXIST);                         /* Task must already be deleted        */
+//  604     }
+??CrossCallReturnLabel_10:
+        JMP     ??OSTaskDelReq_1
+//  605     if (ptcb == OS_TCB_RESERVED) {                              /* Must NOT be assigned to a Mutex     */
+??OSTaskDelReq_3:
+        CMPA    #0x1, R15
+        JNE     ??OSTaskDelReq_4
+//  606         OS_EXIT_CRITICAL();
+        CALLA   #OSCPURestoreSR
+//  607         return (OS_ERR_TASK_DEL);
+        MOV.B   #0x3d, R12
+        JMP     ??OSTaskDelReq_1
+//  608     }
+//  609     ptcb->OSTCBDelReq = OS_ERR_TASK_DEL_REQ;                    /* Set flag indicating task to be DEL. */
+??OSTaskDelReq_4:
+        MOV.B   #0x3f, 0x35(R15)
+//  610     OS_EXIT_CRITICAL();
+        CALLA   #OSCPURestoreSR
+//  611     return (OS_ERR_NONE);
+        MOV.B   #0x0, R12
+??OSTaskDelReq_1:
+        POPM.A  #0x1, R10
+          CFI R10H SameValue
+          CFI R10L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock37
+//  612 }
+//  613 #endif
+//  614 /*$PAGE*/
+//  615 /*
+//  616 *********************************************************************************************************
+//  617 *                                        GET THE NAME OF A TASK
+//  618 *
+//  619 * Description: This function is called to obtain the name of a task.
+//  620 *
+//  621 * Arguments  : prio      is the priority of the task that you want to obtain the name from.
+//  622 *
+//  623 *              pname     is a pointer to a pointer to an ASCII string that will receive the name of the task.
+//  624 *
+//  625 *              perr      is a pointer to an error code that can contain one of the following values:
+//  626 *
+//  627 *                        OS_ERR_NONE                if the requested task is resumed
+//  628 *                        OS_ERR_TASK_NOT_EXIST      if the task has not been created or is assigned to a Mutex
+//  629 *                        OS_ERR_PRIO_INVALID        if you specified an invalid priority:
+//  630 *                                                   A higher value than the idle task or not OS_PRIO_SELF.
+//  631 *                        OS_ERR_PNAME_NULL          You passed a NULL pointer for 'pname'
+//  632 *                        OS_ERR_NAME_GET_ISR        You called this function from an ISR
+//  633 *
+//  634 *
+//  635 * Returns    : The length of the string or 0 if the task does not exist.
+//  636 *********************************************************************************************************
+//  637 */
+//  638 
+//  639 #if OS_TASK_NAME_EN > 0u
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?Subroutine5:
+          CFI Block cfiCond38 Using cfiCommon0
+          CFI Function OSTaskRegGet
+          CFI Conditional ??CrossCallReturnLabel_12
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+24
+          CFI Block cfiCond39 Using cfiCommon0
+          CFI (cfiCond39) Function OSTaskNameSet
+          CFI (cfiCond39) Conditional ??OSTaskNameSet_2
+          CFI (cfiCond39) R8L Frame(CFA, -20)
+          CFI (cfiCond39) R8H Frame(CFA, -18)
+          CFI (cfiCond39) R9L Frame(CFA, -16)
+          CFI (cfiCond39) R9H Frame(CFA, -14)
+          CFI (cfiCond39) R10L Frame(CFA, -12)
+          CFI (cfiCond39) R10H Frame(CFA, -10)
+          CFI (cfiCond39) R11L Frame(CFA, -8)
+          CFI (cfiCond39) R11H Frame(CFA, -6)
+          CFI (cfiCond39) CFA SP+24
+          CFI Block cfiCond40 Using cfiCommon0
+          CFI (cfiCond40) Function OSTaskNameGet
+          CFI (cfiCond40) Conditional ??CrossCallReturnLabel_13
+          CFI (cfiCond40) R8L Frame(CFA, -20)
+          CFI (cfiCond40) R8H Frame(CFA, -18)
+          CFI (cfiCond40) R9L Frame(CFA, -16)
+          CFI (cfiCond40) R9H Frame(CFA, -14)
+          CFI (cfiCond40) R10L Frame(CFA, -12)
+          CFI (cfiCond40) R10H Frame(CFA, -10)
+          CFI (cfiCond40) R11L Frame(CFA, -8)
+          CFI (cfiCond40) R11H Frame(CFA, -6)
+          CFI (cfiCond40) CFA SP+24
+          CFI Block cfiPicker41 Using cfiCommon1
+          CFI (cfiPicker41) NoFunction
+          CFI (cfiPicker41) Picker
+        CALLA   #OSCPURestoreSR
+        MOV.B   #0x0, 0(R8)
+        RETA
+          CFI EndBlock cfiCond38
+          CFI EndBlock cfiCond39
+          CFI EndBlock cfiCond40
+          CFI EndBlock cfiPicker41
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  640 INT8U  OSTaskNameGet (INT8U    prio,
+OSTaskNameGet:
+          CFI Block cfiBlock42 Using cfiCommon0
+          CFI Function OSTaskNameGet
+//  641                       INT8U  **pname,
+//  642                       INT8U   *perr)
+//  643 {
+        FUNCALL OSTaskNameGet, OSCPUSaveSR
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSTaskNameGet, OSCPURestoreSR
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSTaskNameGet, OS_StrLen
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSTaskNameGet, OSCPURestoreSR
+        LOCFRAME CSTACK, 20, STACK
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        MOV.B   R12, R11
+        MOVA    R13, R9
+        MOVA    R14, R8
+//  644     OS_TCB    *ptcb;
+//  645     INT8U      len;
+//  646 #if OS_CRITICAL_METHOD == 3u                             /* Allocate storage for CPU status register   */
+//  647     OS_CPU_SR  cpu_sr = 0u;
+//  648 #endif
+//  649 
+//  650 
+//  651 
+//  652 #ifdef OS_SAFETY_CRITICAL
+//  653     if (perr == (INT8U *)0) {
+//  654         OS_SAFETY_CRITICAL_EXCEPTION();
+//  655     }
+//  656 #endif
+//  657 
+//  658 #if OS_ARG_CHK_EN > 0u
+//  659     if (prio > OS_LOWEST_PRIO) {                         /* Task priority valid ?                      */
+//  660         if (prio != OS_PRIO_SELF) {
+//  661             *perr = OS_ERR_PRIO_INVALID;                 /* No                                         */
+//  662             return (0u);
+//  663         }
+//  664     }
+//  665     if (pname == (INT8U **)0) {                          /* Is 'pname' a NULL pointer?                 */
+//  666         *perr = OS_ERR_PNAME_NULL;                       /* Yes                                        */
+//  667         return (0u);
+//  668     }
+//  669 #endif
+//  670     if (OSIntNesting > 0u) {                              /* See if trying to call from an ISR          */
+        CALLA   #??Subroutine2_0
+??CrossCallReturnLabel_21:
+        JEQ     ??OSTaskNameGet_1
+//  671         *perr = OS_ERR_NAME_GET_ISR;
+        MOV.B   #0x11, 0(R14)
+//  672         return (0u);
+        JMP     ??OSTaskNameGet_2
+//  673     }
+//  674     OS_ENTER_CRITICAL();
+??OSTaskNameGet_1:
+        CALLA   #?Subroutine0
+//  675     if (prio == OS_PRIO_SELF) {                          /* See if caller desires it's own name        */
+//  676         prio = OSTCBCur->OSTCBPrio;
+//  677     }
+//  678     ptcb = OSTCBPrioTbl[prio];
+??CrossCallReturnLabel_2:
+        MOVX.A  OSTCBPrioTbl(R11), R15
+//  679     if (ptcb == (OS_TCB *)0) {                           /* Does task exist?                           */
+        CMPA    #0x0, R15
+        JEQ     ??OSTaskNameGet_3
+//  680         OS_EXIT_CRITICAL();                              /* No                                         */
+//  681         *perr = OS_ERR_TASK_NOT_EXIST;
+//  682         return (0u);
+//  683     }
+//  684     if (ptcb == OS_TCB_RESERVED) {                       /* Task assigned to a Mutex?                  */
+        CMPA    #0x1, R15
+        JNE     ??OSTaskNameGet_4
+//  685         OS_EXIT_CRITICAL();                              /* Yes                                        */
+??OSTaskNameGet_3:
+        CALLA   #OSCPURestoreSR
+//  686         *perr = OS_ERR_TASK_NOT_EXIST;
+        MOV.B   #0x43, 0(R8)
+//  687         return (0u);
+??OSTaskNameGet_2:
+        MOV.B   #0x0, R12
+        JMP     ??OSTaskNameGet_5
+//  688     }
+//  689     *pname = ptcb->OSTCBTaskName;
+??OSTaskNameGet_4:
+        MOVA    0x4a(R15), R12
+        MOVA    R12, 0(R9)
+//  690     len    = OS_StrLen(*pname);
+        CALLA   #OS_StrLen
+        MOV.B   R12, R11
+//  691     OS_EXIT_CRITICAL();
+        MOV.W   R10, R12
+        CALLA   #?Subroutine5
+//  692     *perr  = OS_ERR_NONE;
+//  693     return (len);
+??CrossCallReturnLabel_13:
+        MOV.B   R11, R12
+??OSTaskNameGet_5:
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock42
+//  694 }
+//  695 #endif
+//  696 
+//  697 /*$PAGE*/
+//  698 /*
+//  699 *********************************************************************************************************
+//  700 *                                        ASSIGN A NAME TO A TASK
+//  701 *
+//  702 * Description: This function is used to set the name of a task.
+//  703 *
+//  704 * Arguments  : prio      is the priority of the task that you want the assign a name to.
+//  705 *
+//  706 *              pname     is a pointer to an ASCII string that contains the name of the task.
+//  707 *
+//  708 *              perr       is a pointer to an error code that can contain one of the following values:
+//  709 *
+//  710 *                        OS_ERR_NONE                if the requested task is resumed
+//  711 *                        OS_ERR_TASK_NOT_EXIST      if the task has not been created or is assigned to a Mutex
+//  712 *                        OS_ERR_PNAME_NULL          You passed a NULL pointer for 'pname'
+//  713 *                        OS_ERR_PRIO_INVALID        if you specified an invalid priority:
+//  714 *                                                   A higher value than the idle task or not OS_PRIO_SELF.
+//  715 *                        OS_ERR_NAME_SET_ISR        if you called this function from an ISR
+//  716 *
+//  717 * Returns    : None
+//  718 *********************************************************************************************************
+//  719 */
+//  720 #if OS_TASK_NAME_EN > 0u
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  721 void  OSTaskNameSet (INT8U   prio,
+OSTaskNameSet:
+          CFI Block cfiBlock43 Using cfiCommon0
+          CFI Function OSTaskNameSet
+//  722                      INT8U  *pname,
+//  723                      INT8U  *perr)
+//  724 {
+        FUNCALL OSTaskNameSet, OSCPUSaveSR
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSTaskNameSet, OSCPURestoreSR
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSTaskNameSet, OSCPURestoreSR
+        LOCFRAME CSTACK, 20, STACK
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        MOV.B   R12, R10
+        MOVA    R13, R11
+        MOVA    R14, R8
+//  725     OS_TCB    *ptcb;
+//  726 #if OS_CRITICAL_METHOD == 3u                         /* Allocate storage for CPU status register       */
+//  727     OS_CPU_SR  cpu_sr = 0u;
+//  728 #endif
+//  729 
+//  730 
+//  731 
+//  732 #ifdef OS_SAFETY_CRITICAL
+//  733     if (perr == (INT8U *)0) {
+//  734         OS_SAFETY_CRITICAL_EXCEPTION();
+//  735     }
+//  736 #endif
+//  737 
+//  738 #if OS_ARG_CHK_EN > 0u
+//  739     if (prio > OS_LOWEST_PRIO) {                     /* Task priority valid ?                          */
+//  740         if (prio != OS_PRIO_SELF) {
+//  741             *perr = OS_ERR_PRIO_INVALID;             /* No                                             */
+//  742             return;
+//  743         }
+//  744     }
+//  745     if (pname == (INT8U *)0) {                       /* Is 'pname' a NULL pointer?                     */
+//  746         *perr = OS_ERR_PNAME_NULL;                   /* Yes                                            */
+//  747         return;
+//  748     }
+//  749 #endif
+//  750     if (OSIntNesting > 0u) {                         /* See if trying to call from an ISR              */
+        CALLA   #??Subroutine2_0
+??CrossCallReturnLabel_20:
+        JEQ     ??OSTaskNameSet_1
+//  751         *perr = OS_ERR_NAME_SET_ISR;
+        MOV.B   #0x12, 0(R14)
+//  752         return;
+        JMP     ??OSTaskNameSet_2
+//  753     }
+//  754     OS_ENTER_CRITICAL();
+??OSTaskNameSet_1:
+        CALLA   #?Subroutine1
+//  755     if (prio == OS_PRIO_SELF) {                      /* See if caller desires to set it's own name     */
+//  756         prio = OSTCBCur->OSTCBPrio;
+//  757     }
+//  758     ptcb = OSTCBPrioTbl[prio];
+//  759     if (ptcb == (OS_TCB *)0) {                       /* Does task exist?                               */
+??CrossCallReturnLabel_4:
+        JEQ     ??OSTaskNameSet_3
+//  760         OS_EXIT_CRITICAL();                          /* No                                             */
+//  761         *perr = OS_ERR_TASK_NOT_EXIST;
+//  762         return;
+//  763     }
+//  764     if (ptcb == OS_TCB_RESERVED) {                   /* Task assigned to a Mutex?                      */
+        CMPA    #0x1, R15
+        JNE     ??OSTaskNameSet_4
+//  765         OS_EXIT_CRITICAL();                          /* Yes                                            */
+??OSTaskNameSet_3:
+        CALLA   #OSCPURestoreSR
+//  766         *perr = OS_ERR_TASK_NOT_EXIST;
+        MOV.B   #0x43, 0(R8)
+//  767         return;
+        JMP     ??OSTaskNameSet_2
+//  768     }
+//  769     ptcb->OSTCBTaskName = pname;
+??OSTaskNameSet_4:
+        MOVA    R11, 0x4a(R15)
+//  770     OS_EXIT_CRITICAL();
+        CALLA   #?Subroutine5
+//  771     *perr               = OS_ERR_NONE;
+//  772 }
+??OSTaskNameSet_2:
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock43
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?Subroutine1:
+          CFI Block cfiCond44 Using cfiCommon0
+          CFI Function OSTaskStkChk
+          CFI Conditional ??CrossCallReturnLabel_3
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+32
+          CFI Block cfiCond45 Using cfiCommon0
+          CFI (cfiCond45) Function OSTaskNameSet
+          CFI (cfiCond45) Conditional ??CrossCallReturnLabel_4
+          CFI (cfiCond45) R8L Frame(CFA, -20)
+          CFI (cfiCond45) R8H Frame(CFA, -18)
+          CFI (cfiCond45) R9L Frame(CFA, -16)
+          CFI (cfiCond45) R9H Frame(CFA, -14)
+          CFI (cfiCond45) R10L Frame(CFA, -12)
+          CFI (cfiCond45) R10H Frame(CFA, -10)
+          CFI (cfiCond45) R11L Frame(CFA, -8)
+          CFI (cfiCond45) R11H Frame(CFA, -6)
+          CFI (cfiCond45) CFA SP+24
+          CFI Block cfiPicker46 Using cfiCommon1
+          CFI (cfiPicker46) NoFunction
+          CFI (cfiPicker46) Picker
+        CALLA   #OSCPUSaveSR
+        CMP.B   #0xff, R10
+        JNE     ??OSTaskStkChk_1
+        MOVA    &OSTCBCur, R15
+        MOV.B   0x30(R15), R10
+??OSTaskStkChk_1:
+        CALLA   #?Subroutine7
+??CrossCallReturnLabel_16:
+        CMPA    #0x0, R15
+        RETA
+          CFI EndBlock cfiCond44
+          CFI EndBlock cfiCond45
+          CFI EndBlock cfiPicker46
+//  773 #endif
+//  774 
+//  775 /*$PAGE*/
+//  776 /*
+//  777 *********************************************************************************************************
+//  778 *                                        RESUME A SUSPENDED TASK
+//  779 *
+//  780 * Description: This function is called to resume a previously suspended task.  This is the only call that
+//  781 *              will remove an explicit task suspension.
+//  782 *
+//  783 * Arguments  : prio     is the priority of the task to resume.
+//  784 *
+//  785 * Returns    : OS_ERR_NONE                if the requested task is resumed
+//  786 *              OS_ERR_PRIO_INVALID        if the priority you specify is higher that the maximum allowed
+//  787 *                                         (i.e. >= OS_LOWEST_PRIO)
+//  788 *              OS_ERR_TASK_RESUME_PRIO    if the task to resume does not exist
+//  789 *              OS_ERR_TASK_NOT_EXIST      if the task is assigned to a Mutex PIP
+//  790 *              OS_ERR_TASK_NOT_SUSPENDED  if the task to resume has not been suspended
+//  791 *********************************************************************************************************
+//  792 */
+//  793 
+//  794 #if OS_TASK_SUSPEND_EN > 0u
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  795 INT8U  OSTaskResume (INT8U prio)
+OSTaskResume:
+          CFI Block cfiBlock47 Using cfiCommon0
+          CFI Function OSTaskResume
+//  796 {
+        FUNCALL OSTaskResume, OSCPUSaveSR
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL OSTaskResume, OSCPURestoreSR
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL OSTaskResume, OSCPURestoreSR
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL OSTaskResume, OSCPURestoreSR
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL OSTaskResume, OS_Sched
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL OSTaskResume, OSCPURestoreSR
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL OSTaskResume, OSCPURestoreSR
+        LOCFRAME CSTACK, 8, STACK
+        PUSHM.A #0x1, R10
+          CFI R10L Frame(CFA, -8)
+          CFI R10H Frame(CFA, -6)
+          CFI CFA SP+8
+        MOV.B   R12, R10
+//  797     OS_TCB    *ptcb;
+//  798 #if OS_CRITICAL_METHOD == 3u                                  /* Storage for CPU status register       */
+//  799     OS_CPU_SR  cpu_sr = 0u;
+//  800 #endif
+//  801 
+//  802 
+//  803 
+//  804 #if OS_ARG_CHK_EN > 0u
+//  805     if (prio >= OS_LOWEST_PRIO) {                             /* Make sure task priority is valid      */
+//  806         return (OS_ERR_PRIO_INVALID);
+//  807     }
+//  808 #endif
+//  809     OS_ENTER_CRITICAL();
+        CALLA   #OSCPUSaveSR
+//  810     ptcb = OSTCBPrioTbl[prio];
+        RLAM.A  #0x2, R10
+        MOVX.A  OSTCBPrioTbl(R10), R14
+//  811     if (ptcb == (OS_TCB *)0) {                                /* Task to suspend must exist            */
+        CMPA    #0x0, R14
+        JNE     ??OSTaskResume_0
+//  812         OS_EXIT_CRITICAL();
+        CALLA   #OSCPURestoreSR
+//  813         return (OS_ERR_TASK_RESUME_PRIO);
+        MOV.B   #0x46, R12
+        JMP     ??OSTaskResume_1
+//  814     }
+//  815     if (ptcb == OS_TCB_RESERVED) {                            /* See if assigned to Mutex              */
+??OSTaskResume_0:
+        CMPA    #0x1, R14
+        JNE     ??OSTaskResume_2
+//  816         OS_EXIT_CRITICAL();
+        CALLA   #?Subroutine3
+//  817         return (OS_ERR_TASK_NOT_EXIST);
+//  818     }
+??CrossCallReturnLabel_9:
+        JMP     ??OSTaskResume_1
+//  819     if ((ptcb->OSTCBStat & OS_STAT_SUSPEND) != OS_STAT_RDY) { /* Task must be suspended                */
+??OSTaskResume_2:
+        BIT.B   #0x8, 0x2e(R14)
+        JNC     ??OSTaskResume_3
+//  820         ptcb->OSTCBStat &= (INT8U)~(INT8U)OS_STAT_SUSPEND;    /* Remove suspension                     */
+        BIC.B   #0x8, 0x2e(R14)
+//  821         if (ptcb->OSTCBStat == OS_STAT_RDY) {                 /* See if task is now ready              */
+        CMP.B   #0x0, 0x2e(R14)
+        JNE     ??OSTaskResume_4
+//  822             if (ptcb->OSTCBDly == 0u) {
+        MOV.W   0x2a(R14), R15
+        BIS.W   0x2c(R14), R15
+        CMP.W   #0x0, R15
+        JNE     ??OSTaskResume_4
+//  823                 OSRdyGrp               |= ptcb->OSTCBBitY;    /* Yes, Make task ready to run           */
+        BISX.B  0x34(R14), &OSRdyGrp
+//  824                 OSRdyTbl[ptcb->OSTCBY] |= ptcb->OSTCBBitX;
+        MOV.B   0x32(R14), R15
+        BISX.B  0x33(R14), OSRdyTbl(R15)
+//  825                 OS_EXIT_CRITICAL();
+        CALLA   #OSCPURestoreSR
+//  826                 if (OSRunning == OS_TRUE) {
+        CMPX.B  #0x1, &OSRunning
+        JNE     ??OSTaskResume_5
+//  827                     OS_Sched();                               /* Find new highest priority task        */
+        CALLA   #OS_Sched
+        JMP     ??OSTaskResume_5
+//  828                 }
+//  829             } else {
+//  830                 OS_EXIT_CRITICAL();
+//  831             }
+//  832         } else {                                              /* Must be pending on event              */
+//  833             OS_EXIT_CRITICAL();
+??OSTaskResume_4:
+        CALLA   #OSCPURestoreSR
+//  834         }
+//  835         return (OS_ERR_NONE);
+??OSTaskResume_5:
+        MOV.B   #0x0, R12
+        JMP     ??OSTaskResume_1
+//  836     }
+//  837     OS_EXIT_CRITICAL();
+??OSTaskResume_3:
+        CALLA   #OSCPURestoreSR
+//  838     return (OS_ERR_TASK_NOT_SUSPENDED);
+        MOV.B   #0x44, R12
+??OSTaskResume_1:
+        POPM.A  #0x1, R10
+          CFI R10H SameValue
+          CFI R10L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock47
+//  839 }
+//  840 #endif
+//  841 /*$PAGE*/
+//  842 /*
+//  843 *********************************************************************************************************
+//  844 *                                             STACK CHECKING
+//  845 *
+//  846 * Description: This function is called to check the amount of free memory left on the specified task's
+//  847 *              stack.
+//  848 *
+//  849 * Arguments  : prio          is the task priority
+//  850 *
+//  851 *              p_stk_data    is a pointer to a data structure of type OS_STK_DATA.
+//  852 *
+//  853 * Returns    : OS_ERR_NONE            upon success
+//  854 *              OS_ERR_PRIO_INVALID    if the priority you specify is higher that the maximum allowed
+//  855 *                                     (i.e. > OS_LOWEST_PRIO) or, you have not specified OS_PRIO_SELF.
+//  856 *              OS_ERR_TASK_NOT_EXIST  if the desired task has not been created or is assigned to a Mutex PIP
+//  857 *              OS_ERR_TASK_OPT        if you did NOT specified OS_TASK_OPT_STK_CHK when the task was created
+//  858 *              OS_ERR_PDATA_NULL      if 'p_stk_data' is a NULL pointer
+//  859 *********************************************************************************************************
+//  860 */
+//  861 #if (OS_TASK_STAT_STK_CHK_EN > 0u) && (OS_TASK_CREATE_EXT_EN > 0u)
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  862 INT8U  OSTaskStkChk (INT8U         prio,
+OSTaskStkChk:
+          CFI Block cfiBlock48 Using cfiCommon0
+          CFI Function OSTaskStkChk
+//  863                      OS_STK_DATA  *p_stk_data)
+//  864 {
+        FUNCALL OSTaskStkChk, OSCPUSaveSR
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSTaskStkChk, OSCPURestoreSR
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSTaskStkChk, OSCPURestoreSR
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSTaskStkChk, OSCPURestoreSR
+        LOCFRAME CSTACK, 28, STACK
+        PUSHM.A #0x6, R11
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+28
+        MOV.B   R12, R10
+        MOVA    R13, R6
+//  865     OS_TCB    *ptcb;
+//  866     OS_STK    *pchk;
+//  867     INT32U     nfree;
+//  868     INT32U     size;
+//  869 #if OS_CRITICAL_METHOD == 3u                           /* Allocate storage for CPU status register     */
+//  870     OS_CPU_SR  cpu_sr = 0u;
+//  871 #endif
+//  872 
+//  873 
+//  874 
+//  875 #if OS_ARG_CHK_EN > 0u
+//  876     if (prio > OS_LOWEST_PRIO) {                       /* Make sure task priority is valid             */
+//  877         if (prio != OS_PRIO_SELF) {
+//  878             return (OS_ERR_PRIO_INVALID);
+//  879         }
+//  880     }
+//  881     if (p_stk_data == (OS_STK_DATA *)0) {              /* Validate 'p_stk_data'                        */
+//  882         return (OS_ERR_PDATA_NULL);
+//  883     }
+//  884 #endif
+//  885     p_stk_data->OSFree = 0u;                           /* Assume failure, set to 0 size                */
+        MOV.W   #0x0, 0(R13)
+        MOV.W   #0x0, 0x2(R13)
+//  886     p_stk_data->OSUsed = 0u;
+        MOV.W   #0x0, 0x4(R13)
+        MOV.W   #0x0, 0x6(R13)
+//  887     OS_ENTER_CRITICAL();
+        CALLA   #?Subroutine1
+//  888     if (prio == OS_PRIO_SELF) {                        /* See if check for SELF                        */
+//  889         prio = OSTCBCur->OSTCBPrio;
+//  890     }
+//  891     ptcb = OSTCBPrioTbl[prio];
+//  892     if (ptcb == (OS_TCB *)0) {                         /* Make sure task exist                         */
+??CrossCallReturnLabel_3:
+        JEQ     ??OSTaskStkChk_2
+//  893         OS_EXIT_CRITICAL();
+//  894         return (OS_ERR_TASK_NOT_EXIST);
+//  895     }
+//  896     if (ptcb == OS_TCB_RESERVED) {
+        CMPA    #0x1, R15
+        JNE     ??OSTaskStkChk_3
+//  897         OS_EXIT_CRITICAL();
+??OSTaskStkChk_2:
+        CALLA   #?Subroutine3
+//  898         return (OS_ERR_TASK_NOT_EXIST);
+//  899     }
+??CrossCallReturnLabel_8:
+        JMP     ??OSTaskStkChk_4
+//  900     if ((ptcb->OSTCBOpt & OS_TASK_OPT_STK_CHK) == 0u) { /* Make sure stack checking option is set      */
+??OSTaskStkChk_3:
+        BIT.W   #0x1, 0x10(R15)
+        JC      ??OSTaskStkChk_5
+//  901         OS_EXIT_CRITICAL();
+        CALLA   #OSCPURestoreSR
+//  902         return (OS_ERR_TASK_OPT);
+        MOV.B   #0x45, R12
+        JMP     ??OSTaskStkChk_4
+//  903     }
+//  904     nfree = 0u;
+??OSTaskStkChk_5:
+        MOV.W   #0x0, R10
+        MOV.W   #0x0, R11
+//  905     size  = ptcb->OSTCBStkSize;
+        MOV.W   0xc(R15), R8
+        MOV.W   0xe(R15), R9
+//  906     pchk  = ptcb->OSTCBStkBottom;
+        MOVA    0x8(R15), R7
+//  907     OS_EXIT_CRITICAL();
+        CALLA   #OSCPURestoreSR
+        JMP     ??OSTaskStkChk_6
+//  908 #if OS_STK_GROWTH == 1u
+//  909     while (*pchk++ == (OS_STK)0) {                    /* Compute the number of zero entries on the stk */
+//  910         nfree++;
+??OSTaskStkChk_0:
+        ADD.W   #0x1, R10
+        ADDC.W  #0x0, R11
+//  911     }
+??OSTaskStkChk_6:
+        MOV.W   @R7+, R15
+        CMP.W   #0x0, R15
+        JEQ     ??OSTaskStkChk_0
+//  912 #else
+//  913     while (*pchk-- == (OS_STK)0) {
+//  914         nfree++;
+//  915     }
+//  916 #endif
+//  917     p_stk_data->OSFree = nfree * sizeof(OS_STK);          /* Compute number of free bytes on the stack */
+        MOV.W   R10, R14
+        MOV.W   R11, R15
+        RLA.W   R14
+        RLC.W   R15
+        MOV.W   R14, 0(R6)
+        MOV.W   R15, 0x2(R6)
+//  918     p_stk_data->OSUsed = (size - nfree) * sizeof(OS_STK); /* Compute number of bytes used on the stack */
+        SUB.W   R10, R8
+        SUBC.W  R11, R9
+        RLA.W   R8
+        RLC.W   R9
+        MOV.W   R8, 0x4(R6)
+        MOV.W   R9, 0x6(R6)
+//  919     return (OS_ERR_NONE);
+        MOV.B   #0x0, R12
+??OSTaskStkChk_4:
+        POPM.A  #0x6, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock48
+//  920 }
+//  921 #endif
+//  922 /*$PAGE*/
+//  923 /*
+//  924 *********************************************************************************************************
+//  925 *                                            SUSPEND A TASK
+//  926 *
+//  927 * Description: This function is called to suspend a task.  The task can be the calling task if the
+//  928 *              priority passed to OSTaskSuspend() is the priority of the calling task or OS_PRIO_SELF.
+//  929 *
+//  930 * Arguments  : prio     is the priority of the task to suspend.  If you specify OS_PRIO_SELF, the
+//  931 *                       calling task will suspend itself and rescheduling will occur.
+//  932 *
+//  933 * Returns    : OS_ERR_NONE               if the requested task is suspended
+//  934 *              OS_ERR_TASK_SUSPEND_IDLE  if you attempted to suspend the idle task which is not allowed.
+//  935 *              OS_ERR_PRIO_INVALID       if the priority you specify is higher that the maximum allowed
+//  936 *                                        (i.e. >= OS_LOWEST_PRIO) or, you have not specified OS_PRIO_SELF.
+//  937 *              OS_ERR_TASK_SUSPEND_PRIO  if the task to suspend does not exist
+//  938 *              OS_ERR_TASK_NOT_EXITS     if the task is assigned to a Mutex PIP
+//  939 *
+//  940 * Note       : You should use this function with great care.  If you suspend a task that is waiting for
+//  941 *              an event (i.e. a message, a semaphore, a queue ...) you will prevent this task from
+//  942 *              running when the event arrives.
+//  943 *********************************************************************************************************
+//  944 */
+//  945 
+//  946 #if OS_TASK_SUSPEND_EN > 0u
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  947 INT8U  OSTaskSuspend (INT8U prio)
+OSTaskSuspend:
+          CFI Block cfiBlock49 Using cfiCommon0
+          CFI Function OSTaskSuspend
+//  948 {
+        FUNCALL OSTaskSuspend, OSCPUSaveSR
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL OSTaskSuspend, OSCPURestoreSR
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL OSTaskSuspend, OSCPURestoreSR
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL OSTaskSuspend, OSCPURestoreSR
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL OSTaskSuspend, OS_Sched
+        LOCFRAME CSTACK, 12, STACK
+        PUSHM.A #0x2, R11
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+12
+        MOV.B   R12, R10
+//  949     BOOLEAN    self;
+//  950     OS_TCB    *ptcb;
+//  951     INT8U      y;
+//  952 #if OS_CRITICAL_METHOD == 3u                     /* Allocate storage for CPU status register           */
+//  953     OS_CPU_SR  cpu_sr = 0u;
+//  954 #endif
+//  955 
+//  956 
+//  957 
+//  958 #if OS_ARG_CHK_EN > 0u
+//  959     if (prio == OS_TASK_IDLE_PRIO) {                            /* Not allowed to suspend idle task    */
+//  960         return (OS_ERR_TASK_SUSPEND_IDLE);
+//  961     }
+//  962     if (prio >= OS_LOWEST_PRIO) {                               /* Task priority valid ?               */
+//  963         if (prio != OS_PRIO_SELF) {
+//  964             return (OS_ERR_PRIO_INVALID);
+//  965         }
+//  966     }
+//  967 #endif
+//  968     OS_ENTER_CRITICAL();
+        CALLA   #OSCPUSaveSR
+        MOVA    &OSTCBCur, R15
+        MOV.B   0x30(R15), R14
+        CMP.B   #0xff, R10
+        JNE     ??OSTaskSuspend_2
+//  969     if (prio == OS_PRIO_SELF) {                                 /* See if suspend SELF                 */
+//  970         prio = OSTCBCur->OSTCBPrio;
+        MOV.B   R14, R10
+//  971         self = OS_TRUE;
+        JMP     ??OSTaskSuspend_1
+//  972     } else if (prio == OSTCBCur->OSTCBPrio) {                   /* See if suspending self              */
+??OSTaskSuspend_2:
+        CMP.B   R14, R10
+        JEQ     ??OSTaskSuspend_1
+        MOV.B   #0x0, R11
+        JMP     ??OSTaskSuspend_0
+??OSTaskSuspend_1:
+        MOV.B   #0x1, R11
+//  973         self = OS_TRUE;
+//  974     } else {
+//  975         self = OS_FALSE;                                        /* No suspending another task          */
+//  976     }
+//  977     ptcb = OSTCBPrioTbl[prio];
+??OSTaskSuspend_0:
+        RLAM.A  #0x2, R10
+        MOVX.A  OSTCBPrioTbl(R10), R14
+//  978     if (ptcb == (OS_TCB *)0) {                                  /* Task to suspend must exist          */
+        CMPA    #0x0, R14
+        JNE     ??OSTaskSuspend_3
+//  979         OS_EXIT_CRITICAL();
+        CALLA   #OSCPURestoreSR
+//  980         return (OS_ERR_TASK_SUSPEND_PRIO);
+        MOV.B   #0x48, R12
+        JMP     ??OSTaskSuspend_4
+//  981     }
+//  982     if (ptcb == OS_TCB_RESERVED) {                              /* See if assigned to Mutex            */
+??OSTaskSuspend_3:
+        CMPA    #0x1, R14
+        JNE     ??OSTaskSuspend_5
+//  983         OS_EXIT_CRITICAL();
+        CALLA   #?Subroutine3
+//  984         return (OS_ERR_TASK_NOT_EXIST);
+//  985     }
+??CrossCallReturnLabel_7:
+        JMP     ??OSTaskSuspend_4
+//  986     y            = ptcb->OSTCBY;
+??OSTaskSuspend_5:
+        MOV.B   0x32(R14), R15
+//  987     OSRdyTbl[y] &= (OS_PRIO)~ptcb->OSTCBBitX;                   /* Make task not ready                 */
+        BICX.B  0x33(R14), OSRdyTbl(R15)
+//  988     if (OSRdyTbl[y] == 0u) {
+        CMPX.B  #0x0, OSRdyTbl(R15)
+        JNE     ??OSTaskSuspend_6
+//  989         OSRdyGrp &= (OS_PRIO)~ptcb->OSTCBBitY;
+        BICX.B  0x34(R14), &OSRdyGrp
+//  990     }
+//  991     ptcb->OSTCBStat |= OS_STAT_SUSPEND;                         /* Status of task is 'SUSPENDED'       */
+??OSTaskSuspend_6:
+        BIS.B   #0x8, 0x2e(R14)
+//  992     OS_EXIT_CRITICAL();
+        CALLA   #OSCPURestoreSR
+//  993     if (self == OS_TRUE) {                                      /* Context switch only if SELF         */
+        BIT.B   #0x1, R11
+        JNC     ??OSTaskSuspend_7
+//  994         OS_Sched();                                             /* Find new highest priority task      */
+        CALLA   #OS_Sched
+//  995     }
+//  996     return (OS_ERR_NONE);
+??OSTaskSuspend_7:
+        MOV.B   #0x0, R12
+??OSTaskSuspend_4:
+        POPM.A  #0x2, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock49
+//  997 }
+//  998 #endif
+//  999 /*$PAGE*/
+// 1000 /*
+// 1001 *********************************************************************************************************
+// 1002 *                                            QUERY A TASK
+// 1003 *
+// 1004 * Description: This function is called to obtain a copy of the desired task's TCB.
+// 1005 *
+// 1006 * Arguments  : prio         is the priority of the task to obtain information from.
+// 1007 *
+// 1008 *              p_task_data  is a pointer to where the desired task's OS_TCB will be stored.
+// 1009 *
+// 1010 * Returns    : OS_ERR_NONE            if the requested task is suspended
+// 1011 *              OS_ERR_PRIO_INVALID    if the priority you specify is higher that the maximum allowed
+// 1012 *                                     (i.e. > OS_LOWEST_PRIO) or, you have not specified OS_PRIO_SELF.
+// 1013 *              OS_ERR_PRIO            if the desired task has not been created
+// 1014 *              OS_ERR_TASK_NOT_EXIST  if the task is assigned to a Mutex PIP
+// 1015 *              OS_ERR_PDATA_NULL      if 'p_task_data' is a NULL pointer
+// 1016 *********************************************************************************************************
+// 1017 */
+// 1018 
+// 1019 #if OS_TASK_QUERY_EN > 0u
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+// 1020 INT8U  OSTaskQuery (INT8U    prio,
+OSTaskQuery:
+          CFI Block cfiBlock50 Using cfiCommon0
+          CFI Function OSTaskQuery
+// 1021                     OS_TCB  *p_task_data)
+// 1022 {
+        FUNCALL OSTaskQuery, OSCPUSaveSR
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSTaskQuery, OSCPURestoreSR
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSTaskQuery, OSCPURestoreSR
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSTaskQuery, OS_MemCopy
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSTaskQuery, OSCPURestoreSR
+        LOCFRAME CSTACK, 20, STACK
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        MOV.B   R12, R11
+        MOVA    R13, R8
+// 1023     OS_TCB    *ptcb;
+// 1024 #if OS_CRITICAL_METHOD == 3u                     /* Allocate storage for CPU status register           */
+// 1025     OS_CPU_SR  cpu_sr = 0u;
+// 1026 #endif
+// 1027 
+// 1028 
+// 1029 
+// 1030 #if OS_ARG_CHK_EN > 0u
+// 1031     if (prio > OS_LOWEST_PRIO) {                 /* Task priority valid ?                              */
+// 1032         if (prio != OS_PRIO_SELF) {
+// 1033             return (OS_ERR_PRIO_INVALID);
+// 1034         }
+// 1035     }
+// 1036     if (p_task_data == (OS_TCB *)0) {            /* Validate 'p_task_data'                             */
+// 1037         return (OS_ERR_PDATA_NULL);
+// 1038     }
+// 1039 #endif
+// 1040     OS_ENTER_CRITICAL();
+        CALLA   #?Subroutine0
+// 1041     if (prio == OS_PRIO_SELF) {                  /* See if suspend SELF                                */
+// 1042         prio = OSTCBCur->OSTCBPrio;
+// 1043     }
+// 1044     ptcb = OSTCBPrioTbl[prio];
+??CrossCallReturnLabel_1:
+        MOVX.A  OSTCBPrioTbl(R11), R13
+// 1045     if (ptcb == (OS_TCB *)0) {                   /* Task to query must exist                           */
+        CMPA    #0x0, R13
+        JNE     ??OSTaskQuery_1
+// 1046         OS_EXIT_CRITICAL();
+        CALLA   #OSCPURestoreSR
+// 1047         return (OS_ERR_PRIO);
+        MOV.B   #0x29, R12
+        JMP     ??OSTaskQuery_2
+// 1048     }
+// 1049     if (ptcb == OS_TCB_RESERVED) {               /* Task to query must not be assigned to a Mutex      */
+??OSTaskQuery_1:
+        CMPA    #0x1, R13
+        JNE     ??OSTaskQuery_3
+// 1050         OS_EXIT_CRITICAL();
+        CALLA   #?Subroutine3
+// 1051         return (OS_ERR_TASK_NOT_EXIST);
+// 1052     }
+??CrossCallReturnLabel_6:
+        JMP     ??OSTaskQuery_2
+// 1053                                                  /* Copy TCB into user storage area                    */
+// 1054     OS_MemCopy((INT8U *)p_task_data, (INT8U *)ptcb, sizeof(OS_TCB));
+??OSTaskQuery_3:
+        MOV.W   #0x52, R14
+        MOVA    R8, R12
+        CALLA   #OS_MemCopy
+// 1055     OS_EXIT_CRITICAL();
+        MOV.W   R10, R12
+        CALLA   #OSCPURestoreSR
+// 1056     return (OS_ERR_NONE);
+        MOV.B   #0x0, R12
+??OSTaskQuery_2:
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock50
+// 1057 }
+// 1058 #endif
+// 1059 /*$PAGE*/
+// 1060 /*
+// 1061 *********************************************************************************************************
+// 1062 *                                 GET THE CURRENT VALUE OF A TASK REGISTER
+// 1063 *
+// 1064 * Description: This function is called to obtain the current value of a task register.  Task registers
+// 1065 *              are application specific and can be used to store task specific values such as 'error
+// 1066 *              numbers' (i.e. errno), statistics, etc.  Each task register can hold a 32-bit value.
+// 1067 *
+// 1068 * Arguments  : prio      is the priority of the task you want to get the task register from.  If you
+// 1069 *                        specify OS_PRIO_SELF then the task register of the current task will be obtained.
+// 1070 *
+// 1071 *              id        is the 'id' of the desired task register.  Note that the 'id' must be less
+// 1072 *                        than OS_TASK_REG_TBL_SIZE
+// 1073 *
+// 1074 *              perr      is a pointer to a variable that will hold an error code related to this call.
+// 1075 *
+// 1076 *                        OS_ERR_NONE            if the call was successful
+// 1077 *                        OS_ERR_PRIO_INVALID    if you specified an invalid priority
+// 1078 *                        OS_ERR_ID_INVALID      if the 'id' is not between 0 and OS_TASK_REG_TBL_SIZE-1
+// 1079 *
+// 1080 * Returns    : The current value of the task's register or 0 if an error is detected.
+// 1081 *
+// 1082 * Note(s)    : The maximum number of task variables is 254
+// 1083 *********************************************************************************************************
+// 1084 */
+// 1085 
+// 1086 #if OS_TASK_REG_TBL_SIZE > 0u
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+// 1087 INT32U  OSTaskRegGet (INT8U   prio,
+OSTaskRegGet:
+          CFI Block cfiBlock51 Using cfiCommon0
+          CFI Function OSTaskRegGet
+// 1088                       INT8U   id,
+// 1089                       INT8U  *perr)
+// 1090 {
+        FUNCALL OSTaskRegGet, OSCPUSaveSR
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSTaskRegGet, OSCPURestoreSR
+        LOCFRAME CSTACK, 20, STACK
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        MOV.B   R12, R10
+        MOV.B   R13, R11
+        MOVA    R14, R8
+// 1091 #if OS_CRITICAL_METHOD == 3u                     /* Allocate storage for CPU status register           */
+// 1092     OS_CPU_SR  cpu_sr = 0u;
+// 1093 #endif
+// 1094     INT32U     value;
+// 1095     OS_TCB    *ptcb;
+// 1096 
+// 1097 
+// 1098 #if OS_ARG_CHK_EN > 0u
+// 1099     if (prio >= OS_LOWEST_PRIO) {
+// 1100         if (prio != OS_PRIO_SELF) {
+// 1101             *perr = OS_ERR_PRIO_INVALID;
+// 1102             return (0u);
+// 1103         }
+// 1104     }
+// 1105     if (id >= OS_TASK_REG_TBL_SIZE) {
+// 1106         *perr = OS_ERR_ID_INVALID;
+// 1107         return (0u);
+// 1108     }
+// 1109 #endif
+// 1110     OS_ENTER_CRITICAL();
+        CALLA   #OSCPUSaveSR
+// 1111     if (prio == OS_PRIO_SELF) {                  /* See if need to get register from current task      */
+        CMP.B   #0xff, R10
+        JNE     ??OSTaskRegGet_0
+// 1112         ptcb = OSTCBCur;
+        MOVA    &OSTCBCur, R15
+        JMP     ??OSTaskRegGet_1
+// 1113     } else {
+// 1114         ptcb = OSTCBPrioTbl[prio];
+??OSTaskRegGet_0:
+        CALLA   #?Subroutine7
+// 1115     }
+// 1116     value = ptcb->OSTCBRegTbl[id];
+??OSTaskRegGet_1:
+        RLAM.A  #0x2, R11
+        ADDA    R11, R15
+        MOV.W   0x4e(R15), R10
+        MOV.W   0x50(R15), R11
+// 1117     OS_EXIT_CRITICAL();
+        CALLA   #?Subroutine5
+// 1118     *perr = OS_ERR_NONE;
+// 1119     return (value);
+??CrossCallReturnLabel_12:
+        MOV.W   R10, R12
+        MOV.W   R11, R13
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock51
+// 1120 }
+// 1121 #endif
+// 1122 
+// 1123 /*$PAGE*/
+// 1124 /*
+// 1125 *********************************************************************************************************
+// 1126 *                                 SET THE CURRENT VALUE OF A TASK VARIABLE
+// 1127 *
+// 1128 * Description: This function is called to change the current value of a task register.  Task registers
+// 1129 *              are application specific and can be used to store task specific values such as 'error
+// 1130 *              numbers' (i.e. errno), statistics, etc.  Each task register can hold a 32-bit value.
+// 1131 *
+// 1132 * Arguments  : prio      is the priority of the task you want to set the task register for.  If you
+// 1133 *                        specify OS_PRIO_SELF then the task register of the current task will be obtained.
+// 1134 *
+// 1135 *              id        is the 'id' of the desired task register.  Note that the 'id' must be less
+// 1136 *                        than OS_TASK_REG_TBL_SIZE
+// 1137 *
+// 1138 *              value     is the desired value for the task register.
+// 1139 *
+// 1140 *              perr      is a pointer to a variable that will hold an error code related to this call.
+// 1141 *
+// 1142 *                        OS_ERR_NONE            if the call was successful
+// 1143 *                        OS_ERR_PRIO_INVALID    if you specified an invalid priority
+// 1144 *                        OS_ERR_ID_INVALID      if the 'id' is not between 0 and OS_TASK_REG_TBL_SIZE-1
+// 1145 *
+// 1146 * Returns    : The current value of the task's variable or 0 if an error is detected.
+// 1147 *
+// 1148 * Note(s)    : The maximum number of task variables is 254
+// 1149 *********************************************************************************************************
+// 1150 */
+// 1151 
+// 1152 #if OS_TASK_REG_TBL_SIZE > 0u
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+// 1153 void  OSTaskRegSet (INT8U    prio,
+OSTaskRegSet:
+          CFI Block cfiBlock52 Using cfiCommon0
+          CFI Function OSTaskRegSet
+// 1154                     INT8U    id,
+// 1155                     INT32U   value,
+// 1156                     INT8U   *perr)
+// 1157 {
+        FUNCALL OSTaskRegSet, OSCPUSaveSR
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSTaskRegSet, OSCPURestoreSR
+        LOCFRAME CSTACK, 28, STACK
+        PUSHM.A #0x6, R11
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+28
+        MOV.B   R12, R8
+        MOV.B   R13, R9
+        MOV.W   R14, R10
+        MOV.W   R15, R11
+        MOVA    0x1c(SP), R6
+// 1158 #if OS_CRITICAL_METHOD == 3u                     /* Allocate storage for CPU status register           */
+// 1159     OS_CPU_SR  cpu_sr = 0u;
+// 1160 #endif
+// 1161     OS_TCB    *ptcb;
+// 1162 
+// 1163 
+// 1164 #if OS_ARG_CHK_EN > 0u
+// 1165     if (prio >= OS_LOWEST_PRIO) {
+// 1166         if (prio != OS_PRIO_SELF) {
+// 1167             *perr = OS_ERR_PRIO_INVALID;
+// 1168             return;
+// 1169         }
+// 1170     }
+// 1171     if (id >= OS_TASK_REG_TBL_SIZE) {
+// 1172         *perr = OS_ERR_ID_INVALID;
+// 1173         return;
+// 1174     }
+// 1175 #endif
+// 1176     OS_ENTER_CRITICAL();
+        CALLA   #OSCPUSaveSR
+// 1177     if (prio == OS_PRIO_SELF) {                  /* See if need to get register from current task      */
+        CMP.B   #0xff, R8
+        JNE     ??OSTaskRegSet_0
+// 1178         ptcb = OSTCBCur;
+        MOVA    &OSTCBCur, R15
+        JMP     ??OSTaskRegSet_1
+// 1179     } else {
+// 1180         ptcb = OSTCBPrioTbl[prio];
+??OSTaskRegSet_0:
+        RLAM.A  #0x2, R8
+        MOVX.A  OSTCBPrioTbl(R8), R15
+// 1181     }
+// 1182     ptcb->OSTCBRegTbl[id] = value;
+??OSTaskRegSet_1:
+        RLAM.A  #0x2, R9
+        ADDA    R9, R15
+        MOV.W   R10, 0x4e(R15)
+        MOV.W   R11, 0x50(R15)
+// 1183     OS_EXIT_CRITICAL();
+        CALLA   #OSCPURestoreSR
+// 1184     *perr                 = OS_ERR_NONE;
+        MOV.B   #0x0, 0(R6)
+// 1185 }
+        POPM.A  #0x6, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock52
+// 1186 #endif
+// 1187 
+// 1188 /*$PAGE*/
+// 1189 /*
+// 1190 *********************************************************************************************************
+// 1191 *                                              CATCH ACCIDENTAL TASK RETURN
+// 1192 *
+// 1193 * Description: This function is called if a task accidentally returns without deleting itself.  In other
+// 1194 *              words, a task should either be an infinite loop or delete itself if it's done.
+// 1195 *
+// 1196 * Arguments  : none
+// 1197 *
+// 1198 * Returns    : none
+// 1199 *
+// 1200 * Note(s)    : This function is INTERNAL to uC/OS-II and your application should not call it.
+// 1201 *********************************************************************************************************
+// 1202 */
+// 1203 
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+// 1204 void  OS_TaskReturn (void)
+OS_TaskReturn:
+          CFI Block cfiBlock53 Using cfiCommon0
+          CFI Function OS_TaskReturn
+// 1205 {
+// 1206     OSTaskReturnHook(OSTCBCur);                   /* Call hook to let user decide on what to do        */
+        FUNCALL OS_TaskReturn, OSTaskReturnHook
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL OS_TaskReturn, OSTaskDel
+        LOCFRAME CSTACK, 4, STACK
+        MOVA    &OSTCBCur, R12
+        CALLA   #OSTaskReturnHook
+// 1207 
+// 1208 #if OS_TASK_DEL_EN > 0u
+// 1209     (void)OSTaskDel(OS_PRIO_SELF);                /* Delete task if it accidentally returns!           */
+        MOV.B   #0xff, R12
+        BRA     #OSTaskDel
+          CFI EndBlock cfiBlock53
+// 1210 #else
+// 1211     for (;;) {
+// 1212         OSTimeDly(OS_TICKS_PER_SEC);
+// 1213     }
+// 1214 #endif
+// 1215 }
+// 1216 
+// 1217 /*$PAGE*/
+// 1218 /*
+// 1219 *********************************************************************************************************
+// 1220 *                                        CLEAR TASK STACK
+// 1221 *
+// 1222 * Description: This function is used to clear the stack of a task (i.e. write all zeros)
+// 1223 *
+// 1224 * Arguments  : pbos     is a pointer to the task's bottom of stack.  If the configuration constant
+// 1225 *                       OS_STK_GROWTH is set to 1, the stack is assumed to grow downward (i.e. from high
+// 1226 *                       memory to low memory).  'pbos' will thus point to the lowest (valid) memory
+// 1227 *                       location of the stack.  If OS_STK_GROWTH is set to 0, 'pbos' will point to the
+// 1228 *                       highest memory location of the stack and the stack will grow with increasing
+// 1229 *                       memory locations.  'pbos' MUST point to a valid 'free' data item.
+// 1230 *
+// 1231 *              size     is the number of 'stack elements' to clear.
+// 1232 *
+// 1233 *              opt      contains additional information (or options) about the behavior of the task.  The
+// 1234 *                       LOWER 8-bits are reserved by uC/OS-II while the upper 8 bits can be application
+// 1235 *                       specific.  See OS_TASK_OPT_??? in uCOS-II.H.
+// 1236 *
+// 1237 * Returns    : none
+// 1238 *********************************************************************************************************
+// 1239 */
+// 1240 #if (OS_TASK_STAT_STK_CHK_EN > 0u) && (OS_TASK_CREATE_EXT_EN > 0u)
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+// 1241 void  OS_TaskStkClr (OS_STK  *pbos,
+OS_TaskStkClr:
+          CFI Block cfiBlock54 Using cfiCommon0
+          CFI Function OS_TaskStkClr
+// 1242                      INT32U   size,
+// 1243                      INT16U   opt)
+// 1244 {
+// 1245     if ((opt & OS_TASK_OPT_STK_CHK) != 0x0000u) {      /* See if stack checking has been enabled       */
+        AND.B   #0x3, R13
+        CMP.B   #0x3, R13
+        JNE     ??OS_TaskStkClr_1
+        MOV.W   R14, R13
+        BIS.W   R15, R13
+        CMP.W   #0x0, R13
+        JEQ     ??OS_TaskStkClr_1
+// 1246         if ((opt & OS_TASK_OPT_STK_CLR) != 0x0000u) {  /* See if stack needs to be cleared             */
+// 1247 #if OS_STK_GROWTH == 1u
+// 1248             while (size > 0u) {                        /* Stack grows from HIGH to LOW memory          */
+// 1249                 size--;
+// 1250                 *pbos++ = (OS_STK)0;                   /* Clear from bottom of stack and up!           */
+??OS_TaskStkClr_0:
+        MOV.W   #0x0, 0(R12)
+        ADDA    #0x2, R12
+        ADD.W   #0xffff, R14
+        ADDC.W  #0xffff, R15
+// 1251             }
+        MOV.W   R14, R13
+        BIS.W   R15, R13
+        CMP.W   #0x0, R13
+        JNE     ??OS_TaskStkClr_0
+// 1252 #else
+// 1253             while (size > 0u) {                        /* Stack grows from LOW to HIGH memory          */
+// 1254                 size--;
+// 1255                 *pbos-- = (OS_STK)0;                   /* Clear from bottom of stack and down          */
+// 1256             }
+// 1257 #endif
+// 1258         }
+// 1259     }
+// 1260 }
+??OS_TaskStkClr_1:
+        RETA
+          CFI EndBlock cfiBlock54
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r4:
+        REQUIRE ?setjmp_r4
+        REQUIRE ?longjmp_r4
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r5:
+        REQUIRE ?setjmp_r5
+        REQUIRE ?longjmp_r5
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "?">`:
+        DC8 "?"
+
+        END
+// 1261 
+// 1262 #endif
+// 1263 	 	   	  		 			 	    		   		 		 	 	 			 	    		   	 			 	  	 		 				 		  			 		 					 	  	  		      		  	   		      		  	 		 	      		   		 		  	 		 	      		  		  		  
+// 
+// 1 776 bytes in segment CODE
+//     2 bytes in segment DATA20_C
+// 
+// 1 776 bytes of CODE  memory
+//     2 bytes of CONST memory
+//
+//Errors: none
+//Warnings: 11

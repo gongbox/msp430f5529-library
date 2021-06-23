@@ -1,0 +1,448 @@
+###############################################################################
+#                                                                             #
+#                                                       06/Jun/2016  16:42:34 #
+# IAR C/C++ Compiler V5.50.1.20465/W32, Evaluation edition for MSP430         #
+# Copyright 1996-2012 IAR Systems AB.                                         #
+#                                                                             #
+#    __rt_version  =  3                                                       #
+#    __double_size =  32                                                      #
+#    __reg_r4      =  free                                                    #
+#    __reg_r5      =  free                                                    #
+#    __pic         =  no                                                      #
+#    __core        =  430X                                                    #
+#    __data_model  =  large                                                   #
+#    Source file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\rtc.c                                #
+#    Command line  =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\rtc.c -D NDEBUG -D RAM_VECTOR -lC    #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\List\ -lA C:\Users\615\Desktop\MSP430\MS #
+#                     P430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Release\List\ -o        #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\Obj\ -D__MSP430F5529__ -e --double=32    #
+#                     --dlib_config "D:\Program Files (x86)\IAR               #
+#                     Systems\Embedded Workbench 6.4                          #
+#                     Evaluation\430\LIB\DLIB\dl430xlfn.h" -I                 #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\ -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Ê #
+#                     ý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\inc\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\ -I C:\Users\615\Desktop\MSP430\MSP4 #
+#                     30F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\src\USB\ -I       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_config\ -I                   #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_User\ -I                     #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\srcUSB\USB_API\USB_CDC_API\ -I           #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_API\USB_HID_API\ -I          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_API\USB_MSC_API\ -I          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\KEY\ -I C:\Users\615\Desktop\MSP430\MSP #
+#                     430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\LED\ -I         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\12864\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\oled\ -I      #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\mpu6050\inc\ -I                         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\mpu6050\src\ -I                         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\nokia5110\inc\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\nokia5110\src\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\LQ_1.8_TFT\ -I                          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\LCD_API\ -I                             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\2.2TFT\ -I                              #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\delay\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\ -I             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\System\inc\ -I C:\Users\615\Desktop\MSP430\MSP43 #
+#                     0F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\src\ -I             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\User\ -I C:\Users\615\Desktop\MSP430\MSP430F5529 #
+#                     ¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\User\USER\ -I                    #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\UCOSII\CONFIG\ -I                            #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\uCOSII\App\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII\CONFIHG\    #
+#                     -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ #
+#                     \¹¤³ÌÄ£°å\Lib\uCOSII\PORT\ -I                           #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\UCOSII\CORE\ -I                              #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\FatFs\ -I C:\Users\615\Desktop\MSP430\MSP430 #
+#                     F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\FatFs\option\           #
+#                     --core=430X --data_model=large -Oh --multiplier=32      #
+#                     --multiplier_location=4C0 --hw_workaround=CPU40         #
+#    List file     =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\List\rtc.lst                             #
+#    Object file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\Obj\rtc.r43                              #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\src\rtc.c
+      1          #include "rtc.h"
+
+   \                                 In  segment DATA16_AN, at 0x4a0
+   \   union <unnamed> __data16 _A_RTCCTL01_L
+   \                     _A_RTCCTL01_L:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_AN, at 0x4a8
+   \   union <unnamed> __data16 _A_RTCPS0CTL_L
+   \                     _A_RTCPS0CTL_L:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_AN, at 0x4aa
+   \   union <unnamed> __data16 _A_RTCPS1CTL_L
+   \                     _A_RTCPS1CTL_L:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_AN, at 0x4b0
+   \   union <unnamed> __data16 _A_RTCTIM0_L
+   \                     _A_RTCTIM0_L:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_AN, at 0x4b8
+   \   union <unnamed> __data16 _A_RTCAMINHR_L
+   \                     _A_RTCAMINHR_L:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_AN, at 0x4ba
+   \   union <unnamed> __data16 _A_RTCADOWDAY_L
+   \                     _A_RTCADOWDAY_L:
+   \   000000                DS8 2
+      2          #include "clock.h"
+      3          
+
+   \                                 In  segment DATA20_C, align 2, align-sorted
+      4          const RTC_MemMapPtr  RTC = RTC_BASE_PTR; 
+   \                     RTC:
+   \   000000   A0040000     DC32 4A0H
+      5          /*******************************************************************************
+      6          *  º¯ÊýÃû³Æ£ºRTC_Init(Calendar nowDate)
+      7          *  ¹¦ÄÜËµÃ÷£ºRTC ³õÊ¼»¯²¢ÉèÖÃÊ±¼ä
+      8          *  ²ÎÊýËµÃ÷£ºCalendar nowDate : ÉèÖÃµ±Ç°Ê±¼ä
+      9          *  º¯Êý·µ»Ø£ºÎÞ
+     10          *  Ê¹ÓÃÊ¾Àý£ºCalendar  nowDate;RTC_Init(nowDate);//³õÊ¼»¯RTC²¢ÉèÖÃRTCÊ±¼ä
+     11          *  ×¢Òâ£ºÈÕÀúÄ£Ê½ÏÂÒªÇóACLKÎª32768HZ
+     12          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   0F41         MOV.W   SP, R15
+   \   000002   2F52         ADD.W   #0x4, R15
+   \   000004   B24FB004     MOV.W   @R15+, &0x4b0
+   \   000008   B24FB204     MOV.W   @R15+, &0x4b2
+   \   00000C   B24FB404     MOV.W   @R15+, &0x4b4
+   \   000010   B24FB604     MOV.W   @R15+, &0x4b6
+   \   000014   1001         RETA
+
+   \                                 In  segment CODE, align 2
+     13          void RTC_Init(Calendar nowDate)
+   \                     RTC_Init:
+     14          {
+     15            ASSERT(g_sClock.ACLK.CLK_HZ == 32768);                //ÈÕÀúÄ£Ê½ÏÂÒªÇóACLKÎª32768HZ
+     16            /*uint32_t clock_div_result = g_sClock.ACLK.CLK_HZ;          
+     17            uint16_t clock_div_value = 0;//¶þ·ÖÆµ´ÎÊý
+     18            while(clock_div_result>1)  //²»¶Ï·ÖÆµ£¬Ö±µ½·ÖÆµºóµÄÖµÎª1»òÐ¡ÓÚ1£¨ÒªÇóÎª1£©
+     19            {
+     20              clock_div_result = clock_div_result>>1; //¶þ·ÖÆµÒ»´Î
+     21              clock_div_value++;                      //·ÖÆµÏµÊý¼ÓÒ»
+     22            };
+     23            ASSERT((clock_div_result==1)&&(clock_div_value>=2)&&(clock_div_value<=16));        //ÒªÇóÊ±ÖÓ¶þ·ÖÆµ×î¶à16´Î£¬ÇÒ×îÉÙ2´Î£¬ÇÒ·ÖÆµºóµÄÆµÂÊÖµÎª1HZ
+     24            */
+     25            RTCCTL01 = RTCHOLD + RTCMODE + RTCSSEL__RT1PS + RTC_TimeEvent;           //Ê¹ÄÜÈÕÀúÄ£Ê½
+   \   000000   B2400068A004 MOV.W   #0x6800, &0x4a0
+     26            
+     27            RTCPS0CTL =   RT0PSHOLD ;             //Ê¹ÓÃACLK×÷ÎªÊ±ÖÓ
+   \   000006   B2400001A804 MOV.W   #0x100, &0x4a8
+     28            RTCPS1CTL  =  RT1PSHOLD + RT1SSEL_2; //Ê¹ÓÃ RTCPS0Êä³ö×÷ÎªÊ±ÖÓÔ´     
+   \   00000C   B2400081AA04 MOV.W   #0x8100, &0x4aa
+     29            
+     30            //RTC->RT1_PSDIV = (clock_div_value <= 9) ? (clock_div_value-2u) : 7u;
+     31            //RTC->RT0_PSDIV = (clock_div_value >  9) ? (clock_div_value-9u) : 0u;
+     32            
+     33            RTC->HOLD = RESET;                 //´ò¿ªRTCÄ£¿é 
+   \   000012   B2C00040A004 BIC.W   #0x4000, &0x4a0
+     34            RTC->RT0_PSHOLD = RESET;           //´ò¿ªRTCPS0CTL
+   \   000018   B2C00001A804 BIC.W   #0x100, &0x4a8
+     35            RTC->RT1_PSHOLD = RESET;           //´ò¿ªRTCPS1CTL
+   \   00001E   B2C00001AA04 BIC.W   #0x100, &0x4aa
+     36            
+     37            RTC_Set_Time(nowDate);    
+   \   000024   ....         JMP     ?Subroutine0
+   \   000026   0343         NOP
+   \   000028                REQUIRE _A_RTCCTL01_L
+   \   000028                REQUIRE _A_RTCPS0CTL_L
+   \   000028                REQUIRE _A_RTCPS1CTL_L
+   \   000028                REQUIRE _A_RTCTIM0_L
+     38          }
+     39          /*******************************************************************************
+     40          *  º¯ÊýÃû³Æ£ºRTC_Set_Time(Calendar nowDate)
+     41          *  ¹¦ÄÜËµÃ÷£ºÉèÖÃµ±Ç°Ê±¼ä
+     42          *  ²ÎÊýËµÃ÷£ºCalendar nowDate : µ±Ç°Ê±¼ä
+     43          *  º¯Êý·µ»Ø£ºÎÞ
+     44          *  Ê¹ÓÃÊ¾Àý£ºRTC_Set_Time(nowDate);  //ÉèÖÃRTCÊ±¼ä
+     45          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2, keep-with-next
+     46          void RTC_Set_Time(Calendar nowDate)
+   \                     RTC_Set_Time:
+     47          {
+     48            (*((Calendar *)(&RTCSEC))) = nowDate;  
+   \   000000                REQUIRE ?Subroutine0
+   \   000000                REQUIRE _A_RTCTIM0_L
+   \   000000                // Fall through to label ?Subroutine0
+     49          }
+     50          /*******************************************************************************
+     51          *  º¯ÊýÃû³Æ£ºRTC_Get_Time(void)
+     52          *  ¹¦ÄÜËµÃ÷£º»ñÈ¡µ±Ç°Ê±¼ä
+     53          *  ²ÎÊýËµÃ÷£ºÎÞ
+     54          *  º¯Êý·µ»Ø£ºCalendar nowDate : µ±Ç°Ê±¼ä
+     55          *  Ê¹ÓÃÊ¾Àý£ºCalendar nowDate = RTC_Get_Time();  //»ñÈ¡µ±Ç°Ê±¼ä
+     56          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+     57          Calendar RTC_Get_Time(void)
+   \                     RTC_Get_Time:
+   \                     ??RTC_Get_Time_0:
+     58          {
+     59            while(RTC->RDY == RESET);                  //µÈ´ýÊ±ÖÓ×¼±¸ºÃ¶Á
+   \   000000   B2B00010A004 BIT.W   #0x1000, &0x4a0
+   \   000006   FC2B         JNC     ??RTC_Get_Time_0
+   \   000008   9C42B0040000 MOV.W   &0x4b0, 0(R12)
+   \   00000E   9C42B2040200 MOV.W   &0x4b2, 0x2(R12)
+   \   000014   9C42B4040400 MOV.W   &0x4b4, 0x4(R12)
+   \   00001A   9C42B6040600 MOV.W   &0x4b6, 0x6(R12)
+   \   000020   1001         RETA
+   \   000022                REQUIRE _A_RTCTIM0_L
+     60            return (*((Calendar *)(&RTCSEC)));         //ÒòÎª¸Ã¼Ä´æÆ÷½á¹¹ÓëCalendar½á¹¹ÌåÏàÍ¬£¬Ö±½Ó½«¼Ä´æÆ÷Öµ·µ»Ø
+     61          }
+     62          /*******************************************************************************
+     63          *  º¯ÊýÃû³Æ£ºRTC_Set_Alarm    (Calendar alarm_Time,Alarm_Type alarm_type)
+     64          *  ¹¦ÄÜËµÃ÷£ºÉèÖÃÄÖÖÓÊ±¼ä¼°ÀàÐÍ
+     65          *  ²ÎÊýËµÃ÷£ºCalendar alarm_Time     :ÄÖÖÓÊ±¼ä
+     66                       Alarm_Type alarm_type   :ÄÖÖÓÀàÐÍ
+     67          *  º¯Êý·µ»Ø£ºÎÞ
+     68          *  Ê¹ÓÃÊ¾Àý£ºRTC_Set_Alarm (alarm_Time,Every_Days); //ÄÖÖÓÊ±¼äÉèÖÃ£¬Ã¿Ìì´¥·¢Ò»´ÎÄÖÖÓÊÂ¼þ
+     69          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+     70          void RTC_Set_Alarm    (Calendar alarm_Time,Alarm_Type alarm_type)
+   \                     RTC_Set_Alarm:
+     71          {
+     72            //Ð´ÈëÄÖÖÓÊ±¼ä
+     73            RTCAMIN  = alarm_Time.Minutes    ;
+   \   000000   D2410500B804 MOV.B   0x5(SP), &0x4b8
+     74            RTCAHOUR = alarm_Time.Hours      ;
+   \   000006   D2410600B904 MOV.B   0x6(SP), &0x4b9
+     75            RTCADAY  = alarm_Time.DayOfMonth ; 
+   \   00000C   D2410800BB04 MOV.B   0x8(SP), &0x4bb
+     76            
+     77            BYTE_BIT_SET(RTCAMIN,7) = SET;
+   \   000012   F2D08000B804 BIS.B   #0x80, &0x4b8
+     78            BYTE_BIT_SET(RTCAHOUR,7) = (alarm_type == Every_Days  ||
+     79                                        alarm_type == Every_Weeks ||
+     80                                        alarm_type == Every_Months 
+     81                                        ) ? SET : RESET;
+   \   000018   5C93         CMP.B   #0x1, R12
+   \   00001A   0724         JEQ     ??RTC_Set_Alarm_2
+   \   00001C   6C93         CMP.B   #0x2, R12
+   \   00001E   0524         JEQ     ??RTC_Set_Alarm_2
+   \   000020   7C900300     CMP.B   #0x3, R12
+   \   000024   0224         JEQ     ??RTC_Set_Alarm_2
+   \   000026   4E43         MOV.B   #0x0, R14
+   \   000028   013C         JMP     ??RTC_Set_Alarm_1
+   \                     ??RTC_Set_Alarm_2:
+   \   00002A   5E43         MOV.B   #0x1, R14
+   \                     ??RTC_Set_Alarm_1:
+   \   00002C   5EB3         BIT.B   #0x1, R14
+   \   00002E   042C         JC      ??RTC_Set_Alarm_4
+   \   000030   F2C08000B904 BIC.B   #0x80, &0x4b9
+   \   000036   033C         JMP     ??RTC_Set_Alarm_5
+   \                     ??RTC_Set_Alarm_4:
+   \   000038   F2D08000B904 BIS.B   #0x80, &0x4b9
+     82            BYTE_BIT_SET(RTCADOW,7) = alarm_type == Every_Weeks  ? SET : RESET;
+   \                     ??RTC_Set_Alarm_5:
+   \   00003E   6C93         CMP.B   #0x2, R12
+   \   000040   0224         JEQ     ??RTC_Set_Alarm_6
+   \   000042   4E43         MOV.B   #0x0, R14
+   \   000044   013C         JMP     ??RTC_Set_Alarm_7
+   \                     ??RTC_Set_Alarm_6:
+   \   000046   5E43         MOV.B   #0x1, R14
+   \                     ??RTC_Set_Alarm_7:
+   \   000048   5EB3         BIT.B   #0x1, R14
+   \   00004A   042C         JC      ??RTC_Set_Alarm_8
+   \   00004C   F2C08000BA04 BIC.B   #0x80, &0x4ba
+   \   000052   033C         JMP     ??RTC_Set_Alarm_9
+   \                     ??RTC_Set_Alarm_8:
+   \   000054   F2D08000BA04 BIS.B   #0x80, &0x4ba
+     83            BYTE_BIT_SET(RTCADAY,7) = alarm_type == Every_Months ? SET : RESET;
+   \                     ??RTC_Set_Alarm_9:
+   \   00005A   7C900300     CMP.B   #0x3, R12
+   \   00005E   0224         JEQ     ??RTC_Set_Alarm_10
+   \   000060   4E43         MOV.B   #0x0, R14
+   \   000062   013C         JMP     ??RTC_Set_Alarm_11
+   \                     ??RTC_Set_Alarm_10:
+   \   000064   5E43         MOV.B   #0x1, R14
+   \                     ??RTC_Set_Alarm_11:
+   \   000066   5EB3         BIT.B   #0x1, R14
+   \   000068   042C         JC      ??RTC_Set_Alarm_12
+   \   00006A   F2C08000BB04 BIC.B   #0x80, &0x4bb
+   \   000070   1001         RETA
+   \                     ??RTC_Set_Alarm_12:
+   \   000072   F2D08000BB04 BIS.B   #0x80, &0x4bb
+     84          }
+   \   000078   1001         RETA
+   \   00007A                REQUIRE _A_RTCAMINHR_L
+   \   00007A                REQUIRE _A_RTCADOWDAY_L
+     85          /*******************************************************************************
+     86          *  º¯ÊýÃû³Æ£ºRTC_ITConfig   (RTC_IRQn irqn, STATUS ITState)
+     87          *  ¹¦ÄÜËµÃ÷: ÉèÖÃRTCÄ³Ò»¸öÖÐ¶ÏÊÇ·ñÊ¹ÄÜ
+     88          *  ²ÎÊýËµÃ÷£ºRTC_IRQn irqn   : ÖÐ¶ÏÊÂ¼þÑ¡Ôñ
+     89                       STATUS ITState  : ÊÇ·ñÊ¹ÄÜÖÐ¶Ï
+     90          *  º¯Êý·µ»Ø£ºÎÞ
+     91          *  Ê¹ÓÃÊ¾Àý£ºRTC_ITConfig   (RTC_Alarm_IRQn, ENABLE);  //Ê¹ÄÜÄÖÖÓÖÐ¶Ï
+     92          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   0FDE         BIS.W   R14, R15
+   \   000002   824FA004     MOV.W   R15, &0x4a0
+   \   000006   1001         RETA
+
+   \                                 In  segment CODE, align 2
+     93          void RTC_ITConfig   (RTC_IRQn irqn, STATUS ITState)
+   \                     RTC_ITConfig:
+     94          {
+     95            if(ITState != DISABLE)
+   \   000000   4D93         CMP.B   #0x0, R13
+   \   000002   1F42A004     MOV.W   &0x4a0, R15
+   \   000006   4E4F         MOV.B   R15, R14
+   \   000008   0524         JEQ     ??RTC_ITConfig_0
+     96            {
+     97              RTC->IE |= irqn;
+   \   00000A                RPT     #0x4
+   \   00000A   43194E10     RRUX.B  R14
+   \   00000E   4C4C         MOV.B   R12, R12
+   \   000010   0EDC         BIS.W   R12, R14
+   \   000012   043C         JMP     ??RTC_ITConfig_1
+     98            }
+     99            else
+    100            {
+    101              RTC->IE &=~ irqn;
+   \                     ??RTC_ITConfig_0:
+   \   000014                RPT     #0x4
+   \   000014   43194E10     RRUX.B  R14
+   \   000018   4C4C         MOV.B   R12, R12
+   \   00001A   0ECC         BIC.W   R12, R14
+   \                     ??RTC_ITConfig_1:
+   \   00001C   5E0E         RLAM.W  #0x4, R14
+   \   00001E   3EF07000     AND.W   #0x70, R14
+   \   000022   3FF08FFF     AND.W   #0xff8f, R15
+    102            }
+   \   000026   ....         JMP     ?Subroutine1
+   \   000028   0343         NOP
+    103          }
+    104          /*******************************************************************************
+    105          *  º¯ÊýÃû³Æ£ºRTC_GetITStatus(RTC_IRQn irqn)
+    106          *  ¹¦ÄÜËµÃ÷£º»ñÈ¡RTCÄ³Ò»Î»ÖÐ¶Ï±êÖ¾
+    107          *  ²ÎÊýËµÃ÷£ºRTC_IRQn irqn : ÖÐ¶ÏÊÂ¼þÑ¡Ôñ
+    108          *  º¯Êý·µ»Ø£ºSTATUS : TRUE ÖÐ¶ÏÊÂ¼þ·¢Éú£¬FALSE ÖÐ¶ÏÊÂ¼þÎ´·¢Éú
+    109          *  Ê¹ÓÃÊ¾Àý£ºif(TRUE == RTC_GetITStatus(RTC_Alarm_IRQn)){...}  //ÅÐ¶ÏÄÖÖÓÊ±¼äÊÇ·ñ·¢Éú
+    110          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2, keep-with-next
+    111          STATUS RTC_GetITStatus(RTC_IRQn irqn)
+   \                     RTC_GetITStatus:
+    112          {
+    113            return ((RTC->IFG & irqn) ? TRUE : FALSE);
+   \   000000   1E42A004     MOV.W   &0x4a0, R14
+   \   000004   4EFC         AND.B   R12, R14
+   \   000006   7EB00700     BIT.B   #0x7, R14
+   \   00000A   0220         JNE     ??RTC_GetITStatus_0
+   \   00000C   4C43         MOV.B   #0x0, R12
+   \   00000E   1001         RETA
+   \                     ??RTC_GetITStatus_0:
+   \   000010   5C43         MOV.B   #0x1, R12
+   \   000012   1001         RETA
+    114          }
+    115          /*******************************************************************************
+    116          *  º¯ÊýÃû³Æ£ºRTC_ClearITPendingBit(RTC_IRQn irqn)
+    117          *  ¹¦ÄÜËµÃ÷£ºÇå³ýRTCÄ³Ò»Î»ÖÐ¶Ï±êÖ¾
+    118          *  ²ÎÊýËµÃ÷£ºRTC_IRQn irqn : ÖÐ¶ÏÊÂ¼þÑ¡Ôñ
+    119          *  º¯Êý·µ»Ø£ºÎÞ
+    120          *  Ê¹ÓÃÊ¾Àý£ºRTC_ClearITPendingBit(RTC_Alarm_IRQn); //Çå³ýRTCÄÖÖÓÖÐ¶Ï±êÖ¾Î»
+    121          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2, keep-with-next
+    122          void RTC_ClearITPendingBit(RTC_IRQn irqn)
+   \                     RTC_ClearITPendingBit:
+    123          {
+    124            RTC->IFG &=~ irqn;
+   \   000000   1F42A004     MOV.W   &0x4a0, R15
+   \   000004   4C4C         MOV.B   R12, R12
+   \   000006   0E4F         MOV.W   R15, R14
+   \   000008   0ECC         BIC.W   R12, R14
+   \   00000A   3EF00700     AND.W   #0x7, R14
+   \   00000E   3FF0F8FF     AND.W   #0xfff8, R15
+   \   000012                REQUIRE ?Subroutine1
+   \   000012                // Fall through to label ?Subroutine1
+    125          }
+
+   Maximum stack usage in bytes:
+
+   CSTACK Function
+   ------ --------
+       4  RTC_ClearITPendingBit
+       4  RTC_GetITStatus
+       4  RTC_Get_Time
+       4  RTC_ITConfig
+       4  RTC_Init
+       4  RTC_Set_Alarm
+       4  RTC_Set_Time
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      22  ?Subroutine0
+       8  ?Subroutine1
+       4  RTC
+      18  RTC_ClearITPendingBit
+      20  RTC_GetITStatus
+      34  RTC_Get_Time
+      42  RTC_ITConfig
+      40  RTC_Init
+     122  RTC_Set_Alarm
+       0  RTC_Set_Time
+       2  _A_RTCADOWDAY_L
+       2  _A_RTCAMINHR_L
+       2  _A_RTCCTL01_L
+       2  _A_RTCPS0CTL_L
+       2  _A_RTCPS1CTL_L
+       2  _A_RTCTIM0_L
+
+ 
+ 306 bytes in segment CODE
+  12 bytes in segment DATA16_AN
+   4 bytes in segment DATA20_C
+ 
+ 306 bytes of CODE  memory
+   4 bytes of CONST memory
+   0 bytes of DATA  memory (+ 12 bytes shared)
+
+Errors: none
+Warnings: none

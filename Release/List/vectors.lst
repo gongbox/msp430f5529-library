@@ -1,0 +1,205 @@
+###############################################################################
+#                                                                             #
+#                                                       06/Jun/2016  16:42:37 #
+# IAR C/C++ Compiler V5.50.1.20465/W32, Evaluation edition for MSP430         #
+# Copyright 1996-2012 IAR Systems AB.                                         #
+#                                                                             #
+#    __rt_version  =  3                                                       #
+#    __double_size =  32                                                      #
+#    __reg_r4      =  free                                                    #
+#    __reg_r5      =  free                                                    #
+#    __pic         =  no                                                      #
+#    __core        =  430X                                                    #
+#    __data_model  =  large                                                   #
+#    Source file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\System\src\vectors.c                             #
+#    Command line  =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\System\src\vectors.c -D NDEBUG -D RAM_VECTOR     #
+#                     -lC C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C° #
+#                     æ\¹¤³ÌÄ£°å\Release\List\ -lA                            #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\List\ -o C:\Users\615\Desktop\MSP430\MSP #
+#                     430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Release\Obj\             #
+#                     -D__MSP430F5529__ -e --double=32 --dlib_config          #
+#                     "D:\Program Files (x86)\IAR Systems\Embedded Workbench  #
+#                     6.4 Evaluation\430\LIB\DLIB\dl430xlfn.h" -I             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\ -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Ê #
+#                     ý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\inc\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\ -I C:\Users\615\Desktop\MSP430\MSP4 #
+#                     30F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\src\USB\ -I       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_config\ -I                   #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_User\ -I                     #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\srcUSB\USB_API\USB_CDC_API\ -I           #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_API\USB_HID_API\ -I          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_API\USB_MSC_API\ -I          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\KEY\ -I C:\Users\615\Desktop\MSP430\MSP #
+#                     430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\LED\ -I         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\12864\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\oled\ -I      #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\mpu6050\inc\ -I                         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\mpu6050\src\ -I                         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\nokia5110\inc\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\nokia5110\src\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\LQ_1.8_TFT\ -I                          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\LCD_API\ -I                             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\2.2TFT\ -I                              #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\delay\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\ -I             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\System\inc\ -I C:\Users\615\Desktop\MSP430\MSP43 #
+#                     0F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\src\ -I             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\User\ -I C:\Users\615\Desktop\MSP430\MSP430F5529 #
+#                     ¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\User\USER\ -I                    #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\UCOSII\CONFIG\ -I                            #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\uCOSII\App\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII\CONFIHG\    #
+#                     -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ #
+#                     \¹¤³ÌÄ£°å\Lib\uCOSII\PORT\ -I                           #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\UCOSII\CORE\ -I                              #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\FatFs\ -I C:\Users\615\Desktop\MSP430\MSP430 #
+#                     F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\FatFs\option\           #
+#                     --core=430X --data_model=large -Oh --multiplier=32      #
+#                     --multiplier_location=4C0 --hw_workaround=CPU40         #
+#    List file     =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\List\vectors.lst                         #
+#    Object file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\Obj\vectors.r43                          #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\src\vectors.c
+      1          #include "isr.h"
+
+   \                                 In  segment DATA16_AN, at 0x180
+   \   union <unnamed> __data16 _A_SYSCTL_L
+   \                     _A_SYSCTL_L:
+   \   000000                DS8 2
+      2          #include "vectors.h"
+      3          
+      4          //¶¨ÒåÖÐ¶ÏÏòÁ¿±íµ½RAMµÄÌØ¶¨ÇøÓò£¬ºÜÖØÒª
+
+   \                                 In  segment DATA16_AN, at 0x4380
+      5          __no_init ISR_TYPE __VECTOR_RAM[64]@VECTOR_RAM_START_ADDR;
+   \                     __VECTOR_RAM:
+   \   000000                DS8 128
+      6          //#pragma location="VECTOR_ROM"
+      7          //__no_init const ISR_TYPE __VECTOR_ROM[64];
+      8          /*******************************************************************************
+      9          *  º¯ÊýÃû³Æ£ºSet_Vector_Handler(VECTORn vector,__interrupt void pfunc_handler(void))
+     10          *  ¹¦ÄÜËµÃ÷£ºÉèÖÃÖÐ¶ÏÏòÁ¿µØÖ·
+     11          *  ²ÎÊýËµÃ÷£º
+     12                      VECTORn vector  £ºÖÐ¶ÏÏòÁ¿£¨Ã¶¾Ù±äÁ¿£¬¼û.hÎÄ¼þ£©
+     13                      __interrupt void pfunc_handler(void)  £º ÖÐ¶Ï·þÎñº¯Êý
+     14          *  º¯Êý·µ»Ø£ºÎÞ
+     15          *  Ê¹ÓÃÊ¾Àý£ºSet_Vector_Handler(VECTOR_PORT1,GPIO_IRQ_Handler);    //ÉèÖÃPPORT1ÖÐ¶Ï·þÎñº¯ÊýÎªGPIO_IRQ_Handler£¬ÐèÒªÏÈ¶¨ÒåÖÐ¶Ï·þÎñº¯Êý£¬ÁíÍâ×îºÃÏÈÉèÖÃÖÐ¶ÏÏòÁ¿£¬ÔÚ¿ªÆôÖÐ¶Ï
+     16          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+     17          void Set_Vector_Handler(VECTORn vector, __interrupt void pfunc_handler(void))
+   \                     Set_Vector_Handler:
+     18          {
+     19            if((SYSCTL & SYSRIVECT) != SYSRIVECT)        //Èç¹ûÃ»ÓÐÉèÖÃÖÐ¶ÏÏòÁ¿±íµ½RAM£¬ÔòÉèÖÃ
+   \   000000   92B38001     BIT.W   #0x1, &0x180
+   \   000004   022C         JC      ??Set_Vector_Handler_0
+     20            {
+     21              Set_VectorTable_To_RAM();                       //ÉèÖÃÖÐ¶ÏÏòÁ¿±íµ½RAM
+   \   000006   92D38001     BIS.W   #0x1, &0x180
+     22            }
+     23            __VECTOR_RAM[vector] = (ISR_TYPE)pfunc_handler;     //ÉèÖÃ¸ÃÖÐ¶ÏÏòÁ¿µØÖ· 
+                                          ^
+Warning[Pe767]: conversion from pointer to smaller integer
+   \                     ??Set_Vector_Handler_0:
+   \   00000A   0F4D         MOV.W   R13, R15
+   \   00000C   4C4C         MOV.B   R12, R12
+   \   00000E   0C5C         RLA.W   R12
+   \   000010   8C4F8043     MOV.W   R15, 0x4380(R12)
+     24          }
+   \   000014   1001         RETA
+   \   000016                REQUIRE _A_SYSCTL_L
+   \   000016                REQUIRE __VECTOR_RAM
+     25          /*******************************************************************************
+     26          *  º¯ÊýÃû³Æ£ºSet_VectorTable_To_RAM()
+     27          *  ¹¦ÄÜËµÃ÷£ºÉèÖÃÖÐ¶ÏÏòÁ¿±íÓ³Éäµ½RAMÇø¼ä
+     28          *  ²ÎÊýËµÃ÷£ºÎÞ
+     29          *  º¯Êý·µ»Ø£ºÎÞ
+     30          *  Ê¹ÓÃÊ¾Àý£ºSet_VectorTable_To_RAM();  //ÉèÖÃÖÐ¶ÏÏòÁ¿±íÓ³Éäµ½RAM
+     31          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+     32          void Set_VectorTable_To_RAM(void)
+   \                     Set_VectorTable_To_RAM:
+     33          {
+     34            SYSCTL |= SYSRIVECT;                             //ÉèÖÃÖÐ¶ÏÏòÁ¿Ó³Éäµ½RAMÇø¼ä 
+   \   000000   92D38001     BIS.W   #0x1, &0x180
+     35          }
+   \   000004   1001         RETA
+   \   000006                REQUIRE _A_SYSCTL_L
+     36          /*******************************************************************************
+     37          *  º¯ÊýÃû³Æ£ºSet_VectorTable_To_FLASH()
+     38          *  ¹¦ÄÜËµÃ÷£ºÉèÖÃÖÐ¶ÏÏòÁ¿±íÓ³Éäµ½ROMÇø¼ä
+     39          *  ²ÎÊýËµÃ÷£ºÎÞ
+     40          *  º¯Êý·µ»Ø£ºÎÞ
+     41          *  Ê¹ÓÃÊ¾Àý£ºSet_VectorTable_To_FLASH();  //ÉèÖÃÖÐ¶ÏÏòÁ¿±íÓ³Éäµ½FLASH
+     42          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+     43          void Set_VectorTable_To_FLASH(void)
+   \                     Set_VectorTable_To_FLASH:
+     44          {
+     45            SYSCTL &=~ SYSRIVECT;                            //ÉèÖÃÖÐ¶ÏÏòÁ¿Ó³Éäµ½ROMÇø¼ä 
+   \   000000   92C38001     BIC.W   #0x1, &0x180
+     46          }
+   \   000004   1001         RETA
+   \   000006                REQUIRE _A_SYSCTL_L
+
+   Maximum stack usage in bytes:
+
+   CSTACK Function
+   ------ --------
+       4  Set_VectorTable_To_FLASH
+       4  Set_VectorTable_To_RAM
+       4  Set_Vector_Handler
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       6  Set_VectorTable_To_FLASH
+       6  Set_VectorTable_To_RAM
+      22  Set_Vector_Handler
+       2  _A_SYSCTL_L
+     128  __VECTOR_RAM
+
+ 
+  34 bytes in segment CODE
+ 130 bytes in segment DATA16_AN
+ 
+ 34 bytes of CODE memory
+  0 bytes of DATA memory (+ 130 bytes shared)
+
+Errors: none
+Warnings: 1

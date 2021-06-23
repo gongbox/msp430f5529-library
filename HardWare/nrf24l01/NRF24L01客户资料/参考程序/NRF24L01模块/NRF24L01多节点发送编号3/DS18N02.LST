@@ -1,0 +1,101 @@
+C51 COMPILER V9.01   DS18N02                                                               08/22/2010 19:16:09 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE DS18N02
+OBJECT MODULE PLACED IN DS18N02.OBJ
+COMPILER INVOKED BY: d:\Keil\C51\BIN\C51.EXE DS18N02.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          /**********************************************************
+   2          创建人：陈志强
+   3          时间：2009.9.10
+   4          功能：DS18B20函数                                                         
+   5          ***********************************************************/
+   6          #include"reg52.h"
+   7          #include"allhead.h"
+   8          sbit DQ=P1^0;//数据端
+   9          unint tempL,tempH;
+  10          /********************************************************* 
+  11                  DS18B20复位函数
+  12          **********************************************************/
+  13          void Reset() 
+  14          {   
+  15   1              DQ=1;
+  16   1              DDelay(8); 
+  17   1              DQ=0; 
+  18   1              DDelay(85); 
+  19   1              DQ=1;
+  20   1              DDelay(14);
+  21   1      
+  22   1      } 
+  23          /*********************************************************** 
+  24                  DS18B20写一个字节函数
+  25          *********************************************************/
+  26          void WriteChar(unchar dat) 
+  27          { 
+  28   1                unint i; 
+  29   1                for(i=8;i>0;i--) 
+  30   1                { 
+  31   2                      DQ=0;   
+  32   2                      DQ=dat&0x01;
+  33   2                      DDelay(5);
+  34   2                      DQ=1;
+  35   2                      dat>>=1;
+  36   2                 } 
+  37   1               DDelay(4);
+  38   1      } 
+  39          /**************************************************** 
+  40                   DS18B20读一个字节函数
+  41          ****************************************************/
+  42          unint ReadChar() 
+  43          {                        
+  44   1              unchar i,dat=0;
+  45   1              for (i=8;i>0;i--) 
+  46   1              { 
+  47   2                      DQ=1; 
+  48   2                      DDelay(1);
+  49   2                      DQ=0;  
+  50   2                      dat>>=1;
+  51   2                      DQ=1; 
+  52   2                      if(DQ)
+  53   2                        dat=dat|0x80;
+  54   2                        DDelay(4);
+  55   2           } 
+C51 COMPILER V9.01   DS18N02                                                               08/22/2010 19:16:09 PAGE 2   
+
+  56   1      return(dat);
+  57   1      } 
+  58          /*************************************************** 
+  59                  DS18B20读温度程序
+  60          ****************************************************/ 
+  61          unint ReadTemperature() 
+  62          { 
+  63   1          unint temperature;
+  64   1              Reset(); 
+  65   1              WriteChar(0xcc); 
+  66   1              WriteChar(0x44); 
+  67   1              DDelay(125); 
+  68   1              Reset();
+  69   1              WriteChar(0xcc);
+  70   1              WriteChar(0xbe);
+  71   1              tempL=ReadChar(); 
+  72   1              tempH=ReadChar();
+  73   1              temperature=((tempH*256)+tempL)*0.0625*10;      
+  74   1              DDelay(200);
+  75   1              return(temperature); //返回的是0123格式
+  76   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    228    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      4       7
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,2022 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+//                                                      06/Jun/2016  16:42:31 /
+// IAR C/C++ Compiler V5.50.1.20465/W32, Evaluation edition for MSP430        /
+// Copyright 1996-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    __rt_version  =  3                                                      /
+//    __double_size =  32                                                     /
+//    __reg_r4      =  free                                                   /
+//    __reg_r5      =  free                                                   /
+//    __pic         =  no                                                     /
+//    __core        =  430X                                                   /
+//    __data_model  =  large                                                  /
+//    Source file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\UCOSII\CORE\os_mutex.c                     /
+//    Command line  =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\UCOSII\CORE\os_mutex.c -D NDEBUG -D        /
+//                     RAM_VECTOR -lC C:\Users\615\Desktop\MSP430\MSP430F5529 /
+//                     ¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Release\List\ -lA               /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Release\List\ -o C:\Users\615\Desktop\MSP430\M /
+//                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Release\Obj\          /
+//                     -D__MSP430F5529__ -e --double=32 --dlib_config         /
+//                     "D:\Program Files (x86)\IAR Systems\Embedded           /
+//                     Workbench 6.4 Evaluation\430\LIB\DLIB\dl430xlfn.h" -I  /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\ -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº /
+//                     ¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\inc\ -I                    /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\ -I C:\Users\615\Desktop\MSP430\MS /
+//                     P430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\src\USB\ -I    /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_config\ -I                 /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_User\ -I                   /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\srcUSB\USB_API\USB_CDC_API\ -I         /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_API\USB_HID_API\ -I        /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_API\USB_MSC_API\ -I        /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\KEY\ -I C:\Users\615\Desktop\MSP430\M /
+//                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\LED\ -I      /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\12864\ -I                             /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\oled\ -I C:\Users\615\Desktop\MSP430\ /
+//                     MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\mpu6050\inc /
+//                     \ -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\ /
+//                     C°æ\¹¤³ÌÄ£°å\HardWare\mpu6050\src\ -I                  /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\nokia5110\inc\ -I                     /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\nokia5110\src\ -I                     /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\LQ_1.8_TFT\ -I                        /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\LCD_API\ -I                           /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\2.2TFT\ -I                            /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\delay\ -I                             /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\System\ -I C:\Users\615\Desktop\MSP430\MSP430F /
+//                     5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\inc\ -I              /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\System\src\ -I C:\Users\615\Desktop\MSP430\MSP /
+//                     430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\User\ -I                /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\User\USER\ -I C:\Users\615\Desktop\MSP430\MSP4 /
+//                     30F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\UCOSII\CONFIG\ -I    /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\uCOSII\App\ -I                             /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\uCOSII\CONFIHG\ -I                         /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\uCOSII\PORT\ -I                            /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\UCOSII\CORE\ -I                            /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\FatFs\ -I C:\Users\615\Desktop\MSP430\MSP4 /
+//                     30F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\FatFs\option\        /
+//                     --core=430X --data_model=large -Oh --multiplier=32     /
+//                     --multiplier_location=4C0 --hw_workaround=CPU40        /
+//    List file     =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Release\List\os_mutex.s43                      /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME os_mutex
+
+        RTMODEL "__SystemLibrary", "DLib"
+        RTMODEL "__core", "430X"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dlib_file_descriptor", "0"
+        RTMODEL "__dlib_full_locale_support", "0"
+        RTMODEL "__double_size", "32"
+        RTMODEL "__pic", "no"
+        RTMODEL "__reg_r4", "free"
+        RTMODEL "__reg_r5", "free"
+        RTMODEL "__rt_version", "3"
+
+        RSEG CSTACK:DATA:SORT:NOROOT(0)
+
+        EXTERN ?OneBitMask32
+        EXTERN ?longjmp_r4
+        EXTERN ?longjmp_r5
+        EXTERN ?setjmp_r4
+        EXTERN ?setjmp_r5
+
+        PUBWEAK ?setjmp_save_r4
+        PUBWEAK ?setjmp_save_r5
+        PUBLIC OSMutexAccept
+        FUNCTION OSMutexAccept,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 12, STACK
+        PUBLIC OSMutexCreate
+        FUNCTION OSMutexCreate,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 20, STACK
+        PUBLIC OSMutexDel
+        FUNCTION OSMutexDel,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 28, STACK
+        PUBLIC OSMutexPend
+        FUNCTION OSMutexPend,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 40, STACK
+        PUBLIC OSMutexPost
+        FUNCTION OSMutexPost,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 20, STACK
+        PUBLIC OSMutexQuery
+        FUNCTION OSMutexQuery,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 12, STACK
+        FUNCTION OSMutex_RdyAtPrio,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 8, STACK
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA SP DATA
+          CFI Resource PC:20, SP:20, SR:16, R4L:16, R4H:4, R4:20, R5L:16, R5H:4
+          CFI Resource R5:20, R6L:16, R6H:4, R6:20, R7L:16, R7H:4, R7:20, R8L:16
+          CFI Resource R8H:4, R8:20, R9L:16, R9H:4, R9:20, R10L:16, R10H:4
+          CFI Resource R10:20, R11L:16, R11H:4, R11:20, R12L:16, R12H:4, R12:20
+          CFI Resource R13L:16, R13H:4, R13:20, R14L:16, R14H:4, R14:20, R15L:16
+          CFI Resource R15H:4, R15:20
+          CFI ResourceParts R4 R4H, R4L
+          CFI ResourceParts R5 R5H, R5L
+          CFI ResourceParts R6 R6H, R6L
+          CFI ResourceParts R7 R7H, R7L
+          CFI ResourceParts R8 R8H, R8L
+          CFI ResourceParts R9 R9H, R9L
+          CFI ResourceParts R10 R10H, R10L
+          CFI ResourceParts R11 R11H, R11L
+          CFI ResourceParts R12 R12H, R12L
+          CFI ResourceParts R13 R13H, R13L
+          CFI ResourceParts R14 R14H, R14L
+          CFI ResourceParts R15 R15H, R15L
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H SameValue
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H SameValue
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H SameValue
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H SameValue
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H SameValue
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H SameValue
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H SameValue
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H SameValue
+          CFI R11 Concat
+          CFI R12L Undefined
+          CFI R12H Undefined
+          CFI R12 Undefined
+          CFI R13L Undefined
+          CFI R13H Undefined
+          CFI R13 Undefined
+          CFI R14L Undefined
+          CFI R14H Undefined
+          CFI R14 Undefined
+          CFI R15L Undefined
+          CFI R15H Undefined
+          CFI R15 Undefined
+          CFI EndCommon cfiCommon0
+        
+        
+          CFI Common cfiCommon1 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H SameValue
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H SameValue
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H SameValue
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H SameValue
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H SameValue
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H SameValue
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H SameValue
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H SameValue
+          CFI R11 Concat
+          CFI R12L SameValue
+          CFI R12H SameValue
+          CFI R12 Concat
+          CFI R13L SameValue
+          CFI R13H SameValue
+          CFI R13 Concat
+          CFI R14L SameValue
+          CFI R14H SameValue
+          CFI R14 Concat
+          CFI R15L SameValue
+          CFI R15H SameValue
+          CFI R15 Concat
+          CFI EndCommon cfiCommon1
+        
+        EXTERN OSRdyTbl
+        EXTERN OSRdyGrp
+        EXTERN OSPrioCur
+        EXTERN OSTCBPrioTbl
+        EXTERN OSIntNesting
+        EXTERN OSCPUSaveSR
+        FUNCTION OSCPUSaveSR,0202H
+        EXTERN OSCPURestoreSR
+        FUNCTION OSCPURestoreSR,0202H
+        EXTERN OSTCBCur
+        EXTERN OS_EventTaskRdy
+        FUNCTION OS_EventTaskRdy,0202H
+        EXTERN OS_Sched
+        FUNCTION OS_Sched,0202H
+        EXTERN OSLockNesting
+        EXTERN OS_EventTaskWait
+        FUNCTION OS_EventTaskWait,0202H
+        EXTERN OS_EventTaskRemove
+        FUNCTION OS_EventTaskRemove,0202H
+        EXTERN OSEventFreeList
+        EXTERN OS_EventWaitListInit
+        FUNCTION OS_EventWaitListInit,0202H
+
+// C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\UCOSII\CORE\os_mutex.c
+//    1 /*
+//    2 *********************************************************************************************************
+//    3 *                                                uC/OS-II
+//    4 *                                          The Real-Time Kernel
+//    5 *                                  MUTUAL EXCLUSION SEMAPHORE MANAGEMENT
+//    6 *
+//    7 *                              (c) Copyright 1992-2009, Micrium, Weston, FL
+//    8 *                                           All Rights Reserved
+//    9 *
+//   10 * File    : OS_MUTEX.C
+//   11 * By      : Jean J. Labrosse
+//   12 * Version : V2.91
+//   13 *
+//   14 * LICENSING TERMS:
+//   15 * ---------------
+//   16 *   uC/OS-II is provided in source form for FREE evaluation, for educational use or for peaceful research.
+//   17 * If you plan on using  uC/OS-II  in a commercial product you need to contact Micriµm to properly license
+//   18 * its use in your product. We provide ALL the source code for your convenience and to help you experience
+//   19 * uC/OS-II.   The fact that the  source is provided does  NOT  mean that you can use it without  paying a
+//   20 * licensing fee.
+//   21 *********************************************************************************************************
+//   22 */
+//   23 
+//   24 #ifndef  OS_MASTER_FILE
+//   25 #include "ucos_ii.h"
+//   26 #endif
+//   27 
+//   28 
+//   29 #if OS_MUTEX_EN > 0u
+//   30 /*
+//   31 *********************************************************************************************************
+//   32 *                                            LOCAL CONSTANTS
+//   33 *********************************************************************************************************
+//   34 */
+//   35 
+//   36 #define  OS_MUTEX_KEEP_LOWER_8   ((INT16U)0x00FFu)
+//   37 #define  OS_MUTEX_KEEP_UPPER_8   ((INT16U)0xFF00u)
+//   38 
+//   39 #define  OS_MUTEX_AVAILABLE      ((INT16U)0x00FFu)
+//   40 
+//   41 /*
+//   42 *********************************************************************************************************
+//   43 *                                            LOCAL CONSTANTS
+//   44 *********************************************************************************************************
+//   45 */
+//   46 
+//   47 static  void  OSMutex_RdyAtPrio(OS_TCB *ptcb, INT8U prio);
+//   48 
+//   49 /*$PAGE*/
+//   50 /*
+//   51 *********************************************************************************************************
+//   52 *                                   ACCEPT MUTUAL EXCLUSION SEMAPHORE
+//   53 *
+//   54 * Description: This  function checks the mutual exclusion semaphore to see if a resource is available.
+//   55 *              Unlike OSMutexPend(), OSMutexAccept() does not suspend the calling task if the resource is
+//   56 *              not available or the event did not occur.
+//   57 *
+//   58 * Arguments  : pevent     is a pointer to the event control block
+//   59 *
+//   60 *              perr       is a pointer to an error code which will be returned to your application:
+//   61 *                            OS_ERR_NONE         if the call was successful.
+//   62 *                            OS_ERR_EVENT_TYPE   if 'pevent' is not a pointer to a mutex
+//   63 *                            OS_ERR_PEVENT_NULL  'pevent' is a NULL pointer
+//   64 *                            OS_ERR_PEND_ISR     if you called this function from an ISR
+//   65 *                            OS_ERR_PIP_LOWER    If the priority of the task that owns the Mutex is
+//   66 *                                                HIGHER (i.e. a lower number) than the PIP.  This error
+//   67 *                                                indicates that you did not set the PIP higher (lower
+//   68 *                                                number) than ALL the tasks that compete for the Mutex.
+//   69 *                                                Unfortunately, this is something that could not be
+//   70 *                                                detected when the Mutex is created because we don't know
+//   71 *                                                what tasks will be using the Mutex.
+//   72 *
+//   73 * Returns    : == OS_TRUE    if the resource is available, the mutual exclusion semaphore is acquired
+//   74 *              == OS_FALSE   a) if the resource is not available
+//   75 *                            b) you didn't pass a pointer to a mutual exclusion semaphore
+//   76 *                            c) you called this function from an ISR
+//   77 *
+//   78 * Warning(s) : This function CANNOT be called from an ISR because mutual exclusion semaphores are
+//   79 *              intended to be used by tasks only.
+//   80 *********************************************************************************************************
+//   81 */
+//   82 
+//   83 #if OS_MUTEX_ACCEPT_EN > 0u
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   84 BOOLEAN  OSMutexAccept (OS_EVENT  *pevent,
+OSMutexAccept:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function OSMutexAccept
+//   85                         INT8U     *perr)
+//   86 {
+        FUNCALL OSMutexAccept, OSCPUSaveSR
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL OSMutexAccept, OSCPURestoreSR
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL OSMutexAccept, OSCPURestoreSR
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL OSMutexAccept, OSCPURestoreSR
+        LOCFRAME CSTACK, 12, STACK
+        PUSHM.A #0x2, R11
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+12
+        MOVA    R12, R10
+        MOVA    R13, R11
+//   87     INT8U      pip;                                    /* Priority Inheritance Priority (PIP)          */
+//   88 #if OS_CRITICAL_METHOD == 3u                           /* Allocate storage for CPU status register     */
+//   89     OS_CPU_SR  cpu_sr = 0u;
+//   90 #endif
+//   91 
+//   92 
+//   93 
+//   94 #ifdef OS_SAFETY_CRITICAL
+//   95     if (perr == (INT8U *)0) {
+//   96         OS_SAFETY_CRITICAL_EXCEPTION();
+//   97     }
+//   98 #endif
+//   99 
+//  100 #if OS_ARG_CHK_EN > 0u
+//  101     if (pevent == (OS_EVENT *)0) {                     /* Validate 'pevent'                            */
+//  102         *perr = OS_ERR_PEVENT_NULL;
+//  103         return (OS_FALSE);
+//  104     }
+//  105 #endif
+//  106     if (pevent->OSEventType != OS_EVENT_TYPE_MUTEX) {  /* Validate event block type                    */
+        CMP.B   #0x4, 0(R12)
+        JEQ     ??OSMutexAccept_1
+//  107         *perr = OS_ERR_EVENT_TYPE;
+        MOV.B   #0x1, 0(R13)
+//  108         return (OS_FALSE);
+        JMP     ??OSMutexAccept_0
+//  109     }
+//  110     if (OSIntNesting > 0u) {                           /* Make sure it's not called from an ISR        */
+??OSMutexAccept_1:
+        CALLA   #??Subroutine0_0
+??CrossCallReturnLabel_11:
+        JEQ     ??OSMutexAccept_2
+//  111         *perr = OS_ERR_PEND_ISR;
+        MOV.B   #0x2, 0(R13)
+//  112         return (OS_FALSE);
+        JMP     ??OSMutexAccept_0
+//  113     }
+//  114     OS_ENTER_CRITICAL();                               /* Get value (0 or 1) of Mutex                  */
+??OSMutexAccept_2:
+        CALLA   #OSCPUSaveSR
+//  115     pip = (INT8U)(pevent->OSEventCnt >> 8u);           /* Get PIP from mutex                           */
+        MOV.W   0x6(R10), R14
+        MOV.W   R14, R15
+        SWPB    R15
+//  116     if ((pevent->OSEventCnt & OS_MUTEX_KEEP_LOWER_8) == OS_MUTEX_AVAILABLE) {
+        CMP.B   #0xff, R14
+        JNE     ??OSMutexAccept_3
+//  117         pevent->OSEventCnt &= OS_MUTEX_KEEP_UPPER_8;   /*      Mask off LSByte (Acquire Mutex)         */
+        AND.W   #0xff00, 0x6(R10)
+//  118         pevent->OSEventCnt |= OSTCBCur->OSTCBPrio;     /*      Save current task priority in LSByte    */
+        MOVA    &OSTCBCur, R13
+        MOV.B   0x30(R13), R14
+        BIS.W   R14, 0x6(R10)
+//  119         pevent->OSEventPtr  = (void *)OSTCBCur;        /*      Link TCB of task owning Mutex           */
+        MOVA    R13, 0x2(R10)
+//  120         if (OSTCBCur->OSTCBPrio <= pip) {              /*      PIP 'must' have a SMALLER prio ...      */
+        CMP.B   0x30(R13), R15
+        JNC     ??OSMutexAccept_4
+//  121             OS_EXIT_CRITICAL();                        /*      ... than current task!                  */
+        CALLA   #OSCPURestoreSR
+//  122             *perr = OS_ERR_PIP_LOWER;
+        MOV.B   #0x78, 0(R11)
+        JMP     ??OSMutexAccept_5
+//  123         } else {
+//  124             OS_EXIT_CRITICAL();
+??OSMutexAccept_4:
+        CALLA   #?Subroutine2
+//  125             *perr = OS_ERR_NONE;
+//  126         }
+//  127         return (OS_TRUE);
+??OSMutexAccept_5:
+        MOV.B   #0x1, R12
+        JMP     ??OSMutexAccept_6
+//  128     }
+//  129     OS_EXIT_CRITICAL();
+??OSMutexAccept_3:
+        CALLA   #?Subroutine2
+//  130     *perr = OS_ERR_NONE;
+//  131     return (OS_FALSE);
+??OSMutexAccept_0:
+        MOV.B   #0x0, R12
+??OSMutexAccept_6:
+        POPM.A  #0x2, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock0
+//  132 }
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?Subroutine2:
+          CFI Block cfiCond1 Using cfiCommon0
+          CFI Function OSMutexPend
+          CFI Conditional ??CrossCallReturnLabel_3
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+44
+          CFI Block cfiCond2 Using cfiCommon0
+          CFI (cfiCond2) Function OSMutexAccept
+          CFI (cfiCond2) Conditional ??OSMutexAccept_5
+          CFI (cfiCond2) R10L Frame(CFA, -12)
+          CFI (cfiCond2) R10H Frame(CFA, -10)
+          CFI (cfiCond2) R11L Frame(CFA, -8)
+          CFI (cfiCond2) R11H Frame(CFA, -6)
+          CFI (cfiCond2) CFA SP+16
+          CFI Block cfiCond3 Using cfiCommon0
+          CFI (cfiCond3) Function OSMutexAccept
+          CFI (cfiCond3) Conditional ??OSMutexAccept_0
+          CFI (cfiCond3) R10L Frame(CFA, -12)
+          CFI (cfiCond3) R10H Frame(CFA, -10)
+          CFI (cfiCond3) R11L Frame(CFA, -8)
+          CFI (cfiCond3) R11H Frame(CFA, -6)
+          CFI (cfiCond3) CFA SP+16
+          CFI Block cfiPicker4 Using cfiCommon1
+          CFI (cfiPicker4) NoFunction
+          CFI (cfiPicker4) Picker
+        CALLA   #OSCPURestoreSR
+        MOV.B   #0x0, 0(R11)
+        RETA
+          CFI EndBlock cfiCond1
+          CFI EndBlock cfiCond2
+          CFI EndBlock cfiCond3
+          CFI EndBlock cfiPicker4
+//  133 #endif
+//  134 
+//  135 /*$PAGE*/
+//  136 /*
+//  137 *********************************************************************************************************
+//  138 *                                  CREATE A MUTUAL EXCLUSION SEMAPHORE
+//  139 *
+//  140 * Description: This function creates a mutual exclusion semaphore.
+//  141 *
+//  142 * Arguments  : prio          is the priority to use when accessing the mutual exclusion semaphore.  In
+//  143 *                            other words, when the semaphore is acquired and a higher priority task
+//  144 *                            attempts to obtain the semaphore then the priority of the task owning the
+//  145 *                            semaphore is raised to this priority.  It is assumed that you will specify
+//  146 *                            a priority that is LOWER in value than ANY of the tasks competing for the
+//  147 *                            mutex.
+//  148 *
+//  149 *              perr          is a pointer to an error code which will be returned to your application:
+//  150 *                               OS_ERR_NONE         if the call was successful.
+//  151 *                               OS_ERR_CREATE_ISR   if you attempted to create a MUTEX from an ISR
+//  152 *                               OS_ERR_PRIO_EXIST   if a task at the priority inheritance priority
+//  153 *                                                   already exist.
+//  154 *                               OS_ERR_PEVENT_NULL  No more event control blocks available.
+//  155 *                               OS_ERR_PRIO_INVALID if the priority you specify is higher that the
+//  156 *                                                   maximum allowed (i.e. > OS_LOWEST_PRIO)
+//  157 *
+//  158 * Returns    : != (void *)0  is a pointer to the event control clock (OS_EVENT) associated with the
+//  159 *                            created mutex.
+//  160 *              == (void *)0  if an error is detected.
+//  161 *
+//  162 * Note(s)    : 1) The LEAST significant 8 bits of '.OSEventCnt' are used to hold the priority number
+//  163 *                 of the task owning the mutex or 0xFF if no task owns the mutex.
+//  164 *
+//  165 *              2) The MOST  significant 8 bits of '.OSEventCnt' are used to hold the priority number
+//  166 *                 to use to reduce priority inversion.
+//  167 *********************************************************************************************************
+//  168 */
+//  169 
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine0:
+          CFI Block cfiCond5 Using cfiCommon0
+          CFI Function OSMutexQuery
+          CFI Conditional ??CrossCallReturnLabel_6
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+16
+          CFI Block cfiCond6 Using cfiCommon0
+          CFI (cfiCond6) Function OSMutexCreate
+          CFI (cfiCond6) Conditional ??CrossCallReturnLabel_7
+          CFI (cfiCond6) R8L Frame(CFA, -20)
+          CFI (cfiCond6) R8H Frame(CFA, -18)
+          CFI (cfiCond6) R9L Frame(CFA, -16)
+          CFI (cfiCond6) R9H Frame(CFA, -14)
+          CFI (cfiCond6) R10L Frame(CFA, -12)
+          CFI (cfiCond6) R10H Frame(CFA, -10)
+          CFI (cfiCond6) R11L Frame(CFA, -8)
+          CFI (cfiCond6) R11H Frame(CFA, -6)
+          CFI (cfiCond6) CFA SP+24
+          CFI Block cfiPicker7 Using cfiCommon1
+          CFI (cfiPicker7) NoFunction
+          CFI (cfiPicker7) Picker
+        MOVA    R13, R11
+          CFI EndBlock cfiCond5
+          CFI EndBlock cfiCond6
+          CFI EndBlock cfiPicker7
+        REQUIRE ??Subroutine0_0
+        // Fall through to label ??Subroutine0_0
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+??Subroutine0_0:
+          CFI Block cfiCond8 Using cfiCommon0
+          CFI Function OSMutexPost
+          CFI Conditional ??CrossCallReturnLabel_8
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+24
+          CFI Block cfiCond9 Using cfiCommon0
+          CFI (cfiCond9) Function OSMutexPend
+          CFI (cfiCond9) Conditional ??CrossCallReturnLabel_9
+          CFI (cfiCond9) R4L Frame(CFA, -36)
+          CFI (cfiCond9) R4H Frame(CFA, -34)
+          CFI (cfiCond9) R5L Frame(CFA, -32)
+          CFI (cfiCond9) R5H Frame(CFA, -30)
+          CFI (cfiCond9) R6L Frame(CFA, -28)
+          CFI (cfiCond9) R6H Frame(CFA, -26)
+          CFI (cfiCond9) R7L Frame(CFA, -24)
+          CFI (cfiCond9) R7H Frame(CFA, -22)
+          CFI (cfiCond9) R8L Frame(CFA, -20)
+          CFI (cfiCond9) R8H Frame(CFA, -18)
+          CFI (cfiCond9) R9L Frame(CFA, -16)
+          CFI (cfiCond9) R9H Frame(CFA, -14)
+          CFI (cfiCond9) R10L Frame(CFA, -12)
+          CFI (cfiCond9) R10H Frame(CFA, -10)
+          CFI (cfiCond9) R11L Frame(CFA, -8)
+          CFI (cfiCond9) R11H Frame(CFA, -6)
+          CFI (cfiCond9) CFA SP+44
+          CFI Block cfiCond10 Using cfiCommon0
+          CFI (cfiCond10) Function OSMutexDel
+          CFI (cfiCond10) Conditional ??CrossCallReturnLabel_10
+          CFI (cfiCond10) R6L Frame(CFA, -28)
+          CFI (cfiCond10) R6H Frame(CFA, -26)
+          CFI (cfiCond10) R7L Frame(CFA, -24)
+          CFI (cfiCond10) R7H Frame(CFA, -22)
+          CFI (cfiCond10) R8L Frame(CFA, -20)
+          CFI (cfiCond10) R8H Frame(CFA, -18)
+          CFI (cfiCond10) R9L Frame(CFA, -16)
+          CFI (cfiCond10) R9H Frame(CFA, -14)
+          CFI (cfiCond10) R10L Frame(CFA, -12)
+          CFI (cfiCond10) R10H Frame(CFA, -10)
+          CFI (cfiCond10) R11L Frame(CFA, -8)
+          CFI (cfiCond10) R11H Frame(CFA, -6)
+          CFI (cfiCond10) CFA SP+32
+          CFI Block cfiCond11 Using cfiCommon0
+          CFI (cfiCond11) Function OSMutexAccept
+          CFI (cfiCond11) Conditional ??CrossCallReturnLabel_11
+          CFI (cfiCond11) R10L Frame(CFA, -12)
+          CFI (cfiCond11) R10H Frame(CFA, -10)
+          CFI (cfiCond11) R11L Frame(CFA, -8)
+          CFI (cfiCond11) R11H Frame(CFA, -6)
+          CFI (cfiCond11) CFA SP+16
+          CFI Block cfiCond12 Using cfiCommon0
+          CFI (cfiCond12) Function OSMutexQuery
+          CFI (cfiCond12) Conditional ??CrossCallReturnLabel_6
+          CFI (cfiCond12) R10L Frame(CFA, -12)
+          CFI (cfiCond12) R10H Frame(CFA, -10)
+          CFI (cfiCond12) R11L Frame(CFA, -8)
+          CFI (cfiCond12) R11H Frame(CFA, -6)
+          CFI (cfiCond12) CFA SP+16
+          CFI Block cfiCond13 Using cfiCommon0
+          CFI (cfiCond13) Function OSMutexCreate
+          CFI (cfiCond13) Conditional ??CrossCallReturnLabel_7
+          CFI (cfiCond13) R8L Frame(CFA, -20)
+          CFI (cfiCond13) R8H Frame(CFA, -18)
+          CFI (cfiCond13) R9L Frame(CFA, -16)
+          CFI (cfiCond13) R9H Frame(CFA, -14)
+          CFI (cfiCond13) R10L Frame(CFA, -12)
+          CFI (cfiCond13) R10H Frame(CFA, -10)
+          CFI (cfiCond13) R11L Frame(CFA, -8)
+          CFI (cfiCond13) R11H Frame(CFA, -6)
+          CFI (cfiCond13) CFA SP+24
+          CFI Block cfiPicker14 Using cfiCommon1
+          CFI (cfiPicker14) NoFunction
+          CFI (cfiPicker14) Picker
+        CMPX.B  #0x0, &OSIntNesting
+        RETA
+          CFI EndBlock cfiCond8
+          CFI EndBlock cfiCond9
+          CFI EndBlock cfiCond10
+          CFI EndBlock cfiCond11
+          CFI EndBlock cfiCond12
+          CFI EndBlock cfiCond13
+          CFI EndBlock cfiPicker14
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  170 OS_EVENT  *OSMutexCreate (INT8U   prio,
+OSMutexCreate:
+          CFI Block cfiBlock15 Using cfiCommon0
+          CFI Function OSMutexCreate
+//  171                           INT8U  *perr)
+//  172 {
+        FUNCALL OSMutexCreate, OSCPUSaveSR
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSMutexCreate, OSCPURestoreSR
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSMutexCreate, OSCPURestoreSR
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSMutexCreate, OSCPURestoreSR
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSMutexCreate, OS_EventWaitListInit
+        LOCFRAME CSTACK, 20, STACK
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        MOV.B   R12, R10
+        CALLA   #?Subroutine0
+//  173     OS_EVENT  *pevent;
+//  174 #if OS_CRITICAL_METHOD == 3u                               /* Allocate storage for CPU status register */
+//  175     OS_CPU_SR  cpu_sr = 0u;
+//  176 #endif
+//  177 
+//  178 
+//  179 
+//  180 #ifdef OS_SAFETY_CRITICAL
+//  181     if (perr == (INT8U *)0) {
+//  182         OS_SAFETY_CRITICAL_EXCEPTION();
+//  183     }
+//  184 #endif
+//  185 
+//  186 #ifdef OS_SAFETY_CRITICAL_IEC61508
+//  187     if (OSSafetyCriticalStartFlag == OS_TRUE) {
+//  188         OS_SAFETY_CRITICAL_EXCEPTION();
+//  189     }
+//  190 #endif
+//  191 
+//  192 #if OS_ARG_CHK_EN > 0u
+//  193     if (prio >= OS_LOWEST_PRIO) {                          /* Validate PIP                             */
+//  194         *perr = OS_ERR_PRIO_INVALID;
+//  195         return ((OS_EVENT *)0);
+//  196     }
+//  197 #endif
+//  198     if (OSIntNesting > 0u) {                               /* See if called from ISR ...               */
+??CrossCallReturnLabel_7:
+        JEQ     ??OSMutexCreate_1
+//  199         *perr = OS_ERR_CREATE_ISR;                         /* ... can't CREATE mutex from an ISR       */
+        MOV.B   #0x10, 0(R13)
+//  200         return ((OS_EVENT *)0);
+        JMP     ??OSMutexCreate_0
+//  201     }
+//  202     OS_ENTER_CRITICAL();
+??OSMutexCreate_1:
+        CALLA   #OSCPUSaveSR
+//  203     if (OSTCBPrioTbl[prio] != (OS_TCB *)0) {               /* Mutex priority must not already exist    */
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  OSTCBPrioTbl(R15), R14
+        CMPA    #0x0, R14
+        JEQ     ??OSMutexCreate_2
+//  204         OS_EXIT_CRITICAL();                                /* Task already exist at priority ...       */
+        CALLA   #OSCPURestoreSR
+//  205         *perr = OS_ERR_PRIO_EXIST;                         /* ... inheritance priority                 */
+        MOV.B   #0x28, 0(R11)
+//  206         return ((OS_EVENT *)0);
+        JMP     ??OSMutexCreate_0
+//  207     }
+//  208     OSTCBPrioTbl[prio] = OS_TCB_RESERVED;                  /* Reserve the table entry                  */
+??OSMutexCreate_2:
+        MOVX.A  #0x1, OSTCBPrioTbl(R15)
+        MOVA    &OSEventFreeList, R14
+        MOVA    R14, R8
+//  209     pevent             = OSEventFreeList;                  /* Get next free event control block        */
+//  210     if (pevent == (OS_EVENT *)0) {                         /* See if an ECB was available              */
+        CMPA    #0x0, R14
+        JNE     ??OSMutexCreate_3
+//  211         OSTCBPrioTbl[prio] = (OS_TCB *)0;                  /* No, Release the table entry              */
+        MOVX.A  #0x0, OSTCBPrioTbl(R15)
+//  212         OS_EXIT_CRITICAL();
+        CALLA   #OSCPURestoreSR
+//  213         *perr              = OS_ERR_PEVENT_NULL;           /* No more event control blocks             */
+        MOV.B   #0x4, 0(R11)
+//  214         return (pevent);
+??OSMutexCreate_0:
+        MOVA    #0x0, R12
+        JMP     ??OSMutexCreate_4
+//  215     }
+//  216     OSEventFreeList        = (OS_EVENT *)OSEventFreeList->OSEventPtr;   /* Adjust the free list        */
+??OSMutexCreate_3:
+        MOVX.A  0x2(R14), &OSEventFreeList
+//  217     OS_EXIT_CRITICAL();
+        CALLA   #OSCPURestoreSR
+//  218     pevent->OSEventType    = OS_EVENT_TYPE_MUTEX;
+        MOV.B   #0x4, 0(R8)
+//  219     pevent->OSEventCnt     = (INT16U)((INT16U)prio << 8u) | OS_MUTEX_AVAILABLE; /* Resource is avail.  */
+        SWPB    R10
+        BIS.W   #0xff, R10
+        MOV.W   R10, 0x6(R8)
+//  220     pevent->OSEventPtr     = (void *)0;                                 /* No task owning the mutex    */
+        MOVX.A  #0x0, 0x2(R8)
+//  221 #if OS_EVENT_NAME_EN > 0u
+//  222     pevent->OSEventName    = (INT8U *)(void *)"?";
+//  223 #endif
+//  224     OS_EventWaitListInit(pevent);
+        MOVA    R8, R12
+        CALLA   #OS_EventWaitListInit
+//  225     *perr                  = OS_ERR_NONE;
+        MOV.B   #0x0, 0(R11)
+//  226     return (pevent);
+        MOVA    R8, R12
+??OSMutexCreate_4:
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock15
+//  227 }
+//  228 
+//  229 /*$PAGE*/
+//  230 /*
+//  231 *********************************************************************************************************
+//  232 *                                          DELETE A MUTEX
+//  233 *
+//  234 * Description: This function deletes a mutual exclusion semaphore and readies all tasks pending on the it.
+//  235 *
+//  236 * Arguments  : pevent        is a pointer to the event control block associated with the desired mutex.
+//  237 *
+//  238 *              opt           determines delete options as follows:
+//  239 *                            opt == OS_DEL_NO_PEND   Delete mutex ONLY if no task pending
+//  240 *                            opt == OS_DEL_ALWAYS    Deletes the mutex even if tasks are waiting.
+//  241 *                                                    In this case, all the tasks pending will be readied.
+//  242 *
+//  243 *              perr          is a pointer to an error code that can contain one of the following values:
+//  244 *                            OS_ERR_NONE             The call was successful and the mutex was deleted
+//  245 *                            OS_ERR_DEL_ISR          If you attempted to delete the MUTEX from an ISR
+//  246 *                            OS_ERR_INVALID_OPT      An invalid option was specified
+//  247 *                            OS_ERR_TASK_WAITING     One or more tasks were waiting on the mutex
+//  248 *                            OS_ERR_EVENT_TYPE       If you didn't pass a pointer to a mutex
+//  249 *                            OS_ERR_PEVENT_NULL      If 'pevent' is a NULL pointer.
+//  250 *
+//  251 * Returns    : pevent        upon error
+//  252 *              (OS_EVENT *)0 if the mutex was successfully deleted.
+//  253 *
+//  254 * Note(s)    : 1) This function must be used with care.  Tasks that would normally expect the presence of
+//  255 *                 the mutex MUST check the return code of OSMutexPend().
+//  256 *
+//  257 *              2) This call can potentially disable interrupts for a long time.  The interrupt disable
+//  258 *                 time is directly proportional to the number of tasks waiting on the mutex.
+//  259 *
+//  260 *              3) Because ALL tasks pending on the mutex will be readied, you MUST be careful because the
+//  261 *                 resource(s) will no longer be guarded by the mutex.
+//  262 *
+//  263 *              4) IMPORTANT: In the 'OS_DEL_ALWAYS' case, we assume that the owner of the Mutex (if there
+//  264 *                            is one) is ready-to-run and is thus NOT pending on another kernel object or
+//  265 *                            has delayed itself.  In other words, if a task owns the mutex being deleted,
+//  266 *                            that task will be made ready-to-run at its original priority.
+//  267 *********************************************************************************************************
+//  268 */
+//  269 
+//  270 #if OS_MUTEX_DEL_EN > 0u
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  271 OS_EVENT  *OSMutexDel (OS_EVENT  *pevent,
+OSMutexDel:
+          CFI Block cfiBlock16 Using cfiCommon0
+          CFI Function OSMutexDel
+//  272                        INT8U      opt,
+//  273                        INT8U     *perr)
+//  274 {
+        FUNCALL OSMutexDel, OSCPUSaveSR
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSMutexDel, OSCPURestoreSR
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSMutexDel, OSCPURestoreSR
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSMutexDel, OSMutex_RdyAtPrio
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSMutexDel, OS_EventTaskRdy
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSMutexDel, OSCPURestoreSR
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSMutexDel, OS_Sched
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSMutexDel, OSCPURestoreSR
+        LOCFRAME CSTACK, 28, STACK
+        PUSHM.A #0x6, R11
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+28
+        MOVA    R12, R10
+        MOV.B   R13, R6
+        MOVA    R14, R11
+//  275     BOOLEAN    tasks_waiting;
+//  276     OS_EVENT  *pevent_return;
+//  277     INT8U      pip;                                        /* Priority inheritance priority            */
+//  278     INT8U      prio;
+//  279     OS_TCB    *ptcb;
+//  280 #if OS_CRITICAL_METHOD == 3u                               /* Allocate storage for CPU status register */
+//  281     OS_CPU_SR  cpu_sr = 0u;
+//  282 #endif
+//  283 
+//  284 
+//  285 
+//  286 #ifdef OS_SAFETY_CRITICAL
+//  287     if (perr == (INT8U *)0) {
+//  288         OS_SAFETY_CRITICAL_EXCEPTION();
+//  289     }
+//  290 #endif
+//  291 
+//  292 #if OS_ARG_CHK_EN > 0u
+//  293     if (pevent == (OS_EVENT *)0) {                         /* Validate 'pevent'                        */
+//  294         *perr = OS_ERR_PEVENT_NULL;
+//  295         return (pevent);
+//  296     }
+//  297 #endif
+//  298     if (pevent->OSEventType != OS_EVENT_TYPE_MUTEX) {      /* Validate event block type                */
+        CMP.B   #0x4, 0(R12)
+        JEQ     ??OSMutexDel_2
+//  299         *perr = OS_ERR_EVENT_TYPE;
+        MOV.B   #0x1, 0(R14)
+//  300         return (pevent);
+        JMP     ??OSMutexDel_3
+//  301     }
+//  302     if (OSIntNesting > 0u) {                               /* See if called from ISR ...               */
+??OSMutexDel_2:
+        CALLA   #??Subroutine0_0
+??CrossCallReturnLabel_10:
+        JEQ     ??OSMutexDel_4
+//  303         *perr = OS_ERR_DEL_ISR;                             /* ... can't DELETE from an ISR             */
+        MOV.B   #0xf, 0(R14)
+//  304         return (pevent);
+        JMP     ??OSMutexDel_3
+//  305     }
+//  306     OS_ENTER_CRITICAL();
+??OSMutexDel_4:
+        CALLA   #OSCPUSaveSR
+        MOV.W   R12, R9
+//  307     if (pevent->OSEventGrp != 0u) {                        /* See if any tasks waiting on mutex        */
+        CMP.B   #0x0, 0x8(R10)
+        JNE     ??OSMutexDel_5
+        MOV.B   #0x0, R8
+        JMP     ??OSMutexDel_6
+??OSMutexDel_5:
+        MOV.B   #0x1, R8
+//  308         tasks_waiting = OS_TRUE;                           /* Yes                                      */
+//  309     } else {
+//  310         tasks_waiting = OS_FALSE;                          /* No                                       */
+//  311     }
+//  312     switch (opt) {
+??OSMutexDel_6:
+        SUB.B   #0x0, R6
+        JEQ     ??OSMutexDel_7
+        SUB.B   #0x1, R6
+        JEQ     ??OSMutexDel_8
+        JMP     ??OSMutexDel_9
+//  313         case OS_DEL_NO_PEND:                               /* DELETE MUTEX ONLY IF NO TASK WAITING --- */
+//  314              if (tasks_waiting == OS_FALSE) {
+??OSMutexDel_7:
+        BIT.B   #0x1, R8
+        JC      ??OSMutexDel_10
+//  315 #if OS_EVENT_NAME_EN > 0u
+//  316                  pevent->OSEventName = (INT8U *)(void *)"?";
+//  317 #endif
+//  318                  pip                 = (INT8U)(pevent->OSEventCnt >> 8u);
+//  319                  OSTCBPrioTbl[pip]   = (OS_TCB *)0;        /* Free up the PIP                          */
+        CALLA   #?Subroutine3
+//  320                  pevent->OSEventType = OS_EVENT_TYPE_UNUSED;
+//  321                  pevent->OSEventPtr  = OSEventFreeList;    /* Return Event Control Block to free list  */
+//  322                  pevent->OSEventCnt  = 0u;
+//  323                  OSEventFreeList     = pevent;
+//  324                  OS_EXIT_CRITICAL();
+??CrossCallReturnLabel_4:
+        CALLA   #OSCPURestoreSR
+//  325                  *perr               = OS_ERR_NONE;
+        JMP     ??OSMutexDel_1
+//  326                  pevent_return       = (OS_EVENT *)0;      /* Mutex has been deleted                   */
+//  327              } else {
+//  328                  OS_EXIT_CRITICAL();
+??OSMutexDel_10:
+        CALLA   #OSCPURestoreSR
+//  329                  *perr               = OS_ERR_TASK_WAITING;
+        MOV.B   #0x49, 0(R11)
+//  330                  pevent_return       = pevent;
+        JMP     ??OSMutexDel_11
+//  331              }
+??OSMutexDel_8:
+        MOV.W   0x6(R10), R15
+        MOV.B   R15, R13
+//  332              break;
+//  333 
+//  334         case OS_DEL_ALWAYS:                                /* ALWAYS DELETE THE MUTEX ---------------- */
+//  335              pip  = (INT8U)(pevent->OSEventCnt >> 8u);                    /* Get PIP of mutex          */
+//  336              prio = (INT8U)(pevent->OSEventCnt & OS_MUTEX_KEEP_LOWER_8);  /* Get owner's original prio */
+//  337              ptcb = (OS_TCB *)pevent->OSEventPtr;
+        MOVA    0x2(R10), R12
+//  338              if (ptcb != (OS_TCB *)0) {                    /* See if any task owns the mutex           */
+        CMPA    #0x0, R12
+        JEQ     ??OSMutexDel_12
+//  339                  if (ptcb->OSTCBPrio == pip) {             /* See if original prio was changed         */
+        SWPB    R15
+        CMP.B   R15, 0x30(R12)
+        JNE     ??OSMutexDel_12
+//  340                      OSMutex_RdyAtPrio(ptcb, prio);        /* Yes, Restore the task's original prio    */
+        CALLA   #OSMutex_RdyAtPrio
+        JMP     ??OSMutexDel_12
+//  341                  }
+//  342              }
+//  343              while (pevent->OSEventGrp != 0u) {            /* Ready ALL tasks waiting for mutex        */
+//  344                  (void)OS_EventTaskRdy(pevent, (void *)0, OS_STAT_MUTEX, OS_STAT_PEND_OK);
+??OSMutexDel_0:
+        MOV.B   #0x0, R15
+        MOV.B   #0x10, R14
+        MOVA    #0x0, R13
+        MOVA    R10, R12
+        CALLA   #OS_EventTaskRdy
+//  345              }
+??OSMutexDel_12:
+        CMP.B   #0x0, 0x8(R10)
+        JNE     ??OSMutexDel_0
+//  346 #if OS_EVENT_NAME_EN > 0u
+//  347              pevent->OSEventName = (INT8U *)(void *)"?";
+//  348 #endif
+//  349              pip                 = (INT8U)(pevent->OSEventCnt >> 8u);
+//  350              OSTCBPrioTbl[pip]   = (OS_TCB *)0;            /* Free up the PIP                          */
+        CALLA   #?Subroutine3
+//  351              pevent->OSEventType = OS_EVENT_TYPE_UNUSED;
+//  352              pevent->OSEventPtr  = OSEventFreeList;        /* Return Event Control Block to free list  */
+//  353              pevent->OSEventCnt  = 0u;
+//  354              OSEventFreeList     = pevent;                 /* Get next free event control block        */
+//  355              OS_EXIT_CRITICAL();
+??CrossCallReturnLabel_5:
+        MOV.W   R9, R12
+        CALLA   #OSCPURestoreSR
+//  356              if (tasks_waiting == OS_TRUE) {               /* Reschedule only if task(s) were waiting  */
+        BIT.B   #0x1, R8
+        JNC     ??OSMutexDel_1
+//  357                  OS_Sched();                               /* Find highest priority task ready to run  */
+        CALLA   #OS_Sched
+//  358              }
+//  359              *perr         = OS_ERR_NONE;
+??OSMutexDel_1:
+        MOV.B   #0x0, 0(R11)
+//  360              pevent_return = (OS_EVENT *)0;                /* Mutex has been deleted                   */
+        MOVA    #0x0, R10
+//  361              break;
+        JMP     ??OSMutexDel_11
+//  362 
+//  363         default:
+//  364              OS_EXIT_CRITICAL();
+??OSMutexDel_9:
+        CALLA   #OSCPURestoreSR
+//  365              *perr         = OS_ERR_INVALID_OPT;
+        MOV.B   #0x7, 0(R11)
+//  366              pevent_return = pevent;
+//  367              break;
+//  368     }
+//  369     return (pevent_return);
+??OSMutexDel_11:
+        MOVA    R10, R12
+??OSMutexDel_3:
+        POPM.A  #0x6, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock16
+//  370 }
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?Subroutine3:
+          CFI Block cfiCond17 Using cfiCommon0
+          CFI Function OSMutexDel
+          CFI Conditional ??CrossCallReturnLabel_4
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+32
+          CFI Block cfiCond18 Using cfiCommon0
+          CFI (cfiCond18) Function OSMutexDel
+          CFI (cfiCond18) Conditional ??CrossCallReturnLabel_5
+          CFI (cfiCond18) R6L Frame(CFA, -28)
+          CFI (cfiCond18) R6H Frame(CFA, -26)
+          CFI (cfiCond18) R7L Frame(CFA, -24)
+          CFI (cfiCond18) R7H Frame(CFA, -22)
+          CFI (cfiCond18) R8L Frame(CFA, -20)
+          CFI (cfiCond18) R8H Frame(CFA, -18)
+          CFI (cfiCond18) R9L Frame(CFA, -16)
+          CFI (cfiCond18) R9H Frame(CFA, -14)
+          CFI (cfiCond18) R10L Frame(CFA, -12)
+          CFI (cfiCond18) R10H Frame(CFA, -10)
+          CFI (cfiCond18) R11L Frame(CFA, -8)
+          CFI (cfiCond18) R11H Frame(CFA, -6)
+          CFI (cfiCond18) CFA SP+32
+          CFI Block cfiPicker19 Using cfiCommon1
+          CFI (cfiPicker19) NoFunction
+          CFI (cfiPicker19) Picker
+        MOV.B   0x7(R10), R15
+        RLAM.A  #0x2, R15
+        MOVX.A  #0x0, OSTCBPrioTbl(R15)
+        MOV.B   #0x0, 0(R10)
+        MOVX.A  &OSEventFreeList, 0x2(R10)
+        MOV.W   #0x0, 0x6(R10)
+        MOVA    R10, &OSEventFreeList
+        RETA
+          CFI EndBlock cfiCond17
+          CFI EndBlock cfiCond18
+          CFI EndBlock cfiPicker19
+//  371 #endif
+//  372 
+//  373 /*$PAGE*/
+//  374 /*
+//  375 *********************************************************************************************************
+//  376 *                                  PEND ON MUTUAL EXCLUSION SEMAPHORE
+//  377 *
+//  378 * Description: This function waits for a mutual exclusion semaphore.
+//  379 *
+//  380 * Arguments  : pevent        is a pointer to the event control block associated with the desired
+//  381 *                            mutex.
+//  382 *
+//  383 *              timeout       is an optional timeout period (in clock ticks).  If non-zero, your task will
+//  384 *                            wait for the resource up to the amount of time specified by this argument.
+//  385 *                            If you specify 0, however, your task will wait forever at the specified
+//  386 *                            mutex or, until the resource becomes available.
+//  387 *
+//  388 *              perr          is a pointer to where an error message will be deposited.  Possible error
+//  389 *                            messages are:
+//  390 *                               OS_ERR_NONE        The call was successful and your task owns the mutex
+//  391 *                               OS_ERR_TIMEOUT     The mutex was not available within the specified 'timeout'.
+//  392 *                               OS_ERR_PEND_ABORT  The wait on the mutex was aborted.
+//  393 *                               OS_ERR_EVENT_TYPE  If you didn't pass a pointer to a mutex
+//  394 *                               OS_ERR_PEVENT_NULL 'pevent' is a NULL pointer
+//  395 *                               OS_ERR_PEND_ISR    If you called this function from an ISR and the result
+//  396 *                                                  would lead to a suspension.
+//  397 *                               OS_ERR_PIP_LOWER   If the priority of the task that owns the Mutex is
+//  398 *                                                  HIGHER (i.e. a lower number) than the PIP.  This error
+//  399 *                                                  indicates that you did not set the PIP higher (lower
+//  400 *                                                  number) than ALL the tasks that compete for the Mutex.
+//  401 *                                                  Unfortunately, this is something that could not be
+//  402 *                                                  detected when the Mutex is created because we don't know
+//  403 *                                                  what tasks will be using the Mutex.
+//  404 *                               OS_ERR_PEND_LOCKED If you called this function when the scheduler is locked
+//  405 *
+//  406 * Returns    : none
+//  407 *
+//  408 * Note(s)    : 1) The task that owns the Mutex MUST NOT pend on any other event while it owns the mutex.
+//  409 *
+//  410 *              2) You MUST NOT change the priority of the task that owns the mutex
+//  411 *********************************************************************************************************
+//  412 */
+//  413 
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  414 void  OSMutexPend (OS_EVENT  *pevent,
+OSMutexPend:
+          CFI Block cfiBlock20 Using cfiCommon0
+          CFI Function OSMutexPend
+//  415                    INT32U     timeout,
+//  416                    INT8U     *perr)
+//  417 {
+        FUNCALL OSMutexPend, OSCPUSaveSR
+        LOCFRAME CSTACK, 40, STACK
+        FUNCALL OSMutexPend, OSCPURestoreSR
+        LOCFRAME CSTACK, 40, STACK
+        FUNCALL OSMutexPend, OSCPURestoreSR
+        LOCFRAME CSTACK, 40, STACK
+        FUNCALL OSMutexPend, OS_EventTaskWait
+        LOCFRAME CSTACK, 40, STACK
+        FUNCALL OSMutexPend, OSCPURestoreSR
+        LOCFRAME CSTACK, 40, STACK
+        FUNCALL OSMutexPend, OS_Sched
+        LOCFRAME CSTACK, 40, STACK
+        FUNCALL OSMutexPend, OSCPUSaveSR
+        LOCFRAME CSTACK, 40, STACK
+        FUNCALL OSMutexPend, OS_EventTaskRemove
+        LOCFRAME CSTACK, 40, STACK
+        FUNCALL OSMutexPend, OSCPURestoreSR
+        LOCFRAME CSTACK, 40, STACK
+        PUSHM.A #0x8, R11
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+36
+        PUSH.W  R15
+          CFI CFA SP+38
+        PUSH.W  R14
+          CFI CFA SP+40
+        MOVA    R12, R10
+        MOVA    R13, R11
+//  418     INT8U      pip;                                        /* Priority Inheritance Priority (PIP)      */
+//  419     INT8U      mprio;                                      /* Mutex owner priority                     */
+//  420     BOOLEAN    rdy;                                        /* Flag indicating task was ready           */
+//  421     OS_TCB    *ptcb;
+//  422     OS_EVENT  *pevent2;
+//  423     INT8U      y;
+//  424 #if OS_CRITICAL_METHOD == 3u                               /* Allocate storage for CPU status register */
+//  425     OS_CPU_SR  cpu_sr = 0u;
+//  426 #endif
+//  427 
+//  428 
+//  429 
+//  430 #ifdef OS_SAFETY_CRITICAL
+//  431     if (perr == (INT8U *)0) {
+//  432         OS_SAFETY_CRITICAL_EXCEPTION();
+//  433     }
+//  434 #endif
+//  435 
+//  436 #if OS_ARG_CHK_EN > 0u
+//  437     if (pevent == (OS_EVENT *)0) {                         /* Validate 'pevent'                        */
+//  438         *perr = OS_ERR_PEVENT_NULL;
+//  439         return;
+//  440     }
+//  441 #endif
+//  442     if (pevent->OSEventType != OS_EVENT_TYPE_MUTEX) {      /* Validate event block type                */
+        CMP.B   #0x4, 0(R12)
+        JEQ     ??OSMutexPend_0
+//  443         *perr = OS_ERR_EVENT_TYPE;
+        MOV.B   #0x1, 0(R13)
+//  444         return;
+        JMP     ??OSMutexPend_1
+//  445     }
+//  446     if (OSIntNesting > 0u) {                               /* See if called from ISR ...               */
+??OSMutexPend_0:
+        CALLA   #??Subroutine0_0
+??CrossCallReturnLabel_9:
+        JEQ     ??OSMutexPend_2
+//  447         *perr = OS_ERR_PEND_ISR;                           /* ... can't PEND from an ISR               */
+        MOV.B   #0x2, 0(R13)
+//  448         return;
+        JMP     ??OSMutexPend_1
+//  449     }
+//  450     if (OSLockNesting > 0u) {                              /* See if called with scheduler locked ...  */
+??OSMutexPend_2:
+        CMPX.B  #0x0, &OSLockNesting
+        JEQ     ??OSMutexPend_3
+//  451         *perr = OS_ERR_PEND_LOCKED;                        /* ... can't PEND when locked               */
+        MOV.B   #0xd, 0(R13)
+//  452         return;
+        JMP     ??OSMutexPend_1
+//  453     }
+//  454 /*$PAGE*/
+//  455     OS_ENTER_CRITICAL();
+??OSMutexPend_3:
+        CALLA   #OSCPUSaveSR
+        MOV.W   R12, R7
+//  456     pip = (INT8U)(pevent->OSEventCnt >> 8u);               /* Get PIP from mutex                       */
+        MOV.W   0x6(R10), R14
+        MOV.W   R14, R15
+        SWPB    R15
+//  457                                                            /* Is Mutex available?                      */
+//  458     if ((INT8U)(pevent->OSEventCnt & OS_MUTEX_KEEP_LOWER_8) == OS_MUTEX_AVAILABLE) {
+        MOVA    #OSTCBCur, R8
+        CMP.B   #0xff, R14
+        JNE     ??OSMutexPend_4
+//  459         pevent->OSEventCnt &= OS_MUTEX_KEEP_UPPER_8;       /* Yes, Acquire the resource                */
+        AND.W   #0xff00, 0x6(R10)
+//  460         pevent->OSEventCnt |= OSTCBCur->OSTCBPrio;         /*      Save priority of owning task        */
+        MOVA    @R8, R13
+        MOV.B   0x30(R13), R14
+        BIS.W   R14, 0x6(R10)
+//  461         pevent->OSEventPtr  = (void *)OSTCBCur;            /*      Point to owning task's OS_TCB       */
+        MOVX.A  @R8, 0x2(R10)
+//  462         if (OSTCBCur->OSTCBPrio <= pip) {                  /*      PIP 'must' have a SMALLER prio ...  */
+        CMP.B   0x30(R13), R15
+        JNC     ??OSMutexPend_5
+//  463             OS_EXIT_CRITICAL();                            /*      ... than current task!              */
+        CALLA   #OSCPURestoreSR
+//  464             *perr = OS_ERR_PIP_LOWER;
+        MOV.B   #0x78, 0(R11)
+        JMP     ??OSMutexPend_1
+//  465         } else {
+//  466             OS_EXIT_CRITICAL();
+??OSMutexPend_5:
+        CALLA   #?Subroutine2
+//  467             *perr = OS_ERR_NONE;
+//  468         }
+//  469         return;
+//  470     }
+??CrossCallReturnLabel_3:
+        JMP     ??OSMutexPend_1
+//  471     mprio = (INT8U)(pevent->OSEventCnt & OS_MUTEX_KEEP_LOWER_8);  /* No, Get priority of mutex owner   */
+//  472     ptcb  = (OS_TCB *)(pevent->OSEventPtr);                       /*     Point to TCB of mutex owner   */
+??OSMutexPend_4:
+        MOVA    0x2(R10), R9
+        CMP.B   0x30(R9), R15
+        JC      ??OSMutexPend_6
+//  473     if (ptcb->OSTCBPrio > pip) {                                  /*     Need to promote prio of owner?*/
+//  474         if (mprio > OSTCBCur->OSTCBPrio) {
+        MOVA    @R8, R13
+        CMP.B   R14, 0x30(R13)
+        JC      ??OSMutexPend_6
+//  475             y = ptcb->OSTCBY;
+        MOVA    R9, R6
+        ADDA    #0x32, R6
+        MOV.B   @R6, R14
+//  476             if ((OSRdyTbl[y] & ptcb->OSTCBBitX) != 0u) {          /*     See if mutex owner is ready   */
+        MOV.B   0x33(R9), R4
+        MOVX.B  OSRdyTbl(R14), R13
+        BIT.B   R4, R13
+        JEQ     ??OSMutexPend_7
+//  477                 OSRdyTbl[y] &= (OS_PRIO)~ptcb->OSTCBBitX;         /*     Yes, Remove owner from Rdy ...*/
+        BICX.B  R4, OSRdyTbl(R14)
+//  478                 if (OSRdyTbl[y] == 0u) {                          /*          ... list at current prio */
+        CMPX.B  #0x0, OSRdyTbl(R14)
+        JNE     ??OSMutexPend_8
+//  479                     OSRdyGrp &= (OS_PRIO)~ptcb->OSTCBBitY;
+        BICX.B  0x34(R9), &OSRdyGrp
+//  480                 }
+//  481                 rdy = OS_TRUE;
+??OSMutexPend_8:
+        MOV.B   #0x1, R5
+        JMP     ??OSMutexPend_9
+//  482             } else {
+//  483                 pevent2 = ptcb->OSTCBEventPtr;
+??OSMutexPend_7:
+        MOVA    0x1c(R9), R13
+//  484                 if (pevent2 != (OS_EVENT *)0) {                   /* Remove from event wait list       */
+        CMPA    #0x0, R13
+        JEQ     ??OSMutexPend_10
+//  485                     y = ptcb->OSTCBY;
+//  486                     pevent2->OSEventTbl[y] &= (OS_PRIO)~ptcb->OSTCBBitX;
+        MOVA    R13, R5
+        ADDA    R14, R5
+        BIC.B   R4, 0x9(R5)
+//  487                     if (pevent2->OSEventTbl[y] == 0u) {
+        CMP.B   #0x0, 0x9(R5)
+        JNE     ??OSMutexPend_10
+//  488                         pevent2->OSEventGrp &= (OS_PRIO)~ptcb->OSTCBBitY;
+        BIC.B   0x34(R9), 0x8(R13)
+//  489                     }
+//  490                 }
+//  491                 rdy = OS_FALSE;                            /* No                                       */
+??OSMutexPend_10:
+        MOV.B   #0x0, R5
+//  492             }
+//  493             ptcb->OSTCBPrio = pip;                         /* Change owner task prio to PIP            */
+??OSMutexPend_9:
+        MOV.B   R15, 0x30(R9)
+//  494 #if OS_LOWEST_PRIO <= 63u
+//  495             ptcb->OSTCBY    = (INT8U)( ptcb->OSTCBPrio >> 3u);
+        MOV.B   R15, R4
+        MOV.B   R15, R12
+        RPT     #0x3
+        RRUX.B  R12
+        MOV.B   R12, 0x32(R9)
+//  496             ptcb->OSTCBX    = (INT8U)( ptcb->OSTCBPrio & 0x07u);
+        AND.B   #0x7, R4
+        MOV.B   R4, 0x31(R9)
+//  497 #else
+//  498             ptcb->OSTCBY    = (INT8U)((INT8U)(ptcb->OSTCBPrio >> 4u) & 0xFFu);
+//  499             ptcb->OSTCBX    = (INT8U)( ptcb->OSTCBPrio & 0x0Fu);
+//  500 #endif
+//  501             ptcb->OSTCBBitY = (OS_PRIO)(1uL << ptcb->OSTCBY);
+        CALLA   #?OneBitMask32
+        MOV.B   R12, 0x34(R9)
+//  502             ptcb->OSTCBBitX = (OS_PRIO)(1uL << ptcb->OSTCBX);
+        MOV.B   #0x1, R14
+        SUB.B   #0x1, R4
+        JN      ??OSMutexPend_11
+        RPT     R4
+        RLAX.B  R14
+??OSMutexPend_11:
+        MOV.B   R14, 0x33(R9)
+//  503 
+//  504             if (rdy == OS_TRUE) {                          /* If task was ready at owner's priority ...*/
+        BIT.B   #0x1, R5
+        JNC     ??OSMutexPend_12
+//  505                 OSRdyGrp               |= ptcb->OSTCBBitY; /* ... make it ready at new priority.       */
+        BISX.B  0x34(R9), &OSRdyGrp
+//  506                 OSRdyTbl[ptcb->OSTCBY] |= ptcb->OSTCBBitX;
+        MOV.B   @R6, R14
+        BISX.B  0x33(R9), OSRdyTbl(R14)
+        JMP     ??OSMutexPend_13
+//  507             } else {
+//  508                 pevent2 = ptcb->OSTCBEventPtr;
+??OSMutexPend_12:
+        MOVA    0x1c(R9), R13
+//  509                 if (pevent2 != (OS_EVENT *)0) {            /* Add to event wait list                   */
+        CMPA    #0x0, R13
+        JEQ     ??OSMutexPend_13
+//  510                     pevent2->OSEventGrp               |= ptcb->OSTCBBitY;
+        BIS.B   0x34(R9), 0x8(R13)
+//  511                     pevent2->OSEventTbl[ptcb->OSTCBY] |= ptcb->OSTCBBitX;
+        MOV.B   @R6, R14
+        ADDA    R14, R13
+        BIS.B   0x33(R9), 0x9(R13)
+//  512                 }
+//  513             }
+//  514             OSTCBPrioTbl[pip] = ptcb;
+??OSMutexPend_13:
+        MOV.B   R15, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  R9, OSTCBPrioTbl(R15)
+//  515         }
+//  516     }
+//  517     OSTCBCur->OSTCBStat     |= OS_STAT_MUTEX;         /* Mutex not available, pend current task        */
+??OSMutexPend_6:
+        MOVA    @R8, R15
+        BIS.B   #0x10, 0x2e(R15)
+//  518     OSTCBCur->OSTCBStatPend  = OS_STAT_PEND_OK;
+        MOVA    @R8, R15
+        MOV.B   #0x0, 0x2f(R15)
+//  519     OSTCBCur->OSTCBDly       = timeout;               /* Store timeout in current task's TCB           */
+        MOVA    @R8, R15
+        MOV.W   @SP, 0x2a(R15)
+        MOV.W   0x2(SP), 0x2c(R15)
+//  520     OS_EventTaskWait(pevent);                         /* Suspend task until event or timeout occurs    */
+        MOVA    R10, R12
+        CALLA   #OS_EventTaskWait
+//  521     OS_EXIT_CRITICAL();
+        MOV.W   R7, R12
+        CALLA   #?Subroutine1
+//  522     OS_Sched();                                       /* Find next highest priority task ready         */
+//  523     OS_ENTER_CRITICAL();
+??CrossCallReturnLabel_0:
+        CALLA   #OSCPUSaveSR
+        MOV.W   R12, R7
+        MOVA    @R8, R15
+        MOV.B   0x2f(R15), R14
+        SUB.B   #0x0, R14
+        JEQ     ??OSMutexPend_14
+        SUB.B   #0x2, R14
+        JEQ     ??OSMutexPend_15
+        JMP     ??OSMutexPend_16
+//  524     switch (OSTCBCur->OSTCBStatPend) {                /* See if we timed-out or aborted                */
+//  525         case OS_STAT_PEND_OK:
+//  526              *perr = OS_ERR_NONE;
+??OSMutexPend_14:
+        MOV.B   #0x0, 0(R11)
+//  527              break;
+        JMP     ??OSMutexPend_17
+//  528 
+//  529         case OS_STAT_PEND_ABORT:
+//  530              *perr = OS_ERR_PEND_ABORT;               /* Indicate that we aborted getting mutex        */
+??OSMutexPend_15:
+        MOV.B   #0xe, 0(R11)
+//  531              break;
+        JMP     ??OSMutexPend_17
+//  532 
+//  533         case OS_STAT_PEND_TO:
+//  534         default:
+//  535              OS_EventTaskRemove(OSTCBCur, pevent);
+??OSMutexPend_16:
+        MOVA    R10, R13
+        MOVA    @R8, R12
+        CALLA   #OS_EventTaskRemove
+//  536              *perr = OS_ERR_TIMEOUT;                  /* Indicate that we didn't get mutex within TO   */
+        MOV.B   #0xa, 0(R11)
+//  537              break;
+//  538     }
+//  539     OSTCBCur->OSTCBStat          =  OS_STAT_RDY;      /* Set   task  status to ready                   */
+??OSMutexPend_17:
+        MOVA    @R8, R15
+        MOV.B   #0x0, 0x2e(R15)
+//  540     OSTCBCur->OSTCBStatPend      =  OS_STAT_PEND_OK;  /* Clear pend  status                            */
+        MOVA    @R8, R15
+        MOV.B   #0x0, 0x2f(R15)
+//  541     OSTCBCur->OSTCBEventPtr      = (OS_EVENT  *)0;    /* Clear event pointers                          */
+        MOVA    @R8, R15
+        MOVX.A  #0x0, 0x1c(R15)
+//  542 #if (OS_EVENT_MULTI_EN > 0u)
+//  543     OSTCBCur->OSTCBEventMultiPtr = (OS_EVENT **)0;
+//  544 #endif
+//  545     OS_EXIT_CRITICAL();
+        MOV.W   R7, R12
+        CALLA   #OSCPURestoreSR
+//  546 }
+??OSMutexPend_1:
+        ADD.W   #0x4, SP
+          CFI CFA SP+36
+        POPM.A  #0x8, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R4H SameValue
+          CFI R5H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R4L SameValue
+          CFI R5L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock20
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?Subroutine1:
+          CFI Block cfiCond21 Using cfiCommon0
+          CFI Function OSMutexPost
+          CFI Conditional ??CrossCallReturnLabel_2
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+24
+          CFI Block cfiCond22 Using cfiCommon0
+          CFI (cfiCond22) Function OSMutexPost
+          CFI (cfiCond22) Conditional ??CrossCallReturnLabel_1
+          CFI (cfiCond22) R8L Frame(CFA, -20)
+          CFI (cfiCond22) R8H Frame(CFA, -18)
+          CFI (cfiCond22) R9L Frame(CFA, -16)
+          CFI (cfiCond22) R9H Frame(CFA, -14)
+          CFI (cfiCond22) R10L Frame(CFA, -12)
+          CFI (cfiCond22) R10H Frame(CFA, -10)
+          CFI (cfiCond22) R11L Frame(CFA, -8)
+          CFI (cfiCond22) R11H Frame(CFA, -6)
+          CFI (cfiCond22) CFA SP+24
+          CFI Block cfiCond23 Using cfiCommon0
+          CFI (cfiCond23) Function OSMutexPend
+          CFI (cfiCond23) Conditional ??CrossCallReturnLabel_0
+          CFI (cfiCond23) R4L Frame(CFA, -36)
+          CFI (cfiCond23) R4H Frame(CFA, -34)
+          CFI (cfiCond23) R5L Frame(CFA, -32)
+          CFI (cfiCond23) R5H Frame(CFA, -30)
+          CFI (cfiCond23) R6L Frame(CFA, -28)
+          CFI (cfiCond23) R6H Frame(CFA, -26)
+          CFI (cfiCond23) R7L Frame(CFA, -24)
+          CFI (cfiCond23) R7H Frame(CFA, -22)
+          CFI (cfiCond23) R8L Frame(CFA, -20)
+          CFI (cfiCond23) R8H Frame(CFA, -18)
+          CFI (cfiCond23) R9L Frame(CFA, -16)
+          CFI (cfiCond23) R9H Frame(CFA, -14)
+          CFI (cfiCond23) R10L Frame(CFA, -12)
+          CFI (cfiCond23) R10H Frame(CFA, -10)
+          CFI (cfiCond23) R11L Frame(CFA, -8)
+          CFI (cfiCond23) R11H Frame(CFA, -6)
+          CFI (cfiCond23) CFA SP+44
+          CFI Block cfiPicker24 Using cfiCommon1
+          CFI (cfiPicker24) NoFunction
+          CFI (cfiPicker24) Picker
+        CALLA   #OSCPURestoreSR
+        BRA     #OS_Sched
+          CFI EndBlock cfiCond21
+          CFI EndBlock cfiCond22
+          CFI EndBlock cfiCond23
+          CFI EndBlock cfiPicker24
+//  547 /*$PAGE*/
+//  548 /*
+//  549 *********************************************************************************************************
+//  550 *                                  POST TO A MUTUAL EXCLUSION SEMAPHORE
+//  551 *
+//  552 * Description: This function signals a mutual exclusion semaphore
+//  553 *
+//  554 * Arguments  : pevent              is a pointer to the event control block associated with the desired
+//  555 *                                  mutex.
+//  556 *
+//  557 * Returns    : OS_ERR_NONE             The call was successful and the mutex was signaled.
+//  558 *              OS_ERR_EVENT_TYPE       If you didn't pass a pointer to a mutex
+//  559 *              OS_ERR_PEVENT_NULL      'pevent' is a NULL pointer
+//  560 *              OS_ERR_POST_ISR         Attempted to post from an ISR (not valid for MUTEXes)
+//  561 *              OS_ERR_NOT_MUTEX_OWNER  The task that did the post is NOT the owner of the MUTEX.
+//  562 *              OS_ERR_PIP_LOWER        If the priority of the new task that owns the Mutex is
+//  563 *                                      HIGHER (i.e. a lower number) than the PIP.  This error
+//  564 *                                      indicates that you did not set the PIP higher (lower
+//  565 *                                      number) than ALL the tasks that compete for the Mutex.
+//  566 *                                      Unfortunately, this is something that could not be
+//  567 *                                      detected when the Mutex is created because we don't know
+//  568 *                                      what tasks will be using the Mutex.
+//  569 *********************************************************************************************************
+//  570 */
+//  571 
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  572 INT8U  OSMutexPost (OS_EVENT *pevent)
+OSMutexPost:
+          CFI Block cfiBlock25 Using cfiCommon0
+          CFI Function OSMutexPost
+//  573 {
+        FUNCALL OSMutexPost, OSCPUSaveSR
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSMutexPost, OSCPURestoreSR
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSMutexPost, OSMutex_RdyAtPrio
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSMutexPost, OS_EventTaskRdy
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSMutexPost, OSCPURestoreSR
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSMutexPost, OS_Sched
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSMutexPost, OSCPURestoreSR
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSMutexPost, OS_Sched
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSMutexPost, OSCPURestoreSR
+        LOCFRAME CSTACK, 20, STACK
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        MOVA    R12, R11
+//  574     INT8U      pip;                                   /* Priority inheritance priority                 */
+//  575     INT8U      prio;
+//  576 #if OS_CRITICAL_METHOD == 3u                          /* Allocate storage for CPU status register      */
+//  577     OS_CPU_SR  cpu_sr = 0u;
+//  578 #endif
+//  579 
+//  580 
+//  581 
+//  582     if (OSIntNesting > 0u) {                          /* See if called from ISR ...                    */
+        CALLA   #??Subroutine0_0
+??CrossCallReturnLabel_8:
+        JEQ     ??OSMutexPost_0
+//  583         return (OS_ERR_POST_ISR);                     /* ... can't POST mutex from an ISR              */
+        MOV.B   #0x5, R12
+        JMP     ??OSMutexPost_1
+//  584     }
+//  585 #if OS_ARG_CHK_EN > 0u
+//  586     if (pevent == (OS_EVENT *)0) {                    /* Validate 'pevent'                             */
+//  587         return (OS_ERR_PEVENT_NULL);
+//  588     }
+//  589 #endif
+//  590     if (pevent->OSEventType != OS_EVENT_TYPE_MUTEX) { /* Validate event block type                     */
+??OSMutexPost_0:
+        CMP.B   #0x4, 0(R12)
+        JEQ     ??OSMutexPost_2
+//  591         return (OS_ERR_EVENT_TYPE);
+        MOV.B   #0x1, R12
+        JMP     ??OSMutexPost_1
+//  592     }
+//  593     OS_ENTER_CRITICAL();
+??OSMutexPost_2:
+        CALLA   #OSCPUSaveSR
+        MOV.W   R12, R10
+        MOV.W   0x6(R11), R13
+        MOV.W   R13, R8
+        SWPB    R8
+//  594     pip  = (INT8U)(pevent->OSEventCnt >> 8u);         /* Get priority inheritance priority of mutex    */
+//  595     prio = (INT8U)(pevent->OSEventCnt & OS_MUTEX_KEEP_LOWER_8);  /* Get owner's original priority      */
+//  596     if (OSTCBCur != (OS_TCB *)pevent->OSEventPtr) {   /* See if posting task owns the MUTEX            */
+        MOVA    &OSTCBCur, R12
+        MOVA    0x2(R11), R15
+        CMPA    R15, R12
+        JEQ     ??OSMutexPost_3
+//  597         OS_EXIT_CRITICAL();
+        MOV.W   R10, R12
+        CALLA   #OSCPURestoreSR
+//  598         return (OS_ERR_NOT_MUTEX_OWNER);
+        MOV.B   #0x64, R12
+        JMP     ??OSMutexPost_1
+//  599     }
+//  600     if (OSTCBCur->OSTCBPrio == pip) {                 /* Did we have to raise current task's priority? */
+??OSMutexPost_3:
+        CMP.B   R8, 0x30(R12)
+        JNE     ??OSMutexPost_4
+//  601         OSMutex_RdyAtPrio(OSTCBCur, prio);            /* Restore the task's original priority          */
+        CALLA   #OSMutex_RdyAtPrio
+//  602     }
+//  603     OSTCBPrioTbl[pip] = OS_TCB_RESERVED;              /* Reserve table entry                           */
+??OSMutexPost_4:
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  #0x1, OSTCBPrioTbl(R15)
+//  604     if (pevent->OSEventGrp != 0u) {                   /* Any task waiting for the mutex?               */
+        CMP.B   #0x0, 0x8(R11)
+        JEQ     ??OSMutexPost_5
+//  605                                                       /* Yes, Make HPT waiting for mutex ready         */
+//  606         prio                = OS_EventTaskRdy(pevent, (void *)0, OS_STAT_MUTEX, OS_STAT_PEND_OK);
+        MOV.B   #0x0, R15
+        MOV.B   #0x10, R14
+        MOVA    #0x0, R13
+        MOVA    R11, R12
+        CALLA   #OS_EventTaskRdy
+        MOV.B   R12, R13
+//  607         pevent->OSEventCnt &= OS_MUTEX_KEEP_UPPER_8;  /*      Save priority of mutex's new owner       */
+//  608         pevent->OSEventCnt |= prio;
+        MOV.W   0x6(R11), R15
+        AND.W   #0xff00, R15
+        BIS.W   R13, R15
+        MOV.W   R15, 0x6(R11)
+//  609         pevent->OSEventPtr  = OSTCBPrioTbl[prio];     /*      Link to new mutex owner's OS_TCB         */
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  OSTCBPrioTbl(R15), 0x2(R11)
+//  610         if (prio <= pip) {                            /*      PIP 'must' have a SMALLER prio ...       */
+        CMP.B   R12, R8
+        MOV.W   R10, R12
+        JNC     ??OSMutexPost_6
+//  611             OS_EXIT_CRITICAL();                       /*      ... than current task!                   */
+        CALLA   #?Subroutine1
+//  612             OS_Sched();                               /*      Find highest priority task ready to run  */
+//  613             return (OS_ERR_PIP_LOWER);
+??CrossCallReturnLabel_2:
+        MOV.B   #0x78, R12
+        JMP     ??OSMutexPost_1
+//  614         } else {
+//  615             OS_EXIT_CRITICAL();
+??OSMutexPost_6:
+        CALLA   #?Subroutine1
+//  616             OS_Sched();                               /*      Find highest priority task ready to run  */
+//  617             return (OS_ERR_NONE);
+??CrossCallReturnLabel_1:
+        JMP     ??OSMutexPost_7
+//  618         }
+//  619     }
+//  620     pevent->OSEventCnt |= OS_MUTEX_AVAILABLE;         /* No,  Mutex is now available                   */
+??OSMutexPost_5:
+        BIS.W   #0xff, 0x6(R11)
+//  621     pevent->OSEventPtr  = (void *)0;
+        MOVX.A  #0x0, 0x2(R11)
+//  622     OS_EXIT_CRITICAL();
+        MOV.W   R10, R12
+        CALLA   #OSCPURestoreSR
+//  623     return (OS_ERR_NONE);
+??OSMutexPost_7:
+        MOV.B   #0x0, R12
+??OSMutexPost_1:
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock25
+//  624 }
+//  625 /*$PAGE*/
+//  626 /*
+//  627 *********************************************************************************************************
+//  628 *                                     QUERY A MUTUAL EXCLUSION SEMAPHORE
+//  629 *
+//  630 * Description: This function obtains information about a mutex
+//  631 *
+//  632 * Arguments  : pevent          is a pointer to the event control block associated with the desired mutex
+//  633 *
+//  634 *              p_mutex_data    is a pointer to a structure that will contain information about the mutex
+//  635 *
+//  636 * Returns    : OS_ERR_NONE          The call was successful and the message was sent
+//  637 *              OS_ERR_QUERY_ISR     If you called this function from an ISR
+//  638 *              OS_ERR_PEVENT_NULL   If 'pevent'       is a NULL pointer
+//  639 *              OS_ERR_PDATA_NULL    If 'p_mutex_data' is a NULL pointer
+//  640 *              OS_ERR_EVENT_TYPE    If you are attempting to obtain data from a non mutex.
+//  641 *********************************************************************************************************
+//  642 */
+//  643 
+//  644 #if OS_MUTEX_QUERY_EN > 0u
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  645 INT8U  OSMutexQuery (OS_EVENT       *pevent,
+OSMutexQuery:
+          CFI Block cfiBlock26 Using cfiCommon0
+          CFI Function OSMutexQuery
+//  646                      OS_MUTEX_DATA  *p_mutex_data)
+//  647 {
+        FUNCALL OSMutexQuery, OSCPUSaveSR
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL OSMutexQuery, OSCPURestoreSR
+        LOCFRAME CSTACK, 12, STACK
+        PUSHM.A #0x2, R11
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+12
+        MOVA    R12, R10
+        CALLA   #?Subroutine0
+//  648     INT8U       i;
+//  649     OS_PRIO    *psrc;
+//  650     OS_PRIO    *pdest;
+//  651 #if OS_CRITICAL_METHOD == 3u                     /* Allocate storage for CPU status register           */
+//  652     OS_CPU_SR   cpu_sr = 0u;
+//  653 #endif
+//  654 
+//  655 
+//  656 
+//  657     if (OSIntNesting > 0u) {                               /* See if called from ISR ...               */
+??CrossCallReturnLabel_6:
+        JEQ     ??OSMutexQuery_1
+//  658         return (OS_ERR_QUERY_ISR);                         /* ... can't QUERY mutex from an ISR        */
+        MOV.B   #0x6, R12
+        JMP     ??OSMutexQuery_2
+//  659     }
+//  660 #if OS_ARG_CHK_EN > 0u
+//  661     if (pevent == (OS_EVENT *)0) {                         /* Validate 'pevent'                        */
+//  662         return (OS_ERR_PEVENT_NULL);
+//  663     }
+//  664     if (p_mutex_data == (OS_MUTEX_DATA *)0) {              /* Validate 'p_mutex_data'                  */
+//  665         return (OS_ERR_PDATA_NULL);
+//  666     }
+//  667 #endif
+//  668     if (pevent->OSEventType != OS_EVENT_TYPE_MUTEX) {      /* Validate event block type                */
+??OSMutexQuery_1:
+        CMP.B   #0x4, 0(R12)
+        JEQ     ??OSMutexQuery_3
+//  669         return (OS_ERR_EVENT_TYPE);
+        MOV.B   #0x1, R12
+        JMP     ??OSMutexQuery_2
+//  670     }
+//  671     OS_ENTER_CRITICAL();
+??OSMutexQuery_3:
+        CALLA   #OSCPUSaveSR
+//  672     p_mutex_data->OSMutexPIP  = (INT8U)(pevent->OSEventCnt >> 8u);
+        MOV.B   0x7(R10), 0xb(R11)
+//  673     p_mutex_data->OSOwnerPrio = (INT8U)(pevent->OSEventCnt & OS_MUTEX_KEEP_LOWER_8);
+        MOV.B   0x6(R10), 0xa(R11)
+//  674     if (p_mutex_data->OSOwnerPrio == 0xFFu) {
+        CMP.B   #0xff, 0xa(R11)
+        JEQ     ??OSMutexQuery_4
+        MOV.B   #0x0, R14
+        JMP     ??OSMutexQuery_5
+??OSMutexQuery_4:
+        MOV.B   #0x1, R14
+??OSMutexQuery_5:
+        MOV.B   R14, 0x9(R11)
+//  675         p_mutex_data->OSValue = OS_TRUE;
+//  676     } else {
+//  677         p_mutex_data->OSValue = OS_FALSE;
+//  678     }
+//  679     p_mutex_data->OSEventGrp  = pevent->OSEventGrp;        /* Copy wait list                           */
+        MOV.B   0x8(R10), 0x8(R11)
+//  680     psrc                      = &pevent->OSEventTbl[0];
+        ADDA    #0x9, R10
+//  681     pdest                     = &p_mutex_data->OSEventTbl[0];
+//  682     for (i = 0u; i < OS_EVENT_TBL_SIZE; i++) {
+        MOV.B   #0x4, R14
+//  683         *pdest++ = *psrc++;
+??OSMutexQuery_0:
+        MOV.B   @R10+, 0(R11)
+        ADDA    #0x1, R11
+        MOV.B   @R10+, 0(R11)
+        ADDA    #0x1, R11
+//  684     }
+        ADD.B   #0xff, R14
+        JNE     ??OSMutexQuery_0
+//  685     OS_EXIT_CRITICAL();
+        CALLA   #OSCPURestoreSR
+//  686     return (OS_ERR_NONE);
+        MOV.B   #0x0, R12
+??OSMutexQuery_2:
+        POPM.A  #0x2, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock26
+//  687 }
+//  688 #endif                                                     /* OS_MUTEX_QUERY_EN                        */
+//  689 
+//  690 /*$PAGE*/
+//  691 /*
+//  692 *********************************************************************************************************
+//  693 *                                RESTORE A TASK BACK TO ITS ORIGINAL PRIORITY
+//  694 *
+//  695 * Description: This function makes a task ready at the specified priority
+//  696 *
+//  697 * Arguments  : ptcb            is a pointer to OS_TCB of the task to make ready
+//  698 *
+//  699 *              prio            is the desired priority
+//  700 *
+//  701 * Returns    : none
+//  702 *********************************************************************************************************
+//  703 */
+//  704 
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  705 static  void  OSMutex_RdyAtPrio (OS_TCB  *ptcb,
+OSMutex_RdyAtPrio:
+          CFI Block cfiBlock27 Using cfiCommon0
+          CFI Function OSMutex_RdyAtPrio
+//  706                                  INT8U    prio)
+//  707 {
+        PUSHM.A #0x1, R10
+          CFI R10L Frame(CFA, -8)
+          CFI R10H Frame(CFA, -6)
+          CFI CFA SP+8
+        MOV.B   0x32(R12), R15
+//  708     INT8U  y;
+//  709 
+//  710 
+//  711     y            =  ptcb->OSTCBY;                          /* Remove owner from ready list at 'pip'    */
+//  712     OSRdyTbl[y] &= (OS_PRIO)~ptcb->OSTCBBitX;
+        BICX.B  0x33(R12), OSRdyTbl(R15)
+//  713     if (OSRdyTbl[y] == 0u) {
+        CMPX.B  #0x0, OSRdyTbl(R15)
+        JNE     ??OSMutex_RdyAtPrio_0
+//  714         OSRdyGrp &= (OS_PRIO)~ptcb->OSTCBBitY;
+        BICX.B  0x34(R12), &OSRdyGrp
+//  715     }
+//  716     ptcb->OSTCBPrio         = prio;
+??OSMutex_RdyAtPrio_0:
+        MOV.B   R13, 0x30(R12)
+//  717     OSPrioCur               = prio;                        /* The current task is now at this priority */
+        MOVX.B  R13, &OSPrioCur
+        MOV.B   R13, R14
+        RPT     #0x3
+        RRUX.B  R14
+        AND.B   #0x7, R14
+        MOV.B   R14, 0x32(R12)
+//  718 #if OS_LOWEST_PRIO <= 63u
+//  719     ptcb->OSTCBY            = (INT8U)((INT8U)(prio >> 3u) & 0x07u);
+//  720     ptcb->OSTCBX            = (INT8U)(prio & 0x07u);
+        MOV.B   R13, R15
+        AND.B   #0x7, R15
+        MOV.B   R15, 0x31(R12)
+//  721 #else
+//  722     ptcb->OSTCBY            = (INT8U)((INT8U)(prio >> 4u) & 0x0Fu);
+//  723     ptcb->OSTCBX            = (INT8U) (prio & 0x0Fu);
+//  724 #endif
+//  725     ptcb->OSTCBBitY         = (OS_PRIO)(1uL << ptcb->OSTCBY);
+        MOV.B   #0x1, R10
+        SUB.B   #0x1, R14
+        JN      ??OSMutex_RdyAtPrio_1
+        RPT     R14
+        RLAX.B  R10
+??OSMutex_RdyAtPrio_1:
+        MOV.B   R10, 0x34(R12)
+//  726     ptcb->OSTCBBitX         = (OS_PRIO)(1uL << ptcb->OSTCBX);
+        MOV.B   #0x1, R14
+        SUB.B   #0x1, R15
+        JN      ??OSMutex_RdyAtPrio_2
+        RPT     R15
+        RLAX.B  R14
+??OSMutex_RdyAtPrio_2:
+        MOV.B   R14, 0x33(R12)
+//  727     OSRdyGrp               |= ptcb->OSTCBBitY;             /* Make task ready at original priority     */
+        BISX.B  R10, &OSRdyGrp
+//  728     OSRdyTbl[ptcb->OSTCBY] |= ptcb->OSTCBBitX;
+        MOV.B   0x32(R12), R15
+        BISX.B  0x33(R12), OSRdyTbl(R15)
+//  729     OSTCBPrioTbl[prio]      = ptcb;
+        MOV.B   R13, R13
+        RLAM.A  #0x2, R13
+        MOVX.A  R12, OSTCBPrioTbl(R13)
+//  730 
+//  731 }
+        POPM.A  #0x1, R10
+          CFI R10H SameValue
+          CFI R10L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock27
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r4:
+        REQUIRE ?setjmp_r4
+        REQUIRE ?longjmp_r4
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r5:
+        REQUIRE ?setjmp_r5
+        REQUIRE ?longjmp_r5
+
+        END
+//  732 
+//  733 
+//  734 #endif                                                     /* OS_MUTEX_EN                              */
+//  735 	 	   	  		 			 	    		   		 		 	 	 			 	    		   	 			 	  	 		 				 		  			 		 					 	  	  		      		  	   		      		  	 		 	      		   		 		  	 		 	      		  		  		  
+// 
+// 1 314 bytes in segment CODE
+// 
+// 1 314 bytes of CODE memory
+//
+//Errors: none
+//Warnings: 11

@@ -1,0 +1,479 @@
+###############################################################################
+#                                                                             #
+#                                                       06/Jun/2016  16:42:29 #
+# IAR C/C++ Compiler V5.50.1.20465/W32, Evaluation edition for MSP430         #
+# Copyright 1996-2012 IAR Systems AB.                                         #
+#                                                                             #
+#    __rt_version  =  3                                                       #
+#    __double_size =  32                                                      #
+#    __reg_r4      =  free                                                    #
+#    __reg_r5      =  free                                                    #
+#    __pic         =  no                                                      #
+#    __core        =  430X                                                    #
+#    __data_model  =  large                                                   #
+#    Source file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\UCOSII\PORT\os_dbg.c                         #
+#    Command line  =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\UCOSII\PORT\os_dbg.c -D NDEBUG -D            #
+#                     RAM_VECTOR -lC C:\Users\615\Desktop\MSP430\MSP430F5529¿ #
+#                     âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Release\List\ -lA                 #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\List\ -o C:\Users\615\Desktop\MSP430\MSP #
+#                     430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Release\Obj\             #
+#                     -D__MSP430F5529__ -e --double=32 --dlib_config          #
+#                     "D:\Program Files (x86)\IAR Systems\Embedded Workbench  #
+#                     6.4 Evaluation\430\LIB\DLIB\dl430xlfn.h" -I             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\ -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Ê #
+#                     ý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\inc\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\ -I C:\Users\615\Desktop\MSP430\MSP4 #
+#                     30F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\src\USB\ -I       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_config\ -I                   #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_User\ -I                     #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\srcUSB\USB_API\USB_CDC_API\ -I           #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_API\USB_HID_API\ -I          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_API\USB_MSC_API\ -I          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\KEY\ -I C:\Users\615\Desktop\MSP430\MSP #
+#                     430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\LED\ -I         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\12864\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\oled\ -I      #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\mpu6050\inc\ -I                         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\mpu6050\src\ -I                         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\nokia5110\inc\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\nokia5110\src\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\LQ_1.8_TFT\ -I                          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\LCD_API\ -I                             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\2.2TFT\ -I                              #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\delay\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\ -I             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\System\inc\ -I C:\Users\615\Desktop\MSP430\MSP43 #
+#                     0F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\src\ -I             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\User\ -I C:\Users\615\Desktop\MSP430\MSP430F5529 #
+#                     ¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\User\USER\ -I                    #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\UCOSII\CONFIG\ -I                            #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\uCOSII\App\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII\CONFIHG\    #
+#                     -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ #
+#                     \¹¤³ÌÄ£°å\Lib\uCOSII\PORT\ -I                           #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\UCOSII\CORE\ -I                              #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\FatFs\ -I C:\Users\615\Desktop\MSP430\MSP430 #
+#                     F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\FatFs\option\           #
+#                     --core=430X --data_model=large -Oh --multiplier=32      #
+#                     --multiplier_location=4C0 --hw_workaround=CPU40         #
+#    List file     =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\List\os_dbg.lst                          #
+#    Object file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\Obj\os_dbg.r43                           #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\UCOSII\PORT\os_dbg.c
+      1          /*
+      2          *********************************************************************************************************
+      3          *                                                uC/OS-II
+      4          *                                          The Real-Time Kernel
+      5          *                                           DEBUGGER CONSTANTS
+      6          *
+      7          *                              (c) Copyright 1992-2007, Micrium, Weston, FL
+      8          *                                           All Rights Reserved
+      9          *
+     10          * File    : OS_DBG.C
+     11          * By      : Jean J. Labrosse
+     12          * Version : V2.86
+     13          *
+     14          * LICENSING TERMS:
+     15          * ---------------
+     16          *   uC/OS-II is provided in source form for FREE evaluation, for educational use or for peaceful research.  
+     17          * If you plan on using  uC/OS-II  in a commercial product you need to contact Micriµm to properly license 
+     18          * its use in your product. We provide ALL the source code for your convenience and to help you experience 
+     19          * uC/OS-II.   The fact that the  source is provided does  NOT  mean that you can use it without  paying a 
+     20          * licensing fee.
+     21          *********************************************************************************************************
+     22          */
+     23          
+     24          #include "ucos_ii.h"
+
+  typedef unsigned char  BOOLEAN;
+                         ^
+"C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII\PORT\os_cpu.h",31  Warning[Pe301]: 
+          typedef name has already been declared (with same type)
+
+  typedef unsigned char  INT8U;                    /* Unsigned  8 bit quantity                           */
+                         ^
+"C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII\PORT\os_cpu.h",32  Warning[Pe301]: 
+          typedef name has already been declared (with same type)
+
+  typedef signed   char  INT8S;                    /* Signed    8 bit quantity                           */
+                         ^
+"C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII\PORT\os_cpu.h",33  Warning[Pe301]: 
+          typedef name has already been declared (with same type)
+
+  typedef unsigned int   INT16U;                   /* Unsigned 16 bit quantity                           */
+                         ^
+"C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII\PORT\os_cpu.h",34  Warning[Pe301]: 
+          typedef name has already been declared (with same type)
+
+  typedef signed   int   INT16S;                   /* Signed   16 bit quantity                           */
+                         ^
+"C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII\PORT\os_cpu.h",35  Warning[Pe301]: 
+          typedef name has already been declared (with same type)
+
+  typedef unsigned long  INT32U;                   /* Unsigned 32 bit quantity                           */
+                         ^
+"C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII\PORT\os_cpu.h",36  Warning[Pe301]: 
+          typedef name has already been declared (with same type)
+
+  typedef signed   long  INT32S;                   /* Signed   32 bit quantity                           */
+                         ^
+"C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII\PORT\os_cpu.h",37  Warning[Pe301]: 
+          typedef name has already been declared (with same type)
+
+  typedef float          FP32;                     /* Single precision floating point                    */
+                         ^
+"C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII\PORT\os_cpu.h",38  Warning[Pe301]: 
+          typedef name has already been declared (with same type)
+
+  typedef double         FP64;                     /* Double precision floating point                    */
+                         ^
+"C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII\PORT\os_cpu.h",39  Warning[Pe301]: 
+          typedef name has already been declared (with same type)
+
+  typedef unsigned int   OS_STK;                   /* Each stack entry is 16-bit wide                    */
+                         ^
+"C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII\PORT\os_cpu.h",41  Warning[Pe301]: 
+          typedef name has already been declared (with same type)
+
+  typedef unsigned int   OS_CPU_SR;                /* Define size of CPU status register (SR = 16 bits)  */
+                         ^
+"C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII\PORT\os_cpu.h",42  Warning[Pe301]: 
+          typedef name has already been declared (with same type)
+     25          
+     26          /*
+     27          *********************************************************************************************************
+     28          *                                             DEBUG DATA
+     29          *********************************************************************************************************
+     30          */
+     31          
+
+   \                                 In  segment DATA20_C, align 2, align-sorted
+     32          INT16U  const  OSDebugEn           = OS_DEBUG_EN;               /* Debug constants are defined below   */
+   \                     OSDebugEn:
+   \   000000   0000         DC16 0
+     33          
+     34          #if OS_DEBUG_EN > 0
+     35          
+     36          INT32U  const  OSEndiannessTest    = 0x12345678L;               /* Variable to test CPU endianness     */
+     37          
+     38          INT16U  const  OSEventEn           = OS_EVENT_EN;
+     39          INT16U  const  OSEventMax          = OS_MAX_EVENTS;             /* Number of event control blocks      */
+     40          INT16U  const  OSEventNameSize     = OS_EVENT_NAME_SIZE;        /* Size (in bytes) of event names      */
+     41          #if (OS_EVENT_EN) && (OS_MAX_EVENTS > 0)
+     42          INT16U  const  OSEventSize         = sizeof(OS_EVENT);          /* Size in Bytes of OS_EVENT           */
+     43          INT16U  const  OSEventTblSize      = sizeof(OSEventTbl);        /* Size of OSEventTbl[] in bytes       */
+     44          #else
+     45          INT16U  const  OSEventSize         = 0;
+     46          INT16U  const  OSEventTblSize      = 0;
+     47          #endif
+     48          INT16U  const  OSEventMultiEn      = OS_EVENT_MULTI_EN;
+     49          
+     50          
+     51          INT16U  const  OSFlagEn            = OS_FLAG_EN;
+     52          #if (OS_FLAG_EN > 0) && (OS_MAX_FLAGS > 0)
+     53          INT16U  const  OSFlagGrpSize       = sizeof(OS_FLAG_GRP);       /* Size in Bytes of OS_FLAG_GRP        */
+     54          INT16U  const  OSFlagNodeSize      = sizeof(OS_FLAG_NODE);      /* Size in Bytes of OS_FLAG_NODE       */
+     55          INT16U  const  OSFlagWidth         = sizeof(OS_FLAGS);          /* Width (in bytes) of OS_FLAGS        */
+     56          #else
+     57          INT16U  const  OSFlagGrpSize       = 0;
+     58          INT16U  const  OSFlagNodeSize      = 0;
+     59          INT16U  const  OSFlagWidth         = 0;
+     60          #endif
+     61          INT16U  const  OSFlagMax           = OS_MAX_FLAGS;
+     62          INT16U  const  OSFlagNameSize      = OS_FLAG_NAME_SIZE;         /* Size (in bytes) of flag names       */
+     63          
+     64          INT16U  const  OSLowestPrio        = OS_LOWEST_PRIO;
+     65          
+     66          INT16U  const  OSMboxEn            = OS_MBOX_EN;
+     67          
+     68          INT16U  const  OSMemEn             = OS_MEM_EN;
+     69          INT16U  const  OSMemMax            = OS_MAX_MEM_PART;           /* Number of memory partitions         */
+     70          INT16U  const  OSMemNameSize       = OS_MEM_NAME_SIZE;          /* Size (in bytes) of partition names  */
+     71          #if (OS_MEM_EN > 0) && (OS_MAX_MEM_PART > 0)
+     72          INT16U  const  OSMemSize           = sizeof(OS_MEM);            /* Mem. Partition header sine (bytes)  */
+     73          INT16U  const  OSMemTblSize        = sizeof(OSMemTbl);
+     74          #else
+     75          INT16U  const  OSMemSize           = 0;
+     76          INT16U  const  OSMemTblSize        = 0;
+     77          #endif
+     78          INT16U  const  OSMutexEn           = OS_MUTEX_EN;
+     79          
+     80          INT16U  const  OSPtrSize           = sizeof(void *);            /* Size in Bytes of a pointer          */
+     81          
+     82          INT16U  const  OSQEn               = OS_Q_EN;
+     83          INT16U  const  OSQMax              = OS_MAX_QS;                 /* Number of queues                    */
+     84          #if (OS_Q_EN > 0) && (OS_MAX_QS > 0)
+     85          INT16U  const  OSQSize             = sizeof(OS_Q);              /* Size in bytes of OS_Q structure     */
+     86          #else
+     87          INT16U  const  OSQSize             = 0;
+     88          #endif
+     89          
+     90          INT16U  const  OSRdyTblSize        = OS_RDY_TBL_SIZE;           /* Number of bytes in the ready table  */
+     91          
+     92          INT16U  const  OSSemEn             = OS_SEM_EN;
+     93          
+     94          INT16U  const  OSStkWidth          = sizeof(OS_STK);            /* Size in Bytes of a stack entry      */
+     95          
+     96          INT16U  const  OSTaskCreateEn      = OS_TASK_CREATE_EN;
+     97          INT16U  const  OSTaskCreateExtEn   = OS_TASK_CREATE_EXT_EN;
+     98          INT16U  const  OSTaskDelEn         = OS_TASK_DEL_EN;
+     99          INT16U  const  OSTaskIdleStkSize   = OS_TASK_IDLE_STK_SIZE;
+    100          INT16U  const  OSTaskProfileEn     = OS_TASK_PROFILE_EN;
+    101          INT16U  const  OSTaskMax           = OS_MAX_TASKS + OS_N_SYS_TASKS; /* Total max. number of tasks      */
+    102          INT16U  const  OSTaskNameSize      = OS_TASK_NAME_SIZE;             /* Size (in bytes) of task names   */
+    103          INT16U  const  OSTaskStatEn        = OS_TASK_STAT_EN;
+    104          INT16U  const  OSTaskStatStkSize   = OS_TASK_STAT_STK_SIZE;
+    105          INT16U  const  OSTaskStatStkChkEn  = OS_TASK_STAT_STK_CHK_EN;
+    106          INT16U  const  OSTaskSwHookEn      = OS_TASK_SW_HOOK_EN;
+    107          
+    108          INT16U  const  OSTCBPrioTblMax     = OS_LOWEST_PRIO + 1;        /* Number of entries in OSTCBPrioTbl[] */
+    109          INT16U  const  OSTCBSize           = sizeof(OS_TCB);            /* Size in Bytes of OS_TCB             */
+    110          INT16U  const  OSTicksPerSec       = OS_TICKS_PER_SEC;
+    111          INT16U  const  OSTimeTickHookEn    = OS_TIME_TICK_HOOK_EN;
+    112          INT16U  const  OSVersionNbr        = OS_VERSION;
+    113          
+    114          INT16U  const  OSTmrEn             = OS_TMR_EN;
+    115          INT16U  const  OSTmrCfgMax         = OS_TMR_CFG_MAX;
+    116          INT16U  const  OSTmrCfgNameSize    = OS_TMR_CFG_NAME_SIZE;
+    117          INT16U  const  OSTmrCfgWheelSize   = OS_TMR_CFG_WHEEL_SIZE;
+    118          INT16U  const  OSTmrCfgTicksPerSec = OS_TMR_CFG_TICKS_PER_SEC;
+    119          
+    120          #if (OS_TMR_EN > 0) && (OS_TMR_CFG_MAX > 0)
+    121          INT16U  const  OSTmrSize           = sizeof(OS_TMR);
+    122          INT16U  const  OSTmrTblSize        = sizeof(OSTmrTbl);
+    123          INT16U  const  OSTmrWheelSize      = sizeof(OS_TMR_WHEEL);
+    124          INT16U  const  OSTmrWheelTblSize   = sizeof(OSTmrWheelTbl);
+    125          #else
+    126          INT16U  const  OSTmrSize           = 0;
+    127          INT16U  const  OSTmrTblSize        = 0;
+    128          INT16U  const  OSTmrWheelSize      = 0;
+    129          INT16U  const  OSTmrWheelTblSize   = 0;
+    130          #endif
+    131          
+    132          #endif
+    133          
+    134          /*$PAGE*/
+    135          /*
+    136          *********************************************************************************************************
+    137          *                                             DEBUG DATA
+    138          *                            TOTAL DATA SPACE (i.e. RAM) USED BY uC/OS-II
+    139          *********************************************************************************************************
+    140          */
+    141          #if OS_DEBUG_EN > 0
+    142          
+    143          INT16U  const  OSDataSize = sizeof(OSCtxSwCtr)
+    144          #if (OS_EVENT_EN) && (OS_MAX_EVENTS > 0)
+    145                                    + sizeof(OSEventFreeList)
+    146                                    + sizeof(OSEventTbl)
+    147          #endif
+    148          #if (OS_FLAG_EN > 0) && (OS_MAX_FLAGS > 0)
+    149                                    + sizeof(OSFlagTbl)
+    150                                    + sizeof(OSFlagFreeList)
+    151          #endif
+    152          #if OS_TASK_STAT_EN > 0
+    153                                    + sizeof(OSCPUUsage)
+    154                                    + sizeof(OSIdleCtrMax)
+    155                                    + sizeof(OSIdleCtrRun)
+    156                                    + sizeof(OSStatRdy)
+    157                                    + sizeof(OSTaskStatStk)
+    158          #endif
+    159          #if OS_TICK_STEP_EN > 0
+    160                                    + sizeof(OSTickStepState)
+    161          #endif
+    162          #if (OS_MEM_EN > 0) && (OS_MAX_MEM_PART > 0)
+    163                                    + sizeof(OSMemFreeList)
+    164                                    + sizeof(OSMemTbl)
+    165          #endif
+    166          #if (OS_Q_EN > 0) && (OS_MAX_QS > 0)
+    167                                    + sizeof(OSQFreeList)
+    168                                    + sizeof(OSQTbl)
+    169          #endif
+    170          #if OS_TIME_GET_SET_EN > 0   
+    171                                    + sizeof(OSTime)
+    172          #endif
+    173          #if (OS_TMR_EN > 0) && (OS_TMR_CFG_MAX > 0)
+    174                                    + sizeof(OSTmrFree)
+    175                                    + sizeof(OSTmrUsed)
+    176                                    + sizeof(OSTmrTime)
+    177                                    + sizeof(OSTmrSem)
+    178                                    + sizeof(OSTmrSemSignal)
+    179                                    + sizeof(OSTmrTbl)
+    180                                    + sizeof(OSTmrFreeList)
+    181                                    + sizeof(OSTmrTaskStk)
+    182                                    + sizeof(OSTmrWheelTbl)
+    183          #endif
+    184                                    + sizeof(OSIntNesting)
+    185                                    + sizeof(OSLockNesting)
+    186                                    + sizeof(OSPrioCur)
+    187                                    + sizeof(OSPrioHighRdy)
+    188                                    + sizeof(OSRdyGrp)
+    189                                    + sizeof(OSRdyTbl)
+    190                                    + sizeof(OSRunning)
+    191                                    + sizeof(OSTaskCtr)
+    192                                    + sizeof(OSIdleCtr)
+    193                                    + sizeof(OSTaskIdleStk)
+    194                                    + sizeof(OSTCBCur)
+    195                                    + sizeof(OSTCBFreeList)
+    196                                    + sizeof(OSTCBHighRdy)
+    197                                    + sizeof(OSTCBList)
+    198                                    + sizeof(OSTCBPrioTbl)
+    199                                    + sizeof(OSTCBTbl);
+    200          
+    201          #endif
+    202          
+    203          /*$PAGE*/
+    204          /*
+    205          *********************************************************************************************************
+    206          *                                        OS DEBUG INITIALIZATION
+    207          *
+    208          * Description: This function is used to make sure that debug variables that are unused in the application
+    209          *              are not optimized away.  This function might not be necessary for all compilers.  In this
+    210          *              case, you should simply DELETE the code in this function while still leaving the declaration
+    211          *              of the function itself.
+    212          *
+    213          * Arguments  : none
+    214          *
+    215          * Returns    : none
+    216          *
+    217          * Note(s)    : (1) This code doesn't do anything, it simply prevents the compiler from optimizing out
+    218          *                  the 'const' variables which are declared in this file.
+    219          *              (2) You may decide to 'compile out' the code (by using #if 0/#endif) INSIDE the function 
+    220          *                  if your compiler DOES NOT optimize out the 'const' variables above.
+    221          *********************************************************************************************************
+    222          */
+    223          
+    224          #if OS_DEBUG_EN > 0
+    225          void  OSDebugInit (void)
+    226          {
+    227              void  *ptemp;
+    228          
+    229              
+    230              ptemp = (void *)&OSDebugEn;
+    231          
+    232              ptemp = (void *)&OSEndiannessTest;
+    233          
+    234              ptemp = (void *)&OSEventMax;
+    235              ptemp = (void *)&OSEventNameSize;
+    236              ptemp = (void *)&OSEventEn;
+    237              ptemp = (void *)&OSEventSize;
+    238              ptemp = (void *)&OSEventTblSize;
+    239              ptemp = (void *)&OSEventMultiEn;
+    240          
+    241              ptemp = (void *)&OSFlagEn;
+    242              ptemp = (void *)&OSFlagGrpSize;
+    243              ptemp = (void *)&OSFlagNodeSize;
+    244              ptemp = (void *)&OSFlagWidth;
+    245              ptemp = (void *)&OSFlagMax;
+    246              ptemp = (void *)&OSFlagNameSize;
+    247          
+    248              ptemp = (void *)&OSLowestPrio;
+    249          
+    250              ptemp = (void *)&OSMboxEn;
+    251          
+    252              ptemp = (void *)&OSMemEn;
+    253              ptemp = (void *)&OSMemMax;
+    254              ptemp = (void *)&OSMemNameSize;
+    255              ptemp = (void *)&OSMemSize;
+    256              ptemp = (void *)&OSMemTblSize;
+    257          
+    258              ptemp = (void *)&OSMutexEn;
+    259          
+    260              ptemp = (void *)&OSPtrSize;
+    261          
+    262              ptemp = (void *)&OSQEn;
+    263              ptemp = (void *)&OSQMax;
+    264              ptemp = (void *)&OSQSize;
+    265          
+    266              ptemp = (void *)&OSRdyTblSize;
+    267          
+    268              ptemp = (void *)&OSSemEn;
+    269          
+    270              ptemp = (void *)&OSStkWidth;
+    271          
+    272              ptemp = (void *)&OSTaskCreateEn;
+    273              ptemp = (void *)&OSTaskCreateExtEn;
+    274              ptemp = (void *)&OSTaskDelEn;
+    275              ptemp = (void *)&OSTaskIdleStkSize;
+    276              ptemp = (void *)&OSTaskProfileEn;
+    277              ptemp = (void *)&OSTaskMax;
+    278              ptemp = (void *)&OSTaskNameSize;
+    279              ptemp = (void *)&OSTaskStatEn;
+    280              ptemp = (void *)&OSTaskStatStkSize;
+    281              ptemp = (void *)&OSTaskStatStkChkEn;
+    282              ptemp = (void *)&OSTaskSwHookEn;
+    283          
+    284              ptemp = (void *)&OSTCBPrioTblMax;
+    285              ptemp = (void *)&OSTCBSize;
+    286          
+    287              ptemp = (void *)&OSTicksPerSec;
+    288              ptemp = (void *)&OSTimeTickHookEn;
+    289          
+    290          #if OS_TMR_EN > 0
+    291              ptemp = (void *)&OSTmrTbl[0];
+    292              ptemp = (void *)&OSTmrWheelTbl[0];
+    293              
+    294              ptemp = (void *)&OSTmrEn;
+    295              ptemp = (void *)&OSTmrCfgMax;
+    296              ptemp = (void *)&OSTmrCfgNameSize;
+    297              ptemp = (void *)&OSTmrCfgWheelSize;
+    298              ptemp = (void *)&OSTmrCfgTicksPerSec;
+    299              ptemp = (void *)&OSTmrSize;
+    300              ptemp = (void *)&OSTmrTblSize;
+    301          
+    302              ptemp = (void *)&OSTmrWheelSize;
+    303              ptemp = (void *)&OSTmrWheelTblSize;
+    304          #endif
+    305          
+    306              ptemp = (void *)&OSVersionNbr;
+    307          
+    308              ptemp = (void *)&OSDataSize;
+    309          
+    310              ptemp = ptemp;                             /* Prevent compiler warning for 'ptemp' not being used! */
+    311          }
+    312          #endif
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       2  OSDebugEn
+
+ 
+ 2 bytes in segment DATA20_C
+ 
+ 2 bytes of CONST memory
+
+Errors: none
+Warnings: 11

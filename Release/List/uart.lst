@@ -1,0 +1,552 @@
+###############################################################################
+#                                                                             #
+#                                                       06/Jun/2016  16:42:36 #
+# IAR C/C++ Compiler V5.50.1.20465/W32, Evaluation edition for MSP430         #
+# Copyright 1996-2012 IAR Systems AB.                                         #
+#                                                                             #
+#    __rt_version  =  3                                                       #
+#    __double_size =  32                                                      #
+#    __reg_r4      =  free                                                    #
+#    __reg_r5      =  free                                                    #
+#    __pic         =  no                                                      #
+#    __core        =  430X                                                    #
+#    __data_model  =  large                                                   #
+#    Source file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\uart.c                               #
+#    Command line  =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\uart.c -D NDEBUG -D RAM_VECTOR -lC   #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\List\ -lA C:\Users\615\Desktop\MSP430\MS #
+#                     P430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Release\List\ -o        #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\Obj\ -D__MSP430F5529__ -e --double=32    #
+#                     --dlib_config "D:\Program Files (x86)\IAR               #
+#                     Systems\Embedded Workbench 6.4                          #
+#                     Evaluation\430\LIB\DLIB\dl430xlfn.h" -I                 #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\ -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Ê #
+#                     ý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\inc\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\ -I C:\Users\615\Desktop\MSP430\MSP4 #
+#                     30F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\src\USB\ -I       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_config\ -I                   #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_User\ -I                     #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\srcUSB\USB_API\USB_CDC_API\ -I           #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_API\USB_HID_API\ -I          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_API\USB_MSC_API\ -I          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\KEY\ -I C:\Users\615\Desktop\MSP430\MSP #
+#                     430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\LED\ -I         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\12864\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\oled\ -I      #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\mpu6050\inc\ -I                         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\mpu6050\src\ -I                         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\nokia5110\inc\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\nokia5110\src\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\LQ_1.8_TFT\ -I                          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\LCD_API\ -I                             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\2.2TFT\ -I                              #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\delay\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\ -I             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\System\inc\ -I C:\Users\615\Desktop\MSP430\MSP43 #
+#                     0F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\src\ -I             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\User\ -I C:\Users\615\Desktop\MSP430\MSP430F5529 #
+#                     ¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\User\USER\ -I                    #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\UCOSII\CONFIG\ -I                            #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\uCOSII\App\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII\CONFIHG\    #
+#                     -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ #
+#                     \¹¤³ÌÄ£°å\Lib\uCOSII\PORT\ -I                           #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\UCOSII\CORE\ -I                              #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\FatFs\ -I C:\Users\615\Desktop\MSP430\MSP430 #
+#                     F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\FatFs\option\           #
+#                     --core=430X --data_model=large -Oh --multiplier=32      #
+#                     --multiplier_location=4C0 --hw_workaround=CPU40         #
+#    List file     =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\List\uart.lst                            #
+#    Object file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\Obj\uart.r43                             #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\src\uart.c
+      1          #include "uart.h"
+      2          #include "clock.h"
+      3          #include "system.h"
+      4          #include "gpio.h"
+      5          #include <stdio.h>
+      6          #include <stdarg.h>
+      7          const struct
+      8          {
+      9            IO_PIN TX;
+     10            IO_PIN RX;
+
+   \                                 In  segment DATA20_C, align 1, align-sorted
+     11          }UART_PIN[]=
+   \                     UART_PIN:
+   \   000000   020302040304 DC8 2, 3, 2, 4, 3, 4, 3, 5
+   \            0305        
+     12          {
+     13            /*UART0*/{.TX={P3,3},.RX={P3,4}},        
+     14            /*UART1*/{.TX={P4,4},.RX={P4,5}}
+     15          }; //Òý½ÅÊý×é
+     16          /*******************************************************************************
+     17          *  º¯ÊýÃû³Æ£ºUART_Init(UARTn uartn,uint32_t BaudRate)
+     18          *  ¹¦ÄÜËµÃ÷£º³õÊ¼»¯´®¿Ú£¬ÉèÖÃ²¨ÌØÂÊ
+     19          *  ²ÎÊýËµÃ÷£ºUARTn uartn       Ä£¿éºÅ£¨UART0~UART1£©
+     20                       uint32_t BaudRate : ²¨ÌØÂÊ£¬Èç9600¡¢19200¡¢115200µÈ
+     21          *  º¯Êý·µ»Ø£º²»³É¹¦Ôò·µ»ØERROR£¬³É¹¦Ôò·µ»ØSUCCEED
+     22          *  Ê¹ÓÃÊ¾Àý£ºUART_Init(UART0,115200);   //³õÊ¼»¯Ò»¸öUARTÄ£¿é£¬²¨ÌØÂÊÎª115200
+     23          *******************************************************************************/
+
+   \                                 In  segment CODE, align 2
+     24          STATUS UART_Init(UARTn uartn,uint32_t BaudRate)
+   \                     UART_Init:
+     25          {      
+   \   000000   3B14         PUSHM.A #0x4, R11
+   \   000002   494C         MOV.B   R12, R9
+   \   000004   0A4E         MOV.W   R14, R10
+   \   000006   0B4F         MOV.W   R15, R11
+     26            //Òý½Å³õÊ¼»¯
+     27            GPIO_Init(UART_PIN[uartn].TX.Port,UART_PIN[uartn].TX.Pin,SEL);
+   \   000008   484C         MOV.B   R12, R8
+   \   00000A   4806         RLAM.A  #0x2, R8
+   \   00000C   3E400001     MOV.W   #0x100, R14
+   \   000010   1D43         MOV.W   #0x1, R13
+   \   000012   ....5F48.... MOVX.B  UART_PIN + 1(R8), R15
+   \   000018   5F83         SUB.B   #0x1, R15
+   \   00001A   0230         JN      ??UART_Init_0
+   \   00001C                RPT     R15
+   \   00001C   CF180D5D     RLAX.W  R13
+   \                     ??UART_Init_0:
+   \   000020   ....5C48.... MOVX.B  UART_PIN(R8), R12
+   \   000026   ........     CALLA   #GPIO_MultiBits_Init
+     28            GPIO_Init(UART_PIN[uartn].RX.Port,UART_PIN[uartn].RX.Pin,SEL);
+   \   00002A   3E400001     MOV.W   #0x100, R14
+   \   00002E   1D43         MOV.W   #0x1, R13
+   \   000030   ....5F48.... MOVX.B  UART_PIN + 3(R8), R15
+   \   000036   5F83         SUB.B   #0x1, R15
+   \   000038   0230         JN      ??UART_Init_1
+   \   00003A                RPT     R15
+   \   00003A   CF180D5D     RLAX.W  R13
+   \                     ??UART_Init_1:
+   \   00003E   ....5C48.... MOVX.B  UART_PIN + 2(R8), R12
+   \   000044   ........     CALLA   #GPIO_MultiBits_Init
+     29            
+     30            UART_SetBaudRate (uartn, BaudRate);                            //ÉèÖÃ´®¿Ú²¨ÌØÂÊ
+   \   000048   0E4A         MOV.W   R10, R14
+   \   00004A   0F4B         MOV.W   R11, R15
+   \   00004C   4C49         MOV.B   R9, R12
+   \   00004E   ........     CALLA   #UART_SetBaudRate
+     31            
+     32            USCIX[uartn]->IE = 0u;                                         //¹Ø±ÕËùÓÐÖÐ¶Ï
+   \   000052   ....5B48.... MOVX.A  USCIX(R8), R11
+   \   000058   CB431C00     MOV.B   #0x0, 0x1c(R11)
+     33            USCIX[uartn]->RXIFG = RESET;                                   //Çå³ý½ÓÊÕÊý¾Ý±êÖ¾
+   \   00005C   DBC31D00     BIC.B   #0x1, 0x1d(R11)
+     34            USCIX[uartn]->TXIFG = SET;                                     //ÖÃÎ»·¢ËÍ»º³åÇøÎª¿Õ±êÖ¾
+   \   000060   EBD31D00     BIS.B   #0x2, 0x1d(R11)
+     35            
+     36            return SUCCEED;
+   \   000064   5C43         MOV.B   #0x1, R12
+   \   000066   3816         POPM.A  #0x4, R11
+   \   000068   1001         RETA
+     37          }
+     38          /*******************************************************************************
+     39          *  º¯ÊýÃû³Æ£ºUART_SetBaudRate (UARTn uartn, uint32_t BaudRate)
+     40          *  ¹¦ÄÜËµÃ÷£ºÉèÖÃ´®¿Ú²¨ÌØÂÊ
+     41          *  ²ÎÊýËµÃ÷£ºUARTn uartn       Ä£¿éºÅ£¨UART0~UART1£©
+     42                       uint32_t BaudRate : ²¨ÌØÂÊ£¬Èç9600¡¢19200¡¢115200µÈ
+     43          *  º¯Êý·µ»Ø£ºÎÞ
+     44          *******************************************************************************/
+
+   \                                 In  segment CODE, align 2
+     45          void UART_SetBaudRate (UARTn uartn, uint32_t BaudRate)
+   \                     UART_SetBaudRate:
+     46          {
+   \   000000   5B14         PUSHM.A #0x6, R11
+   \   000002   484C         MOV.B   R12, R8
+     47            float BRTemp = (float)g_sClock.SMCLK.CLK_HZ/(float)BaudRate;
+   \   000004   0C4E         MOV.W   R14, R12
+   \   000006   0D4F         MOV.W   R15, R13
+   \   000008   ........     CALLA   #_Cast32uto32f
+   \   00000C   0A4C         MOV.W   R12, R10
+   \   00000E   0B4D         MOV.W   R13, R11
+   \   000010   ....1C42.... MOVX.W  &g_sClock + 12, R12
+   \   000016   ....1D42.... MOVX.W  &g_sClock + 14, R13
+   \   00001C   ........     CALLA   #_Cast32uto32f
+   \   000020   0E4A         MOV.W   R10, R14
+   \   000022   0F4B         MOV.W   R11, R15
+   \   000024   ........     CALLA   #_Div32f
+   \   000028   064C         MOV.W   R12, R6
+   \   00002A   074D         MOV.W   R13, R7
+     48            
+     49            USCIX[uartn]->CTL1 = UCSSEL__SMCLK + UCSWRST;                //ÉèÖÃÊ±ÖÓÔ´
+   \   00002C   4806         RLAM.A  #0x2, R8
+   \   00002E   ....5848.... MOVX.A  USCIX(R8), R8
+   \   000034   F84081000000 MOV.B   #0x81, 0(R8)
+     50           
+     51            USCIX[uartn]->BRW = (uint16_t)BRTemp;                                 //ÉèÖÃ²¨ÌØÂÊ
+   \   00003A   ........     CALLA   #_Cast32fto32u
+   \   00003E   884C0600     MOV.W   R12, 0x6(R8)
+     52            USCIX[uartn]->BRS = (uint16_t)((BRTemp-(uint16_t)(BRTemp))*8.0);        //ÉèÖÃµ÷Õû²¨ÌØÂÊ
+   \   000042   0D43         MOV.W   #0x0, R13
+   \   000044   ........     CALLA   #_Cast32uto32f
+   \   000048   0E4C         MOV.W   R12, R14
+   \   00004A   0F4D         MOV.W   R13, R15
+   \   00004C   0C46         MOV.W   R6, R12
+   \   00004E   0D47         MOV.W   R7, R13
+   \   000050   ........     CALLA   #_Sub32f
+   \   000054   0E43         MOV.W   #0x0, R14
+   \   000056   3F400041     MOV.W   #0x4100, R15
+   \   00005A   ........     CALLA   #_Mul32f
+   \   00005E   ........     CALLA   #_Cast32fto32u
+   \   000062   4C5C         RLA.B   R12
+   \   000064   7CF00E00     AND.B   #0xe, R12
+   \   000068   5E480800     MOV.B   0x8(R8), R14
+   \   00006C   7EF0F100     AND.B   #0xf1, R14
+   \   000070   4EDC         BIS.B   R12, R14
+   \   000072   C84E0800     MOV.B   R14, 0x8(R8)
+     53            USCIX[uartn]->BRF = 0u;
+   \   000076   F8F00F000800 AND.B   #0xf, 0x8(R8)
+     54            
+     55            //¹ý²ÉÑùÄ£Ê½
+     56            /*
+     57            USCIX[uartn]->BRW =(uint16_t)(BRTemp/16);                                 //ÉèÖÃ²¨ÌØÂÊ
+     58            USCIX[uartn]->BRS = 0u;
+     59            USCIX[uartn]->BRF =(uint16_t)((BRTemp/16.0-(uint16_t)(BRTemp/16.0))*16.0);  //ÉèÖÃµ÷Õû²¨ÌØÂÊ
+     60            */
+     61            USCIX[uartn]->CTL1 &= ~UCSWRST;       
+   \   00007C   D8C30000     BIC.B   #0x1, 0(R8)
+     62          }
+   \   000080   5616         POPM.A  #0x6, R11
+   \   000082   1001         RETA
+     63          /*******************************************************************************
+     64          *  º¯ÊýÃû³Æ£ºUART_GetChar    (UARTn uartn)
+     65          *  ¹¦ÄÜËµÃ÷£ºÎÞÏÞÊ±¼äµÈ´ý´®¿Ú½ÓÊÜÒ»¸ö×Ö½Ú
+     66          *  ²ÎÊýËµÃ÷£ºUARTn uartn     Ä£¿éºÅ£¨UART0~UART1£©
+     67          *  º¯Êý·µ»Ø£º½ÓÊÕµ½µÄ×Ö½ÚÊý¾Ý
+     68          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+     69          char UART_GetChar    (UARTn uartn)
+   \                     UART_GetChar:
+   \                     ??UART_GetChar_0:
+     70          {
+     71            while(USCIX[uartn]->RXIFG == RESET);               //µÈ´ý½ÓÊÕµ½Êý¾Ý
+   \   000000   4F4C         MOV.B   R12, R15
+   \   000002   4F06         RLAM.A  #0x2, R15
+   \   000004   ....5F4F.... MOVX.A  USCIX(R15), R15
+   \   00000A   DFB31D00     BIT.B   #0x1, 0x1d(R15)
+   \   00000E   F82B         JNC     ??UART_GetChar_0
+     72            return (USCIX[uartn]->RXBUF);
+   \   000010   5C4F0C00     MOV.B   0xc(R15), R12
+   \   000014   1001         RETA
+     73          }
+     74          /*************************************************************************
+     75          *  º¯ÊýÃû³Æ£ºUART_PutChar
+     76          *  ¹¦ÄÜËµÃ÷£º´®¿Ú·¢ËÍÒ»¸ö×Ö½Ú
+     77          *  ²ÎÊýËµÃ÷£ºUARTn uartn      Ä£¿éºÅ£¨UART0~UART1£©
+     78          *  º¯Êý·µ»Ø£ºÎÞ
+     79          *  Ê¹ÓÃÊ¾Àý£ºUART_PutChar(UART0,0x02);   //·¢ËÍÒ»×Ö½ÚÊý¾Ý
+     80          *************************************************************************/  
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine0:
+   \   000000   4C4C         MOV.B   R12, R12
+   \   000002   4C06         RLAM.A  #0x2, R12
+   \   000004   ....5F4C.... MOVX.A  USCIX(R12), R15
+   \   00000A   1001         RETA
+
+   \                                 In  segment CODE, align 2
+     81          void UART_PutChar(UARTn uartn,char data)
+   \                     UART_PutChar:
+     82          {
+     83              if(data == '\n')
+   \   000000   ........     CALLA   #?Subroutine0
+   \                     ??CrossCallReturnLabel_3:
+   \   000004   7D900A00     CMP.B   #0xa, R13
+   \   000008   0620         JNE     ??UART_PutChar_1
+     84              {
+     85                while (USCIX[uartn]->TXIFG == RESET);          //µÈ´ý·¢ËÍ»º³åÇøÎª¿Õ
+   \                     ??UART_PutChar_0:
+   \   00000A   EFB31D00     BIT.B   #0x2, 0x1d(R15)
+   \   00000E   FD2B         JNC     ??UART_PutChar_0
+     86                USCIX[uartn]->TXBUF = '\r';                    // 
+   \   000010   FF400D000E00 MOV.B   #0xd, 0xe(R15)
+     87              }
+     88              while (USCIX[uartn]->TXIFG == RESET);            //µÈ´ý·¢ËÍ»º³åÇøÎª¿Õ
+   \                     ??UART_PutChar_1:
+   \   000016   EFB31D00     BIT.B   #0x2, 0x1d(R15)
+   \   00001A   FD2B         JNC     ??UART_PutChar_1
+     89              USCIX[uartn]->TXBUF = data;                      // 
+   \   00001C   CF4D0E00     MOV.B   R13, 0xe(R15)
+     90          }
+   \   000020   1001         RETA
+     91          /*************************************************************************
+     92          *  º¯ÊýÃû³Æ£ºUart_PutNChar
+     93          *  ¹¦ÄÜËµÃ÷£º´®¿Ú·¢ËÍÖ¸¶¨³¤¶È¸ö×Ö½ÚÊý¾Ý
+     94          *  ²ÎÊýËµÃ÷£ºUARTn uartn      Ä£¿éºÅ£¨UART0~UART1£©
+     95          *  º¯Êý·µ»Ø£ºÎÞ
+     96          *  Ê¹ÓÃÊ¾Àý£ºchar Buff[10];UART_PutNChar(UART0,&Buff[0],5);   //·¢ËÍÒ»¸ö×Ö·û´®µÄÇ°5¸ö×Ö½Ú
+     97          *************************************************************************/ 
+
+   \                                 In  segment CODE, align 2
+     98          void UART_PutNChar(UARTn uartn,char * data,uint16_t Length)
+   \                     UART_PutNChar:
+     99          {
+   \   000000   3B14         PUSHM.A #0x4, R11
+   \   000002   4A4C         MOV.B   R12, R10
+   \   000004   CB0D         MOVA    R13, R11
+    100            for(int i=0; i < Length; i++)
+   \   000006   0843         MOV.W   #0x0, R8
+   \   000008   053C         JMP     ??UART_PutNChar_1
+    101            {
+    102              UART_PutChar(uartn,*data++);
+   \                     ??UART_PutNChar_0:
+   \   00000A   7D4B         MOV.B   @R11+, R13
+   \   00000C   4C4A         MOV.B   R10, R12
+   \   00000E   ........     CALLA   #UART_PutChar
+    103            }
+   \   000012   1853         ADD.W   #0x1, R8
+   \                     ??UART_PutNChar_1:
+   \   000014   089E         CMP.W   R14, R8
+   \   000016   F92B         JNC     ??UART_PutNChar_0
+    104          }
+   \   000018   3816         POPM.A  #0x4, R11
+   \   00001A   1001         RETA
+    105          /*************************************************************************
+    106          *  º¯ÊýÃû³Æ£ºUart_PutString
+    107          *  ¹¦ÄÜËµÃ÷£º´®¿Ú·¢ËÍ×Ö·û´®
+    108          *  ²ÎÊýËµÃ÷£ºUARTn uartn       Ä£¿éºÅ£¨UART0~UART1£©
+    109          *  º¯Êý·µ»Ø£ºÎÞ
+    110          *  Ê¹ÓÃÊ¾Àý£ºUART_PutString  (UART0 ,"Hello!");  //·¢ËÍÒ»¸ö×Ö·û´®
+    111          *************************************************************************/  
+
+   \                                 In  segment CODE, align 2
+    112          void UART_PutString  (UARTn uartn ,const char * str)
+   \                     UART_PutString:
+    113          {
+   \   000000   0A14         PUSHM.A #0x1, R10
+   \   000002   4E4C         MOV.B   R12, R14
+   \   000004   CA0D         MOVA    R13, R10
+   \   000006   043C         JMP     ??UART_PutString_1
+    114              while(*str != '\0')
+    115              {
+    116                UART_PutChar(uartn,*str++);
+   \                     ??UART_PutString_0:
+   \   000008   7D4A         MOV.B   @R10+, R13
+   \   00000A   4C4E         MOV.B   R14, R12
+   \   00000C   ........     CALLA   #UART_PutChar
+    117              }
+   \                     ??UART_PutString_1:
+   \   000010   CA930000     CMP.B   #0x0, 0(R10)
+   \   000014   F923         JNE     ??UART_PutString_0
+    118          }
+   \   000016   0A16         POPM.A  #0x1, R10
+   \   000018   1001         RETA
+    119          /*************************************************************************
+    120          *  º¯ÊýÃû³Æ£ºUART_Printf
+    121          *  ¹¦ÄÜËµÃ÷£º´®¿Ú·¢ËÍ×Ö·û´®
+    122          *  ²ÎÊýËµÃ÷£ºUARTn uartn     Ä£¿éºÅ£¨UART0~UART1£©
+    123          *  º¯Êý·µ»Ø£ºÎÞ
+    124          *  Ê¹ÓÃÊ¾Àý£ºUART_Printf(UART0 ,"Hello!:i=%d,J=%f",i,1.0);  //·¢ËÍÒ»¸ö×Ö·û´®
+    125          *************************************************************************/ 
+
+   \                                 In  segment CODE, align 2
+    126          void UART_Printf(UARTn uartn ,const char * fmt,...)
+   \                     UART_Printf:
+    127          {
+   \   000000   1B14         PUSHM.A #0x2, R11
+   \   000002   31808400     SUB.W   #0x84, SP
+   \   000006   4A4C         MOV.B   R12, R10
+    128            char UART_String[128];
+    129            va_list ap;
+    130            va_start(ap,fmt);
+   \   000008   0F41         MOV.W   SP, R15
+   \   00000A   3F509000     ADD.W   #0x90, R15
+   \   00000E   710F0000     MOVA    R15, 0(SP)
+   \   000012   0B41         MOV.W   SP, R11
+   \   000014   2B52         ADD.W   #0x4, R11
+   \   000016   0312         PUSH.W  #0x0
+   \   000018   0F12         PUSH.W  R15
+   \   00001A   CC0B         MOVA    R11, R12
+    131            vsprintf(UART_String,fmt,ap);
+   \   00001C   ........     CALLA   #vsprintf
+    132            UART_PutString  (uartn ,UART_String);
+   \   000020   CD0B         MOVA    R11, R13
+   \   000022   4C4A         MOV.B   R10, R12
+   \   000024   ........     CALLA   #UART_PutString
+    133            va_end(ap);
+    134          }
+   \   000028   31508800     ADD.W   #0x88, SP
+   \   00002C   1A16         POPM.A  #0x2, R11
+   \   00002E   1001         RETA
+    135          /*************************************************************************
+    136          *  º¯ÊýÃû³Æ£ºUART_ITConfig      (UARTn uartn,UART_IRQn irqn,STATUS ITState)
+    137          *  ¹¦ÄÜËµÃ÷£ºÉèÖÃ´®¿ÚÖÐ¶Ï
+    138          *  ²ÎÊýËµÃ÷£ºUARTn uartn       Ä£¿éºÅ£¨UART0~UART1£©
+    139                       UART_IRQn irqn   £ºÖÐ¶ÏÊÂ¼þ
+    140                       STATUS ITState   £ºÊÇ·ñÊ¹ÄÜÖÐ¶Ï
+    141          *  º¯Êý·µ»Ø£ºÎÞ
+    142          *  Ê¹ÓÃÊ¾Àý£ºUART_ITConfig      (UART0,UART_RX_IRQn,ENABLE);  //ÉèÖÃUART0½ÓÊÕÖÐ¶ÏÔÊÐí
+    143          *************************************************************************/ 
+
+   \                                 In  segment CODE, align 2
+    144          void  UART_ITConfig      (UARTn uartn,UART_IRQn irqn,STATUS ITState)
+   \                     UART_ITConfig:
+    145          {
+    146            if(ITState != DISABLE)
+   \   000000   ........     CALLA   #?Subroutine0
+   \                     ??CrossCallReturnLabel_2:
+   \   000004   4E93         CMP.B   #0x0, R14
+   \   000006   0324         JEQ     ??UART_ITConfig_0
+    147            {
+    148              USCIX[uartn]->IE |= irqn;
+   \   000008   CFDD1C00     BIS.B   R13, 0x1c(R15)
+   \   00000C   1001         RETA
+    149            }
+    150            else
+    151            {
+    152              USCIX[uartn]->IE &=~irqn;
+   \                     ??UART_ITConfig_0:
+   \   00000E   CFCD1C00     BIC.B   R13, 0x1c(R15)
+    153            }
+    154          }
+   \   000012   1001         RETA
+    155          /*************************************************************************
+    156          *  º¯ÊýÃû³Æ£ºUART_GetITStatus  (UARTn uartn,UART_IRQn irqn)
+    157          *  ¹¦ÄÜËµÃ÷£ºÇå³ý´®¿ÚÄ³Ò»¸öÖÐ¶Ï±êÖ¾
+    158          *  ²ÎÊýËµÃ÷£ºUARTn uartn      Ä£¿éºÅ£¨UART0~UART1£©
+    159                       UART_IRQn irqn  £ºÖÐ¶ÏÊÂ¼þ
+    160          *  º¯Êý·µ»Ø£ºSTATUS : TRUE-ÖÐ¶ÏÊÂ¼þ·¢Éú FALSE-ÖÐ¶ÏÊÂ¼þÎ´·¢Éú
+    161          *  Ê¹ÓÃÊ¾Àý£ºif(TRUE == UART_GetITStatus  (UART0,UART_RX_IRQn)){...} //ÅÐ¶ÏUART0½ÓÊÕÖÐ¶ÏÊÂ¼þÊÇ·ñ·¢Éú
+    162          *************************************************************************/ 
+
+   \                                 In  segment CODE, align 2
+    163          STATUS UART_GetITStatus  (UARTn uartn,UART_IRQn irqn)
+   \                     UART_GetITStatus:
+    164          {
+    165            return ((USCIX[uartn]->IFG & irqn) ? TRUE : FALSE);
+   \   000000   ........     CALLA   #?Subroutine0
+   \                     ??CrossCallReturnLabel_1:
+   \   000004   CFBD1D00     BIT.B   R13, 0x1d(R15)
+   \   000008   0220         JNE     ??UART_GetITStatus_0
+   \   00000A   4C43         MOV.B   #0x0, R12
+   \   00000C   1001         RETA
+   \                     ??UART_GetITStatus_0:
+   \   00000E   5C43         MOV.B   #0x1, R12
+   \   000010   1001         RETA
+    166          }
+    167          /*************************************************************************
+    168          *  º¯ÊýÃû³Æ£ºUART_ClearITPendingBit(UARTn uartn,UART_IRQn irqn)
+    169          *  ¹¦ÄÜËµÃ÷£ºÇå³ý´®¿ÚÄ³Ò»¸öÖÐ¶Ï±êÖ¾
+    170          *  ²ÎÊýËµÃ÷£ºUARTn uartn      Ä£¿éºÅ£¨UART0~UART1£©
+    171                       UART_IRQn irqn  £ºÖÐ¶ÏÊÂ¼þ
+    172          *  º¯Êý·µ»Ø£ºÎÞ
+    173          *  Ê¹ÓÃÊ¾Àý£ºUART_ClearITPendingBit(UART0,UART_RX_IRQn);  //Çå³ýUART0½ÓÊÕÖÐ¶Ï±êÖ¾Î»
+    174          *************************************************************************/ 
+
+   \                                 In  segment CODE, align 2
+    175          void  UART_ClearITPendingBit(UARTn uartn,UART_IRQn irqn)
+   \                     UART_ClearITPendingBit:
+    176          {
+    177            USCIX[uartn]->IFG &=~ irqn;
+   \   000000   ........     CALLA   #?Subroutine0
+   \                     ??CrossCallReturnLabel_0:
+   \   000004   CFCD1D00     BIC.B   R13, 0x1d(R15)
+    178          }
+   \   000008   1001         RETA
+    179          
+    180          #if defined(DEBUG)&&defined(DEBUG_UART_PRINT)
+    181          
+    182          #ifdef __GNUC__
+    183            /* With GCC/RAISONANCE, small printf (option LD Linker->Libraries->Small printf
+    184               set to 'Yes') calls __io_putchar() */
+    185            #define PUTCHAR_PROTOTYPE int __io_putchar(int ch)
+    186          #else
+    187            #define PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f)
+    188          #endif /* __GNUC__ */
+    189          
+    190          PUTCHAR_PROTOTYPE
+    191          {
+    192            UART_PutChar(Print_UART,(char)ch);
+    193            return ch;
+    194          }
+    195           
+    196          #endif
+
+   Maximum stack usage in bytes:
+
+   CSTACK Function
+   ------ --------
+       4  UART_ClearITPendingBit
+       4  UART_GetChar
+       4  UART_GetITStatus
+       4  UART_ITConfig
+      20  UART_Init
+             20 -> GPIO_MultiBits_Init
+             20 -> UART_SetBaudRate
+     148  UART_Printf
+            148 -> UART_PutString
+            148 -> vsprintf
+       4  UART_PutChar
+      20  UART_PutNChar
+             20 -> UART_PutChar
+       8  UART_PutString
+              8 -> UART_PutChar
+      28  UART_SetBaudRate
+             28 -> _Cast32fto32u
+             28 -> _Cast32uto32f
+             28 -> _Div32f
+             28 -> _Mul32f
+             28 -> _Sub32f
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      12  ?Subroutine0
+      10  UART_ClearITPendingBit
+      22  UART_GetChar
+      18  UART_GetITStatus
+      20  UART_ITConfig
+     106  UART_Init
+       8  UART_PIN
+      48  UART_Printf
+      34  UART_PutChar
+      28  UART_PutNChar
+      26  UART_PutString
+     132  UART_SetBaudRate
+
+ 
+ 456 bytes in segment CODE
+   8 bytes in segment DATA20_C
+ 
+ 456 bytes of CODE  memory
+   8 bytes of CONST memory
+
+Errors: none
+Warnings: none

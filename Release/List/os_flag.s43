@@ -1,0 +1,2932 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+//                                                      06/Jun/2016  16:42:30 /
+// IAR C/C++ Compiler V5.50.1.20465/W32, Evaluation edition for MSP430        /
+// Copyright 1996-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    __rt_version  =  3                                                      /
+//    __double_size =  32                                                     /
+//    __reg_r4      =  free                                                   /
+//    __reg_r5      =  free                                                   /
+//    __pic         =  no                                                     /
+//    __core        =  430X                                                   /
+//    __data_model  =  large                                                  /
+//    Source file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\UCOSII\CORE\os_flag.c                      /
+//    Command line  =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\UCOSII\CORE\os_flag.c -D NDEBUG -D         /
+//                     RAM_VECTOR -lC C:\Users\615\Desktop\MSP430\MSP430F5529 /
+//                     ¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Release\List\ -lA               /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Release\List\ -o C:\Users\615\Desktop\MSP430\M /
+//                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Release\Obj\          /
+//                     -D__MSP430F5529__ -e --double=32 --dlib_config         /
+//                     "D:\Program Files (x86)\IAR Systems\Embedded           /
+//                     Workbench 6.4 Evaluation\430\LIB\DLIB\dl430xlfn.h" -I  /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\ -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº /
+//                     ¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\inc\ -I                    /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\ -I C:\Users\615\Desktop\MSP430\MS /
+//                     P430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\src\USB\ -I    /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_config\ -I                 /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_User\ -I                   /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\srcUSB\USB_API\USB_CDC_API\ -I         /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_API\USB_HID_API\ -I        /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_API\USB_MSC_API\ -I        /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\KEY\ -I C:\Users\615\Desktop\MSP430\M /
+//                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\LED\ -I      /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\12864\ -I                             /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\oled\ -I C:\Users\615\Desktop\MSP430\ /
+//                     MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\mpu6050\inc /
+//                     \ -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\ /
+//                     C°æ\¹¤³ÌÄ£°å\HardWare\mpu6050\src\ -I                  /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\nokia5110\inc\ -I                     /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\nokia5110\src\ -I                     /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\LQ_1.8_TFT\ -I                        /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\LCD_API\ -I                           /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\2.2TFT\ -I                            /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\delay\ -I                             /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\System\ -I C:\Users\615\Desktop\MSP430\MSP430F /
+//                     5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\inc\ -I              /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\System\src\ -I C:\Users\615\Desktop\MSP430\MSP /
+//                     430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\User\ -I                /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\User\USER\ -I C:\Users\615\Desktop\MSP430\MSP4 /
+//                     30F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\UCOSII\CONFIG\ -I    /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\uCOSII\App\ -I                             /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\uCOSII\CONFIHG\ -I                         /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\uCOSII\PORT\ -I                            /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\UCOSII\CORE\ -I                            /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\FatFs\ -I C:\Users\615\Desktop\MSP430\MSP4 /
+//                     30F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\FatFs\option\        /
+//                     --core=430X --data_model=large -Oh --multiplier=32     /
+//                     --multiplier_location=4C0 --hw_workaround=CPU40        /
+//    List file     =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Release\List\os_flag.s43                       /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME os_flag
+
+        RTMODEL "__SystemLibrary", "DLib"
+        RTMODEL "__core", "430X"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dlib_file_descriptor", "0"
+        RTMODEL "__dlib_full_locale_support", "0"
+        RTMODEL "__double_size", "32"
+        RTMODEL "__pic", "no"
+        RTMODEL "__reg_r4", "free"
+        RTMODEL "__reg_r5", "free"
+        RTMODEL "__rt_version", "3"
+
+        RSEG CSTACK:DATA:SORT:NOROOT(0)
+
+        EXTERN ?longjmp_r4
+        EXTERN ?longjmp_r5
+        EXTERN ?setjmp_r4
+        EXTERN ?setjmp_r5
+
+        PUBWEAK ?setjmp_save_r4
+        PUBWEAK ?setjmp_save_r5
+        PUBLIC OSFlagAccept
+        FUNCTION OSFlagAccept,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 28, STACK
+        PUBLIC OSFlagCreate
+        FUNCTION OSFlagCreate,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 20, STACK
+        PUBLIC OSFlagDel
+        FUNCTION OSFlagDel,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 28, STACK
+        PUBLIC OSFlagNameGet
+        FUNCTION OSFlagNameGet,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 20, STACK
+        PUBLIC OSFlagNameSet
+        FUNCTION OSFlagNameSet,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 20, STACK
+        PUBLIC OSFlagPend
+        FUNCTION OSFlagPend,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 60, STACK
+        PUBLIC OSFlagPendGetFlagsRdy
+        FUNCTION OSFlagPendGetFlagsRdy,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 8, STACK
+        PUBLIC OSFlagPost
+        FUNCTION OSFlagPost,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 28, STACK
+        PUBLIC OSFlagQuery
+        FUNCTION OSFlagQuery,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 12, STACK
+        FUNCTION OS_FlagBlock,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 20, STACK
+        PUBLIC OS_FlagInit
+        FUNCTION OS_FlagInit,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 8, STACK
+        FUNCTION OS_FlagTaskRdy,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC OS_FlagUnlink
+        FUNCTION OS_FlagUnlink,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA SP DATA
+          CFI Resource PC:20, SP:20, SR:16, R4L:16, R4H:4, R4:20, R5L:16, R5H:4
+          CFI Resource R5:20, R6L:16, R6H:4, R6:20, R7L:16, R7H:4, R7:20, R8L:16
+          CFI Resource R8H:4, R8:20, R9L:16, R9H:4, R9:20, R10L:16, R10H:4
+          CFI Resource R10:20, R11L:16, R11H:4, R11:20, R12L:16, R12H:4, R12:20
+          CFI Resource R13L:16, R13H:4, R13:20, R14L:16, R14H:4, R14:20, R15L:16
+          CFI Resource R15H:4, R15:20
+          CFI ResourceParts R4 R4H, R4L
+          CFI ResourceParts R5 R5H, R5L
+          CFI ResourceParts R6 R6H, R6L
+          CFI ResourceParts R7 R7H, R7L
+          CFI ResourceParts R8 R8H, R8L
+          CFI ResourceParts R9 R9H, R9L
+          CFI ResourceParts R10 R10H, R10L
+          CFI ResourceParts R11 R11H, R11L
+          CFI ResourceParts R12 R12H, R12L
+          CFI ResourceParts R13 R13H, R13L
+          CFI ResourceParts R14 R14H, R14L
+          CFI ResourceParts R15 R15H, R15L
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H SameValue
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H SameValue
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H SameValue
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H SameValue
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H SameValue
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H SameValue
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H SameValue
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H SameValue
+          CFI R11 Concat
+          CFI R12L Undefined
+          CFI R12H Undefined
+          CFI R12 Undefined
+          CFI R13L Undefined
+          CFI R13H Undefined
+          CFI R13 Undefined
+          CFI R14L Undefined
+          CFI R14H Undefined
+          CFI R14 Undefined
+          CFI R15L Undefined
+          CFI R15H Undefined
+          CFI R15 Undefined
+          CFI EndCommon cfiCommon0
+        
+        
+          CFI Common cfiCommon1 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H SameValue
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H SameValue
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H SameValue
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H SameValue
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H SameValue
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H SameValue
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H SameValue
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H SameValue
+          CFI R11 Concat
+          CFI R12L SameValue
+          CFI R12H SameValue
+          CFI R12 Concat
+          CFI R13L SameValue
+          CFI R13H SameValue
+          CFI R13 Concat
+          CFI R14L SameValue
+          CFI R14H SameValue
+          CFI R14 Concat
+          CFI R15L SameValue
+          CFI R15H SameValue
+          CFI R15 Concat
+          CFI EndCommon cfiCommon1
+        
+        EXTERN OSRdyGrp
+        EXTERN OSRdyTbl
+        EXTERN OSFlagTbl
+        EXTERN OS_MemClr
+        FUNCTION OS_MemClr,0202H
+        EXTERN OSFlagFreeList
+        EXTERN OSTCBCur
+        EXTERN OSCPUSaveSR
+        FUNCTION OSCPUSaveSR,0202H
+        EXTERN OSCPURestoreSR
+        FUNCTION OSCPURestoreSR,0202H
+        EXTERN OS_Sched
+        FUNCTION OS_Sched,0202H
+        EXTERN OSIntNesting
+        EXTERN OSLockNesting
+        EXTERN OS_StrLen
+        FUNCTION OS_StrLen,0202H
+
+// C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\UCOSII\CORE\os_flag.c
+//    1 /*
+//    2 *********************************************************************************************************
+//    3 *                                                uC/OS-II
+//    4 *                                          The Real-Time Kernel
+//    5 *                                         EVENT FLAG  MANAGEMENT
+//    6 *
+//    7 *                              (c) Copyright 1992-2009, Micrium, Weston, FL
+//    8 *                                           All Rights Reserved
+//    9 *
+//   10 * File    : OS_FLAG.C
+//   11 * By      : Jean J. Labrosse
+//   12 * Version : V2.91
+//   13 *
+//   14 * LICENSING TERMS:
+//   15 * ---------------
+//   16 *   uC/OS-II is provided in source form for FREE evaluation, for educational use or for peaceful research.
+//   17 * If you plan on using  uC/OS-II  in a commercial product you need to contact Micriµm to properly license
+//   18 * its use in your product. We provide ALL the source code for your convenience and to help you experience
+//   19 * uC/OS-II.   The fact that the  source is provided does  NOT  mean that you can use it without  paying a
+//   20 * licensing fee.
+//   21 *********************************************************************************************************
+//   22 */
+//   23 
+//   24 #ifndef  OS_MASTER_FILE
+//   25 #include "ucos_ii.h"
+//   26 #endif
+//   27 
+//   28 #if (OS_FLAG_EN > 0u) && (OS_MAX_FLAGS > 0u)
+//   29 /*
+//   30 *********************************************************************************************************
+//   31 *                                            LOCAL PROTOTYPES
+//   32 *********************************************************************************************************
+//   33 */
+//   34 
+//   35 static  void     OS_FlagBlock(OS_FLAG_GRP *pgrp, OS_FLAG_NODE *pnode, OS_FLAGS flags, INT8U wait_type, INT32U timeout);
+//   36 static  BOOLEAN  OS_FlagTaskRdy(OS_FLAG_NODE *pnode, OS_FLAGS flags_rdy);
+//   37 
+//   38 /*$PAGE*/
+//   39 /*
+//   40 *********************************************************************************************************
+//   41 *                              CHECK THE STATUS OF FLAGS IN AN EVENT FLAG GROUP
+//   42 *
+//   43 * Description: This function is called to check the status of a combination of bits to be set or cleared
+//   44 *              in an event flag group.  Your application can check for ANY bit to be set/cleared or ALL
+//   45 *              bits to be set/cleared.
+//   46 *
+//   47 *              This call does not block if the desired flags are not present.
+//   48 *
+//   49 * Arguments  : pgrp          is a pointer to the desired event flag group.
+//   50 *
+//   51 *              flags         Is a bit pattern indicating which bit(s) (i.e. flags) you wish to check.
+//   52 *                            The bits you want are specified by setting the corresponding bits in
+//   53 *                            'flags'.  e.g. if your application wants to wait for bits 0 and 1 then
+//   54 *                            'flags' would contain 0x03.
+//   55 *
+//   56 *              wait_type     specifies whether you want ALL bits to be set/cleared or ANY of the bits
+//   57 *                            to be set/cleared.
+//   58 *                            You can specify the following argument:
+//   59 *
+//   60 *                            OS_FLAG_WAIT_CLR_ALL   You will check ALL bits in 'flags' to be clear (0)
+//   61 *                            OS_FLAG_WAIT_CLR_ANY   You will check ANY bit  in 'flags' to be clear (0)
+//   62 *                            OS_FLAG_WAIT_SET_ALL   You will check ALL bits in 'flags' to be set   (1)
+//   63 *                            OS_FLAG_WAIT_SET_ANY   You will check ANY bit  in 'flags' to be set   (1)
+//   64 *
+//   65 *                            NOTE: Add OS_FLAG_CONSUME if you want the event flag to be 'consumed' by
+//   66 *                                  the call.  Example, to wait for any flag in a group AND then clear
+//   67 *                                  the flags that are present, set 'wait_type' to:
+//   68 *
+//   69 *                                  OS_FLAG_WAIT_SET_ANY + OS_FLAG_CONSUME
+//   70 *
+//   71 *              perr          is a pointer to an error code and can be:
+//   72 *                            OS_ERR_NONE               No error
+//   73 *                            OS_ERR_EVENT_TYPE         You are not pointing to an event flag group
+//   74 *                            OS_ERR_FLAG_WAIT_TYPE     You didn't specify a proper 'wait_type' argument.
+//   75 *                            OS_ERR_FLAG_INVALID_PGRP  You passed a NULL pointer instead of the event flag
+//   76 *                                                      group handle.
+//   77 *                            OS_ERR_FLAG_NOT_RDY       The desired flags you are waiting for are not
+//   78 *                                                      available.
+//   79 *
+//   80 * Returns    : The flags in the event flag group that made the task ready or, 0 if a timeout or an error
+//   81 *              occurred.
+//   82 *
+//   83 * Called from: Task or ISR
+//   84 *
+//   85 * Note(s)    : 1) IMPORTANT, the behavior of this function has changed from PREVIOUS versions.  The
+//   86 *                 function NOW returns the flags that were ready INSTEAD of the current state of the
+//   87 *                 event flags.
+//   88 *********************************************************************************************************
+//   89 */
+//   90 
+//   91 #if OS_FLAG_ACCEPT_EN > 0u
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?Subroutine1:
+          CFI Block cfiCond0 Using cfiCommon0
+          CFI Function OSFlagQuery
+          CFI Conditional ??CrossCallReturnLabel_2
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+16
+          CFI Block cfiCond1 Using cfiCommon0
+          CFI (cfiCond1) Function OSFlagPost
+          CFI (cfiCond1) Conditional ??CrossCallReturnLabel_3
+          CFI (cfiCond1) R6L Frame(CFA, -28)
+          CFI (cfiCond1) R6H Frame(CFA, -26)
+          CFI (cfiCond1) R7L Frame(CFA, -24)
+          CFI (cfiCond1) R7H Frame(CFA, -22)
+          CFI (cfiCond1) R8L Frame(CFA, -20)
+          CFI (cfiCond1) R8H Frame(CFA, -18)
+          CFI (cfiCond1) R9L Frame(CFA, -16)
+          CFI (cfiCond1) R9H Frame(CFA, -14)
+          CFI (cfiCond1) R10L Frame(CFA, -12)
+          CFI (cfiCond1) R10H Frame(CFA, -10)
+          CFI (cfiCond1) R11L Frame(CFA, -8)
+          CFI (cfiCond1) R11H Frame(CFA, -6)
+          CFI (cfiCond1) CFA SP+32
+          CFI Block cfiCond2 Using cfiCommon0
+          CFI (cfiCond2) Function OSFlagPend
+          CFI (cfiCond2) Conditional ??CrossCallReturnLabel_4
+          CFI (cfiCond2) R4L Frame(CFA, -36)
+          CFI (cfiCond2) R4H Frame(CFA, -34)
+          CFI (cfiCond2) R5L Frame(CFA, -32)
+          CFI (cfiCond2) R5H Frame(CFA, -30)
+          CFI (cfiCond2) R6L Frame(CFA, -28)
+          CFI (cfiCond2) R6H Frame(CFA, -26)
+          CFI (cfiCond2) R7L Frame(CFA, -24)
+          CFI (cfiCond2) R7H Frame(CFA, -22)
+          CFI (cfiCond2) R8L Frame(CFA, -20)
+          CFI (cfiCond2) R8H Frame(CFA, -18)
+          CFI (cfiCond2) R9L Frame(CFA, -16)
+          CFI (cfiCond2) R9H Frame(CFA, -14)
+          CFI (cfiCond2) R10L Frame(CFA, -12)
+          CFI (cfiCond2) R10H Frame(CFA, -10)
+          CFI (cfiCond2) R11L Frame(CFA, -8)
+          CFI (cfiCond2) R11H Frame(CFA, -6)
+          CFI (cfiCond2) CFA SP+60
+          CFI Block cfiCond3 Using cfiCommon0
+          CFI (cfiCond3) Function OSFlagDel
+          CFI (cfiCond3) Conditional ??CrossCallReturnLabel_5
+          CFI (cfiCond3) R6L Frame(CFA, -28)
+          CFI (cfiCond3) R6H Frame(CFA, -26)
+          CFI (cfiCond3) R7L Frame(CFA, -24)
+          CFI (cfiCond3) R7H Frame(CFA, -22)
+          CFI (cfiCond3) R8L Frame(CFA, -20)
+          CFI (cfiCond3) R8H Frame(CFA, -18)
+          CFI (cfiCond3) R9L Frame(CFA, -16)
+          CFI (cfiCond3) R9H Frame(CFA, -14)
+          CFI (cfiCond3) R10L Frame(CFA, -12)
+          CFI (cfiCond3) R10H Frame(CFA, -10)
+          CFI (cfiCond3) R11L Frame(CFA, -8)
+          CFI (cfiCond3) R11H Frame(CFA, -6)
+          CFI (cfiCond3) CFA SP+32
+          CFI Block cfiCond4 Using cfiCommon0
+          CFI (cfiCond4) Function OSFlagAccept
+          CFI (cfiCond4) Conditional ??CrossCallReturnLabel_6
+          CFI (cfiCond4) R6L Frame(CFA, -28)
+          CFI (cfiCond4) R6H Frame(CFA, -26)
+          CFI (cfiCond4) R7L Frame(CFA, -24)
+          CFI (cfiCond4) R7H Frame(CFA, -22)
+          CFI (cfiCond4) R8L Frame(CFA, -20)
+          CFI (cfiCond4) R8H Frame(CFA, -18)
+          CFI (cfiCond4) R9L Frame(CFA, -16)
+          CFI (cfiCond4) R9H Frame(CFA, -14)
+          CFI (cfiCond4) R10L Frame(CFA, -12)
+          CFI (cfiCond4) R10H Frame(CFA, -10)
+          CFI (cfiCond4) R11L Frame(CFA, -8)
+          CFI (cfiCond4) R11H Frame(CFA, -6)
+          CFI (cfiCond4) CFA SP+32
+          CFI Block cfiPicker5 Using cfiCommon1
+          CFI (cfiPicker5) NoFunction
+          CFI (cfiPicker5) Picker
+        CMP.B   #0x5, 0(R12)
+        RETA
+          CFI EndBlock cfiCond0
+          CFI EndBlock cfiCond1
+          CFI EndBlock cfiCond2
+          CFI EndBlock cfiCond3
+          CFI EndBlock cfiCond4
+          CFI EndBlock cfiPicker5
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   92 OS_FLAGS  OSFlagAccept (OS_FLAG_GRP  *pgrp,
+OSFlagAccept:
+          CFI Block cfiBlock6 Using cfiCommon0
+          CFI Function OSFlagAccept
+//   93                         OS_FLAGS      flags,
+//   94                         INT8U         wait_type,
+//   95                         INT8U        *perr)
+//   96 {
+        FUNCALL OSFlagAccept, OSCPUSaveSR
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSFlagAccept, OSCPURestoreSR
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSFlagAccept, OSCPURestoreSR
+        LOCFRAME CSTACK, 28, STACK
+        PUSHM.A #0x6, R11
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+28
+        MOVA    R12, R8
+        MOV.W   R13, R10
+        MOV.B   R14, R11
+        MOVA    R15, R9
+//   97     OS_FLAGS      flags_rdy;
+//   98     INT8U         result;
+//   99     BOOLEAN       consume;
+//  100 #if OS_CRITICAL_METHOD == 3u                               /* Allocate storage for CPU status register */
+//  101     OS_CPU_SR     cpu_sr = 0u;
+//  102 #endif
+//  103 
+//  104 
+//  105 
+//  106 #ifdef OS_SAFETY_CRITICAL
+//  107     if (perr == (INT8U *)0) {
+//  108         OS_SAFETY_CRITICAL_EXCEPTION();
+//  109     }
+//  110 #endif
+//  111 
+//  112 #if OS_ARG_CHK_EN > 0u
+//  113     if (pgrp == (OS_FLAG_GRP *)0) {                        /* Validate 'pgrp'                          */
+//  114         *perr = OS_ERR_FLAG_INVALID_PGRP;
+//  115         return ((OS_FLAGS)0);
+//  116     }
+//  117 #endif
+//  118     if (pgrp->OSFlagType != OS_EVENT_TYPE_FLAG) {          /* Validate event block type                */
+        CALLA   #?Subroutine1
+??CrossCallReturnLabel_6:
+        JEQ     ??OSFlagAccept_4
+//  119         *perr = OS_ERR_EVENT_TYPE;
+        MOV.B   #0x1, 0(R15)
+//  120         return ((OS_FLAGS)0);
+        MOV.W   #0x0, R12
+        JMP     ??OSFlagAccept_5
+//  121     }
+//  122     result = (INT8U)(wait_type & OS_FLAG_CONSUME);
+//  123     if (result != (INT8U)0) {                              /* See if we need to consume the flags      */
+??OSFlagAccept_4:
+        CALLA   #?Subroutine4
+//  124         wait_type &= ~OS_FLAG_CONSUME;
+//  125         consume    = OS_TRUE;
+//  126     } else {
+//  127         consume    = OS_FALSE;
+//  128     }
+//  129 /*$PAGE*/
+//  130     *perr = OS_ERR_NONE;                                   /* Assume NO error until proven otherwise.  */
+??CrossCallReturnLabel_14:
+        MOV.B   #0x0, 0(R15)
+//  131     OS_ENTER_CRITICAL();
+        CALLA   #OSCPUSaveSR
+//  132     switch (wait_type) {
+        SUB.B   #0x0, R11
+        JEQ     ??OSFlagAccept_6
+        SUB.B   #0x1, R11
+        JEQ     ??OSFlagAccept_7
+        SUB.B   #0x1, R11
+        JEQ     ??OSFlagAccept_8
+        SUB.B   #0x1, R11
+        JEQ     ??OSFlagAccept_9
+        JMP     ??OSFlagAccept_10
+//  133         case OS_FLAG_WAIT_SET_ALL:                         /* See if all required flags are set        */
+//  134              flags_rdy = (OS_FLAGS)(pgrp->OSFlagFlags & flags);     /* Extract only the bits we want   */
+??OSFlagAccept_8:
+        MOV.W   R10, R11
+        AND.W   0x6(R8), R11
+//  135              if (flags_rdy == flags) {                     /* Must match ALL the bits that we want     */
+        CMP.W   R10, R11
+        JEQ     ??OSFlagAccept_11
+//  136                  if (consume == OS_TRUE) {                 /* See if we need to consume the flags      */
+//  137                      pgrp->OSFlagFlags &= (OS_FLAGS)~flags_rdy;     /* Clear ONLY the flags we wanted  */
+//  138                  }
+//  139              } else {
+//  140                  *perr = OS_ERR_FLAG_NOT_RDY;
+//  141              }
+//  142              OS_EXIT_CRITICAL();
+//  143              break;
+//  144 
+//  145         case OS_FLAG_WAIT_SET_ANY:
+//  146              flags_rdy = (OS_FLAGS)(pgrp->OSFlagFlags & flags);     /* Extract only the bits we want   */
+//  147              if (flags_rdy != (OS_FLAGS)0) {               /* See if any flag set                      */
+//  148                  if (consume == OS_TRUE) {                 /* See if we need to consume the flags      */
+//  149                      pgrp->OSFlagFlags &= (OS_FLAGS)~flags_rdy;     /* Clear ONLY the flags we got     */
+//  150                  }
+//  151              } else {
+//  152                  *perr = OS_ERR_FLAG_NOT_RDY;
+//  153              }
+//  154              OS_EXIT_CRITICAL();
+//  155              break;
+//  156 
+//  157 #if OS_FLAG_WAIT_CLR_EN > 0u
+//  158         case OS_FLAG_WAIT_CLR_ALL:                         /* See if all required flags are cleared    */
+//  159              flags_rdy = (OS_FLAGS)~pgrp->OSFlagFlags & flags;    /* Extract only the bits we want     */
+//  160              if (flags_rdy == flags) {                     /* Must match ALL the bits that we want     */
+//  161                  if (consume == OS_TRUE) {                 /* See if we need to consume the flags      */
+//  162                      pgrp->OSFlagFlags |= flags_rdy;       /* Set ONLY the flags that we wanted        */
+//  163                  }
+//  164              } else {
+//  165                  *perr = OS_ERR_FLAG_NOT_RDY;
+//  166              }
+//  167              OS_EXIT_CRITICAL();
+//  168              break;
+//  169 
+//  170         case OS_FLAG_WAIT_CLR_ANY:
+//  171              flags_rdy = (OS_FLAGS)~pgrp->OSFlagFlags & flags;   /* Extract only the bits we want      */
+//  172              if (flags_rdy != (OS_FLAGS)0) {               /* See if any flag cleared                  */
+//  173                  if (consume == OS_TRUE) {                 /* See if we need to consume the flags      */
+//  174                      pgrp->OSFlagFlags |= flags_rdy;       /* Set ONLY the flags that we got           */
+//  175                  }
+//  176              } else {
+//  177                  *perr = OS_ERR_FLAG_NOT_RDY;
+??OSFlagAccept_0:
+        MOV.B   #0x70, 0(R9)
+//  178              }
+//  179              OS_EXIT_CRITICAL();
+??OSFlagAccept_1:
+        CALLA   #OSCPURestoreSR
+//  180              break;
+        JMP     ??OSFlagAccept_12
+??OSFlagAccept_9:
+        AND.W   0x6(R8), R10
+        MOV.W   R10, R11
+        JEQ     ??OSFlagAccept_0
+??OSFlagAccept_11:
+        BIT.B   #0x1, R6
+        JNC     ??OSFlagAccept_1
+        BIC.W   R11, 0x6(R8)
+        JMP     ??OSFlagAccept_1
+??OSFlagAccept_6:
+        MOV.W   R10, R11
+        BIC.W   0x6(R8), R11
+        CMP.W   R10, R11
+        JNE     ??OSFlagAccept_0
+        JMP     ??OSFlagAccept_13
+??OSFlagAccept_7:
+        BIC.W   0x6(R8), R10
+        MOV.W   R10, R11
+        CMP.W   #0x0, R10
+        JEQ     ??OSFlagAccept_0
+??OSFlagAccept_13:
+        BIT.B   #0x1, R6
+        JNC     ??OSFlagAccept_1
+        BIS.W   R11, 0x6(R8)
+        JMP     ??OSFlagAccept_1
+//  181 #endif
+//  182 
+//  183         default:
+//  184              OS_EXIT_CRITICAL();
+??OSFlagAccept_10:
+        CALLA   #OSCPURestoreSR
+//  185              flags_rdy = (OS_FLAGS)0;
+        MOV.W   #0x0, R11
+//  186              *perr     = OS_ERR_FLAG_WAIT_TYPE;
+        MOV.B   #0x6f, 0(R9)
+//  187              break;
+//  188     }
+//  189     return (flags_rdy);
+??OSFlagAccept_12:
+        MOV.W   R11, R12
+??OSFlagAccept_5:
+        POPM.A  #0x6, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock6
+//  190 }
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?Subroutine4:
+          CFI Block cfiCond7 Using cfiCommon0
+          CFI Function OSFlagPend
+          CFI Conditional ??CrossCallReturnLabel_13
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+60
+          CFI Block cfiCond8 Using cfiCommon0
+          CFI (cfiCond8) Function OSFlagAccept
+          CFI (cfiCond8) Conditional ??CrossCallReturnLabel_14
+          CFI (cfiCond8) R6L Frame(CFA, -28)
+          CFI (cfiCond8) R6H Frame(CFA, -26)
+          CFI (cfiCond8) R7L Frame(CFA, -24)
+          CFI (cfiCond8) R7H Frame(CFA, -22)
+          CFI (cfiCond8) R8L Frame(CFA, -20)
+          CFI (cfiCond8) R8H Frame(CFA, -18)
+          CFI (cfiCond8) R9L Frame(CFA, -16)
+          CFI (cfiCond8) R9H Frame(CFA, -14)
+          CFI (cfiCond8) R10L Frame(CFA, -12)
+          CFI (cfiCond8) R10H Frame(CFA, -10)
+          CFI (cfiCond8) R11L Frame(CFA, -8)
+          CFI (cfiCond8) R11H Frame(CFA, -6)
+          CFI (cfiCond8) CFA SP+32
+          CFI Block cfiPicker9 Using cfiCommon1
+          CFI (cfiPicker9) NoFunction
+          CFI (cfiPicker9) Picker
+        CMP.B   #0x0, R14
+        JGE     ??OSFlagPend_6
+        BIC.B   #0x80, R11
+        MOV.B   #0x1, R6
+        RETA
+??OSFlagPend_6:
+        MOV.B   #0x0, R6
+        RETA
+          CFI EndBlock cfiCond7
+          CFI EndBlock cfiCond8
+          CFI EndBlock cfiPicker9
+//  191 #endif
+//  192 
+//  193 /*$PAGE*/
+//  194 /*
+//  195 *********************************************************************************************************
+//  196 *                                           CREATE AN EVENT FLAG
+//  197 *
+//  198 * Description: This function is called to create an event flag group.
+//  199 *
+//  200 * Arguments  : flags         Contains the initial value to store in the event flag group.
+//  201 *
+//  202 *              perr          is a pointer to an error code which will be returned to your application:
+//  203 *                               OS_ERR_NONE               if the call was successful.
+//  204 *                               OS_ERR_CREATE_ISR         if you attempted to create an Event Flag from an
+//  205 *                                                         ISR.
+//  206 *                               OS_ERR_FLAG_GRP_DEPLETED  if there are no more event flag groups
+//  207 *
+//  208 * Returns    : A pointer to an event flag group or a NULL pointer if no more groups are available.
+//  209 *
+//  210 * Called from: Task ONLY
+//  211 *********************************************************************************************************
+//  212 */
+//  213 
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  214 OS_FLAG_GRP  *OSFlagCreate (OS_FLAGS  flags,
+OSFlagCreate:
+          CFI Block cfiBlock10 Using cfiCommon0
+          CFI Function OSFlagCreate
+//  215                             INT8U    *perr)
+//  216 {
+        FUNCALL OSFlagCreate, OSCPUSaveSR
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSFlagCreate, OSCPURestoreSR
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSFlagCreate, OSCPURestoreSR
+        LOCFRAME CSTACK, 20, STACK
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        MOV.W   R12, R10
+        MOVA    R13, R11
+//  217     OS_FLAG_GRP *pgrp;
+//  218 #if OS_CRITICAL_METHOD == 3u                        /* Allocate storage for CPU status register        */
+//  219     OS_CPU_SR    cpu_sr = 0u;
+//  220 #endif
+//  221 
+//  222 
+//  223 
+//  224 #ifdef OS_SAFETY_CRITICAL
+//  225     if (perr == (INT8U *)0) {
+//  226         OS_SAFETY_CRITICAL_EXCEPTION();
+//  227     }
+//  228 #endif
+//  229 
+//  230 #ifdef OS_SAFETY_CRITICAL_IEC61508
+//  231     if (OSSafetyCriticalStartFlag == OS_TRUE) {
+//  232         OS_SAFETY_CRITICAL_EXCEPTION();
+//  233     }
+//  234 #endif
+//  235 
+//  236     if (OSIntNesting > 0u) {                        /* See if called from ISR ...                      */
+        CALLA   #??Subroutine5_0
+??CrossCallReturnLabel_19:
+        JEQ     ??OSFlagCreate_0
+//  237         *perr = OS_ERR_CREATE_ISR;                  /* ... can't CREATE from an ISR                    */
+        MOV.B   #0x10, 0(R13)
+//  238         return ((OS_FLAG_GRP *)0);
+        MOVA    #0x0, R12
+        JMP     ??OSFlagCreate_1
+//  239     }
+//  240     OS_ENTER_CRITICAL();
+??OSFlagCreate_0:
+        CALLA   #OSCPUSaveSR
+        MOVA    &OSFlagFreeList, R15
+        MOVA    R15, R8
+//  241     pgrp = OSFlagFreeList;                          /* Get next free event flag                        */
+//  242     if (pgrp != (OS_FLAG_GRP *)0) {                 /* See if we have event flag groups available      */
+        CMPA    #0x0, R15
+        JEQ     ??OSFlagCreate_2
+//  243                                                     /* Adjust free list                                */
+//  244         OSFlagFreeList       = (OS_FLAG_GRP *)OSFlagFreeList->OSFlagWaitList;
+        MOVX.A  0x2(R15), &OSFlagFreeList
+//  245         pgrp->OSFlagType     = OS_EVENT_TYPE_FLAG;  /* Set to event flag group type                    */
+        MOV.B   #0x5, 0(R15)
+//  246         pgrp->OSFlagFlags    = flags;               /* Set to desired initial value                    */
+        MOV.W   R10, 0x6(R15)
+//  247         pgrp->OSFlagWaitList = (void *)0;           /* Clear list of tasks waiting on flags            */
+        CALLA   #?Subroutine0
+//  248 #if OS_FLAG_NAME_EN > 0u
+//  249         pgrp->OSFlagName     = (INT8U *)(void *)"?";
+//  250 #endif
+//  251         OS_EXIT_CRITICAL();
+??CrossCallReturnLabel_1:
+        CALLA   #OSCPURestoreSR
+//  252         *perr                = OS_ERR_NONE;
+        MOV.B   #0x0, 0(R11)
+        JMP     ??OSFlagCreate_3
+//  253     } else {
+//  254         OS_EXIT_CRITICAL();
+??OSFlagCreate_2:
+        CALLA   #OSCPURestoreSR
+//  255         *perr                = OS_ERR_FLAG_GRP_DEPLETED;
+        MOV.B   #0x72, 0(R11)
+//  256     }
+//  257     return (pgrp);                                  /* Return pointer to event flag group              */
+??OSFlagCreate_3:
+        MOVA    R8, R12
+??OSFlagCreate_1:
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock10
+//  258 }
+//  259 
+//  260 /*$PAGE*/
+//  261 /*
+//  262 *********************************************************************************************************
+//  263 *                                     DELETE AN EVENT FLAG GROUP
+//  264 *
+//  265 * Description: This function deletes an event flag group and readies all tasks pending on the event flag
+//  266 *              group.
+//  267 *
+//  268 * Arguments  : pgrp          is a pointer to the desired event flag group.
+//  269 *
+//  270 *              opt           determines delete options as follows:
+//  271 *                            opt == OS_DEL_NO_PEND   Deletes the event flag group ONLY if no task pending
+//  272 *                            opt == OS_DEL_ALWAYS    Deletes the event flag group even if tasks are
+//  273 *                                                    waiting.  In this case, all the tasks pending will be
+//  274 *                                                    readied.
+//  275 *
+//  276 *              perr          is a pointer to an error code that can contain one of the following values:
+//  277 *                            OS_ERR_NONE               The call was successful and the event flag group was
+//  278 *                                                      deleted
+//  279 *                            OS_ERR_DEL_ISR            If you attempted to delete the event flag group from
+//  280 *                                                      an ISR
+//  281 *                            OS_ERR_FLAG_INVALID_PGRP  If 'pgrp' is a NULL pointer.
+//  282 *                            OS_ERR_EVENT_TYPE         If you didn't pass a pointer to an event flag group
+//  283 *                            OS_ERR_INVALID_OPT        An invalid option was specified
+//  284 *                            OS_ERR_TASK_WAITING       One or more tasks were waiting on the event flag
+//  285 *                                                      group.
+//  286 *
+//  287 * Returns    : pgrp          upon error
+//  288 *              (OS_EVENT *)0 if the event flag group was successfully deleted.
+//  289 *
+//  290 * Note(s)    : 1) This function must be used with care.  Tasks that would normally expect the presence of
+//  291 *                 the event flag group MUST check the return code of OSFlagAccept() and OSFlagPend().
+//  292 *              2) This call can potentially disable interrupts for a long time.  The interrupt disable
+//  293 *                 time is directly proportional to the number of tasks waiting on the event flag group.
+//  294 *********************************************************************************************************
+//  295 */
+//  296 
+//  297 #if OS_FLAG_DEL_EN > 0u
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine5:
+          CFI Block cfiCond11 Using cfiCommon0
+          CFI Function OSFlagNameGet
+          CFI Conditional ??CrossCallReturnLabel_15
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+24
+          CFI Block cfiCond12 Using cfiCommon0
+          CFI (cfiCond12) Function OSFlagDel
+          CFI (cfiCond12) Conditional ??CrossCallReturnLabel_16
+          CFI (cfiCond12) R6L Frame(CFA, -28)
+          CFI (cfiCond12) R6H Frame(CFA, -26)
+          CFI (cfiCond12) R7L Frame(CFA, -24)
+          CFI (cfiCond12) R7H Frame(CFA, -22)
+          CFI (cfiCond12) R8L Frame(CFA, -20)
+          CFI (cfiCond12) R8H Frame(CFA, -18)
+          CFI (cfiCond12) R9L Frame(CFA, -16)
+          CFI (cfiCond12) R9H Frame(CFA, -14)
+          CFI (cfiCond12) R10L Frame(CFA, -12)
+          CFI (cfiCond12) R10H Frame(CFA, -10)
+          CFI (cfiCond12) R11L Frame(CFA, -8)
+          CFI (cfiCond12) R11H Frame(CFA, -6)
+          CFI (cfiCond12) CFA SP+32
+          CFI Block cfiPicker13 Using cfiCommon1
+          CFI (cfiPicker13) NoFunction
+          CFI (cfiPicker13) Picker
+        MOVA    R14, R9
+          CFI EndBlock cfiCond11
+          CFI EndBlock cfiCond12
+          CFI EndBlock cfiPicker13
+        REQUIRE ??Subroutine5_0
+        // Fall through to label ??Subroutine5_0
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+??Subroutine5_0:
+          CFI Block cfiCond14 Using cfiCommon0
+          CFI Function OSFlagPend
+          CFI Conditional ??CrossCallReturnLabel_17
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+60
+          CFI Block cfiCond15 Using cfiCommon0
+          CFI (cfiCond15) Function OSFlagNameSet
+          CFI (cfiCond15) Conditional ??CrossCallReturnLabel_18
+          CFI (cfiCond15) R8L Frame(CFA, -20)
+          CFI (cfiCond15) R8H Frame(CFA, -18)
+          CFI (cfiCond15) R9L Frame(CFA, -16)
+          CFI (cfiCond15) R9H Frame(CFA, -14)
+          CFI (cfiCond15) R10L Frame(CFA, -12)
+          CFI (cfiCond15) R10H Frame(CFA, -10)
+          CFI (cfiCond15) R11L Frame(CFA, -8)
+          CFI (cfiCond15) R11H Frame(CFA, -6)
+          CFI (cfiCond15) CFA SP+24
+          CFI Block cfiCond16 Using cfiCommon0
+          CFI (cfiCond16) Function OSFlagCreate
+          CFI (cfiCond16) Conditional ??CrossCallReturnLabel_19
+          CFI (cfiCond16) R8L Frame(CFA, -20)
+          CFI (cfiCond16) R8H Frame(CFA, -18)
+          CFI (cfiCond16) R9L Frame(CFA, -16)
+          CFI (cfiCond16) R9H Frame(CFA, -14)
+          CFI (cfiCond16) R10L Frame(CFA, -12)
+          CFI (cfiCond16) R10H Frame(CFA, -10)
+          CFI (cfiCond16) R11L Frame(CFA, -8)
+          CFI (cfiCond16) R11H Frame(CFA, -6)
+          CFI (cfiCond16) CFA SP+24
+          CFI Block cfiCond17 Using cfiCommon0
+          CFI (cfiCond17) Function OSFlagNameGet
+          CFI (cfiCond17) Conditional ??CrossCallReturnLabel_15
+          CFI (cfiCond17) R8L Frame(CFA, -20)
+          CFI (cfiCond17) R8H Frame(CFA, -18)
+          CFI (cfiCond17) R9L Frame(CFA, -16)
+          CFI (cfiCond17) R9H Frame(CFA, -14)
+          CFI (cfiCond17) R10L Frame(CFA, -12)
+          CFI (cfiCond17) R10H Frame(CFA, -10)
+          CFI (cfiCond17) R11L Frame(CFA, -8)
+          CFI (cfiCond17) R11H Frame(CFA, -6)
+          CFI (cfiCond17) CFA SP+24
+          CFI Block cfiCond18 Using cfiCommon0
+          CFI (cfiCond18) Function OSFlagDel
+          CFI (cfiCond18) Conditional ??CrossCallReturnLabel_16
+          CFI (cfiCond18) R6L Frame(CFA, -28)
+          CFI (cfiCond18) R6H Frame(CFA, -26)
+          CFI (cfiCond18) R7L Frame(CFA, -24)
+          CFI (cfiCond18) R7H Frame(CFA, -22)
+          CFI (cfiCond18) R8L Frame(CFA, -20)
+          CFI (cfiCond18) R8H Frame(CFA, -18)
+          CFI (cfiCond18) R9L Frame(CFA, -16)
+          CFI (cfiCond18) R9H Frame(CFA, -14)
+          CFI (cfiCond18) R10L Frame(CFA, -12)
+          CFI (cfiCond18) R10H Frame(CFA, -10)
+          CFI (cfiCond18) R11L Frame(CFA, -8)
+          CFI (cfiCond18) R11H Frame(CFA, -6)
+          CFI (cfiCond18) CFA SP+32
+          CFI Block cfiPicker19 Using cfiCommon1
+          CFI (cfiPicker19) NoFunction
+          CFI (cfiPicker19) Picker
+        CMPX.B  #0x0, &OSIntNesting
+        RETA
+          CFI EndBlock cfiCond14
+          CFI EndBlock cfiCond15
+          CFI EndBlock cfiCond16
+          CFI EndBlock cfiCond17
+          CFI EndBlock cfiCond18
+          CFI EndBlock cfiPicker19
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?Subroutine0:
+          CFI Block cfiCond20 Using cfiCommon0
+          CFI Function OS_FlagInit
+          CFI Conditional ??CrossCallReturnLabel_0
+          CFI R10L Frame(CFA, -8)
+          CFI R10H Frame(CFA, -6)
+          CFI CFA SP+12
+          CFI Block cfiCond21 Using cfiCommon0
+          CFI (cfiCond21) Function OSFlagCreate
+          CFI (cfiCond21) Conditional ??CrossCallReturnLabel_1
+          CFI (cfiCond21) R8L Frame(CFA, -20)
+          CFI (cfiCond21) R8H Frame(CFA, -18)
+          CFI (cfiCond21) R9L Frame(CFA, -16)
+          CFI (cfiCond21) R9H Frame(CFA, -14)
+          CFI (cfiCond21) R10L Frame(CFA, -12)
+          CFI (cfiCond21) R10H Frame(CFA, -10)
+          CFI (cfiCond21) R11L Frame(CFA, -8)
+          CFI (cfiCond21) R11H Frame(CFA, -6)
+          CFI (cfiCond21) CFA SP+24
+          CFI Block cfiPicker22 Using cfiCommon1
+          CFI (cfiPicker22) NoFunction
+          CFI (cfiPicker22) Picker
+        MOVX.A  #0x0, 0x2(R15)
+        MOVX.A  #`?<Constant "?">`, 0x8(R15)
+        RETA
+          CFI EndBlock cfiCond20
+          CFI EndBlock cfiCond21
+          CFI EndBlock cfiPicker22
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?Subroutine3:
+          CFI Block cfiCond23 Using cfiCommon0
+          CFI Function OSFlagPost
+          CFI Conditional ??CrossCallReturnLabel_12
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+32
+          CFI Block cfiCond24 Using cfiCommon0
+          CFI (cfiCond24) Function OSFlagPost
+          CFI (cfiCond24) Conditional ??CrossCallReturnLabel_11
+          CFI (cfiCond24) R6L Frame(CFA, -28)
+          CFI (cfiCond24) R6H Frame(CFA, -26)
+          CFI (cfiCond24) R7L Frame(CFA, -24)
+          CFI (cfiCond24) R7H Frame(CFA, -22)
+          CFI (cfiCond24) R8L Frame(CFA, -20)
+          CFI (cfiCond24) R8H Frame(CFA, -18)
+          CFI (cfiCond24) R9L Frame(CFA, -16)
+          CFI (cfiCond24) R9H Frame(CFA, -14)
+          CFI (cfiCond24) R10L Frame(CFA, -12)
+          CFI (cfiCond24) R10H Frame(CFA, -10)
+          CFI (cfiCond24) R11L Frame(CFA, -8)
+          CFI (cfiCond24) R11H Frame(CFA, -6)
+          CFI (cfiCond24) CFA SP+32
+          CFI Block cfiCond25 Using cfiCommon0
+          CFI (cfiCond25) Function OSFlagNameGet
+          CFI (cfiCond25) Conditional ??CrossCallReturnLabel_10
+          CFI (cfiCond25) R8L Frame(CFA, -20)
+          CFI (cfiCond25) R8H Frame(CFA, -18)
+          CFI (cfiCond25) R9L Frame(CFA, -16)
+          CFI (cfiCond25) R9H Frame(CFA, -14)
+          CFI (cfiCond25) R10L Frame(CFA, -12)
+          CFI (cfiCond25) R10H Frame(CFA, -10)
+          CFI (cfiCond25) R11L Frame(CFA, -8)
+          CFI (cfiCond25) R11H Frame(CFA, -6)
+          CFI (cfiCond25) CFA SP+24
+          CFI Block cfiCond26 Using cfiCommon0
+          CFI (cfiCond26) Function OSFlagDel
+          CFI (cfiCond26) Conditional ??CrossCallReturnLabel_9
+          CFI (cfiCond26) R6L Frame(CFA, -28)
+          CFI (cfiCond26) R6H Frame(CFA, -26)
+          CFI (cfiCond26) R7L Frame(CFA, -24)
+          CFI (cfiCond26) R7H Frame(CFA, -22)
+          CFI (cfiCond26) R8L Frame(CFA, -20)
+          CFI (cfiCond26) R8H Frame(CFA, -18)
+          CFI (cfiCond26) R9L Frame(CFA, -16)
+          CFI (cfiCond26) R9H Frame(CFA, -14)
+          CFI (cfiCond26) R10L Frame(CFA, -12)
+          CFI (cfiCond26) R10H Frame(CFA, -10)
+          CFI (cfiCond26) R11L Frame(CFA, -8)
+          CFI (cfiCond26) R11H Frame(CFA, -6)
+          CFI (cfiCond26) CFA SP+32
+          CFI Block cfiPicker27 Using cfiCommon1
+          CFI (cfiPicker27) NoFunction
+          CFI (cfiPicker27) Picker
+        MOV.W   R10, R12
+        BRA     #OSCPURestoreSR
+          CFI EndBlock cfiCond23
+          CFI EndBlock cfiCond24
+          CFI EndBlock cfiCond25
+          CFI EndBlock cfiCond26
+          CFI EndBlock cfiPicker27
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  298 OS_FLAG_GRP  *OSFlagDel (OS_FLAG_GRP  *pgrp,
+OSFlagDel:
+          CFI Block cfiBlock28 Using cfiCommon0
+          CFI Function OSFlagDel
+//  299                          INT8U         opt,
+//  300                          INT8U        *perr)
+//  301 {
+        FUNCALL OSFlagDel, OSCPUSaveSR
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSFlagDel, OSCPURestoreSR
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSFlagDel, OSCPURestoreSR
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSFlagDel, OS_FlagTaskRdy
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSFlagDel, OSCPURestoreSR
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSFlagDel, OS_Sched
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSFlagDel, OSCPURestoreSR
+        LOCFRAME CSTACK, 28, STACK
+        PUSHM.A #0x6, R11
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+28
+        MOVA    R12, R11
+        MOV.B   R13, R8
+        CALLA   #?Subroutine5
+//  302     BOOLEAN       tasks_waiting;
+//  303     OS_FLAG_NODE *pnode;
+//  304     OS_FLAG_GRP  *pgrp_return;
+//  305 #if OS_CRITICAL_METHOD == 3u                               /* Allocate storage for CPU status register */
+//  306     OS_CPU_SR     cpu_sr = 0u;
+//  307 #endif
+//  308 
+//  309 
+//  310 
+//  311 #ifdef OS_SAFETY_CRITICAL
+//  312     if (perr == (INT8U *)0) {
+//  313         OS_SAFETY_CRITICAL_EXCEPTION();
+//  314     }
+//  315 #endif
+//  316 
+//  317 #if OS_ARG_CHK_EN > 0u
+//  318     if (pgrp == (OS_FLAG_GRP *)0) {                        /* Validate 'pgrp'                          */
+//  319         *perr = OS_ERR_FLAG_INVALID_PGRP;
+//  320         return (pgrp);
+//  321     }
+//  322 #endif
+//  323     if (OSIntNesting > 0u) {                               /* See if called from ISR ...               */
+??CrossCallReturnLabel_16:
+        JEQ     ??OSFlagDel_5
+//  324         *perr = OS_ERR_DEL_ISR;                            /* ... can't DELETE from an ISR             */
+        MOV.B   #0xf, 0(R14)
+//  325         return (pgrp);
+        JMP     ??OSFlagDel_1
+//  326     }
+//  327     if (pgrp->OSFlagType != OS_EVENT_TYPE_FLAG) {          /* Validate event group type                */
+??OSFlagDel_5:
+        CALLA   #?Subroutine1
+??CrossCallReturnLabel_5:
+        JEQ     ??OSFlagDel_6
+//  328         *perr = OS_ERR_EVENT_TYPE;
+        MOV.B   #0x1, 0(R14)
+//  329         return (pgrp);
+        JMP     ??OSFlagDel_1
+//  330     }
+//  331     OS_ENTER_CRITICAL();
+??OSFlagDel_6:
+        CALLA   #OSCPUSaveSR
+        MOV.W   R12, R10
+//  332     if (pgrp->OSFlagWaitList != (void *)0) {               /* See if any tasks waiting on event flags  */
+        MOVA    0x2(R11), R7
+        CMPA    #0x0, R7
+        JNE     ??OSFlagDel_7
+        MOV.B   #0x0, R6
+        JMP     ??OSFlagDel_8
+??OSFlagDel_7:
+        MOV.B   #0x1, R6
+//  333         tasks_waiting = OS_TRUE;                           /* Yes                                      */
+//  334     } else {
+//  335         tasks_waiting = OS_FALSE;                          /* No                                       */
+//  336     }
+//  337     switch (opt) {
+??OSFlagDel_8:
+        SUB.B   #0x0, R8
+        JEQ     ??OSFlagDel_9
+        SUB.B   #0x1, R8
+        JEQ     ??OSFlagDel_3
+        JMP     ??OSFlagDel_10
+//  338         case OS_DEL_NO_PEND:                               /* Delete group if no task waiting          */
+//  339              if (tasks_waiting == OS_FALSE) {
+??OSFlagDel_9:
+        BIT.B   #0x1, R6
+        JC      ??OSFlagDel_11
+//  340 #if OS_FLAG_NAME_EN > 0u
+//  341                  pgrp->OSFlagName     = (INT8U *)(void *)"?";
+        CALLA   #?Subroutine2
+//  342 #endif
+//  343                  pgrp->OSFlagType     = OS_EVENT_TYPE_UNUSED;
+//  344                  pgrp->OSFlagWaitList = (void *)OSFlagFreeList; /* Return group to free list           */
+//  345                  pgrp->OSFlagFlags    = (OS_FLAGS)0;
+//  346                  OSFlagFreeList       = pgrp;
+//  347                  OS_EXIT_CRITICAL();
+??CrossCallReturnLabel_7:
+        CALLA   #OSCPURestoreSR
+//  348                  *perr                = OS_ERR_NONE;
+        JMP     ??OSFlagDel_4
+//  349                  pgrp_return          = (OS_FLAG_GRP *)0;  /* Event Flag Group has been deleted        */
+//  350              } else {
+//  351                  OS_EXIT_CRITICAL();
+??OSFlagDel_11:
+        CALLA   #OSCPURestoreSR
+//  352                  *perr                = OS_ERR_TASK_WAITING;
+        MOV.B   #0x49, 0(R9)
+//  353                  pgrp_return          = pgrp;
+        JMP     ??OSFlagDel_12
+//  354              }
+//  355              break;
+//  356 
+//  357         case OS_DEL_ALWAYS:                                /* Always delete the event flag group       */
+//  358              pnode = (OS_FLAG_NODE *)pgrp->OSFlagWaitList;
+//  359              while (pnode != (OS_FLAG_NODE *)0) {          /* Ready ALL tasks waiting for flags        */
+//  360                  (void)OS_FlagTaskRdy(pnode, (OS_FLAGS)0);
+??OSFlagDel_0:
+        MOV.W   #0x0, R13
+        MOVA    R7, R12
+        CALLA   #OS_FlagTaskRdy
+//  361                  pnode = (OS_FLAG_NODE *)pnode->OSFlagNodeNext;
+        MOVA    @R7, R7
+//  362              }
+??OSFlagDel_3:
+        CMPA    #0x0, R7
+        JNE     ??OSFlagDel_0
+//  363 #if OS_FLAG_NAME_EN > 0u
+//  364              pgrp->OSFlagName     = (INT8U *)(void *)"?";
+        CALLA   #?Subroutine2
+//  365 #endif
+//  366              pgrp->OSFlagType     = OS_EVENT_TYPE_UNUSED;
+//  367              pgrp->OSFlagWaitList = (void *)OSFlagFreeList;/* Return group to free list                */
+//  368              pgrp->OSFlagFlags    = (OS_FLAGS)0;
+//  369              OSFlagFreeList       = pgrp;
+//  370              OS_EXIT_CRITICAL();
+??CrossCallReturnLabel_8:
+        CALLA   #?Subroutine3
+//  371              if (tasks_waiting == OS_TRUE) {               /* Reschedule only if task(s) were waiting  */
+??CrossCallReturnLabel_9:
+        BIT.B   #0x1, R6
+        JNC     ??OSFlagDel_4
+//  372                  OS_Sched();                               /* Find highest priority task ready to run  */
+        CALLA   #OS_Sched
+//  373              }
+//  374              *perr = OS_ERR_NONE;
+??OSFlagDel_4:
+        MOV.B   #0x0, 0(R9)
+//  375              pgrp_return          = (OS_FLAG_GRP *)0;      /* Event Flag Group has been deleted        */
+        MOVA    #0x0, R12
+//  376              break;
+        JMP     ??OSFlagDel_1
+//  377 
+//  378         default:
+//  379              OS_EXIT_CRITICAL();
+??OSFlagDel_10:
+        CALLA   #OSCPURestoreSR
+//  380              *perr                = OS_ERR_INVALID_OPT;
+        MOV.B   #0x7, 0(R9)
+//  381              pgrp_return          = pgrp;
+??OSFlagDel_12:
+        MOVA    R11, R12
+//  382              break;
+//  383     }
+//  384     return (pgrp_return);
+??OSFlagDel_1:
+        POPM.A  #0x6, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock28
+//  385 }
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?Subroutine2:
+          CFI Block cfiCond29 Using cfiCommon0
+          CFI Function OSFlagDel
+          CFI Conditional ??CrossCallReturnLabel_7
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+32
+          CFI Block cfiCond30 Using cfiCommon0
+          CFI (cfiCond30) Function OSFlagDel
+          CFI (cfiCond30) Conditional ??CrossCallReturnLabel_8
+          CFI (cfiCond30) R6L Frame(CFA, -28)
+          CFI (cfiCond30) R6H Frame(CFA, -26)
+          CFI (cfiCond30) R7L Frame(CFA, -24)
+          CFI (cfiCond30) R7H Frame(CFA, -22)
+          CFI (cfiCond30) R8L Frame(CFA, -20)
+          CFI (cfiCond30) R8H Frame(CFA, -18)
+          CFI (cfiCond30) R9L Frame(CFA, -16)
+          CFI (cfiCond30) R9H Frame(CFA, -14)
+          CFI (cfiCond30) R10L Frame(CFA, -12)
+          CFI (cfiCond30) R10H Frame(CFA, -10)
+          CFI (cfiCond30) R11L Frame(CFA, -8)
+          CFI (cfiCond30) R11H Frame(CFA, -6)
+          CFI (cfiCond30) CFA SP+32
+          CFI Block cfiPicker31 Using cfiCommon1
+          CFI (cfiPicker31) NoFunction
+          CFI (cfiPicker31) Picker
+        MOVX.A  #`?<Constant "?">`, 0x8(R11)
+        MOV.B   #0x0, 0(R11)
+        MOVX.A  &OSFlagFreeList, 0x2(R11)
+        MOV.W   #0x0, 0x6(R11)
+        MOVA    R11, &OSFlagFreeList
+        RETA
+          CFI EndBlock cfiCond29
+          CFI EndBlock cfiCond30
+          CFI EndBlock cfiPicker31
+//  386 #endif
+//  387 /*$PAGE*/
+//  388 /*
+//  389 *********************************************************************************************************
+//  390 *                                 GET THE NAME OF AN EVENT FLAG GROUP
+//  391 *
+//  392 * Description: This function is used to obtain the name assigned to an event flag group
+//  393 *
+//  394 * Arguments  : pgrp      is a pointer to the event flag group.
+//  395 *
+//  396 *              pname     is pointer to a pointer to an ASCII string that will receive the name of the event flag
+//  397 *                        group.
+//  398 *
+//  399 *              perr      is a pointer to an error code that can contain one of the following values:
+//  400 *
+//  401 *                        OS_ERR_NONE                if the requested task is resumed
+//  402 *                        OS_ERR_EVENT_TYPE          if 'pevent' is not pointing to an event flag group
+//  403 *                        OS_ERR_PNAME_NULL          You passed a NULL pointer for 'pname'
+//  404 *                        OS_ERR_FLAG_INVALID_PGRP   if you passed a NULL pointer for 'pgrp'
+//  405 *                        OS_ERR_NAME_GET_ISR        if you called this function from an ISR
+//  406 *
+//  407 * Returns    : The length of the string or 0 if the 'pgrp' is a NULL pointer.
+//  408 *********************************************************************************************************
+//  409 */
+//  410 
+//  411 #if OS_FLAG_NAME_EN > 0u
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  412 INT8U  OSFlagNameGet (OS_FLAG_GRP   *pgrp,
+OSFlagNameGet:
+          CFI Block cfiBlock32 Using cfiCommon0
+          CFI Function OSFlagNameGet
+//  413                       INT8U        **pname,
+//  414                       INT8U         *perr)
+//  415 {
+        FUNCALL OSFlagNameGet, OSCPUSaveSR
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSFlagNameGet, OSCPURestoreSR
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSFlagNameGet, OS_StrLen
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSFlagNameGet, OSCPURestoreSR
+        LOCFRAME CSTACK, 20, STACK
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        MOVA    R12, R11
+        MOVA    R13, R8
+        CALLA   #?Subroutine5
+//  416     INT8U      len;
+//  417 #if OS_CRITICAL_METHOD == 3u                     /* Allocate storage for CPU status register           */
+//  418     OS_CPU_SR  cpu_sr = 0u;
+//  419 #endif
+//  420 
+//  421 
+//  422 
+//  423 #ifdef OS_SAFETY_CRITICAL
+//  424     if (perr == (INT8U *)0) {
+//  425         OS_SAFETY_CRITICAL_EXCEPTION();
+//  426     }
+//  427 #endif
+//  428 
+//  429 #if OS_ARG_CHK_EN > 0u
+//  430     if (pgrp == (OS_FLAG_GRP *)0) {              /* Is 'pgrp' a NULL pointer?                          */
+//  431         *perr = OS_ERR_FLAG_INVALID_PGRP;
+//  432         return (0u);
+//  433     }
+//  434     if (pname == (INT8U **)0) {                   /* Is 'pname' a NULL pointer?                         */
+//  435         *perr = OS_ERR_PNAME_NULL;
+//  436         return (0u);
+//  437     }
+//  438 #endif
+//  439     if (OSIntNesting > 0u) {                     /* See if trying to call from an ISR                  */
+??CrossCallReturnLabel_15:
+        JEQ     ??OSFlagNameGet_0
+//  440         *perr = OS_ERR_NAME_GET_ISR;
+        MOV.B   #0x11, 0(R14)
+//  441         return (0u);
+        JMP     ??OSFlagNameGet_1
+//  442     }
+//  443     OS_ENTER_CRITICAL();
+??OSFlagNameGet_0:
+        CALLA   #OSCPUSaveSR
+        MOV.W   R12, R10
+//  444     if (pgrp->OSFlagType != OS_EVENT_TYPE_FLAG) {
+        CMP.B   #0x5, 0(R11)
+        JEQ     ??OSFlagNameGet_2
+//  445         OS_EXIT_CRITICAL();
+        CALLA   #OSCPURestoreSR
+//  446         *perr = OS_ERR_EVENT_TYPE;
+        MOV.B   #0x1, 0(R9)
+//  447         return (0u);
+??OSFlagNameGet_1:
+        MOV.B   #0x0, R12
+        JMP     ??OSFlagNameGet_3
+//  448     }
+//  449     *pname = pgrp->OSFlagName;
+??OSFlagNameGet_2:
+        MOVA    0x8(R11), R12
+        MOVA    R12, 0(R8)
+//  450     len    = OS_StrLen(*pname);
+        CALLA   #OS_StrLen
+        MOV.B   R12, R11
+//  451     OS_EXIT_CRITICAL();
+        CALLA   #?Subroutine3
+//  452     *perr  = OS_ERR_NONE;
+??CrossCallReturnLabel_10:
+        MOV.B   #0x0, 0(R9)
+//  453     return (len);
+        MOV.B   R11, R12
+??OSFlagNameGet_3:
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock32
+//  454 }
+//  455 #endif
+//  456 
+//  457 /*$PAGE*/
+//  458 /*
+//  459 *********************************************************************************************************
+//  460 *                                 ASSIGN A NAME TO AN EVENT FLAG GROUP
+//  461 *
+//  462 * Description: This function assigns a name to an event flag group.
+//  463 *
+//  464 * Arguments  : pgrp      is a pointer to the event flag group.
+//  465 *
+//  466 *              pname     is a pointer to an ASCII string that will be used as the name of the event flag
+//  467 *                        group.
+//  468 *
+//  469 *              perr      is a pointer to an error code that can contain one of the following values:
+//  470 *
+//  471 *                        OS_ERR_NONE                if the requested task is resumed
+//  472 *                        OS_ERR_EVENT_TYPE          if 'pevent' is not pointing to an event flag group
+//  473 *                        OS_ERR_PNAME_NULL          You passed a NULL pointer for 'pname'
+//  474 *                        OS_ERR_FLAG_INVALID_PGRP   if you passed a NULL pointer for 'pgrp'
+//  475 *                        OS_ERR_NAME_SET_ISR        if you called this function from an ISR
+//  476 *
+//  477 * Returns    : None
+//  478 *********************************************************************************************************
+//  479 */
+//  480 
+//  481 #if OS_FLAG_NAME_EN > 0u
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  482 void  OSFlagNameSet (OS_FLAG_GRP  *pgrp,
+OSFlagNameSet:
+          CFI Block cfiBlock33 Using cfiCommon0
+          CFI Function OSFlagNameSet
+//  483                      INT8U        *pname,
+//  484                      INT8U        *perr)
+//  485 {
+        FUNCALL OSFlagNameSet, OSCPUSaveSR
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSFlagNameSet, OSCPURestoreSR
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL OSFlagNameSet, OSCPURestoreSR
+        LOCFRAME CSTACK, 20, STACK
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        MOVA    R12, R10
+        MOVA    R13, R11
+        MOVA    R14, R8
+//  486 #if OS_CRITICAL_METHOD == 3u                     /* Allocate storage for CPU status register           */
+//  487     OS_CPU_SR  cpu_sr = 0u;
+//  488 #endif
+//  489 
+//  490 
+//  491 
+//  492 #ifdef OS_SAFETY_CRITICAL
+//  493     if (perr == (INT8U *)0) {
+//  494         OS_SAFETY_CRITICAL_EXCEPTION();
+//  495     }
+//  496 #endif
+//  497 
+//  498 #if OS_ARG_CHK_EN > 0u
+//  499     if (pgrp == (OS_FLAG_GRP *)0) {              /* Is 'pgrp' a NULL pointer?                          */
+//  500         *perr = OS_ERR_FLAG_INVALID_PGRP;
+//  501         return;
+//  502     }
+//  503     if (pname == (INT8U *)0) {                   /* Is 'pname' a NULL pointer?                         */
+//  504         *perr = OS_ERR_PNAME_NULL;
+//  505         return;
+//  506     }
+//  507 #endif
+//  508     if (OSIntNesting > 0u) {                     /* See if trying to call from an ISR                  */
+        CALLA   #??Subroutine5_0
+??CrossCallReturnLabel_18:
+        JEQ     ??OSFlagNameSet_0
+//  509         *perr = OS_ERR_NAME_SET_ISR;
+        MOV.B   #0x12, 0(R14)
+//  510         return;
+        JMP     ??OSFlagNameSet_1
+//  511     }
+//  512     OS_ENTER_CRITICAL();
+??OSFlagNameSet_0:
+        CALLA   #OSCPUSaveSR
+//  513     if (pgrp->OSFlagType != OS_EVENT_TYPE_FLAG) {
+        CMP.B   #0x5, 0(R10)
+        JEQ     ??OSFlagNameSet_2
+//  514         OS_EXIT_CRITICAL();
+        CALLA   #OSCPURestoreSR
+//  515         *perr = OS_ERR_EVENT_TYPE;
+        MOV.B   #0x1, 0(R8)
+//  516         return;
+        JMP     ??OSFlagNameSet_1
+//  517     }
+//  518     pgrp->OSFlagName = pname;
+??OSFlagNameSet_2:
+        MOVA    R11, 0x8(R10)
+//  519     OS_EXIT_CRITICAL();
+        CALLA   #OSCPURestoreSR
+//  520     *perr            = OS_ERR_NONE;
+        MOV.B   #0x0, 0(R8)
+//  521     return;
+??OSFlagNameSet_1:
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock33
+//  522 }
+//  523 #endif
+//  524 
+//  525 /*$PAGE*/
+//  526 /*
+//  527 *********************************************************************************************************
+//  528 *                                        WAIT ON AN EVENT FLAG GROUP
+//  529 *
+//  530 * Description: This function is called to wait for a combination of bits to be set in an event flag
+//  531 *              group.  Your application can wait for ANY bit to be set or ALL bits to be set.
+//  532 *
+//  533 * Arguments  : pgrp          is a pointer to the desired event flag group.
+//  534 *
+//  535 *              flags         Is a bit pattern indicating which bit(s) (i.e. flags) you wish to wait for.
+//  536 *                            The bits you want are specified by setting the corresponding bits in
+//  537 *                            'flags'.  e.g. if your application wants to wait for bits 0 and 1 then
+//  538 *                            'flags' would contain 0x03.
+//  539 *
+//  540 *              wait_type     specifies whether you want ALL bits to be set or ANY of the bits to be set.
+//  541 *                            You can specify the following argument:
+//  542 *
+//  543 *                            OS_FLAG_WAIT_CLR_ALL   You will wait for ALL bits in 'mask' to be clear (0)
+//  544 *                            OS_FLAG_WAIT_SET_ALL   You will wait for ALL bits in 'mask' to be set   (1)
+//  545 *                            OS_FLAG_WAIT_CLR_ANY   You will wait for ANY bit  in 'mask' to be clear (0)
+//  546 *                            OS_FLAG_WAIT_SET_ANY   You will wait for ANY bit  in 'mask' to be set   (1)
+//  547 *
+//  548 *                            NOTE: Add OS_FLAG_CONSUME if you want the event flag to be 'consumed' by
+//  549 *                                  the call.  Example, to wait for any flag in a group AND then clear
+//  550 *                                  the flags that are present, set 'wait_type' to:
+//  551 *
+//  552 *                                  OS_FLAG_WAIT_SET_ANY + OS_FLAG_CONSUME
+//  553 *
+//  554 *              timeout       is an optional timeout (in clock ticks) that your task will wait for the
+//  555 *                            desired bit combination.  If you specify 0, however, your task will wait
+//  556 *                            forever at the specified event flag group or, until a message arrives.
+//  557 *
+//  558 *              perr          is a pointer to an error code and can be:
+//  559 *                            OS_ERR_NONE               The desired bits have been set within the specified
+//  560 *                                                      'timeout'.
+//  561 *                            OS_ERR_PEND_ISR           If you tried to PEND from an ISR
+//  562 *                            OS_ERR_FLAG_INVALID_PGRP  If 'pgrp' is a NULL pointer.
+//  563 *                            OS_ERR_EVENT_TYPE         You are not pointing to an event flag group
+//  564 *                            OS_ERR_TIMEOUT            The bit(s) have not been set in the specified
+//  565 *                                                      'timeout'.
+//  566 *                            OS_ERR_PEND_ABORT         The wait on the flag was aborted.
+//  567 *                            OS_ERR_FLAG_WAIT_TYPE     You didn't specify a proper 'wait_type' argument.
+//  568 *
+//  569 * Returns    : The flags in the event flag group that made the task ready or, 0 if a timeout or an error
+//  570 *              occurred.
+//  571 *
+//  572 * Called from: Task ONLY
+//  573 *
+//  574 * Note(s)    : 1) IMPORTANT, the behavior of this function has changed from PREVIOUS versions.  The
+//  575 *                 function NOW returns the flags that were ready INSTEAD of the current state of the
+//  576 *                 event flags.
+//  577 *********************************************************************************************************
+//  578 */
+//  579 
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  580 OS_FLAGS  OSFlagPend (OS_FLAG_GRP  *pgrp,
+OSFlagPend:
+          CFI Block cfiBlock34 Using cfiCommon0
+          CFI Function OSFlagPend
+//  581                       OS_FLAGS      flags,
+//  582                       INT8U         wait_type,
+//  583                       INT32U        timeout,
+//  584                       INT8U        *perr)
+//  585 {
+        FUNCALL OSFlagPend, OSCPUSaveSR
+        LOCFRAME CSTACK, 56, STACK
+        FUNCALL OSFlagPend, OS_FlagBlock
+        LOCFRAME CSTACK, 60, STACK
+        FUNCALL OSFlagPend, OSCPURestoreSR
+        LOCFRAME CSTACK, 60, STACK
+        FUNCALL OSFlagPend, OS_Sched
+        LOCFRAME CSTACK, 60, STACK
+        FUNCALL OSFlagPend, OSCPUSaveSR
+        LOCFRAME CSTACK, 60, STACK
+        FUNCALL OSFlagPend, OS_FlagUnlink
+        LOCFRAME CSTACK, 56, STACK
+        FUNCALL OSFlagPend, OSCPURestoreSR
+        LOCFRAME CSTACK, 56, STACK
+        FUNCALL OSFlagPend, OSCPURestoreSR
+        LOCFRAME CSTACK, 56, STACK
+        FUNCALL OSFlagPend, OSCPURestoreSR
+        LOCFRAME CSTACK, 56, STACK
+        FUNCALL OSFlagPend, OSCPURestoreSR
+        LOCFRAME CSTACK, 56, STACK
+        PUSHM.A #0x8, R11
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+36
+        SUB.W   #0x14, SP
+          CFI CFA SP+56
+        MOVA    R12, R8
+        MOV.W   R13, R10
+        MOV.B   R14, R11
+        MOVA    R15, R9
+//  586     OS_FLAG_NODE  node;
+//  587     OS_FLAGS      flags_rdy;
+//  588     INT8U         result;
+//  589     INT8U         pend_stat;
+//  590     BOOLEAN       consume;
+//  591 #if OS_CRITICAL_METHOD == 3u                               /* Allocate storage for CPU status register */
+//  592     OS_CPU_SR     cpu_sr = 0u;
+//  593 #endif
+//  594 
+//  595 
+//  596 
+//  597 #ifdef OS_SAFETY_CRITICAL
+//  598     if (perr == (INT8U *)0) {
+//  599         OS_SAFETY_CRITICAL_EXCEPTION();
+//  600     }
+//  601 #endif
+//  602 
+//  603 #if OS_ARG_CHK_EN > 0u
+//  604     if (pgrp == (OS_FLAG_GRP *)0) {                        /* Validate 'pgrp'                          */
+//  605         *perr = OS_ERR_FLAG_INVALID_PGRP;
+//  606         return ((OS_FLAGS)0);
+//  607     }
+//  608 #endif
+//  609     if (OSIntNesting > 0u) {                               /* See if called from ISR ...               */
+        CALLA   #??Subroutine5_0
+??CrossCallReturnLabel_17:
+        JEQ     ??OSFlagPend_8
+//  610         *perr = OS_ERR_PEND_ISR;                           /* ... can't PEND from an ISR               */
+        MOV.B   #0x2, 0(R15)
+//  611         return ((OS_FLAGS)0);
+        JMP     ??OSFlagPend_5
+//  612     }
+//  613     if (OSLockNesting > 0u) {                              /* See if called with scheduler locked ...  */
+??OSFlagPend_8:
+        CMPX.B  #0x0, &OSLockNesting
+        JEQ     ??OSFlagPend_9
+//  614         *perr = OS_ERR_PEND_LOCKED;                        /* ... can't PEND when locked               */
+        MOV.B   #0xd, 0(R15)
+//  615         return ((OS_FLAGS)0);
+        JMP     ??OSFlagPend_5
+//  616     }
+//  617     if (pgrp->OSFlagType != OS_EVENT_TYPE_FLAG) {          /* Validate event block type                */
+??OSFlagPend_9:
+        CALLA   #?Subroutine1
+??CrossCallReturnLabel_4:
+        JEQ     ??OSFlagPend_10
+//  618         *perr = OS_ERR_EVENT_TYPE;
+        MOV.B   #0x1, 0(R15)
+//  619         return ((OS_FLAGS)0);
+        JMP     ??OSFlagPend_5
+//  620     }
+//  621     result = (INT8U)(wait_type & OS_FLAG_CONSUME);
+//  622     if (result != (INT8U)0) {                              /* See if we need to consume the flags      */
+??OSFlagPend_10:
+        CALLA   #?Subroutine4
+//  623         wait_type &= (INT8U)~(INT8U)OS_FLAG_CONSUME;
+//  624         consume    = OS_TRUE;
+//  625     } else {
+//  626         consume    = OS_FALSE;
+//  627     }
+//  628 /*$PAGE*/
+//  629     OS_ENTER_CRITICAL();
+??CrossCallReturnLabel_13:
+        CALLA   #OSCPUSaveSR
+        MOV.W   R12, R7
+//  630     switch (wait_type) {
+        MOV.B   R11, R14
+        SUB.B   #0x0, R14
+        JEQ     ??OSFlagPend_11
+        SUB.B   #0x1, R14
+        JEQ     ??OSFlagPend_12
+        SUB.B   #0x1, R14
+        JEQ     ??OSFlagPend_13
+        SUB.B   #0x1, R14
+        JEQ     ??OSFlagPend_14
+        JMP     ??OSFlagPend_4
+//  631         case OS_FLAG_WAIT_SET_ALL:                         /* See if all required flags are set        */
+//  632              flags_rdy = (OS_FLAGS)(pgrp->OSFlagFlags & flags);   /* Extract only the bits we want     */
+??OSFlagPend_13:
+        MOV.W   R10, R4
+        AND.W   0x6(R8), R4
+//  633              if (flags_rdy == flags) {                     /* Must match ALL the bits that we want     */
+        CMP.W   R10, R4
+        JEQ     ??OSFlagPend_15
+??OSFlagPend_0:
+        MOV.W   SP, R4
+        ADD.W   #0x0, R4
+        PUSH.W  0x3c(SP)
+          CFI CFA SP+58
+        PUSH.W  0x3c(SP)
+          CFI CFA SP+60
+        MOV.B   R11, R15
+        MOV.W   R10, R14
+        MOVA    R4, R13
+        MOVA    R8, R12
+//  634                  if (consume == OS_TRUE) {                 /* See if we need to consume the flags      */
+//  635                      pgrp->OSFlagFlags &= (OS_FLAGS)~flags_rdy;   /* Clear ONLY the flags we wanted    */
+//  636                  }
+//  637                  OSTCBCur->OSTCBFlagsRdy = flags_rdy;      /* Save flags that were ready               */
+//  638                  OS_EXIT_CRITICAL();                       /* Yes, condition met, return to caller     */
+//  639                  *perr                   = OS_ERR_NONE;
+//  640                  return (flags_rdy);
+//  641              } else {                                      /* Block task until events occur or timeout */
+//  642                  OS_FlagBlock(pgrp, &node, flags, wait_type, timeout);
+//  643                  OS_EXIT_CRITICAL();
+//  644              }
+//  645              break;
+//  646 
+//  647         case OS_FLAG_WAIT_SET_ANY:
+//  648              flags_rdy = (OS_FLAGS)(pgrp->OSFlagFlags & flags);    /* Extract only the bits we want    */
+//  649              if (flags_rdy != (OS_FLAGS)0) {               /* See if any flag set                      */
+//  650                  if (consume == OS_TRUE) {                 /* See if we need to consume the flags      */
+//  651                      pgrp->OSFlagFlags &= (OS_FLAGS)~flags_rdy;    /* Clear ONLY the flags that we got */
+//  652                  }
+//  653                  OSTCBCur->OSTCBFlagsRdy = flags_rdy;      /* Save flags that were ready               */
+//  654                  OS_EXIT_CRITICAL();                       /* Yes, condition met, return to caller     */
+//  655                  *perr                   = OS_ERR_NONE;
+//  656                  return (flags_rdy);
+//  657              } else {                                      /* Block task until events occur or timeout */
+//  658                  OS_FlagBlock(pgrp, &node, flags, wait_type, timeout);
+//  659                  OS_EXIT_CRITICAL();
+//  660              }
+//  661              break;
+//  662 
+//  663 #if OS_FLAG_WAIT_CLR_EN > 0u
+//  664         case OS_FLAG_WAIT_CLR_ALL:                         /* See if all required flags are cleared    */
+//  665              flags_rdy = (OS_FLAGS)~pgrp->OSFlagFlags & flags;    /* Extract only the bits we want     */
+//  666              if (flags_rdy == flags) {                     /* Must match ALL the bits that we want     */
+//  667                  if (consume == OS_TRUE) {                 /* See if we need to consume the flags      */
+//  668                      pgrp->OSFlagFlags |= flags_rdy;       /* Set ONLY the flags that we wanted        */
+//  669                  }
+//  670                  OSTCBCur->OSTCBFlagsRdy = flags_rdy;      /* Save flags that were ready               */
+//  671                  OS_EXIT_CRITICAL();                       /* Yes, condition met, return to caller     */
+//  672                  *perr                   = OS_ERR_NONE;
+//  673                  return (flags_rdy);
+//  674              } else {                                      /* Block task until events occur or timeout */
+//  675                  OS_FlagBlock(pgrp, &node, flags, wait_type, timeout);
+//  676                  OS_EXIT_CRITICAL();
+//  677              }
+//  678              break;
+//  679 
+//  680         case OS_FLAG_WAIT_CLR_ANY:
+//  681              flags_rdy = (OS_FLAGS)~pgrp->OSFlagFlags & flags;   /* Extract only the bits we want      */
+//  682              if (flags_rdy != (OS_FLAGS)0) {               /* See if any flag cleared                  */
+//  683                  if (consume == OS_TRUE) {                 /* See if we need to consume the flags      */
+//  684                      pgrp->OSFlagFlags |= flags_rdy;       /* Set ONLY the flags that we got           */
+//  685                  }
+//  686                  OSTCBCur->OSTCBFlagsRdy = flags_rdy;      /* Save flags that were ready               */
+//  687                  OS_EXIT_CRITICAL();                       /* Yes, condition met, return to caller     */
+//  688                  *perr                   = OS_ERR_NONE;
+//  689                  return (flags_rdy);
+//  690              } else {                                      /* Block task until events occur or timeout */
+//  691                  OS_FlagBlock(pgrp, &node, flags, wait_type, timeout);
+        CALLA   #OS_FlagBlock
+//  692                  OS_EXIT_CRITICAL();
+        MOV.W   R7, R12
+        CALLA   #OSCPURestoreSR
+//  693              }
+//  694              break;
+//  695 #endif
+//  696 
+//  697         default:
+//  698              OS_EXIT_CRITICAL();
+//  699              flags_rdy = (OS_FLAGS)0;
+//  700              *perr      = OS_ERR_FLAG_WAIT_TYPE;
+//  701              return (flags_rdy);
+//  702     }
+//  703 /*$PAGE*/
+//  704     OS_Sched();                                            /* Find next HPT ready to run               */
+        CALLA   #OS_Sched
+//  705     OS_ENTER_CRITICAL();
+        CALLA   #OSCPUSaveSR
+        MOV.W   R12, R7
+        MOVA    &OSTCBCur, R15
+        MOV.B   0x2f(R15), R10
+        ADD.W   #0x4, SP
+          CFI CFA SP+56
+        CMP.B   #0x0, R10
+        JEQ     ??OSFlagPend_16
+//  706     if (OSTCBCur->OSTCBStatPend != OS_STAT_PEND_OK) {      /* Have we timed-out or aborted?            */
+//  707         pend_stat                = OSTCBCur->OSTCBStatPend;
+//  708         OSTCBCur->OSTCBStatPend  = OS_STAT_PEND_OK;
+        MOV.B   #0x0, 0x2f(R15)
+//  709         OS_FlagUnlink(&node);
+        MOVA    R4, R12
+        CALLA   #OS_FlagUnlink
+//  710         OSTCBCur->OSTCBStat      = OS_STAT_RDY;            /* Yes, make task ready-to-run              */
+        MOVA    &OSTCBCur, R15
+        MOV.B   #0x0, 0x2e(R15)
+//  711         OS_EXIT_CRITICAL();
+        MOV.W   R7, R12
+        CALLA   #OSCPURestoreSR
+//  712         flags_rdy                = (OS_FLAGS)0;
+//  713         switch (pend_stat) {
+        CMP.B   #0x2, R10
+        JEQ     ??OSFlagPend_17
+        MOV.B   #0xa, R14
+        JMP     ??OSFlagPend_18
+??OSFlagPend_17:
+        MOV.B   #0xe, R14
+??OSFlagPend_18:
+        MOV.B   R14, 0(R9)
+//  714             case OS_STAT_PEND_ABORT:
+//  715                  *perr = OS_ERR_PEND_ABORT;                /* Indicate that we aborted   waiting       */
+//  716                  break;
+//  717 
+//  718             case OS_STAT_PEND_TO:
+//  719             default:
+//  720                  *perr = OS_ERR_TIMEOUT;                   /* Indicate that we timed-out waiting       */
+//  721                  break;
+//  722         }
+//  723         return (flags_rdy);
+        JMP     ??OSFlagPend_5
+//  724     }
+??OSFlagPend_14:
+        MOV.W   R10, R4
+        AND.W   0x6(R8), R4
+        JEQ     ??OSFlagPend_0
+??OSFlagPend_15:
+        BIT.B   #0x1, R6
+        JNC     ??OSFlagPend_19
+        BIC.W   R4, 0x6(R8)
+        JMP     ??OSFlagPend_19
+??OSFlagPend_11:
+        MOV.W   R10, R4
+        BIC.W   0x6(R8), R4
+        CMP.W   R10, R4
+        JNE     ??OSFlagPend_0
+        JMP     ??OSFlagPend_20
+??OSFlagPend_12:
+        MOV.W   R10, R4
+        BIC.W   0x6(R8), R4
+        CMP.W   #0x0, R4
+        JEQ     ??OSFlagPend_0
+??OSFlagPend_20:
+        BIT.B   #0x1, R6
+        JNC     ??OSFlagPend_19
+        BIS.W   R4, 0x6(R8)
+??OSFlagPend_19:
+        MOVA    &OSTCBCur, R15
+        MOV.W   R4, 0x28(R15)
+        JMP     ??OSFlagPend_1
+//  725     flags_rdy = OSTCBCur->OSTCBFlagsRdy;
+??OSFlagPend_16:
+        MOV.W   0x28(R15), R4
+//  726     if (consume == OS_TRUE) {                              /* See if we need to consume the flags      */
+        BIT.B   #0x1, R6
+        JNC     ??OSFlagPend_1
+//  727         switch (wait_type) {
+        SUB.B   #0x0, R11
+        JEQ     ??OSFlagPend_21
+        SUB.B   #0x1, R11
+        JEQ     ??OSFlagPend_21
+        SUB.B   #0x1, R11
+        JEQ     ??OSFlagPend_3
+        SUB.B   #0x1, R11
+        JNE     ??OSFlagPend_4
+//  728             case OS_FLAG_WAIT_SET_ALL:
+//  729             case OS_FLAG_WAIT_SET_ANY:                     /* Clear ONLY the flags we got              */
+//  730                  pgrp->OSFlagFlags &= (OS_FLAGS)~flags_rdy;
+??OSFlagPend_3:
+        BIC.W   R4, 0x6(R8)
+//  731                  break;
+//  732 
+//  733 #if OS_FLAG_WAIT_CLR_EN > 0u
+//  734             case OS_FLAG_WAIT_CLR_ALL:
+//  735             case OS_FLAG_WAIT_CLR_ANY:                     /* Set   ONLY the flags we got              */
+//  736                  pgrp->OSFlagFlags |=  flags_rdy;
+//  737                  break;
+//  738 #endif
+//  739             default:
+//  740                  OS_EXIT_CRITICAL();
+//  741                  *perr = OS_ERR_FLAG_WAIT_TYPE;
+//  742                  return ((OS_FLAGS)0);
+//  743         }
+//  744     }
+//  745     OS_EXIT_CRITICAL();
+??OSFlagPend_1:
+        CALLA   #OSCPURestoreSR
+//  746     *perr = OS_ERR_NONE;                                   /* Event(s) must have occurred              */
+        MOV.B   #0x0, 0(R9)
+//  747     return (flags_rdy);
+        MOV.W   R4, R12
+??OSFlagPend_2:
+        ADD.W   #0x14, SP
+          CFI CFA SP+36
+        POPM.A  #0x8, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R4H SameValue
+          CFI R5H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R4L SameValue
+          CFI R5L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+56
+??OSFlagPend_21:
+        BIS.W   R4, 0x6(R8)
+        JMP     ??OSFlagPend_1
+??OSFlagPend_4:
+        MOV.W   R7, R12
+        CALLA   #OSCPURestoreSR
+        MOV.B   #0x6f, 0(R9)
+??OSFlagPend_5:
+        MOV.W   #0x0, R12
+        JMP     ??OSFlagPend_2
+        NOP
+          CFI EndBlock cfiBlock34
+//  748 }
+//  749 /*$PAGE*/
+//  750 /*
+//  751 *********************************************************************************************************
+//  752 *                               GET FLAGS WHO CAUSED TASK TO BECOME READY
+//  753 *
+//  754 * Description: This function is called to obtain the flags that caused the task to become ready to run.
+//  755 *              In other words, this function allows you to tell "Who done it!".
+//  756 *
+//  757 * Arguments  : None
+//  758 *
+//  759 * Returns    : The flags that caused the task to be ready.
+//  760 *
+//  761 * Called from: Task ONLY
+//  762 *********************************************************************************************************
+//  763 */
+//  764 
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  765 OS_FLAGS  OSFlagPendGetFlagsRdy (void)
+OSFlagPendGetFlagsRdy:
+          CFI Block cfiBlock35 Using cfiCommon0
+          CFI Function OSFlagPendGetFlagsRdy
+//  766 {
+        FUNCALL OSFlagPendGetFlagsRdy, OSCPUSaveSR
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL OSFlagPendGetFlagsRdy, OSCPURestoreSR
+        LOCFRAME CSTACK, 8, STACK
+        PUSHM.A #0x1, R10
+          CFI R10L Frame(CFA, -8)
+          CFI R10H Frame(CFA, -6)
+          CFI CFA SP+8
+//  767     OS_FLAGS      flags;
+//  768 #if OS_CRITICAL_METHOD == 3u                               /* Allocate storage for CPU status register */
+//  769     OS_CPU_SR     cpu_sr = 0u;
+//  770 #endif
+//  771 
+//  772 
+//  773 
+//  774     OS_ENTER_CRITICAL();
+        CALLA   #OSCPUSaveSR
+//  775     flags = OSTCBCur->OSTCBFlagsRdy;
+        MOVA    &OSTCBCur, R15
+        MOV.W   0x28(R15), R10
+//  776     OS_EXIT_CRITICAL();
+        CALLA   #OSCPURestoreSR
+//  777     return (flags);
+        MOV.W   R10, R12
+        POPM.A  #0x1, R10
+          CFI R10H SameValue
+          CFI R10L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock35
+//  778 }
+//  779 
+//  780 /*$PAGE*/
+//  781 /*
+//  782 *********************************************************************************************************
+//  783 *                                         POST EVENT FLAG BIT(S)
+//  784 *
+//  785 * Description: This function is called to set or clear some bits in an event flag group.  The bits to
+//  786 *              set or clear are specified by a 'bit mask'.
+//  787 *
+//  788 * Arguments  : pgrp          is a pointer to the desired event flag group.
+//  789 *
+//  790 *              flags         If 'opt' (see below) is OS_FLAG_SET, each bit that is set in 'flags' will
+//  791 *                            set the corresponding bit in the event flag group.  e.g. to set bits 0, 4
+//  792 *                            and 5 you would set 'flags' to:
+//  793 *
+//  794 *                                0x31     (note, bit 0 is least significant bit)
+//  795 *
+//  796 *                            If 'opt' (see below) is OS_FLAG_CLR, each bit that is set in 'flags' will
+//  797 *                            CLEAR the corresponding bit in the event flag group.  e.g. to clear bits 0,
+//  798 *                            4 and 5 you would specify 'flags' as:
+//  799 *
+//  800 *                                0x31     (note, bit 0 is least significant bit)
+//  801 *
+//  802 *              opt           indicates whether the flags will be:
+//  803 *                                set     (OS_FLAG_SET) or
+//  804 *                                cleared (OS_FLAG_CLR)
+//  805 *
+//  806 *              perr          is a pointer to an error code and can be:
+//  807 *                            OS_ERR_NONE                The call was successfull
+//  808 *                            OS_ERR_FLAG_INVALID_PGRP   You passed a NULL pointer
+//  809 *                            OS_ERR_EVENT_TYPE          You are not pointing to an event flag group
+//  810 *                            OS_ERR_FLAG_INVALID_OPT    You specified an invalid option
+//  811 *
+//  812 * Returns    : the new value of the event flags bits that are still set.
+//  813 *
+//  814 * Called From: Task or ISR
+//  815 *
+//  816 * WARNING(s) : 1) The execution time of this function depends on the number of tasks waiting on the event
+//  817 *                 flag group.
+//  818 *              2) The amount of time interrupts are DISABLED depends on the number of tasks waiting on
+//  819 *                 the event flag group.
+//  820 *********************************************************************************************************
+//  821 */
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  822 OS_FLAGS  OSFlagPost (OS_FLAG_GRP  *pgrp,
+OSFlagPost:
+          CFI Block cfiBlock36 Using cfiCommon0
+          CFI Function OSFlagPost
+//  823                       OS_FLAGS      flags,
+//  824                       INT8U         opt,
+//  825                       INT8U        *perr)
+//  826 {
+        FUNCALL OSFlagPost, OSCPUSaveSR
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSFlagPost, OSCPURestoreSR
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSFlagPost, OS_FlagTaskRdy
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSFlagPost, OSCPURestoreSR
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSFlagPost, OSCPURestoreSR
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSFlagPost, OS_Sched
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSFlagPost, OSCPUSaveSR
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL OSFlagPost, OSCPURestoreSR
+        LOCFRAME CSTACK, 28, STACK
+        PUSHM.A #0x6, R11
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+28
+        MOVA    R12, R9
+        MOV.W   R13, R11
+        MOV.B   R14, R8
+        MOVA    R15, R6
+//  827     OS_FLAG_NODE *pnode;
+//  828     BOOLEAN       sched;
+//  829     OS_FLAGS      flags_cur;
+//  830     OS_FLAGS      flags_rdy;
+//  831     BOOLEAN       rdy;
+//  832 #if OS_CRITICAL_METHOD == 3u                         /* Allocate storage for CPU status register       */
+//  833     OS_CPU_SR     cpu_sr = 0u;
+//  834 #endif
+//  835 
+//  836 
+//  837 
+//  838 #ifdef OS_SAFETY_CRITICAL
+//  839     if (perr == (INT8U *)0) {
+//  840         OS_SAFETY_CRITICAL_EXCEPTION();
+//  841     }
+//  842 #endif
+//  843 
+//  844 #if OS_ARG_CHK_EN > 0u
+//  845     if (pgrp == (OS_FLAG_GRP *)0) {                  /* Validate 'pgrp'                                */
+//  846         *perr = OS_ERR_FLAG_INVALID_PGRP;
+//  847         return ((OS_FLAGS)0);
+//  848     }
+//  849 #endif
+//  850     if (pgrp->OSFlagType != OS_EVENT_TYPE_FLAG) {    /* Make sure we are pointing to an event flag grp */
+        CALLA   #?Subroutine1
+??CrossCallReturnLabel_3:
+        JEQ     ??OSFlagPost_6
+//  851         *perr = OS_ERR_EVENT_TYPE;
+        MOV.B   #0x1, 0(R15)
+//  852         return ((OS_FLAGS)0);
+        JMP     ??OSFlagPost_5
+//  853     }
+//  854 /*$PAGE*/
+//  855     OS_ENTER_CRITICAL();
+??OSFlagPost_6:
+        CALLA   #OSCPUSaveSR
+        MOV.W   R12, R10
+//  856     switch (opt) {
+        SUB.B   #0x0, R8
+        JEQ     ??OSFlagPost_7
+        SUB.B   #0x1, R8
+        JEQ     ??OSFlagPost_8
+        JMP     ??OSFlagPost_9
+//  857         case OS_FLAG_CLR:
+//  858              pgrp->OSFlagFlags &= (OS_FLAGS)~flags;  /* Clear the flags specified in the group         */
+??OSFlagPost_7:
+        BIC.W   R11, 0x6(R9)
+//  859              break;
+//  860 
+//  861         case OS_FLAG_SET:
+//  862              pgrp->OSFlagFlags |=  flags;            /* Set   the flags specified in the group         */
+//  863              break;
+//  864 
+//  865         default:
+//  866              OS_EXIT_CRITICAL();                     /* INVALID option                                 */
+//  867              *perr = OS_ERR_FLAG_INVALID_OPT;
+//  868              return ((OS_FLAGS)0);
+//  869     }
+//  870     sched = OS_FALSE;                                /* Indicate that we don't need rescheduling       */
+??OSFlagPost_0:
+        MOV.B   #0x0, R11
+//  871     pnode = (OS_FLAG_NODE *)pgrp->OSFlagWaitList;
+        MOVA    0x2(R9), R8
+        JMP     ??OSFlagPost_10
+??OSFlagPost_8:
+        BIS.W   R11, 0x6(R9)
+        JMP     ??OSFlagPost_0
+??OSFlagPost_9:
+        CALLA   #OSCPURestoreSR
+        MOV.B   #0x71, 0(R6)
+        JMP     ??OSFlagPost_5
+//  872     while (pnode != (OS_FLAG_NODE *)0) {             /* Go through all tasks waiting on event flag(s)  */
+//  873         switch (pnode->OSFlagNodeWaitType) {
+//  874             case OS_FLAG_WAIT_SET_ALL:               /* See if all req. flags are set for current node */
+//  875                  flags_rdy = (OS_FLAGS)(pgrp->OSFlagFlags & pnode->OSFlagNodeFlags);
+??OSFlagPost_1:
+        MOV.W   0x10(R8), R15
+        MOV.W   R15, R13
+        AND.W   0x6(R9), R13
+//  876                  if (flags_rdy == pnode->OSFlagNodeFlags) {
+        CMP.W   R15, R13
+        JEQ     ??OSFlagPost_11
+//  877                      rdy = OS_FlagTaskRdy(pnode, flags_rdy);  /* Make task RTR, event(s) Rx'd          */
+//  878                      if (rdy == OS_TRUE) {
+//  879                          sched = OS_TRUE;                     /* When done we will reschedule          */
+//  880                      }
+//  881                  }
+//  882                  break;
+//  883 
+//  884             case OS_FLAG_WAIT_SET_ANY:               /* See if any flag set                            */
+//  885                  flags_rdy = (OS_FLAGS)(pgrp->OSFlagFlags & pnode->OSFlagNodeFlags);
+//  886                  if (flags_rdy != (OS_FLAGS)0) {
+//  887                      rdy = OS_FlagTaskRdy(pnode, flags_rdy);  /* Make task RTR, event(s) Rx'd          */
+//  888                      if (rdy == OS_TRUE) {
+//  889                          sched = OS_TRUE;                     /* When done we will reschedule          */
+//  890                      }
+//  891                  }
+//  892                  break;
+//  893 
+//  894 #if OS_FLAG_WAIT_CLR_EN > 0u
+//  895             case OS_FLAG_WAIT_CLR_ALL:               /* See if all req. flags are set for current node */
+//  896                  flags_rdy = (OS_FLAGS)~pgrp->OSFlagFlags & pnode->OSFlagNodeFlags;
+//  897                  if (flags_rdy == pnode->OSFlagNodeFlags) {
+//  898                      rdy = OS_FlagTaskRdy(pnode, flags_rdy);  /* Make task RTR, event(s) Rx'd          */
+//  899                      if (rdy == OS_TRUE) {
+//  900                          sched = OS_TRUE;                     /* When done we will reschedule          */
+//  901                      }
+//  902                  }
+//  903                  break;
+//  904 
+//  905             case OS_FLAG_WAIT_CLR_ANY:               /* See if any flag set                            */
+//  906                  flags_rdy = (OS_FLAGS)~pgrp->OSFlagFlags & pnode->OSFlagNodeFlags;
+//  907                  if (flags_rdy != (OS_FLAGS)0) {
+//  908                      rdy = OS_FlagTaskRdy(pnode, flags_rdy);  /* Make task RTR, event(s) Rx'd          */
+//  909                      if (rdy == OS_TRUE) {
+//  910                          sched = OS_TRUE;                     /* When done we will reschedule          */
+//  911                      }
+//  912                  }
+//  913                  break;
+//  914 #endif
+//  915             default:
+//  916                  OS_EXIT_CRITICAL();
+//  917                  *perr = OS_ERR_FLAG_WAIT_TYPE;
+//  918                  return ((OS_FLAGS)0);
+//  919         }
+//  920         pnode = (OS_FLAG_NODE *)pnode->OSFlagNodeNext; /* Point to next task waiting for event flag(s) */
+??OSFlagPost_2:
+        MOVA    @R8, R8
+??OSFlagPost_10:
+        CMPA    #0x0, R8
+        JEQ     ??OSFlagPost_12
+        MOV.B   0x12(R8), R14
+        SUB.B   #0x0, R14
+        JEQ     ??OSFlagPost_13
+        SUB.B   #0x1, R14
+        JEQ     ??OSFlagPost_14
+        SUB.B   #0x1, R14
+        JEQ     ??OSFlagPost_1
+        SUB.B   #0x1, R14
+        JNE     ??OSFlagPost_4
+        MOV.W   0x6(R9), R13
+        AND.W   0x10(R8), R13
+        JNE     ??OSFlagPost_11
+        JMP     ??OSFlagPost_2
+??OSFlagPost_13:
+        MOV.W   0x10(R8), R15
+        MOV.W   R15, R13
+        BIC.W   0x6(R9), R13
+        CMP.W   R15, R13
+        JNE     ??OSFlagPost_2
+        JMP     ??OSFlagPost_11
+??OSFlagPost_14:
+        MOV.W   0x10(R8), R13
+        BIC.W   0x6(R9), R13
+        CMP.W   #0x0, R13
+        JEQ     ??OSFlagPost_2
+??OSFlagPost_11:
+        MOVA    R8, R12
+        CALLA   #OS_FlagTaskRdy
+        CMP.B   #0x1, R12
+        JNE     ??OSFlagPost_2
+        MOV.B   #0x1, R11
+        JMP     ??OSFlagPost_2
+??OSFlagPost_4:
+        CALLA   #?Subroutine3
+??CrossCallReturnLabel_12:
+        MOV.B   #0x6f, 0(R6)
+??OSFlagPost_5:
+        MOV.W   #0x0, R12
+        JMP     ??OSFlagPost_15
+//  921     }
+//  922     OS_EXIT_CRITICAL();
+??OSFlagPost_12:
+        CALLA   #?Subroutine3
+//  923     if (sched == OS_TRUE) {
+??CrossCallReturnLabel_11:
+        BIT.B   #0x1, R11
+        JNC     ??OSFlagPost_16
+//  924         OS_Sched();
+        CALLA   #OS_Sched
+//  925     }
+//  926     OS_ENTER_CRITICAL();
+??OSFlagPost_16:
+        CALLA   #OSCPUSaveSR
+//  927     flags_cur = pgrp->OSFlagFlags;
+        MOV.W   0x6(R9), R11
+//  928     OS_EXIT_CRITICAL();
+        CALLA   #OSCPURestoreSR
+//  929     *perr     = OS_ERR_NONE;
+        MOV.B   #0x0, 0(R6)
+//  930     return (flags_cur);
+        MOV.W   R11, R12
+??OSFlagPost_15:
+        POPM.A  #0x6, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock36
+//  931 }
+//  932 /*$PAGE*/
+//  933 /*
+//  934 *********************************************************************************************************
+//  935 *                                           QUERY EVENT FLAG
+//  936 *
+//  937 * Description: This function is used to check the value of the event flag group.
+//  938 *
+//  939 * Arguments  : pgrp         is a pointer to the desired event flag group.
+//  940 *
+//  941 *              perr          is a pointer to an error code returned to the called:
+//  942 *                            OS_ERR_NONE                The call was successfull
+//  943 *                            OS_ERR_FLAG_INVALID_PGRP   You passed a NULL pointer
+//  944 *                            OS_ERR_EVENT_TYPE          You are not pointing to an event flag group
+//  945 *
+//  946 * Returns    : The current value of the event flag group.
+//  947 *
+//  948 * Called From: Task or ISR
+//  949 *********************************************************************************************************
+//  950 */
+//  951 
+//  952 #if OS_FLAG_QUERY_EN > 0u
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  953 OS_FLAGS  OSFlagQuery (OS_FLAG_GRP  *pgrp,
+OSFlagQuery:
+          CFI Block cfiBlock37 Using cfiCommon0
+          CFI Function OSFlagQuery
+//  954                        INT8U        *perr)
+//  955 {
+        FUNCALL OSFlagQuery, OSCPUSaveSR
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL OSFlagQuery, OSCPURestoreSR
+        LOCFRAME CSTACK, 12, STACK
+        PUSHM.A #0x2, R11
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+12
+        MOVA    R12, R10
+        MOVA    R13, R11
+//  956     OS_FLAGS   flags;
+//  957 #if OS_CRITICAL_METHOD == 3u                      /* Allocate storage for CPU status register          */
+//  958     OS_CPU_SR  cpu_sr = 0u;
+//  959 #endif
+//  960 
+//  961 
+//  962 
+//  963 #ifdef OS_SAFETY_CRITICAL
+//  964     if (perr == (INT8U *)0) {
+//  965         OS_SAFETY_CRITICAL_EXCEPTION();
+//  966     }
+//  967 #endif
+//  968 
+//  969 #if OS_ARG_CHK_EN > 0u
+//  970     if (pgrp == (OS_FLAG_GRP *)0) {               /* Validate 'pgrp'                                   */
+//  971         *perr = OS_ERR_FLAG_INVALID_PGRP;
+//  972         return ((OS_FLAGS)0);
+//  973     }
+//  974 #endif
+//  975     if (pgrp->OSFlagType != OS_EVENT_TYPE_FLAG) { /* Validate event block type                         */
+        CALLA   #?Subroutine1
+??CrossCallReturnLabel_2:
+        JEQ     ??OSFlagQuery_0
+//  976         *perr = OS_ERR_EVENT_TYPE;
+        MOV.B   #0x1, 0(R13)
+//  977         return ((OS_FLAGS)0);
+        MOV.W   #0x0, R12
+        JMP     ??OSFlagQuery_1
+//  978     }
+//  979     OS_ENTER_CRITICAL();
+??OSFlagQuery_0:
+        CALLA   #OSCPUSaveSR
+//  980     flags = pgrp->OSFlagFlags;
+        MOV.W   0x6(R10), R10
+//  981     OS_EXIT_CRITICAL();
+        CALLA   #OSCPURestoreSR
+//  982     *perr = OS_ERR_NONE;
+        MOV.B   #0x0, 0(R11)
+//  983     return (flags);                               /* Return the current value of the event flags       */
+        MOV.W   R10, R12
+??OSFlagQuery_1:
+        POPM.A  #0x2, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock37
+//  984 }
+//  985 #endif
+//  986 
+//  987 /*$PAGE*/
+//  988 /*
+//  989 *********************************************************************************************************
+//  990 *                         SUSPEND TASK UNTIL EVENT FLAG(s) RECEIVED OR TIMEOUT OCCURS
+//  991 *
+//  992 * Description: This function is internal to uC/OS-II and is used to put a task to sleep until the desired
+//  993 *              event flag bit(s) are set.
+//  994 *
+//  995 * Arguments  : pgrp          is a pointer to the desired event flag group.
+//  996 *
+//  997 *              pnode         is a pointer to a structure which contains data about the task waiting for
+//  998 *                            event flag bit(s) to be set.
+//  999 *
+// 1000 *              flags         Is a bit pattern indicating which bit(s) (i.e. flags) you wish to check.
+// 1001 *                            The bits you want are specified by setting the corresponding bits in
+// 1002 *                            'flags'.  e.g. if your application wants to wait for bits 0 and 1 then
+// 1003 *                            'flags' would contain 0x03.
+// 1004 *
+// 1005 *              wait_type     specifies whether you want ALL bits to be set/cleared or ANY of the bits
+// 1006 *                            to be set/cleared.
+// 1007 *                            You can specify the following argument:
+// 1008 *
+// 1009 *                            OS_FLAG_WAIT_CLR_ALL   You will check ALL bits in 'mask' to be clear (0)
+// 1010 *                            OS_FLAG_WAIT_CLR_ANY   You will check ANY bit  in 'mask' to be clear (0)
+// 1011 *                            OS_FLAG_WAIT_SET_ALL   You will check ALL bits in 'mask' to be set   (1)
+// 1012 *                            OS_FLAG_WAIT_SET_ANY   You will check ANY bit  in 'mask' to be set   (1)
+// 1013 *
+// 1014 *              timeout       is the desired amount of time that the task will wait for the event flag
+// 1015 *                            bit(s) to be set.
+// 1016 *
+// 1017 * Returns    : none
+// 1018 *
+// 1019 * Called by  : OSFlagPend()  OS_FLAG.C
+// 1020 *
+// 1021 * Note(s)    : This function is INTERNAL to uC/OS-II and your application should not call it.
+// 1022 *********************************************************************************************************
+// 1023 */
+// 1024 
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+// 1025 static  void  OS_FlagBlock (OS_FLAG_GRP  *pgrp,
+OS_FlagBlock:
+          CFI Block cfiBlock38 Using cfiCommon0
+          CFI Function OS_FlagBlock
+// 1026                             OS_FLAG_NODE *pnode,
+// 1027                             OS_FLAGS      flags,
+// 1028                             INT8U         wait_type,
+// 1029                             INT32U        timeout)
+// 1030 {
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        MOV.W   0x14(SP), R10
+        MOV.W   0x16(SP), R11
+// 1031     OS_FLAG_NODE  *pnode_next;
+// 1032     INT8U          y;
+// 1033 
+// 1034 
+// 1035     OSTCBCur->OSTCBStat      |= OS_STAT_FLAG;
+        MOVA    #OSTCBCur, R8
+        MOVA    @R8, R9
+        BIS.B   #0x20, 0x2e(R9)
+// 1036     OSTCBCur->OSTCBStatPend   = OS_STAT_PEND_OK;
+        MOVA    @R8, R9
+        MOV.B   #0x0, 0x2f(R9)
+// 1037     OSTCBCur->OSTCBDly        = timeout;              /* Store timeout in task's TCB                   */
+        MOVA    @R8, R9
+        MOV.W   R10, 0x2a(R9)
+        MOV.W   R11, 0x2c(R9)
+// 1038 #if OS_TASK_DEL_EN > 0u
+// 1039     OSTCBCur->OSTCBFlagNode   = pnode;                /* TCB to link to node                           */
+        MOVA    R13, 0x24(R9)
+// 1040 #endif
+// 1041     pnode->OSFlagNodeFlags    = flags;                /* Save the flags that we need to wait for       */
+        MOV.W   R14, 0x10(R13)
+// 1042     pnode->OSFlagNodeWaitType = wait_type;            /* Save the type of wait we are doing            */
+        MOV.B   R15, 0x12(R13)
+// 1043     pnode->OSFlagNodeTCB      = (void *)OSTCBCur;     /* Link to task's TCB                            */
+        MOVA    @R8, R11
+        MOVX.A  @R8, 0x8(R13)
+// 1044     pnode->OSFlagNodeNext     = pgrp->OSFlagWaitList; /* Add node at beginning of event flag wait list */
+        MOVX.A  0x2(R12), 0(R13)
+// 1045     pnode->OSFlagNodePrev     = (void *)0;
+        MOVX.A  #0x0, 0x4(R13)
+// 1046     pnode->OSFlagNodeFlagGrp  = (void *)pgrp;         /* Link to Event Flag Group                      */
+        MOVA    R12, 0xc(R13)
+// 1047     pnode_next                = (OS_FLAG_NODE *)pgrp->OSFlagWaitList;
+        MOVA    0x2(R12), R15
+// 1048     if (pnode_next != (void *)0) {                    /* Is this the first NODE to insert?             */
+        CMPA    #0x0, R15
+        JEQ     ??OS_FlagBlock_0
+// 1049         pnode_next->OSFlagNodePrev = pnode;           /* No, link in doubly linked list                */
+        MOVA    R13, 0x4(R15)
+// 1050     }
+// 1051     pgrp->OSFlagWaitList = (void *)pnode;
+??OS_FlagBlock_0:
+        MOVA    R13, 0x2(R12)
+// 1052 
+// 1053     y            =  OSTCBCur->OSTCBY;                 /* Suspend current task until flag(s) received   */
+        MOV.B   0x32(R11), R15
+// 1054     OSRdyTbl[y] &= (OS_PRIO)~OSTCBCur->OSTCBBitX;
+        BICX.B  0x33(R11), OSRdyTbl(R15)
+// 1055     if (OSRdyTbl[y] == 0x00u) {
+        CMPX.B  #0x0, OSRdyTbl(R15)
+        JNE     ??OS_FlagBlock_1
+// 1056         OSRdyGrp &= (OS_PRIO)~OSTCBCur->OSTCBBitY;
+        BICX.B  0x34(R11), &OSRdyGrp
+// 1057     }
+// 1058 }
+??OS_FlagBlock_1:
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock38
+// 1059 
+// 1060 /*$PAGE*/
+// 1061 /*
+// 1062 *********************************************************************************************************
+// 1063 *                                    INITIALIZE THE EVENT FLAG MODULE
+// 1064 *
+// 1065 * Description: This function is called by uC/OS-II to initialize the event flag module.  Your application
+// 1066 *              MUST NOT call this function.  In other words, this function is internal to uC/OS-II.
+// 1067 *
+// 1068 * Arguments  : none
+// 1069 *
+// 1070 * Returns    : none
+// 1071 *
+// 1072 * WARNING    : You MUST NOT call this function from your code.  This is an INTERNAL function to uC/OS-II.
+// 1073 *********************************************************************************************************
+// 1074 */
+// 1075 
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+// 1076 void  OS_FlagInit (void)
+OS_FlagInit:
+          CFI Block cfiBlock39 Using cfiCommon0
+          CFI Function OS_FlagInit
+// 1077 {
+        FUNCALL OS_FlagInit, OS_MemClr
+        LOCFRAME CSTACK, 8, STACK
+        PUSHM.A #0x1, R10
+          CFI R10L Frame(CFA, -8)
+          CFI R10H Frame(CFA, -6)
+          CFI CFA SP+8
+// 1078 #if OS_MAX_FLAGS == 1u
+// 1079     OSFlagFreeList                 = (OS_FLAG_GRP *)&OSFlagTbl[0];  /* Only ONE event flag group!      */
+// 1080     OSFlagFreeList->OSFlagType     = OS_EVENT_TYPE_UNUSED;
+// 1081     OSFlagFreeList->OSFlagWaitList = (void *)0;
+// 1082     OSFlagFreeList->OSFlagFlags    = (OS_FLAGS)0;
+// 1083 #if OS_FLAG_NAME_EN > 0u
+// 1084     OSFlagFreeList->OSFlagName     = (INT8U *)"?";
+// 1085 #endif
+// 1086 #endif
+// 1087 
+// 1088 #if OS_MAX_FLAGS >= 2u
+// 1089     INT16U        ix;
+// 1090     INT16U        ix_next;
+// 1091     OS_FLAG_GRP  *pgrp1;
+// 1092     OS_FLAG_GRP  *pgrp2;
+// 1093 
+// 1094 
+// 1095     OS_MemClr((INT8U *)&OSFlagTbl[0], sizeof(OSFlagTbl));           /* Clear the flag group table      */
+        MOVA    #OSFlagTbl, R10
+        MOV.W   #0x3c, R13
+        MOVA    R10, R12
+        CALLA   #OS_MemClr
+// 1096     for (ix = 0u; ix < (OS_MAX_FLAGS - 1u); ix++) {                 /* Init. list of free EVENT FLAGS  */
+        MOV.W   #0x0, R15
+        MOVA    R10, R14
+// 1097         ix_next = ix + 1u;
+// 1098         pgrp1 = &OSFlagTbl[ix];
+// 1099         pgrp2 = &OSFlagTbl[ix_next];
+// 1100         pgrp1->OSFlagType     = OS_EVENT_TYPE_UNUSED;
+??OS_FlagInit_0:
+        MOV.B   #0x0, 0(R14)
+// 1101         pgrp1->OSFlagWaitList = (void *)pgrp2;
+        MOVA    R14, R13
+        ADDA    #0xc, R13
+        MOVA    R13, 0x2(R14)
+// 1102 #if OS_FLAG_NAME_EN > 0u
+// 1103         pgrp1->OSFlagName     = (INT8U *)(void *)"?";               /* Unknown name                    */
+        MOVX.A  #`?<Constant "?">`, 0x8(R14)
+// 1104 #endif
+// 1105     }
+        ADD.W   #0x1, R15
+        ADDA    #0xc, R14
+        CMP.W   #0x4, R15
+        JNC     ??OS_FlagInit_0
+// 1106     pgrp1                 = &OSFlagTbl[ix];
+        RLAM.A  #0x2, R15
+        MOVA    R15, R14
+        ADDA    R15, R15
+        ADDA    R14, R15
+        MOVA    R15, R14
+        MOVA    R10, R15
+        ADDA    R14, R15
+// 1107     pgrp1->OSFlagType     = OS_EVENT_TYPE_UNUSED;
+        MOV.B   #0x0, 0(R15)
+// 1108     pgrp1->OSFlagWaitList = (void *)0;
+        CALLA   #?Subroutine0
+// 1109 #if OS_FLAG_NAME_EN > 0u
+// 1110     pgrp1->OSFlagName     = (INT8U *)(void *)"?";                   /* Unknown name                    */
+// 1111 #endif
+// 1112     OSFlagFreeList        = &OSFlagTbl[0];
+??CrossCallReturnLabel_0:
+        MOVA    R10, &OSFlagFreeList
+// 1113 #endif
+// 1114 }
+        POPM.A  #0x1, R10
+          CFI R10H SameValue
+          CFI R10L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock39
+// 1115 
+// 1116 /*$PAGE*/
+// 1117 /*
+// 1118 *********************************************************************************************************
+// 1119 *                              MAKE TASK READY-TO-RUN, EVENT(s) OCCURRED
+// 1120 *
+// 1121 * Description: This function is internal to uC/OS-II and is used to make a task ready-to-run because the
+// 1122 *              desired event flag bits have been set.
+// 1123 *
+// 1124 * Arguments  : pnode         is a pointer to a structure which contains data about the task waiting for
+// 1125 *                            event flag bit(s) to be set.
+// 1126 *
+// 1127 *              flags_rdy     contains the bit pattern of the event flags that cause the task to become
+// 1128 *                            ready-to-run.
+// 1129 *
+// 1130 * Returns    : OS_TRUE       If the task has been placed in the ready list and thus needs scheduling
+// 1131 *              OS_FALSE      The task is still not ready to run and thus scheduling is not necessary
+// 1132 *
+// 1133 * Called by  : OSFlagsPost() OS_FLAG.C
+// 1134 *
+// 1135 * Note(s)    : 1) This function assumes that interrupts are disabled.
+// 1136 *              2) This function is INTERNAL to uC/OS-II and your application should not call it.
+// 1137 *********************************************************************************************************
+// 1138 */
+// 1139 
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+// 1140 static  BOOLEAN  OS_FlagTaskRdy (OS_FLAG_NODE *pnode,
+OS_FlagTaskRdy:
+          CFI Block cfiBlock40 Using cfiCommon0
+          CFI Function OS_FlagTaskRdy
+// 1141                                  OS_FLAGS      flags_rdy)
+// 1142 {
+// 1143     OS_TCB   *ptcb;
+// 1144     BOOLEAN   sched;
+// 1145 
+// 1146 
+// 1147     ptcb                 = (OS_TCB *)pnode->OSFlagNodeTCB; /* Point to TCB of waiting task             */
+        FUNCALL OS_FlagTaskRdy, OS_FlagUnlink
+        LOCFRAME CSTACK, 4, STACK
+        MOVA    0x8(R12), R14
+// 1148     ptcb->OSTCBDly       = 0u;
+        MOV.W   #0x0, 0x2a(R14)
+        MOV.W   #0x0, 0x2c(R14)
+// 1149     ptcb->OSTCBFlagsRdy  = flags_rdy;
+        MOV.W   R13, 0x28(R14)
+// 1150     ptcb->OSTCBStat     &= (INT8U)~(INT8U)OS_STAT_FLAG;
+        BIC.B   #0x20, 0x2e(R14)
+// 1151     ptcb->OSTCBStatPend  = OS_STAT_PEND_OK;
+        MOV.B   #0x0, 0x2f(R14)
+// 1152     if (ptcb->OSTCBStat == OS_STAT_RDY) {                  /* Task now ready?                          */
+        CMP.B   #0x0, 0x2e(R14)
+        JNE     ??OS_FlagTaskRdy_0
+// 1153         OSRdyGrp               |= ptcb->OSTCBBitY;         /* Put task into ready list                 */
+        BISX.B  0x34(R14), &OSRdyGrp
+// 1154         OSRdyTbl[ptcb->OSTCBY] |= ptcb->OSTCBBitX;
+        MOV.B   0x32(R14), R15
+        BISX.B  0x33(R14), OSRdyTbl(R15)
+// 1155         sched                   = OS_TRUE;
+        MOV.B   #0x1, R13
+        JMP     ??OS_FlagTaskRdy_1
+// 1156     } else {
+// 1157         sched                   = OS_FALSE;
+??OS_FlagTaskRdy_0:
+        MOV.B   #0x0, R13
+// 1158     }
+// 1159     OS_FlagUnlink(pnode);
+??OS_FlagTaskRdy_1:
+        CALLA   #OS_FlagUnlink
+// 1160     return (sched);
+        MOV.B   R13, R12
+        RETA
+          CFI EndBlock cfiBlock40
+// 1161 }
+// 1162 
+// 1163 /*$PAGE*/
+// 1164 /*
+// 1165 *********************************************************************************************************
+// 1166 *                                  UNLINK EVENT FLAG NODE FROM WAITING LIST
+// 1167 *
+// 1168 * Description: This function is internal to uC/OS-II and is used to unlink an event flag node from a
+// 1169 *              list of tasks waiting for the event flag.
+// 1170 *
+// 1171 * Arguments  : pnode         is a pointer to a structure which contains data about the task waiting for
+// 1172 *                            event flag bit(s) to be set.
+// 1173 *
+// 1174 * Returns    : none
+// 1175 *
+// 1176 * Called by  : OS_FlagTaskRdy() OS_FLAG.C
+// 1177 *              OSFlagPend()     OS_FLAG.C
+// 1178 *              OSTaskDel()      OS_TASK.C
+// 1179 *
+// 1180 * Note(s)    : 1) This function assumes that interrupts are disabled.
+// 1181 *              2) This function is INTERNAL to uC/OS-II and your application should not call it.
+// 1182 *********************************************************************************************************
+// 1183 */
+// 1184 
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+// 1185 void  OS_FlagUnlink (OS_FLAG_NODE *pnode)
+OS_FlagUnlink:
+          CFI Block cfiBlock41 Using cfiCommon0
+          CFI Function OS_FlagUnlink
+// 1186 {
+// 1187 #if OS_TASK_DEL_EN > 0u
+// 1188     OS_TCB       *ptcb;
+// 1189 #endif
+// 1190     OS_FLAG_GRP  *pgrp;
+// 1191     OS_FLAG_NODE *pnode_prev;
+// 1192     OS_FLAG_NODE *pnode_next;
+// 1193 
+// 1194 
+// 1195     pnode_prev = (OS_FLAG_NODE *)pnode->OSFlagNodePrev;
+        MOVA    0x4(R12), R15
+// 1196     pnode_next = (OS_FLAG_NODE *)pnode->OSFlagNodeNext;
+        MOVA    @R12, R14
+// 1197     if (pnode_prev == (OS_FLAG_NODE *)0) {                      /* Is it first node in wait list?      */
+        CMPA    #0x0, R15
+        JNE     ??OS_FlagUnlink_0
+// 1198         pgrp                 = (OS_FLAG_GRP *)pnode->OSFlagNodeFlagGrp;
+// 1199         pgrp->OSFlagWaitList = (void *)pnode_next;              /*      Update list for new 1st node   */
+        MOVA    0xc(R12), R15
+        MOVA    R14, 0x2(R15)
+// 1200         if (pnode_next != (OS_FLAG_NODE *)0) {
+        CMPA    #0x0, R14
+        JEQ     ??OS_FlagUnlink_1
+// 1201             pnode_next->OSFlagNodePrev = (OS_FLAG_NODE *)0;     /*      Link new 1st node PREV to NULL */
+        MOVX.A  #0x0, 0x4(R14)
+        JMP     ??OS_FlagUnlink_1
+// 1202         }
+// 1203     } else {                                                    /* No,  A node somewhere in the list   */
+// 1204         pnode_prev->OSFlagNodeNext = pnode_next;                /*      Link around the node to unlink */
+??OS_FlagUnlink_0:
+        MOVA    R14, 0(R15)
+// 1205         if (pnode_next != (OS_FLAG_NODE *)0) {                  /*      Was this the LAST node?        */
+        CMPA    #0x0, R14
+        JEQ     ??OS_FlagUnlink_1
+// 1206             pnode_next->OSFlagNodePrev = pnode_prev;            /*      No, Link around current node   */
+        MOVA    R15, 0x4(R14)
+// 1207         }
+// 1208     }
+// 1209 #if OS_TASK_DEL_EN > 0u
+// 1210     ptcb                = (OS_TCB *)pnode->OSFlagNodeTCB;
+// 1211     ptcb->OSTCBFlagNode = (OS_FLAG_NODE *)0;
+??OS_FlagUnlink_1:
+        MOVA    0x8(R12), R15
+        MOVX.A  #0x0, 0x24(R15)
+// 1212 #endif
+// 1213 }
+        RETA
+          CFI EndBlock cfiBlock41
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r4:
+        REQUIRE ?setjmp_r4
+        REQUIRE ?longjmp_r4
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r5:
+        REQUIRE ?setjmp_r5
+        REQUIRE ?longjmp_r5
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "?">`:
+        DC8 "?"
+
+        END
+// 1214 #endif
+// 1215 	 	   	  		 			 	    		   		 		 	 	 			 	    		   	 			 	  	 		 				 		  			 		 					 	  	  		      		  	   		      		  	 		 	      		   		 		  	 		 	      		  		  		  
+// 
+// 1 512 bytes in segment CODE
+//     2 bytes in segment DATA20_C
+// 
+// 1 512 bytes of CODE  memory
+//     2 bytes of CONST memory
+//
+//Errors: none
+//Warnings: 11

@@ -1,0 +1,1391 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+//                                                      06/Jun/2016  16:42:37 /
+// IAR C/C++ Compiler V5.50.1.20465/W32, Evaluation edition for MSP430        /
+// Copyright 1996-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    __rt_version  =  3                                                      /
+//    __double_size =  32                                                     /
+//    __reg_r4      =  free                                                   /
+//    __reg_r5      =  free                                                   /
+//    __pic         =  no                                                     /
+//    __core        =  430X                                                   /
+//    __data_model  =  large                                                  /
+//    Source file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\watchdog.c                         /
+//    Command line  =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\watchdog.c -D NDEBUG -D            /
+//                     RAM_VECTOR -lC C:\Users\615\Desktop\MSP430\MSP430F5529 /
+//                     ¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Release\List\ -lA               /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Release\List\ -o C:\Users\615\Desktop\MSP430\M /
+//                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Release\Obj\          /
+//                     -D__MSP430F5529__ -e --double=32 --dlib_config         /
+//                     "D:\Program Files (x86)\IAR Systems\Embedded           /
+//                     Workbench 6.4 Evaluation\430\LIB\DLIB\dl430xlfn.h" -I  /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\ -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº /
+//                     ¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\inc\ -I                    /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\ -I C:\Users\615\Desktop\MSP430\MS /
+//                     P430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\src\USB\ -I    /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_config\ -I                 /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_User\ -I                   /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\srcUSB\USB_API\USB_CDC_API\ -I         /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_API\USB_HID_API\ -I        /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_API\USB_MSC_API\ -I        /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\KEY\ -I C:\Users\615\Desktop\MSP430\M /
+//                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\LED\ -I      /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\12864\ -I                             /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\oled\ -I C:\Users\615\Desktop\MSP430\ /
+//                     MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\mpu6050\inc /
+//                     \ -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\ /
+//                     C°æ\¹¤³ÌÄ£°å\HardWare\mpu6050\src\ -I                  /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\nokia5110\inc\ -I                     /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\nokia5110\src\ -I                     /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\LQ_1.8_TFT\ -I                        /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\LCD_API\ -I                           /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\2.2TFT\ -I                            /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\delay\ -I                             /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\System\ -I C:\Users\615\Desktop\MSP430\MSP430F /
+//                     5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\inc\ -I              /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\System\src\ -I C:\Users\615\Desktop\MSP430\MSP /
+//                     430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\User\ -I                /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\User\USER\ -I C:\Users\615\Desktop\MSP430\MSP4 /
+//                     30F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\UCOSII\CONFIG\ -I    /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\uCOSII\App\ -I                             /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\uCOSII\CONFIHG\ -I                         /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\uCOSII\PORT\ -I                            /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\UCOSII\CORE\ -I                            /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\FatFs\ -I C:\Users\615\Desktop\MSP430\MSP4 /
+//                     30F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\FatFs\option\        /
+//                     --core=430X --data_model=large -Oh --multiplier=32     /
+//                     --multiplier_location=4C0 --hw_workaround=CPU40        /
+//    List file     =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Release\List\watchdog.s43                      /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME watchdog
+
+        RTMODEL "__SystemLibrary", "DLib"
+        RTMODEL "__core", "430X"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__double_size", "32"
+        RTMODEL "__pic", "no"
+        RTMODEL "__reg_r4", "free"
+        RTMODEL "__reg_r5", "free"
+        RTMODEL "__rt_version", "3"
+
+        RSEG CSTACK:DATA:SORT:NOROOT(0)
+
+        EXTERN ?ClearMemoryWords
+        EXTERN ?DivMod32u
+        EXTERN ?Mul32
+        EXTERN ?longjmp_r4
+        EXTERN ?longjmp_r5
+        EXTERN ?setjmp_r4
+        EXTERN ?setjmp_r5
+
+        PUBWEAK ?setjmp_save_r4
+        PUBWEAK ?setjmp_save_r5
+        PUBLIC DisableWatchDog
+        FUNCTION DisableWatchDog,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC SoftWare_RESET
+        FUNCTION SoftWare_RESET,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC WatchDog_Feed
+        FUNCTION WatchDog_Feed,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC WatchDog_ITConfig
+        FUNCTION WatchDog_ITConfig,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC WatchDog_Init
+        FUNCTION WatchDog_Init,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 68, STACK
+        PUBWEAK _A_SFRIE1_L
+        PUBWEAK _A_SFRIFG1_L
+        PUBWEAK _A_WDTCTL_L
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA SP DATA
+          CFI Resource PC:20, SP:20, SR:16, R4L:16, R4H:4, R4:20, R5L:16, R5H:4
+          CFI Resource R5:20, R6L:16, R6H:4, R6:20, R7L:16, R7H:4, R7:20, R8L:16
+          CFI Resource R8H:4, R8:20, R9L:16, R9H:4, R9:20, R10L:16, R10H:4
+          CFI Resource R10:20, R11L:16, R11H:4, R11:20, R12L:16, R12H:4, R12:20
+          CFI Resource R13L:16, R13H:4, R13:20, R14L:16, R14H:4, R14:20, R15L:16
+          CFI Resource R15H:4, R15:20
+          CFI ResourceParts R4 R4H, R4L
+          CFI ResourceParts R5 R5H, R5L
+          CFI ResourceParts R6 R6H, R6L
+          CFI ResourceParts R7 R7H, R7L
+          CFI ResourceParts R8 R8H, R8L
+          CFI ResourceParts R9 R9H, R9L
+          CFI ResourceParts R10 R10H, R10L
+          CFI ResourceParts R11 R11H, R11L
+          CFI ResourceParts R12 R12H, R12L
+          CFI ResourceParts R13 R13H, R13L
+          CFI ResourceParts R14 R14H, R14L
+          CFI ResourceParts R15 R15H, R15L
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H SameValue
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H SameValue
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H SameValue
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H SameValue
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H SameValue
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H SameValue
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H SameValue
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H SameValue
+          CFI R11 Concat
+          CFI R12L Undefined
+          CFI R12H Undefined
+          CFI R12 Undefined
+          CFI R13L Undefined
+          CFI R13H Undefined
+          CFI R13 Undefined
+          CFI R14L Undefined
+          CFI R14H Undefined
+          CFI R14 Undefined
+          CFI R15L Undefined
+          CFI R15H Undefined
+          CFI R15 Undefined
+          CFI EndCommon cfiCommon0
+        
+        
+          CFI Common cfiCommon1 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H SameValue
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H SameValue
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H SameValue
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H SameValue
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H SameValue
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H SameValue
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H SameValue
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H SameValue
+          CFI R11 Concat
+          CFI R12L SameValue
+          CFI R12H SameValue
+          CFI R12 Concat
+          CFI R13L SameValue
+          CFI R13H SameValue
+          CFI R13 Concat
+          CFI R14L SameValue
+          CFI R14H SameValue
+          CFI R14 Concat
+          CFI R15L SameValue
+          CFI R15H SameValue
+          CFI R15 Concat
+          CFI EndCommon cfiCommon1
+        
+        EXTERN g_sClock
+        EXTERN _Cast32uto32f
+        FUNCTION _Cast32uto32f,0202H
+        EXTERN _Cast32sto32f
+        FUNCTION _Cast32sto32f,0202H
+        EXTERN _Div32f
+        FUNCTION _Div32f,0202H
+        EXTERN _CmpGe32f
+        FUNCTION _CmpGe32f,0202H
+
+// C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\src\watchdog.c
+//    1 #include "watchdog.h"
+
+        ASEGN DATA16_AN:DATA:NOROOT,0100H
+// union <unnamed> __data16 _A_SFRIE1_L
+_A_SFRIE1_L:
+        DS8 2
+
+        ASEGN DATA16_AN:DATA:NOROOT,0102H
+// union <unnamed> __data16 _A_SFRIFG1_L
+_A_SFRIFG1_L:
+        DS8 2
+
+        ASEGN DATA16_AN:DATA:NOROOT,015cH
+// union <unnamed> __data16 _A_WDTCTL_L
+_A_WDTCTL_L:
+        DS8 2
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(1)
+        DC32 0, 0, 0
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(1)
+`?<Constant {7, 7, 7}>`:
+        DC16 7, 7, 7
+//    2 #include "clock.h"
+//    3 
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(1)
+//    4 static const uint32_t WDT_Counter[]={2000000000u,128000000u,8192000u,512000u,32768u,8192u,512u,64u};
+WDT_Counter:
+        DC32 2000000000, 128000000, 8192000, 512000, 32768, 8192, 512, 64
+
+        RSEG CODE:CODE:NOROOT(1)
+WatchDog_Feed:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function WatchDog_Feed
+        MOV.W   &0x15c, R15
+        AND.B   #0xff, R15
+        BIS.W   #0x5a08, R15
+          CFI EndBlock cfiBlock0
+        REQUIRE ?Subroutine0
+        REQUIRE _A_WDTCTL_L
+        // Fall through to label ?Subroutine0
+//    5 /*******************************************************************************
+//    6 *  º¯ÊýÃû³Æ£ºDisableWatchDog(void)
+//    7 *  ¹¦ÄÜËµÃ÷£º¹Ø±Õ¿´ÃÅ¹·
+//    8 *  ²ÎÊýËµÃ÷£ºÎÞ
+//    9 *  º¯Êý·µ»Ø£ºÎÞ
+//   10 ********************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine0:
+          CFI Block cfiBlock1 Using cfiCommon0
+          CFI NoFunction
+//   11 void DisableWatchDog(void)
+//   12 {
+//   13   WDTCTL = (WDTCTL&0xFF)|(WDTPW+WDTHOLD);
+        MOV.W   R15, &0x15c
+//   14 } 
+        RETA
+          CFI EndBlock cfiBlock1
+
+        RSEG CODE:CODE:NOROOT(1)
+WatchDog_ITConfig:
+          CFI Block cfiBlock2 Using cfiCommon0
+          CFI Function WatchDog_ITConfig
+        CMP.B   #0x0, R12
+        JEQ     ??WatchDog_ITConfig_0
+        BIC.W   #0x1, &0x102
+        BIS.W   #0x1, &0x100
+        RETA
+??WatchDog_ITConfig_0:
+        BIC.W   #0x1, &0x100
+        RETA
+          CFI EndBlock cfiBlock2
+        REQUIRE _A_SFRIFG1_L
+        REQUIRE _A_SFRIE1_L
+
+        RSEG CODE:CODE:NOROOT(1)
+WatchDog_Init:
+          CFI Block cfiBlock3 Using cfiCommon0
+          CFI Function WatchDog_Init
+        FUNCALL WatchDog_Init, _Cast32uto32f
+        LOCFRAME CSTACK, 68, STACK
+        FUNCALL WatchDog_Init, _Cast32sto32f
+        LOCFRAME CSTACK, 68, STACK
+        FUNCALL WatchDog_Init, _Div32f
+        LOCFRAME CSTACK, 68, STACK
+        FUNCALL WatchDog_Init, _Cast32uto32f
+        LOCFRAME CSTACK, 68, STACK
+        FUNCALL WatchDog_Init, _Cast32sto32f
+        LOCFRAME CSTACK, 68, STACK
+        FUNCALL WatchDog_Init, _Div32f
+        LOCFRAME CSTACK, 68, STACK
+        FUNCALL WatchDog_Init, _Cast32sto32f
+        LOCFRAME CSTACK, 68, STACK
+        FUNCALL WatchDog_Init, _Div32f
+        LOCFRAME CSTACK, 68, STACK
+        FUNCALL WatchDog_Init, _CmpGe32f
+        LOCFRAME CSTACK, 68, STACK
+        FUNCALL WatchDog_Init, _CmpGe32f
+        LOCFRAME CSTACK, 68, STACK
+        FUNCALL WatchDog_Init, _CmpGe32f
+        LOCFRAME CSTACK, 68, STACK
+        FUNCALL WatchDog_Init, _CmpGe32f
+        LOCFRAME CSTACK, 68, STACK
+        FUNCALL WatchDog_Init, _CmpGe32f
+        LOCFRAME CSTACK, 68, STACK
+        FUNCALL WatchDog_Init, _CmpGe32f
+        LOCFRAME CSTACK, 68, STACK
+        PUSHM.A #0x8, R11
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+36
+        PUSH.B  R12
+          CFI CFA SP+38
+        SUB.W   #0x1e, SP
+          CFI CFA SP+68
+        MOV.W   R14, R6
+        MOV.W   R15, R7
+        MOV.W   SP, R12
+        ADD.W   #0x6, R12
+        MOV.W   #0x6, R14
+        CALLA   #?ClearMemoryWords
+        MOVA    #`?<Constant {7, 7, 7}>`, R15
+        MOVX.W  @R15+, 0(SP)
+        MOVX.W  @R15+, 0x2(SP)
+        MOVX.W  @R15+, 0x4(SP)
+        MOVA    #g_sClock, R8
+        MOV.W   0xc(R8), R12
+        MOV.W   0xe(R8), R13
+        CALLA   #??Subroutine7_0
+??CrossCallReturnLabel_13:
+        MOV.W   R12, R14
+        MOV.W   R13, R15
+        MOV.W   R6, R12
+        MOV.W   R7, R13
+        CALLA   #?Mul32
+        JMP     ??WatchDog_Init_4
+??WatchDog_Init_0:
+        MOV.W   @SP, R15
+        ADD.W   #0xffff, R15
+        MOV.W   R15, 0(SP)
+??WatchDog_Init_4:
+        MOV.W   @SP, R15
+        RLAM.A  #0x2, R15
+        MOVX.W  WDT_Counter(R15), R10
+        MOVX.W  WDT_Counter + 2(R15), R11
+        CMP.W   R13, R11
+        JNC     ??WatchDog_Init_0
+        JNE     ??WatchDog_Init_5
+        CMP.W   R12, R10
+        JNC     ??WatchDog_Init_0
+??WatchDog_Init_5:
+        MOV.W   @SP, R15
+        ADD.W   #0x1, R15
+        MOV.W   R15, R14
+        RLAM.A  #0x2, R14
+        MOV.W   R12, R4
+        MOV.W   R13, R5
+        SUBX.W  WDT_Counter(R14), R4
+        SUBCX.W WDT_Counter + 2(R14), R5
+        SUB.W   R12, R10
+        SUBC.W  R13, R11
+        CMP.W   R11, R5
+        JNC     ??WatchDog_Init_6
+        JNE     ??WatchDog_Init_7
+        CMP.W   R10, R4
+        JC      ??WatchDog_Init_7
+??WatchDog_Init_6:
+        MOV.W   R15, 0(SP)
+        MOV.W   R4, 0x6(SP)
+        MOV.W   R5, 0x8(SP)
+        JMP     ??WatchDog_Init_8
+??WatchDog_Init_7:
+        MOV.W   R10, 0x6(SP)
+        MOV.W   R11, 0x8(SP)
+??WatchDog_Init_8:
+        CMP.W   #0x0, 0x8(SP)
+        JL      ??WatchDog_Init_9
+        JNE     ??WatchDog_Init_10
+        CMP.W   #0x1, 0x6(SP)
+        JC      ??WatchDog_Init_10
+??WatchDog_Init_9:
+        MOV.W   0x6(SP), R14
+        MOV.W   0x8(SP), R15
+        CALLA   #?Subroutine5
+??CrossCallReturnLabel_4:
+        MOV.W   R14, 0x6(SP)
+        MOV.W   R15, 0x8(SP)
+??WatchDog_Init_10:
+        MOV.W   0xc(R8), R12
+        MOV.W   0xe(R8), R13
+        CALLA   #_Cast32uto32f
+        MOV.W   R12, R10
+        MOV.W   R13, R11
+        MOV.W   0x6(SP), R12
+        MOV.W   0x8(SP), R13
+        CALLA   #?Subroutine3
+??CrossCallReturnLabel_2:
+        MOV.W   R12, 0x12(SP)
+        MOV.W   R13, 0x14(SP)
+        MOV.W   R6, R12
+        MOV.W   R7, R13
+        MOV.W   0x18(R8), R14
+        MOV.W   0x1a(R8), R15
+        CALLA   #?Subroutine1
+??CrossCallReturnLabel_14:
+        JMP     ??WatchDog_Init_11
+??WatchDog_Init_1:
+        ADD.W   #0xffff, 0x2(SP)
+??WatchDog_Init_11:
+        MOV.W   0x2(SP), R15
+        CALLA   #?Subroutine2
+??CrossCallReturnLabel_0:
+        JNC     ??WatchDog_Init_1
+        JNE     ??WatchDog_Init_12
+        CMP.W   R12, R10
+        JNC     ??WatchDog_Init_1
+??WatchDog_Init_12:
+        ADD.W   #0x1, R15
+        RLAM.A  #0x2, R15
+        MOV.W   R12, R4
+        MOV.W   R13, R5
+        SUBX.W  WDT_Counter(R15), R4
+        SUBCX.W WDT_Counter + 2(R15), R5
+        SUB.W   R12, R10
+        SUBC.W  R13, R11
+        CMP.W   R11, R5
+        JNC     ??WatchDog_Init_13
+        JNE     ??WatchDog_Init_14
+        CMP.W   R10, R4
+        JC      ??WatchDog_Init_14
+??WatchDog_Init_13:
+        ADD.W   #0x1, 0x2(SP)
+        MOV.W   R4, 0xa(SP)
+        MOV.W   R5, 0xc(SP)
+        JMP     ??WatchDog_Init_15
+??WatchDog_Init_14:
+        MOV.W   R10, 0xa(SP)
+        MOV.W   R11, 0xc(SP)
+??WatchDog_Init_15:
+        MOV.W   0xa(SP), R14
+        MOV.W   0xc(SP), R15
+        CMP.W   #0x0, R15
+        JL      ??WatchDog_Init_16
+        JNE     ??WatchDog_Init_17
+        CMP.W   #0x1, R14
+        JC      ??WatchDog_Init_17
+??WatchDog_Init_16:
+        CALLA   #?Subroutine5
+??CrossCallReturnLabel_5:
+        MOV.W   R14, 0xa(SP)
+        MOV.W   R15, 0xc(SP)
+??WatchDog_Init_17:
+        MOV.W   0x18(R8), R12
+        MOV.W   0x1a(R8), R13
+        CALLA   #_Cast32uto32f
+        MOV.W   R12, R10
+        MOV.W   R13, R11
+        MOV.W   0xa(SP), R12
+        MOV.W   0xc(SP), R13
+        CALLA   #?Subroutine3
+??CrossCallReturnLabel_3:
+        MOV.W   R12, R8
+        MOV.W   R13, R9
+        MOV.W   R8, 0x16(SP)
+        MOV.W   R9, 0x18(SP)
+        MOV.W   R6, R12
+        MOV.W   R7, R13
+        MOV.W   #0x2710, R14
+        MOV.W   #0x0, R15
+        CALLA   #?Subroutine1
+??CrossCallReturnLabel_15:
+        JMP     ??WatchDog_Init_18
+??WatchDog_Init_2:
+        ADD.W   #0xffff, 0x4(SP)
+??WatchDog_Init_18:
+        MOV.W   0x4(SP), R15
+        CALLA   #?Subroutine2
+??CrossCallReturnLabel_1:
+        JNC     ??WatchDog_Init_2
+        JNE     ??WatchDog_Init_19
+        CMP.W   R12, R10
+        JNC     ??WatchDog_Init_2
+??WatchDog_Init_19:
+        ADD.W   #0x1, R15
+        RLAM.A  #0x2, R15
+        MOV.W   R12, R6
+        MOV.W   R13, R7
+        SUBX.W  WDT_Counter(R15), R6
+        SUBCX.W WDT_Counter + 2(R15), R7
+        SUB.W   R12, R10
+        SUBC.W  R13, R11
+        CMP.W   R11, R7
+        JNC     ??WatchDog_Init_20
+        JNE     ??WatchDog_Init_21
+        CMP.W   R10, R6
+        JC      ??WatchDog_Init_21
+??WatchDog_Init_20:
+        ADD.W   #0x1, 0x4(SP)
+        MOV.W   R6, 0xe(SP)
+        MOV.W   R7, 0x10(SP)
+        JMP     ??WatchDog_Init_22
+??WatchDog_Init_21:
+        MOV.W   R10, 0xe(SP)
+        MOV.W   R11, 0x10(SP)
+??WatchDog_Init_22:
+        MOV.W   0xe(SP), R14
+        MOV.W   0x10(SP), R15
+        CMP.W   #0x0, R15
+        JL      ??WatchDog_Init_23
+        JNE     ??WatchDog_Init_24
+        CMP.W   #0x1, R14
+        JC      ??WatchDog_Init_24
+??WatchDog_Init_23:
+        CALLA   #?Subroutine5
+??CrossCallReturnLabel_6:
+        MOV.W   R14, 0xe(SP)
+        MOV.W   R15, 0x10(SP)
+??WatchDog_Init_24:
+        MOV.W   0xe(SP), R12
+        MOV.W   0x10(SP), R13
+        CALLA   #_Cast32sto32f
+        MOV.W   #0x4000, R14
+        MOV.W   #0x461c, R15
+        CALLA   #_Div32f
+        MOV.W   R12, R10
+        MOV.W   R13, R11
+        MOV.W   R10, 0x1a(SP)
+        MOV.W   R11, 0x1c(SP)
+        MOV.W   #0x0, R6
+        MOV.W   @SP, R7
+        MOV.W   0x12(SP), R14
+        MOV.W   0x14(SP), R15
+        MOV.W   R8, R12
+        MOV.W   R9, R13
+        CALLA   #??Subroutine4_0
+??CrossCallReturnLabel_7:
+        JEQ     ??WatchDog_Init_25
+        MOV.W   0x12(SP), R14
+        MOV.W   0x14(SP), R15
+        MOV.W   R10, R12
+        MOV.W   R11, R13
+        CALLA   #??Subroutine4_0
+??CrossCallReturnLabel_8:
+        JNE     ??WatchDog_Init_26
+??WatchDog_Init_25:
+        MOV.W   R8, R14
+        MOV.W   R9, R15
+        CALLA   #?Subroutine4
+??CrossCallReturnLabel_11:
+        JEQ     ??WatchDog_Init_27
+        MOV.W   R8, R14
+        MOV.W   R9, R15
+        MOV.W   R10, R12
+        MOV.W   R11, R13
+        CALLA   #??Subroutine4_0
+??CrossCallReturnLabel_9:
+        JEQ     ??WatchDog_Init_27
+        MOV.W   #0x20, R6
+        MOV.W   0x2(SP), R7
+        JMP     ??WatchDog_Init_26
+??WatchDog_Init_27:
+        MOV.W   R10, R14
+        MOV.W   R11, R15
+        MOV.W   R8, R12
+        MOV.W   R9, R13
+        CALLA   #??Subroutine4_0
+??CrossCallReturnLabel_10:
+        JEQ     ??WatchDog_Init_26
+        MOV.W   R10, R14
+        MOV.W   R11, R15
+        CALLA   #?Subroutine4
+??CrossCallReturnLabel_12:
+        JEQ     ??WatchDog_Init_26
+        MOV.W   #0x40, R6
+        MOV.W   0x4(SP), R7
+??WatchDog_Init_26:
+        BIC.W   #0x1, &0x100
+        CMP.B   #0x1, 0x1e(SP)
+        JNE     ??WatchDog_Init_28
+        BIS.W   R7, R6
+        BIS.W   #0x5a18, R6
+        JMP     ??WatchDog_Init_29
+??WatchDog_Init_28:
+        CMP.B   #0x2, 0x1e(SP)
+        JNE     ??WatchDog_Init_30
+        BIS.W   R7, R6
+        BIS.W   #0x5a18, R6
+        MOV.W   R6, &0x15c
+        BIC.W   #0x1, &0x102
+??WatchDog_Init_3:
+        BIT.W   #0x1, &0x102
+        JC      ??WatchDog_Init_31
+        JMP     ??WatchDog_Init_3
+??WatchDog_Init_30:
+        CMP.B   #0x0, 0x1e(SP)
+        JNE     ??WatchDog_Init_31
+        BIS.W   R7, R6
+        BIS.W   #0x5a08, R6
+??WatchDog_Init_29:
+        MOV.W   R6, &0x15c
+??WatchDog_Init_31:
+        ADD.W   #0x20, SP
+          CFI CFA SP+36
+        POPM.A  #0x8, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R4H SameValue
+          CFI R5H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R4L SameValue
+          CFI R5L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock3
+        REQUIRE _A_SFRIE1_L
+        REQUIRE _A_WDTCTL_L
+        REQUIRE _A_SFRIFG1_L
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine5:
+          CFI Block cfiCond4 Using cfiCommon0
+          CFI Function WatchDog_Init
+          CFI Conditional ??CrossCallReturnLabel_4
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+72
+          CFI Block cfiCond5 Using cfiCommon0
+          CFI (cfiCond5) Function WatchDog_Init
+          CFI (cfiCond5) Conditional ??CrossCallReturnLabel_5
+          CFI (cfiCond5) R4L Frame(CFA, -36)
+          CFI (cfiCond5) R4H Frame(CFA, -34)
+          CFI (cfiCond5) R5L Frame(CFA, -32)
+          CFI (cfiCond5) R5H Frame(CFA, -30)
+          CFI (cfiCond5) R6L Frame(CFA, -28)
+          CFI (cfiCond5) R6H Frame(CFA, -26)
+          CFI (cfiCond5) R7L Frame(CFA, -24)
+          CFI (cfiCond5) R7H Frame(CFA, -22)
+          CFI (cfiCond5) R8L Frame(CFA, -20)
+          CFI (cfiCond5) R8H Frame(CFA, -18)
+          CFI (cfiCond5) R9L Frame(CFA, -16)
+          CFI (cfiCond5) R9H Frame(CFA, -14)
+          CFI (cfiCond5) R10L Frame(CFA, -12)
+          CFI (cfiCond5) R10H Frame(CFA, -10)
+          CFI (cfiCond5) R11L Frame(CFA, -8)
+          CFI (cfiCond5) R11H Frame(CFA, -6)
+          CFI (cfiCond5) CFA SP+72
+          CFI Block cfiCond6 Using cfiCommon0
+          CFI (cfiCond6) Function WatchDog_Init
+          CFI (cfiCond6) Conditional ??CrossCallReturnLabel_6
+          CFI (cfiCond6) R4L Frame(CFA, -36)
+          CFI (cfiCond6) R4H Frame(CFA, -34)
+          CFI (cfiCond6) R5L Frame(CFA, -32)
+          CFI (cfiCond6) R5H Frame(CFA, -30)
+          CFI (cfiCond6) R6L Frame(CFA, -28)
+          CFI (cfiCond6) R6H Frame(CFA, -26)
+          CFI (cfiCond6) R7L Frame(CFA, -24)
+          CFI (cfiCond6) R7H Frame(CFA, -22)
+          CFI (cfiCond6) R8L Frame(CFA, -20)
+          CFI (cfiCond6) R8H Frame(CFA, -18)
+          CFI (cfiCond6) R9L Frame(CFA, -16)
+          CFI (cfiCond6) R9H Frame(CFA, -14)
+          CFI (cfiCond6) R10L Frame(CFA, -12)
+          CFI (cfiCond6) R10H Frame(CFA, -10)
+          CFI (cfiCond6) R11L Frame(CFA, -8)
+          CFI (cfiCond6) R11H Frame(CFA, -6)
+          CFI (cfiCond6) CFA SP+72
+          CFI Block cfiPicker7 Using cfiCommon1
+          CFI (cfiPicker7) NoFunction
+          CFI (cfiPicker7) Picker
+        XOR.W   #0xffff, R14
+        XOR.W   #0xffff, R15
+        ADD.W   #0x1, R14
+        ADDC.W  #0x0, R15
+        RETA
+          CFI EndBlock cfiCond4
+          CFI EndBlock cfiCond5
+          CFI EndBlock cfiCond6
+          CFI EndBlock cfiPicker7
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine4:
+          CFI Block cfiCond8 Using cfiCommon0
+          CFI Function WatchDog_Init
+          CFI Conditional ??CrossCallReturnLabel_11
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+72
+          CFI Block cfiCond9 Using cfiCommon0
+          CFI (cfiCond9) Function WatchDog_Init
+          CFI (cfiCond9) Conditional ??CrossCallReturnLabel_12
+          CFI (cfiCond9) R4L Frame(CFA, -36)
+          CFI (cfiCond9) R4H Frame(CFA, -34)
+          CFI (cfiCond9) R5L Frame(CFA, -32)
+          CFI (cfiCond9) R5H Frame(CFA, -30)
+          CFI (cfiCond9) R6L Frame(CFA, -28)
+          CFI (cfiCond9) R6H Frame(CFA, -26)
+          CFI (cfiCond9) R7L Frame(CFA, -24)
+          CFI (cfiCond9) R7H Frame(CFA, -22)
+          CFI (cfiCond9) R8L Frame(CFA, -20)
+          CFI (cfiCond9) R8H Frame(CFA, -18)
+          CFI (cfiCond9) R9L Frame(CFA, -16)
+          CFI (cfiCond9) R9H Frame(CFA, -14)
+          CFI (cfiCond9) R10L Frame(CFA, -12)
+          CFI (cfiCond9) R10H Frame(CFA, -10)
+          CFI (cfiCond9) R11L Frame(CFA, -8)
+          CFI (cfiCond9) R11H Frame(CFA, -6)
+          CFI (cfiCond9) CFA SP+72
+          CFI Block cfiPicker10 Using cfiCommon1
+          CFI (cfiPicker10) NoFunction
+          CFI (cfiPicker10) Picker
+        MOV.W   0x16(SP), R12
+        MOV.W   0x18(SP), R13
+          CFI EndBlock cfiCond8
+          CFI EndBlock cfiCond9
+          CFI EndBlock cfiPicker10
+        REQUIRE ??Subroutine4_0
+        // Fall through to label ??Subroutine4_0
+
+        RSEG CODE:CODE:NOROOT(1)
+??Subroutine4_0:
+          CFI Block cfiCond11 Using cfiCommon0
+          CFI Function WatchDog_Init
+          CFI Conditional ??CrossCallReturnLabel_7
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+72
+          CFI Block cfiCond12 Using cfiCommon0
+          CFI (cfiCond12) Function WatchDog_Init
+          CFI (cfiCond12) Conditional ??CrossCallReturnLabel_8
+          CFI (cfiCond12) R4L Frame(CFA, -36)
+          CFI (cfiCond12) R4H Frame(CFA, -34)
+          CFI (cfiCond12) R5L Frame(CFA, -32)
+          CFI (cfiCond12) R5H Frame(CFA, -30)
+          CFI (cfiCond12) R6L Frame(CFA, -28)
+          CFI (cfiCond12) R6H Frame(CFA, -26)
+          CFI (cfiCond12) R7L Frame(CFA, -24)
+          CFI (cfiCond12) R7H Frame(CFA, -22)
+          CFI (cfiCond12) R8L Frame(CFA, -20)
+          CFI (cfiCond12) R8H Frame(CFA, -18)
+          CFI (cfiCond12) R9L Frame(CFA, -16)
+          CFI (cfiCond12) R9H Frame(CFA, -14)
+          CFI (cfiCond12) R10L Frame(CFA, -12)
+          CFI (cfiCond12) R10H Frame(CFA, -10)
+          CFI (cfiCond12) R11L Frame(CFA, -8)
+          CFI (cfiCond12) R11H Frame(CFA, -6)
+          CFI (cfiCond12) CFA SP+72
+          CFI Block cfiCond13 Using cfiCommon0
+          CFI (cfiCond13) Function WatchDog_Init
+          CFI (cfiCond13) Conditional ??CrossCallReturnLabel_9
+          CFI (cfiCond13) R4L Frame(CFA, -36)
+          CFI (cfiCond13) R4H Frame(CFA, -34)
+          CFI (cfiCond13) R5L Frame(CFA, -32)
+          CFI (cfiCond13) R5H Frame(CFA, -30)
+          CFI (cfiCond13) R6L Frame(CFA, -28)
+          CFI (cfiCond13) R6H Frame(CFA, -26)
+          CFI (cfiCond13) R7L Frame(CFA, -24)
+          CFI (cfiCond13) R7H Frame(CFA, -22)
+          CFI (cfiCond13) R8L Frame(CFA, -20)
+          CFI (cfiCond13) R8H Frame(CFA, -18)
+          CFI (cfiCond13) R9L Frame(CFA, -16)
+          CFI (cfiCond13) R9H Frame(CFA, -14)
+          CFI (cfiCond13) R10L Frame(CFA, -12)
+          CFI (cfiCond13) R10H Frame(CFA, -10)
+          CFI (cfiCond13) R11L Frame(CFA, -8)
+          CFI (cfiCond13) R11H Frame(CFA, -6)
+          CFI (cfiCond13) CFA SP+72
+          CFI Block cfiCond14 Using cfiCommon0
+          CFI (cfiCond14) Function WatchDog_Init
+          CFI (cfiCond14) Conditional ??CrossCallReturnLabel_10
+          CFI (cfiCond14) R4L Frame(CFA, -36)
+          CFI (cfiCond14) R4H Frame(CFA, -34)
+          CFI (cfiCond14) R5L Frame(CFA, -32)
+          CFI (cfiCond14) R5H Frame(CFA, -30)
+          CFI (cfiCond14) R6L Frame(CFA, -28)
+          CFI (cfiCond14) R6H Frame(CFA, -26)
+          CFI (cfiCond14) R7L Frame(CFA, -24)
+          CFI (cfiCond14) R7H Frame(CFA, -22)
+          CFI (cfiCond14) R8L Frame(CFA, -20)
+          CFI (cfiCond14) R8H Frame(CFA, -18)
+          CFI (cfiCond14) R9L Frame(CFA, -16)
+          CFI (cfiCond14) R9H Frame(CFA, -14)
+          CFI (cfiCond14) R10L Frame(CFA, -12)
+          CFI (cfiCond14) R10H Frame(CFA, -10)
+          CFI (cfiCond14) R11L Frame(CFA, -8)
+          CFI (cfiCond14) R11H Frame(CFA, -6)
+          CFI (cfiCond14) CFA SP+72
+          CFI Block cfiCond15 Using cfiCommon0
+          CFI (cfiCond15) Function WatchDog_Init
+          CFI (cfiCond15) Conditional ??CrossCallReturnLabel_11
+          CFI (cfiCond15) R4L Frame(CFA, -36)
+          CFI (cfiCond15) R4H Frame(CFA, -34)
+          CFI (cfiCond15) R5L Frame(CFA, -32)
+          CFI (cfiCond15) R5H Frame(CFA, -30)
+          CFI (cfiCond15) R6L Frame(CFA, -28)
+          CFI (cfiCond15) R6H Frame(CFA, -26)
+          CFI (cfiCond15) R7L Frame(CFA, -24)
+          CFI (cfiCond15) R7H Frame(CFA, -22)
+          CFI (cfiCond15) R8L Frame(CFA, -20)
+          CFI (cfiCond15) R8H Frame(CFA, -18)
+          CFI (cfiCond15) R9L Frame(CFA, -16)
+          CFI (cfiCond15) R9H Frame(CFA, -14)
+          CFI (cfiCond15) R10L Frame(CFA, -12)
+          CFI (cfiCond15) R10H Frame(CFA, -10)
+          CFI (cfiCond15) R11L Frame(CFA, -8)
+          CFI (cfiCond15) R11H Frame(CFA, -6)
+          CFI (cfiCond15) CFA SP+72
+          CFI Block cfiCond16 Using cfiCommon0
+          CFI (cfiCond16) Function WatchDog_Init
+          CFI (cfiCond16) Conditional ??CrossCallReturnLabel_12
+          CFI (cfiCond16) R4L Frame(CFA, -36)
+          CFI (cfiCond16) R4H Frame(CFA, -34)
+          CFI (cfiCond16) R5L Frame(CFA, -32)
+          CFI (cfiCond16) R5H Frame(CFA, -30)
+          CFI (cfiCond16) R6L Frame(CFA, -28)
+          CFI (cfiCond16) R6H Frame(CFA, -26)
+          CFI (cfiCond16) R7L Frame(CFA, -24)
+          CFI (cfiCond16) R7H Frame(CFA, -22)
+          CFI (cfiCond16) R8L Frame(CFA, -20)
+          CFI (cfiCond16) R8H Frame(CFA, -18)
+          CFI (cfiCond16) R9L Frame(CFA, -16)
+          CFI (cfiCond16) R9H Frame(CFA, -14)
+          CFI (cfiCond16) R10L Frame(CFA, -12)
+          CFI (cfiCond16) R10H Frame(CFA, -10)
+          CFI (cfiCond16) R11L Frame(CFA, -8)
+          CFI (cfiCond16) R11H Frame(CFA, -6)
+          CFI (cfiCond16) CFA SP+72
+          CFI Block cfiPicker17 Using cfiCommon1
+          CFI (cfiPicker17) NoFunction
+          CFI (cfiPicker17) Picker
+        CALLA   #_CmpGe32f
+        CMP.W   #0x0, R12
+        RETA
+          CFI EndBlock cfiCond11
+          CFI EndBlock cfiCond12
+          CFI EndBlock cfiCond13
+          CFI EndBlock cfiCond14
+          CFI EndBlock cfiCond15
+          CFI EndBlock cfiCond16
+          CFI EndBlock cfiPicker17
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine3:
+          CFI Block cfiCond18 Using cfiCommon0
+          CFI Function WatchDog_Init
+          CFI Conditional ??CrossCallReturnLabel_2
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+72
+          CFI Block cfiCond19 Using cfiCommon0
+          CFI (cfiCond19) Function WatchDog_Init
+          CFI (cfiCond19) Conditional ??CrossCallReturnLabel_3
+          CFI (cfiCond19) R4L Frame(CFA, -36)
+          CFI (cfiCond19) R4H Frame(CFA, -34)
+          CFI (cfiCond19) R5L Frame(CFA, -32)
+          CFI (cfiCond19) R5H Frame(CFA, -30)
+          CFI (cfiCond19) R6L Frame(CFA, -28)
+          CFI (cfiCond19) R6H Frame(CFA, -26)
+          CFI (cfiCond19) R7L Frame(CFA, -24)
+          CFI (cfiCond19) R7H Frame(CFA, -22)
+          CFI (cfiCond19) R8L Frame(CFA, -20)
+          CFI (cfiCond19) R8H Frame(CFA, -18)
+          CFI (cfiCond19) R9L Frame(CFA, -16)
+          CFI (cfiCond19) R9H Frame(CFA, -14)
+          CFI (cfiCond19) R10L Frame(CFA, -12)
+          CFI (cfiCond19) R10H Frame(CFA, -10)
+          CFI (cfiCond19) R11L Frame(CFA, -8)
+          CFI (cfiCond19) R11H Frame(CFA, -6)
+          CFI (cfiCond19) CFA SP+72
+          CFI Block cfiPicker20 Using cfiCommon1
+          CFI (cfiPicker20) NoFunction
+          CFI (cfiPicker20) Picker
+        CALLA   #_Cast32sto32f
+        MOV.W   R10, R14
+        MOV.W   R11, R15
+        BRA     #_Div32f
+          CFI EndBlock cfiCond18
+          CFI EndBlock cfiCond19
+          CFI EndBlock cfiPicker20
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine2:
+          CFI Block cfiCond21 Using cfiCommon0
+          CFI Function WatchDog_Init
+          CFI Conditional ??CrossCallReturnLabel_0
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+72
+          CFI Block cfiCond22 Using cfiCommon0
+          CFI (cfiCond22) Function WatchDog_Init
+          CFI (cfiCond22) Conditional ??CrossCallReturnLabel_1
+          CFI (cfiCond22) R4L Frame(CFA, -36)
+          CFI (cfiCond22) R4H Frame(CFA, -34)
+          CFI (cfiCond22) R5L Frame(CFA, -32)
+          CFI (cfiCond22) R5H Frame(CFA, -30)
+          CFI (cfiCond22) R6L Frame(CFA, -28)
+          CFI (cfiCond22) R6H Frame(CFA, -26)
+          CFI (cfiCond22) R7L Frame(CFA, -24)
+          CFI (cfiCond22) R7H Frame(CFA, -22)
+          CFI (cfiCond22) R8L Frame(CFA, -20)
+          CFI (cfiCond22) R8H Frame(CFA, -18)
+          CFI (cfiCond22) R9L Frame(CFA, -16)
+          CFI (cfiCond22) R9H Frame(CFA, -14)
+          CFI (cfiCond22) R10L Frame(CFA, -12)
+          CFI (cfiCond22) R10H Frame(CFA, -10)
+          CFI (cfiCond22) R11L Frame(CFA, -8)
+          CFI (cfiCond22) R11H Frame(CFA, -6)
+          CFI (cfiCond22) CFA SP+72
+          CFI Block cfiPicker23 Using cfiCommon1
+          CFI (cfiPicker23) NoFunction
+          CFI (cfiPicker23) Picker
+        MOV.W   R15, R11
+        RLAM.A  #0x2, R11
+        MOVX.W  WDT_Counter(R11), R10
+        MOVX.W  WDT_Counter + 2(R11), R11
+        CMP.W   R13, R11
+        RETA
+          CFI EndBlock cfiCond21
+          CFI EndBlock cfiCond22
+          CFI EndBlock cfiPicker23
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine1:
+          CFI Block cfiCond24 Using cfiCommon0
+          CFI Function WatchDog_Init
+          CFI Conditional ??CrossCallReturnLabel_14
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+72
+          CFI Block cfiCond25 Using cfiCommon0
+          CFI (cfiCond25) Function WatchDog_Init
+          CFI (cfiCond25) Conditional ??CrossCallReturnLabel_15
+          CFI (cfiCond25) R4L Frame(CFA, -36)
+          CFI (cfiCond25) R4H Frame(CFA, -34)
+          CFI (cfiCond25) R5L Frame(CFA, -32)
+          CFI (cfiCond25) R5H Frame(CFA, -30)
+          CFI (cfiCond25) R6L Frame(CFA, -28)
+          CFI (cfiCond25) R6H Frame(CFA, -26)
+          CFI (cfiCond25) R7L Frame(CFA, -24)
+          CFI (cfiCond25) R7H Frame(CFA, -22)
+          CFI (cfiCond25) R8L Frame(CFA, -20)
+          CFI (cfiCond25) R8H Frame(CFA, -18)
+          CFI (cfiCond25) R9L Frame(CFA, -16)
+          CFI (cfiCond25) R9H Frame(CFA, -14)
+          CFI (cfiCond25) R10L Frame(CFA, -12)
+          CFI (cfiCond25) R10H Frame(CFA, -10)
+          CFI (cfiCond25) R11L Frame(CFA, -8)
+          CFI (cfiCond25) R11H Frame(CFA, -6)
+          CFI (cfiCond25) CFA SP+72
+          CFI Block cfiPicker26 Using cfiCommon1
+          CFI (cfiPicker26) NoFunction
+          CFI (cfiPicker26) Picker
+        CALLA   #?Mul32
+          CFI EndBlock cfiCond24
+          CFI EndBlock cfiCond25
+          CFI EndBlock cfiPicker26
+        REQUIRE ??Subroutine7_0
+        // Fall through to label ??Subroutine7_0
+
+        RSEG CODE:CODE:NOROOT(1)
+??Subroutine7_0:
+          CFI Block cfiCond27 Using cfiCommon0
+          CFI Function WatchDog_Init
+          CFI Conditional ??CrossCallReturnLabel_13
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+72
+          CFI Block cfiCond28 Using cfiCommon0
+          CFI (cfiCond28) Function WatchDog_Init
+          CFI (cfiCond28) Conditional ??CrossCallReturnLabel_14
+          CFI (cfiCond28) R4L Frame(CFA, -36)
+          CFI (cfiCond28) R4H Frame(CFA, -34)
+          CFI (cfiCond28) R5L Frame(CFA, -32)
+          CFI (cfiCond28) R5H Frame(CFA, -30)
+          CFI (cfiCond28) R6L Frame(CFA, -28)
+          CFI (cfiCond28) R6H Frame(CFA, -26)
+          CFI (cfiCond28) R7L Frame(CFA, -24)
+          CFI (cfiCond28) R7H Frame(CFA, -22)
+          CFI (cfiCond28) R8L Frame(CFA, -20)
+          CFI (cfiCond28) R8H Frame(CFA, -18)
+          CFI (cfiCond28) R9L Frame(CFA, -16)
+          CFI (cfiCond28) R9H Frame(CFA, -14)
+          CFI (cfiCond28) R10L Frame(CFA, -12)
+          CFI (cfiCond28) R10H Frame(CFA, -10)
+          CFI (cfiCond28) R11L Frame(CFA, -8)
+          CFI (cfiCond28) R11H Frame(CFA, -6)
+          CFI (cfiCond28) CFA SP+72
+          CFI Block cfiCond29 Using cfiCommon0
+          CFI (cfiCond29) Function WatchDog_Init
+          CFI (cfiCond29) Conditional ??CrossCallReturnLabel_15
+          CFI (cfiCond29) R4L Frame(CFA, -36)
+          CFI (cfiCond29) R4H Frame(CFA, -34)
+          CFI (cfiCond29) R5L Frame(CFA, -32)
+          CFI (cfiCond29) R5H Frame(CFA, -30)
+          CFI (cfiCond29) R6L Frame(CFA, -28)
+          CFI (cfiCond29) R6H Frame(CFA, -26)
+          CFI (cfiCond29) R7L Frame(CFA, -24)
+          CFI (cfiCond29) R7H Frame(CFA, -22)
+          CFI (cfiCond29) R8L Frame(CFA, -20)
+          CFI (cfiCond29) R8H Frame(CFA, -18)
+          CFI (cfiCond29) R9L Frame(CFA, -16)
+          CFI (cfiCond29) R9H Frame(CFA, -14)
+          CFI (cfiCond29) R10L Frame(CFA, -12)
+          CFI (cfiCond29) R10H Frame(CFA, -10)
+          CFI (cfiCond29) R11L Frame(CFA, -8)
+          CFI (cfiCond29) R11H Frame(CFA, -6)
+          CFI (cfiCond29) CFA SP+72
+          CFI Block cfiPicker30 Using cfiCommon1
+          CFI (cfiPicker30) NoFunction
+          CFI (cfiPicker30) Picker
+        MOV.W   #0x3e8, R14
+        MOV.W   #0x0, R15
+        BRA     #?DivMod32u
+          CFI EndBlock cfiCond27
+          CFI EndBlock cfiCond28
+          CFI EndBlock cfiCond29
+          CFI EndBlock cfiPicker30
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+DisableWatchDog:
+          CFI Block cfiBlock31 Using cfiCommon0
+          CFI Function DisableWatchDog
+        MOV.W   &0x15c, R15
+        AND.B   #0xff, R15
+        BIS.W   #0x5a80, R15
+        JMP     ?Subroutine0
+        NOP
+          CFI EndBlock cfiBlock31
+        REQUIRE _A_WDTCTL_L
+//   15 /*******************************************************************************
+//   16 *  º¯ÊýÃû³Æ£ºWatchDog_Init(WatchDog_Fun fun,uint32_t ms) 
+//   17 *  ¹¦ÄÜËµÃ÷£ºÉèÖÃ¿´ÃÅ¹·»ò¶¨Ê±ÖÐ¶Ï£¬×¢Òâ¶¨Ê±Ê±¼äÖ»ÊÇ±È½Ï½Ó½üÉèÖÃÊ±¼äµÄÒ»¸öÊ±¼ä£¬²¢²»¾«×¼,·µ»Ø¼°Ê±¼äÆ«
+//   18 *  ²ÎÊýËµÃ÷£ºWatchDog_Fun fun   £º¹¦ÄÜÑ¡Ôñ
+//   19              uint32_t ms          £º¹¦ÄÜÊ±¼ä
+//   20 *  º¯Êý·µ»Ø£º//Îó²îÊ±¼ä£¨µ¥Î»£ºms£©
+//   21 *  Ê¹ÓÃÊ¾Àý£º WatchDog_Init(IntervalTimer,500);   //¶¨Ê±500msÖÐ¶Ï
+//   22 ********************************************************************************/
+//   23 void WatchDog_Init(WatchDog_Fun fun,uint32_t ms) 
+//   24 {
+//   25   float OffectTime[3];
+//   26   int32_t OffectTimeTemp[3]={0,0,0};
+//   27   uint16_t DividerValue[]={7,7,7};
+//   28   /**********************¼ÆËãÊ±ÖÓÔ´¼°¼ÆÊ±Ê±¼ä**********************************/
+//   29   //SMCLK
+//   30   uint32_t SelectClock = g_sClock.SMCLK.CLK_HZ/1000;
+//   31   uint32_t WDT_CounterValue = ms*SelectClock;
+//   32   while(WDT_CounterValue > WDT_Counter[DividerValue[0]])
+//   33   {
+//   34     DividerValue[0] --;
+//   35   }
+//   36   if((WDT_Counter[DividerValue[0]]-WDT_CounterValue) > (WDT_CounterValue-WDT_Counter[DividerValue[0]+1]))
+//   37   {
+//   38     OffectTimeTemp[0] = (WDT_CounterValue-WDT_Counter[++DividerValue[0]]);
+//   39   }
+//   40   else
+//   41   {
+//   42      OffectTimeTemp[0] = (WDT_Counter[DividerValue[0]]-WDT_CounterValue);
+//   43   }
+//   44   OffectTimeTemp[0] = OffectTimeTemp[0]>0 ? OffectTimeTemp[0] : -OffectTimeTemp[0];
+//   45   OffectTime[0] = (float)OffectTimeTemp[0]/(float)g_sClock.SMCLK.CLK_HZ;
+//   46   /*ACLK*/
+//   47   SelectClock = g_sClock.ACLK.CLK_HZ;
+//   48   WDT_CounterValue = ms*SelectClock/1000;
+//   49   while(WDT_CounterValue > WDT_Counter[DividerValue[1]])
+//   50   {
+//   51     DividerValue[1] --;
+//   52   }
+//   53   if((WDT_Counter[DividerValue[1]]-WDT_CounterValue) > (WDT_CounterValue-WDT_Counter[DividerValue[1]+1]))
+//   54   {
+//   55     OffectTimeTemp[1] = (WDT_CounterValue-WDT_Counter[++DividerValue[1]]);
+//   56   }
+//   57   else
+//   58   {
+//   59      OffectTimeTemp[1] = (WDT_Counter[DividerValue[1]]-WDT_CounterValue);
+//   60   }  
+//   61   OffectTimeTemp[1] = OffectTimeTemp[1]>0 ? OffectTimeTemp[1] : -OffectTimeTemp[1];
+//   62   OffectTime[1] = (float)OffectTimeTemp[1]/(float)g_sClock.ACLK.CLK_HZ;
+//   63   /**VLOCLK_10K*/
+//   64   SelectClock = VLOCLK_FREQUENCY;
+//   65   WDT_CounterValue = ms*SelectClock/1000;
+//   66   while(WDT_CounterValue > WDT_Counter[DividerValue[2]])
+//   67   {
+//   68     DividerValue[2] --;
+//   69   }
+//   70   if((WDT_Counter[DividerValue[2]]-WDT_CounterValue) > (WDT_CounterValue-WDT_Counter[DividerValue[2]+1]))
+//   71   {
+//   72      OffectTimeTemp[2] = (WDT_CounterValue-WDT_Counter[++DividerValue[2]]);
+//   73   }
+//   74   else
+//   75   {
+//   76      OffectTimeTemp[2] = (WDT_Counter[DividerValue[2]]-WDT_CounterValue);
+//   77   }
+//   78   OffectTimeTemp[2] = OffectTimeTemp[2]>0 ? OffectTimeTemp[2] : -OffectTimeTemp[2];
+//   79   OffectTime[2] = (float)OffectTimeTemp[2]/(float)10000; 
+//   80   /*********±È½Ï¸÷¸öÊ±ÖÓÔ´µÄ¶¨Ê±¾«¶È£¬Ñ¡Ôñ×î¸ß¾«¶ÈµÄÊ±ÖÓÔ´¼°¶¨Ê±Ê±¼ä**********/
+//   81   uint16_t TimerSSEL_REGValue = WDTSSEL__SMCLK;
+//   82   uint16_t TimerDivider_REGValue =DividerValue[0];
+//   83   //float aboutTime;
+//   84   if((OffectTime[0]<=OffectTime[1]) && (OffectTime[0]<=OffectTime[2]))
+//   85   {
+//   86       TimerSSEL_REGValue = WDTSSEL__SMCLK;
+//   87       TimerDivider_REGValue = DividerValue[0];
+//   88       //aboutTime=OffectTime[0];
+//   89   }
+//   90   else if((OffectTime[1]<=OffectTime[0]) && (OffectTime[1]<=OffectTime[2]))
+//   91   {
+//   92       TimerSSEL_REGValue = WDTSSEL__ACLK;
+//   93       TimerDivider_REGValue = DividerValue[1];
+//   94       //aboutTime=OffectTime[1];
+//   95   }
+//   96   else if((OffectTime[2]<=OffectTime[1]) && (OffectTime[2]<=OffectTime[0]))
+//   97   {
+//   98       TimerSSEL_REGValue = WDTSSEL__VLO;
+//   99       TimerDivider_REGValue = DividerValue[2];
+//  100       //aboutTime=OffectTime[2];
+//  101   }
+//  102   //ÅäÖÃ¿´ÃÅ¹·
+//  103   SFRIE1 &=~ WDTIE;
+//  104   if(fun == IntervalTimer)
+//  105   { 
+//  106     WDTCTL = WDTPW+WDTCNTCL | TimerSSEL_REGValue | TimerDivider_REGValue | WDTTMSEL; //ÅäÖÃ
+//  107   }
+//  108   else if(fun == DelayTimer)
+//  109   {
+//  110     WDTCTL = WDTPW+WDTCNTCL | TimerSSEL_REGValue | TimerDivider_REGValue | WDTTMSEL; //ÅäÖÃ
+//  111     SFRIFG1 &=~ WDTIFG;
+//  112     while((SFRIFG1 & WDTIFG) == 0u);
+//  113   }
+//  114   else if(fun == WatchDog)
+//  115   {
+//  116     WDTCTL = WDTPW+WDTCNTCL | TimerSSEL_REGValue | TimerDivider_REGValue ; //ÅäÖÃ
+//  117   }  
+//  118   //return  (aboutTime*1000.0f);
+//  119 }
+//  120 /*************************************************************************
+//  121 *  º¯ÊýÃû³Æ£ºWatchDog_ITConfig(STATUS ITState)
+//  122 *  ¹¦ÄÜËµÃ÷£ºÉèÖÃ¿´ÃÅ¹·ÖÐ¶ÏÊÇ·ñÊ¹ÄÜ
+//  123 *  ²ÎÊýËµÃ÷£ºSTATUS ITState £ºÊÇ·ñÊ¹ÄÜÖÐ¶Ï
+//  124 *  º¯Êý·µ»Ø£ºÎÞ
+//  125 *  Ê¹ÓÃÊ¾Àý£ºWatchDog_ITConfig(ENABLE);  //Ê¹ÄÜ¿´ÃÅ¹·ÖÐ¶Ï
+//  126 *************************************************************************/
+//  127 void  WatchDog_ITConfig(STATUS ITState)
+//  128 {
+//  129   if(ITState != DISABLE)
+//  130   {
+//  131     SFRIFG1 &=~ WDTIFG;
+//  132     SFRIE1 |= WDTIE;  //¿ªÆô¿´ÃÅ¹·ÖÐ¶Ï
+//  133   }
+//  134   else
+//  135   {
+//  136     SFRIE1 &=~ WDTIE;
+//  137   }
+//  138 }
+//  139 /*************************************************************************
+//  140 *  º¯ÊýÃû³Æ£ºWatchDog_Feed(void)
+//  141 *  ¹¦ÄÜËµÃ÷£ºÎ¹¹·
+//  142 *  ²ÎÊýËµÃ÷£ºÎÞ
+//  143 *  º¯Êý·µ»Ø£ºÎÞ
+//  144 *  Ê¹ÓÃÊ¾Àý£ºWatchDog_Feed();  //Î¹¹·£¬Çå³ý¿´ÃÅ¹·¼ÆÊýÖµ
+//  145 *************************************************************************/  
+//  146 void  WatchDog_Feed(void)
+//  147 {
+//  148   WDTCTL =(WDTCTL&0X00FF) | (WDTCNTCL + WDTPW);                //¼ÆÊýÖµÇåÁã
+//  149 }
+//  150 /*************************************************************************
+//  151 *  º¯ÊýÃû³Æ£ºSoftWare_RESET(void)
+//  152 *  ¹¦ÄÜËµÃ÷£ºÈí¼þ´¥·¢Ò»´Î¸´Î»
+//  153 *  ²ÎÊýËµÃ÷£ºÎÞ
+//  154 *  º¯Êý·µ»Ø£ºÎÞ
+//  155 *  Ê¹ÓÃÊ¾Àý£ºSoftWare_RESET();  //Èí¼þ¸´Î»Ò»´Îµ¥Æ¬»ú
+//  156 *****************************************************{********************/  
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  157 void  SoftWare_RESET(void)
+SoftWare_RESET:
+          CFI Block cfiBlock32 Using cfiCommon0
+          CFI Function SoftWare_RESET
+//  158 {
+//  159   WDTCTL = 0x0000;
+        MOV.W   #0x0, &0x15c
+//  160 }
+        RETA
+          CFI EndBlock cfiBlock32
+        REQUIRE _A_WDTCTL_L
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r4:
+        REQUIRE ?setjmp_r4
+        REQUIRE ?longjmp_r4
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r5:
+        REQUIRE ?setjmp_r5
+        REQUIRE ?longjmp_r5
+
+        END
+// 
+// 868 bytes in segment CODE
+//   6 bytes in segment DATA16_AN
+//  50 bytes in segment DATA20_C
+// 
+// 868 bytes of CODE  memory
+//  50 bytes of CONST memory
+//   0 bytes of DATA  memory (+ 6 bytes shared)
+//
+//Errors: none
+//Warnings: none

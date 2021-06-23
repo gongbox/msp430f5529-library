@@ -1,0 +1,83 @@
+C51 COMPILER V7.20   LCD1602                                                               06/18/2010 15:55:31 PAGE 1   
+
+
+C51 COMPILER V7.20, COMPILATION OF MODULE LCD1602
+OBJECT MODULE PLACED IN LCD1602.OBJ
+COMPILER INVOKED BY: E:\单片机专用\keil UV3 C51绿色精简版\keil UV3 C51绿色精简版\keil UV3 C51绿色精简版\C51\BIN\C51.EXE 
+                    -LCD1602.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          /*****************************************
+   2          创建：陈志强
+   3          时间：2010.6.12
+   4          功能：LCD1602液晶驱动
+   5          *****************************************/
+   6          #include"reg52.h"
+   7          #include"Allhead.h"
+   8          sbit RS=P0^0;
+   9          sbit RW=P0^1;
+  10          sbit EN=P0^2;
+  11          #define DBPort P2               
+  12          /***************************LCD写命令函数********************/
+  13          void LCDWriteCmd(unchar cmd)
+  14          {
+  15   1         DBPort=cmd;
+  16   1         RS=0;
+  17   1         RW=0;
+  18   1         LCDDelay(5);
+  19   1         EN=1;
+  20   1         EN=0;
+  21   1      }
+  22          /************************LCD写数据函数**************************/
+  23          void LCDWriteDate(unchar date)
+  24          {
+  25   1        DBPort=date;
+  26   1        RS=1;
+  27   1        RW=0;
+  28   1        LCDDelay(5);
+  29   1        EN=1;
+  30   1        EN=0;
+  31   1      }
+  32          /***************************定位函数************************/
+  33          void SetXY(unchar x,unchar y)
+  34          {
+  35   1         if(x==0)
+  36   1                LCDWriteCmd(0x80+y);          //第一行
+  37   1         else
+  38   1            LCDWriteCmd(0x80+0x40+y); //第二行
+  39   1      }
+  40          /***********************显示函数****************************/
+  41          void LcdShow(unchar x,unchar y,unchar *str)
+  42          {
+  43   1         SetXY(x,y);
+  44   1         while(*str!='\0')
+  45   1          {
+  46   2                LCDWriteDate(*str);
+  47   2                str++;
+  48   2              }
+  49   1      } 
+  50          /**********************LCD初始化函数***********************/
+  51          void LCDInt()
+  52          { 
+  53   1         LCDWriteCmd(0x38);//设置模式
+  54   1         LCDWriteCmd(0x0c);//不显示光标
+C51 COMPILER V7.20   LCD1602                                                               06/18/2010 15:55:31 PAGE 2   
+
+  55   1         LCDWriteCmd(0x06);//设置指针自加
+  56   1         LCDWriteCmd(0x01);//清屏
+  57   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    110    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       4
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

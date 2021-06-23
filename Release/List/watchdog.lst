@@ -1,0 +1,725 @@
+###############################################################################
+#                                                                             #
+#                                                       06/Jun/2016  16:42:37 #
+# IAR C/C++ Compiler V5.50.1.20465/W32, Evaluation edition for MSP430         #
+# Copyright 1996-2012 IAR Systems AB.                                         #
+#                                                                             #
+#    __rt_version  =  3                                                       #
+#    __double_size =  32                                                      #
+#    __reg_r4      =  free                                                    #
+#    __reg_r5      =  free                                                    #
+#    __pic         =  no                                                      #
+#    __core        =  430X                                                    #
+#    __data_model  =  large                                                   #
+#    Source file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\watchdog.c                           #
+#    Command line  =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\watchdog.c -D NDEBUG -D RAM_VECTOR   #
+#                     -lC C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C° #
+#                     æ\¹¤³ÌÄ£°å\Release\List\ -lA                            #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\List\ -o C:\Users\615\Desktop\MSP430\MSP #
+#                     430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Release\Obj\             #
+#                     -D__MSP430F5529__ -e --double=32 --dlib_config          #
+#                     "D:\Program Files (x86)\IAR Systems\Embedded Workbench  #
+#                     6.4 Evaluation\430\LIB\DLIB\dl430xlfn.h" -I             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\ -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Ê #
+#                     ý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\inc\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\ -I C:\Users\615\Desktop\MSP430\MSP4 #
+#                     30F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\src\USB\ -I       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_config\ -I                   #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_User\ -I                     #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\srcUSB\USB_API\USB_CDC_API\ -I           #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_API\USB_HID_API\ -I          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_API\USB_MSC_API\ -I          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\KEY\ -I C:\Users\615\Desktop\MSP430\MSP #
+#                     430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\LED\ -I         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\12864\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\oled\ -I      #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\mpu6050\inc\ -I                         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\mpu6050\src\ -I                         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\nokia5110\inc\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\nokia5110\src\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\LQ_1.8_TFT\ -I                          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\LCD_API\ -I                             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\2.2TFT\ -I                              #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\delay\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\ -I             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\System\inc\ -I C:\Users\615\Desktop\MSP430\MSP43 #
+#                     0F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\src\ -I             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\User\ -I C:\Users\615\Desktop\MSP430\MSP430F5529 #
+#                     ¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\User\USER\ -I                    #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\UCOSII\CONFIG\ -I                            #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\uCOSII\App\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII\CONFIHG\    #
+#                     -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ #
+#                     \¹¤³ÌÄ£°å\Lib\uCOSII\PORT\ -I                           #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\UCOSII\CORE\ -I                              #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\FatFs\ -I C:\Users\615\Desktop\MSP430\MSP430 #
+#                     F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\FatFs\option\           #
+#                     --core=430X --data_model=large -Oh --multiplier=32      #
+#                     --multiplier_location=4C0 --hw_workaround=CPU40         #
+#    List file     =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\List\watchdog.lst                        #
+#    Object file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\Obj\watchdog.r43                         #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\src\watchdog.c
+      1          #include "watchdog.h"
+
+   \                                 In  segment DATA16_AN, at 0x100
+   \   union <unnamed> __data16 _A_SFRIE1_L
+   \                     _A_SFRIE1_L:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_AN, at 0x102
+   \   union <unnamed> __data16 _A_SFRIFG1_L
+   \                     _A_SFRIFG1_L:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_AN, at 0x15c
+   \   union <unnamed> __data16 _A_WDTCTL_L
+   \                     _A_WDTCTL_L:
+   \   000000                DS8 2
+      2          #include "clock.h"
+      3          
+
+   \                                 In  segment DATA20_C, align 2, align-sorted
+      4          static const uint32_t WDT_Counter[]={2000000000u,128000000u,8192000u,512000u,32768u,8192u,512u,64u};
+   \                     WDT_Counter:
+   \   000000   009435770020 DC32 2000000000, 128000000, 8192000, 512000, 32768, 8192, 512, 64
+   \            A10700007D00
+   \            00D007000080
+   \            000000200000
+   \            000200004000
+   \            0000        
+      5          /*******************************************************************************
+      6          *  º¯ÊýÃû³Æ£ºDisableWatchDog(void)
+      7          *  ¹¦ÄÜËµÃ÷£º¹Ø±Õ¿´ÃÅ¹·
+      8          *  ²ÎÊýËµÃ÷£ºÎÞ
+      9          *  º¯Êý·µ»Ø£ºÎÞ
+     10          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   824F5C01     MOV.W   R15, &0x15c
+   \   000004   1001         RETA
+
+   \                                 In  segment CODE, align 2
+     11          void DisableWatchDog(void)
+   \                     DisableWatchDog:
+     12          {
+     13            WDTCTL = (WDTCTL&0xFF)|(WDTPW+WDTHOLD);
+   \   000000   1F425C01     MOV.W   &0x15c, R15
+   \   000004   7FF3         AND.B   #0xff, R15
+   \   000006   3FD0805A     BIS.W   #0x5a80, R15
+   \   00000A   ....         JMP     ?Subroutine0
+   \   00000C   0343         NOP
+   \   00000E                REQUIRE _A_WDTCTL_L
+     14          } 
+     15          /*******************************************************************************
+     16          *  º¯ÊýÃû³Æ£ºWatchDog_Init(WatchDog_Fun fun,uint32_t ms) 
+     17          *  ¹¦ÄÜËµÃ÷£ºÉèÖÃ¿´ÃÅ¹·»ò¶¨Ê±ÖÐ¶Ï£¬×¢Òâ¶¨Ê±Ê±¼äÖ»ÊÇ±È½Ï½Ó½üÉèÖÃÊ±¼äµÄÒ»¸öÊ±¼ä£¬²¢²»¾«×¼,·µ»Ø¼°Ê±¼äÆ«
+     18          *  ²ÎÊýËµÃ÷£ºWatchDog_Fun fun   £º¹¦ÄÜÑ¡Ôñ
+     19                       uint32_t ms          £º¹¦ÄÜÊ±¼ä
+     20          *  º¯Êý·µ»Ø£º//Îó²îÊ±¼ä£¨µ¥Î»£ºms£©
+     21          *  Ê¹ÓÃÊ¾Àý£º WatchDog_Init(IntervalTimer,500);   //¶¨Ê±500msÖÐ¶Ï
+     22          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2, keep-with-next
+     23          void WatchDog_Init(WatchDog_Fun fun,uint32_t ms) 
+   \                     WatchDog_Init:
+     24          {
+   \   000000   7B14         PUSHM.A #0x8, R11
+   \   000002   4C12         PUSH.B  R12
+   \   000004   31801E00     SUB.W   #0x1e, SP
+   \   000008   064E         MOV.W   R14, R6
+   \   00000A   074F         MOV.W   R15, R7
+     25            float OffectTime[3];
+     26            int32_t OffectTimeTemp[3]={0,0,0};
+   \   00000C   0C41         MOV.W   SP, R12
+   \   00000E   3C500600     ADD.W   #0x6, R12
+   \   000012   3E400600     MOV.W   #0x6, R14
+   \   000016   ........     CALLA   #?ClearMemoryWords
+     27            uint16_t DividerValue[]={7,7,7};
+   \   00001A   ........     MOVA    #`?<Constant {7, 7, 7}>`, R15
+   \   00001E   4018B14F0000 MOVX.W  @R15+, 0(SP)
+   \   000024   4018B14F0200 MOVX.W  @R15+, 0x2(SP)
+   \   00002A   4018B14F0400 MOVX.W  @R15+, 0x4(SP)
+     28            /**********************¼ÆËãÊ±ÖÓÔ´¼°¼ÆÊ±Ê±¼ä**********************************/
+     29            //SMCLK
+     30            uint32_t SelectClock = g_sClock.SMCLK.CLK_HZ/1000;
+     31            uint32_t WDT_CounterValue = ms*SelectClock;
+   \   000030   ........     MOVA    #g_sClock, R8
+   \   000034   1C480C00     MOV.W   0xc(R8), R12
+   \   000038   1D480E00     MOV.W   0xe(R8), R13
+   \   00003C   ........     CALLA   #??Subroutine7_0
+   \                     ??CrossCallReturnLabel_13:
+   \   000040   0E4C         MOV.W   R12, R14
+   \   000042   0F4D         MOV.W   R13, R15
+   \   000044   0C46         MOV.W   R6, R12
+   \   000046   0D47         MOV.W   R7, R13
+   \   000048   ........     CALLA   #?Mul32
+   \   00004C   043C         JMP     ??WatchDog_Init_4
+     32            while(WDT_CounterValue > WDT_Counter[DividerValue[0]])
+     33            {
+     34              DividerValue[0] --;
+   \                     ??WatchDog_Init_0:
+   \   00004E   2F41         MOV.W   @SP, R15
+   \   000050   3F53         ADD.W   #0xffff, R15
+   \   000052   814F0000     MOV.W   R15, 0(SP)
+   \                     ??WatchDog_Init_4:
+   \   000056   2F41         MOV.W   @SP, R15
+   \   000058   4F06         RLAM.A  #0x2, R15
+   \   00005A   ....1A4F.... MOVX.W  WDT_Counter(R15), R10
+   \   000060   ....1B4F.... MOVX.W  WDT_Counter + 2(R15), R11
+   \   000066   0B9D         CMP.W   R13, R11
+   \   000068   F22B         JNC     ??WatchDog_Init_0
+   \   00006A   0220         JNE     ??WatchDog_Init_5
+   \   00006C   0A9C         CMP.W   R12, R10
+   \   00006E   EF2B         JNC     ??WatchDog_Init_0
+     35            }
+     36            if((WDT_Counter[DividerValue[0]]-WDT_CounterValue) > (WDT_CounterValue-WDT_Counter[DividerValue[0]+1]))
+   \                     ??WatchDog_Init_5:
+   \   000070   2F41         MOV.W   @SP, R15
+   \   000072   1F53         ADD.W   #0x1, R15
+   \   000074   0E4F         MOV.W   R15, R14
+   \   000076   4E06         RLAM.A  #0x2, R14
+   \   000078   044C         MOV.W   R12, R4
+   \   00007A   054D         MOV.W   R13, R5
+   \   00007C   ....148E.... SUBX.W  WDT_Counter(R14), R4
+   \   000082   ....157E.... SUBCX.W WDT_Counter + 2(R14), R5
+   \   000088   0A8C         SUB.W   R12, R10
+   \   00008A   0B7D         SUBC.W  R13, R11
+   \   00008C   059B         CMP.W   R11, R5
+   \   00008E   0328         JNC     ??WatchDog_Init_6
+   \   000090   0920         JNE     ??WatchDog_Init_7
+   \   000092   049A         CMP.W   R10, R4
+   \   000094   072C         JC      ??WatchDog_Init_7
+     37            {
+     38              OffectTimeTemp[0] = (WDT_CounterValue-WDT_Counter[++DividerValue[0]]);
+   \                     ??WatchDog_Init_6:
+   \   000096   814F0000     MOV.W   R15, 0(SP)
+   \   00009A   81440600     MOV.W   R4, 0x6(SP)
+   \   00009E   81450800     MOV.W   R5, 0x8(SP)
+   \   0000A2   043C         JMP     ??WatchDog_Init_8
+     39            }
+     40            else
+     41            {
+     42               OffectTimeTemp[0] = (WDT_Counter[DividerValue[0]]-WDT_CounterValue);
+   \                     ??WatchDog_Init_7:
+   \   0000A4   814A0600     MOV.W   R10, 0x6(SP)
+   \   0000A8   814B0800     MOV.W   R11, 0x8(SP)
+     43            }
+     44            OffectTimeTemp[0] = OffectTimeTemp[0]>0 ? OffectTimeTemp[0] : -OffectTimeTemp[0];
+   \                     ??WatchDog_Init_8:
+   \   0000AC   81930800     CMP.W   #0x0, 0x8(SP)
+   \   0000B0   0438         JL      ??WatchDog_Init_9
+   \   0000B2   0D20         JNE     ??WatchDog_Init_10
+   \   0000B4   91930600     CMP.W   #0x1, 0x6(SP)
+   \   0000B8   0A2C         JC      ??WatchDog_Init_10
+   \                     ??WatchDog_Init_9:
+   \   0000BA   1E410600     MOV.W   0x6(SP), R14
+   \   0000BE   1F410800     MOV.W   0x8(SP), R15
+   \   0000C2   ........     CALLA   #?Subroutine5
+   \                     ??CrossCallReturnLabel_4:
+   \   0000C6   814E0600     MOV.W   R14, 0x6(SP)
+   \   0000CA   814F0800     MOV.W   R15, 0x8(SP)
+     45            OffectTime[0] = (float)OffectTimeTemp[0]/(float)g_sClock.SMCLK.CLK_HZ;
+   \                     ??WatchDog_Init_10:
+   \   0000CE   1C480C00     MOV.W   0xc(R8), R12
+   \   0000D2   1D480E00     MOV.W   0xe(R8), R13
+   \   0000D6   ........     CALLA   #_Cast32uto32f
+   \   0000DA   0A4C         MOV.W   R12, R10
+   \   0000DC   0B4D         MOV.W   R13, R11
+   \   0000DE   1C410600     MOV.W   0x6(SP), R12
+   \   0000E2   1D410800     MOV.W   0x8(SP), R13
+   \   0000E6   ........     CALLA   #?Subroutine3
+   \                     ??CrossCallReturnLabel_2:
+   \   0000EA   814C1200     MOV.W   R12, 0x12(SP)
+   \   0000EE   814D1400     MOV.W   R13, 0x14(SP)
+   \   0000F2   0C46         MOV.W   R6, R12
+   \   0000F4   0D47         MOV.W   R7, R13
+   \   0000F6   1E481800     MOV.W   0x18(R8), R14
+   \   0000FA   1F481A00     MOV.W   0x1a(R8), R15
+   \   0000FE   ........     CALLA   #?Subroutine1
+   \                     ??CrossCallReturnLabel_14:
+   \   000102   023C         JMP     ??WatchDog_Init_11
+     46            /*ACLK*/
+     47            SelectClock = g_sClock.ACLK.CLK_HZ;
+     48            WDT_CounterValue = ms*SelectClock/1000;
+     49            while(WDT_CounterValue > WDT_Counter[DividerValue[1]])
+     50            {
+     51              DividerValue[1] --;
+   \                     ??WatchDog_Init_1:
+   \   000104   B1530200     ADD.W   #0xffff, 0x2(SP)
+     52            }
+   \                     ??WatchDog_Init_11:
+   \   000108   1F410200     MOV.W   0x2(SP), R15
+   \   00010C   ........     CALLA   #?Subroutine2
+   \                     ??CrossCallReturnLabel_0:
+   \   000110   F92B         JNC     ??WatchDog_Init_1
+   \   000112   0220         JNE     ??WatchDog_Init_12
+   \   000114   0A9C         CMP.W   R12, R10
+   \   000116   F62B         JNC     ??WatchDog_Init_1
+   \                     ??WatchDog_Init_12:
+   \   000118   1F53         ADD.W   #0x1, R15
+   \   00011A   4F06         RLAM.A  #0x2, R15
+   \   00011C   044C         MOV.W   R12, R4
+   \   00011E   054D         MOV.W   R13, R5
+   \   000120   ....148F.... SUBX.W  WDT_Counter(R15), R4
+   \   000126   ....157F.... SUBCX.W WDT_Counter + 2(R15), R5
+   \   00012C   0A8C         SUB.W   R12, R10
+   \   00012E   0B7D         SUBC.W  R13, R11
+   \   000130   059B         CMP.W   R11, R5
+   \   000132   0328         JNC     ??WatchDog_Init_13
+   \   000134   0920         JNE     ??WatchDog_Init_14
+   \   000136   049A         CMP.W   R10, R4
+   \   000138   072C         JC      ??WatchDog_Init_14
+     53            if((WDT_Counter[DividerValue[1]]-WDT_CounterValue) > (WDT_CounterValue-WDT_Counter[DividerValue[1]+1]))
+     54            {
+     55              OffectTimeTemp[1] = (WDT_CounterValue-WDT_Counter[++DividerValue[1]]);
+   \                     ??WatchDog_Init_13:
+   \   00013A   91530200     ADD.W   #0x1, 0x2(SP)
+   \   00013E   81440A00     MOV.W   R4, 0xa(SP)
+   \   000142   81450C00     MOV.W   R5, 0xc(SP)
+   \   000146   043C         JMP     ??WatchDog_Init_15
+     56            }
+     57            else
+     58            {
+     59               OffectTimeTemp[1] = (WDT_Counter[DividerValue[1]]-WDT_CounterValue);
+   \                     ??WatchDog_Init_14:
+   \   000148   814A0A00     MOV.W   R10, 0xa(SP)
+   \   00014C   814B0C00     MOV.W   R11, 0xc(SP)
+     60            }  
+     61            OffectTimeTemp[1] = OffectTimeTemp[1]>0 ? OffectTimeTemp[1] : -OffectTimeTemp[1];
+   \                     ??WatchDog_Init_15:
+   \   000150   1E410A00     MOV.W   0xa(SP), R14
+   \   000154   1F410C00     MOV.W   0xc(SP), R15
+   \   000158   0F93         CMP.W   #0x0, R15
+   \   00015A   0338         JL      ??WatchDog_Init_16
+   \   00015C   0820         JNE     ??WatchDog_Init_17
+   \   00015E   1E93         CMP.W   #0x1, R14
+   \   000160   062C         JC      ??WatchDog_Init_17
+   \                     ??WatchDog_Init_16:
+   \   000162   ........     CALLA   #?Subroutine5
+   \                     ??CrossCallReturnLabel_5:
+   \   000166   814E0A00     MOV.W   R14, 0xa(SP)
+   \   00016A   814F0C00     MOV.W   R15, 0xc(SP)
+     62            OffectTime[1] = (float)OffectTimeTemp[1]/(float)g_sClock.ACLK.CLK_HZ;
+   \                     ??WatchDog_Init_17:
+   \   00016E   1C481800     MOV.W   0x18(R8), R12
+   \   000172   1D481A00     MOV.W   0x1a(R8), R13
+   \   000176   ........     CALLA   #_Cast32uto32f
+   \   00017A   0A4C         MOV.W   R12, R10
+   \   00017C   0B4D         MOV.W   R13, R11
+   \   00017E   1C410A00     MOV.W   0xa(SP), R12
+   \   000182   1D410C00     MOV.W   0xc(SP), R13
+   \   000186   ........     CALLA   #?Subroutine3
+   \                     ??CrossCallReturnLabel_3:
+   \   00018A   084C         MOV.W   R12, R8
+   \   00018C   094D         MOV.W   R13, R9
+   \   00018E   81481600     MOV.W   R8, 0x16(SP)
+   \   000192   81491800     MOV.W   R9, 0x18(SP)
+     63            /**VLOCLK_10K*/
+     64            SelectClock = VLOCLK_FREQUENCY;
+     65            WDT_CounterValue = ms*SelectClock/1000;
+   \   000196   0C46         MOV.W   R6, R12
+   \   000198   0D47         MOV.W   R7, R13
+   \   00019A   3E401027     MOV.W   #0x2710, R14
+   \   00019E   0F43         MOV.W   #0x0, R15
+   \   0001A0   ........     CALLA   #?Subroutine1
+   \                     ??CrossCallReturnLabel_15:
+   \   0001A4   023C         JMP     ??WatchDog_Init_18
+     66            while(WDT_CounterValue > WDT_Counter[DividerValue[2]])
+     67            {
+     68              DividerValue[2] --;
+   \                     ??WatchDog_Init_2:
+   \   0001A6   B1530400     ADD.W   #0xffff, 0x4(SP)
+     69            }
+   \                     ??WatchDog_Init_18:
+   \   0001AA   1F410400     MOV.W   0x4(SP), R15
+   \   0001AE   ........     CALLA   #?Subroutine2
+   \                     ??CrossCallReturnLabel_1:
+   \   0001B2   F92B         JNC     ??WatchDog_Init_2
+   \   0001B4   0220         JNE     ??WatchDog_Init_19
+   \   0001B6   0A9C         CMP.W   R12, R10
+   \   0001B8   F62B         JNC     ??WatchDog_Init_2
+   \                     ??WatchDog_Init_19:
+   \   0001BA   1F53         ADD.W   #0x1, R15
+   \   0001BC   4F06         RLAM.A  #0x2, R15
+   \   0001BE   064C         MOV.W   R12, R6
+   \   0001C0   074D         MOV.W   R13, R7
+   \   0001C2   ....168F.... SUBX.W  WDT_Counter(R15), R6
+   \   0001C8   ....177F.... SUBCX.W WDT_Counter + 2(R15), R7
+   \   0001CE   0A8C         SUB.W   R12, R10
+   \   0001D0   0B7D         SUBC.W  R13, R11
+   \   0001D2   079B         CMP.W   R11, R7
+   \   0001D4   0328         JNC     ??WatchDog_Init_20
+   \   0001D6   0920         JNE     ??WatchDog_Init_21
+   \   0001D8   069A         CMP.W   R10, R6
+   \   0001DA   072C         JC      ??WatchDog_Init_21
+     70            if((WDT_Counter[DividerValue[2]]-WDT_CounterValue) > (WDT_CounterValue-WDT_Counter[DividerValue[2]+1]))
+     71            {
+     72               OffectTimeTemp[2] = (WDT_CounterValue-WDT_Counter[++DividerValue[2]]);
+   \                     ??WatchDog_Init_20:
+   \   0001DC   91530400     ADD.W   #0x1, 0x4(SP)
+   \   0001E0   81460E00     MOV.W   R6, 0xe(SP)
+   \   0001E4   81471000     MOV.W   R7, 0x10(SP)
+   \   0001E8   043C         JMP     ??WatchDog_Init_22
+     73            }
+     74            else
+     75            {
+     76               OffectTimeTemp[2] = (WDT_Counter[DividerValue[2]]-WDT_CounterValue);
+   \                     ??WatchDog_Init_21:
+   \   0001EA   814A0E00     MOV.W   R10, 0xe(SP)
+   \   0001EE   814B1000     MOV.W   R11, 0x10(SP)
+     77            }
+     78            OffectTimeTemp[2] = OffectTimeTemp[2]>0 ? OffectTimeTemp[2] : -OffectTimeTemp[2];
+   \                     ??WatchDog_Init_22:
+   \   0001F2   1E410E00     MOV.W   0xe(SP), R14
+   \   0001F6   1F411000     MOV.W   0x10(SP), R15
+   \   0001FA   0F93         CMP.W   #0x0, R15
+   \   0001FC   0338         JL      ??WatchDog_Init_23
+   \   0001FE   0820         JNE     ??WatchDog_Init_24
+   \   000200   1E93         CMP.W   #0x1, R14
+   \   000202   062C         JC      ??WatchDog_Init_24
+   \                     ??WatchDog_Init_23:
+   \   000204   ........     CALLA   #?Subroutine5
+   \                     ??CrossCallReturnLabel_6:
+   \   000208   814E0E00     MOV.W   R14, 0xe(SP)
+   \   00020C   814F1000     MOV.W   R15, 0x10(SP)
+     79            OffectTime[2] = (float)OffectTimeTemp[2]/(float)10000; 
+   \                     ??WatchDog_Init_24:
+   \   000210   1C410E00     MOV.W   0xe(SP), R12
+   \   000214   1D411000     MOV.W   0x10(SP), R13
+   \   000218   ........     CALLA   #_Cast32sto32f
+   \   00021C   3E400040     MOV.W   #0x4000, R14
+   \   000220   3F401C46     MOV.W   #0x461c, R15
+   \   000224   ........     CALLA   #_Div32f
+   \   000228   0A4C         MOV.W   R12, R10
+   \   00022A   0B4D         MOV.W   R13, R11
+   \   00022C   814A1A00     MOV.W   R10, 0x1a(SP)
+   \   000230   814B1C00     MOV.W   R11, 0x1c(SP)
+     80            /*********±È½Ï¸÷¸öÊ±ÖÓÔ´µÄ¶¨Ê±¾«¶È£¬Ñ¡Ôñ×î¸ß¾«¶ÈµÄÊ±ÖÓÔ´¼°¶¨Ê±Ê±¼ä**********/
+     81            uint16_t TimerSSEL_REGValue = WDTSSEL__SMCLK;
+   \   000234   0643         MOV.W   #0x0, R6
+     82            uint16_t TimerDivider_REGValue =DividerValue[0];
+   \   000236   2741         MOV.W   @SP, R7
+     83            //float aboutTime;
+     84            if((OffectTime[0]<=OffectTime[1]) && (OffectTime[0]<=OffectTime[2]))
+   \   000238   1E411200     MOV.W   0x12(SP), R14
+   \   00023C   1F411400     MOV.W   0x14(SP), R15
+   \   000240   0C48         MOV.W   R8, R12
+   \   000242   0D49         MOV.W   R9, R13
+   \   000244   ........     CALLA   #??Subroutine4_0
+   \                     ??CrossCallReturnLabel_7:
+   \   000248   0924         JEQ     ??WatchDog_Init_25
+   \   00024A   1E411200     MOV.W   0x12(SP), R14
+   \   00024E   1F411400     MOV.W   0x14(SP), R15
+   \   000252   0C4A         MOV.W   R10, R12
+   \   000254   0D4B         MOV.W   R11, R13
+   \   000256   ........     CALLA   #??Subroutine4_0
+   \                     ??CrossCallReturnLabel_8:
+   \   00025A   2120         JNE     ??WatchDog_Init_26
+     85            {
+     86                TimerSSEL_REGValue = WDTSSEL__SMCLK;
+     87                TimerDivider_REGValue = DividerValue[0];
+     88                //aboutTime=OffectTime[0];
+     89            }
+     90            else if((OffectTime[1]<=OffectTime[0]) && (OffectTime[1]<=OffectTime[2]))
+   \                     ??WatchDog_Init_25:
+   \   00025C   0E48         MOV.W   R8, R14
+   \   00025E   0F49         MOV.W   R9, R15
+   \   000260   ........     CALLA   #?Subroutine4
+   \                     ??CrossCallReturnLabel_11:
+   \   000264   0C24         JEQ     ??WatchDog_Init_27
+   \   000266   0E48         MOV.W   R8, R14
+   \   000268   0F49         MOV.W   R9, R15
+   \   00026A   0C4A         MOV.W   R10, R12
+   \   00026C   0D4B         MOV.W   R11, R13
+   \   00026E   ........     CALLA   #??Subroutine4_0
+   \                     ??CrossCallReturnLabel_9:
+   \   000272   0524         JEQ     ??WatchDog_Init_27
+     91            {
+     92                TimerSSEL_REGValue = WDTSSEL__ACLK;
+   \   000274   36402000     MOV.W   #0x20, R6
+     93                TimerDivider_REGValue = DividerValue[1];
+   \   000278   17410200     MOV.W   0x2(SP), R7
+   \   00027C   103C         JMP     ??WatchDog_Init_26
+     94                //aboutTime=OffectTime[1];
+     95            }
+     96            else if((OffectTime[2]<=OffectTime[1]) && (OffectTime[2]<=OffectTime[0]))
+   \                     ??WatchDog_Init_27:
+   \   00027E   0E4A         MOV.W   R10, R14
+   \   000280   0F4B         MOV.W   R11, R15
+   \   000282   0C48         MOV.W   R8, R12
+   \   000284   0D49         MOV.W   R9, R13
+   \   000286   ........     CALLA   #??Subroutine4_0
+   \                     ??CrossCallReturnLabel_10:
+   \   00028A   0924         JEQ     ??WatchDog_Init_26
+   \   00028C   0E4A         MOV.W   R10, R14
+   \   00028E   0F4B         MOV.W   R11, R15
+   \   000290   ........     CALLA   #?Subroutine4
+   \                     ??CrossCallReturnLabel_12:
+   \   000294   0424         JEQ     ??WatchDog_Init_26
+     97            {
+     98                TimerSSEL_REGValue = WDTSSEL__VLO;
+   \   000296   36404000     MOV.W   #0x40, R6
+     99                TimerDivider_REGValue = DividerValue[2];
+   \   00029A   17410400     MOV.W   0x4(SP), R7
+    100                //aboutTime=OffectTime[2];
+    101            }
+    102            //ÅäÖÃ¿´ÃÅ¹·
+    103            SFRIE1 &=~ WDTIE;
+   \                     ??WatchDog_Init_26:
+   \   00029E   92C30001     BIC.W   #0x1, &0x100
+    104            if(fun == IntervalTimer)
+   \   0002A2   D1931E00     CMP.B   #0x1, 0x1e(SP)
+   \   0002A6   0420         JNE     ??WatchDog_Init_28
+    105            { 
+    106              WDTCTL = WDTPW+WDTCNTCL | TimerSSEL_REGValue | TimerDivider_REGValue | WDTTMSEL; //ÅäÖÃ
+   \   0002A8   06D7         BIS.W   R7, R6
+   \   0002AA   36D0185A     BIS.W   #0x5a18, R6
+   \   0002AE   143C         JMP     ??WatchDog_Init_29
+    107            }
+    108            else if(fun == DelayTimer)
+   \                     ??WatchDog_Init_28:
+   \   0002B0   E1931E00     CMP.B   #0x2, 0x1e(SP)
+   \   0002B4   0B20         JNE     ??WatchDog_Init_30
+    109            {
+    110              WDTCTL = WDTPW+WDTCNTCL | TimerSSEL_REGValue | TimerDivider_REGValue | WDTTMSEL; //ÅäÖÃ
+   \   0002B6   06D7         BIS.W   R7, R6
+   \   0002B8   36D0185A     BIS.W   #0x5a18, R6
+   \   0002BC   82465C01     MOV.W   R6, &0x15c
+    111              SFRIFG1 &=~ WDTIFG;
+   \   0002C0   92C30201     BIC.W   #0x1, &0x102
+    112              while((SFRIFG1 & WDTIFG) == 0u);
+   \                     ??WatchDog_Init_3:
+   \   0002C4   92B30201     BIT.W   #0x1, &0x102
+   \   0002C8   092C         JC      ??WatchDog_Init_31
+   \   0002CA   FC3F         JMP     ??WatchDog_Init_3
+    113            }
+    114            else if(fun == WatchDog)
+   \                     ??WatchDog_Init_30:
+   \   0002CC   C1931E00     CMP.B   #0x0, 0x1e(SP)
+   \   0002D0   0520         JNE     ??WatchDog_Init_31
+    115            {
+    116              WDTCTL = WDTPW+WDTCNTCL | TimerSSEL_REGValue | TimerDivider_REGValue ; //ÅäÖÃ
+   \   0002D2   06D7         BIS.W   R7, R6
+   \   0002D4   36D0085A     BIS.W   #0x5a08, R6
+   \                     ??WatchDog_Init_29:
+   \   0002D8   82465C01     MOV.W   R6, &0x15c
+    117            }  
+    118            //return  (aboutTime*1000.0f);
+    119          }
+   \                     ??WatchDog_Init_31:
+   \   0002DC   31502000     ADD.W   #0x20, SP
+   \   0002E0   7416         POPM.A  #0x8, R11
+   \   0002E2   1001         RETA
+   \   0002E4                REQUIRE _A_SFRIE1_L
+   \   0002E4                REQUIRE _A_WDTCTL_L
+   \   0002E4                REQUIRE _A_SFRIFG1_L
+
+   \                                 In  segment CODE, align 2, keep-with-next
+   \                     ?Subroutine5:
+   \   000000   3EE3         XOR.W   #0xffff, R14
+   \   000002   3FE3         XOR.W   #0xffff, R15
+   \   000004   1E53         ADD.W   #0x1, R14
+   \   000006   0F63         ADDC.W  #0x0, R15
+   \   000008   1001         RETA
+
+   \                                 In  segment CODE, align 2, keep-with-next
+   \                     ?Subroutine4:
+   \   000000   1C411600     MOV.W   0x16(SP), R12
+   \   000004   1D411800     MOV.W   0x18(SP), R13
+   \   000008                REQUIRE ??Subroutine4_0
+   \   000008                // Fall through to label ??Subroutine4_0
+
+   \                                 In  segment CODE, align 2, keep-with-next
+   \                     ??Subroutine4_0:
+   \   000000   ........     CALLA   #_CmpGe32f
+   \   000004   0C93         CMP.W   #0x0, R12
+   \   000006   1001         RETA
+
+   \                                 In  segment CODE, align 2, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   ........     CALLA   #_Cast32sto32f
+   \   000004   0E4A         MOV.W   R10, R14
+   \   000006   0F4B         MOV.W   R11, R15
+   \   000008   ........     BRA     #_Div32f
+
+   \                                 In  segment CODE, align 2, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   0B4F         MOV.W   R15, R11
+   \   000002   4B06         RLAM.A  #0x2, R11
+   \   000004   ....1A4B.... MOVX.W  WDT_Counter(R11), R10
+   \   00000A   ....1B4B.... MOVX.W  WDT_Counter + 2(R11), R11
+   \   000010   0B9D         CMP.W   R13, R11
+   \   000012   1001         RETA
+
+   \                                 In  segment CODE, align 2, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   ........     CALLA   #?Mul32
+   \   000004                REQUIRE ??Subroutine7_0
+   \   000004                // Fall through to label ??Subroutine7_0
+
+   \                                 In  segment CODE, align 2, keep-with-next
+   \                     ??Subroutine7_0:
+   \   000000   3E40E803     MOV.W   #0x3e8, R14
+   \   000004   0F43         MOV.W   #0x0, R15
+   \   000006   ........     BRA     #?DivMod32u
+    120          /*************************************************************************
+    121          *  º¯ÊýÃû³Æ£ºWatchDog_ITConfig(STATUS ITState)
+    122          *  ¹¦ÄÜËµÃ÷£ºÉèÖÃ¿´ÃÅ¹·ÖÐ¶ÏÊÇ·ñÊ¹ÄÜ
+    123          *  ²ÎÊýËµÃ÷£ºSTATUS ITState £ºÊÇ·ñÊ¹ÄÜÖÐ¶Ï
+    124          *  º¯Êý·µ»Ø£ºÎÞ
+    125          *  Ê¹ÓÃÊ¾Àý£ºWatchDog_ITConfig(ENABLE);  //Ê¹ÄÜ¿´ÃÅ¹·ÖÐ¶Ï
+    126          *************************************************************************/
+
+   \                                 In  segment CODE, align 2, keep-with-next
+    127          void  WatchDog_ITConfig(STATUS ITState)
+   \                     WatchDog_ITConfig:
+    128          {
+    129            if(ITState != DISABLE)
+   \   000000   4C93         CMP.B   #0x0, R12
+   \   000002   0524         JEQ     ??WatchDog_ITConfig_0
+    130            {
+    131              SFRIFG1 &=~ WDTIFG;
+   \   000004   92C30201     BIC.W   #0x1, &0x102
+    132              SFRIE1 |= WDTIE;  //¿ªÆô¿´ÃÅ¹·ÖÐ¶Ï
+   \   000008   92D30001     BIS.W   #0x1, &0x100
+   \   00000C   1001         RETA
+    133            }
+    134            else
+    135            {
+    136              SFRIE1 &=~ WDTIE;
+   \                     ??WatchDog_ITConfig_0:
+   \   00000E   92C30001     BIC.W   #0x1, &0x100
+    137            }
+    138          }
+   \   000012   1001         RETA
+   \   000014                REQUIRE _A_SFRIFG1_L
+   \   000014                REQUIRE _A_SFRIE1_L
+    139          /*************************************************************************
+    140          *  º¯ÊýÃû³Æ£ºWatchDog_Feed(void)
+    141          *  ¹¦ÄÜËµÃ÷£ºÎ¹¹·
+    142          *  ²ÎÊýËµÃ÷£ºÎÞ
+    143          *  º¯Êý·µ»Ø£ºÎÞ
+    144          *  Ê¹ÓÃÊ¾Àý£ºWatchDog_Feed();  //Î¹¹·£¬Çå³ý¿´ÃÅ¹·¼ÆÊýÖµ
+    145          *************************************************************************/  
+
+   \                                 In  segment CODE, align 2, keep-with-next
+    146          void  WatchDog_Feed(void)
+   \                     WatchDog_Feed:
+    147          {
+    148            WDTCTL =(WDTCTL&0X00FF) | (WDTCNTCL + WDTPW);                //¼ÆÊýÖµÇåÁã
+   \   000000   1F425C01     MOV.W   &0x15c, R15
+   \   000004   7FF3         AND.B   #0xff, R15
+   \   000006   3FD0085A     BIS.W   #0x5a08, R15
+   \   00000A                REQUIRE ?Subroutine0
+   \   00000A                REQUIRE _A_WDTCTL_L
+   \   00000A                // Fall through to label ?Subroutine0
+    149          }
+    150          /*************************************************************************
+    151          *  º¯ÊýÃû³Æ£ºSoftWare_RESET(void)
+    152          *  ¹¦ÄÜËµÃ÷£ºÈí¼þ´¥·¢Ò»´Î¸´Î»
+    153          *  ²ÎÊýËµÃ÷£ºÎÞ
+    154          *  º¯Êý·µ»Ø£ºÎÞ
+    155          *  Ê¹ÓÃÊ¾Àý£ºSoftWare_RESET();  //Èí¼þ¸´Î»Ò»´Îµ¥Æ¬»ú
+    156          *****************************************************{********************/  
+
+   \                                 In  segment CODE, align 2
+    157          void  SoftWare_RESET(void)
+   \                     SoftWare_RESET:
+    158          {
+    159            WDTCTL = 0x0000;
+   \   000000   82435C01     MOV.W   #0x0, &0x15c
+    160          }
+   \   000004   1001         RETA
+   \   000006                REQUIRE _A_WDTCTL_L
+
+   \                                 In  segment DATA20_C, align 2, align-sorted
+   \   000000   000000000000 DC32 0, 0, 0
+   \            000000000000
+
+   \                                 In  segment DATA20_C, align 2, align-sorted
+   \                     `?<Constant {7, 7, 7}>`:
+   \   000000   070007000700 DC16 7, 7, 7
+
+   Maximum stack usage in bytes:
+
+   CSTACK Function
+   ------ --------
+       4  DisableWatchDog
+       4  SoftWare_RESET
+       4  WatchDog_Feed
+       4  WatchDog_ITConfig
+      68  WatchDog_Init
+            68 -> _Cast32sto32f
+            68 -> _Cast32uto32f
+            68 -> _CmpGe32f
+            68 -> _Div32f
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      12  ?<Constant {0L, 0L, 0L}>
+       6  ?<Constant {7, 7, 7}>
+       8  ??Subroutine4_0
+      10  ??Subroutine7_0
+       6  ?Subroutine0
+       4  ?Subroutine1
+      20  ?Subroutine2
+      12  ?Subroutine3
+       8  ?Subroutine4
+      10  ?Subroutine5
+      14  DisableWatchDog
+       6  SoftWare_RESET
+      32  WDT_Counter
+      10  WatchDog_Feed
+      20  WatchDog_ITConfig
+     740  WatchDog_Init
+       2  _A_SFRIE1_L
+       2  _A_SFRIFG1_L
+       2  _A_WDTCTL_L
+
+ 
+ 868 bytes in segment CODE
+   6 bytes in segment DATA16_AN
+  50 bytes in segment DATA20_C
+ 
+ 868 bytes of CODE  memory
+  50 bytes of CONST memory
+   0 bytes of DATA  memory (+ 6 bytes shared)
+
+Errors: none
+Warnings: none

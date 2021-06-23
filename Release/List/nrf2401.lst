@@ -1,0 +1,870 @@
+###############################################################################
+#                                                                             #
+#                                                       06/Jun/2016  16:42:28 #
+# IAR C/C++ Compiler V5.50.1.20465/W32, Evaluation edition for MSP430         #
+# Copyright 1996-2012 IAR Systems AB.                                         #
+#                                                                             #
+#    __rt_version  =  3                                                       #
+#    __double_size =  32                                                      #
+#    __reg_r4      =  free                                                    #
+#    __reg_r5      =  free                                                    #
+#    __pic         =  no                                                      #
+#    __core        =  430X                                                    #
+#    __data_model  =  large                                                   #
+#    Source file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\nrf24l01\nrf2401.c                      #
+#    Command line  =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\nrf24l01\nrf2401.c -D NDEBUG -D         #
+#                     RAM_VECTOR -lC C:\Users\615\Desktop\MSP430\MSP430F5529¿ #
+#                     âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Release\List\ -lA                 #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\List\ -o C:\Users\615\Desktop\MSP430\MSP #
+#                     430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Release\Obj\             #
+#                     -D__MSP430F5529__ -e --double=32 --dlib_config          #
+#                     "D:\Program Files (x86)\IAR Systems\Embedded Workbench  #
+#                     6.4 Evaluation\430\LIB\DLIB\dl430xlfn.h" -I             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\ -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Ê #
+#                     ý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\inc\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\ -I C:\Users\615\Desktop\MSP430\MSP4 #
+#                     30F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\src\USB\ -I       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_config\ -I                   #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_User\ -I                     #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\srcUSB\USB_API\USB_CDC_API\ -I           #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_API\USB_HID_API\ -I          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_API\USB_MSC_API\ -I          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\KEY\ -I C:\Users\615\Desktop\MSP430\MSP #
+#                     430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\LED\ -I         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\12864\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\oled\ -I      #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\mpu6050\inc\ -I                         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\mpu6050\src\ -I                         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\nokia5110\inc\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\nokia5110\src\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\LQ_1.8_TFT\ -I                          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\LCD_API\ -I                             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\2.2TFT\ -I                              #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\delay\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\ -I             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\System\inc\ -I C:\Users\615\Desktop\MSP430\MSP43 #
+#                     0F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\src\ -I             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\User\ -I C:\Users\615\Desktop\MSP430\MSP430F5529 #
+#                     ¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\User\USER\ -I                    #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\UCOSII\CONFIG\ -I                            #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\uCOSII\App\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII\CONFIHG\    #
+#                     -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ #
+#                     \¹¤³ÌÄ£°å\Lib\uCOSII\PORT\ -I                           #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\UCOSII\CORE\ -I                              #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\FatFs\ -I C:\Users\615\Desktop\MSP430\MSP430 #
+#                     F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\FatFs\option\           #
+#                     --core=430X --data_model=large -Oh --multiplier=32      #
+#                     --multiplier_location=4C0 --hw_workaround=CPU40         #
+#    List file     =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\List\nrf2401.lst                         #
+#    Object file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\Obj\nrf2401.r43                          #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\nrf24l01\nrf2401.c
+      1          #include "nrf2401.H"
+
+   \                                 In  segment DATA16_AN, at 0x222
+   \   union <unnamed> __data16 _A_PBOUT_L
+   \                     _A_PBOUT_L:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_AN, at 0x262
+   \   union <unnamed> __data16 _A_PDOUT_L
+   \                     _A_PDOUT_L:
+   \   000000                DS8 2
+      2          //********************************************************************************************************************// 
+      3          // SPI(nRF24L01) Ö¸Áî
+      4          #define READ_REG    0x00   // ¶ÁÅäÖÃ¼Ä´æÆ÷
+      5          #define WRITE_REG   0x20   // Ð´ÅäÖÃ¼Ä´æÆ÷
+      6          #define RD_RX_PLOAD 0x61   // ¶ÁÈ¡RX FIFOÖÐµÄÊý¾Ý
+      7          #define WR_TX_PLOAD 0xA0   // ÏòTX FIFOÖÐÐ´ÈëÊý¾Ý
+      8          #define FLUSH_TX    0xE1   // Çå³ýTX FIFOÖÐµÄÊý¾Ý Ó¦ÓÃÓÚ·¢ÉäÄ£Ê½ÏÂ
+      9          #define FLUSH_RX    0xE2   // Çå³ýRX FIFOÖÐµÄÊý¾Ý Ó¦ÓÃÓÚ½ÓÊÕÄ£Ê½ÏÂ
+     10          #define REUSE_TX_PL 0xE3   // ÖØÐÂÊ¹ÓÃÉÏÒ»°üÓÐÐ§Êý¾Ý
+     11          #define NOP         0xFF   // ±£Áô
+     12          //********************************************************************************************************************// 
+     13          // SPI(nRF24L01) ¼Ä´æÆ÷(µØÖ·)
+     14          #define CONFIG      0x00  //ÅäÖÃ·¢ËÍ×´Ì¬£¬CRCÐ£ÑéÄ£Ê½ÒÔ¼°·¢ÊÕ·¢×´Ì¬ÏìÓ¦·½Ê½
+     15          
+     16          #define MASK_RX_DR  BIT6  //¿ÉÆÁ±ÎÖÐ¶Ï-½ÓÊÕÖÐ¶Ï 1£ºÆÁ±ÎÖÐ¶Ï
+     17          #define MASK_TX_DS  BIT5  //¿ÉÆÁ±ÎÖÐ¶Ï-·¢ËÍÍê³ÉÖÐ¶Ï
+     18          #define MASK_MAX_RT BIT4  //¿ÉÆÁ±ÎÖÐ¶Ï-´ïµ½×î´óÖØ·¢´ÎÊýÖÐ¶Ï
+     19          #define EN_CRC      BIT3  //Ê¹ÄÜCRC
+     20          #define CRCO        BIT2  //0£ºCRC8Î»: 1£º16Î»
+     21          #define PWR_UP      BIT1  //1£ºÉÏµç 0£ºµôµç
+     22          #define PRIM_RX     BIT0  //1£º½ÓÊÕÄ£Ê½ 0£º·¢ÉäÄ£Ê½
+     23          
+     24          #define EN_AA       0x01  //×Ô¶¯Ó¦´ð¹¦ÄÜÉèÖÃ
+     25          #define EN_RXADDR   0x02  //¿ÉÓÃÐÅµÀÉèÖÃ
+     26          #define SETUP_AW    0x03  //ÊÕ·¢µØÖ·¿í¶ÈÉèÖÃ
+     27          #define SETUP_RETR  0x04  //×Ô¶¯ÖØ·¢¹¦ÄÜÉèÉèÖÃ
+     28          #define RF_CH       0x05  //¹¤×÷ÆµÂÊÉè¶¨
+     29          #define RF_SETUP    0x06  //
+     30          #define STATUS      0x07  //
+     31          #define OBSERVE_TX  0x08  //
+     32          #define CD          0x09  //
+     33          #define RX_ADDR_P0  0x0A
+     34          #define RX_ADDR_P1  0x0B
+     35          #define RX_ADDR_P2  0x0C
+     36          #define RX_ADDR_P3  0x0D
+     37          #define RX_ADDR_P4  0x0E
+     38          #define RX_ADDR_P5  0x0F
+     39          #define TX_ADDR     0x10
+     40          #define RX_PW_P0    0x11
+     41          #define RX_PW_P1    0x12
+     42          #define RX_PW_P2    0x13
+     43          #define RX_PW_P3    0x14
+     44          #define RX_PW_P4    0x15
+     45          #define RX_PW_P5    0x16
+     46          #define FIFO_STATUS 0x17
+     47          
+     48          //¼¸¸öÖØÒªµÄ×´Ì¬±ê¼Ç
+     49          #define STATUS_TX_FULL     0x01        //TX FIFO ¼Ä´æÆ÷Âú±êÖ¾¡£ 1 Îª Âú£¬0Îª ²»Âú
+     50          #define STATUS_MAX_RT      0x10        //´ïµ½×î´óÖØ·¢´ÎÊýÖÐ¶Ï±êÖ¾Î»
+     51          #define STATUS_TX_DS       0x20        //·¢ËÍÍê³ÉÖÐ¶Ï±êÖ¾Î»
+     52          #define STATUS_RX_DR       0x40        //½ÓÊÕµ½Êý¾ÝÖÐ¶Ï±êÖ¾Î»
+     53          
+
+   \                                 In  segment DATA20_C, align 1, align-sorted
+     54          const uint8_t TX_ADDRESS[TX_ADR_WIDTH]={0xE1,0xE2,0xE3,0xE4,0xE5}; //·¢ËÍµØÖ·
+   \                     TX_ADDRESS:
+   \   000000   E1E2E3E4E5   DC8 225, 226, 227, 228, 229
+
+   \                                 In  segment DATA20_C, align 1, align-sorted
+     55          const uint8_t RX_ADDRESS[RX_ADR_WIDTH]={0xE1,0xE2,0xE3,0xE4,0xE5}; //½ÓÊÕµØÖ·
+   \                     RX_ADDRESS:
+   \   000000   E1E2E3E4E5   DC8 225, 226, 227, 228, 229
+     56          
+
+   \                                 In  segment DATA20_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero20
+     57          static s_NRF24L01 s_nrf24l01;
+   \                     s_nrf24l01:
+   \   000000                DS8 24
+     58          /***********************************************************************************************
+     59           ¹¦ÄÜ£ºNRF24L01 ¶ÁÐ´Ò»¸ö×Ö½Ú
+     60           ÐÎ²Î£º·¢ËÍµÄÊý¾Ý
+     61           ·µ»Ø£º¶Áµ½µÄÊý¾Ý
+     62           Ïê½â£ºµ÷ÓÃSPIÄ£¿é
+     63          ************************************************************************************************/
+     64          static uint8_t NRF2401_ReadWriteByte(uint8_t data)
+     65          {
+     66          #if NRF24L01HardWareSPI
+     67            return NRF2401HardWareSPI_SendByte(data);   //·¢ËÍ²¢¶ÁÈ¡Ò»×Ö½ÚÊý¾Ý
+     68          #else
+     69            for(uint8_t i=0;i < 8;i++)          // Ñ­»·8´Î
+     70            {
+     71              NRF2401_SIMO = (data&0x80) ? 1 : 0;//ÉÏÉýÑØ·¢ËÍÊý¾Ý// byte×î¸ßÎ»Êä³öµ½MOSI
+     72              data <<= 1;             // µÍÒ»Î»ÒÆÎ»µ½×î¸ßÎ»
+     73              NRF2401_SCL = 1; 
+     74              if(NRF2401_SOMI)            // À­¸ßSCK£¬nRF24L01´ÓMOSI¶ÁÈë1Î»Êý¾Ý£¬Í¬Ê±´ÓMISOÊä³ö1Î»Êý¾Ý
+     75                data |= 0x01;       	// ¶ÁMISOµ½byte×îµÍÎ»
+     76              NRF2401_SCL = 0;            	// SCKÖÃµÍ
+     77            }
+     78            return(data);           	// ·µ»Ø¶Á³öµÄÒ»×Ö½Ú
+     79          #endif
+     80          }
+     81          /***********************************************************************************************
+     82           ¹¦ÄÜ£ºNRF24L01 Ð´¼Ä´æÆ÷
+     83           ÐÎ²Î£ºreg: ¼Ä´æÆ÷
+     84                 value:Ð´ÈëµÄÖµ
+     85           ·µ»Ø£º¶Áµ½µÄÊý¾Ý
+     86           Ïê½â£ºÎÞ
+     87          ************************************************************************************************/
+
+   \                                 In  segment CODE, align 2, keep-with-next
+     88          static uint8_t NRF2401_ReadWriteReg(uint8_t reg,uint8_t value)
+   \                     NRF2401_ReadWriteReg:
+     89          {
+   \   000000   1B14         PUSHM.A #0x2, R11
+   \   000002   4A4D         MOV.B   R13, R10
+     90          	NRF2401_CSN = 0;                   // CSN low, init SPI transaction
+   \   000004   E2C26302     BIC.B   #0x4, &0x263
+     91          	uint8_t status = NRF2401_ReadWriteByte(reg);      // select register
+   \   000008   4D4C         MOV.B   R12, R13
+   \   00000A   ........     CALLA   #?Subroutine3
+   \                     ??CrossCallReturnLabel_4:
+   \   00000E   4B4C         MOV.B   R12, R11
+     92          	NRF2401_ReadWriteByte(value);             // ..and write value to it..
+   \   000010   4D4A         MOV.B   R10, R13
+   \   000012   ........     CALLA   #?Subroutine3
+     93          	NRF2401_CSN = 1;                   // CSN high again
+   \                     ??CrossCallReturnLabel_3:
+   \   000016   E2D26302     BIS.B   #0x4, &0x263
+     94          	return(status);            // return nRF24L01 status byte
+   \   00001A   4C4B         MOV.B   R11, R12
+   \   00001C   1A16         POPM.A  #0x2, R11
+   \   00001E   1001         RETA
+   \   000020                REQUIRE _A_PDOUT_L
+     95          }
+     96          /***********************************************************************************************
+     97           ¹¦ÄÜ£ºNRF24L01 Ð´¼Ä´æÆ÷
+     98           ÐÎ²Î£ºreg: ¼Ä´æÆ÷
+     99                 value:Ð´ÈëµÄÖµ
+    100           ·µ»Ø£º¶Áµ½µÄÊý¾Ý
+    101           Ïê½â£ºÎÞ
+    102          ************************************************************************************************/
+
+   \                                 In  segment CODE, align 2, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   E2D26302     BIS.B   #0x4, &0x263
+   \   000004   4C48         MOV.B   R8, R12
+   \   000006   3816         POPM.A  #0x4, R11
+   \   000008   1001         RETA
+
+   \                                 In  segment CODE, align 2
+    103          static uint8_t NRF2401_WriteBuffer(uint8_t reg,uint8_t *pBuf,uint8_t bytes)
+   \                     NRF2401_WriteBuffer:
+    104          {
+   \   000000   3B14         PUSHM.A #0x4, R11
+   \   000002   ........     CALLA   #?Subroutine2
+    105          	NRF2401_CSN = 0; 
+    106          	uint8_t status = NRF2401_ReadWriteByte(reg);    // Select register to write to and read status byte
+    107          	for(uint8_t i=0; i<bytes; i++) // then write all byte in buffer(*pBuf)
+   \                     ??CrossCallReturnLabel_1:
+   \   000006   0524         JEQ     ??NRF2401_WriteBuffer_1
+    108          	{
+    109          		NRF2401_ReadWriteByte(*pBuf++);
+   \                     ??NRF2401_WriteBuffer_0:
+   \   000008   7D4B         MOV.B   @R11+, R13
+   \   00000A   ........     CALLA   #?Subroutine3
+    110          	}
+   \                     ??CrossCallReturnLabel_2:
+   \   00000E   7A53         ADD.B   #0xff, R10
+   \   000010   FB23         JNE     ??NRF2401_WriteBuffer_0
+    111          	NRF2401_CSN = 1;                 // Set CSN high again
+   \                     ??NRF2401_WriteBuffer_1:
+   \   000012   ....         JMP     ?Subroutine1
+   \   000014   0343         NOP
+   \   000016                REQUIRE _A_PDOUT_L
+    112          	return(status);          // return nRF24L01 status byte
+    113          }
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine2:
+   \   000000   CB0D         MOVA    R13, R11
+   \   000002   4A4E         MOV.B   R14, R10
+   \   000004   E2C26302     BIC.B   #0x4, &0x263
+   \   000008   4D4C         MOV.B   R12, R13
+   \   00000A   7C400300     MOV.B   #0x3, R12
+   \   00000E   ........     CALLA   #SPI_SendReadByte
+   \   000012   484C         MOV.B   R12, R8
+   \   000014   4A93         CMP.B   #0x0, R10
+   \   000016   1001         RETA
+    114          /***********************************************************************************************
+    115           ¹¦ÄÜ£ºNRF24L01 ¶ÁBuffer
+    116           ÐÎ²Î£ºreg: ¼Ä´æÆ÷
+    117                 pBuf:Êý¾ÝÖ¸Õë
+    118          		 	 bytes: Ð´ÈëµÄ×Ö½ÚÊý
+    119           ·µ»Ø£º¶Á×´Ì¬
+    120           Ïê½â£ºÎÞ
+    121          ************************************************************************************************/
+
+   \                                 In  segment CODE, align 2, keep-with-next
+    122          static uint8_t NRF2401_ReadBuffer(uint8_t reg,uint8_t *pBuf,uint8_t bytes)
+   \                     NRF2401_ReadBuffer:
+    123          {
+   \   000000   3B14         PUSHM.A #0x4, R11
+   \   000002   ........     CALLA   #?Subroutine2
+    124          	NRF2401_CSN = 0;                    		// Set CSN low, init SPI tranaction
+    125          	uint8_t status = NRF2401_ReadWriteByte(reg);       		// Select register to write to and read status byte
+    126          	for(uint8_t i=0;i<bytes;i++)
+   \                     ??CrossCallReturnLabel_0:
+   \   000006   0924         JEQ     ??NRF2401_ReadBuffer_1
+    127          	{
+    128          		pBuf[i] = NRF2401_ReadWriteByte(0);    // Perform SPI_RW to read byte from nRF24L01
+   \                     ??NRF2401_ReadBuffer_0:
+   \   000008   4D43         MOV.B   #0x0, R13
+   \   00000A   ........     CALLA   #?Subroutine3
+   \                     ??CrossCallReturnLabel_5:
+   \   00000E   CB4C0000     MOV.B   R12, 0(R11)
+   \   000012   AB000100     ADDA    #0x1, R11
+   \   000016   7A53         ADD.B   #0xff, R10
+   \   000018   F723         JNE     ??NRF2401_ReadBuffer_0
+    129          	}
+    130          	NRF2401_CSN = 1;                           // Set CSN high again
+   \                     ??NRF2401_ReadBuffer_1:
+   \   00001A                REQUIRE ?Subroutine1
+   \   00001A                REQUIRE _A_PDOUT_L
+   \   00001A                // Fall through to label ?Subroutine1
+    131          	return(status);                    // return nRF24L01 status byte
+    132          }
+
+   \                                 In  segment CODE, align 2, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   7C400300     MOV.B   #0x3, R12
+   \   000004   ........     BRA     #SPI_SendReadByte
+    133          
+    134          /***********************************************************************************************
+    135           ¹¦ÄÜ£º¼ì²âNRF24L01 ÊÇ·ñ´æÔÚ
+    136           ÐÎ²Î£º
+    137           ·µ»Ø£ºNRF_OK : ³É¹¦   NRF_ERR:Ê§°Ü
+    138           Ïê½â£ºÎÞ
+    139          ************************************************************************************************/
+
+   \                                 In  segment CODE, align 2
+    140          static uint8_t NRF24L01_Check(void)
+   \                     NRF24L01_Check:
+    141          {
+   \   000000   0A14         PUSHM.A #0x1, R10
+   \   000002   31800600     SUB.W   #0x6, SP
+    142          	uint8_t buf[5]={0XA5,0XA5,0XA5,0XA5,0XA5};
+   \   000006   0C41         MOV.W   SP, R12
+   \   000008   0C53         ADD.W   #0x0, R12
+   \   00000A   ........     MOVA    #`?<Constant {165, 165, 165, 165, 165}>`, R14
+   \   00000E   8D000500     MOVA    #0x5, R13
+   \   000012   ........     CALLA   #?CopyMemoryBytes20
+   \   000016   0A41         MOV.W   SP, R10
+   \   000018   0A53         ADD.W   #0x0, R10
+   \   00001A   7E400500     MOV.B   #0x5, R14
+   \   00001E   CD0A         MOVA    R10, R13
+   \   000020   ........     CALLA   #?Subroutine7
+    143          	NRF2401_WriteBuffer(WRITE_REG+TX_ADDR,buf,5);//Ð´Èë5¸ö×Ö½ÚµÄµØÖ·.	
+    144          	NRF2401_ReadBuffer(TX_ADDR,buf,5); //¶Á³öÐ´ÈëµÄµØÖ·  
+   \                     ??CrossCallReturnLabel_14:
+   \   000024   CD0A         MOVA    R10, R13
+   \   000026   7C401000     MOV.B   #0x10, R12
+   \   00002A   ........     CALLA   #NRF2401_ReadBuffer
+    145          	for(uint8_t i=0;i < 5;i++)
+   \   00002E   7E40A500     MOV.B   #0xa5, R14
+    146          	{
+    147          		if(buf[i] != 0xA5) return NRF_ERR;
+   \   000032   C19E0000     CMP.B   R14, 0(SP)
+   \   000036   0224         JEQ     ??NRF24L01_Check_1
+   \                     ??NRF24L01_Check_0:
+   \   000038   5C43         MOV.B   #0x1, R12
+   \   00003A   0D3C         JMP     ??NRF24L01_Check_2
+   \                     ??NRF24L01_Check_1:
+   \   00003C   C19E0100     CMP.B   R14, 0x1(SP)
+   \   000040   FB23         JNE     ??NRF24L01_Check_0
+   \   000042   C19E0200     CMP.B   R14, 0x2(SP)
+   \   000046   F823         JNE     ??NRF24L01_Check_0
+   \   000048   C19E0300     CMP.B   R14, 0x3(SP)
+   \   00004C   F523         JNE     ??NRF24L01_Check_0
+   \   00004E   C19E0400     CMP.B   R14, 0x4(SP)
+   \   000052   F223         JNE     ??NRF24L01_Check_0
+    148          	}
+    149          	return NRF_OK;
+   \   000054   4C43         MOV.B   #0x0, R12
+   \                     ??NRF24L01_Check_2:
+   \   000056   31500600     ADD.W   #0x6, SP
+   \   00005A   0A16         POPM.A  #0x1, R10
+   \   00005C   1001         RETA
+    150          /*******************************************************************************
+    151          *  º¯ÊýÃû³Æ£º
+    152          *  ¹¦ÄÜËµÃ÷£ºNRF24L01³õÊ¼»¯
+    153          *  ²ÎÊýËµÃ÷£º
+    154          *  º¯Êý·µ»Ø£º
+    155          *  Ê¹ÓÃÊ¾Àý£º
+    156          ********************************************************************************/}
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine7:
+   \   000000   7C403000     MOV.B   #0x30, R12
+   \   000004   ........     CALLA   #NRF2401_WriteBuffer
+   \   000008   7E400500     MOV.B   #0x5, R14
+   \   00000C   1001         RETA
+
+   \                                 In  segment CODE, align 2, keep-with-next
+   \                     ?Subroutine5:
+   \   000000   F2C080002202 BIC.B   #0x80, &0x222
+   \   000006   1001         RETA
+
+   \                                 In  segment CODE, align 2, keep-with-next
+   \                     ?Subroutine4:
+   \   000000   ........     CALLA   #NRF2401_ReadWriteReg
+   \   000004   F2D080002202 BIS.B   #0x80, &0x222
+   \   00000A   1001         RETA
+
+   \                                 In  segment CODE, align 2
+    157          uint8_t NRF2401_Init(s_NRF24L01 nrf24l01)
+   \                     NRF2401_Init:
+    158          {
+   \   000000   0A14         PUSHM.A #0x1, R10
+    159                  s_nrf24l01 = nrf24l01;
+   \   000002   ........     MOVA    #s_nrf24l01, R12
+   \   000006   0E41         MOV.W   SP, R14
+   \   000008   3E52         ADD.W   #0x8, R14
+   \   00000A   8D000C00     MOVA    #0xc, R13
+   \   00000E   ........     CALLA   #?CopyMemoryWords20
+    160                  
+    161                  GPIO_Init(NRF2401_CE_Port,NRF2401_CE_Pin,GPO);
+   \   000012   2E43         MOV.W   #0x2, R14
+   \   000014   7D408000     MOV.B   #0x80, R13
+   \   000018   6C43         MOV.B   #0x2, R12
+   \   00001A   ........     CALLA   #GPIO_MultiBits_Init
+    162                  GPIO_Init(NRF2401_CSN_Port,NRF2401_CSN_Pin,GPO);
+   \   00001E   2E43         MOV.W   #0x2, R14
+   \   000020   6D42         MOV.B   #0x4, R13
+   \   000022   7C400700     MOV.B   #0x7, R12
+   \   000026   ........     CALLA   #GPIO_MultiBits_Init
+    163                  //GPIO_Init(NRF2401_IRQ_Port,NRF2401_IRQ_Pin,GPI);
+    164                  
+    165                  nrf24l01.CallBack_IRQ_Init();
+   \   00002A   3F010C00     MOVA    0xc(SP), R15
+   \   00002E   4F13         CALLA   R15
+    166          #if NRF24L01HardWareSPI
+    167                  NRF2401HardWareSPI_Init();
+   \   000030   6312         PUSH.B  #0x2
+   \   000032   4312         PUSH.B  #0x0
+   \   000034   5D43         MOV.B   #0x1, R13
+   \   000036   3E40404B     MOV.W   #0x4b40, R14
+   \   00003A   3F404C00     MOV.W   #0x4c, R15
+   \   00003E   7C400300     MOV.B   #0x3, R12
+   \   000042   ........     CALLA   #SPI_Master_Init
+    168          #else
+    169                  GPIO_Init(NRF2401_SCL_Port,NRF2401_SCL_Pin,GPO);
+    170                  GPIO_Init(NRF2401_SIMO_Port,NRF2401_SIMO_Pin,GPO);
+    171                  GPIO_Init(NRF2401_SOMI_Port,NRF2401_SOMI_Pin,GPI);
+    172          #endif
+    173                  
+    174          	NRF2401_CSN = 1;			// Spi disable	
+   \   000046   E2D26302     BIS.B   #0x4, &0x263
+    175                  NRF2401_CE = 0;			        // chip enable
+   \   00004A   ........     CALLA   #?Subroutine5
+    176                  //¼ì²âNRF2401 ÊÇ·ñ´æÔÚ
+    177                  uint8_t checkStatus = NRF24L01_Check();
+   \                     ??CrossCallReturnLabel_10:
+   \   00004E   ........     CALLA   #NRF24L01_Check
+   \   000052   4A4C         MOV.B   R12, R10
+    178                  if(checkStatus == NRF_OK)
+   \   000054   2152         ADD.W   #0x4, SP
+   \   000056   4C93         CMP.B   #0x0, R12
+   \   000058   3C20         JNE     ??NRF2401_Init_0
+    179                  {
+    180                    NRF2401_CE=0;
+   \   00005A   ........     CALLA   #?Subroutine5
+    181                    
+    182                    NRF2401_ReadWriteReg(WRITE_REG+SETUP_AW, ADR_WIDTH - 2);          //ÉèÖÃµØÖ·³¤¶ÈÎª TX_ADR_WIDTH   	    
+   \                     ??CrossCallReturnLabel_11:
+   \   00005E   7D400300     MOV.B   #0x3, R13
+   \   000062   7C402300     MOV.B   #0x23, R12
+   \   000066   ........     CALLA   #NRF2401_ReadWriteReg
+    183                    NRF2401_WriteBuffer(WRITE_REG+TX_ADDR,(uint8_t*)TX_ADDRESS,TX_ADR_WIDTH);//Ð´TX½ÚµãµØÖ· 
+   \   00006A   7E400500     MOV.B   #0x5, R14
+   \   00006E   ........     MOVA    #TX_ADDRESS, R13
+   \   000072   ........     CALLA   #?Subroutine7
+    184                    NRF2401_WriteBuffer(WRITE_REG+RX_ADDR_P0,(uint8_t*)RX_ADDRESS,RX_ADR_WIDTH); //ÉèÖÃTX½ÚµãµØÖ·,Ö÷ÒªÎªÁËÊ¹ÄÜACK	  
+   \                     ??CrossCallReturnLabel_15:
+   \   000076   ........     MOVA    #RX_ADDRESS, R13
+   \   00007A   7C402A00     MOV.B   #0x2a, R12
+   \   00007E   ........     CALLA   #NRF2401_WriteBuffer
+    185                    NRF2401_ReadWriteReg(WRITE_REG+EN_AA,0x01);     //Ê¹ÄÜÍ¨µÀ0µÄ×Ô¶¯Ó¦´ð    
+   \   000082   5D43         MOV.B   #0x1, R13
+   \   000084   7C402100     MOV.B   #0x21, R12
+   \   000088   ........     CALLA   #NRF2401_ReadWriteReg
+    186                    NRF2401_ReadWriteReg(WRITE_REG+EN_RXADDR,0x01); //Ê¹ÄÜÍ¨µÀ0µÄ½ÓÊÕµØÖ·  
+   \   00008C   5D43         MOV.B   #0x1, R13
+   \   00008E   7C402200     MOV.B   #0x22, R12
+   \   000092   ........     CALLA   #NRF2401_ReadWriteReg
+    187                    NRF2401_ReadWriteReg(WRITE_REG+RX_PW_P0,RX_PLOAD_WIDTH);//Ñ¡ÔñÍ¨µÀ0µÄÓÐÐ§Êý¾Ý¿í¶È
+   \   000096   7D402000     MOV.B   #0x20, R13
+   \   00009A   7C403100     MOV.B   #0x31, R12
+   \   00009E   ........     CALLA   #NRF2401_ReadWriteReg
+    188                    NRF2401_ReadWriteReg(WRITE_REG+SETUP_RETR,0x1a);//ÉèÖÃ×Ô¶¯ÖØ·¢¼ä¸ôÊ±¼ä:500us + 86us;×î´ó×Ô¶¯ÖØ·¢´ÎÊý:10´Î
+   \   0000A2   7D401A00     MOV.B   #0x1a, R13
+   \   0000A6   7C402400     MOV.B   #0x24, R12
+   \   0000AA   ........     CALLA   #NRF2401_ReadWriteReg
+    189                    NRF2401_ReadWriteReg(WRITE_REG+RF_CH,40);       //ÉèÖÃRFÍ¨µÀÎª40
+   \   0000AE   7D402800     MOV.B   #0x28, R13
+   \   0000B2   7C402500     MOV.B   #0x25, R12
+   \   0000B6   ........     CALLA   #NRF2401_ReadWriteReg
+    190                    NRF2401_ReadWriteReg(WRITE_REG+RF_SETUP,0x0f);  //ÉèÖÃTX·¢Éä²ÎÊý,0dbÔöÒæ,2Mbps,µÍÔëÉùÔöÒæ¿ªÆô
+   \   0000BA   7D400F00     MOV.B   #0xf, R13
+   \   0000BE   7C402600     MOV.B   #0x26, R12
+   \   0000C2   ........     CALLA   #NRF2401_ReadWriteReg
+    191                    NRF2401_ReadWriteReg(WRITE_REG+CONFIG,0x0e);     //ÅäÖÃ»ù±¾¹¤×÷Ä£Ê½µÄ²ÎÊý;PWR_UP,EN_CRC,16BIT_CRC,½ÓÊÕÄ£Ê½,¿ªÆôËùÓÐÖÐ¶Ï
+   \   0000C6   7D400E00     MOV.B   #0xe, R13
+   \   0000CA   7C402000     MOV.B   #0x20, R12
+   \   0000CE   ........     CALLA   #?Subroutine4
+    192          
+    193                    NRF2401_CE=1;//CEÎª¸ß,10usºóÆô¶¯·¢ËÍ
+    194                  }
+    195          	return checkStatus;
+   \                     ??NRF2401_Init_0:
+   \   0000D2   4C4A         MOV.B   R10, R12
+   \   0000D4   0A16         POPM.A  #0x1, R10
+   \   0000D6   1001         RETA
+   \   0000D8                REQUIRE _A_PDOUT_L
+   \   0000D8                REQUIRE _A_PBOUT_L
+    196          }
+    197          /*******************************************************************************
+    198          *  º¯ÊýÃû³Æ£º
+    199          *  ¹¦ÄÜËµÃ÷£º¸Ãº¯Êý³õÊ¼»¯NRF24L01µ½RXÄ£Ê½
+    200                       ÉèÖÃRXµØÖ·,Ð´RXÊý¾Ý¿í¶È,Ñ¡ÔñRFÆµµÀ,²¨ÌØÂÊºÍLNA HCURR
+    201                       µ±CE±ä¸ßºó,¼´½øÈëRXÄ£Ê½,²¢¿ÉÒÔ½ÓÊÕÊý¾ÝÁË
+    202          *  ²ÎÊýËµÃ÷£º
+    203          *  º¯Êý·µ»Ø£º
+    204          *  Ê¹ÓÃÊ¾Àý£º
+    205          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   7C402000     MOV.B   #0x20, R12
+   \   000004   ........     BRA     #?Subroutine4
+
+   \                                 In  segment CODE, align 2
+    206          void NRF2401_SetRXMode(void)
+   \                     NRF2401_SetRXMode:
+    207          {
+    208          	NRF2401_CE=0;
+   \   000000   ........     CALLA   #?Subroutine5
+    209             
+    210          	NRF2401_ReadWriteReg(WRITE_REG+CONFIG, 0x0f);//ÅäÖÃ»ù±¾¹¤×÷Ä£Ê½µÄ²ÎÊý;PWR_UP,EN_CRC,16BIT_CRC,½ÓÊÕÄ£Ê½
+   \                     ??CrossCallReturnLabel_9:
+   \   000004   7D400F00     MOV.B   #0xf, R13
+   \   000008   ....         JMP     ?Subroutine0
+   \   00000A   0343         NOP
+   \   00000C                REQUIRE _A_PBOUT_L
+    211                  
+    212          	NRF2401_CE = 1; //CEÎª¸ß,½øÈë½ÓÊÕÄ£Ê½
+    213          }	
+    214          /*******************************************************************************
+    215          *  º¯ÊýÃû³Æ£º
+    216          *  ¹¦ÄÜËµÃ÷£º¸Ãº¯Êý³õÊ¼»¯NRF24L01µ½TXÄ£Ê½
+    217                       ÉèÖÃTXµØÖ·,Ð´TXÊý¾Ý¿í¶È,ÉèÖÃRX×Ô¶¯Ó¦´ðµÄµØÖ·,Ìî³äTX·¢ËÍÊý¾Ý,Ñ¡ÔñRFÆµµÀ,²¨ÌØÂÊºÍLNA HCURR
+    218                       PWR_UP,CRCÊ¹ÄÜ
+    219                       µ±CE±ä¸ßºó,¼´½øÈëRXÄ£Ê½,²¢¿ÉÒÔ½ÓÊÕÊý¾ÝÁË		   
+    220                       CEÎª¸ß´óÓÚ10us,ÔòÆô¶¯·¢ËÍ.	
+    221          *  ²ÎÊýËµÃ÷£º
+    222          *  º¯Êý·µ»Ø£º
+    223          *  Ê¹ÓÃÊ¾Àý£º
+    224          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2, keep-with-next
+    225          void NRF2401_SetTXMode(void)
+   \                     NRF2401_SetTXMode:
+    226          {				
+    227          	NRF2401_CE=0;
+   \   000000   ........     CALLA   #?Subroutine5
+    228           
+    229          	NRF2401_ReadWriteReg(WRITE_REG+CONFIG,0x0e);    //ÅäÖÃ»ù±¾¹¤×÷Ä£Ê½µÄ²ÎÊý;PWR_UP,EN_CRC,16BIT_CRC,½ÓÊÕÄ£Ê½,¿ªÆôËùÓÐÖÐ¶Ï
+   \                     ??CrossCallReturnLabel_8:
+   \   000004   7D400E00     MOV.B   #0xe, R13
+   \   000008                REQUIRE ?Subroutine0
+   \   000008                REQUIRE _A_PBOUT_L
+   \   000008                // Fall through to label ?Subroutine0
+    230          	
+    231                  NRF2401_CE=1;//CEÎª¸ß,10usºóÆô¶¯·¢ËÍ
+    232          }
+    233          /*******************************************************************************
+    234          *  º¯ÊýÃû³Æ£º
+    235          *  ¹¦ÄÜËµÃ÷£ºÆô¶¯NRF24L01·¢ËÍÒ»´ÎÊý¾Ý
+    236          *  ²ÎÊýËµÃ÷£ºtxbuf:´ý·¢ËÍÊý¾ÝÊ×µØÖ·
+    237          *  º¯Êý·µ»Ø£º·µ»ØÖµ:·¢ËÍÍê³É×´¿ö
+    238          *  Ê¹ÓÃÊ¾Àý£º
+    239          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2, keep-with-next
+    240          void NRF2401_SendData(uint8_t *txbuf)
+   \                     NRF2401_SendData:
+    241          {
+    242          	/*uint8_t sta;
+    243          	NRF2401_CE=0;
+    244          	NRF2401_WriteBuffer(WR_TX_PLOAD,txbuf,TX_PLOAD_WIDTH);//Ð´Êý¾Ýµ½TX BUF  32¸ö×Ö½Ú
+    245           	NRF2401_CE=1;//Æô¶¯·¢ËÍ	  
+    246          	while(NRF2401_IRQ!=0);//µÈ´ý·¢ËÍÍê³É
+    247          	sta = NRF2401_ReadWriteReg(STATUS,0xFF);  //¶ÁÈ¡×´Ì¬¼Ä´æÆ÷µÄÖµ	
+    248          	NRF2401_ReadWriteReg(WRITE_REG+STATUS,sta); //Çå³ýTX_DS»òMAX_RTÖÐ¶Ï±êÖ¾
+    249          	
+    250          	if(sta & MAX_TX)//´ïµ½×î´óÖØ·¢´ÎÊý
+    251          	{
+    252          		NRF2401_ReadWriteReg(FLUSH_TX,0xff);//Çå³ýTX FIFO¼Ä´æÆ÷ 
+    253          		return MAX_TX; 
+    254          	}
+    255          	if(sta & TX_OK)//·¢ËÍÍê³É
+    256          	{
+    257          		return TX_OK;
+    258          	}
+    259          	return 0xff;//ÆäËûÔ­Òò·¢ËÍÊ§°Ü
+    260                  */
+    261                  NRF2401_CE = 0;			//StandBy IÄ£Ê½	
+   \   000000   ........     CALLA   #?Subroutine5
+    262                  
+    263          	NRF2401_WriteBuffer(WR_TX_PLOAD, txbuf, TX_PLOAD_WIDTH); 			 // ×°ÔØÊý¾Ý	
+   \                     ??CrossCallReturnLabel_7:
+   \   000004   7E402000     MOV.B   #0x20, R14
+   \   000008   CD0C         MOVA    R12, R13
+   \   00000A   7C40A000     MOV.B   #0xa0, R12
+   \   00000E   ........     CALLA   #NRF2401_WriteBuffer
+    264                  NRF2401_ReadWriteReg(WRITE_REG+STATUS,STATUS_TX_DS|STATUS_MAX_RT); //Çå³ýTX_DS»òMAX_RTÖÐ¶Ï±êÖ¾
+   \   000012   7D403000     MOV.B   #0x30, R13
+   \   000016   7C402700     MOV.B   #0x27, R12
+   \   00001A   ....         JMP     ?Subroutine4
+   \   00001C   0343         NOP
+   \   00001E                REQUIRE _A_PBOUT_L
+    265                  
+    266                  NRF2401_CE = 1;		 //ÖÃ¸ßCE£¬¼¤·¢Êý¾Ý·¢ËÍ
+    267          }
+    268          /*******************************************************************************
+    269          *  º¯ÊýÃû³Æ£º
+    270          *  ¹¦ÄÜËµÃ÷£ºÆô¶¯NRF24L01·¢ËÍÒ»´ÎÊý¾Ý
+    271          *  ²ÎÊýËµÃ÷£ºtxbuf:´ý·¢ËÍÊý¾ÝÊ×µØÖ·
+    272          *  º¯Êý·µ»Ø£º·µ»ØÖµ:0£¬½ÓÊÕÍê³É£»ÆäËû£¬´íÎó´úÂë
+    273          *  Ê¹ÓÃÊ¾Àý£º
+    274          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2, keep-with-next
+    275          uint8_t NRF2401_RecData(uint8_t *rxbuf)
+   \                     NRF2401_RecData:
+    276          {
+   \   000000   1B14         PUSHM.A #0x2, R11
+   \   000002   CA0C         MOVA    R12, R10
+    277          	uint8_t status = NRF2401_ReadWriteReg(STATUS,0xFF);  //¶ÁÈ¡×´Ì¬¼Ä´æÆ÷µÄÖµ    	 
+   \   000004   ........     CALLA   #?Subroutine6
+   \                     ??CrossCallReturnLabel_12:
+   \   000008   4B4C         MOV.B   R12, R11
+    278          	NRF2401_ReadWriteReg(WRITE_REG+STATUS,status); //Çå³ýTX_DS»òMAX_RTÖÐ¶Ï±êÖ¾
+   \   00000A   4D4C         MOV.B   R12, R13
+   \   00000C   7C402700     MOV.B   #0x27, R12
+   \   000010   ........     CALLA   #NRF2401_ReadWriteReg
+    279                  if(status & RX_OK)//½ÓÊÕµ½Êý¾Ý
+   \   000014   7BB04000     BIT.B   #0x40, R11
+   \   000018   0F28         JNC     ??NRF2401_RecData_0
+    280          	{
+    281          		NRF2401_ReadBuffer(RD_RX_PLOAD,rxbuf,RX_PLOAD_WIDTH);//¶ÁÈ¡Êý¾Ý
+   \   00001A   7E402000     MOV.B   #0x20, R14
+   \   00001E   CD0A         MOVA    R10, R13
+   \   000020   7C406100     MOV.B   #0x61, R12
+   \   000024   ........     CALLA   #NRF2401_ReadBuffer
+    282          		NRF2401_ReadWriteReg(FLUSH_RX,0xff);//Çå³ýRX FIFO¼Ä´æÆ÷ 
+   \   000028   7D43         MOV.B   #0xff, R13
+   \   00002A   7C40E200     MOV.B   #0xe2, R12
+   \   00002E   ........     CALLA   #NRF2401_ReadWriteReg
+    283          		return RX_OK; 
+   \   000032   7C404000     MOV.B   #0x40, R12
+   \   000036   013C         JMP     ??NRF2401_RecData_1
+    284          	}   
+    285          	return 0xff;//Ã»ÊÕµ½ÈÎºÎÊý¾Ý
+   \                     ??NRF2401_RecData_0:
+   \   000038   7C43         MOV.B   #0xff, R12
+   \                     ??NRF2401_RecData_1:
+   \   00003A   1A16         POPM.A  #0x2, R11
+   \   00003C   1001         RETA
+    286          }
+
+   \                                 In  segment CODE, align 2, keep-with-next
+   \                     ?Subroutine6:
+   \   000000   7D43         MOV.B   #0xff, R13
+   \   000002   7C400700     MOV.B   #0x7, R12
+   \   000006   ........     BRA     #NRF2401_ReadWriteReg
+    287          /*******************************************************************************
+    288          *  º¯ÊýÃû³Æ£º
+    289          *  ¹¦ÄÜËµÃ÷£ºNRF24L01ÖÐ¶Ï´¦Àíº¯Êý£¬ÇëÔÚÖÐ¶ÏÖÐÌí¼Ó¸Ãº¯Êý
+    290          *  ²ÎÊýËµÃ÷£º
+    291          *  º¯Êý·µ»Ø£º
+    292          *  Ê¹ÓÃÊ¾Àý£º
+    293          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2, keep-with-next
+    294          void  NRF2401_IRQ_Handler()
+   \                     NRF2401_IRQ_Handler:
+    295          {
+   \   000000   1B14         PUSHM.A #0x2, R11
+    296              /*¶ÁÈ¡status¼Ä´æÆ÷µÄÖµ  */
+    297              uint8_t state = NRF2401_ReadWriteReg(STATUS,0xFF);  //¶ÁÈ¡×´Ì¬¼Ä´æÆ÷µÄÖµ   
+   \   000002   ........     CALLA   #?Subroutine6
+   \                     ??CrossCallReturnLabel_13:
+   \   000006   4A4C         MOV.B   R12, R10
+    298              if(state & STATUS_RX_DR) //½ÓÊÕµ½Êý¾Ý
+   \   000008   ........     MOVA    #s_nrf24l01, R11
+   \   00000C   7CB04000     BIT.B   #0x40, R12
+   \   000010   1528         JNC     ??NRF2401_IRQ_Handler_0
+    299              {
+    300                 NRF2401_CE = 0;			//StandBy IÄ£Ê½	
+   \   000012   ........     CALLA   #?Subroutine5
+    301                 if(s_nrf24l01.CallBack_RecevieData != NULL)
+   \                     ??CrossCallReturnLabel_6:
+   \   000016   3F0B0800     MOVA    0x8(R11), R15
+   \   00001A   DF03         CMPA    #0x0, R15
+   \   00001C   0A24         JEQ     ??NRF2401_IRQ_Handler_1
+    302                 {
+    303                    NRF2401_ReadBuffer(RD_RX_PLOAD,(uint8_t *)s_nrf24l01.pReceiveData,RX_PLOAD_WIDTH);//¶ÁÈ¡Êý¾Ý
+   \   00001E   7E402000     MOV.B   #0x20, R14
+   \   000022   0D0B         MOVA    @R11, R13
+   \   000024   7C406100     MOV.B   #0x61, R12
+   \   000028   ........     CALLA   #NRF2401_ReadBuffer
+    304                    s_nrf24l01.CallBack_RecevieData();
+   \   00002C   3F0B0800     MOVA    0x8(R11), R15
+   \   000030   4F13         CALLA   R15
+    305                 }
+    306                 NRF2401_ReadWriteReg(FLUSH_RX,0xff);//Çå³ýRX FIFO¼Ä´æÆ÷ 
+   \                     ??NRF2401_IRQ_Handler_1:
+   \   000032   7D43         MOV.B   #0xff, R13
+   \   000034   7C40E200     MOV.B   #0xe2, R12
+   \   000038   ........     CALLA   #?Subroutine4
+    307                 NRF2401_CE = 1;		 //ÖÃ¸ßCE£¬¼¤·¢Êý¾Ý·¢ËÍ
+    308              }
+    309          
+    310              if(state & STATUS_TX_DS) //·¢ËÍÍêÊý¾Ý
+   \                     ??NRF2401_IRQ_Handler_0:
+   \   00003C   7AB02000     BIT.B   #0x20, R10
+   \   000040   0528         JNC     ??NRF2401_IRQ_Handler_2
+    311              {
+    312                  if(s_nrf24l01.CallBack_SendDataOk != NULL)
+   \   000042   3F0B0C00     MOVA    0xc(R11), R15
+   \   000046   DF03         CMPA    #0x0, R15
+   \   000048   0124         JEQ     ??NRF2401_IRQ_Handler_2
+    313                  {
+    314                    s_nrf24l01.CallBack_SendDataOk();
+   \   00004A   4F13         CALLA   R15
+    315                  }
+    316              }
+    317          
+    318              if(state & STATUS_MAX_RT)      //·¢ËÍ³¬Ê±
+   \                     ??NRF2401_IRQ_Handler_2:
+   \   00004C   7AB01000     BIT.B   #0x10, R10
+   \   000050   0A28         JNC     ??NRF2401_IRQ_Handler_3
+    319              {
+    320                  if(s_nrf24l01.CallBack_SendOutTime != NULL)
+   \   000052   3F0B1000     MOVA    0x10(R11), R15
+   \   000056   DF03         CMPA    #0x0, R15
+   \   000058   0124         JEQ     ??NRF2401_IRQ_Handler_4
+    321                  {
+    322                     s_nrf24l01.CallBack_SendOutTime();
+   \   00005A   4F13         CALLA   R15
+    323                  }
+    324                  NRF2401_ReadWriteReg(FLUSH_TX,0xff);//Çå³ýTX FIFO¼Ä´æÆ÷
+   \                     ??NRF2401_IRQ_Handler_4:
+   \   00005C   7D43         MOV.B   #0xff, R13
+   \   00005E   7C40E100     MOV.B   #0xe1, R12
+   \   000062   ........     CALLA   #NRF2401_ReadWriteReg
+    325              }
+    326          
+    327              if(state & STATUS_TX_FULL) //TX FIFO Âú
+   \                     ??NRF2401_IRQ_Handler_3:
+   \   000066   5AB3         BIT.B   #0x1, R10
+   \   000068   0528         JNC     ??NRF2401_IRQ_Handler_5
+    328              {
+    329                  if(s_nrf24l01.CallBack_TxFull != NULL)
+   \   00006A   3F0B1400     MOVA    0x14(R11), R15
+   \   00006E   DF03         CMPA    #0x0, R15
+   \   000070   0124         JEQ     ??NRF2401_IRQ_Handler_5
+    330                  {
+    331                     s_nrf24l01.CallBack_TxFull();
+   \   000072   4F13         CALLA   R15
+    332                  }
+    333              }
+    334              NRF2401_ReadWriteReg(WRITE_REG+STATUS,state); //Çå³ýTX_DS»òMAX_RTÖÐ¶Ï±êÖ¾
+   \                     ??NRF2401_IRQ_Handler_5:
+   \   000074   4D4A         MOV.B   R10, R13
+   \   000076   7C402700     MOV.B   #0x27, R12
+   \   00007A   ........     CALLA   #NRF2401_ReadWriteReg
+    335          }
+   \   00007E   1A16         POPM.A  #0x2, R11
+   \   000080   1001         RETA
+   \   000082                REQUIRE _A_PBOUT_L
+
+   \                                 In  segment DATA20_C, align 1, align-sorted
+   \                     `?<Constant {165, 165, 165, 165, 165}>`:
+   \   000000   A5A5A5A5A5   DC8 165, 165, 165, 165, 165
+    336          
+    337          
+
+   Maximum stack usage in bytes:
+
+   CSTACK Function
+   ------ --------
+      12  NRF2401_IRQ_Handler
+            12 -- Indirect call
+            12 -> NRF2401_ReadBuffer
+            12 -> NRF2401_ReadWriteReg
+      12  NRF2401_Init
+             8 -- Indirect call
+             8 -> GPIO_MultiBits_Init
+             8 -> NRF2401_ReadWriteReg
+             8 -> NRF2401_WriteBuffer
+            12 -> NRF24L01_Check
+            12 -> SPI_Master_Init
+      20  NRF2401_ReadBuffer
+            20 -> SPI_SendReadByte
+      12  NRF2401_ReadWriteReg
+            12 -> SPI_SendReadByte
+      12  NRF2401_RecData
+            12 -> NRF2401_ReadBuffer
+            12 -> NRF2401_ReadWriteReg
+       4  NRF2401_SendData
+             4 -> NRF2401_ReadWriteReg
+             4 -> NRF2401_WriteBuffer
+       4  NRF2401_SetRXMode
+             4 -> NRF2401_ReadWriteReg
+       4  NRF2401_SetTXMode
+             4 -> NRF2401_ReadWriteReg
+      20  NRF2401_WriteBuffer
+            20 -> SPI_SendReadByte
+      14  NRF24L01_Check
+            14 -> NRF2401_ReadBuffer
+            14 -> NRF2401_WriteBuffer
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       5  ?<Constant {165, 165, 165, 165, 165}>
+       8  ?Subroutine0
+      10  ?Subroutine1
+      24  ?Subroutine2
+       8  ?Subroutine3
+      12  ?Subroutine4
+       8  ?Subroutine5
+      10  ?Subroutine6
+      14  ?Subroutine7
+     130  NRF2401_IRQ_Handler
+     216  NRF2401_Init
+      26  NRF2401_ReadBuffer
+      32  NRF2401_ReadWriteReg
+      62  NRF2401_RecData
+      30  NRF2401_SendData
+      12  NRF2401_SetRXMode
+       8  NRF2401_SetTXMode
+      22  NRF2401_WriteBuffer
+      94  NRF24L01_Check
+       5  RX_ADDRESS
+       5  TX_ADDRESS
+       2  _A_PBOUT_L
+       2  _A_PDOUT_L
+      24  s_nrf24l01
+
+ 
+ 726 bytes in segment CODE
+   4 bytes in segment DATA16_AN
+  15 bytes in segment DATA20_C
+  24 bytes in segment DATA20_Z
+ 
+ 726 bytes of CODE  memory
+  15 bytes of CONST memory
+  24 bytes of DATA  memory (+ 4 bytes shared)
+
+Errors: none
+Warnings: none

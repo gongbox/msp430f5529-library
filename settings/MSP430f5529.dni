@@ -1,0 +1,122 @@
+[Stack]
+FillEnabled=0
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnLogOnly=1
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[DebugChecksum]
+Checksum=-906890470
+[CallStack]
+ShowArgs=0
+[Disassembly]
+MixedMode=1
+[State Storage]
+Control Register=0
+[Sequencer]
+Control Register=0
+NextState0=0
+NextState1=0
+[Action Register]
+Break=0
+State Storage=0
+[FET]
+Clock mode=14
+Extended Clock mode=-1
+Secure Password=
+Extended Clock Control Enable=1
+Advanced Extended Clock Control=1
+Emulation mode=0
+Free running=0
+Shutting Down=1
+[Memory Dump]
+Start address=
+Lenghth=
+Address info=0
+Format=0
+Dump registers=0
+PC=0
+SP=0
+SR=0
+all registers=0
+File name=
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[CallStackLog]
+Enabled=0
+[DriverProfiling]
+Enabled=0
+Mode=0
+Graph=0
+Symbiont=0
+Exclusions=
+[Breakpoints]
+Bp0=_ "STD_CODE" "{D:\Program Files (x86)\IAR Systems\Embedded Workbench 6.4 Evaluation\common\bin}.330.21" 0 0 0 0 "" 0 ""
+Bp1=_ "STD_CODE" "{D:\Program Files (x86)\IAR Systems\Embedded Workbench 6.4 Evaluation\common\bin}.115.2" 0 0 0 0 "" 0 ""
+[InterruptLog]
+LogEnabled=0
+SumEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=1
+SumSortOrder=0
+[DataLog]
+LogEnabled=0
+SumEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=1
+[Breakpoints2]
+Bp0=_ 0 "STD_CODE2" "{$PROJ_DIR$\User\main.c}.8.10" 0 0 1 "" 0 ""
+Bp1=_ 0 "STD_CODE2" "{$PROJ_DIR$\HardWare\oled\支持浮点数显示的OLED程序\OLED12864.c}.369.1" 0 0 1 "" 0 ""
+Bp2=_ 0 "STD_CODE2" "{$PROJ_DIR$\HardWare\oled\支持浮点数显示的OLED程序\OLED12864.c}.369.1" 0 0 1 "" 0 ""
+Bp3=_ 0 "STD_CODE2" "{$PROJ_DIR$\Drivers\src\adc.c}.63.4" 0 0 1 "" 0 ""
+Bp4=_ 0 "STD_CODE2" "{$PROJ_DIR$\User\main.c}.24.1" 0 0 1 "" 0 ""
+Bp5=_ 0 "STD_CODE2" "{$PROJ_DIR$\System\src\system.c}.70.3" 0 0 1 "" 0 ""
+Bp6=_ 0 "STD_CODE2" "{$PROJ_DIR$\User\main.c}.24.1" 0 0 1 "" 0 ""
+Bp7=_ 0 "STD_CODE2" "{$PROJ_DIR$\Drivers\src\adc.c}.43.11" 0 0 1 "" 0 ""
+Bp8=_ 0 "STD_CODE2" "{$PROJ_DIR$\User\main.c}.24.4" 0 0 1 "" 0 ""
+Bp9=_ 0 "STD_CODE2" "{$PROJ_DIR$\User\main.c}.12.10" 0 0 1 "" 0 ""
+Bp10=_ 0 "STD_CODE2" "{$PROJ_DIR$\Drivers\src\watchdog.c}.29.10" 0 0 1 "" 0 ""
+Bp11=_ 0 "STD_CODE2" "{$PROJ_DIR$\System\src\system.c}.16.15" 0 0 1 "" 0 ""
+Bp12=_ 0 "STD_CODE2" "{$PROJ_DIR$\System\src\system.c}.54.13" 0 0 1 "" 0 ""
+Count=13
+[Interrupts]
+Enabled=1
+[MemoryMap]
+Enabled=0
+Base=0
+UseAuto=0
+TypeViolation=1
+UnspecRange=1
+ActionState=1
+[Aliases]
+A0=_ "C:\Users\615\Desktop\MSP430\例程\SPI操作\硬件SPI—OLED带printf\Lib\uCOS-II\oskernel\os_core.c" ""
+A1=_ "C:\Users\Administrator\Desktop\MSP430f5529库函数\工程模板\HardWare\12864\12864ser.c" ""
+A2=_ "C:\Users\Administrator\Desktop\起跑线\MSP430f5529库函数\工程模板\Drivers\src\gpio.c" ""
+A3=_ "C:\Users\Administrator\Desktop\起跑线\MSP430f5529库函数\工程模板\HardWare\12864\12864ser.c" ""
+A4=_ "C:\Users\GB\Desktop\MSP430\MSP430F5529库函数\Lib\uCOS-II\MSP430Ports\Os_cpu_a.asm" ""
+A5=_ "C:\Users\GB\Desktop\MSP430\MSP430F5529库函数\Lib\uCOS-II\oskernel\os_core.c" ""
+A6=_ "C:\Users\GB\Desktop\例程\工程模板\HardWare\LED\LED.c" ""
+A7=_ "C:\Users\GONGBO\Desktop\风力摆mpu6050-f5529\HardWare\oled\支持浮点数显示的OLED程序\OLED12864.c" ""
+A8=_ "C:\Users\GONGBO\Desktop\风力摆mpu6050-f5529\User\USER\I2CPORT.c" ""
+A9=_ "C:\Users\GONGBO\Desktop\库函数\Drivers\src\clock.c" ""
+A10=_ "C:\Users\GONGBO\Desktop\库函数\HardWare\Bord\Bord.c" ""
+A11=_ "C:\Users\GONGBO\Desktop\库函数\System\src\system.c" ""
+A12=_ "C:\Users\GONGBO\Desktop\杨成程序stm32-f5529移植\Drivers\src\clock.c" ""
+A13=_ "C:\Users\GONGBO\Desktop\杨成程序stm32-f5529移植\User\USER\IMU.c" ""
+A14=_ "C:\Users\总\Desktop\风力摆mpu6050-f5529\User\USER\mpu6050.c" ""
+A15=_ "J:\新建文件夹 (4)\MSP430f5529库函数\工程模板\Drivers\src\gpio.c" ""
+Count=16
+SuppressDialog=1
+[Trace1]
+Enabled=0
+ShowSource=1

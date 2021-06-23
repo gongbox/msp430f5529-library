@@ -1,0 +1,2131 @@
+###############################################################################
+#                                                                             #
+#                                                       06/Jun/2016  16:42:30 #
+# IAR C/C++ Compiler V5.50.1.20465/W32, Evaluation edition for MSP430         #
+# Copyright 1996-2012 IAR Systems AB.                                         #
+#                                                                             #
+#    __rt_version  =  3                                                       #
+#    __double_size =  32                                                      #
+#    __reg_r4      =  free                                                    #
+#    __reg_r5      =  free                                                    #
+#    __pic         =  no                                                      #
+#    __core        =  430X                                                    #
+#    __data_model  =  large                                                   #
+#    Source file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\UCOSII\CORE\os_flag.c                        #
+#    Command line  =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\UCOSII\CORE\os_flag.c -D NDEBUG -D           #
+#                     RAM_VECTOR -lC C:\Users\615\Desktop\MSP430\MSP430F5529¿ #
+#                     âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Release\List\ -lA                 #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\List\ -o C:\Users\615\Desktop\MSP430\MSP #
+#                     430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Release\Obj\             #
+#                     -D__MSP430F5529__ -e --double=32 --dlib_config          #
+#                     "D:\Program Files (x86)\IAR Systems\Embedded Workbench  #
+#                     6.4 Evaluation\430\LIB\DLIB\dl430xlfn.h" -I             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\ -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Ê #
+#                     ý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\inc\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\ -I C:\Users\615\Desktop\MSP430\MSP4 #
+#                     30F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\src\USB\ -I       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_config\ -I                   #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_User\ -I                     #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\srcUSB\USB_API\USB_CDC_API\ -I           #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_API\USB_HID_API\ -I          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_API\USB_MSC_API\ -I          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\KEY\ -I C:\Users\615\Desktop\MSP430\MSP #
+#                     430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\LED\ -I         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\12864\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\oled\ -I      #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\mpu6050\inc\ -I                         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\mpu6050\src\ -I                         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\nokia5110\inc\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\nokia5110\src\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\LQ_1.8_TFT\ -I                          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\LCD_API\ -I                             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\2.2TFT\ -I                              #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\delay\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\ -I             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\System\inc\ -I C:\Users\615\Desktop\MSP430\MSP43 #
+#                     0F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\src\ -I             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\User\ -I C:\Users\615\Desktop\MSP430\MSP430F5529 #
+#                     ¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\User\USER\ -I                    #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\UCOSII\CONFIG\ -I                            #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\uCOSII\App\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII\CONFIHG\    #
+#                     -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ #
+#                     \¹¤³ÌÄ£°å\Lib\uCOSII\PORT\ -I                           #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\UCOSII\CORE\ -I                              #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\FatFs\ -I C:\Users\615\Desktop\MSP430\MSP430 #
+#                     F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\FatFs\option\           #
+#                     --core=430X --data_model=large -Oh --multiplier=32      #
+#                     --multiplier_location=4C0 --hw_workaround=CPU40         #
+#    List file     =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\List\os_flag.lst                         #
+#    Object file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\Obj\os_flag.r43                          #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\UCOSII\CORE\os_flag.c
+      1          /*
+      2          *********************************************************************************************************
+      3          *                                                uC/OS-II
+      4          *                                          The Real-Time Kernel
+      5          *                                         EVENT FLAG  MANAGEMENT
+      6          *
+      7          *                              (c) Copyright 1992-2009, Micrium, Weston, FL
+      8          *                                           All Rights Reserved
+      9          *
+     10          * File    : OS_FLAG.C
+     11          * By      : Jean J. Labrosse
+     12          * Version : V2.91
+     13          *
+     14          * LICENSING TERMS:
+     15          * ---------------
+     16          *   uC/OS-II is provided in source form for FREE evaluation, for educational use or for peaceful research.
+     17          * If you plan on using  uC/OS-II  in a commercial product you need to contact Micriµm to properly license
+     18          * its use in your product. We provide ALL the source code for your convenience and to help you experience
+     19          * uC/OS-II.   The fact that the  source is provided does  NOT  mean that you can use it without  paying a
+     20          * licensing fee.
+     21          *********************************************************************************************************
+     22          */
+     23          
+     24          #ifndef  OS_MASTER_FILE
+     25          #include "ucos_ii.h"
+
+  typedef unsigned char  BOOLEAN;
+                         ^
+"C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII\PORT\os_cpu.h",31  Warning[Pe301]: 
+          typedef name has already been declared (with same type)
+
+  typedef unsigned char  INT8U;                    /* Unsigned  8 bit quantity                           */
+                         ^
+"C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII\PORT\os_cpu.h",32  Warning[Pe301]: 
+          typedef name has already been declared (with same type)
+
+  typedef signed   char  INT8S;                    /* Signed    8 bit quantity                           */
+                         ^
+"C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII\PORT\os_cpu.h",33  Warning[Pe301]: 
+          typedef name has already been declared (with same type)
+
+  typedef unsigned int   INT16U;                   /* Unsigned 16 bit quantity                           */
+                         ^
+"C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII\PORT\os_cpu.h",34  Warning[Pe301]: 
+          typedef name has already been declared (with same type)
+
+  typedef signed   int   INT16S;                   /* Signed   16 bit quantity                           */
+                         ^
+"C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII\PORT\os_cpu.h",35  Warning[Pe301]: 
+          typedef name has already been declared (with same type)
+
+  typedef unsigned long  INT32U;                   /* Unsigned 32 bit quantity                           */
+                         ^
+"C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII\PORT\os_cpu.h",36  Warning[Pe301]: 
+          typedef name has already been declared (with same type)
+
+  typedef signed   long  INT32S;                   /* Signed   32 bit quantity                           */
+                         ^
+"C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII\PORT\os_cpu.h",37  Warning[Pe301]: 
+          typedef name has already been declared (with same type)
+
+  typedef float          FP32;                     /* Single precision floating point                    */
+                         ^
+"C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII\PORT\os_cpu.h",38  Warning[Pe301]: 
+          typedef name has already been declared (with same type)
+
+  typedef double         FP64;                     /* Double precision floating point                    */
+                         ^
+"C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII\PORT\os_cpu.h",39  Warning[Pe301]: 
+          typedef name has already been declared (with same type)
+
+  typedef unsigned int   OS_STK;                   /* Each stack entry is 16-bit wide                    */
+                         ^
+"C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII\PORT\os_cpu.h",41  Warning[Pe301]: 
+          typedef name has already been declared (with same type)
+
+  typedef unsigned int   OS_CPU_SR;                /* Define size of CPU status register (SR = 16 bits)  */
+                         ^
+"C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII\PORT\os_cpu.h",42  Warning[Pe301]: 
+          typedef name has already been declared (with same type)
+     26          #endif
+     27          
+     28          #if (OS_FLAG_EN > 0u) && (OS_MAX_FLAGS > 0u)
+     29          /*
+     30          *********************************************************************************************************
+     31          *                                            LOCAL PROTOTYPES
+     32          *********************************************************************************************************
+     33          */
+     34          
+     35          static  void     OS_FlagBlock(OS_FLAG_GRP *pgrp, OS_FLAG_NODE *pnode, OS_FLAGS flags, INT8U wait_type, INT32U timeout);
+     36          static  BOOLEAN  OS_FlagTaskRdy(OS_FLAG_NODE *pnode, OS_FLAGS flags_rdy);
+     37          
+     38          /*$PAGE*/
+     39          /*
+     40          *********************************************************************************************************
+     41          *                              CHECK THE STATUS OF FLAGS IN AN EVENT FLAG GROUP
+     42          *
+     43          * Description: This function is called to check the status of a combination of bits to be set or cleared
+     44          *              in an event flag group.  Your application can check for ANY bit to be set/cleared or ALL
+     45          *              bits to be set/cleared.
+     46          *
+     47          *              This call does not block if the desired flags are not present.
+     48          *
+     49          * Arguments  : pgrp          is a pointer to the desired event flag group.
+     50          *
+     51          *              flags         Is a bit pattern indicating which bit(s) (i.e. flags) you wish to check.
+     52          *                            The bits you want are specified by setting the corresponding bits in
+     53          *                            'flags'.  e.g. if your application wants to wait for bits 0 and 1 then
+     54          *                            'flags' would contain 0x03.
+     55          *
+     56          *              wait_type     specifies whether you want ALL bits to be set/cleared or ANY of the bits
+     57          *                            to be set/cleared.
+     58          *                            You can specify the following argument:
+     59          *
+     60          *                            OS_FLAG_WAIT_CLR_ALL   You will check ALL bits in 'flags' to be clear (0)
+     61          *                            OS_FLAG_WAIT_CLR_ANY   You will check ANY bit  in 'flags' to be clear (0)
+     62          *                            OS_FLAG_WAIT_SET_ALL   You will check ALL bits in 'flags' to be set   (1)
+     63          *                            OS_FLAG_WAIT_SET_ANY   You will check ANY bit  in 'flags' to be set   (1)
+     64          *
+     65          *                            NOTE: Add OS_FLAG_CONSUME if you want the event flag to be 'consumed' by
+     66          *                                  the call.  Example, to wait for any flag in a group AND then clear
+     67          *                                  the flags that are present, set 'wait_type' to:
+     68          *
+     69          *                                  OS_FLAG_WAIT_SET_ANY + OS_FLAG_CONSUME
+     70          *
+     71          *              perr          is a pointer to an error code and can be:
+     72          *                            OS_ERR_NONE               No error
+     73          *                            OS_ERR_EVENT_TYPE         You are not pointing to an event flag group
+     74          *                            OS_ERR_FLAG_WAIT_TYPE     You didn't specify a proper 'wait_type' argument.
+     75          *                            OS_ERR_FLAG_INVALID_PGRP  You passed a NULL pointer instead of the event flag
+     76          *                                                      group handle.
+     77          *                            OS_ERR_FLAG_NOT_RDY       The desired flags you are waiting for are not
+     78          *                                                      available.
+     79          *
+     80          * Returns    : The flags in the event flag group that made the task ready or, 0 if a timeout or an error
+     81          *              occurred.
+     82          *
+     83          * Called from: Task or ISR
+     84          *
+     85          * Note(s)    : 1) IMPORTANT, the behavior of this function has changed from PREVIOUS versions.  The
+     86          *                 function NOW returns the flags that were ready INSTEAD of the current state of the
+     87          *                 event flags.
+     88          *********************************************************************************************************
+     89          */
+     90          
+     91          #if OS_FLAG_ACCEPT_EN > 0u
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine1:
+   \   000000   FC9005000000 CMP.B   #0x5, 0(R12)
+   \   000006   1001         RETA
+
+   \                                 In  segment CODE, align 2
+     92          OS_FLAGS  OSFlagAccept (OS_FLAG_GRP  *pgrp,
+   \                     OSFlagAccept:
+     93                                  OS_FLAGS      flags,
+     94                                  INT8U         wait_type,
+     95                                  INT8U        *perr)
+     96          {
+   \   000000   5B14         PUSHM.A #0x6, R11
+   \   000002   C80C         MOVA    R12, R8
+   \   000004   0A4D         MOV.W   R13, R10
+   \   000006   4B4E         MOV.B   R14, R11
+   \   000008   C90F         MOVA    R15, R9
+     97              OS_FLAGS      flags_rdy;
+     98              INT8U         result;
+     99              BOOLEAN       consume;
+    100          #if OS_CRITICAL_METHOD == 3u                               /* Allocate storage for CPU status register */
+    101              OS_CPU_SR     cpu_sr = 0u;
+    102          #endif
+    103          
+    104          
+    105          
+    106          #ifdef OS_SAFETY_CRITICAL
+    107              if (perr == (INT8U *)0) {
+    108                  OS_SAFETY_CRITICAL_EXCEPTION();
+    109              }
+    110          #endif
+    111          
+    112          #if OS_ARG_CHK_EN > 0u
+    113              if (pgrp == (OS_FLAG_GRP *)0) {                        /* Validate 'pgrp'                          */
+    114                  *perr = OS_ERR_FLAG_INVALID_PGRP;
+    115                  return ((OS_FLAGS)0);
+    116              }
+    117          #endif
+    118              if (pgrp->OSFlagType != OS_EVENT_TYPE_FLAG) {          /* Validate event block type                */
+   \   00000A   ........     CALLA   #?Subroutine1
+   \                     ??CrossCallReturnLabel_6:
+   \   00000E   0424         JEQ     ??OSFlagAccept_4
+    119                  *perr = OS_ERR_EVENT_TYPE;
+   \   000010   DF430000     MOV.B   #0x1, 0(R15)
+    120                  return ((OS_FLAGS)0);
+   \   000014   0C43         MOV.W   #0x0, R12
+   \   000016   3A3C         JMP     ??OSFlagAccept_5
+    121              }
+    122              result = (INT8U)(wait_type & OS_FLAG_CONSUME);
+    123              if (result != (INT8U)0) {                              /* See if we need to consume the flags      */
+   \                     ??OSFlagAccept_4:
+   \   000018   ........     CALLA   #?Subroutine4
+    124                  wait_type &= ~OS_FLAG_CONSUME;
+    125                  consume    = OS_TRUE;
+    126              } else {
+    127                  consume    = OS_FALSE;
+    128              }
+    129          /*$PAGE*/
+    130              *perr = OS_ERR_NONE;                                   /* Assume NO error until proven otherwise.  */
+   \                     ??CrossCallReturnLabel_14:
+   \   00001C   CF430000     MOV.B   #0x0, 0(R15)
+    131              OS_ENTER_CRITICAL();
+   \   000020   ........     CALLA   #OSCPUSaveSR
+    132              switch (wait_type) {
+   \   000024   4B83         SUB.B   #0x0, R11
+   \   000026   1B24         JEQ     ??OSFlagAccept_6
+   \   000028   5B83         SUB.B   #0x1, R11
+   \   00002A   1F24         JEQ     ??OSFlagAccept_7
+   \   00002C   5B83         SUB.B   #0x1, R11
+   \   00002E   0324         JEQ     ??OSFlagAccept_8
+   \   000030   5B83         SUB.B   #0x1, R11
+   \   000032   0C24         JEQ     ??OSFlagAccept_9
+   \   000034   243C         JMP     ??OSFlagAccept_10
+    133                  case OS_FLAG_WAIT_SET_ALL:                         /* See if all required flags are set        */
+    134                       flags_rdy = (OS_FLAGS)(pgrp->OSFlagFlags & flags);     /* Extract only the bits we want   */
+   \                     ??OSFlagAccept_8:
+   \   000036   0B4A         MOV.W   R10, R11
+   \   000038   1BF80600     AND.W   0x6(R8), R11
+    135                       if (flags_rdy == flags) {                     /* Must match ALL the bits that we want     */
+   \   00003C   0B9A         CMP.W   R10, R11
+   \   00003E   0A24         JEQ     ??OSFlagAccept_11
+    136                           if (consume == OS_TRUE) {                 /* See if we need to consume the flags      */
+    137                               pgrp->OSFlagFlags &= (OS_FLAGS)~flags_rdy;     /* Clear ONLY the flags we wanted  */
+    138                           }
+    139                       } else {
+    140                           *perr = OS_ERR_FLAG_NOT_RDY;
+    141                       }
+    142                       OS_EXIT_CRITICAL();
+    143                       break;
+    144          
+    145                  case OS_FLAG_WAIT_SET_ANY:
+    146                       flags_rdy = (OS_FLAGS)(pgrp->OSFlagFlags & flags);     /* Extract only the bits we want   */
+    147                       if (flags_rdy != (OS_FLAGS)0) {               /* See if any flag set                      */
+    148                           if (consume == OS_TRUE) {                 /* See if we need to consume the flags      */
+    149                               pgrp->OSFlagFlags &= (OS_FLAGS)~flags_rdy;     /* Clear ONLY the flags we got     */
+    150                           }
+    151                       } else {
+    152                           *perr = OS_ERR_FLAG_NOT_RDY;
+    153                       }
+    154                       OS_EXIT_CRITICAL();
+    155                       break;
+    156          
+    157          #if OS_FLAG_WAIT_CLR_EN > 0u
+    158                  case OS_FLAG_WAIT_CLR_ALL:                         /* See if all required flags are cleared    */
+    159                       flags_rdy = (OS_FLAGS)~pgrp->OSFlagFlags & flags;    /* Extract only the bits we want     */
+    160                       if (flags_rdy == flags) {                     /* Must match ALL the bits that we want     */
+    161                           if (consume == OS_TRUE) {                 /* See if we need to consume the flags      */
+    162                               pgrp->OSFlagFlags |= flags_rdy;       /* Set ONLY the flags that we wanted        */
+    163                           }
+    164                       } else {
+    165                           *perr = OS_ERR_FLAG_NOT_RDY;
+    166                       }
+    167                       OS_EXIT_CRITICAL();
+    168                       break;
+    169          
+    170                  case OS_FLAG_WAIT_CLR_ANY:
+    171                       flags_rdy = (OS_FLAGS)~pgrp->OSFlagFlags & flags;   /* Extract only the bits we want      */
+    172                       if (flags_rdy != (OS_FLAGS)0) {               /* See if any flag cleared                  */
+    173                           if (consume == OS_TRUE) {                 /* See if we need to consume the flags      */
+    174                               pgrp->OSFlagFlags |= flags_rdy;       /* Set ONLY the flags that we got           */
+    175                           }
+    176                       } else {
+    177                           *perr = OS_ERR_FLAG_NOT_RDY;
+   \                     ??OSFlagAccept_0:
+   \   000040   F94070000000 MOV.B   #0x70, 0(R9)
+    178                       }
+    179                       OS_EXIT_CRITICAL();
+   \                     ??OSFlagAccept_1:
+   \   000046   ........     CALLA   #OSCPURestoreSR
+    180                       break;
+   \   00004A   1F3C         JMP     ??OSFlagAccept_12
+   \                     ??OSFlagAccept_9:
+   \   00004C   1AF80600     AND.W   0x6(R8), R10
+   \   000050   0B4A         MOV.W   R10, R11
+   \   000052   F627         JEQ     ??OSFlagAccept_0
+   \                     ??OSFlagAccept_11:
+   \   000054   56B3         BIT.B   #0x1, R6
+   \   000056   F72B         JNC     ??OSFlagAccept_1
+   \   000058   88CB0600     BIC.W   R11, 0x6(R8)
+   \   00005C   F43F         JMP     ??OSFlagAccept_1
+   \                     ??OSFlagAccept_6:
+   \   00005E   0B4A         MOV.W   R10, R11
+   \   000060   1BC80600     BIC.W   0x6(R8), R11
+   \   000064   0B9A         CMP.W   R10, R11
+   \   000066   EC23         JNE     ??OSFlagAccept_0
+   \   000068   053C         JMP     ??OSFlagAccept_13
+   \                     ??OSFlagAccept_7:
+   \   00006A   1AC80600     BIC.W   0x6(R8), R10
+   \   00006E   0B4A         MOV.W   R10, R11
+   \   000070   0A93         CMP.W   #0x0, R10
+   \   000072   E627         JEQ     ??OSFlagAccept_0
+   \                     ??OSFlagAccept_13:
+   \   000074   56B3         BIT.B   #0x1, R6
+   \   000076   E72B         JNC     ??OSFlagAccept_1
+   \   000078   88DB0600     BIS.W   R11, 0x6(R8)
+   \   00007C   E43F         JMP     ??OSFlagAccept_1
+    181          #endif
+    182          
+    183                  default:
+    184                       OS_EXIT_CRITICAL();
+   \                     ??OSFlagAccept_10:
+   \   00007E   ........     CALLA   #OSCPURestoreSR
+    185                       flags_rdy = (OS_FLAGS)0;
+   \   000082   0B43         MOV.W   #0x0, R11
+    186                       *perr     = OS_ERR_FLAG_WAIT_TYPE;
+   \   000084   F9406F000000 MOV.B   #0x6f, 0(R9)
+    187                       break;
+    188              }
+    189              return (flags_rdy);
+   \                     ??OSFlagAccept_12:
+   \   00008A   0C4B         MOV.W   R11, R12
+   \                     ??OSFlagAccept_5:
+   \   00008C   5616         POPM.A  #0x6, R11
+   \   00008E   1001         RETA
+    190          }
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine4:
+   \   000000   4E93         CMP.B   #0x0, R14
+   \   000002   0434         JGE     ??OSFlagPend_6
+   \   000004   7BC08000     BIC.B   #0x80, R11
+   \   000008   5643         MOV.B   #0x1, R6
+   \   00000A   1001         RETA
+   \                     ??OSFlagPend_6:
+   \   00000C   4643         MOV.B   #0x0, R6
+   \   00000E   1001         RETA
+    191          #endif
+    192          
+    193          /*$PAGE*/
+    194          /*
+    195          *********************************************************************************************************
+    196          *                                           CREATE AN EVENT FLAG
+    197          *
+    198          * Description: This function is called to create an event flag group.
+    199          *
+    200          * Arguments  : flags         Contains the initial value to store in the event flag group.
+    201          *
+    202          *              perr          is a pointer to an error code which will be returned to your application:
+    203          *                               OS_ERR_NONE               if the call was successful.
+    204          *                               OS_ERR_CREATE_ISR         if you attempted to create an Event Flag from an
+    205          *                                                         ISR.
+    206          *                               OS_ERR_FLAG_GRP_DEPLETED  if there are no more event flag groups
+    207          *
+    208          * Returns    : A pointer to an event flag group or a NULL pointer if no more groups are available.
+    209          *
+    210          * Called from: Task ONLY
+    211          *********************************************************************************************************
+    212          */
+    213          
+
+   \                                 In  segment CODE, align 2
+    214          OS_FLAG_GRP  *OSFlagCreate (OS_FLAGS  flags,
+   \                     OSFlagCreate:
+    215                                      INT8U    *perr)
+    216          {
+   \   000000   3B14         PUSHM.A #0x4, R11
+   \   000002   0A4C         MOV.W   R12, R10
+   \   000004   CB0D         MOVA    R13, R11
+    217              OS_FLAG_GRP *pgrp;
+    218          #if OS_CRITICAL_METHOD == 3u                        /* Allocate storage for CPU status register        */
+    219              OS_CPU_SR    cpu_sr = 0u;
+    220          #endif
+    221          
+    222          
+    223          
+    224          #ifdef OS_SAFETY_CRITICAL
+    225              if (perr == (INT8U *)0) {
+    226                  OS_SAFETY_CRITICAL_EXCEPTION();
+    227              }
+    228          #endif
+    229          
+    230          #ifdef OS_SAFETY_CRITICAL_IEC61508
+    231              if (OSSafetyCriticalStartFlag == OS_TRUE) {
+    232                  OS_SAFETY_CRITICAL_EXCEPTION();
+    233              }
+    234          #endif
+    235          
+    236              if (OSIntNesting > 0u) {                        /* See if called from ISR ...                      */
+   \   000006   ........     CALLA   #??Subroutine5_0
+   \                     ??CrossCallReturnLabel_19:
+   \   00000A   0524         JEQ     ??OSFlagCreate_0
+    237                  *perr = OS_ERR_CREATE_ISR;                  /* ... can't CREATE from an ISR                    */
+   \   00000C   FD4010000000 MOV.B   #0x10, 0(R13)
+    238                  return ((OS_FLAG_GRP *)0);
+   \   000012   4C43         MOVA    #0x0, R12
+   \   000014   1D3C         JMP     ??OSFlagCreate_1
+    239              }
+    240              OS_ENTER_CRITICAL();
+   \                     ??OSFlagCreate_0:
+   \   000016   ........     CALLA   #OSCPUSaveSR
+   \   00001A   ........     MOVA    &OSFlagFreeList, R15
+   \   00001E   C80F         MOVA    R15, R8
+    241              pgrp = OSFlagFreeList;                          /* Get next free event flag                        */
+    242              if (pgrp != (OS_FLAG_GRP *)0) {                 /* See if we have event flag groups available      */
+   \   000020   DF03         CMPA    #0x0, R15
+   \   000022   1024         JEQ     ??OSFlagCreate_2
+    243                                                              /* Adjust free list                                */
+    244                  OSFlagFreeList       = (OS_FLAG_GRP *)OSFlagFreeList->OSFlagWaitList;
+   \   000024   ....D24F0200 MOVX.A  0x2(R15), &OSFlagFreeList
+   \            ....        
+    245                  pgrp->OSFlagType     = OS_EVENT_TYPE_FLAG;  /* Set to event flag group type                    */
+   \   00002C   FF4005000000 MOV.B   #0x5, 0(R15)
+    246                  pgrp->OSFlagFlags    = flags;               /* Set to desired initial value                    */
+   \   000032   8F4A0600     MOV.W   R10, 0x6(R15)
+    247                  pgrp->OSFlagWaitList = (void *)0;           /* Clear list of tasks waiting on flags            */
+   \   000036   ........     CALLA   #?Subroutine0
+    248          #if OS_FLAG_NAME_EN > 0u
+    249                  pgrp->OSFlagName     = (INT8U *)(void *)"?";
+    250          #endif
+    251                  OS_EXIT_CRITICAL();
+   \                     ??CrossCallReturnLabel_1:
+   \   00003A   ........     CALLA   #OSCPURestoreSR
+    252                  *perr                = OS_ERR_NONE;
+   \   00003E   CB430000     MOV.B   #0x0, 0(R11)
+   \   000042   053C         JMP     ??OSFlagCreate_3
+    253              } else {
+    254                  OS_EXIT_CRITICAL();
+   \                     ??OSFlagCreate_2:
+   \   000044   ........     CALLA   #OSCPURestoreSR
+    255                  *perr                = OS_ERR_FLAG_GRP_DEPLETED;
+   \   000048   FB4072000000 MOV.B   #0x72, 0(R11)
+    256              }
+    257              return (pgrp);                                  /* Return pointer to event flag group              */
+   \                     ??OSFlagCreate_3:
+   \   00004E   CC08         MOVA    R8, R12
+   \                     ??OSFlagCreate_1:
+   \   000050   3816         POPM.A  #0x4, R11
+   \   000052   1001         RETA
+    258          }
+
+   \                                 In  segment CODE, align 2
+   \                     ??Subroutine5_0:
+   \   000000   ....C293.... CMPX.B  #0x0, &OSIntNesting
+   \   000006   1001         RETA
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine0:
+   \   000000   0018CF430200 MOVX.A  #0x0, 0x2(R15)
+   \   000006   ....FF40.... MOVX.A  #`?<Constant "?">`, 0x8(R15)
+   \            0800        
+   \   00000E   1001         RETA
+    259          
+    260          /*$PAGE*/
+    261          /*
+    262          *********************************************************************************************************
+    263          *                                     DELETE AN EVENT FLAG GROUP
+    264          *
+    265          * Description: This function deletes an event flag group and readies all tasks pending on the event flag
+    266          *              group.
+    267          *
+    268          * Arguments  : pgrp          is a pointer to the desired event flag group.
+    269          *
+    270          *              opt           determines delete options as follows:
+    271          *                            opt == OS_DEL_NO_PEND   Deletes the event flag group ONLY if no task pending
+    272          *                            opt == OS_DEL_ALWAYS    Deletes the event flag group even if tasks are
+    273          *                                                    waiting.  In this case, all the tasks pending will be
+    274          *                                                    readied.
+    275          *
+    276          *              perr          is a pointer to an error code that can contain one of the following values:
+    277          *                            OS_ERR_NONE               The call was successful and the event flag group was
+    278          *                                                      deleted
+    279          *                            OS_ERR_DEL_ISR            If you attempted to delete the event flag group from
+    280          *                                                      an ISR
+    281          *                            OS_ERR_FLAG_INVALID_PGRP  If 'pgrp' is a NULL pointer.
+    282          *                            OS_ERR_EVENT_TYPE         If you didn't pass a pointer to an event flag group
+    283          *                            OS_ERR_INVALID_OPT        An invalid option was specified
+    284          *                            OS_ERR_TASK_WAITING       One or more tasks were waiting on the event flag
+    285          *                                                      group.
+    286          *
+    287          * Returns    : pgrp          upon error
+    288          *              (OS_EVENT *)0 if the event flag group was successfully deleted.
+    289          *
+    290          * Note(s)    : 1) This function must be used with care.  Tasks that would normally expect the presence of
+    291          *                 the event flag group MUST check the return code of OSFlagAccept() and OSFlagPend().
+    292          *              2) This call can potentially disable interrupts for a long time.  The interrupt disable
+    293          *                 time is directly proportional to the number of tasks waiting on the event flag group.
+    294          *********************************************************************************************************
+    295          */
+    296          
+    297          #if OS_FLAG_DEL_EN > 0u
+
+   \                                 In  segment CODE, align 2, keep-with-next
+   \                     ?Subroutine5:
+   \   000000   C90E         MOVA    R14, R9
+   \   000002                REQUIRE ??Subroutine5_0
+   \   000002                // Fall through to label ??Subroutine5_0
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine3:
+   \   000000   0C4A         MOV.W   R10, R12
+   \   000002   ........     BRA     #OSCPURestoreSR
+
+   \                                 In  segment CODE, align 2
+    298          OS_FLAG_GRP  *OSFlagDel (OS_FLAG_GRP  *pgrp,
+   \                     OSFlagDel:
+    299                                   INT8U         opt,
+    300                                   INT8U        *perr)
+    301          {
+   \   000000   5B14         PUSHM.A #0x6, R11
+   \   000002   CB0C         MOVA    R12, R11
+   \   000004   484D         MOV.B   R13, R8
+   \   000006   ........     CALLA   #?Subroutine5
+    302              BOOLEAN       tasks_waiting;
+    303              OS_FLAG_NODE *pnode;
+    304              OS_FLAG_GRP  *pgrp_return;
+    305          #if OS_CRITICAL_METHOD == 3u                               /* Allocate storage for CPU status register */
+    306              OS_CPU_SR     cpu_sr = 0u;
+    307          #endif
+    308          
+    309          
+    310          
+    311          #ifdef OS_SAFETY_CRITICAL
+    312              if (perr == (INT8U *)0) {
+    313                  OS_SAFETY_CRITICAL_EXCEPTION();
+    314              }
+    315          #endif
+    316          
+    317          #if OS_ARG_CHK_EN > 0u
+    318              if (pgrp == (OS_FLAG_GRP *)0) {                        /* Validate 'pgrp'                          */
+    319                  *perr = OS_ERR_FLAG_INVALID_PGRP;
+    320                  return (pgrp);
+    321              }
+    322          #endif
+    323              if (OSIntNesting > 0u) {                               /* See if called from ISR ...               */
+   \                     ??CrossCallReturnLabel_16:
+   \   00000A   0424         JEQ     ??OSFlagDel_5
+    324                  *perr = OS_ERR_DEL_ISR;                            /* ... can't DELETE from an ISR             */
+   \   00000C   FE400F000000 MOV.B   #0xf, 0(R14)
+    325                  return (pgrp);
+   \   000012   3B3C         JMP     ??OSFlagDel_1
+    326              }
+    327              if (pgrp->OSFlagType != OS_EVENT_TYPE_FLAG) {          /* Validate event group type                */
+   \                     ??OSFlagDel_5:
+   \   000014   ........     CALLA   #?Subroutine1
+   \                     ??CrossCallReturnLabel_5:
+   \   000018   0324         JEQ     ??OSFlagDel_6
+    328                  *perr = OS_ERR_EVENT_TYPE;
+   \   00001A   DE430000     MOV.B   #0x1, 0(R14)
+    329                  return (pgrp);
+   \   00001E   353C         JMP     ??OSFlagDel_1
+    330              }
+    331              OS_ENTER_CRITICAL();
+   \                     ??OSFlagDel_6:
+   \   000020   ........     CALLA   #OSCPUSaveSR
+   \   000024   0A4C         MOV.W   R12, R10
+    332              if (pgrp->OSFlagWaitList != (void *)0) {               /* See if any tasks waiting on event flags  */
+   \   000026   370B0200     MOVA    0x2(R11), R7
+   \   00002A   D703         CMPA    #0x0, R7
+   \   00002C   0220         JNE     ??OSFlagDel_7
+   \   00002E   4643         MOV.B   #0x0, R6
+   \   000030   013C         JMP     ??OSFlagDel_8
+   \                     ??OSFlagDel_7:
+   \   000032   5643         MOV.B   #0x1, R6
+    333                  tasks_waiting = OS_TRUE;                           /* Yes                                      */
+    334              } else {
+    335                  tasks_waiting = OS_FALSE;                          /* No                                       */
+    336              }
+    337              switch (opt) {
+   \                     ??OSFlagDel_8:
+   \   000034   4883         SUB.B   #0x0, R8
+   \   000036   0324         JEQ     ??OSFlagDel_9
+   \   000038   5883         SUB.B   #0x1, R8
+   \   00003A   1324         JEQ     ??OSFlagDel_3
+   \   00003C   203C         JMP     ??OSFlagDel_10
+    338                  case OS_DEL_NO_PEND:                               /* Delete group if no task waiting          */
+    339                       if (tasks_waiting == OS_FALSE) {
+   \                     ??OSFlagDel_9:
+   \   00003E   56B3         BIT.B   #0x1, R6
+   \   000040   052C         JC      ??OSFlagDel_11
+    340          #if OS_FLAG_NAME_EN > 0u
+    341                           pgrp->OSFlagName     = (INT8U *)(void *)"?";
+   \   000042   ........     CALLA   #?Subroutine2
+    342          #endif
+    343                           pgrp->OSFlagType     = OS_EVENT_TYPE_UNUSED;
+    344                           pgrp->OSFlagWaitList = (void *)OSFlagFreeList; /* Return group to free list           */
+    345                           pgrp->OSFlagFlags    = (OS_FLAGS)0;
+    346                           OSFlagFreeList       = pgrp;
+    347                           OS_EXIT_CRITICAL();
+   \                     ??CrossCallReturnLabel_7:
+   \   000046   ........     CALLA   #OSCPURestoreSR
+    348                           *perr                = OS_ERR_NONE;
+   \   00004A   153C         JMP     ??OSFlagDel_4
+    349                           pgrp_return          = (OS_FLAG_GRP *)0;  /* Event Flag Group has been deleted        */
+    350                       } else {
+    351                           OS_EXIT_CRITICAL();
+   \                     ??OSFlagDel_11:
+   \   00004C   ........     CALLA   #OSCPURestoreSR
+    352                           *perr                = OS_ERR_TASK_WAITING;
+   \   000050   F94049000000 MOV.B   #0x49, 0(R9)
+    353                           pgrp_return          = pgrp;
+   \   000056   183C         JMP     ??OSFlagDel_12
+    354                       }
+    355                       break;
+    356          
+    357                  case OS_DEL_ALWAYS:                                /* Always delete the event flag group       */
+    358                       pnode = (OS_FLAG_NODE *)pgrp->OSFlagWaitList;
+    359                       while (pnode != (OS_FLAG_NODE *)0) {          /* Ready ALL tasks waiting for flags        */
+    360                           (void)OS_FlagTaskRdy(pnode, (OS_FLAGS)0);
+   \                     ??OSFlagDel_0:
+   \   000058   0D43         MOV.W   #0x0, R13
+   \   00005A   CC07         MOVA    R7, R12
+   \   00005C   ........     CALLA   #OS_FlagTaskRdy
+    361                           pnode = (OS_FLAG_NODE *)pnode->OSFlagNodeNext;
+   \   000060   0707         MOVA    @R7, R7
+    362                       }
+   \                     ??OSFlagDel_3:
+   \   000062   D703         CMPA    #0x0, R7
+   \   000064   F923         JNE     ??OSFlagDel_0
+    363          #if OS_FLAG_NAME_EN > 0u
+    364                       pgrp->OSFlagName     = (INT8U *)(void *)"?";
+   \   000066   ........     CALLA   #?Subroutine2
+    365          #endif
+    366                       pgrp->OSFlagType     = OS_EVENT_TYPE_UNUSED;
+    367                       pgrp->OSFlagWaitList = (void *)OSFlagFreeList;/* Return group to free list                */
+    368                       pgrp->OSFlagFlags    = (OS_FLAGS)0;
+    369                       OSFlagFreeList       = pgrp;
+    370                       OS_EXIT_CRITICAL();
+   \                     ??CrossCallReturnLabel_8:
+   \   00006A   ........     CALLA   #?Subroutine3
+    371                       if (tasks_waiting == OS_TRUE) {               /* Reschedule only if task(s) were waiting  */
+   \                     ??CrossCallReturnLabel_9:
+   \   00006E   56B3         BIT.B   #0x1, R6
+   \   000070   0228         JNC     ??OSFlagDel_4
+    372                           OS_Sched();                               /* Find highest priority task ready to run  */
+   \   000072   ........     CALLA   #OS_Sched
+    373                       }
+    374                       *perr = OS_ERR_NONE;
+   \                     ??OSFlagDel_4:
+   \   000076   C9430000     MOV.B   #0x0, 0(R9)
+    375                       pgrp_return          = (OS_FLAG_GRP *)0;      /* Event Flag Group has been deleted        */
+   \   00007A   4C43         MOVA    #0x0, R12
+    376                       break;
+   \   00007C   063C         JMP     ??OSFlagDel_1
+    377          
+    378                  default:
+    379                       OS_EXIT_CRITICAL();
+   \                     ??OSFlagDel_10:
+   \   00007E   ........     CALLA   #OSCPURestoreSR
+    380                       *perr                = OS_ERR_INVALID_OPT;
+   \   000082   F94007000000 MOV.B   #0x7, 0(R9)
+    381                       pgrp_return          = pgrp;
+   \                     ??OSFlagDel_12:
+   \   000088   CC0B         MOVA    R11, R12
+    382                       break;
+    383              }
+    384              return (pgrp_return);
+   \                     ??OSFlagDel_1:
+   \   00008A   5616         POPM.A  #0x6, R11
+   \   00008C   1001         RETA
+    385          }
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine2:
+   \   000000   ....FB40.... MOVX.A  #`?<Constant "?">`, 0x8(R11)
+   \            0800        
+   \   000008   CB430000     MOV.B   #0x0, 0(R11)
+   \   00000C   ....DB42.... MOVX.A  &OSFlagFreeList, 0x2(R11)
+   \            0200        
+   \   000014   8B430600     MOV.W   #0x0, 0x6(R11)
+   \   000018   ........     MOVA    R11, &OSFlagFreeList
+   \   00001C   1001         RETA
+    386          #endif
+    387          /*$PAGE*/
+    388          /*
+    389          *********************************************************************************************************
+    390          *                                 GET THE NAME OF AN EVENT FLAG GROUP
+    391          *
+    392          * Description: This function is used to obtain the name assigned to an event flag group
+    393          *
+    394          * Arguments  : pgrp      is a pointer to the event flag group.
+    395          *
+    396          *              pname     is pointer to a pointer to an ASCII string that will receive the name of the event flag
+    397          *                        group.
+    398          *
+    399          *              perr      is a pointer to an error code that can contain one of the following values:
+    400          *
+    401          *                        OS_ERR_NONE                if the requested task is resumed
+    402          *                        OS_ERR_EVENT_TYPE          if 'pevent' is not pointing to an event flag group
+    403          *                        OS_ERR_PNAME_NULL          You passed a NULL pointer for 'pname'
+    404          *                        OS_ERR_FLAG_INVALID_PGRP   if you passed a NULL pointer for 'pgrp'
+    405          *                        OS_ERR_NAME_GET_ISR        if you called this function from an ISR
+    406          *
+    407          * Returns    : The length of the string or 0 if the 'pgrp' is a NULL pointer.
+    408          *********************************************************************************************************
+    409          */
+    410          
+    411          #if OS_FLAG_NAME_EN > 0u
+
+   \                                 In  segment CODE, align 2
+    412          INT8U  OSFlagNameGet (OS_FLAG_GRP   *pgrp,
+   \                     OSFlagNameGet:
+    413                                INT8U        **pname,
+    414                                INT8U         *perr)
+    415          {
+   \   000000   3B14         PUSHM.A #0x4, R11
+   \   000002   CB0C         MOVA    R12, R11
+   \   000004   C80D         MOVA    R13, R8
+   \   000006   ........     CALLA   #?Subroutine5
+    416              INT8U      len;
+    417          #if OS_CRITICAL_METHOD == 3u                     /* Allocate storage for CPU status register           */
+    418              OS_CPU_SR  cpu_sr = 0u;
+    419          #endif
+    420          
+    421          
+    422          
+    423          #ifdef OS_SAFETY_CRITICAL
+    424              if (perr == (INT8U *)0) {
+    425                  OS_SAFETY_CRITICAL_EXCEPTION();
+    426              }
+    427          #endif
+    428          
+    429          #if OS_ARG_CHK_EN > 0u
+    430              if (pgrp == (OS_FLAG_GRP *)0) {              /* Is 'pgrp' a NULL pointer?                          */
+    431                  *perr = OS_ERR_FLAG_INVALID_PGRP;
+    432                  return (0u);
+    433              }
+    434              if (pname == (INT8U **)0) {                   /* Is 'pname' a NULL pointer?                         */
+    435                  *perr = OS_ERR_PNAME_NULL;
+    436                  return (0u);
+    437              }
+    438          #endif
+    439              if (OSIntNesting > 0u) {                     /* See if trying to call from an ISR                  */
+   \                     ??CrossCallReturnLabel_15:
+   \   00000A   0424         JEQ     ??OSFlagNameGet_0
+    440                  *perr = OS_ERR_NAME_GET_ISR;
+   \   00000C   FE4011000000 MOV.B   #0x11, 0(R14)
+    441                  return (0u);
+   \   000012   0B3C         JMP     ??OSFlagNameGet_1
+    442              }
+    443              OS_ENTER_CRITICAL();
+   \                     ??OSFlagNameGet_0:
+   \   000014   ........     CALLA   #OSCPUSaveSR
+   \   000018   0A4C         MOV.W   R12, R10
+    444              if (pgrp->OSFlagType != OS_EVENT_TYPE_FLAG) {
+   \   00001A   FB9005000000 CMP.B   #0x5, 0(R11)
+   \   000020   0624         JEQ     ??OSFlagNameGet_2
+    445                  OS_EXIT_CRITICAL();
+   \   000022   ........     CALLA   #OSCPURestoreSR
+    446                  *perr = OS_ERR_EVENT_TYPE;
+   \   000026   D9430000     MOV.B   #0x1, 0(R9)
+    447                  return (0u);
+   \                     ??OSFlagNameGet_1:
+   \   00002A   4C43         MOV.B   #0x0, R12
+   \   00002C   0C3C         JMP     ??OSFlagNameGet_3
+    448              }
+    449              *pname = pgrp->OSFlagName;
+   \                     ??OSFlagNameGet_2:
+   \   00002E   3C0B0800     MOVA    0x8(R11), R12
+   \   000032   780C0000     MOVA    R12, 0(R8)
+    450              len    = OS_StrLen(*pname);
+   \   000036   ........     CALLA   #OS_StrLen
+   \   00003A   4B4C         MOV.B   R12, R11
+    451              OS_EXIT_CRITICAL();
+   \   00003C   ........     CALLA   #?Subroutine3
+    452              *perr  = OS_ERR_NONE;
+   \                     ??CrossCallReturnLabel_10:
+   \   000040   C9430000     MOV.B   #0x0, 0(R9)
+    453              return (len);
+   \   000044   4C4B         MOV.B   R11, R12
+   \                     ??OSFlagNameGet_3:
+   \   000046   3816         POPM.A  #0x4, R11
+   \   000048   1001         RETA
+    454          }
+    455          #endif
+    456          
+    457          /*$PAGE*/
+    458          /*
+    459          *********************************************************************************************************
+    460          *                                 ASSIGN A NAME TO AN EVENT FLAG GROUP
+    461          *
+    462          * Description: This function assigns a name to an event flag group.
+    463          *
+    464          * Arguments  : pgrp      is a pointer to the event flag group.
+    465          *
+    466          *              pname     is a pointer to an ASCII string that will be used as the name of the event flag
+    467          *                        group.
+    468          *
+    469          *              perr      is a pointer to an error code that can contain one of the following values:
+    470          *
+    471          *                        OS_ERR_NONE                if the requested task is resumed
+    472          *                        OS_ERR_EVENT_TYPE          if 'pevent' is not pointing to an event flag group
+    473          *                        OS_ERR_PNAME_NULL          You passed a NULL pointer for 'pname'
+    474          *                        OS_ERR_FLAG_INVALID_PGRP   if you passed a NULL pointer for 'pgrp'
+    475          *                        OS_ERR_NAME_SET_ISR        if you called this function from an ISR
+    476          *
+    477          * Returns    : None
+    478          *********************************************************************************************************
+    479          */
+    480          
+    481          #if OS_FLAG_NAME_EN > 0u
+
+   \                                 In  segment CODE, align 2
+    482          void  OSFlagNameSet (OS_FLAG_GRP  *pgrp,
+   \                     OSFlagNameSet:
+    483                               INT8U        *pname,
+    484                               INT8U        *perr)
+    485          {
+   \   000000   3B14         PUSHM.A #0x4, R11
+   \   000002   CA0C         MOVA    R12, R10
+   \   000004   CB0D         MOVA    R13, R11
+   \   000006   C80E         MOVA    R14, R8
+    486          #if OS_CRITICAL_METHOD == 3u                     /* Allocate storage for CPU status register           */
+    487              OS_CPU_SR  cpu_sr = 0u;
+    488          #endif
+    489          
+    490          
+    491          
+    492          #ifdef OS_SAFETY_CRITICAL
+    493              if (perr == (INT8U *)0) {
+    494                  OS_SAFETY_CRITICAL_EXCEPTION();
+    495              }
+    496          #endif
+    497          
+    498          #if OS_ARG_CHK_EN > 0u
+    499              if (pgrp == (OS_FLAG_GRP *)0) {              /* Is 'pgrp' a NULL pointer?                          */
+    500                  *perr = OS_ERR_FLAG_INVALID_PGRP;
+    501                  return;
+    502              }
+    503              if (pname == (INT8U *)0) {                   /* Is 'pname' a NULL pointer?                         */
+    504                  *perr = OS_ERR_PNAME_NULL;
+    505                  return;
+    506              }
+    507          #endif
+    508              if (OSIntNesting > 0u) {                     /* See if trying to call from an ISR                  */
+   \   000008   ........     CALLA   #??Subroutine5_0
+   \                     ??CrossCallReturnLabel_18:
+   \   00000C   0424         JEQ     ??OSFlagNameSet_0
+    509                  *perr = OS_ERR_NAME_SET_ISR;
+   \   00000E   FE4012000000 MOV.B   #0x12, 0(R14)
+    510                  return;
+   \   000014   113C         JMP     ??OSFlagNameSet_1
+    511              }
+    512              OS_ENTER_CRITICAL();
+   \                     ??OSFlagNameSet_0:
+   \   000016   ........     CALLA   #OSCPUSaveSR
+    513              if (pgrp->OSFlagType != OS_EVENT_TYPE_FLAG) {
+   \   00001A   FA9005000000 CMP.B   #0x5, 0(R10)
+   \   000020   0524         JEQ     ??OSFlagNameSet_2
+    514                  OS_EXIT_CRITICAL();
+   \   000022   ........     CALLA   #OSCPURestoreSR
+    515                  *perr = OS_ERR_EVENT_TYPE;
+   \   000026   D8430000     MOV.B   #0x1, 0(R8)
+    516                  return;
+   \   00002A   063C         JMP     ??OSFlagNameSet_1
+    517              }
+    518              pgrp->OSFlagName = pname;
+   \                     ??OSFlagNameSet_2:
+   \   00002C   7A0B0800     MOVA    R11, 0x8(R10)
+    519              OS_EXIT_CRITICAL();
+   \   000030   ........     CALLA   #OSCPURestoreSR
+    520              *perr            = OS_ERR_NONE;
+   \   000034   C8430000     MOV.B   #0x0, 0(R8)
+    521              return;
+   \                     ??OSFlagNameSet_1:
+   \   000038   3816         POPM.A  #0x4, R11
+   \   00003A   1001         RETA
+    522          }
+    523          #endif
+    524          
+    525          /*$PAGE*/
+    526          /*
+    527          *********************************************************************************************************
+    528          *                                        WAIT ON AN EVENT FLAG GROUP
+    529          *
+    530          * Description: This function is called to wait for a combination of bits to be set in an event flag
+    531          *              group.  Your application can wait for ANY bit to be set or ALL bits to be set.
+    532          *
+    533          * Arguments  : pgrp          is a pointer to the desired event flag group.
+    534          *
+    535          *              flags         Is a bit pattern indicating which bit(s) (i.e. flags) you wish to wait for.
+    536          *                            The bits you want are specified by setting the corresponding bits in
+    537          *                            'flags'.  e.g. if your application wants to wait for bits 0 and 1 then
+    538          *                            'flags' would contain 0x03.
+    539          *
+    540          *              wait_type     specifies whether you want ALL bits to be set or ANY of the bits to be set.
+    541          *                            You can specify the following argument:
+    542          *
+    543          *                            OS_FLAG_WAIT_CLR_ALL   You will wait for ALL bits in 'mask' to be clear (0)
+    544          *                            OS_FLAG_WAIT_SET_ALL   You will wait for ALL bits in 'mask' to be set   (1)
+    545          *                            OS_FLAG_WAIT_CLR_ANY   You will wait for ANY bit  in 'mask' to be clear (0)
+    546          *                            OS_FLAG_WAIT_SET_ANY   You will wait for ANY bit  in 'mask' to be set   (1)
+    547          *
+    548          *                            NOTE: Add OS_FLAG_CONSUME if you want the event flag to be 'consumed' by
+    549          *                                  the call.  Example, to wait for any flag in a group AND then clear
+    550          *                                  the flags that are present, set 'wait_type' to:
+    551          *
+    552          *                                  OS_FLAG_WAIT_SET_ANY + OS_FLAG_CONSUME
+    553          *
+    554          *              timeout       is an optional timeout (in clock ticks) that your task will wait for the
+    555          *                            desired bit combination.  If you specify 0, however, your task will wait
+    556          *                            forever at the specified event flag group or, until a message arrives.
+    557          *
+    558          *              perr          is a pointer to an error code and can be:
+    559          *                            OS_ERR_NONE               The desired bits have been set within the specified
+    560          *                                                      'timeout'.
+    561          *                            OS_ERR_PEND_ISR           If you tried to PEND from an ISR
+    562          *                            OS_ERR_FLAG_INVALID_PGRP  If 'pgrp' is a NULL pointer.
+    563          *                            OS_ERR_EVENT_TYPE         You are not pointing to an event flag group
+    564          *                            OS_ERR_TIMEOUT            The bit(s) have not been set in the specified
+    565          *                                                      'timeout'.
+    566          *                            OS_ERR_PEND_ABORT         The wait on the flag was aborted.
+    567          *                            OS_ERR_FLAG_WAIT_TYPE     You didn't specify a proper 'wait_type' argument.
+    568          *
+    569          * Returns    : The flags in the event flag group that made the task ready or, 0 if a timeout or an error
+    570          *              occurred.
+    571          *
+    572          * Called from: Task ONLY
+    573          *
+    574          * Note(s)    : 1) IMPORTANT, the behavior of this function has changed from PREVIOUS versions.  The
+    575          *                 function NOW returns the flags that were ready INSTEAD of the current state of the
+    576          *                 event flags.
+    577          *********************************************************************************************************
+    578          */
+    579          
+
+   \                                 In  segment CODE, align 2
+    580          OS_FLAGS  OSFlagPend (OS_FLAG_GRP  *pgrp,
+   \                     OSFlagPend:
+    581                                OS_FLAGS      flags,
+    582                                INT8U         wait_type,
+    583                                INT32U        timeout,
+    584                                INT8U        *perr)
+    585          {
+   \   000000   7B14         PUSHM.A #0x8, R11
+   \   000002   31801400     SUB.W   #0x14, SP
+   \   000006   C80C         MOVA    R12, R8
+   \   000008   0A4D         MOV.W   R13, R10
+   \   00000A   4B4E         MOV.B   R14, R11
+   \   00000C   C90F         MOVA    R15, R9
+    586              OS_FLAG_NODE  node;
+    587              OS_FLAGS      flags_rdy;
+    588              INT8U         result;
+    589              INT8U         pend_stat;
+    590              BOOLEAN       consume;
+    591          #if OS_CRITICAL_METHOD == 3u                               /* Allocate storage for CPU status register */
+    592              OS_CPU_SR     cpu_sr = 0u;
+    593          #endif
+    594          
+    595          
+    596          
+    597          #ifdef OS_SAFETY_CRITICAL
+    598              if (perr == (INT8U *)0) {
+    599                  OS_SAFETY_CRITICAL_EXCEPTION();
+    600              }
+    601          #endif
+    602          
+    603          #if OS_ARG_CHK_EN > 0u
+    604              if (pgrp == (OS_FLAG_GRP *)0) {                        /* Validate 'pgrp'                          */
+    605                  *perr = OS_ERR_FLAG_INVALID_PGRP;
+    606                  return ((OS_FLAGS)0);
+    607              }
+    608          #endif
+    609              if (OSIntNesting > 0u) {                               /* See if called from ISR ...               */
+   \   00000E   ........     CALLA   #??Subroutine5_0
+   \                     ??CrossCallReturnLabel_17:
+   \   000012   0324         JEQ     ??OSFlagPend_8
+    610                  *perr = OS_ERR_PEND_ISR;                           /* ... can't PEND from an ISR               */
+   \   000014   EF430000     MOV.B   #0x2, 0(R15)
+    611                  return ((OS_FLAGS)0);
+   \   000018   903C         JMP     ??OSFlagPend_5
+    612              }
+    613              if (OSLockNesting > 0u) {                              /* See if called with scheduler locked ...  */
+   \                     ??OSFlagPend_8:
+   \   00001A   ....C293.... CMPX.B  #0x0, &OSLockNesting
+   \   000020   0424         JEQ     ??OSFlagPend_9
+    614                  *perr = OS_ERR_PEND_LOCKED;                        /* ... can't PEND when locked               */
+   \   000022   FF400D000000 MOV.B   #0xd, 0(R15)
+    615                  return ((OS_FLAGS)0);
+   \   000028   883C         JMP     ??OSFlagPend_5
+    616              }
+    617              if (pgrp->OSFlagType != OS_EVENT_TYPE_FLAG) {          /* Validate event block type                */
+   \                     ??OSFlagPend_9:
+   \   00002A   ........     CALLA   #?Subroutine1
+   \                     ??CrossCallReturnLabel_4:
+   \   00002E   0324         JEQ     ??OSFlagPend_10
+    618                  *perr = OS_ERR_EVENT_TYPE;
+   \   000030   DF430000     MOV.B   #0x1, 0(R15)
+    619                  return ((OS_FLAGS)0);
+   \   000034   823C         JMP     ??OSFlagPend_5
+    620              }
+    621              result = (INT8U)(wait_type & OS_FLAG_CONSUME);
+    622              if (result != (INT8U)0) {                              /* See if we need to consume the flags      */
+   \                     ??OSFlagPend_10:
+   \   000036   ........     CALLA   #?Subroutine4
+    623                  wait_type &= (INT8U)~(INT8U)OS_FLAG_CONSUME;
+    624                  consume    = OS_TRUE;
+    625              } else {
+    626                  consume    = OS_FALSE;
+    627              }
+    628          /*$PAGE*/
+    629              OS_ENTER_CRITICAL();
+   \                     ??CrossCallReturnLabel_13:
+   \   00003A   ........     CALLA   #OSCPUSaveSR
+   \   00003E   074C         MOV.W   R12, R7
+    630              switch (wait_type) {
+   \   000040   4E4B         MOV.B   R11, R14
+   \   000042   4E83         SUB.B   #0x0, R14
+   \   000044   4624         JEQ     ??OSFlagPend_11
+   \   000046   5E83         SUB.B   #0x1, R14
+   \   000048   4A24         JEQ     ??OSFlagPend_12
+   \   00004A   5E83         SUB.B   #0x1, R14
+   \   00004C   0324         JEQ     ??OSFlagPend_13
+   \   00004E   5E83         SUB.B   #0x1, R14
+   \   000050   3724         JEQ     ??OSFlagPend_14
+   \   000052   6D3C         JMP     ??OSFlagPend_4
+    631                  case OS_FLAG_WAIT_SET_ALL:                         /* See if all required flags are set        */
+    632                       flags_rdy = (OS_FLAGS)(pgrp->OSFlagFlags & flags);   /* Extract only the bits we want     */
+   \                     ??OSFlagPend_13:
+   \   000054   044A         MOV.W   R10, R4
+   \   000056   14F80600     AND.W   0x6(R8), R4
+    633                       if (flags_rdy == flags) {                     /* Must match ALL the bits that we want     */
+   \   00005A   049A         CMP.W   R10, R4
+   \   00005C   3524         JEQ     ??OSFlagPend_15
+   \                     ??OSFlagPend_0:
+   \   00005E   0441         MOV.W   SP, R4
+   \   000060   0453         ADD.W   #0x0, R4
+   \   000062   11123C00     PUSH.W  0x3c(SP)
+   \   000066   11123C00     PUSH.W  0x3c(SP)
+   \   00006A   4F4B         MOV.B   R11, R15
+   \   00006C   0E4A         MOV.W   R10, R14
+   \   00006E   CD04         MOVA    R4, R13
+   \   000070   CC08         MOVA    R8, R12
+    634                           if (consume == OS_TRUE) {                 /* See if we need to consume the flags      */
+    635                               pgrp->OSFlagFlags &= (OS_FLAGS)~flags_rdy;   /* Clear ONLY the flags we wanted    */
+    636                           }
+    637                           OSTCBCur->OSTCBFlagsRdy = flags_rdy;      /* Save flags that were ready               */
+    638                           OS_EXIT_CRITICAL();                       /* Yes, condition met, return to caller     */
+    639                           *perr                   = OS_ERR_NONE;
+    640                           return (flags_rdy);
+    641                       } else {                                      /* Block task until events occur or timeout */
+    642                           OS_FlagBlock(pgrp, &node, flags, wait_type, timeout);
+    643                           OS_EXIT_CRITICAL();
+    644                       }
+    645                       break;
+    646          
+    647                  case OS_FLAG_WAIT_SET_ANY:
+    648                       flags_rdy = (OS_FLAGS)(pgrp->OSFlagFlags & flags);    /* Extract only the bits we want    */
+    649                       if (flags_rdy != (OS_FLAGS)0) {               /* See if any flag set                      */
+    650                           if (consume == OS_TRUE) {                 /* See if we need to consume the flags      */
+    651                               pgrp->OSFlagFlags &= (OS_FLAGS)~flags_rdy;    /* Clear ONLY the flags that we got */
+    652                           }
+    653                           OSTCBCur->OSTCBFlagsRdy = flags_rdy;      /* Save flags that were ready               */
+    654                           OS_EXIT_CRITICAL();                       /* Yes, condition met, return to caller     */
+    655                           *perr                   = OS_ERR_NONE;
+    656                           return (flags_rdy);
+    657                       } else {                                      /* Block task until events occur or timeout */
+    658                           OS_FlagBlock(pgrp, &node, flags, wait_type, timeout);
+    659                           OS_EXIT_CRITICAL();
+    660                       }
+    661                       break;
+    662          
+    663          #if OS_FLAG_WAIT_CLR_EN > 0u
+    664                  case OS_FLAG_WAIT_CLR_ALL:                         /* See if all required flags are cleared    */
+    665                       flags_rdy = (OS_FLAGS)~pgrp->OSFlagFlags & flags;    /* Extract only the bits we want     */
+    666                       if (flags_rdy == flags) {                     /* Must match ALL the bits that we want     */
+    667                           if (consume == OS_TRUE) {                 /* See if we need to consume the flags      */
+    668                               pgrp->OSFlagFlags |= flags_rdy;       /* Set ONLY the flags that we wanted        */
+    669                           }
+    670                           OSTCBCur->OSTCBFlagsRdy = flags_rdy;      /* Save flags that were ready               */
+    671                           OS_EXIT_CRITICAL();                       /* Yes, condition met, return to caller     */
+    672                           *perr                   = OS_ERR_NONE;
+    673                           return (flags_rdy);
+    674                       } else {                                      /* Block task until events occur or timeout */
+    675                           OS_FlagBlock(pgrp, &node, flags, wait_type, timeout);
+    676                           OS_EXIT_CRITICAL();
+    677                       }
+    678                       break;
+    679          
+    680                  case OS_FLAG_WAIT_CLR_ANY:
+    681                       flags_rdy = (OS_FLAGS)~pgrp->OSFlagFlags & flags;   /* Extract only the bits we want      */
+    682                       if (flags_rdy != (OS_FLAGS)0) {               /* See if any flag cleared                  */
+    683                           if (consume == OS_TRUE) {                 /* See if we need to consume the flags      */
+    684                               pgrp->OSFlagFlags |= flags_rdy;       /* Set ONLY the flags that we got           */
+    685                           }
+    686                           OSTCBCur->OSTCBFlagsRdy = flags_rdy;      /* Save flags that were ready               */
+    687                           OS_EXIT_CRITICAL();                       /* Yes, condition met, return to caller     */
+    688                           *perr                   = OS_ERR_NONE;
+    689                           return (flags_rdy);
+    690                       } else {                                      /* Block task until events occur or timeout */
+    691                           OS_FlagBlock(pgrp, &node, flags, wait_type, timeout);
+   \   000072   ........     CALLA   #OS_FlagBlock
+    692                           OS_EXIT_CRITICAL();
+   \   000076   0C47         MOV.W   R7, R12
+   \   000078   ........     CALLA   #OSCPURestoreSR
+    693                       }
+    694                       break;
+    695          #endif
+    696          
+    697                  default:
+    698                       OS_EXIT_CRITICAL();
+    699                       flags_rdy = (OS_FLAGS)0;
+    700                       *perr      = OS_ERR_FLAG_WAIT_TYPE;
+    701                       return (flags_rdy);
+    702              }
+    703          /*$PAGE*/
+    704              OS_Sched();                                            /* Find next HPT ready to run               */
+   \   00007C   ........     CALLA   #OS_Sched
+    705              OS_ENTER_CRITICAL();
+   \   000080   ........     CALLA   #OSCPUSaveSR
+   \   000084   074C         MOV.W   R12, R7
+   \   000086   ........     MOVA    &OSTCBCur, R15
+   \   00008A   5A4F2F00     MOV.B   0x2f(R15), R10
+   \   00008E   2152         ADD.W   #0x4, SP
+   \   000090   4A93         CMP.B   #0x0, R10
+   \   000092   3324         JEQ     ??OSFlagPend_16
+    706              if (OSTCBCur->OSTCBStatPend != OS_STAT_PEND_OK) {      /* Have we timed-out or aborted?            */
+    707                  pend_stat                = OSTCBCur->OSTCBStatPend;
+    708                  OSTCBCur->OSTCBStatPend  = OS_STAT_PEND_OK;
+   \   000094   CF432F00     MOV.B   #0x0, 0x2f(R15)
+    709                  OS_FlagUnlink(&node);
+   \   000098   CC04         MOVA    R4, R12
+   \   00009A   ........     CALLA   #OS_FlagUnlink
+    710                  OSTCBCur->OSTCBStat      = OS_STAT_RDY;            /* Yes, make task ready-to-run              */
+   \   00009E   ........     MOVA    &OSTCBCur, R15
+   \   0000A2   CF432E00     MOV.B   #0x0, 0x2e(R15)
+    711                  OS_EXIT_CRITICAL();
+   \   0000A6   0C47         MOV.W   R7, R12
+   \   0000A8   ........     CALLA   #OSCPURestoreSR
+    712                  flags_rdy                = (OS_FLAGS)0;
+    713                  switch (pend_stat) {
+   \   0000AC   6A93         CMP.B   #0x2, R10
+   \   0000AE   0324         JEQ     ??OSFlagPend_17
+   \   0000B0   7E400A00     MOV.B   #0xa, R14
+   \   0000B4   023C         JMP     ??OSFlagPend_18
+   \                     ??OSFlagPend_17:
+   \   0000B6   7E400E00     MOV.B   #0xe, R14
+   \                     ??OSFlagPend_18:
+   \   0000BA   C94E0000     MOV.B   R14, 0(R9)
+    714                      case OS_STAT_PEND_ABORT:
+    715                           *perr = OS_ERR_PEND_ABORT;                /* Indicate that we aborted   waiting       */
+    716                           break;
+    717          
+    718                      case OS_STAT_PEND_TO:
+    719                      default:
+    720                           *perr = OS_ERR_TIMEOUT;                   /* Indicate that we timed-out waiting       */
+    721                           break;
+    722                  }
+    723                  return (flags_rdy);
+   \   0000BE   3D3C         JMP     ??OSFlagPend_5
+    724              }
+   \                     ??OSFlagPend_14:
+   \   0000C0   044A         MOV.W   R10, R4
+   \   0000C2   14F80600     AND.W   0x6(R8), R4
+   \   0000C6   CB27         JEQ     ??OSFlagPend_0
+   \                     ??OSFlagPend_15:
+   \   0000C8   56B3         BIT.B   #0x1, R6
+   \   0000CA   1228         JNC     ??OSFlagPend_19
+   \   0000CC   88C40600     BIC.W   R4, 0x6(R8)
+   \   0000D0   0F3C         JMP     ??OSFlagPend_19
+   \                     ??OSFlagPend_11:
+   \   0000D2   044A         MOV.W   R10, R4
+   \   0000D4   14C80600     BIC.W   0x6(R8), R4
+   \   0000D8   049A         CMP.W   R10, R4
+   \   0000DA   C123         JNE     ??OSFlagPend_0
+   \   0000DC   053C         JMP     ??OSFlagPend_20
+   \                     ??OSFlagPend_12:
+   \   0000DE   044A         MOV.W   R10, R4
+   \   0000E0   14C80600     BIC.W   0x6(R8), R4
+   \   0000E4   0493         CMP.W   #0x0, R4
+   \   0000E6   BB27         JEQ     ??OSFlagPend_0
+   \                     ??OSFlagPend_20:
+   \   0000E8   56B3         BIT.B   #0x1, R6
+   \   0000EA   0228         JNC     ??OSFlagPend_19
+   \   0000EC   88D40600     BIS.W   R4, 0x6(R8)
+   \                     ??OSFlagPend_19:
+   \   0000F0   ........     MOVA    &OSTCBCur, R15
+   \   0000F4   8F442800     MOV.W   R4, 0x28(R15)
+   \   0000F8   0E3C         JMP     ??OSFlagPend_1
+    725              flags_rdy = OSTCBCur->OSTCBFlagsRdy;
+   \                     ??OSFlagPend_16:
+   \   0000FA   144F2800     MOV.W   0x28(R15), R4
+    726              if (consume == OS_TRUE) {                              /* See if we need to consume the flags      */
+   \   0000FE   56B3         BIT.B   #0x1, R6
+   \   000100   0A28         JNC     ??OSFlagPend_1
+    727                  switch (wait_type) {
+   \   000102   4B83         SUB.B   #0x0, R11
+   \   000104   1124         JEQ     ??OSFlagPend_21
+   \   000106   5B83         SUB.B   #0x1, R11
+   \   000108   0F24         JEQ     ??OSFlagPend_21
+   \   00010A   5B83         SUB.B   #0x1, R11
+   \   00010C   0224         JEQ     ??OSFlagPend_3
+   \   00010E   5B83         SUB.B   #0x1, R11
+   \   000110   0E20         JNE     ??OSFlagPend_4
+    728                      case OS_FLAG_WAIT_SET_ALL:
+    729                      case OS_FLAG_WAIT_SET_ANY:                     /* Clear ONLY the flags we got              */
+    730                           pgrp->OSFlagFlags &= (OS_FLAGS)~flags_rdy;
+   \                     ??OSFlagPend_3:
+   \   000112   88C40600     BIC.W   R4, 0x6(R8)
+    731                           break;
+    732          
+    733          #if OS_FLAG_WAIT_CLR_EN > 0u
+    734                      case OS_FLAG_WAIT_CLR_ALL:
+    735                      case OS_FLAG_WAIT_CLR_ANY:                     /* Set   ONLY the flags we got              */
+    736                           pgrp->OSFlagFlags |=  flags_rdy;
+    737                           break;
+    738          #endif
+    739                      default:
+    740                           OS_EXIT_CRITICAL();
+    741                           *perr = OS_ERR_FLAG_WAIT_TYPE;
+    742                           return ((OS_FLAGS)0);
+    743                  }
+    744              }
+    745              OS_EXIT_CRITICAL();
+   \                     ??OSFlagPend_1:
+   \   000116   ........     CALLA   #OSCPURestoreSR
+    746              *perr = OS_ERR_NONE;                                   /* Event(s) must have occurred              */
+   \   00011A   C9430000     MOV.B   #0x0, 0(R9)
+    747              return (flags_rdy);
+   \   00011E   0C44         MOV.W   R4, R12
+   \                     ??OSFlagPend_2:
+   \   000120   31501400     ADD.W   #0x14, SP
+   \   000124   7416         POPM.A  #0x8, R11
+   \   000126   1001         RETA
+   \                     ??OSFlagPend_21:
+   \   000128   88D40600     BIS.W   R4, 0x6(R8)
+   \   00012C   F43F         JMP     ??OSFlagPend_1
+   \                     ??OSFlagPend_4:
+   \   00012E   0C47         MOV.W   R7, R12
+   \   000130   ........     CALLA   #OSCPURestoreSR
+   \   000134   F9406F000000 MOV.B   #0x6f, 0(R9)
+   \                     ??OSFlagPend_5:
+   \   00013A   0C43         MOV.W   #0x0, R12
+   \   00013C   F13F         JMP     ??OSFlagPend_2
+   \   00013E   0343         NOP
+    748          }
+    749          /*$PAGE*/
+    750          /*
+    751          *********************************************************************************************************
+    752          *                               GET FLAGS WHO CAUSED TASK TO BECOME READY
+    753          *
+    754          * Description: This function is called to obtain the flags that caused the task to become ready to run.
+    755          *              In other words, this function allows you to tell "Who done it!".
+    756          *
+    757          * Arguments  : None
+    758          *
+    759          * Returns    : The flags that caused the task to be ready.
+    760          *
+    761          * Called from: Task ONLY
+    762          *********************************************************************************************************
+    763          */
+    764          
+
+   \                                 In  segment CODE, align 2
+    765          OS_FLAGS  OSFlagPendGetFlagsRdy (void)
+   \                     OSFlagPendGetFlagsRdy:
+    766          {
+   \   000000   0A14         PUSHM.A #0x1, R10
+    767              OS_FLAGS      flags;
+    768          #if OS_CRITICAL_METHOD == 3u                               /* Allocate storage for CPU status register */
+    769              OS_CPU_SR     cpu_sr = 0u;
+    770          #endif
+    771          
+    772          
+    773          
+    774              OS_ENTER_CRITICAL();
+   \   000002   ........     CALLA   #OSCPUSaveSR
+    775              flags = OSTCBCur->OSTCBFlagsRdy;
+   \   000006   ........     MOVA    &OSTCBCur, R15
+   \   00000A   1A4F2800     MOV.W   0x28(R15), R10
+    776              OS_EXIT_CRITICAL();
+   \   00000E   ........     CALLA   #OSCPURestoreSR
+    777              return (flags);
+   \   000012   0C4A         MOV.W   R10, R12
+   \   000014   0A16         POPM.A  #0x1, R10
+   \   000016   1001         RETA
+    778          }
+    779          
+    780          /*$PAGE*/
+    781          /*
+    782          *********************************************************************************************************
+    783          *                                         POST EVENT FLAG BIT(S)
+    784          *
+    785          * Description: This function is called to set or clear some bits in an event flag group.  The bits to
+    786          *              set or clear are specified by a 'bit mask'.
+    787          *
+    788          * Arguments  : pgrp          is a pointer to the desired event flag group.
+    789          *
+    790          *              flags         If 'opt' (see below) is OS_FLAG_SET, each bit that is set in 'flags' will
+    791          *                            set the corresponding bit in the event flag group.  e.g. to set bits 0, 4
+    792          *                            and 5 you would set 'flags' to:
+    793          *
+    794          *                                0x31     (note, bit 0 is least significant bit)
+    795          *
+    796          *                            If 'opt' (see below) is OS_FLAG_CLR, each bit that is set in 'flags' will
+    797          *                            CLEAR the corresponding bit in the event flag group.  e.g. to clear bits 0,
+    798          *                            4 and 5 you would specify 'flags' as:
+    799          *
+    800          *                                0x31     (note, bit 0 is least significant bit)
+    801          *
+    802          *              opt           indicates whether the flags will be:
+    803          *                                set     (OS_FLAG_SET) or
+    804          *                                cleared (OS_FLAG_CLR)
+    805          *
+    806          *              perr          is a pointer to an error code and can be:
+    807          *                            OS_ERR_NONE                The call was successfull
+    808          *                            OS_ERR_FLAG_INVALID_PGRP   You passed a NULL pointer
+    809          *                            OS_ERR_EVENT_TYPE          You are not pointing to an event flag group
+    810          *                            OS_ERR_FLAG_INVALID_OPT    You specified an invalid option
+    811          *
+    812          * Returns    : the new value of the event flags bits that are still set.
+    813          *
+    814          * Called From: Task or ISR
+    815          *
+    816          * WARNING(s) : 1) The execution time of this function depends on the number of tasks waiting on the event
+    817          *                 flag group.
+    818          *              2) The amount of time interrupts are DISABLED depends on the number of tasks waiting on
+    819          *                 the event flag group.
+    820          *********************************************************************************************************
+    821          */
+
+   \                                 In  segment CODE, align 2
+    822          OS_FLAGS  OSFlagPost (OS_FLAG_GRP  *pgrp,
+   \                     OSFlagPost:
+    823                                OS_FLAGS      flags,
+    824                                INT8U         opt,
+    825                                INT8U        *perr)
+    826          {
+   \   000000   5B14         PUSHM.A #0x6, R11
+   \   000002   C90C         MOVA    R12, R9
+   \   000004   0B4D         MOV.W   R13, R11
+   \   000006   484E         MOV.B   R14, R8
+   \   000008   C60F         MOVA    R15, R6
+    827              OS_FLAG_NODE *pnode;
+    828              BOOLEAN       sched;
+    829              OS_FLAGS      flags_cur;
+    830              OS_FLAGS      flags_rdy;
+    831              BOOLEAN       rdy;
+    832          #if OS_CRITICAL_METHOD == 3u                         /* Allocate storage for CPU status register       */
+    833              OS_CPU_SR     cpu_sr = 0u;
+    834          #endif
+    835          
+    836          
+    837          
+    838          #ifdef OS_SAFETY_CRITICAL
+    839              if (perr == (INT8U *)0) {
+    840                  OS_SAFETY_CRITICAL_EXCEPTION();
+    841              }
+    842          #endif
+    843          
+    844          #if OS_ARG_CHK_EN > 0u
+    845              if (pgrp == (OS_FLAG_GRP *)0) {                  /* Validate 'pgrp'                                */
+    846                  *perr = OS_ERR_FLAG_INVALID_PGRP;
+    847                  return ((OS_FLAGS)0);
+    848              }
+    849          #endif
+    850              if (pgrp->OSFlagType != OS_EVENT_TYPE_FLAG) {    /* Make sure we are pointing to an event flag grp */
+   \   00000A   ........     CALLA   #?Subroutine1
+   \                     ??CrossCallReturnLabel_3:
+   \   00000E   0324         JEQ     ??OSFlagPost_6
+    851                  *perr = OS_ERR_EVENT_TYPE;
+   \   000010   DF430000     MOV.B   #0x1, 0(R15)
+    852                  return ((OS_FLAGS)0);
+   \   000014   4B3C         JMP     ??OSFlagPost_5
+    853              }
+    854          /*$PAGE*/
+    855              OS_ENTER_CRITICAL();
+   \                     ??OSFlagPost_6:
+   \   000016   ........     CALLA   #OSCPUSaveSR
+   \   00001A   0A4C         MOV.W   R12, R10
+    856              switch (opt) {
+   \   00001C   4883         SUB.B   #0x0, R8
+   \   00001E   0324         JEQ     ??OSFlagPost_7
+   \   000020   5883         SUB.B   #0x1, R8
+   \   000022   0724         JEQ     ??OSFlagPost_8
+   \   000024   093C         JMP     ??OSFlagPost_9
+    857                  case OS_FLAG_CLR:
+    858                       pgrp->OSFlagFlags &= (OS_FLAGS)~flags;  /* Clear the flags specified in the group         */
+   \                     ??OSFlagPost_7:
+   \   000026   89CB0600     BIC.W   R11, 0x6(R9)
+    859                       break;
+    860          
+    861                  case OS_FLAG_SET:
+    862                       pgrp->OSFlagFlags |=  flags;            /* Set   the flags specified in the group         */
+    863                       break;
+    864          
+    865                  default:
+    866                       OS_EXIT_CRITICAL();                     /* INVALID option                                 */
+    867                       *perr = OS_ERR_FLAG_INVALID_OPT;
+    868                       return ((OS_FLAGS)0);
+    869              }
+    870              sched = OS_FALSE;                                /* Indicate that we don't need rescheduling       */
+   \                     ??OSFlagPost_0:
+   \   00002A   4B43         MOV.B   #0x0, R11
+    871              pnode = (OS_FLAG_NODE *)pgrp->OSFlagWaitList;
+   \   00002C   38090200     MOVA    0x2(R9), R8
+   \   000030   113C         JMP     ??OSFlagPost_10
+   \                     ??OSFlagPost_8:
+   \   000032   89DB0600     BIS.W   R11, 0x6(R9)
+   \   000036   F93F         JMP     ??OSFlagPost_0
+   \                     ??OSFlagPost_9:
+   \   000038   ........     CALLA   #OSCPURestoreSR
+   \   00003C   F64071000000 MOV.B   #0x71, 0(R6)
+   \   000042   343C         JMP     ??OSFlagPost_5
+    872              while (pnode != (OS_FLAG_NODE *)0) {             /* Go through all tasks waiting on event flag(s)  */
+    873                  switch (pnode->OSFlagNodeWaitType) {
+    874                      case OS_FLAG_WAIT_SET_ALL:               /* See if all req. flags are set for current node */
+    875                           flags_rdy = (OS_FLAGS)(pgrp->OSFlagFlags & pnode->OSFlagNodeFlags);
+   \                     ??OSFlagPost_1:
+   \   000044   1F481000     MOV.W   0x10(R8), R15
+   \   000048   0D4F         MOV.W   R15, R13
+   \   00004A   1DF90600     AND.W   0x6(R9), R13
+    876                           if (flags_rdy == pnode->OSFlagNodeFlags) {
+   \   00004E   0D9F         CMP.W   R15, R13
+   \   000050   2124         JEQ     ??OSFlagPost_11
+    877                               rdy = OS_FlagTaskRdy(pnode, flags_rdy);  /* Make task RTR, event(s) Rx'd          */
+    878                               if (rdy == OS_TRUE) {
+    879                                   sched = OS_TRUE;                     /* When done we will reschedule          */
+    880                               }
+    881                           }
+    882                           break;
+    883          
+    884                      case OS_FLAG_WAIT_SET_ANY:               /* See if any flag set                            */
+    885                           flags_rdy = (OS_FLAGS)(pgrp->OSFlagFlags & pnode->OSFlagNodeFlags);
+    886                           if (flags_rdy != (OS_FLAGS)0) {
+    887                               rdy = OS_FlagTaskRdy(pnode, flags_rdy);  /* Make task RTR, event(s) Rx'd          */
+    888                               if (rdy == OS_TRUE) {
+    889                                   sched = OS_TRUE;                     /* When done we will reschedule          */
+    890                               }
+    891                           }
+    892                           break;
+    893          
+    894          #if OS_FLAG_WAIT_CLR_EN > 0u
+    895                      case OS_FLAG_WAIT_CLR_ALL:               /* See if all req. flags are set for current node */
+    896                           flags_rdy = (OS_FLAGS)~pgrp->OSFlagFlags & pnode->OSFlagNodeFlags;
+    897                           if (flags_rdy == pnode->OSFlagNodeFlags) {
+    898                               rdy = OS_FlagTaskRdy(pnode, flags_rdy);  /* Make task RTR, event(s) Rx'd          */
+    899                               if (rdy == OS_TRUE) {
+    900                                   sched = OS_TRUE;                     /* When done we will reschedule          */
+    901                               }
+    902                           }
+    903                           break;
+    904          
+    905                      case OS_FLAG_WAIT_CLR_ANY:               /* See if any flag set                            */
+    906                           flags_rdy = (OS_FLAGS)~pgrp->OSFlagFlags & pnode->OSFlagNodeFlags;
+    907                           if (flags_rdy != (OS_FLAGS)0) {
+    908                               rdy = OS_FlagTaskRdy(pnode, flags_rdy);  /* Make task RTR, event(s) Rx'd          */
+    909                               if (rdy == OS_TRUE) {
+    910                                   sched = OS_TRUE;                     /* When done we will reschedule          */
+    911                               }
+    912                           }
+    913                           break;
+    914          #endif
+    915                      default:
+    916                           OS_EXIT_CRITICAL();
+    917                           *perr = OS_ERR_FLAG_WAIT_TYPE;
+    918                           return ((OS_FLAGS)0);
+    919                  }
+    920                  pnode = (OS_FLAG_NODE *)pnode->OSFlagNodeNext; /* Point to next task waiting for event flag(s) */
+   \                     ??OSFlagPost_2:
+   \   000052   0808         MOVA    @R8, R8
+   \                     ??OSFlagPost_10:
+   \   000054   D803         CMPA    #0x0, R8
+   \   000056   2C24         JEQ     ??OSFlagPost_12
+   \   000058   5E481200     MOV.B   0x12(R8), R14
+   \   00005C   4E83         SUB.B   #0x0, R14
+   \   00005E   0C24         JEQ     ??OSFlagPost_13
+   \   000060   5E83         SUB.B   #0x1, R14
+   \   000062   1224         JEQ     ??OSFlagPost_14
+   \   000064   5E83         SUB.B   #0x1, R14
+   \   000066   EE27         JEQ     ??OSFlagPost_1
+   \   000068   5E83         SUB.B   #0x1, R14
+   \   00006A   1B20         JNE     ??OSFlagPost_4
+   \   00006C   1D490600     MOV.W   0x6(R9), R13
+   \   000070   1DF81000     AND.W   0x10(R8), R13
+   \   000074   0F20         JNE     ??OSFlagPost_11
+   \   000076   ED3F         JMP     ??OSFlagPost_2
+   \                     ??OSFlagPost_13:
+   \   000078   1F481000     MOV.W   0x10(R8), R15
+   \   00007C   0D4F         MOV.W   R15, R13
+   \   00007E   1DC90600     BIC.W   0x6(R9), R13
+   \   000082   0D9F         CMP.W   R15, R13
+   \   000084   E623         JNE     ??OSFlagPost_2
+   \   000086   063C         JMP     ??OSFlagPost_11
+   \                     ??OSFlagPost_14:
+   \   000088   1D481000     MOV.W   0x10(R8), R13
+   \   00008C   1DC90600     BIC.W   0x6(R9), R13
+   \   000090   0D93         CMP.W   #0x0, R13
+   \   000092   DF27         JEQ     ??OSFlagPost_2
+   \                     ??OSFlagPost_11:
+   \   000094   CC08         MOVA    R8, R12
+   \   000096   ........     CALLA   #OS_FlagTaskRdy
+   \   00009A   5C93         CMP.B   #0x1, R12
+   \   00009C   DA23         JNE     ??OSFlagPost_2
+   \   00009E   5B43         MOV.B   #0x1, R11
+   \   0000A0   D83F         JMP     ??OSFlagPost_2
+   \                     ??OSFlagPost_4:
+   \   0000A2   ........     CALLA   #?Subroutine3
+   \                     ??CrossCallReturnLabel_12:
+   \   0000A6   F6406F000000 MOV.B   #0x6f, 0(R6)
+   \                     ??OSFlagPost_5:
+   \   0000AC   0C43         MOV.W   #0x0, R12
+   \   0000AE   0F3C         JMP     ??OSFlagPost_15
+    921              }
+    922              OS_EXIT_CRITICAL();
+   \                     ??OSFlagPost_12:
+   \   0000B0   ........     CALLA   #?Subroutine3
+    923              if (sched == OS_TRUE) {
+   \                     ??CrossCallReturnLabel_11:
+   \   0000B4   5BB3         BIT.B   #0x1, R11
+   \   0000B6   0228         JNC     ??OSFlagPost_16
+    924                  OS_Sched();
+   \   0000B8   ........     CALLA   #OS_Sched
+    925              }
+    926              OS_ENTER_CRITICAL();
+   \                     ??OSFlagPost_16:
+   \   0000BC   ........     CALLA   #OSCPUSaveSR
+    927              flags_cur = pgrp->OSFlagFlags;
+   \   0000C0   1B490600     MOV.W   0x6(R9), R11
+    928              OS_EXIT_CRITICAL();
+   \   0000C4   ........     CALLA   #OSCPURestoreSR
+    929              *perr     = OS_ERR_NONE;
+   \   0000C8   C6430000     MOV.B   #0x0, 0(R6)
+    930              return (flags_cur);
+   \   0000CC   0C4B         MOV.W   R11, R12
+   \                     ??OSFlagPost_15:
+   \   0000CE   5616         POPM.A  #0x6, R11
+   \   0000D0   1001         RETA
+    931          }
+    932          /*$PAGE*/
+    933          /*
+    934          *********************************************************************************************************
+    935          *                                           QUERY EVENT FLAG
+    936          *
+    937          * Description: This function is used to check the value of the event flag group.
+    938          *
+    939          * Arguments  : pgrp         is a pointer to the desired event flag group.
+    940          *
+    941          *              perr          is a pointer to an error code returned to the called:
+    942          *                            OS_ERR_NONE                The call was successfull
+    943          *                            OS_ERR_FLAG_INVALID_PGRP   You passed a NULL pointer
+    944          *                            OS_ERR_EVENT_TYPE          You are not pointing to an event flag group
+    945          *
+    946          * Returns    : The current value of the event flag group.
+    947          *
+    948          * Called From: Task or ISR
+    949          *********************************************************************************************************
+    950          */
+    951          
+    952          #if OS_FLAG_QUERY_EN > 0u
+
+   \                                 In  segment CODE, align 2
+    953          OS_FLAGS  OSFlagQuery (OS_FLAG_GRP  *pgrp,
+   \                     OSFlagQuery:
+    954                                 INT8U        *perr)
+    955          {
+   \   000000   1B14         PUSHM.A #0x2, R11
+   \   000002   CA0C         MOVA    R12, R10
+   \   000004   CB0D         MOVA    R13, R11
+    956              OS_FLAGS   flags;
+    957          #if OS_CRITICAL_METHOD == 3u                      /* Allocate storage for CPU status register          */
+    958              OS_CPU_SR  cpu_sr = 0u;
+    959          #endif
+    960          
+    961          
+    962          
+    963          #ifdef OS_SAFETY_CRITICAL
+    964              if (perr == (INT8U *)0) {
+    965                  OS_SAFETY_CRITICAL_EXCEPTION();
+    966              }
+    967          #endif
+    968          
+    969          #if OS_ARG_CHK_EN > 0u
+    970              if (pgrp == (OS_FLAG_GRP *)0) {               /* Validate 'pgrp'                                   */
+    971                  *perr = OS_ERR_FLAG_INVALID_PGRP;
+    972                  return ((OS_FLAGS)0);
+    973              }
+    974          #endif
+    975              if (pgrp->OSFlagType != OS_EVENT_TYPE_FLAG) { /* Validate event block type                         */
+   \   000006   ........     CALLA   #?Subroutine1
+   \                     ??CrossCallReturnLabel_2:
+   \   00000A   0424         JEQ     ??OSFlagQuery_0
+    976                  *perr = OS_ERR_EVENT_TYPE;
+   \   00000C   DD430000     MOV.B   #0x1, 0(R13)
+    977                  return ((OS_FLAGS)0);
+   \   000010   0C43         MOV.W   #0x0, R12
+   \   000012   093C         JMP     ??OSFlagQuery_1
+    978              }
+    979              OS_ENTER_CRITICAL();
+   \                     ??OSFlagQuery_0:
+   \   000014   ........     CALLA   #OSCPUSaveSR
+    980              flags = pgrp->OSFlagFlags;
+   \   000018   1A4A0600     MOV.W   0x6(R10), R10
+    981              OS_EXIT_CRITICAL();
+   \   00001C   ........     CALLA   #OSCPURestoreSR
+    982              *perr = OS_ERR_NONE;
+   \   000020   CB430000     MOV.B   #0x0, 0(R11)
+    983              return (flags);                               /* Return the current value of the event flags       */
+   \   000024   0C4A         MOV.W   R10, R12
+   \                     ??OSFlagQuery_1:
+   \   000026   1A16         POPM.A  #0x2, R11
+   \   000028   1001         RETA
+    984          }
+    985          #endif
+    986          
+    987          /*$PAGE*/
+    988          /*
+    989          *********************************************************************************************************
+    990          *                         SUSPEND TASK UNTIL EVENT FLAG(s) RECEIVED OR TIMEOUT OCCURS
+    991          *
+    992          * Description: This function is internal to uC/OS-II and is used to put a task to sleep until the desired
+    993          *              event flag bit(s) are set.
+    994          *
+    995          * Arguments  : pgrp          is a pointer to the desired event flag group.
+    996          *
+    997          *              pnode         is a pointer to a structure which contains data about the task waiting for
+    998          *                            event flag bit(s) to be set.
+    999          *
+   1000          *              flags         Is a bit pattern indicating which bit(s) (i.e. flags) you wish to check.
+   1001          *                            The bits you want are specified by setting the corresponding bits in
+   1002          *                            'flags'.  e.g. if your application wants to wait for bits 0 and 1 then
+   1003          *                            'flags' would contain 0x03.
+   1004          *
+   1005          *              wait_type     specifies whether you want ALL bits to be set/cleared or ANY of the bits
+   1006          *                            to be set/cleared.
+   1007          *                            You can specify the following argument:
+   1008          *
+   1009          *                            OS_FLAG_WAIT_CLR_ALL   You will check ALL bits in 'mask' to be clear (0)
+   1010          *                            OS_FLAG_WAIT_CLR_ANY   You will check ANY bit  in 'mask' to be clear (0)
+   1011          *                            OS_FLAG_WAIT_SET_ALL   You will check ALL bits in 'mask' to be set   (1)
+   1012          *                            OS_FLAG_WAIT_SET_ANY   You will check ANY bit  in 'mask' to be set   (1)
+   1013          *
+   1014          *              timeout       is the desired amount of time that the task will wait for the event flag
+   1015          *                            bit(s) to be set.
+   1016          *
+   1017          * Returns    : none
+   1018          *
+   1019          * Called by  : OSFlagPend()  OS_FLAG.C
+   1020          *
+   1021          * Note(s)    : This function is INTERNAL to uC/OS-II and your application should not call it.
+   1022          *********************************************************************************************************
+   1023          */
+   1024          
+
+   \                                 In  segment CODE, align 2
+   1025          static  void  OS_FlagBlock (OS_FLAG_GRP  *pgrp,
+   \                     OS_FlagBlock:
+   1026                                      OS_FLAG_NODE *pnode,
+   1027                                      OS_FLAGS      flags,
+   1028                                      INT8U         wait_type,
+   1029                                      INT32U        timeout)
+   1030          {
+   \   000000   3B14         PUSHM.A #0x4, R11
+   \   000002   1A411400     MOV.W   0x14(SP), R10
+   \   000006   1B411600     MOV.W   0x16(SP), R11
+   1031              OS_FLAG_NODE  *pnode_next;
+   1032              INT8U          y;
+   1033          
+   1034          
+   1035              OSTCBCur->OSTCBStat      |= OS_STAT_FLAG;
+   \   00000A   ........     MOVA    #OSTCBCur, R8
+   \   00000E   0908         MOVA    @R8, R9
+   \   000010   F9D020002E00 BIS.B   #0x20, 0x2e(R9)
+   1036              OSTCBCur->OSTCBStatPend   = OS_STAT_PEND_OK;
+   \   000016   0908         MOVA    @R8, R9
+   \   000018   C9432F00     MOV.B   #0x0, 0x2f(R9)
+   1037              OSTCBCur->OSTCBDly        = timeout;              /* Store timeout in task's TCB                   */
+   \   00001C   0908         MOVA    @R8, R9
+   \   00001E   894A2A00     MOV.W   R10, 0x2a(R9)
+   \   000022   894B2C00     MOV.W   R11, 0x2c(R9)
+   1038          #if OS_TASK_DEL_EN > 0u
+   1039              OSTCBCur->OSTCBFlagNode   = pnode;                /* TCB to link to node                           */
+   \   000026   790D2400     MOVA    R13, 0x24(R9)
+   1040          #endif
+   1041              pnode->OSFlagNodeFlags    = flags;                /* Save the flags that we need to wait for       */
+   \   00002A   8D4E1000     MOV.W   R14, 0x10(R13)
+   1042              pnode->OSFlagNodeWaitType = wait_type;            /* Save the type of wait we are doing            */
+   \   00002E   CD4F1200     MOV.B   R15, 0x12(R13)
+   1043              pnode->OSFlagNodeTCB      = (void *)OSTCBCur;     /* Link to task's TCB                            */
+   \   000032   0B08         MOVA    @R8, R11
+   \   000034   0018ED480800 MOVX.A  @R8, 0x8(R13)
+   1044              pnode->OSFlagNodeNext     = pgrp->OSFlagWaitList; /* Add node at beginning of event flag wait list */
+   \   00003A   0018DD4C0200 MOVX.A  0x2(R12), 0(R13)
+   \            0000        
+   1045              pnode->OSFlagNodePrev     = (void *)0;
+   \   000042   0018CD430400 MOVX.A  #0x0, 0x4(R13)
+   1046              pnode->OSFlagNodeFlagGrp  = (void *)pgrp;         /* Link to Event Flag Group                      */
+   \   000048   7D0C0C00     MOVA    R12, 0xc(R13)
+   1047              pnode_next                = (OS_FLAG_NODE *)pgrp->OSFlagWaitList;
+   \   00004C   3F0C0200     MOVA    0x2(R12), R15
+   1048              if (pnode_next != (void *)0) {                    /* Is this the first NODE to insert?             */
+   \   000050   DF03         CMPA    #0x0, R15
+   \   000052   0224         JEQ     ??OS_FlagBlock_0
+   1049                  pnode_next->OSFlagNodePrev = pnode;           /* No, link in doubly linked list                */
+   \   000054   7F0D0400     MOVA    R13, 0x4(R15)
+   1050              }
+   1051              pgrp->OSFlagWaitList = (void *)pnode;
+   \                     ??OS_FlagBlock_0:
+   \   000058   7C0D0200     MOVA    R13, 0x2(R12)
+   1052          
+   1053              y            =  OSTCBCur->OSTCBY;                 /* Suspend current task until flag(s) received   */
+   \   00005C   5F4B3200     MOV.B   0x32(R11), R15
+   1054              OSRdyTbl[y] &= (OS_PRIO)~OSTCBCur->OSTCBBitX;
+   \   000060   ....DFCB3300 BICX.B  0x33(R11), OSRdyTbl(R15)
+   \            ....        
+   1055              if (OSRdyTbl[y] == 0x00u) {
+   \   000068   ....CF93.... CMPX.B  #0x0, OSRdyTbl(R15)
+   \   00006E   0420         JNE     ??OS_FlagBlock_1
+   1056                  OSRdyGrp &= (OS_PRIO)~OSTCBCur->OSTCBBitY;
+   \   000070   ....D2CB3400 BICX.B  0x34(R11), &OSRdyGrp
+   \            ....        
+   1057              }
+   1058          }
+   \                     ??OS_FlagBlock_1:
+   \   000078   3816         POPM.A  #0x4, R11
+   \   00007A   1001         RETA
+   1059          
+   1060          /*$PAGE*/
+   1061          /*
+   1062          *********************************************************************************************************
+   1063          *                                    INITIALIZE THE EVENT FLAG MODULE
+   1064          *
+   1065          * Description: This function is called by uC/OS-II to initialize the event flag module.  Your application
+   1066          *              MUST NOT call this function.  In other words, this function is internal to uC/OS-II.
+   1067          *
+   1068          * Arguments  : none
+   1069          *
+   1070          * Returns    : none
+   1071          *
+   1072          * WARNING    : You MUST NOT call this function from your code.  This is an INTERNAL function to uC/OS-II.
+   1073          *********************************************************************************************************
+   1074          */
+   1075          
+
+   \                                 In  segment CODE, align 2
+   1076          void  OS_FlagInit (void)
+   \                     OS_FlagInit:
+   1077          {
+   \   000000   0A14         PUSHM.A #0x1, R10
+   1078          #if OS_MAX_FLAGS == 1u
+   1079              OSFlagFreeList                 = (OS_FLAG_GRP *)&OSFlagTbl[0];  /* Only ONE event flag group!      */
+   1080              OSFlagFreeList->OSFlagType     = OS_EVENT_TYPE_UNUSED;
+   1081              OSFlagFreeList->OSFlagWaitList = (void *)0;
+   1082              OSFlagFreeList->OSFlagFlags    = (OS_FLAGS)0;
+   1083          #if OS_FLAG_NAME_EN > 0u
+   1084              OSFlagFreeList->OSFlagName     = (INT8U *)"?";
+   1085          #endif
+   1086          #endif
+   1087          
+   1088          #if OS_MAX_FLAGS >= 2u
+   1089              INT16U        ix;
+   1090              INT16U        ix_next;
+   1091              OS_FLAG_GRP  *pgrp1;
+   1092              OS_FLAG_GRP  *pgrp2;
+   1093          
+   1094          
+   1095              OS_MemClr((INT8U *)&OSFlagTbl[0], sizeof(OSFlagTbl));           /* Clear the flag group table      */
+   \   000002   ........     MOVA    #OSFlagTbl, R10
+   \   000006   3D403C00     MOV.W   #0x3c, R13
+   \   00000A   CC0A         MOVA    R10, R12
+   \   00000C   ........     CALLA   #OS_MemClr
+   1096              for (ix = 0u; ix < (OS_MAX_FLAGS - 1u); ix++) {                 /* Init. list of free EVENT FLAGS  */
+   \   000010   0F43         MOV.W   #0x0, R15
+   \   000012   CE0A         MOVA    R10, R14
+   1097                  ix_next = ix + 1u;
+   1098                  pgrp1 = &OSFlagTbl[ix];
+   1099                  pgrp2 = &OSFlagTbl[ix_next];
+   1100                  pgrp1->OSFlagType     = OS_EVENT_TYPE_UNUSED;
+   \                     ??OS_FlagInit_0:
+   \   000014   CE430000     MOV.B   #0x0, 0(R14)
+   1101                  pgrp1->OSFlagWaitList = (void *)pgrp2;
+   \   000018   CD0E         MOVA    R14, R13
+   \   00001A   AD000C00     ADDA    #0xc, R13
+   \   00001E   7E0D0200     MOVA    R13, 0x2(R14)
+   1102          #if OS_FLAG_NAME_EN > 0u
+   1103                  pgrp1->OSFlagName     = (INT8U *)(void *)"?";               /* Unknown name                    */
+   \   000022   ....FE40.... MOVX.A  #`?<Constant "?">`, 0x8(R14)
+   \            0800        
+   1104          #endif
+   1105              }
+   \   00002A   1F53         ADD.W   #0x1, R15
+   \   00002C   AE000C00     ADDA    #0xc, R14
+   \   000030   2F92         CMP.W   #0x4, R15
+   \   000032   F02B         JNC     ??OS_FlagInit_0
+   1106              pgrp1                 = &OSFlagTbl[ix];
+   \   000034   4F06         RLAM.A  #0x2, R15
+   \   000036   CE0F         MOVA    R15, R14
+   \   000038   EF0F         ADDA    R15, R15
+   \   00003A   EF0E         ADDA    R14, R15
+   \   00003C   CE0F         MOVA    R15, R14
+   \   00003E   CF0A         MOVA    R10, R15
+   \   000040   EF0E         ADDA    R14, R15
+   1107              pgrp1->OSFlagType     = OS_EVENT_TYPE_UNUSED;
+   \   000042   CF430000     MOV.B   #0x0, 0(R15)
+   1108              pgrp1->OSFlagWaitList = (void *)0;
+   \   000046   ........     CALLA   #?Subroutine0
+   1109          #if OS_FLAG_NAME_EN > 0u
+   1110              pgrp1->OSFlagName     = (INT8U *)(void *)"?";                   /* Unknown name                    */
+   1111          #endif
+   1112              OSFlagFreeList        = &OSFlagTbl[0];
+   \                     ??CrossCallReturnLabel_0:
+   \   00004A   ........     MOVA    R10, &OSFlagFreeList
+   1113          #endif
+   1114          }
+   \   00004E   0A16         POPM.A  #0x1, R10
+   \   000050   1001         RETA
+   1115          
+   1116          /*$PAGE*/
+   1117          /*
+   1118          *********************************************************************************************************
+   1119          *                              MAKE TASK READY-TO-RUN, EVENT(s) OCCURRED
+   1120          *
+   1121          * Description: This function is internal to uC/OS-II and is used to make a task ready-to-run because the
+   1122          *              desired event flag bits have been set.
+   1123          *
+   1124          * Arguments  : pnode         is a pointer to a structure which contains data about the task waiting for
+   1125          *                            event flag bit(s) to be set.
+   1126          *
+   1127          *              flags_rdy     contains the bit pattern of the event flags that cause the task to become
+   1128          *                            ready-to-run.
+   1129          *
+   1130          * Returns    : OS_TRUE       If the task has been placed in the ready list and thus needs scheduling
+   1131          *              OS_FALSE      The task is still not ready to run and thus scheduling is not necessary
+   1132          *
+   1133          * Called by  : OSFlagsPost() OS_FLAG.C
+   1134          *
+   1135          * Note(s)    : 1) This function assumes that interrupts are disabled.
+   1136          *              2) This function is INTERNAL to uC/OS-II and your application should not call it.
+   1137          *********************************************************************************************************
+   1138          */
+   1139          
+
+   \                                 In  segment CODE, align 2
+   1140          static  BOOLEAN  OS_FlagTaskRdy (OS_FLAG_NODE *pnode,
+   \                     OS_FlagTaskRdy:
+   1141                                           OS_FLAGS      flags_rdy)
+   1142          {
+   1143              OS_TCB   *ptcb;
+   1144              BOOLEAN   sched;
+   1145          
+   1146          
+   1147              ptcb                 = (OS_TCB *)pnode->OSFlagNodeTCB; /* Point to TCB of waiting task             */
+   \   000000   3E0C0800     MOVA    0x8(R12), R14
+   1148              ptcb->OSTCBDly       = 0u;
+   \   000004   8E432A00     MOV.W   #0x0, 0x2a(R14)
+   \   000008   8E432C00     MOV.W   #0x0, 0x2c(R14)
+   1149              ptcb->OSTCBFlagsRdy  = flags_rdy;
+   \   00000C   8E4D2800     MOV.W   R13, 0x28(R14)
+   1150              ptcb->OSTCBStat     &= (INT8U)~(INT8U)OS_STAT_FLAG;
+   \   000010   FEC020002E00 BIC.B   #0x20, 0x2e(R14)
+   1151              ptcb->OSTCBStatPend  = OS_STAT_PEND_OK;
+   \   000016   CE432F00     MOV.B   #0x0, 0x2f(R14)
+   1152              if (ptcb->OSTCBStat == OS_STAT_RDY) {                  /* Task now ready?                          */
+   \   00001A   CE932E00     CMP.B   #0x0, 0x2e(R14)
+   \   00001E   0C20         JNE     ??OS_FlagTaskRdy_0
+   1153                  OSRdyGrp               |= ptcb->OSTCBBitY;         /* Put task into ready list                 */
+   \   000020   ....D2DE3400 BISX.B  0x34(R14), &OSRdyGrp
+   \            ....        
+   1154                  OSRdyTbl[ptcb->OSTCBY] |= ptcb->OSTCBBitX;
+   \   000028   5F4E3200     MOV.B   0x32(R14), R15
+   \   00002C   ....DFDE3300 BISX.B  0x33(R14), OSRdyTbl(R15)
+   \            ....        
+   1155                  sched                   = OS_TRUE;
+   \   000034   5D43         MOV.B   #0x1, R13
+   \   000036   013C         JMP     ??OS_FlagTaskRdy_1
+   1156              } else {
+   1157                  sched                   = OS_FALSE;
+   \                     ??OS_FlagTaskRdy_0:
+   \   000038   4D43         MOV.B   #0x0, R13
+   1158              }
+   1159              OS_FlagUnlink(pnode);
+   \                     ??OS_FlagTaskRdy_1:
+   \   00003A   ........     CALLA   #OS_FlagUnlink
+   1160              return (sched);
+   \   00003E   4C4D         MOV.B   R13, R12
+   \   000040   1001         RETA
+   1161          }
+   1162          
+   1163          /*$PAGE*/
+   1164          /*
+   1165          *********************************************************************************************************
+   1166          *                                  UNLINK EVENT FLAG NODE FROM WAITING LIST
+   1167          *
+   1168          * Description: This function is internal to uC/OS-II and is used to unlink an event flag node from a
+   1169          *              list of tasks waiting for the event flag.
+   1170          *
+   1171          * Arguments  : pnode         is a pointer to a structure which contains data about the task waiting for
+   1172          *                            event flag bit(s) to be set.
+   1173          *
+   1174          * Returns    : none
+   1175          *
+   1176          * Called by  : OS_FlagTaskRdy() OS_FLAG.C
+   1177          *              OSFlagPend()     OS_FLAG.C
+   1178          *              OSTaskDel()      OS_TASK.C
+   1179          *
+   1180          * Note(s)    : 1) This function assumes that interrupts are disabled.
+   1181          *              2) This function is INTERNAL to uC/OS-II and your application should not call it.
+   1182          *********************************************************************************************************
+   1183          */
+   1184          
+
+   \                                 In  segment CODE, align 2
+   1185          void  OS_FlagUnlink (OS_FLAG_NODE *pnode)
+   \                     OS_FlagUnlink:
+   1186          {
+   1187          #if OS_TASK_DEL_EN > 0u
+   1188              OS_TCB       *ptcb;
+   1189          #endif
+   1190              OS_FLAG_GRP  *pgrp;
+   1191              OS_FLAG_NODE *pnode_prev;
+   1192              OS_FLAG_NODE *pnode_next;
+   1193          
+   1194          
+   1195              pnode_prev = (OS_FLAG_NODE *)pnode->OSFlagNodePrev;
+   \   000000   3F0C0400     MOVA    0x4(R12), R15
+   1196              pnode_next = (OS_FLAG_NODE *)pnode->OSFlagNodeNext;
+   \   000004   0E0C         MOVA    @R12, R14
+   1197              if (pnode_prev == (OS_FLAG_NODE *)0) {                      /* Is it first node in wait list?      */
+   \   000006   DF03         CMPA    #0x0, R15
+   \   000008   0A20         JNE     ??OS_FlagUnlink_0
+   1198                  pgrp                 = (OS_FLAG_GRP *)pnode->OSFlagNodeFlagGrp;
+   1199                  pgrp->OSFlagWaitList = (void *)pnode_next;              /*      Update list for new 1st node   */
+   \   00000A   3F0C0C00     MOVA    0xc(R12), R15
+   \   00000E   7F0E0200     MOVA    R14, 0x2(R15)
+   1200                  if (pnode_next != (OS_FLAG_NODE *)0) {
+   \   000012   DE03         CMPA    #0x0, R14
+   \   000014   0A24         JEQ     ??OS_FlagUnlink_1
+   1201                      pnode_next->OSFlagNodePrev = (OS_FLAG_NODE *)0;     /*      Link new 1st node PREV to NULL */
+   \   000016   0018CE430400 MOVX.A  #0x0, 0x4(R14)
+   \   00001C   063C         JMP     ??OS_FlagUnlink_1
+   1202                  }
+   1203              } else {                                                    /* No,  A node somewhere in the list   */
+   1204                  pnode_prev->OSFlagNodeNext = pnode_next;                /*      Link around the node to unlink */
+   \                     ??OS_FlagUnlink_0:
+   \   00001E   7F0E0000     MOVA    R14, 0(R15)
+   1205                  if (pnode_next != (OS_FLAG_NODE *)0) {                  /*      Was this the LAST node?        */
+   \   000022   DE03         CMPA    #0x0, R14
+   \   000024   0224         JEQ     ??OS_FlagUnlink_1
+   1206                      pnode_next->OSFlagNodePrev = pnode_prev;            /*      No, Link around current node   */
+   \   000026   7E0F0400     MOVA    R15, 0x4(R14)
+   1207                  }
+   1208              }
+   1209          #if OS_TASK_DEL_EN > 0u
+   1210              ptcb                = (OS_TCB *)pnode->OSFlagNodeTCB;
+   1211              ptcb->OSTCBFlagNode = (OS_FLAG_NODE *)0;
+   \                     ??OS_FlagUnlink_1:
+   \   00002A   3F0C0800     MOVA    0x8(R12), R15
+   \   00002E   0018CF432400 MOVX.A  #0x0, 0x24(R15)
+   1212          #endif
+   1213          }
+   \   000034   1001         RETA
+
+   \                                 In  segment DATA20_C, align 1, align-sorted
+   \                     `?<Constant "?">`:
+   \   000000   3F00         DC8 "?"
+   1214          #endif
+   1215          	 	   	  		 			 	    		   		 		 	 	 			 	    		   	 			 	  	 		 				 		  			 		 					 	  	  		      		  	   		      		  	 		 	      		   		 		  	 		 	      		  		  		  
+
+   Maximum stack usage in bytes:
+
+   CSTACK Function
+   ------ --------
+      28  OSFlagAccept
+            28 -> OSCPURestoreSR
+            28 -> OSCPUSaveSR
+      20  OSFlagCreate
+            20 -> OSCPURestoreSR
+            20 -> OSCPUSaveSR
+      28  OSFlagDel
+            28 -> OSCPURestoreSR
+            28 -> OSCPUSaveSR
+            28 -> OS_FlagTaskRdy
+            28 -> OS_Sched
+      20  OSFlagNameGet
+            20 -> OSCPURestoreSR
+            20 -> OSCPUSaveSR
+            20 -> OS_StrLen
+      20  OSFlagNameSet
+            20 -> OSCPURestoreSR
+            20 -> OSCPUSaveSR
+      60  OSFlagPend
+            56 -> OSCPURestoreSR
+            60 -> OSCPURestoreSR
+            56 -> OSCPUSaveSR
+            60 -> OSCPUSaveSR
+            60 -> OS_FlagBlock
+            56 -> OS_FlagUnlink
+            60 -> OS_Sched
+       8  OSFlagPendGetFlagsRdy
+             8 -> OSCPURestoreSR
+             8 -> OSCPUSaveSR
+      28  OSFlagPost
+            28 -> OSCPURestoreSR
+            28 -> OSCPUSaveSR
+            28 -> OS_FlagTaskRdy
+            28 -> OS_Sched
+      12  OSFlagQuery
+            12 -> OSCPURestoreSR
+            12 -> OSCPUSaveSR
+      20  OS_FlagBlock
+       8  OS_FlagInit
+             8 -> OS_MemClr
+       4  OS_FlagTaskRdy
+             4 -> OS_FlagUnlink
+       4  OS_FlagUnlink
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       2  ?<Constant "?">
+       8  ??Subroutine5_0
+      16  ?Subroutine0
+       8  ?Subroutine1
+      30  ?Subroutine2
+       6  ?Subroutine3
+      16  ?Subroutine4
+       2  ?Subroutine5
+     144  OSFlagAccept
+      84  OSFlagCreate
+     142  OSFlagDel
+      74  OSFlagNameGet
+      60  OSFlagNameSet
+     320  OSFlagPend
+      24  OSFlagPendGetFlagsRdy
+     210  OSFlagPost
+      42  OSFlagQuery
+     124  OS_FlagBlock
+      82  OS_FlagInit
+      66  OS_FlagTaskRdy
+      54  OS_FlagUnlink
+
+ 
+ 1 512 bytes in segment CODE
+     2 bytes in segment DATA20_C
+ 
+ 1 512 bytes of CODE  memory
+     2 bytes of CONST memory
+
+Errors: none
+Warnings: 11

@@ -1,0 +1,200 @@
+###############################################################################
+#                                                                             #
+#                                                       06/Jun/2016  16:42:34 #
+# IAR C/C++ Compiler V5.50.1.20465/W32, Evaluation edition for MSP430         #
+# Copyright 1996-2012 IAR Systems AB.                                         #
+#                                                                             #
+#    __rt_version  =  3                                                       #
+#    __double_size =  32                                                      #
+#    __reg_r4      =  free                                                    #
+#    __reg_r5      =  free                                                    #
+#    __pic         =  no                                                      #
+#    __core        =  430X                                                    #
+#    __data_model  =  large                                                   #
+#    Source file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\remap.c                              #
+#    Command line  =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\remap.c -D NDEBUG -D RAM_VECTOR -lC  #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\List\ -lA C:\Users\615\Desktop\MSP430\MS #
+#                     P430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Release\List\ -o        #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\Obj\ -D__MSP430F5529__ -e --double=32    #
+#                     --dlib_config "D:\Program Files (x86)\IAR               #
+#                     Systems\Embedded Workbench 6.4                          #
+#                     Evaluation\430\LIB\DLIB\dl430xlfn.h" -I                 #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\ -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Ê #
+#                     ý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\inc\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\ -I C:\Users\615\Desktop\MSP430\MSP4 #
+#                     30F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\src\USB\ -I       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_config\ -I                   #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_User\ -I                     #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\srcUSB\USB_API\USB_CDC_API\ -I           #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_API\USB_HID_API\ -I          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_API\USB_MSC_API\ -I          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\KEY\ -I C:\Users\615\Desktop\MSP430\MSP #
+#                     430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\LED\ -I         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\12864\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\oled\ -I      #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\mpu6050\inc\ -I                         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\mpu6050\src\ -I                         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\nokia5110\inc\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\nokia5110\src\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\LQ_1.8_TFT\ -I                          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\LCD_API\ -I                             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\2.2TFT\ -I                              #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\delay\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\ -I             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\System\inc\ -I C:\Users\615\Desktop\MSP430\MSP43 #
+#                     0F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\src\ -I             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\User\ -I C:\Users\615\Desktop\MSP430\MSP430F5529 #
+#                     ¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\User\USER\ -I                    #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\UCOSII\CONFIG\ -I                            #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\uCOSII\App\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII\CONFIHG\    #
+#                     -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ #
+#                     \¹¤³ÌÄ£°å\Lib\uCOSII\PORT\ -I                           #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\UCOSII\CORE\ -I                              #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\FatFs\ -I C:\Users\615\Desktop\MSP430\MSP430 #
+#                     F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\FatFs\option\           #
+#                     --core=430X --data_model=large -Oh --multiplier=32      #
+#                     --multiplier_location=4C0 --hw_workaround=CPU40         #
+#    List file     =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\List\remap.lst                           #
+#    Object file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\Obj\remap.r43                            #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\src\remap.c
+      1          #include "remap.h"
+
+   \                                 In  segment DATA16_AN, at 0x1c0
+   \   union <unnamed> __data16 _A_PMAPKEYID_L
+   \                     _A_PMAPKEYID_L:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_AN, at 0x1c2
+   \   union <unnamed> __data16 _A_PMAPCTL_L
+   \                     _A_PMAPCTL_L:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_AN, at 0x1e0
+   \   union <unnamed> __data16 _A_P4MAP01_L
+   \                     _A_P4MAP01_L:
+   \   000000                DS8 2
+      2          /*******************************************************************************
+      3          *  º¯ÊýÃû³Æ£ºGPIO_PinRemapConfig(PORTn portn,uint8_t pin,GPIO_Remap remap)
+      4          *  ¹¦ÄÜËµÃ÷£ºGPIOÖØÓ³Éä£¬¿ÉÒÔÊ¹ÈÎÒ»GPIO¿Ú£¨Ä¿Ç°Ö»ÓÐP4¶Ë¿Ú£¨P4.0-P4.7£©Ö§³Ö£©
+      5                       ÊµÏÖ¿É¹©Ñ¡ÔñµÄÈÎÒ»¸´ÓÃ¹¦ÄÜ£¨²Î¼û.hÎÄ¼þµÄÃ¶¾ÙÑ¡Ïî£©
+      6          *  ×¢Òâ    £ºÄ³Ð©¹¦ÄÜ»¹ÊÇÐèÒªÉèÖÃÓ²¼þÊäÈëÊä³ö·½Ïò¼°µÚ¶þ¹¦ÄÜ
+      7          *  ²ÎÊýËµÃ÷£ºPORTn portn        :GPIOÖØÓ³Éä¶Ë¿Ú
+      8                       uint8_t pin          :GPIOÖØÓ³ÉäÒý½Å
+      9                       GPIO_Remap remap   :GOIOÖØÓ³Éä¹¦ÄÜ
+     10          *  º¯Êý·µ»Ø£ºÎÞ
+     11          *  Ê¹ÓÃÊ¾Àý£ºGPIO_PinRemapConfig(P4,7,GPIO_Remap_MCLK)£» //P4.7ÖØÓ³ÉäÎªMCLKÖ÷Ê±ÖÓÊä³ö
+     12          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+     13          void  GPIO_PinRemapConfig(PORTn portn,uint8_t pin,GPIO_Remap remap)
+   \                     GPIO_PinRemapConfig:
+     14          {
+     15            ASSERT(portn == P4); //Ä¿Ç°Ö»ÓÐP4¶Ë¿ÚÖ§³ÖÖØÓ³Éä
+     16            
+     17            PMAPPWD = PMAPKEY;                                            //·ÃÎÊÔ¿³×
+   \   000000   B240522DC001 MOV.W   #0x2d52, &0x1c0
+     18            *(&P4MAP0 + pin) = remap;                                     //¶Ë¿ÚÖØÓ³ÉäÅäÖÃ 
+   \   000006   4D4D         MOV.B   R13, R13
+   \   000008   CD4EE001     MOV.B   R14, 0x1e0(R13)
+     19            PMAPCTL |= PMAPRECFG;                                         //ÔÊÐíÖØÐÂÅäÖÃµÄ¶Ë¿ÚÓ³Éä
+   \   00000C   A2D3C201     BIS.W   #0x2, &0x1c2
+     20            
+     21            if(((remap>=GPIO_Remap_TB0CCR0A) && (remap<=GPIO_Remap_TB0CCR6A)) 
+     22                || (remap==GPIO_Remap_MCLK))      //Èç¹ûÊÇÕâÐ©¸´ÓÃ¹¦ÄÜÔòÐèÒªÉèÎªÊä³ö·½Ïò£¬Ò²¿ÉÄÜ²»ÊÇ£¬ÆäËûµÄÒ²²»Ò»¶¨²»ÐèÒªÉèÎªÊä³ö·½Ïò
+   \   000010   4F4E         MOV.B   R14, R15
+   \   000012   6F82         SUB.B   #0x4, R15
+   \   000014   7F900700     CMP.B   #0x7, R15
+   \   000018   0328         JNC     ??GPIO_PinRemapConfig_0
+   \   00001A   7E901200     CMP.B   #0x12, R14
+   \   00001E   0320         JNE     ??GPIO_PinRemapConfig_1
+     23            {
+     24              GPIO_Init(P4,pin,GPO | SEL);
+   \                     ??GPIO_PinRemapConfig_0:
+   \   000020   3E400201     MOV.W   #0x102, R14
+   \   000024   023C         JMP     ??GPIO_PinRemapConfig_2
+     25            }
+     26            else
+     27            {
+     28              GPIO_Init(P4,pin,SEL);
+   \                     ??GPIO_PinRemapConfig_1:
+   \   000026   3E400001     MOV.W   #0x100, R14
+   \                     ??GPIO_PinRemapConfig_2:
+   \   00002A   1F43         MOV.W   #0x1, R15
+   \   00002C   5D83         SUB.B   #0x1, R13
+   \   00002E   0230         JN      ??GPIO_PinRemapConfig_3
+   \   000030                RPT     R13
+   \   000030   CD180F5F     RLAX.W  R15
+   \                     ??GPIO_PinRemapConfig_3:
+   \   000034   4D4F         MOV.B   R15, R13
+   \   000036   7C400300     MOV.B   #0x3, R12
+   \   00003A   ........     CALLA   #GPIO_MultiBits_Init
+     29            }
+     30            PMAPPWD = 0;                                                 //½ûÖ¹·ÃÎÊ
+   \   00003E   8243C001     MOV.W   #0x0, &0x1c0
+     31          }
+   \   000042   1001         RETA
+   \   000044                REQUIRE _A_PMAPKEYID_L
+   \   000044                REQUIRE _A_P4MAP01_L
+   \   000044                REQUIRE _A_PMAPCTL_L
+     32          
+
+   Maximum stack usage in bytes:
+
+   CSTACK Function
+   ------ --------
+       4  GPIO_PinRemapConfig
+            4 -> GPIO_MultiBits_Init
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      68  GPIO_PinRemapConfig
+       2  _A_P4MAP01_L
+       2  _A_PMAPCTL_L
+       2  _A_PMAPKEYID_L
+
+ 
+ 68 bytes in segment CODE
+  6 bytes in segment DATA16_AN
+ 
+ 68 bytes of CODE memory
+  0 bytes of DATA memory (+ 6 bytes shared)
+
+Errors: none
+Warnings: none

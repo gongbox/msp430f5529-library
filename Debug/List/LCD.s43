@@ -1,0 +1,1059 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+//                                                      14/Dec/2016  10:52:41 /
+// IAR C/C++ Compiler V5.50.1.20465/W32, Evaluation edition for MSP430        /
+// Copyright 1996-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    __rt_version  =  3                                                      /
+//    __double_size =  32                                                     /
+//    __reg_r4      =  free                                                   /
+//    __reg_r5      =  free                                                   /
+//    __pic         =  no                                                     /
+//    __core        =  430X                                                   /
+//    __data_model  =  large                                                  /
+//    Source file   =  E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\2 /
+//                     .2TFT\LCD.c                                            /
+//    Command line  =  E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\2 /
+//                     .2TFT\LCD.c -D DEBUG -D RAM_VECTOR -lA                 /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Debug\List /
+//                     \ -o E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Debug /
+//                     \Obj\ --no_cse --no_unroll --no_inline                 /
+//                     --no_code_motion --no_tbaa --debug -D__MSP430F5529__   /
+//                     -e --double=32 --dlib_config "D:\Program Files\IAR     /
+//                     Systems\Embedded Workbench 6.4                         /
+//                     Evaluation\430\LIB\DLIB\dl430xlff.h" -I                /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\ -I        /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\in /
+//                     c\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Driv /
+//                     ers\src\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£° /
+//                     å\Drivers\src\USB\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C /
+//                     °æ\¹¤³ÌÄ£°å\Drivers\src\USB\USB_config\ -I             /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\USB\USB_User\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\ /
+//                     ¹¤³ÌÄ£°å\Drivers\srcUSB\USB_API\USB_CDC_API\ -I        /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\USB\USB_API\USB_HID_API\ -I                          /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\USB\USB_API\USB_MSC_API\ -I                          /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\  /
+//                     -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWar /
+//                     e\delay\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£° /
+//                     å\HardWare\18b20\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C° /
+//                     æ\¹¤³ÌÄ£°å\HardWare\KEY\ -I                            /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\L /
+//                     ED\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Har /
+//                     dWare\12864\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ /
+//                     ÌÄ£°å\HardWare\oled\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6 /
+//                     \C°æ\¹¤³ÌÄ£°å\HardWare\mpu6050\inc\ -I                 /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\m /
+//                     pu6050\src\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³Ì /
+//                     Ä£°å\HardWare\nokia5110\inc\ -I                        /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\n /
+//                     okia5110\src\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤ /
+//                     ³ÌÄ£°å\HardWare\LQ_1.8_TFT\ -I                         /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\L /
+//                     CD_API\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å /
+//                     \HardWare\2.2TFT\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C° /
+//                     æ\¹¤³ÌÄ£°å\HardWare\nrf24l01\ -I                       /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\System\    /
+//                     -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\System\ /
+//                     inc\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Sy /
+//                     stem\src\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£ /
+//                     °å\User\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£° /
+//                     å\User\USER\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ /
+//                     ÌÄ£°å\Lib\UCOSII\CONFIG\ -I                            /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII /
+//                     \App\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\L /
+//                     ib\uCOSII\CONFIHG\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C /
+//                     °æ\¹¤³ÌÄ£°å\Lib\uCOSII\PORT\ -I                        /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Lib\UCOSII /
+//                     \CORE\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\ /
+//                     Lib\FatFs\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ /
+//                     £°å\Lib\FatFs\option\ --core=430X --data_model=large   /
+//                     -On --multiplier=32 --multiplier_location=4C0          /
+//                     --hw_workaround=CPU40                                  /
+//    List file     =  E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Debug\List /
+//                     \LCD.s43                                               /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME LCD
+
+        RTMODEL "__SystemLibrary", "DLib"
+        RTMODEL "__core", "430X"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dlib_file_descriptor", "1"
+        RTMODEL "__double_size", "32"
+        RTMODEL "__pic", "no"
+        RTMODEL "__reg_r4", "free"
+        RTMODEL "__reg_r5", "free"
+        RTMODEL "__rt_version", "3"
+
+        RSEG CSTACK:DATA:SORT:NOROOT(0)
+
+        EXTERN ?longjmp_r4
+        EXTERN ?longjmp_r5
+        EXTERN ?setjmp_r4
+        EXTERN ?setjmp_r5
+
+        PUBWEAK ?setjmp_save_r4
+        PUBWEAK ?setjmp_save_r5
+        PUBLIC LCD_Init
+        FUNCTION LCD_Init,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC LCD_PORT_Init
+        FUNCTION LCD_PORT_Init,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 8, STACK
+        PUBLIC LCD_SetPos
+        FUNCTION LCD_SetPos,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 20, STACK
+        PUBLIC LCD_Writ_Bus
+        FUNCTION LCD_Writ_Bus,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 8, STACK
+        PUBLIC LCD_Write_DATA16
+        FUNCTION LCD_Write_DATA16,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 8, STACK
+        PUBLIC LCD_Write_DATA8
+        FUNCTION LCD_Write_DATA8,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 8, STACK
+        PUBLIC LCD_Write_REG
+        FUNCTION LCD_Write_REG,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 8, STACK
+        PUBLIC LCD_Write_REG_DATA
+        FUNCTION LCD_Write_REG_DATA,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 12, STACK
+        PUBWEAK _A_PAOUT_L
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA SP DATA
+          CFI Resource PC:20, SP:20, SR:16, R4L:16, R4H:4, R4:20, R5L:16, R5H:4
+          CFI Resource R5:20, R6L:16, R6H:4, R6:20, R7L:16, R7H:4, R7:20, R8L:16
+          CFI Resource R8H:4, R8:20, R9L:16, R9H:4, R9:20, R10L:16, R10H:4
+          CFI Resource R10:20, R11L:16, R11H:4, R11:20, R12L:16, R12H:4, R12:20
+          CFI Resource R13L:16, R13H:4, R13:20, R14L:16, R14H:4, R14:20, R15L:16
+          CFI Resource R15H:4, R15:20
+          CFI ResourceParts R4 R4H, R4L
+          CFI ResourceParts R5 R5H, R5L
+          CFI ResourceParts R6 R6H, R6L
+          CFI ResourceParts R7 R7H, R7L
+          CFI ResourceParts R8 R8H, R8L
+          CFI ResourceParts R9 R9H, R9L
+          CFI ResourceParts R10 R10H, R10L
+          CFI ResourceParts R11 R11H, R11L
+          CFI ResourceParts R12 R12H, R12L
+          CFI ResourceParts R13 R13H, R13L
+          CFI ResourceParts R14 R14H, R14L
+          CFI ResourceParts R15 R15H, R15L
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H SameValue
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H SameValue
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H SameValue
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H SameValue
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H SameValue
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H SameValue
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H SameValue
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H SameValue
+          CFI R11 Concat
+          CFI R12L Undefined
+          CFI R12H Undefined
+          CFI R12 Undefined
+          CFI R13L Undefined
+          CFI R13H Undefined
+          CFI R13 Undefined
+          CFI R14L Undefined
+          CFI R14H Undefined
+          CFI R14 Undefined
+          CFI R15L Undefined
+          CFI R15H Undefined
+          CFI R15 Undefined
+          CFI EndCommon cfiCommon0
+        
+        EXTERN SPI_SendReadByte
+        FUNCTION SPI_SendReadByte,0202H
+        EXTERN SPI_Master_Init
+        FUNCTION SPI_Master_Init,0202H
+        EXTERN GPIO_MultiBits_Init
+        FUNCTION GPIO_MultiBits_Init,0202H
+        EXTERN delay_us
+        FUNCTION delay_us,0202H
+
+// E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\2.2TFT\LCD.c
+//    1 #include "LCD.h"
+
+        ASEGN DATA16_AN:DATA:NOROOT,0202H
+// union <unnamed> __data16 _A_PAOUT_L
+_A_PAOUT_L:
+        DS8 2
+//    2 #include "delay.h" 
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//    3 void LCD_PORT_Init(void)
+LCD_PORT_Init:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function LCD_PORT_Init
+//    4 {
+//    5 #if(LCDHardWareSPI)
+//    6   LCDHardWareSPI_Init();
+        FUNCALL LCD_PORT_Init, SPI_Master_Init
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL LCD_PORT_Init, GPIO_MultiBits_Init
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL LCD_PORT_Init, GPIO_MultiBits_Init
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL LCD_PORT_Init, GPIO_MultiBits_Init
+        LOCFRAME CSTACK, 8, STACK
+        PUSH.B  #0x3
+          CFI CFA SP+6
+        PUSH.B  #0x0
+          CFI CFA SP+8
+        MOV.B   #0x1, R13
+        MOV.W   #0xf080, R14
+        MOV.W   #0x2fa, R15
+        MOV.B   #0x2, R12
+        CALLA   #SPI_Master_Init
+//    7 #else
+//    8   GPIO_Init(LCD_SCL_PORT,LCD_SCL_PIN,GPO);
+//    9   GPIO_Init(LCD_SDI_PORT,LCD_SDI_PIN,GPO);
+//   10 #endif
+//   11   GPIO_Init(LCD_RST_PORT,LCD_RST_PIN,GPO);
+        MOV.W   #0x2, R14
+        MOV.W   #0x10, R13
+        MOV.B   #0x1, R12
+        CALLA   #GPIO_MultiBits_Init
+//   12   GPIO_Init(LCD_DC_PORT,LCD_DC_PIN,GPO);
+        MOV.W   #0x2, R14
+        MOV.W   #0x1, R13
+        MOV.B   #0x1, R12
+        CALLA   #GPIO_MultiBits_Init
+//   13   GPIO_Init(LCD_CS_PORT, LCD_CS_PIN,GPO);
+        MOV.W   #0x2, R14
+        MOV.W   #0x80, R13
+        MOV.B   #0x1, R12
+        CALLA   #GPIO_MultiBits_Init
+//   14 }
+        ADD.W   #0x4, SP
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock0
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   15 void LCD_Writ_Bus(char data)   //´®ÐÐÊý¾ÝÐ´Èë
+LCD_Writ_Bus:
+          CFI Block cfiBlock1 Using cfiCommon0
+          CFI Function LCD_Writ_Bus
+//   16 {  
+        FUNCALL LCD_Writ_Bus, SPI_SendReadByte
+        LOCFRAME CSTACK, 8, STACK
+        PUSHM.A #0x1, R10
+          CFI R10L Frame(CFA, -8)
+          CFI R10H Frame(CFA, -6)
+          CFI CFA SP+8
+        MOV.B   R12, R10
+//   17 #if(LCDHardWareSPI)
+//   18   LCD_CS = RESET;
+        BIC.B   #0x80, &0x203
+//   19   LCDHardWareSPI_SendByte(data);
+        MOV.B   R10, R13
+        MOV.B   #0x2, R12
+        CALLA   #SPI_SendReadByte
+//   20   LCD_CS = BIT_SET;
+        BIS.B   #0x80, &0x203
+//   21 #else
+//   22   LCD_CS = RESET;	
+//   23   LCD_SCL = RESET;
+//   24   for(uint8_t i=0;i<8;i++)
+//   25   {
+//   26     LCD_SDI = (data&0x80) ? BIT_SET : RESET;//ÉÏÉýÑØ·¢ËÍÊý¾Ý
+//   27     LCD_SCL = BIT_SET;
+//   28     LCD_SCL = RESET;		
+//   29     data <<= 1;    
+//   30   }
+//   31   LCD_CS = BIT_SET;
+//   32 #endif 
+//   33 } 
+        POPM.A  #0x1, R10
+          CFI R10H SameValue
+          CFI R10L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock1
+        REQUIRE _A_PAOUT_L
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   34 void LCD_Write_DATA8(char da) //·¢ËÍÊý¾Ý-8Î»²ÎÊý
+LCD_Write_DATA8:
+          CFI Block cfiBlock2 Using cfiCommon0
+          CFI Function LCD_Write_DATA8
+//   35 {
+        FUNCALL LCD_Write_DATA8, LCD_Writ_Bus
+        LOCFRAME CSTACK, 8, STACK
+        PUSHM.A #0x1, R10
+          CFI R10L Frame(CFA, -8)
+          CFI R10H Frame(CFA, -6)
+          CFI CFA SP+8
+        MOV.B   R12, R10
+//   36     LCD_DC = BIT_SET;
+        BIS.B   #0x1, &0x203
+//   37 	LCD_Writ_Bus(da);
+        MOV.B   R10, R12
+        CALLA   #LCD_Writ_Bus
+//   38 }  
+        POPM.A  #0x1, R10
+          CFI R10H SameValue
+          CFI R10L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock2
+        REQUIRE _A_PAOUT_L
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   39  void LCD_Write_DATA16(uint16_t da)
+LCD_Write_DATA16:
+          CFI Block cfiBlock3 Using cfiCommon0
+          CFI Function LCD_Write_DATA16
+//   40 {
+        FUNCALL LCD_Write_DATA16, LCD_Writ_Bus
+        LOCFRAME CSTACK, 8, STACK
+        FUNCALL LCD_Write_DATA16, LCD_Writ_Bus
+        LOCFRAME CSTACK, 8, STACK
+        PUSHM.A #0x1, R10
+          CFI R10L Frame(CFA, -8)
+          CFI R10H Frame(CFA, -6)
+          CFI CFA SP+8
+        MOV.W   R12, R10
+//   41     LCD_DC = BIT_SET;
+        BIS.B   #0x1, &0x203
+//   42 	LCD_Writ_Bus(da>>8);
+        MOV.W   R10, R12
+        SWPB    R12
+        AND.W   #0xff, R12
+        CALLA   #LCD_Writ_Bus
+//   43 	LCD_Writ_Bus(da);
+        PUSH.W  R12
+          CFI CFA SP+10
+        MOV.B   R10, 0(SP)
+        POP.W   R12
+          CFI CFA SP+8
+        CALLA   #LCD_Writ_Bus
+//   44 }	  
+        POPM.A  #0x1, R10
+          CFI R10H SameValue
+          CFI R10L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock3
+        REQUIRE _A_PAOUT_L
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   45 void LCD_Write_REG(char da)	 
+LCD_Write_REG:
+          CFI Block cfiBlock4 Using cfiCommon0
+          CFI Function LCD_Write_REG
+//   46 {
+        FUNCALL LCD_Write_REG, LCD_Writ_Bus
+        LOCFRAME CSTACK, 8, STACK
+        PUSHM.A #0x1, R10
+          CFI R10L Frame(CFA, -8)
+          CFI R10H Frame(CFA, -6)
+          CFI CFA SP+8
+        MOV.B   R12, R10
+//   47     LCD_DC = RESET;
+        BIC.B   #0x1, &0x203
+//   48         LCD_Writ_Bus(da);
+        MOV.B   R10, R12
+        CALLA   #LCD_Writ_Bus
+//   49 }
+        POPM.A  #0x1, R10
+          CFI R10H SameValue
+          CFI R10L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock4
+        REQUIRE _A_PAOUT_L
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   50  void LCD_Write_REG_DATA(int reg,int da)
+LCD_Write_REG_DATA:
+          CFI Block cfiBlock5 Using cfiCommon0
+          CFI Function LCD_Write_REG_DATA
+//   51 {
+        FUNCALL LCD_Write_REG_DATA, LCD_Write_REG
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL LCD_Write_REG_DATA, LCD_Write_DATA16
+        LOCFRAME CSTACK, 12, STACK
+        PUSHM.A #0x2, R11
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+12
+        MOV.W   R12, R10
+        MOV.W   R13, R11
+//   52     LCD_Write_REG(reg);
+        PUSH.W  R12
+          CFI CFA SP+14
+        MOV.B   R10, 0(SP)
+        POP.W   R12
+          CFI CFA SP+12
+        CALLA   #LCD_Write_REG
+//   53 	LCD_Write_DATA16(da);
+        MOV.W   R11, R12
+        CALLA   #LCD_Write_DATA16
+//   54 }
+        POPM.A  #0x2, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock5
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   55 void LCD_SetPos(unsigned int x1,unsigned int y1,unsigned int x2,unsigned int y2)
+LCD_SetPos:
+          CFI Block cfiBlock6 Using cfiCommon0
+          CFI Function LCD_SetPos
+//   56 {  
+        FUNCALL LCD_SetPos, LCD_Write_REG
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL LCD_SetPos, LCD_Write_DATA8
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL LCD_SetPos, LCD_Write_DATA8
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL LCD_SetPos, LCD_Write_DATA8
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL LCD_SetPos, LCD_Write_DATA8
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL LCD_SetPos, LCD_Write_REG
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL LCD_SetPos, LCD_Write_DATA8
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL LCD_SetPos, LCD_Write_DATA8
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL LCD_SetPos, LCD_Write_DATA8
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL LCD_SetPos, LCD_Write_DATA8
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL LCD_SetPos, LCD_Write_REG
+        LOCFRAME CSTACK, 20, STACK
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        MOV.W   R12, R11
+        MOV.W   R13, R8
+        MOV.W   R14, R9
+        MOV.W   R15, R10
+//   57    LCD_Write_REG(0x2a);
+        MOV.B   #0x2a, R12
+        CALLA   #LCD_Write_REG
+//   58    LCD_Write_DATA8(x1>>8);
+        MOV.W   R11, R12
+        SWPB    R12
+        AND.W   #0xff, R12
+        CALLA   #LCD_Write_DATA8
+//   59    LCD_Write_DATA8(x1);
+        PUSH.W  R12
+          CFI CFA SP+22
+        MOV.B   R11, 0(SP)
+        POP.W   R12
+          CFI CFA SP+20
+        CALLA   #LCD_Write_DATA8
+//   60    LCD_Write_DATA8(x2>>8);
+        MOV.W   R9, R12
+        SWPB    R12
+        AND.W   #0xff, R12
+        CALLA   #LCD_Write_DATA8
+//   61    LCD_Write_DATA8(x2);
+        PUSH.W  R12
+          CFI CFA SP+22
+        MOV.B   R9, 0(SP)
+        POP.W   R12
+          CFI CFA SP+20
+        CALLA   #LCD_Write_DATA8
+//   62   
+//   63    LCD_Write_REG(0x2b);
+        MOV.B   #0x2b, R12
+        CALLA   #LCD_Write_REG
+//   64    LCD_Write_DATA8(y1>>8);
+        MOV.W   R8, R12
+        SWPB    R12
+        AND.W   #0xff, R12
+        CALLA   #LCD_Write_DATA8
+//   65    LCD_Write_DATA8(y1);
+        PUSH.W  R12
+          CFI CFA SP+22
+        MOV.B   R8, 0(SP)
+        POP.W   R12
+          CFI CFA SP+20
+        CALLA   #LCD_Write_DATA8
+//   66    LCD_Write_DATA8(y2>>8);
+        MOV.W   R10, R12
+        SWPB    R12
+        AND.W   #0xff, R12
+        CALLA   #LCD_Write_DATA8
+//   67    LCD_Write_DATA8(y2);
+        PUSH.W  R12
+          CFI CFA SP+22
+        MOV.B   R10, 0(SP)
+        POP.W   R12
+          CFI CFA SP+20
+        CALLA   #LCD_Write_DATA8
+//   68 
+//   69    LCD_Write_REG(0x2C);
+        MOV.B   #0x2c, R12
+        CALLA   #LCD_Write_REG
+//   70 }
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock6
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   71 void LCD_Init(void)
+LCD_Init:
+          CFI Block cfiBlock7 Using cfiCommon0
+          CFI Function LCD_Init
+//   72 {
+//   73         LCD_PORT_Init();
+        FUNCALL LCD_Init, LCD_PORT_Init
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, delay_us
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, delay_us
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_REG
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_REG
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_REG
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_REG
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_REG
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_REG
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_REG
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_REG
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_REG
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_REG
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_REG
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_REG
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_REG
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_REG
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_REG
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_REG
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_REG
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_REG
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_DATA8
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_REG
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, delay_us
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_REG
+        LOCFRAME CSTACK, 4, STACK
+        FUNCALL LCD_Init, LCD_Write_REG
+        LOCFRAME CSTACK, 4, STACK
+        CALLA   #LCD_PORT_Init
+//   74 //µ÷ÓÃÒ»´ÎÕâÐ©º¯Êý£¬ÃâµÃ±àÒëµÄÊ±ºòÌáÊ¾¾¯¸æ
+//   75    	//LCD_CS=1;   
+//   76 	LCD_RST = RESET;
+        BIC.B   #0x10, &0x203
+//   77 	delay_ms(10);
+        MOV.W   #0x2710, R12
+        MOV.W   #0x0, R13
+        CALLA   #delay_us
+//   78 	LCD_RST = BIT_SET;
+        BIS.B   #0x10, &0x203
+//   79 	delay_ms(10);
+        MOV.W   #0x2710, R12
+        MOV.W   #0x0, R13
+        CALLA   #delay_us
+//   80 	//LCD_CS =0;  //´ò¿ªÆ¬Ñ¡Ê¹ÄÜ
+//   81 
+//   82 	LCD_Write_REG(0xCB);  
+        MOV.B   #0xcb, R12
+        CALLA   #LCD_Write_REG
+//   83         LCD_Write_DATA8(0x39); 
+        MOV.B   #0x39, R12
+        CALLA   #LCD_Write_DATA8
+//   84         LCD_Write_DATA8(0x2C); 
+        MOV.B   #0x2c, R12
+        CALLA   #LCD_Write_DATA8
+//   85         LCD_Write_DATA8(0x00); 
+        MOV.B   #0x0, R12
+        CALLA   #LCD_Write_DATA8
+//   86         LCD_Write_DATA8(0x34); 
+        MOV.B   #0x34, R12
+        CALLA   #LCD_Write_DATA8
+//   87         LCD_Write_DATA8(0x02); 
+        MOV.B   #0x2, R12
+        CALLA   #LCD_Write_DATA8
+//   88 
+//   89         LCD_Write_REG(0xCF);  
+        MOV.B   #0xcf, R12
+        CALLA   #LCD_Write_REG
+//   90         LCD_Write_DATA8(0x00); 
+        MOV.B   #0x0, R12
+        CALLA   #LCD_Write_DATA8
+//   91         LCD_Write_DATA8(0XC1); 
+        MOV.B   #0xc1, R12
+        CALLA   #LCD_Write_DATA8
+//   92         LCD_Write_DATA8(0X30); 
+        MOV.B   #0x30, R12
+        CALLA   #LCD_Write_DATA8
+//   93  
+//   94         LCD_Write_REG(0xE8);  
+        MOV.B   #0xe8, R12
+        CALLA   #LCD_Write_REG
+//   95         LCD_Write_DATA8(0x85); 
+        MOV.B   #0x85, R12
+        CALLA   #LCD_Write_DATA8
+//   96         LCD_Write_DATA8(0x00); 
+        MOV.B   #0x0, R12
+        CALLA   #LCD_Write_DATA8
+//   97         LCD_Write_DATA8(0x78); 
+        MOV.B   #0x78, R12
+        CALLA   #LCD_Write_DATA8
+//   98  
+//   99         LCD_Write_REG(0xEA);  
+        MOV.B   #0xea, R12
+        CALLA   #LCD_Write_REG
+//  100         LCD_Write_DATA8(0x00); 
+        MOV.B   #0x0, R12
+        CALLA   #LCD_Write_DATA8
+//  101         LCD_Write_DATA8(0x00); 
+        MOV.B   #0x0, R12
+        CALLA   #LCD_Write_DATA8
+//  102  
+//  103         LCD_Write_REG(0xED);  
+        MOV.B   #0xed, R12
+        CALLA   #LCD_Write_REG
+//  104         LCD_Write_DATA8(0x64); 
+        MOV.B   #0x64, R12
+        CALLA   #LCD_Write_DATA8
+//  105         LCD_Write_DATA8(0x03); 
+        MOV.B   #0x3, R12
+        CALLA   #LCD_Write_DATA8
+//  106         LCD_Write_DATA8(0X12); 
+        MOV.B   #0x12, R12
+        CALLA   #LCD_Write_DATA8
+//  107         LCD_Write_DATA8(0X81); 
+        MOV.B   #0x81, R12
+        CALLA   #LCD_Write_DATA8
+//  108 
+//  109         LCD_Write_REG(0xF7);  
+        MOV.B   #0xf7, R12
+        CALLA   #LCD_Write_REG
+//  110         LCD_Write_DATA8(0x20); 
+        MOV.B   #0x20, R12
+        CALLA   #LCD_Write_DATA8
+//  111   
+//  112         LCD_Write_REG(0xC0);    //Power control 
+        MOV.B   #0xc0, R12
+        CALLA   #LCD_Write_REG
+//  113         LCD_Write_DATA8(0x23);   //VRH[5:0] 
+        MOV.B   #0x23, R12
+        CALLA   #LCD_Write_DATA8
+//  114  
+//  115         LCD_Write_REG(0xC1);    //Power control 
+        MOV.B   #0xc1, R12
+        CALLA   #LCD_Write_REG
+//  116         LCD_Write_DATA8(0x10);   //SAP[2:0];BT[3:0] 
+        MOV.B   #0x10, R12
+        CALLA   #LCD_Write_DATA8
+//  117  
+//  118         LCD_Write_REG(0xC5);    //VCM control 
+        MOV.B   #0xc5, R12
+        CALLA   #LCD_Write_REG
+//  119         LCD_Write_DATA8(0x3e); //¶Ô±È¶Èµ÷½Ú
+        MOV.B   #0x3e, R12
+        CALLA   #LCD_Write_DATA8
+//  120         LCD_Write_DATA8(0x28); 
+        MOV.B   #0x28, R12
+        CALLA   #LCD_Write_DATA8
+//  121  
+//  122         LCD_Write_REG(0xC7);    //VCM control2 
+        MOV.B   #0xc7, R12
+        CALLA   #LCD_Write_REG
+//  123         LCD_Write_DATA8(0x86);  //--
+        MOV.B   #0x86, R12
+        CALLA   #LCD_Write_DATA8
+//  124  
+//  125         LCD_Write_REG(0x36);    // Memory Access Control 
+        MOV.B   #0x36, R12
+        CALLA   #LCD_Write_REG
+//  126         LCD_Write_DATA8(0x48); //C8	   //48 68ÊúÆÁ//28 E8 ºáÆÁ
+        MOV.B   #0x48, R12
+        CALLA   #LCD_Write_DATA8
+//  127 
+//  128         LCD_Write_REG(0x3A);    
+        MOV.B   #0x3a, R12
+        CALLA   #LCD_Write_REG
+//  129         LCD_Write_DATA8(0x55); 
+        MOV.B   #0x55, R12
+        CALLA   #LCD_Write_DATA8
+//  130 
+//  131         LCD_Write_REG(0xB1);    
+        MOV.B   #0xb1, R12
+        CALLA   #LCD_Write_REG
+//  132         LCD_Write_DATA8(0x00);  
+        MOV.B   #0x0, R12
+        CALLA   #LCD_Write_DATA8
+//  133         LCD_Write_DATA8(0x18); 
+        MOV.B   #0x18, R12
+        CALLA   #LCD_Write_DATA8
+//  134  
+//  135         LCD_Write_REG(0xB6);    // Display Function Control 
+        MOV.B   #0xb6, R12
+        CALLA   #LCD_Write_REG
+//  136         LCD_Write_DATA8(0x08); 
+        MOV.B   #0x8, R12
+        CALLA   #LCD_Write_DATA8
+//  137         LCD_Write_DATA8(0x82);
+        MOV.B   #0x82, R12
+        CALLA   #LCD_Write_DATA8
+//  138         LCD_Write_DATA8(0x27);  
+        MOV.B   #0x27, R12
+        CALLA   #LCD_Write_DATA8
+//  139  
+//  140         LCD_Write_REG(0xF2);    // 3Gamma Function Disable 
+        MOV.B   #0xf2, R12
+        CALLA   #LCD_Write_REG
+//  141         LCD_Write_DATA8(0x00); 
+        MOV.B   #0x0, R12
+        CALLA   #LCD_Write_DATA8
+//  142  
+//  143         LCD_Write_REG(0x26);    //Gamma curve selected 
+        MOV.B   #0x26, R12
+        CALLA   #LCD_Write_REG
+//  144         LCD_Write_DATA8(0x01); 
+        MOV.B   #0x1, R12
+        CALLA   #LCD_Write_DATA8
+//  145  
+//  146         LCD_Write_REG(0xE0);    //Set Gamma 
+        MOV.B   #0xe0, R12
+        CALLA   #LCD_Write_REG
+//  147         LCD_Write_DATA8(0x0F); 
+        MOV.B   #0xf, R12
+        CALLA   #LCD_Write_DATA8
+//  148         LCD_Write_DATA8(0x31); 
+        MOV.B   #0x31, R12
+        CALLA   #LCD_Write_DATA8
+//  149         LCD_Write_DATA8(0x2B); 
+        MOV.B   #0x2b, R12
+        CALLA   #LCD_Write_DATA8
+//  150         LCD_Write_DATA8(0x0C); 
+        MOV.B   #0xc, R12
+        CALLA   #LCD_Write_DATA8
+//  151         LCD_Write_DATA8(0x0E); 
+        MOV.B   #0xe, R12
+        CALLA   #LCD_Write_DATA8
+//  152         LCD_Write_DATA8(0x08); 
+        MOV.B   #0x8, R12
+        CALLA   #LCD_Write_DATA8
+//  153         LCD_Write_DATA8(0x4E); 
+        MOV.B   #0x4e, R12
+        CALLA   #LCD_Write_DATA8
+//  154         LCD_Write_DATA8(0xF1); 
+        MOV.B   #0xf1, R12
+        CALLA   #LCD_Write_DATA8
+//  155         LCD_Write_DATA8(0x37); 
+        MOV.B   #0x37, R12
+        CALLA   #LCD_Write_DATA8
+//  156         LCD_Write_DATA8(0x07); 
+        MOV.B   #0x7, R12
+        CALLA   #LCD_Write_DATA8
+//  157         LCD_Write_DATA8(0x10); 
+        MOV.B   #0x10, R12
+        CALLA   #LCD_Write_DATA8
+//  158         LCD_Write_DATA8(0x03); 
+        MOV.B   #0x3, R12
+        CALLA   #LCD_Write_DATA8
+//  159         LCD_Write_DATA8(0x0E); 
+        MOV.B   #0xe, R12
+        CALLA   #LCD_Write_DATA8
+//  160         LCD_Write_DATA8(0x09); 
+        MOV.B   #0x9, R12
+        CALLA   #LCD_Write_DATA8
+//  161         LCD_Write_DATA8(0x00); 
+        MOV.B   #0x0, R12
+        CALLA   #LCD_Write_DATA8
+//  162 
+//  163         LCD_Write_REG(0XE1);    //Set Gamma 
+        MOV.B   #0xe1, R12
+        CALLA   #LCD_Write_REG
+//  164         LCD_Write_DATA8(0x00); 
+        MOV.B   #0x0, R12
+        CALLA   #LCD_Write_DATA8
+//  165         LCD_Write_DATA8(0x0E); 
+        MOV.B   #0xe, R12
+        CALLA   #LCD_Write_DATA8
+//  166         LCD_Write_DATA8(0x14); 
+        MOV.B   #0x14, R12
+        CALLA   #LCD_Write_DATA8
+//  167         LCD_Write_DATA8(0x03); 
+        MOV.B   #0x3, R12
+        CALLA   #LCD_Write_DATA8
+//  168         LCD_Write_DATA8(0x11); 
+        MOV.B   #0x11, R12
+        CALLA   #LCD_Write_DATA8
+//  169         LCD_Write_DATA8(0x07); 
+        MOV.B   #0x7, R12
+        CALLA   #LCD_Write_DATA8
+//  170         LCD_Write_DATA8(0x31); 
+        MOV.B   #0x31, R12
+        CALLA   #LCD_Write_DATA8
+//  171         LCD_Write_DATA8(0xC1); 
+        MOV.B   #0xc1, R12
+        CALLA   #LCD_Write_DATA8
+//  172         LCD_Write_DATA8(0x48); 
+        MOV.B   #0x48, R12
+        CALLA   #LCD_Write_DATA8
+//  173         LCD_Write_DATA8(0x08); 
+        MOV.B   #0x8, R12
+        CALLA   #LCD_Write_DATA8
+//  174         LCD_Write_DATA8(0x0F); 
+        MOV.B   #0xf, R12
+        CALLA   #LCD_Write_DATA8
+//  175         LCD_Write_DATA8(0x0C); 
+        MOV.B   #0xc, R12
+        CALLA   #LCD_Write_DATA8
+//  176         LCD_Write_DATA8(0x31); 
+        MOV.B   #0x31, R12
+        CALLA   #LCD_Write_DATA8
+//  177         LCD_Write_DATA8(0x36); 
+        MOV.B   #0x36, R12
+        CALLA   #LCD_Write_DATA8
+//  178         LCD_Write_DATA8(0x0F); 
+        MOV.B   #0xf, R12
+        CALLA   #LCD_Write_DATA8
+//  179  
+//  180         LCD_Write_REG(0x11);    //Exit Sleep 
+        MOV.B   #0x11, R12
+        CALLA   #LCD_Write_REG
+//  181         delay_ms(10); 
+        MOV.W   #0x2710, R12
+        MOV.W   #0x0, R13
+        CALLA   #delay_us
+//  182 				
+//  183         LCD_Write_REG(0x29);    //Display on 
+        MOV.B   #0x29, R12
+        CALLA   #LCD_Write_REG
+//  184         LCD_Write_REG(0x2c); 
+        MOV.B   #0x2c, R12
+        BRA     #LCD_Write_REG
+          CFI EndBlock cfiBlock7
+        REQUIRE _A_PAOUT_L
+//  185 }
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r4:
+        REQUIRE ?setjmp_r4
+        REQUIRE ?longjmp_r4
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r5:
+        REQUIRE ?setjmp_r5
+        REQUIRE ?longjmp_r5
+
+        END
+//  186 
+//  187 
+//  188 
+//  189 
+//  190 
+//  191 
+//  192 
+// 
+// 1 004 bytes in segment CODE
+//     2 bytes in segment DATA16_AN
+// 
+// 1 004 bytes of CODE memory
+//     0 bytes of DATA memory (+ 2 bytes shared)
+//
+//Errors: none
+//Warnings: none

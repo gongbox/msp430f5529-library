@@ -1,0 +1,778 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+//                                                      06/Jun/2016  16:42:26 /
+// IAR C/C++ Compiler V5.50.1.20465/W32, Evaluation edition for MSP430        /
+// Copyright 1996-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    __rt_version  =  3                                                      /
+//    __double_size =  32                                                     /
+//    __reg_r4      =  free                                                   /
+//    __reg_r5      =  free                                                   /
+//    __pic         =  no                                                     /
+//    __core        =  430X                                                   /
+//    __data_model  =  large                                                  /
+//    Source file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\gpio.c                             /
+//    Command line  =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\gpio.c -D NDEBUG -D RAM_VECTOR     /
+//                     -lC C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C /
+//                     °æ\¹¤³ÌÄ£°å\Release\List\ -lA                          /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Release\List\ -o C:\Users\615\Desktop\MSP430\M /
+//                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Release\Obj\          /
+//                     -D__MSP430F5529__ -e --double=32 --dlib_config         /
+//                     "D:\Program Files (x86)\IAR Systems\Embedded           /
+//                     Workbench 6.4 Evaluation\430\LIB\DLIB\dl430xlfn.h" -I  /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\ -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº /
+//                     ¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\inc\ -I                    /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\ -I C:\Users\615\Desktop\MSP430\MS /
+//                     P430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\src\USB\ -I    /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_config\ -I                 /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_User\ -I                   /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\srcUSB\USB_API\USB_CDC_API\ -I         /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_API\USB_HID_API\ -I        /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Drivers\src\USB\USB_API\USB_MSC_API\ -I        /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\KEY\ -I C:\Users\615\Desktop\MSP430\M /
+//                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\LED\ -I      /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\12864\ -I                             /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\oled\ -I C:\Users\615\Desktop\MSP430\ /
+//                     MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\mpu6050\inc /
+//                     \ -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\ /
+//                     C°æ\¹¤³ÌÄ£°å\HardWare\mpu6050\src\ -I                  /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\nokia5110\inc\ -I                     /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\nokia5110\src\ -I                     /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\LQ_1.8_TFT\ -I                        /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\LCD_API\ -I                           /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\2.2TFT\ -I                            /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\HardWare\delay\ -I                             /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\System\ -I C:\Users\615\Desktop\MSP430\MSP430F /
+//                     5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\inc\ -I              /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\System\src\ -I C:\Users\615\Desktop\MSP430\MSP /
+//                     430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\User\ -I                /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\User\USER\ -I C:\Users\615\Desktop\MSP430\MSP4 /
+//                     30F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\UCOSII\CONFIG\ -I    /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\uCOSII\App\ -I                             /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\uCOSII\CONFIHG\ -I                         /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\uCOSII\PORT\ -I                            /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\UCOSII\CORE\ -I                            /
+//                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Lib\FatFs\ -I C:\Users\615\Desktop\MSP430\MSP4 /
+//                     30F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\FatFs\option\        /
+//                     --core=430X --data_model=large -Oh --multiplier=32     /
+//                     --multiplier_location=4C0 --hw_workaround=CPU40        /
+//    List file     =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹ /
+//                     ¤³ÌÄ£°å\Release\List\gpio.s43                          /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME gpio
+
+        RTMODEL "__SystemLibrary", "DLib"
+        RTMODEL "__core", "430X"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__double_size", "32"
+        RTMODEL "__pic", "no"
+        RTMODEL "__reg_r4", "free"
+        RTMODEL "__reg_r5", "free"
+        RTMODEL "__rt_version", "3"
+
+        RSEG CSTACK:DATA:SORT:NOROOT(0)
+
+        EXTERN ?longjmp_r4
+        EXTERN ?longjmp_r5
+        EXTERN ?setjmp_r4
+        EXTERN ?setjmp_r5
+
+        PUBWEAK ?setjmp_save_r4
+        PUBWEAK ?setjmp_save_r5
+        PUBLIC GPIOX
+        PUBLIC GPIO_Bit_Get
+        FUNCTION GPIO_Bit_Get,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC GPIO_Bit_Set
+        FUNCTION GPIO_Bit_Set,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC GPIO_Bit_Turn
+        FUNCTION GPIO_Bit_Turn,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC GPIO_Byte_Get
+        FUNCTION GPIO_Byte_Get,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC GPIO_Byte_Set
+        FUNCTION GPIO_Byte_Set,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC GPIO_ClearITPendingBit
+        FUNCTION GPIO_ClearITPendingBit,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC GPIO_GetITStatus
+        FUNCTION GPIO_GetITStatus,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC GPIO_ITConfig
+        FUNCTION GPIO_ITConfig,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC GPIO_MultiBits_Init
+        FUNCTION GPIO_MultiBits_Init,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 8, STACK
+        PUBWEAK _A_PAIN_L
+        PUBWEAK _A_PBIN_L
+        PUBWEAK _A_PCIN_L
+        PUBWEAK _A_PDIN_L
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA SP DATA
+          CFI Resource PC:20, SP:20, SR:16, R4L:16, R4H:4, R4:20, R5L:16, R5H:4
+          CFI Resource R5:20, R6L:16, R6H:4, R6:20, R7L:16, R7H:4, R7:20, R8L:16
+          CFI Resource R8H:4, R8:20, R9L:16, R9H:4, R9:20, R10L:16, R10H:4
+          CFI Resource R10:20, R11L:16, R11H:4, R11:20, R12L:16, R12H:4, R12:20
+          CFI Resource R13L:16, R13H:4, R13:20, R14L:16, R14H:4, R14:20, R15L:16
+          CFI Resource R15H:4, R15:20
+          CFI ResourceParts R4 R4H, R4L
+          CFI ResourceParts R5 R5H, R5L
+          CFI ResourceParts R6 R6H, R6L
+          CFI ResourceParts R7 R7H, R7L
+          CFI ResourceParts R8 R8H, R8L
+          CFI ResourceParts R9 R9H, R9L
+          CFI ResourceParts R10 R10H, R10L
+          CFI ResourceParts R11 R11H, R11L
+          CFI ResourceParts R12 R12H, R12L
+          CFI ResourceParts R13 R13H, R13L
+          CFI ResourceParts R14 R14H, R14L
+          CFI ResourceParts R15 R15H, R15L
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H SameValue
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H SameValue
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H SameValue
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H SameValue
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H SameValue
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H SameValue
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H SameValue
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H SameValue
+          CFI R11 Concat
+          CFI R12L Undefined
+          CFI R12H Undefined
+          CFI R12 Undefined
+          CFI R13L Undefined
+          CFI R13H Undefined
+          CFI R13 Undefined
+          CFI R14L Undefined
+          CFI R14H Undefined
+          CFI R14 Undefined
+          CFI R15L Undefined
+          CFI R15H Undefined
+          CFI R15 Undefined
+          CFI EndCommon cfiCommon0
+        
+        
+          CFI Common cfiCommon1 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H SameValue
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H SameValue
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H SameValue
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H SameValue
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H SameValue
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H SameValue
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H SameValue
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H SameValue
+          CFI R11 Concat
+          CFI R12L SameValue
+          CFI R12H SameValue
+          CFI R12 Concat
+          CFI R13L SameValue
+          CFI R13H SameValue
+          CFI R13 Concat
+          CFI R14L SameValue
+          CFI R14H SameValue
+          CFI R14 Concat
+          CFI R15L SameValue
+          CFI R15H SameValue
+          CFI R15 Concat
+          CFI EndCommon cfiCommon1
+        
+// C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\src\gpio.c
+//    1 #include "gpio.h"
+
+        ASEGN DATA16_AN:DATA:NOROOT,0200H
+// union <unnamed> __data16 _A_PAIN_L
+_A_PAIN_L:
+        DS8 2
+
+        ASEGN DATA16_AN:DATA:NOROOT,0220H
+// union <unnamed> __data16 _A_PBIN_L
+_A_PBIN_L:
+        DS8 2
+
+        ASEGN DATA16_AN:DATA:NOROOT,0240H
+// union <unnamed> __data16 _A_PCIN_L
+_A_PCIN_L:
+        DS8 2
+
+        ASEGN DATA16_AN:DATA:NOROOT,0260H
+// union <unnamed> __data16 _A_PDIN_L
+_A_PDIN_L:
+        DS8 2
+//    2 //¶¨Òå8¸öÖ¸ÕëÊý×é±£´æ GPIOX µÄµØÖ·
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(1)
+//    3 const GPIO_MemMapPtr GPIOX[] ={P1_BASE_PTR,P2_BASE_PTR,P3_BASE_PTR,P4_BASE_PTR,P5_BASE_PTR,P6_BASE_PTR,P7_BASE_PTR,P8_BASE_PTR}; 
+GPIOX:
+        DC32 _A_PAIN_L, _A_PAIN_L + 1H, _A_PBIN_L, _A_PBIN_L + 1H, _A_PCIN_L
+        DC32 _A_PCIN_L + 1H, _A_PDIN_L, _A_PDIN_L + 1H
+//    4 /*********************************************************************************
+//    5 º¯ÊýÃû£ºIO¿Ú³õÊ¼»¯
+//    6 Èë¿Ú²ÎÊý£ºPORTn portn    ¶ÔÓ¦IO¶Ë¿Ú
+//    7           uint8_t pin     ¶ÔÓ¦IOÒý½ÅÎ»ÖÃ
+//    8           uint16_t config     
+//    9           ¶ÔÓ¦IO¿ÚÅäÖÃ {
+//   10                             GPI                   ,// ÊäÈë·½Ïò
+//   11                             GPO                   ,// Êä³ö·½Ïò
+//   12                             LDS                   ,// µÍÇý¶¯ÄÜÁ¦
+//   13                             HDS                   ,// ¸ßÇý¶¯ÄÜÁ¦
+//   14                             PULL_DOWN             ,// ÏÂÀ­
+//   15                             PULL_UP               ,// ÉÏÀ­
+//   16                             IRQ_RISING            ,// ÉÏÉýÑØ´¥·¢ÖÐ¶Ï
+//   17                             IRQ_FALLING           ,// ÏÂ½µÑØ´¥·¢ÖÐ¶Ï
+//   18                             SEL                   ,// µÚ¶þ¸´ÓÃ¹¦ÄÜ
+//   19                         }  
+//   20 Ê¹ÓÃÀý³Ì:GPIO_MultiBits_Init(P2,BIT3,GPO|HDS);   //³õÊ¼»¯P2.3ÎªÊä³ö·ÅÏò£¬¸ßÇý¶¯ÄÜÁ¦
+//   21 **********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   22 void GPIO_MultiBits_Init(PORTn portn,uint8_t BITs,uint16_t config)
+GPIO_MultiBits_Init:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function GPIO_MultiBits_Init
+//   23 {
+        PUSHM.A #0x1, R10
+          CFI R10L Frame(CFA, -8)
+          CFI R10H Frame(CFA, -6)
+          CFI CFA SP+8
+//   24   if((config & SEL) == SEL)
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  GPIOX(R15), R15
+        BIT.W   #0x100, R14
+        JNC     ??GPIO_MultiBits_Init_0
+//   25   {
+//   26     GPIOX[portn]->SEL |= BITs;                    //Ñ¡ÔñÎªµÚ¶þ¹¦ÄÜ
+        BIS.B   R13, 0xa(R15)
+        JMP     ??GPIO_MultiBits_Init_1
+//   27   }
+//   28   else
+//   29   {
+//   30     GPIOX[portn]->SEL &=~BITs;                    //Ñ¡ÔñÎªIO¿Ú¹¦ÄÜ
+??GPIO_MultiBits_Init_0:
+        BIC.B   R13, 0xa(R15)
+//   31   }
+//   32   
+//   33   if((config & GPO) == GPO)              //ÅÐ¶Ï·½Ïò
+??GPIO_MultiBits_Init_1:
+        BIT.W   #0x2, R14
+        JNC     ??GPIO_MultiBits_Init_2
+//   34   {
+//   35     GPIOX[portn]->PDIR |= BITs;       //ÉèÖÃÎªÊä³ö·½Ïò
+        BIS.B   R13, 0x4(R15)
+//   36     
+//   37     if((config&HDS) == HDS)            //ÅÐ¶ÏÇý¶¯ÄÜÁ¦
+        BIT.W   #0x8, R14
+        JNC     ??GPIO_MultiBits_Init_3
+//   38     {
+//   39       GPIOX[portn]->DS |= BITs;          //ÉèÎª¸ßÇý¶¯ÄÜÁ¦
+        BIS.B   R13, 0x8(R15)
+        JMP     ??GPIO_MultiBits_Init_4
+//   40     }
+//   41     else
+//   42     {
+//   43       GPIOX[portn]->DS &=~BITs;          //ÉèÎªµÍÇý¶¯ÄÜÁ¦
+??GPIO_MultiBits_Init_3:
+        BIC.B   R13, 0x8(R15)
+        JMP     ??GPIO_MultiBits_Init_4
+//   44     }
+//   45   }
+//   46   else   //Èç¹ûÊÇÊäÈë·½Ïò
+//   47   {
+//   48     GPIOX[portn]->PDIR &=~BITs;      //ÉèÖÃÎªÊäÈë·½Ïò
+??GPIO_MultiBits_Init_2:
+        MOV.B   R13, R10
+        XOR.B   #0xff, R10
+        AND.B   R10, 0x4(R15)
+//   49     
+//   50     if((config & PULL_DOWN) == PULL_DOWN) //ÅÐ¶ÏÊÇ·ñ¿ªÆôÏÂÀ­
+        BIT.W   #0x10, R14
+        JNC     ??GPIO_MultiBits_Init_5
+//   51     {
+//   52       GPIOX[portn]->REN  |= BITs;             //¿ªÆôÉÏ\ÏÂÀ­
+        BIS.B   R13, 0x6(R15)
+//   53       GPIOX[portn]->POUT &=~BITs;             //ÉèÖÃÎªÏÂÀ­
+        AND.B   R10, 0x2(R15)
+        JMP     ??GPIO_MultiBits_Init_6
+//   54     }
+//   55     else if((config & PULL_UP) == PULL_UP)//ÅÐ¶ÏÊÇ·ñ¿ªÆôÉÏÀ­
+??GPIO_MultiBits_Init_5:
+        BIT.W   #0x20, R14
+        JNC     ??GPIO_MultiBits_Init_7
+//   56     {
+//   57       GPIOX[portn]->REN  |= BITs;             //¿ªÆôÉÏ\ÏÂÀ­
+        BIS.B   R13, 0x6(R15)
+//   58       GPIOX[portn]->POUT |= BITs;             //ÉèÖÃÎªÉÏÀ­
+        BIS.B   R13, 0x2(R15)
+        JMP     ??GPIO_MultiBits_Init_6
+//   59     }
+//   60     else
+//   61     {
+//   62       GPIOX[portn]->REN &=~BITs;              //¹Ø±ÕÉÏ\ÏÂÀ­
+??GPIO_MultiBits_Init_7:
+        AND.B   R10, 0x6(R15)
+//   63     }
+//   64     
+//   65     if(portn <= P2) //Ð¡ÓÚµÈÓÚP2Ôò¿ÉÄÜ»áÅäÖÃIO¿ÚÖÐ¶Ï
+??GPIO_MultiBits_Init_6:
+        CMP.B   #0x2, R12
+        JC      ??GPIO_MultiBits_Init_4
+//   66     {
+//   67       GPIOX[portn]->IE &=~BITs;                  //¹Ø±ÕÖÐ¶Ï
+        AND.B   R10, 0x1a(R15)
+//   68       if((config & IRQ_RISING) == IRQ_RISING)       //Èç¹ûÓÐÉÏÉýÑØ
+        BIT.W   #0x40, R14
+        JNC     ??GPIO_MultiBits_Init_8
+//   69       {
+//   70         GPIOX[portn]->IES |= BITs;                  //ÉèÎªÉÏÉýÑØ
+        BIS.B   R13, 0x18(R15)
+        JMP     ??GPIO_MultiBits_Init_4
+//   71       }
+//   72       else 
+//   73       {
+//   74         GPIOX[portn]->IES &=~BITs ;                 //ÉèÎªÏÂ½µÑØ
+??GPIO_MultiBits_Init_8:
+        AND.B   R10, 0x18(R15)
+//   75       } 
+//   76     }
+//   77   }
+//   78 }
+??GPIO_MultiBits_Init_4:
+        POPM.A  #0x1, R10
+          CFI R10H SameValue
+          CFI R10L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock0
+//   79 /*******************************************************************************
+//   80 º¯ÊýÃû³Æ£ºIO¿ÚÒ»Î»Êä³öÉèÖÃ
+//   81 Èë¿Ú²ÎÊý£ºPORTn portn    ¶ÔÓ¦IO¶Ë¿Ú
+//   82           uint8_t pin     ¶ÔÓ¦IOÒý½ÅÎ»ÖÃ
+//   83           uint8_t level   ÉèÖÃÊä³öµçÆ½£¨SET £º¸ßµçÆ½  RESET£ºµÍµçÆ½£©
+//   84 *  Ê¹ÓÃÊ¾Àý£º
+//   85 ********************************************************************************/
+//   86 void GPIO_Bit_Set(PORTn portn,uint8_t pin,BOOL level)
+//   87 {
+//   88   if(level != RESET)
+//   89   {
+//   90     GPIOX[portn]->POUT |= (1<<pin);            //
+//   91   }
+//   92   else 
+//   93   {
+//   94     GPIOX[portn]->POUT &=~(1<<pin);            //
+//   95   }
+//   96 }
+//   97 /*******************************************************************************
+//   98 º¯ÊýÃû³Æ£ºIO¿ÚÒ»Î»ÊäÈë¶ÁÈ¡
+//   99 Èë¿Ú²ÎÊý£ºPORTn portn    ¶ÔÓ¦IO¶Ë¿Ú
+//  100           uint8_t pin     ¶ÔÓ¦IOÒý½ÅÎ»ÖÃ
+//  101 ·µ»Ø²ÎÊý£ºuint8 ÊäÈëµçÆ½£¨SET £º¸ßµçÆ½  RESET£ºµÍµçÆ½£©
+//  102 *  Ê¹ÓÃÊ¾Àý£º
+//  103 ********************************************************************************/
+//  104 STATUS GPIO_Bit_Get(PORTn portn,uint8_t pin)
+//  105 {
+//  106   return (GPIOX[portn]->IN & (1<<pin)) ? SET : RESET;
+//  107 }
+//  108 /*******************************************************************************
+//  109 º¯ÊýÃû³Æ£ºIO¿ÚÒ»Î»Êä³ö·­×ª
+//  110 Èë¿Ú²ÎÊý£ºPORTn portn    ¶ÔÓ¦IO¶Ë¿Ú
+//  111           uint8_t pin     ¶ÔÓ¦IOÒý½ÅÎ»ÖÃ
+//  112 *  Ê¹ÓÃÊ¾Àý£º
+//  113 ********************************************************************************/
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine0:
+          CFI Block cfiCond1 Using cfiCommon0
+          CFI Function GPIO_ClearITPendingBit
+          CFI Conditional ??CrossCallReturnLabel_0
+          CFI CFA SP+8
+          CFI Block cfiCond2 Using cfiCommon0
+          CFI (cfiCond2) Function GPIO_GetITStatus
+          CFI (cfiCond2) Conditional ??CrossCallReturnLabel_1
+          CFI (cfiCond2) CFA SP+8
+          CFI Block cfiCond3 Using cfiCommon0
+          CFI (cfiCond3) Function GPIO_Bit_Turn
+          CFI (cfiCond3) Conditional ??CrossCallReturnLabel_2
+          CFI (cfiCond3) CFA SP+8
+          CFI Block cfiPicker4 Using cfiCommon1
+          CFI (cfiPicker4) NoFunction
+          CFI (cfiPicker4) Picker
+//  114 void GPIO_Bit_Turn  (PORTn portn,uint8_t pin)
+//  115 {
+//  116   GPIOX[portn]->POUT ^=(1<<pin);
+        MOV.B   R12, R12
+        RLAM.A  #0x2, R12
+        MOVX.A  GPIOX(R12), R14
+        BRA     #?Subroutine3
+          CFI EndBlock cfiCond1
+          CFI EndBlock cfiCond2
+          CFI EndBlock cfiCond3
+          CFI EndBlock cfiPicker4
+
+        RSEG CODE:CODE:NOROOT(1)
+GPIO_ITConfig:
+          CFI Block cfiBlock5 Using cfiCommon0
+          CFI Function GPIO_ITConfig
+        CALLA   #?Subroutine1
+??CrossCallReturnLabel_7:
+        MOV.B   R15, R13
+        XOR.B   #0xff, R13
+        CMP.B   #0x0, R14
+        JEQ     ??GPIO_ITConfig_1
+        AND.B   R13, 0x1c(R12)
+        BIS.B   R15, 0x1a(R12)
+        RETA
+??GPIO_ITConfig_1:
+        AND.B   R13, 0x1a(R12)
+        RETA
+          CFI EndBlock cfiBlock5
+
+        RSEG CODE:CODE:NOROOT(1)
+GPIO_Byte_Get:
+          CFI Block cfiBlock6 Using cfiCommon0
+          CFI Function GPIO_Byte_Get
+        CALLA   #?Subroutine2
+??CrossCallReturnLabel_3:
+        MOV.B   @R15, R12
+        RETA
+          CFI EndBlock cfiBlock6
+
+        RSEG CODE:CODE:NOROOT(1)
+GPIO_Byte_Set:
+          CFI Block cfiBlock7 Using cfiCommon0
+          CFI Function GPIO_Byte_Set
+        CALLA   #?Subroutine2
+??CrossCallReturnLabel_4:
+        MOV.B   R13, 0x2(R15)
+        RETA
+          CFI EndBlock cfiBlock7
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine2:
+          CFI Block cfiCond8 Using cfiCommon0
+          CFI Function GPIO_Byte_Get
+          CFI Conditional ??CrossCallReturnLabel_3
+          CFI CFA SP+8
+          CFI Block cfiCond9 Using cfiCommon0
+          CFI (cfiCond9) Function GPIO_Byte_Set
+          CFI (cfiCond9) Conditional ??CrossCallReturnLabel_4
+          CFI (cfiCond9) CFA SP+8
+          CFI Block cfiCond10 Using cfiCommon0
+          CFI (cfiCond10) Function GPIO_Bit_Get
+          CFI (cfiCond10) Conditional ??CrossCallReturnLabel_5
+          CFI (cfiCond10) CFA SP+8
+          CFI Block cfiPicker11 Using cfiCommon1
+          CFI (cfiPicker11) NoFunction
+          CFI (cfiPicker11) Picker
+        MOV.B   R12, R12
+        RLAM.A  #0x2, R12
+        MOVX.A  GPIOX(R12), R15
+        RETA
+          CFI EndBlock cfiCond8
+          CFI EndBlock cfiCond9
+          CFI EndBlock cfiCond10
+          CFI EndBlock cfiPicker11
+
+        RSEG CODE:CODE:NOROOT(1)
+GPIO_Bit_Turn:
+          CFI Block cfiBlock12 Using cfiCommon0
+          CFI Function GPIO_Bit_Turn
+        CALLA   #?Subroutine0
+??CrossCallReturnLabel_2:
+        XOR.B   R15, 0x2(R14)
+        RETA
+          CFI EndBlock cfiBlock12
+
+        RSEG CODE:CODE:NOROOT(1)
+GPIO_Bit_Get:
+          CFI Block cfiBlock13 Using cfiCommon0
+          CFI Function GPIO_Bit_Get
+        CALLA   #?Subroutine2
+??CrossCallReturnLabel_5:
+        MOV.B   @R15, R14
+        CALLA   #?Subroutine3
+??CrossCallReturnLabel_6:
+        BIT.B   R15, R14
+        JNE     ??GPIO_Bit_Get_1
+        MOV.B   #0x0, R12
+        RETA
+??GPIO_Bit_Get_1:
+        MOV.B   #0x1, R12
+        RETA
+          CFI EndBlock cfiBlock13
+
+        RSEG CODE:CODE:NOROOT(1)
+GPIO_Bit_Set:
+          CFI Block cfiBlock14 Using cfiCommon0
+          CFI Function GPIO_Bit_Set
+        CALLA   #?Subroutine1
+??CrossCallReturnLabel_8:
+        CMP.B   #0x0, R14
+        JEQ     ??GPIO_Bit_Set_1
+        BIS.B   R15, 0x2(R12)
+        RETA
+??GPIO_Bit_Set_1:
+        BIC.B   R15, 0x2(R12)
+        RETA
+          CFI EndBlock cfiBlock14
+
+        RSEG CODE:CODE:NOROOT(1)
+?Subroutine1:
+          CFI Block cfiCond15 Using cfiCommon0
+          CFI Function GPIO_ITConfig
+          CFI Conditional ??CrossCallReturnLabel_7
+          CFI CFA SP+8
+          CFI Block cfiCond16 Using cfiCommon0
+          CFI (cfiCond16) Function GPIO_Bit_Set
+          CFI (cfiCond16) Conditional ??CrossCallReturnLabel_8
+          CFI (cfiCond16) CFA SP+8
+          CFI Block cfiPicker17 Using cfiCommon1
+          CFI (cfiPicker17) NoFunction
+          CFI (cfiPicker17) Picker
+//  117 }
+//  118 /*******************************************************************************
+//  119 º¯ÊýÃû³Æ£ºIO¿Ú8Î»Êä³öÉèÖÃ
+//  120 Èë¿Ú²ÎÊý£ºPORTn portn    ¶ÔÓ¦IO¶Ë¿Ú
+//  121           uint8_t level   ÉèÖÃ8Î»Êä³öµçÆ½£¨SET £º¸ßµçÆ½  RESET£ºµÍµçÆ½£©
+//  122 *  Ê¹ÓÃÊ¾Àý£º
+//  123 ********************************************************************************/
+//  124 void GPIO_Byte_Set(PORTn portn,uint8_t value)
+//  125 {
+//  126   GPIOX[portn]->POUT = value;            //
+//  127 }
+//  128 /*******************************************************************************
+//  129 º¯ÊýÃû³Æ£ºIO¿Ú8Î»ÊäÈë¶ÁÈ¡
+//  130 Èë¿Ú²ÎÊý£ºPORTn portn    ¶ÔÓ¦IO¶Ë¿Ú
+//  131 ·µ»Ø²ÎÊý£ºuint8 8Î»ÊäÈëµçÆ½£¨SET £º¸ßµçÆ½  RESET£ºµÍµçÆ½£©
+//  132 *  Ê¹ÓÃÊ¾Àý£º
+//  133 ********************************************************************************/
+//  134 uint8_t GPIO_Byte_Get(PORTn portn)
+//  135 {
+//  136  return (GPIOX[portn]->IN);            //
+//  137 }
+//  138 /*******************************************************************************
+//  139 º¯ÊýÃû³Æ£ºÉèÖÃÊÇ·ñÔÊÐíIO¿ÚÖÐ¶Ï
+//  140 Èë¿Ú²ÎÊý£ºPORTn portn    ¶ÔÓ¦IO¶Ë¿Ú
+//  141           uint8_t pin     ¶ÔÓ¦IOÒý½ÅÎ»ÖÃ
+//  142 *  Ê¹ÓÃÊ¾Àý£º
+//  143 ********************************************************************************/
+//  144 void GPIO_ITConfig(PORTn portn,uint8_t pin,STATUS ITState)
+//  145 {
+//  146   ASSERT(portn <= P2);                             //¶ÏÑÔ¼ì²âÊäÈë²ÎÊý
+//  147   if(ITState != DISABLE)
+        MOV.B   R12, R12
+        RLAM.A  #0x2, R12
+        MOVX.A  GPIOX(R12), R12
+          CFI EndBlock cfiCond15
+          CFI EndBlock cfiCond16
+          CFI EndBlock cfiPicker17
+        REQUIRE ?Subroutine3
+        // Fall through to label ?Subroutine3
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?Subroutine3:
+          CFI Block cfiCond18 Using cfiCommon0
+          CFI Function GPIO_ClearITPendingBit
+          CFI Conditional ??CrossCallReturnLabel_0
+          CFI CFA SP+8
+          CFI Block cfiCond19 Using cfiCommon0
+          CFI (cfiCond19) Function GPIO_GetITStatus
+          CFI (cfiCond19) Conditional ??CrossCallReturnLabel_1
+          CFI (cfiCond19) CFA SP+8
+          CFI Block cfiCond20 Using cfiCommon0
+          CFI (cfiCond20) Function GPIO_Bit_Turn
+          CFI (cfiCond20) Conditional ??CrossCallReturnLabel_2
+          CFI (cfiCond20) CFA SP+8
+          CFI Block cfiCond21 Using cfiCommon0
+          CFI (cfiCond21) Function GPIO_Bit_Get
+          CFI (cfiCond21) Conditional ??CrossCallReturnLabel_6
+          CFI (cfiCond21) CFA SP+8
+          CFI Block cfiCond22 Using cfiCommon0
+          CFI (cfiCond22) Function GPIO_ITConfig
+          CFI (cfiCond22) Conditional ??CrossCallReturnLabel_7
+          CFI (cfiCond22) CFA SP+8
+          CFI Block cfiCond23 Using cfiCommon0
+          CFI (cfiCond23) Function GPIO_Bit_Set
+          CFI (cfiCond23) Conditional ??CrossCallReturnLabel_8
+          CFI (cfiCond23) CFA SP+8
+          CFI Block cfiPicker24 Using cfiCommon1
+          CFI (cfiPicker24) NoFunction
+          CFI (cfiPicker24) Picker
+        MOV.W   #0x1, R15
+        SUB.B   #0x1, R13
+        JN      ??GPIO_ClearITPendingBit_0
+        RPT     R13
+        RLAX.W  R15
+??GPIO_ClearITPendingBit_0:
+        RETA
+          CFI EndBlock cfiCond18
+          CFI EndBlock cfiCond19
+          CFI EndBlock cfiCond20
+          CFI EndBlock cfiCond21
+          CFI EndBlock cfiCond22
+          CFI EndBlock cfiCond23
+          CFI EndBlock cfiPicker24
+//  148   {
+//  149     GPIOX[portn]->IFG &=~(1<<pin);                  //ÇåÖÐ¶Ï±êÖ¾
+//  150     GPIOX[portn]->IE |= (1<<pin);
+//  151   }
+//  152   else
+//  153   {
+//  154     GPIOX[portn]->IE &=~(1<<pin);
+//  155   }
+//  156 }
+//  157 /*******************************************************************************
+//  158 º¯ÊýÃû³Æ£º»ñÈ¡Ä³Ò»Î»¶Ë¿ÚÖÐ¶Ï±êÖ¾
+//  159 Èë¿Ú²ÎÊý£ºPORTn portn    ¶ÔÓ¦IO¶Ë¿Ú
+//  160           uint8_t pin     ¶ÔÓ¦IOÒý½ÅÎ»ÖÃ
+//  161 *  Ê¹ÓÃÊ¾Àý£º
+//  162 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  163 STATUS GPIO_GetITStatus(PORTn portn,uint8_t pin)
+GPIO_GetITStatus:
+          CFI Block cfiBlock25 Using cfiCommon0
+          CFI Function GPIO_GetITStatus
+//  164 {
+//  165    return ((GPIOX[portn]->IFG & (1<<pin)) ? TRUE : FALSE);
+        CALLA   #?Subroutine0
+??CrossCallReturnLabel_1:
+        BIT.B   R15, 0x1c(R14)
+        JNE     ??GPIO_GetITStatus_1
+        MOV.B   #0x0, R12
+        RETA
+??GPIO_GetITStatus_1:
+        MOV.B   #0x1, R12
+        RETA
+          CFI EndBlock cfiBlock25
+//  166 }
+//  167 /*******************************************************************************
+//  168 º¯ÊýÃû³Æ£ºÇå³ý8Î»ÖÐ¶Ï±êÖ¾
+//  169 Èë¿Ú²ÎÊý£ºPORTn portn    ¶ÔÓ¦IO¶Ë¿Ú
+//  170           uint8_t pin     ¶ÔÓ¦IOÒý½ÅÎ»ÖÃ
+//  171 *  Ê¹ÓÃÊ¾Àý£º
+//  172 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  173 void  GPIO_ClearITPendingBit(PORTn portn,uint8_t pin)
+GPIO_ClearITPendingBit:
+          CFI Block cfiBlock26 Using cfiCommon0
+          CFI Function GPIO_ClearITPendingBit
+//  174 {
+//  175    GPIOX[portn]->IFG &=~(1<<pin);
+        CALLA   #?Subroutine0
+??CrossCallReturnLabel_0:
+        BIC.B   R15, 0x1c(R14)
+//  176 }
+        RETA
+          CFI EndBlock cfiBlock26
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r4:
+        REQUIRE ?setjmp_r4
+        REQUIRE ?longjmp_r4
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r5:
+        REQUIRE ?setjmp_r5
+        REQUIRE ?longjmp_r5
+
+        END
+// 
+// 298 bytes in segment CODE
+//   8 bytes in segment DATA16_AN
+//  32 bytes in segment DATA20_C
+// 
+// 298 bytes of CODE  memory
+//  32 bytes of CONST memory
+//   0 bytes of DATA  memory (+ 8 bytes shared)
+//
+//Errors: none
+//Warnings: none

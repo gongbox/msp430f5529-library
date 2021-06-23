@@ -1,0 +1,874 @@
+###############################################################################
+#                                                                             #
+#                                                       06/Jun/2016  16:42:20 #
+# IAR C/C++ Compiler V5.50.1.20465/W32, Evaluation edition for MSP430         #
+# Copyright 1996-2012 IAR Systems AB.                                         #
+#                                                                             #
+#    __rt_version  =  3                                                       #
+#    __double_size =  32                                                      #
+#    __reg_r4      =  free                                                    #
+#    __reg_r5      =  free                                                    #
+#    __pic         =  no                                                      #
+#    __core        =  430X                                                    #
+#    __data_model  =  large                                                   #
+#    Source file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\adc.c                                #
+#    Command line  =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\adc.c -D NDEBUG -D RAM_VECTOR -lC    #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\List\ -lA C:\Users\615\Desktop\MSP430\MS #
+#                     P430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Release\List\ -o        #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\Obj\ -D__MSP430F5529__ -e --double=32    #
+#                     --dlib_config "D:\Program Files (x86)\IAR               #
+#                     Systems\Embedded Workbench 6.4                          #
+#                     Evaluation\430\LIB\DLIB\dl430xlfn.h" -I                 #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\ -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Ê #
+#                     ý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\inc\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\ -I C:\Users\615\Desktop\MSP430\MSP4 #
+#                     30F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\src\USB\ -I       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_config\ -I                   #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_User\ -I                     #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\srcUSB\USB_API\USB_CDC_API\ -I           #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_API\USB_HID_API\ -I          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_API\USB_MSC_API\ -I          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\KEY\ -I C:\Users\615\Desktop\MSP430\MSP #
+#                     430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\LED\ -I         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\12864\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\oled\ -I      #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\mpu6050\inc\ -I                         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\mpu6050\src\ -I                         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\nokia5110\inc\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\nokia5110\src\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\LQ_1.8_TFT\ -I                          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\LCD_API\ -I                             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\2.2TFT\ -I                              #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\delay\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\ -I             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\System\inc\ -I C:\Users\615\Desktop\MSP430\MSP43 #
+#                     0F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\src\ -I             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\User\ -I C:\Users\615\Desktop\MSP430\MSP430F5529 #
+#                     ¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\User\USER\ -I                    #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\UCOSII\CONFIG\ -I                            #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\uCOSII\App\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII\CONFIHG\    #
+#                     -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ #
+#                     \¹¤³ÌÄ£°å\Lib\uCOSII\PORT\ -I                           #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\UCOSII\CORE\ -I                              #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\FatFs\ -I C:\Users\615\Desktop\MSP430\MSP430 #
+#                     F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\FatFs\option\           #
+#                     --core=430X --data_model=large -Oh --multiplier=32      #
+#                     --multiplier_location=4C0 --hw_workaround=CPU40         #
+#    List file     =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\List\adc.lst                             #
+#    Object file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\Obj\adc.r43                              #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\src\adc.c
+      1          #include "adc.h"
+
+   \                                 In  segment DATA16_AN, at 0x24a
+   \   union <unnamed> __data16 _A_PCSEL_L
+   \                     _A_PCSEL_L:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_AN, at 0x1b0
+   \   union <unnamed> __data16 _A_REFCTL0_L
+   \                     _A_REFCTL0_L:
+   \   000000                DS8 2
+      2          #include "system.h"
+      3          
+
+   \                                 In  segment DATA20_C, align 2, align-sorted
+      4          const ADC_MemMapPtr ADC12 = ADC_BASE_PTR;     //ADC¼Ä´æÆ÷½á¹¹Ìå
+   \                     ADC12:
+   \   000000   00070000     DC32 700H
+
+   \                                 In  segment DATA20_Z, align 1, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero20
+      5          static uint8_t  InitialedChannel_Num = 0u;      //ADC³õÊ¼»¯µÄÍ¨µÀÊý£¬ÒòÎª¿ÉÄÜ»á¶à´Î³õÊ¼»¯¶à¸öÍ¨µÀ£¬ÕâÀïÈ¡¾²Ì¬±äÁ¿
+   \                     InitialedChannel_Num:
+   \   000000                DS8 1
+
+   \                                 In  segment DATA20_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero20
+      6          static uint16_t InitialedChannel_Bit = 0u;      //ÒÑ¾­³õÊ¼»¯µÄADCÍ¨µÀ
+   \                     InitialedChannel_Bit:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA20_Z, align 2, align-sorted
+   \   000000                REQUIRE ?cstart_init_zero20
+      7          static uint16_t ADC_Channel_Bit[ADC_CH_NUM] = {0u};    //ÄÚ²¿³õÊ¼»¯±êÖ¾Î»
+   \                     ADC_Channel_Bit:
+   \   000000                DS8 32
+      8          static inline uint8_t  ADC_Get_Chanel_Num(ADC_CHn ch); //ÄÚ²¿º¯Êý
+      9          /*******************************************************************************
+     10          *  º¯ÊýÃû³Æ£ºADC_Init(uint16_t ch,VREF Vref,ADC_nBIT nBit)
+     11          *  ¹¦ÄÜËµÃ÷£ºADC³õÊ¼»¯Ò»¸ö»ò¶à¸öADCÍ¨µÀ
+     12          *  ²ÎÊýËµÃ÷£º
+     13                      uint16_t ch     :Òª³õÊ¼»¯µÄÍ¨µÀ
+     14                      VREF Vref       :²Î¿¼µçÑ¹
+     15                      ADC_nBIT nBit   :×ª»»¾«¶È
+     16          *  º¯Êý·µ»Ø£ºÎÞ
+     17          *  ×¢Òâ    £º1£º³õÊ¼»¯ºóËùÓÐÍ¨µÀ¾«¶ÈÏàÍ¬£¬¼´ËùÓÐÍ¨µÀ×ª»»¾«¶ÈÖ»È¡¾öÓÚ×îºóÒ»´ÎÅäÖÃµÄ¾«¶È
+     18                       2£ºËùÓÐÍ¨µÀÄÚ²¿²Î¿¼µçÑ¹Ö»ÄÜÊ¹ÓÃ1.5»ò2.5VÖÐµÄÒ»ÖÖ
+     19          *  Ê¹ÓÃÊ¾Àý£ºADC_Init(ADC_CH1+ADC_CH3,ADC_VREF_1_5V,ADC_10bit);        //Í¬Ê±³õÊ¼»¯Á½¸öÍ¨µÀ£¬Ê¹ÓÃÄÚ²¿Ìá¹©µÄ1.5V²Î¿¼µçÑ¹£¬10Î»¾«¶È
+     20          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+     21          void ADC_Init(uint16_t ch,VREF Vref,ADC_nBIT nBit)
+   \                     ADC_Init:
+     22          {
+   \   000000   5B14         PUSHM.A #0x6, R11
+   \   000002   0A4C         MOV.W   R12, R10
+   \   000004   4C4D         MOV.B   R13, R12
+   \   000006   4D4E         MOV.B   R14, R13
+     23            ADC12->ENC = RESET ;                                                    //ÏÈ¶Ô¸ÃÎ»¸´Î»£¬·ñÔòÖÃÎ»ºóÓÐÐ©¼Ä´æÆ÷²»ÄÜÔÙ½øÐÐ²Ù×÷
+   \   000008   A2C30007     BIC.W   #0x2, &0x700
+     24            uint16_t SREF_RegValue = 0u;
+   \   00000C   4F43         MOV.B   #0x0, R15
+     25            switch(Vref)           //Ñ¡Ôñ²Î¿¼µçÑ¹
+   \   00000E   4C83         SUB.B   #0x0, R12
+   \   000010   0524         JEQ     ??ADC_Init_6
+   \   000012   5C83         SUB.B   #0x1, R12
+   \   000014   0924         JEQ     ??ADC_Init_7
+   \   000016   6C83         SUB.B   #0x2, R12
+   \   000018   0E24         JEQ     ??ADC_Init_8
+   \   00001A   113C         JMP     ??ADC_Init_9
+     26            {
+     27            case ADC_VREF_1_5V:
+     28              REFCTL0 &=~ REFMSTR;                //°ÑREF²Î¿¼µçÑ¹¿ØÖÆÈ¨½»¸øADC
+   \                     ??ADC_Init_6:
+   \   00001C   ........     CALLA   #?Subroutine5
+     29              ADC12->ADCREFON = SET;
+     30              ADC12->REF2_5V = RESET;
+   \                     ??CrossCallReturnLabel_7:
+   \   000020   B2C040000007 BIC.W   #0x40, &0x700
+     31              SREF_RegValue = ADC12_SREF_1;       //Ê¹ÓÃÄÚ²¿Ìá¹©µÄ²Î¿¼µçÑ¹
+   \   000026   053C         JMP     ??ADC_Init_10
+     32              break;
+     33            case ADC_VREF_2_5V:
+     34              REFCTL0 &=~ REFMSTR;
+   \                     ??ADC_Init_7:
+   \   000028   ........     CALLA   #?Subroutine5
+     35              ADC12->ADCREFON = SET;
+     36              ADC12->REF2_5V = SET;
+   \                     ??CrossCallReturnLabel_8:
+   \   00002C   B2D040000007 BIS.W   #0x40, &0x700
+     37              SREF_RegValue = ADC12_SREF_1;       //Ê¹ÓÃÄÚ²¿Ìá¹©µÄ²Î¿¼µçÑ¹
+   \                     ??ADC_Init_10:
+   \   000032   5F43         MOV.B   #0x1, R15
+     38              break;
+   \   000034   043C         JMP     ??ADC_Init_9
+     39            case ADC_VREF_External :      
+     40              P5SEL |= BIT0;       //VeREF+
+   \                     ??ADC_Init_8:
+   \   000036   D2D34A02     BIS.B   #0x1, &0x24a
+     41              P5SEL |= BIT1;       //VeREF-
+   \   00003A   E2D34A02     BIS.B   #0x2, &0x24a
+     42              SREF_RegValue = ADC12_SREF_2;       //Ê¹ÓÃÍâ²¿²Î¿¼µçÑ¹
+     43            case ADC_VREF_3_3V:
+     44              SREF_RegValue = ADC12_SREF_0;       //Ê¹ÓÃµçÔ´µçÑ¹×÷Îª²Î¿¼µçÑ¹,
+     45              break;
+     46            default :break;
+     47            }
+     48            //³õÊ¼»¯Í¨µÀ
+     49            uint16_t CH_Mask = 0x01;
+   \                     ??ADC_Init_9:
+   \   00003E   1C43         MOV.W   #0x1, R12
+     50            for(uint8_t CH_Num=0; CH_Num < ADC_CH_NUM; CH_Num++)
+   \   000040   4B43         MOV.B   #0x0, R11
+   \   000042   ........     MOVA    #InitialedChannel_Num, R8
+     51            {
+     52              if(ch & CH_Mask)   //Òª³õÊ¼»¯µÄÍ¨µÀ
+   \                     ??ADC_Init_2:
+   \   000046   0ABC         BIT.W   R12, R10
+   \   000048   3A24         JEQ     ??ADC_Init_11
+     53              {
+     54                if((CH_Mask & InitialedChannel_Bit) == 0)   //Èç¹û¸ÃÍ¨µÀÎ´±»³õÊ¼»¯¹ý               
+   \   00004A   0E4C         MOV.W   R12, R14
+   \   00004C   ....1EF2.... ANDX.W  &InitialedChannel_Bit, R14
+   \   000052   2220         JNE     ??ADC_Init_12
+   \   000054   6E48         MOV.B   @R8, R14
+   \   000056   494B         MOV.B   R11, R9
+   \   000058   79F00F00     AND.B   #0xf, R9
+   \   00005C   C60E         MOVA    R14, R6
+   \   00005E   A6000007     ADDA    #0x700, R6
+   \   000062   56461000     MOV.B   0x10(R6), R6
+   \   000066   76F0F000     AND.B   #0xf0, R6
+   \   00006A   46D9         BIS.B   R9, R6
+   \   00006C   C90E         MOVA    R14, R9
+   \   00006E   A9000007     ADDA    #0x700, R9
+   \   000072   C9461000     MOV.B   R6, 0x10(R9)
+     55                {
+     56                  ADC12->MCTL[InitialedChannel_Num].INCH = CH_Num;
+     57                  ADC12->MCTL[InitialedChannel_Num].REF  = SREF_RegValue;                 //²Î¿¼µçÑ¹Ñ¡Ôñ£¬Í¨µÀÉèÖÃ
+   \   000076   ........     CALLA   #?Subroutine4
+   \                     ??CrossCallReturnLabel_5:
+   \   00007A   C90E         MOVA    R14, R9
+   \   00007C   A9000007     ADDA    #0x700, R9
+   \   000080   C9461000     MOV.B   R6, 0x10(R9)
+     58                  ADC_Channel_Bit[InitialedChannel_Num] = CH_Mask;                        //½«¸ÃÍ¨µÀ³õÊ¼»¯±êÖ¾ÖÃÎ»                                                    
+   \   000084   EE0E         ADDA    R14, R14
+   \   000086   ....8E4C.... MOVX.W  R12, ADC_Channel_Bit(R14)
+     59                  InitialedChannel_Bit |= CH_Mask;                                        //ÖÃÎ»ÒÑ³õÊ¼»¯µÄÍ¨µÀ±êÖ¾Î»
+   \   00008C   ....82DC.... BISX.W  R12, &InitialedChannel_Bit
+     60                  InitialedChannel_Num ++;                                                //³õÊ¼»¯µÄÍ¨µÀÊý¼Ó1
+   \   000092   D8530000     ADD.B   #0x1, 0(R8)
+   \   000096   133C         JMP     ??ADC_Init_11
+     61                }
+     62                else                                      //Èç¹ûÊÇÖ®Ç°ÒÑ¾­³õÊ¼»¯¹ýµÄÍ¨µÀ£¬ÔòÒªÔÚÕâÀï´ÓÐÂÉèÖÃÒ»ÏÂ£¬Ö»ÉèÖÃÍ¨µÀ²Î¿¼µçÑ¹
+     63                {
+     64                  ADC12->MCTL[ADC_Get_Chanel_Num((ADC_CHn)CH_Mask)].REF = SREF_RegValue;   //¸Ä±ä²Î¿¼µçÑ¹                                  
+   \                     ??ADC_Init_12:
+   \   000098   4E43         MOV.B   #0x0, R14
+   \   00009A   ........     MOVA    #ADC_Channel_Bit, R9
+   \                     ??ADC_Init_1:
+   \   00009E   3C99         CMP.W   @R9+, R12
+   \   0000A0   0824         JEQ     ??ADC_Init_4
+   \   0000A2   5E53         ADD.B   #0x1, R14
+   \   0000A4   3C99         CMP.W   @R9+, R12
+   \   0000A6   0524         JEQ     ??ADC_Init_4
+   \   0000A8   5E53         ADD.B   #0x1, R14
+   \   0000AA   7E901000     CMP.B   #0x10, R14
+   \   0000AE   F72B         JNC     ??ADC_Init_1
+   \   0000B0   4E43         MOV.B   #0x0, R14
+     65                }
+     66              }
+   \                     ??ADC_Init_4:
+   \   0000B2   ........     CALLA   #?Subroutine4
+   \                     ??CrossCallReturnLabel_6:
+   \   0000B6   AE000007     ADDA    #0x700, R14
+   \   0000BA   CE461000     MOV.B   R6, 0x10(R14)
+     67              CH_Mask <<= 1;
+   \                     ??ADC_Init_11:
+   \   0000BE   0C5C         RLA.W   R12
+     68            }
+   \   0000C0   5B53         ADD.B   #0x1, R11
+   \   0000C2   7B901000     CMP.B   #0x10, R11
+   \   0000C6   BF2B         JNC     ??ADC_Init_2
+     69            if(InitialedChannel_Num > 1)                 //ÓÐ¶à¸öÍ¨µÀÊ±Òª¼ÓÉÏÐòÁÐÍ¨µÀ½áÊøÎ»
+   \   0000C8   6E48         MOV.B   @R8, R14
+   \   0000CA   6E93         CMP.B   #0x2, R14
+   \   0000CC   1328         JNC     ??ADC_Init_13
+     70            {
+     71              for(int i=0; i<(InitialedChannel_Num-1); i++)   //Ç°ÃæËùÓÐÍ¨µÀÐòÁÐ½áÊøÎ»ÇåÁã
+   \   0000CE   8B000007     MOVA    #0x700, R11
+   \   0000D2   4F4E         MOV.B   R14, R15
+   \   0000D4   3F53         ADD.W   #0xffff, R15
+   \   0000D6   084F         MOV.W   R15, R8
+     72              {
+     73                ADC12->MCTL[i].EOS = RESET;
+   \                     ??ADC_Init_3:
+   \   0000D8   FBC080001000 BIC.B   #0x80, 0x10(R11)
+     74              }
+   \   0000DE   AB000100     ADDA    #0x1, R11
+   \   0000E2   3853         ADD.W   #0xffff, R8
+   \   0000E4   F923         JNE     ??ADC_Init_3
+     75              ADC12->MCTL[InitialedChannel_Num-1].EOS = SET;  //×îºóÒ»Í¨µÀ¼ÓÉÏÐòÁÐÍ¨µÀ×ª»»½áÊøÎ»
+   \   0000E6   3FE00080     XOR.W   #0x8000, R15
+   \   0000EA   AF0F0087     ADDA    #0xf8700, R15
+   \   0000EE   FFD080001000 BIS.B   #0x80, 0x10(R15)
+     76            }
+     77            //Ò»°ãÅäÖÃ
+     78            ADC12->SHT0 = M0_M7_SAMPLE_HOLD_TIME; //0-7Í¨µÀ²ÉÑùÓë±£³ÖÊ±¼ä
+   \                     ??ADC_Init_13:
+   \   0000F4   3F40FFF0     MOV.W   #0xf0ff, R15
+   \   0000F8   1FF20007     AND.W   &0x700, R15
+   \   0000FC   3FD00003     BIS.W   #0x300, R15
+   \   000100   824F0007     MOV.W   R15, &0x700
+     79            ADC12->SHT1 = M8_M15_SAMPLE_HOLD_TIME;//8-15Í¨µÀ²ÉÑùÓë±£³ÖÊ±¼ä
+   \   000104   3F40FF0F     MOV.W   #0xfff, R15
+   \   000108   1FF20007     AND.W   &0x700, R15
+   \   00010C   3FD00030     BIS.W   #0x3000, R15
+   \   000110   824F0007     MOV.W   R15, &0x700
+     80            ADC12->ON = SET;                      // ²ÉÑùÊ±¼ä£¬ADÄÚºË¿ªÆô
+   \   000114   B2D010000007 BIS.W   #0x10, &0x700
+     81            ADC12->MSC = SET;
+   \   00011A   B2D080000007 BIS.W   #0x80, &0x700
+     82            ADC12->SSEL = ADC12_SSEL_ADC12OSC;    //Ê±ÖÓÑ¡Ôñ
+   \   000120   B2F0E7FF0207 AND.W   #0xffe7, &0x702
+     83            ADC12->SHP = SET;
+   \   000126   B2D000020207 BIS.W   #0x200, &0x702
+     84            ADC12->CONSEQ = (InitialedChannel_Num > 1) ? SET : RESET;//ÓÐ¶à¸öÍ¨µÀÊ±ÉèÎªÐòÁÐÍ¨µÀµ¥´Î×ª»»Ä£Ê½,µ¥¸öÍ¨µÀÊ±ÉèÎªµ¥Í¨µÀµ¥´Î×ª»»Ä£Ê½              
+   \   00012C   6E93         CMP.B   #0x2, R14
+   \   00012E   0F7F         SUBC.W  R15, R15
+   \   000130   1F53         ADD.W   #0x1, R15
+   \   000132   ........     CALLA   #?Subroutine2
+     85            //ÉèÖÃADC¾«¶È
+     86            ADC12->RES = nBit;    
+   \                     ??CrossCallReturnLabel_4:
+   \   000136   5D0E         RLAM.W  #0x4, R13
+   \   000138   3DF03000     AND.W   #0x30, R13
+   \   00013C   3F40CFFF     MOV.W   #0xffcf, R15
+   \   000140   1FF20407     AND.W   &0x704, R15
+   \   000144   0FDD         BIS.W   R13, R15
+   \   000146   824F0407     MOV.W   R15, &0x704
+     87            //¿ªÆôÊ±ÖÓ
+     88            UCS->MODOSC_REQEN = SET;                                                   //ADCÊ¹ÓÃµÄÊÇMODCLK ËùÒÔÔÚÕâÀïÅäÖÃ¸ÃÊ±ÖÓ£¬Ô¼5MHz×óÓÒ
+   \   00014A   ........     MOVA    &UCS, R15
+   \   00014E   FFD21000     BIS.B   #0x8, 0x10(R15)
+     89            //ÅäÖÃÍ¨µÀÎªµÚ¶þ¹¦ÄÜ
+     90            if(ch & 0x00ff)
+   \   000152   4A93         CMP.B   #0x0, R10
+   \   000154   0424         JEQ     ??ADC_Init_14
+     91            {
+     92               GPIO_MultiBits_Init(P6,(ch & 0x00ff),GPI | SEL);
+   \   000156   3E400101     MOV.W   #0x101, R14
+   \   00015A   ........     CALLA   #?Subroutine3
+     93            }
+     94            if(ch & 0xf000)
+   \                     ??ADC_Init_14:
+   \   00015E   3AB000F0     BIT.W   #0xf000, R10
+   \   000162   0D24         JEQ     ??ADC_Init_15
+     95            {
+     96               GPIO_MultiBits_Init(P7,((ch & 0xf000)>>12),GPI | SEL);
+   \   000164   3E400101     MOV.W   #0x101, R14
+   \   000168   0D4A         MOV.W   R10, R13
+   \   00016A   8D10         SWPB    R13
+   \   00016C   7DF3         AND.B   #0xff, R13
+   \   00016E   0D11         RRA.W   R13
+   \   000170   0D11         RRA.W   R13
+   \   000172   0D11         RRA.W   R13
+   \   000174   0D11         RRA.W   R13
+   \   000176   7C400600     MOV.B   #0x6, R12
+   \   00017A   ........     CALLA   #GPIO_MultiBits_Init
+     97            }
+     98            if(ch & ADC_CH10) //Èç¹ûÊ¹ÓÃÁËÎÂ¶È´«¸ÐÆ÷Í¨µÀ£¬Ôò¿ªÆôÎÂ¶È´«¸ÐÆ÷
+   \                     ??ADC_Init_15:
+   \   00017E   3AB00004     BIT.W   #0x400, R10
+   \   000182   0328         JNC     ??ADC_Init_16
+     99            {
+    100              ADC12->TCOFF = RESET;
+   \   000184   B2C040000407 BIC.W   #0x40, &0x704
+    101            }
+    102            ADC12->ENC = SET;                                                        //¸ÃÎ»±ØÐëÔÚ³õÊ¼»¯Íê³ÉºóÔÙÖÃÎ»
+   \                     ??ADC_Init_16:
+   \   00018A   A2D30007     BIS.W   #0x2, &0x700
+    103            //DELAY_MS(5);                                                                 //ÑÓÊ±µÈ´ý²Î¿¼µçÑ¹½¨Á¢
+    104          }
+   \   00018E   5616         POPM.A  #0x6, R11
+   \   000190   1001         RETA
+   \   000192                REQUIRE _A_REFCTL0_L
+   \   000192                REQUIRE _A_PCSEL_L
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine5:
+   \   000000   B2C08000B001 BIC.W   #0x80, &0x1b0
+   \   000006   B2D020000007 BIS.W   #0x20, &0x700
+   \   00000C   1001         RETA
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine4:
+   \   000000   494F         MOV.B   R15, R9
+   \   000002                RPT     #0x4
+   \   000002   43184959     RLAX.B  R9
+   \   000006   C60E         MOVA    R14, R6
+   \   000008   A6000007     ADDA    #0x700, R6
+   \   00000C   56461000     MOV.B   0x10(R6), R6
+   \   000010   76F08F00     AND.B   #0x8f, R6
+   \   000014   46D9         BIS.B   R9, R6
+   \   000016   1001         RETA
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine3:
+   \   000000   4D4A         MOV.B   R10, R13
+   \   000002   7C400500     MOV.B   #0x5, R12
+   \   000006   ........     BRA     #GPIO_MultiBits_Init
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine2:
+   \   000000   0F5F         RLA.W   R15
+   \   000002   3B40F9FF     MOV.W   #0xfff9, R11
+   \   000006   1BF20207     AND.W   &0x702, R11
+   \   00000A   0BDF         BIS.W   R15, R11
+   \   00000C   824B0207     MOV.W   R11, &0x702
+   \   000010   1001         RETA
+    105          /*******************************************************************************
+    106          *  º¯ÊýÃû³Æ£ºADC_DeInit(ADC_CHn ch)
+    107          *  ¹¦ÄÜËµÃ÷£ºADC¸´Î»Ä³Ò»Í¨µÀ
+    108          *  ²ÎÊýËµÃ÷£ºADC_CHn ch £ºÒª¸´Î»µÄÍ¨µÀ
+    109          *  º¯Êý·µ»Ø£ºÎÞ
+    110          *  ×¢Òâ    £º
+    111          *  Ê¹ÓÃÊ¾Àý£ºADC_DeInit(ADC_CH1);         //¸´Î»Í¨µÀADC_CH1£¬¼´¸ÃÍ¨µÀµÄADC¹¦ÄÜ±»ÆÁ±Î£¬×÷ÎªÆÕÍ¨IO¿ÚÊ¹ÓÃ                              
+    112          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+    113          void   ADC_DeInit(ADC_CHn ch)
+   \                     ADC_DeInit:
+    114          {
+   \   000000   5B14         PUSHM.A #0x6, R11
+   \   000002   2183         SUB.W   #0x2, SP
+   \   000004   0A4C         MOV.W   R12, R10
+    115            ADC12->ENC = RESET ;                                                    //ÏÈ¶Ô¸ÃÎ»¸´Î»£¬·ñÔòÖÃÎ»ºóÓÐÐ©¼Ä´æÆ÷²»ÄÜÔÙ½øÐÐ²Ù×÷
+   \   000006   A2C30007     BIC.W   #0x2, &0x700
+    116            uint16_t CH_Mask = 0x01;
+   \   00000A   1D43         MOV.W   #0x1, R13
+    117            for(uint8_t CH_Num=0; CH_Num < ADC_CH_NUM; CH_Num++)
+   \   00000C   7C401000     MOV.B   #0x10, R12
+   \   000010   ........     MOVA    #InitialedChannel_Num, R11
+    118            {
+    119              if(ch & CH_Mask)   //Òª¸´Î»µÄÍ¨µÀ
+   \                     ??ADC_DeInit_3:
+   \   000014   0ABD         BIT.W   R13, R10
+   \   000016   4E24         JEQ     ??ADC_DeInit_6
+    120              {
+    121                if(CH_Mask & InitialedChannel_Bit)  //Èç¹û¸ÃÍ¨µÀÒÑ¾­³õÊ¼»¯£¬Ôò
+   \   000018   0F4D         MOV.W   R13, R15
+   \   00001A   ....1FF2.... ANDX.W  &InitialedChannel_Bit, R15
+   \   000020   4924         JEQ     ??ADC_DeInit_6
+    122                {
+    123                  uint8_t chanel = ADC_Get_Chanel_Num((ADC_CHn)CH_Mask);
+   \   000022   4E43         MOV.B   #0x0, R14
+   \   000024   ........     MOVA    #ADC_Channel_Bit, R15
+   \                     ??ADC_DeInit_1:
+   \   000028   3D9F         CMP.W   @R15+, R13
+   \   00002A   0824         JEQ     ??ADC_DeInit_4
+   \   00002C   5E53         ADD.B   #0x1, R14
+   \   00002E   3D9F         CMP.W   @R15+, R13
+   \   000030   0524         JEQ     ??ADC_DeInit_4
+   \   000032   5E53         ADD.B   #0x1, R14
+   \   000034   7E901000     CMP.B   #0x10, R14
+   \   000038   F72B         JNC     ??ADC_DeInit_1
+   \   00003A   4E43         MOV.B   #0x0, R14
+    124                  InitialedChannel_Bit &=~ CH_Mask;            //¸ÃÍ¨µÀ³õÊ¼»¯±êÖ¾ÆÁ±Î
+   \                     ??ADC_DeInit_4:
+   \   00003C   ....82CD.... BICX.W  R13, &InitialedChannel_Bit
+    125                  InitialedChannel_Num --;                     //ÒÑ³õÊ¼»¯Í¨µÀÊý¼õÒ»
+   \   000042   FB530000     ADD.B   #0xff, 0(R11)
+   \   000046   6E9B         CMP.B   @R11, R14
+   \   000048   1F2C         JC      ??ADC_DeInit_7
+   \   00004A   4F4E         MOV.B   R14, R15
+   \   00004C   C80F         MOVA    R15, R8
+   \   00004E   A8000007     ADDA    #0x700, R8
+   \   000052   EF0F         ADDA    R15, R15
+   \   000054   ........     ADDA    #ADC_Channel_Bit, R15
+    126                  //ËùÓÐÍ¨µÀÇ°ÒÆ
+    127                  for(;chanel < InitialedChannel_Num; chanel++)
+    128                  {
+    129                    ADC12->MCTL[chanel] = ADC12->MCTL[chanel + 1];
+   \                     ??ADC_DeInit_2:
+   \   000058   4018D1481100 MOVX.B  0x11(R8), 0(SP)
+   \            0000        
+   \   000060   4018E8411000 MOVX.B  @SP, 0x10(R8)
+    130                    ADC_Channel_Bit[chanel] =  (ADC_CHn)(1 << ADC12->MCTL[chanel + 1].INCH);
+   \   000066   1943         MOV.W   #0x1, R9
+   \   000068   56481100     MOV.B   0x11(R8), R6
+   \   00006C   76F00F00     AND.B   #0xf, R6
+   \   000070   5683         SUB.B   #0x1, R6
+   \   000072   0230         JN      ??ADC_DeInit_8
+   \   000074                RPT     R6
+   \   000074   C6180959     RLAX.W  R9
+   \                     ??ADC_DeInit_8:
+   \   000078   8F490000     MOV.W   R9, 0(R15)
+    131                  }
+   \   00007C   5E53         ADD.B   #0x1, R14
+   \   00007E   EF03         ADDA    #0x2, R15
+   \   000080   A8000100     ADDA    #0x1, R8
+   \   000084   6E9B         CMP.B   @R11, R14
+   \   000086   E82B         JNC     ??ADC_DeInit_2
+    132                  //×îºóÒ»Í¨µÀ»Ö¸´Ä¬ÈÏÖµ
+    133                  ADC12->MCTL[chanel].INCH = RESET;         //ÉèÖÃ¸Ã¼Ä´æÆ÷Í¨µÀÎª0
+   \                     ??ADC_DeInit_7:
+   \   000088   CF0E         MOVA    R14, R15
+   \   00008A   AF000007     ADDA    #0x700, R15
+   \   00008E   FFF0F0001000 AND.B   #0xf0, 0x10(R15)
+    134                  ADC12->MCTL[chanel].REF = RESET;          //ÉèÖÃ¸Ã¼Ä´æÆ÷Í¨µÀ²Î¿¼µçÑ¹ÎªÄ¬ÈÏ
+   \   000094   CF0E         MOVA    R14, R15
+   \   000096   AF000007     ADDA    #0x700, R15
+   \   00009A   FFF08F001000 AND.B   #0x8f, 0x10(R15)
+    135                  ADC12->MCTL[chanel].EOS = RESET;          //ÉèÖÃÐòÁÐÍ¨µÀ×ª»»½áÊøÎ»Îª0
+   \   0000A0   CF0E         MOVA    R14, R15
+   \   0000A2   AF000007     ADDA    #0x700, R15
+   \   0000A6   FFC080001000 BIC.B   #0x80, 0x10(R15)
+    136                  ADC_Channel_Bit[chanel] = RESET;          //ÉèÖÃ¸ÃÍ¨µÀ³õÊ¼»¯±êÖ¾Î»¸´Î»
+   \   0000AC   EE0E         ADDA    R14, R14
+   \   0000AE   ....8E43.... MOVX.W  #0x0, ADC_Channel_Bit(R14)
+    137                }
+    138              }
+    139              CH_Mask <<= 1;
+   \                     ??ADC_DeInit_6:
+   \   0000B4   0D5D         RLA.W   R13
+    140            }
+   \   0000B6   7C53         ADD.B   #0xff, R12
+   \   0000B8   AD23         JNE     ??ADC_DeInit_3
+    141            if(InitialedChannel_Num <= 1)                 //×îÖ»ÓÐÒ»¸öÍ¨µÀÊ±È¡ÏûÐòÁÐÍ¨µÀ×ª»»½áÊøÎ»
+   \   0000BA   ....E293.... CMPX.B  #0x2, &InitialedChannel_Num
+   \   0000C0   0D2C         JC      ??ADC_DeInit_9
+    142            {
+    143              ADC12->MCTL[InitialedChannel_Num-1].EOS = RESET;  //
+   \   0000C2   ....5F42.... MOVX.B  &InitialedChannel_Num, R15
+   \   0000C8   3F53         ADD.W   #0xffff, R15
+   \   0000CA   3FE00080     XOR.W   #0x8000, R15
+   \   0000CE   AF0F0087     ADDA    #0xf8700, R15
+   \   0000D2   FFC080001000 BIC.B   #0x80, 0x10(R15)
+   \   0000D8   0F43         MOV.W   #0x0, R15
+   \   0000DA   013C         JMP     ??ADC_DeInit_10
+    144            }
+    145            ADC12->CONSEQ = (InitialedChannel_Num > 1) ? SET : RESET;//ÓÐ¶à¸öÍ¨µÀÊ±ÉèÎªÐòÁÐÍ¨µÀµ¥´Î×ª»»Ä£Ê½,µ¥¸öÍ¨µÀÊ±ÉèÎªµ¥Í¨µÀµ¥´Î×ª»»Ä£Ê½              
+   \                     ??ADC_DeInit_9:
+   \   0000DC   1F43         MOV.W   #0x1, R15
+   \                     ??ADC_DeInit_10:
+   \   0000DE   ........     CALLA   #?Subroutine2
+    146          
+    147            //ÅäÖÃÍ¨µÀÎªIO¿Ú¹¦ÄÜ
+    148            if(ch & 0x00ff)
+   \                     ??CrossCallReturnLabel_3:
+   \   0000E2   4A93         CMP.B   #0x0, R10
+   \   0000E4   0324         JEQ     ??ADC_DeInit_11
+    149            {
+    150               GPIO_MultiBits_Init(P6,(uint8_t)(ch & 0x00ff),GPI);
+   \   0000E6   1E43         MOV.W   #0x1, R14
+   \   0000E8   ........     CALLA   #?Subroutine3
+    151            }
+    152            if(ch & 0xf000)
+   \                     ??ADC_DeInit_11:
+   \   0000EC   3AB000F0     BIT.W   #0xf000, R10
+   \   0000F0   0C24         JEQ     ??ADC_DeInit_12
+    153            {
+    154               GPIO_MultiBits_Init(P7,(uint8_t)((ch & 0xf000)>>12),GPI);
+   \   0000F2   1E43         MOV.W   #0x1, R14
+   \   0000F4   8A10         SWPB    R10
+   \   0000F6   7AF3         AND.B   #0xff, R10
+   \   0000F8   0A11         RRA.W   R10
+   \   0000FA   0A11         RRA.W   R10
+   \   0000FC   0A11         RRA.W   R10
+   \   0000FE   0A11         RRA.W   R10
+   \   000100   4D4A         MOV.B   R10, R13
+   \   000102   7C400600     MOV.B   #0x6, R12
+   \   000106   ........     CALLA   #GPIO_MultiBits_Init
+    155            }
+    156            ADC12->ENC = SET;                                                        //¸ÃÎ»±ØÐëÔÚ³õÊ¼»¯Íê³ÉºóÔÙÖÃÎ»
+   \                     ??ADC_DeInit_12:
+   \   00010A   A2D30007     BIS.W   #0x2, &0x700
+    157          }
+   \   00010E   2153         ADD.W   #0x2, SP
+   \   000110   5616         POPM.A  #0x6, R11
+   \   000112   1001         RETA
+    158          /*******************************************************************************
+    159          *  º¯ÊýÃû³Æ£ºADC_StartConv(void)
+    160          *  ¹¦ÄÜËµÃ÷£ºÆô¶¯Ò»´ÎADC×ª»»
+    161          *  ²ÎÊýËµÃ÷£ºÎÞ
+    162          *  º¯Êý·µ»Ø£ºÎÞ
+    163          *  ×¢Òâ    £ºÈôÓÐ¶à¸öÍ¨µÀÊ±£¬½«»áÍ¬Ê±Ê¹¶à¸öÍ¨µÀ×ª»»Ò»´Î£¬¶ø²»ÊÇ¶Ôµ¥Ò»Í¨µÀ½øÐÐ×ª»»
+    164          *  Ê¹ÓÃÊ¾Àý£ºADC_StartConv();   //ËùÓÐÍ¨µÀÆô¶¯Ò»´ÎADC×ª»»
+    165          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+    166          void ADC_StartConv(void)
+   \                     ADC_StartConv:
+    167          {
+    168            ADC12->SC = RESET;
+   \   000000   92C30007     BIC.W   #0x1, &0x700
+    169            ADC12->SC = SET;        //Æô¶¯²ÉÑù×ª»»
+   \   000004   92D30007     BIS.W   #0x1, &0x700
+    170          }
+   \   000008   1001         RETA
+    171          /*******************************************************************************
+    172          *  º¯ÊýÃû³Æ£ºADC_WaitBusy()
+    173          *  ¹¦ÄÜËµÃ÷£ºµÈ´ýADC²»Ã¦
+    174          *  ²ÎÊýËµÃ÷£ºÎÞ
+    175          *  º¯Êý·µ»Ø£ºÎÞ
+    176          *  ×¢Òâ    £ºÎÞ
+    177          *  Ê¹ÓÃÊ¾Àý£ºADC_WaitBusy()£»  //µÈ´ý×ª»»Íê³É
+    178          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+    179          void   ADC_WaitBusy()
+   \                     ADC_WaitBusy:
+   \                     ??ADC_WaitBusy_0:
+    180          {
+    181            while(ADC12->ADBUSY == SET);//µÈ´ýADC²»Ã¦
+   \   000000   92B30207     BIT.W   #0x1, &0x702
+   \   000004   FD2F         JC      ??ADC_WaitBusy_0
+    182          }
+   \   000006   1001         RETA
+    183          /*******************************************************************************
+    184          *  º¯ÊýÃû³Æ£ºADC_Read_Value(ADC_CHn ch)                           
+    185          *  ¹¦ÄÜËµÃ÷£º¶ÁÈ¡Ò»¸öADCÍ¨µÀµÄ×ª»»½á¹û
+    186          *  ²ÎÊýËµÃ÷£ºADC_CHn ch £ºÒª¶ÁÈ¡µÄÍ¨µÀ
+    187          *  º¯Êý·µ»Ø£º¸ÃÍ¨µÀ×ª»»½á¹û
+    188          *  Ê¹ÓÃÊ¾Àý£ºuint16 data = ADC_Read_Value(ADC_CH0);  //¶ÁÈ¡ADC_CH0Í¨µÀ×ª»»½á¹û
+    189          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+    190          uint16_t ADC_Read_Value(ADC_CHn ch)                           
+   \                     ADC_Read_Value:
+    191          {
+    192            return (ADC12->MEM[ADC_Get_Chanel_Num(ch)]);                          //¶ÁÈ¡×ª»»½á¹û£¬¶ÁÈ¡ºó»á×Ô¶¯Çå³ý¶ÔÓ¦±êÖ¾Î»
+   \   000000   ........     CALLA   #?Subroutine1
+   \                     ??CrossCallReturnLabel_11:
+   \   000004   EE0E         ADDA    R14, R14
+   \   000006   1C4E2007     MOV.W   0x720(R14), R12
+   \   00000A   1001         RETA
+    193          }
+    194          /*******************************************************************************
+    195          *  º¯ÊýÃû³Æ£ºADC_Read_Once(ADC_CHn ch)
+    196          *  ¹¦ÄÜËµÃ÷£º×ª»»²¢¶ÁÈ¡Ò»¸öADCÍ¨µÀµÄÖµ
+    197          *  ²ÎÊýËµÃ÷£ºADC_CHn ch £ºÒª×ª»»²¢¶ÁÈ¡µÄÍ¨µÀ
+    198          *  º¯Êý·µ»Ø£º¸ÃÍ¨µÀ×ª»»½á¹û
+    199          *  Ê¹ÓÃÊ¾Àý£ºuint16 data = ADC_Read_Once(ADC_CH0);  //Á¢¼´Æô¶¯Ò»´ÎADC×ª»»²¢¶ÁÈ¡ADC_CH0Í¨µÀ×ª»»½á¹û
+    200          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+    201          uint16_t ADC_Read_Once(ADC_CHn ch)
+   \                     ADC_Read_Once:
+    202          {
+    203            ADC_StartConv();
+   \   000000   ........     CALLA   #ADC_StartConv
+    204            ADC_WaitBusy();
+   \                     ??ADC_Read_Once_0:
+   \   000004   92B30207     BIT.W   #0x1, &0x702
+   \   000008   FD2F         JC      ??ADC_Read_Once_0
+    205            return ADC_Read_Value(ch);
+   \   00000A   ........     BRA     #ADC_Read_Value
+    206          }
+    207          /*******************************************************************************
+    208          *  º¯ÊýÃû³Æ£ºADC_ITConfig   (ADC_CHn ch,STATUS ITState)
+    209          *  ¹¦ÄÜËµÃ÷£ºÉèÖÃÊÇ·ñÊ¹ÄÜADCÄ³¸öÍ¨µÀµÄÖÐ¶Ï
+    210          *  ²ÎÊýËµÃ÷£ºADC_CHn ch £ºÒªÉèÖÃµÄÍ¨µÀ
+    211                       STATUS ITState £ºÖÐ¶ÏÊÇ·ñÊ¹ÄÜ
+    212          *  º¯Êý·µ»Ø£ºÎÞ
+    213          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+    214          void ADC_ITConfig   (ADC_CHn ch,STATUS ITState)
+   \                     ADC_ITConfig:
+    215          {
+    216            if(ITState != DISABLE)
+   \   000000   4D93         CMP.B   #0x0, R13
+   \   000002   4E43         MOV.B   #0x0, R14
+   \   000004   ........     MOVA    #ADC_Channel_Bit, R15
+   \   000008   0524         JEQ     ??ADC_ITConfig_8
+    217            {
+    218              ADC12->IE |=  (1<<ADC_Get_Chanel_Num(ch));                           //
+   \   00000A   ........     CALLA   #?Subroutine0
+    219            }
+   \                     ??CrossCallReturnLabel_1:
+   \   00000E   82DF0C07     BIS.W   R15, &0x70c
+   \   000012   1001         RETA
+   \                     ??ADC_ITConfig_8:
+   \   000014   ........     CALLA   #?Subroutine0
+    220            else
+    221            {
+    222              ADC12->IE &= ~(1<<ADC_Get_Chanel_Num(ch));                           //
+   \                     ??CrossCallReturnLabel_2:
+   \   000018   82CF0C07     BIC.W   R15, &0x70c
+    223            }
+    224          }
+   \   00001C   1001         RETA
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine0:
+   \   000000   ........     CALLA   #?Subroutine6
+   \                     ??CrossCallReturnLabel_9:
+   \   000004   1F43         MOV.W   #0x1, R15
+   \   000006   5E83         SUB.B   #0x1, R14
+   \   000008   0230         JN      ??ADC_ClearITPendingBit_4
+   \   00000A                RPT     R14
+   \   00000A   CE180F5F     RLAX.W  R15
+   \                     ??ADC_ClearITPendingBit_4:
+   \   00000E   1001         RETA
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine6:
+   \   000000   3C9F         CMP.W   @R15+, R12
+   \   000002   0824         JEQ     ??ADC_ClearITPendingBit_2
+   \   000004   5E53         ADD.B   #0x1, R14
+   \   000006   3C9F         CMP.W   @R15+, R12
+   \   000008   0524         JEQ     ??ADC_ClearITPendingBit_2
+   \   00000A   5E53         ADD.B   #0x1, R14
+   \   00000C   7E901000     CMP.B   #0x10, R14
+   \   000010   F72B         JNC     ?Subroutine6
+   \   000012   4E43         MOV.B   #0x0, R14
+   \                     ??ADC_ClearITPendingBit_2:
+   \   000014   1001         RETA
+    225          /*******************************************************************************
+    226          *  º¯ÊýÃû³Æ£ºADC_GetITStatus(ADC_CHn ch)
+    227          *  ¹¦ÄÜËµÃ÷£º»ñÈ¡Ä³Ò»Í¨µÀÖÐ¶Ï±êÖ¾×´Ì¬
+    228          *  ²ÎÊýËµÃ÷£ºADC_CHn ch £ºÒª¶ÁÈ¡µÄÍ¨µÀ
+    229          *  º¯Êý·µ»Ø£º¸ÃÍ¨µÀÖÐ¶Ï×´Ì¬±êÖ¾ÊÇ·ñÖÃÎ»£¨TRUE:ÖÃÎ» RESET:¸´Î»£©
+    230          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+    231          STATUS  ADC_GetITStatus(ADC_CHn ch)
+   \                     ADC_GetITStatus:
+    232          {
+    233            return ((ADC12->IFG & (1<<ADC_Get_Chanel_Num(ch))) ? TRUE :FALSE);
+   \   000000   1F420A07     MOV.W   &0x70a, R15
+   \   000004   4E43         MOV.B   #0x0, R14
+   \   000006   ........     MOVA    #ADC_Channel_Bit, R13
+   \                     ??ADC_GetITStatus_1:
+   \   00000A   3C9D         CMP.W   @R13+, R12
+   \   00000C   0824         JEQ     ??ADC_GetITStatus_2
+   \   00000E   5E53         ADD.B   #0x1, R14
+   \   000010   3C9D         CMP.W   @R13+, R12
+   \   000012   0524         JEQ     ??ADC_GetITStatus_2
+   \   000014   5E53         ADD.B   #0x1, R14
+   \   000016   7E901000     CMP.B   #0x10, R14
+   \   00001A   F72B         JNC     ??ADC_GetITStatus_1
+   \   00001C   4E43         MOV.B   #0x0, R14
+   \                     ??ADC_GetITStatus_2:
+   \   00001E   1D43         MOV.W   #0x1, R13
+   \   000020   5E83         SUB.B   #0x1, R14
+   \   000022   0230         JN      ??ADC_GetITStatus_4
+   \   000024                RPT     R14
+   \   000024   CE180D5D     RLAX.W  R13
+   \                     ??ADC_GetITStatus_4:
+   \   000028   0FBD         BIT.W   R13, R15
+   \   00002A   0220         JNE     ??ADC_GetITStatus_5
+   \   00002C   4C43         MOV.B   #0x0, R12
+   \   00002E   1001         RETA
+   \                     ??ADC_GetITStatus_5:
+   \   000030   5C43         MOV.B   #0x1, R12
+   \   000032   1001         RETA
+    234          }
+    235           /*******************************************************************************
+    236          *  º¯ÊýÃû³Æ£ºADC_ClearITPendingBit(ADC_CHn ch)
+    237          *  ¹¦ÄÜËµÃ÷£ºÇå³ýÄ³Ò»Í¨µÀÖÐ¶Ï±êÖ¾Î»
+    238          *  ²ÎÊýËµÃ÷£ºADC_CHn ch £ºÒªÇå³ýÖÐ¶Ï±êÖ¾µÄÍ¨µÀ
+    239          *  º¯Êý·µ»Ø£ºÎÞ
+    240          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+    241          void   ADC_ClearITPendingBit(ADC_CHn ch)
+   \                     ADC_ClearITPendingBit:
+    242          {
+    243            ADC12->IFG &=~(1<<ADC_Get_Chanel_Num(ch));
+   \   000000   4E43         MOV.B   #0x0, R14
+   \   000002   ........     MOVA    #ADC_Channel_Bit, R15
+   \   000006   ........     CALLA   #?Subroutine0
+   \                     ??CrossCallReturnLabel_0:
+   \   00000A   82CF0A07     BIC.W   R15, &0x70a
+    244          }
+   \   00000E   1001         RETA
+    245          /*****************************************************************************
+    246          *  º¯ÊýÃû³Æ£ºADC_Get_Chanel_MEMAddr(ADC_CHn ch)
+    247          *  ¹¦ÄÜËµÃ÷£º»ñÈ¡¶ÔÓ¦Í¨µÀµÄ½á¹û¼Ä´æÆ÷µØÖ·£¨Ö÷ÒªÓÃÓÚDMAÊ±ÐèÒª£©
+    248          *  ²ÎÊýËµÃ÷£ºADC_CHn ch £ºÒª»ñÈ¡½á¹ûµØÖ·µÄÍ¨µÀ
+    249          *  º¯Êý·µ»Ø£ºvoid * :×ª»»½á¹ûµØÖ·
+    250          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+    251          void * ADC_Get_Chanel_MEMAddr(ADC_CHn ch)
+   \                     ADC_Get_Chanel_MEMAddr:
+    252          {
+    253            return (void *)(&(ADC12->MEM[ADC_Get_Chanel_Num(ch)]));
+   \   000000   ........     CALLA   #?Subroutine1
+   \                     ??CrossCallReturnLabel_10:
+   \   000004   4C4E         MOV.B   R14, R12
+   \   000006   EC0C         ADDA    R12, R12
+   \   000008   AC002007     ADDA    #0x720, R12
+   \   00000C   1001         RETA
+    254          }
+
+   \                                 In  segment CODE, align 2, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   4E43         MOV.B   #0x0, R14
+   \   000002   ........     MOVA    #ADC_Channel_Bit, R15
+   \   000006                REQUIRE ?Subroutine6
+   \   000006                // Fall through to label ?Subroutine6
+    255          /*******************************************************************************
+    256          *  º¯ÊýÃû³Æ£ºADC_Get_Chanel_Num(ADC_CHn ch)
+    257          *  ¹¦ÄÜËµÃ÷£º»ñÈ¡¶ÔÓ¦Í¨µÀµÄ¼Ä´æÆ÷±àºÅÖµ
+    258          *  ²ÎÊýËµÃ÷£ºADC_CHn ch £ºÒª»ñÈ¡±àºÅµÄÍ¨µÀ
+    259          *  º¯Êý·µ»Ø£º±àºÅ
+    260          ********************************************************************************/
+    261          inline uint8_t ADC_Get_Chanel_Num(ADC_CHn ch)
+    262          {
+    263            for(uint8_t Chanel_Num=0; Chanel_Num < ADC_CH_NUM; Chanel_Num++)
+    264            {
+    265              if(ch == ADC_Channel_Bit[Chanel_Num])
+    266              {
+    267                return Chanel_Num;
+    268              }
+    269            }
+    270            return 0;
+    271          }
+
+   Maximum stack usage in bytes:
+
+   CSTACK Function
+   ------ --------
+       4  ADC_ClearITPendingBit
+      30  ADC_DeInit
+            30 -> GPIO_MultiBits_Init
+       4  ADC_GetITStatus
+       4  ADC_Get_Chanel_MEMAddr
+       4  ADC_ITConfig
+      28  ADC_Init
+            28 -> GPIO_MultiBits_Init
+       4  ADC_Read_Once
+             4 -> ADC_Read_Value
+             4 -> ADC_StartConv
+       4  ADC_Read_Value
+       4  ADC_StartConv
+       4  ADC_WaitBusy
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      16  ?Subroutine0
+       6  ?Subroutine1
+      18  ?Subroutine2
+      10  ?Subroutine3
+      24  ?Subroutine4
+      14  ?Subroutine5
+      22  ?Subroutine6
+       4  ADC12
+      32  ADC_Channel_Bit
+      16  ADC_ClearITPendingBit
+     276  ADC_DeInit
+      52  ADC_GetITStatus
+      14  ADC_Get_Chanel_MEMAddr
+      30  ADC_ITConfig
+     402  ADC_Init
+      14  ADC_Read_Once
+      12  ADC_Read_Value
+      10  ADC_StartConv
+       8  ADC_WaitBusy
+       2  InitialedChannel_Bit
+       1  InitialedChannel_Num
+       2  _A_PCSEL_L
+       2  _A_REFCTL0_L
+
+ 
+ 944 bytes in segment CODE
+   4 bytes in segment DATA16_AN
+   4 bytes in segment DATA20_C
+  35 bytes in segment DATA20_Z
+ 
+ 944 bytes of CODE  memory
+   4 bytes of CONST memory
+  35 bytes of DATA  memory (+ 4 bytes shared)
+
+Errors: none
+Warnings: none

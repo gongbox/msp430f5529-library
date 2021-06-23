@@ -1,0 +1,49 @@
+C51 COMPILER V9.01   发蒧                                                                  08/22/2010 19:16:09 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE 发蒧
+OBJECT MODULE PLACED IN 发射.OBJ
+COMPILER INVOKED BY: d:\Keil\C51\BIN\C51.EXE 发射.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          /*****************************************
+   2          创建：陈志强
+   3          时间：2010.6.12
+   4          功能：NRF24L01射频模块C文件(发射部分)
+   5          编号3对应接收方通道1地址
+   6          *****************************************/
+   7          #include"reg52.h"
+   8          #include"Allhead.h"
+   9          /*********************主函数***************************/
+  10          void main()
+  11          {
+  12   1         unint ReadTempDate;//读取温度
+  13   1         char TxDate[4];
+  14   1         NRF24L01Int();
+  15   1         while(1)
+  16   1          {
+  17   2                       ReadTempDate=160;
+  18   2                       TxDate[0]=ReadTempDate/100+'0';
+  19   2                       TxDate[1]=ReadTempDate%100/10+'0';
+  20   2                       TxDate[2]='.';
+  21   2                       TxDate[3]=ReadTempDate%100%10+'0';     
+  22   2                       NRFSetTxMode(TxDate);//发送温度
+  23   2                       while(CheckACK());     //检测是否发送完毕
+  24   2              }
+  25   1      
+  26   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     97    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       4
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

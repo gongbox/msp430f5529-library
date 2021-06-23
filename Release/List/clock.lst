@@ -1,0 +1,1145 @@
+###############################################################################
+#                                                                             #
+#                                                       06/Jun/2016  16:42:21 #
+# IAR C/C++ Compiler V5.50.1.20465/W32, Evaluation edition for MSP430         #
+# Copyright 1996-2012 IAR Systems AB.                                         #
+#                                                                             #
+#    __rt_version  =  3                                                       #
+#    __double_size =  32                                                      #
+#    __reg_r4      =  free                                                    #
+#    __reg_r5      =  free                                                    #
+#    __pic         =  no                                                      #
+#    __core        =  430X                                                    #
+#    __data_model  =  large                                                   #
+#    Source file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\clock.c                              #
+#    Command line  =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\clock.c -D NDEBUG -D RAM_VECTOR -lC  #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\List\ -lA C:\Users\615\Desktop\MSP430\MS #
+#                     P430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Release\List\ -o        #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\Obj\ -D__MSP430F5529__ -e --double=32    #
+#                     --dlib_config "D:\Program Files (x86)\IAR               #
+#                     Systems\Embedded Workbench 6.4                          #
+#                     Evaluation\430\LIB\DLIB\dl430xlfn.h" -I                 #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\ -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Ê #
+#                     ý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\inc\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\ -I C:\Users\615\Desktop\MSP430\MSP4 #
+#                     30F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\src\USB\ -I       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_config\ -I                   #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_User\ -I                     #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\srcUSB\USB_API\USB_CDC_API\ -I           #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_API\USB_HID_API\ -I          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_API\USB_MSC_API\ -I          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\KEY\ -I C:\Users\615\Desktop\MSP430\MSP #
+#                     430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\LED\ -I         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\12864\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\oled\ -I      #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\mpu6050\inc\ -I                         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\mpu6050\src\ -I                         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\nokia5110\inc\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\nokia5110\src\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\LQ_1.8_TFT\ -I                          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\LCD_API\ -I                             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\2.2TFT\ -I                              #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\delay\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\ -I             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\System\inc\ -I C:\Users\615\Desktop\MSP430\MSP43 #
+#                     0F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\src\ -I             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\User\ -I C:\Users\615\Desktop\MSP430\MSP430F5529 #
+#                     ¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\User\USER\ -I                    #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\UCOSII\CONFIG\ -I                            #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\uCOSII\App\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII\CONFIHG\    #
+#                     -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ #
+#                     \¹¤³ÌÄ£°å\Lib\uCOSII\PORT\ -I                           #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\UCOSII\CORE\ -I                              #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\FatFs\ -I C:\Users\615\Desktop\MSP430\MSP430 #
+#                     F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\FatFs\option\           #
+#                     --core=430X --data_model=large -Oh --multiplier=32      #
+#                     --multiplier_location=4C0 --hw_workaround=CPU40         #
+#    List file     =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\List\clock.lst                           #
+#    Object file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\Obj\clock.r43                            #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\src\clock.c
+      1          #include "clock.h"
+
+   \                                 In  segment DATA16_AN, at 0x244
+   \   union <unnamed> __data16 _A_PCDIR_L
+   \                     _A_PCDIR_L:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_AN, at 0x24a
+   \   union <unnamed> __data16 _A_PCSEL_L
+   \                     _A_PCSEL_L:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_AN, at 0x120
+   \   union <unnamed> __data16 _A_PMMCTL0_L
+   \                     _A_PMMCTL0_L:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_AN, at 0x124
+   \   union <unnamed> __data16 _A_SVSMHCTL_L
+   \                     _A_SVSMHCTL_L:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_AN, at 0x126
+   \   union <unnamed> __data16 _A_SVSMLCTL_L
+   \                     _A_SVSMLCTL_L:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_AN, at 0x12c
+   \   union <unnamed> __data16 _A_PMMIFG_L
+   \                     _A_PMMIFG_L:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_AN, at 0x102
+   \   union <unnamed> __data16 _A_SFRIFG1_L
+   \                     _A_SFRIFG1_L:
+   \   000000                DS8 2
+      2          
+      3          #ifndef EXTAL_IN_XT1_Hz
+      4          #error Ã»ÓÐºê¶¨Òå"XT1_CLK_Hz",ÇëÔÚclock.hÀïºê¶¨Òå£¬Èç#define EXTAL_IN_XT1_Hz  32768HZ
+      5          #endif  
+      6          #ifndef EXTAL_IN_XT2_Hz
+      7          #error Ã»ÓÐºê¶¨Òå"XT2_CLK_Hz",ÇëÔÚclock.hÀïºê¶¨Òå£¬Èç#define EXTAL_IN_XT2_Hz  4000000HZ
+      8          #endif
+      9          
+
+   \                                 In  segment DATA20_C, align 2, align-sorted
+     10          const UCS_MemMapPtr UCS = UCS_BASE_PTR;
+   \                     UCS:
+   \   000000   60010000     DC32 160H
+
+   \                                 In  segment DATA20_N, align 2, align-sorted
+     11          __no_init CLOCK g_sClock;                                        //È«¾Ö±äÁ¿£¬Ê±ÖÓÆµÂÊ
+   \                     g_sClock:
+   \   000000                DS8 40
+     12          static void SetVcoreUp (uint8_t level);                            //ÉèÖÃÄÚºËµçÑ¹
+     13          /*******************************************************************************
+     14          *  º¯ÊýÃû³Æ£ºXT1_Config(BOOL status)
+     15          *  ¹¦ÄÜËµÃ÷£ºÉèÖÃÊÇ·ñÊ¹ÄÜXT1
+     16          *  ²ÎÊýËµÃ÷£ºBOOL status£ºÊÇ·ñÊ¹ÄÜXT1
+     17          *  º¯Êý·µ»Ø£ºÎÞ
+     18          *  Ê¹ÓÃÊ¾Àý£ºXT1_Config(ENABLE);   //Ê¹ÄÜXT1
+     19          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+     20          static inline void XT1_Config(BOOL status)
+   \                     XT1_Config:
+     21          {
+     22            if(status != DISABLE)
+   \   000000   4C93         CMP.B   #0x0, R12
+   \   000002   1324         JEQ     ??XT1_Config_1
+     23            {
+     24              if(UCS->XT1_OFF == SET)
+   \   000004   D2B36C01     BIT.B   #0x1, &0x16c
+   \   000008   1228         JNC     ??XT1_Config_2
+     25              {
+     26                P5DIR &=~(BIT4+BIT5);
+   \   00000A   F2F0CF004402 AND.B   #0xcf, &0x244
+     27                P5SEL |= BIT4+BIT5;                             //Ñ¡ÓÃ XT1 µÚ¶þ¹¦ÄÜ
+   \   000010   F2D030004A02 BIS.B   #0x30, &0x24a
+     28                UCS->XT1_OFF = RESET ;                          // ¿ªÆô XT1                       
+   \   000016   D2C36C01     BIC.B   #0x1, &0x16c
+     29                do
+     30                {
+     31                  UCS->XT1_LFOFFG = RESET;                     // Çå³ýXT1,DCO Ê§Ð§±êÖ¾                     
+   \                     ??XT1_Config_0:
+   \   00001A   E2C36E01     BIC.B   #0x2, &0x16e
+     32                  SFRIFG1 &= ~OFIFG;                           // 
+   \   00001E   A2C30201     BIC.W   #0x2, &0x102
+     33                }while (UCS->XT1_LFOFFG == SET);               //
+   \   000022   E2B36E01     BIT.B   #0x2, &0x16e
+   \   000026   0328         JNC     ??XT1_Config_2
+   \   000028   F83F         JMP     ??XT1_Config_0
+     34              }
+     35            }
+     36            else
+     37            {
+     38              UCS->XT1_OFF = SET ;                          // ¹Ø±Õ XT1                       
+   \                     ??XT1_Config_1:
+   \   00002A   D2D36C01     BIS.B   #0x1, &0x16c
+     39            }
+     40          }
+   \                     ??XT1_Config_2:
+   \   00002E   1001         RETA
+   \   000030                REQUIRE _A_PCDIR_L
+   \   000030                REQUIRE _A_PCSEL_L
+   \   000030                REQUIRE _A_SFRIFG1_L
+     41          /*******************************************************************************
+     42          *  º¯ÊýÃû³Æ£ºXT2_Config(BOOL status)
+     43          *  ¹¦ÄÜËµÃ÷£ºÉèÖÃÊÇ·ñÊ¹ÄÜXT2
+     44          *  ²ÎÊýËµÃ÷£ºBOOL status£ºÊÇ·ñÊ¹ÄÜXT2
+     45          *  º¯Êý·µ»Ø£ºÎÞ
+     46          *  Ê¹ÓÃÊ¾Àý£ºXT2_Config(TRUE);   //Ê¹ÄÜXT2
+     47          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+     48          static inline void XT2_Config(BOOL status)
+   \                     XT2_Config:
+     49          {
+     50            if(status != DISABLE)
+   \   000000   4C93         CMP.B   #0x0, R12
+   \   000002   1324         JEQ     ??XT2_Config_1
+     51            {
+     52              if(UCS->XT2_OFF == SET)
+   \   000004   D2B36D01     BIT.B   #0x1, &0x16d
+   \   000008   1228         JNC     ??XT2_Config_2
+     53              {
+     54                P5DIR &=~(BIT2+BIT3);
+   \   00000A   F2F0F3004402 AND.B   #0xf3, &0x244
+     55                P5SEL |= BIT2+BIT3;                         //Ñ¡ÓÃ XT2 µÚ¶þ¹¦ÄÜ
+   \   000010   F2D00C004A02 BIS.B   #0xc, &0x24a
+     56                UCS->XT2_OFF = RESET;                         //¿ªÆô XT2                      
+   \   000016   D2C36D01     BIC.B   #0x1, &0x16d
+     57                do
+     58                {
+     59                  UCS->XT2_OFFG = RESET;
+   \                     ??XT2_Config_0:
+   \   00001A   F2C26E01     BIC.B   #0x8, &0x16e
+     60                  SFRIFG1 &= ~OFIFG;                       
+   \   00001E   A2C30201     BIC.W   #0x2, &0x102
+     61                }while (UCS->XT2_OFFG == SET);
+   \   000022   F2B26E01     BIT.B   #0x8, &0x16e
+   \   000026   0328         JNC     ??XT2_Config_2
+   \   000028   F83F         JMP     ??XT2_Config_0
+     62              }
+     63            }
+     64            else
+     65            {
+     66              UCS->XT2_OFF = SET ;                          // ¹Ø±ÕXT2                       
+   \                     ??XT2_Config_1:
+   \   00002A   D2D36D01     BIS.B   #0x1, &0x16d
+     67            }
+     68          }
+   \                     ??XT2_Config_2:
+   \   00002E   1001         RETA
+   \   000030                REQUIRE _A_PCDIR_L
+   \   000030                REQUIRE _A_PCSEL_L
+   \   000030                REQUIRE _A_SFRIFG1_L
+     69          /*******************************************************************************
+     70          *  º¯ÊýÃû³Æ£ºDCO_PLLConfig     (FLLREF_Source refsource, FLLREF_DIVx refdiv, uint32_t DCO_FLL_Fre)
+     71          *  ¹¦ÄÜËµÃ÷£ºÉèÖÃDCOÆµÂÊ£¬µ¥Î»£¨HZ£©
+     72          *  ²ÎÊýËµÃ÷£ºFLLREF_Source refsource :²Î¿¼Ê±ÖÓÔ´
+     73                       FLLREF_DIVx refdiv      :²Î¿¼Ê±ÖÓÔ´·ÖÆµÏµÊý
+     74                       uint32_t DCO_FLL_Fre      :DCOÉèÖÃÆµÂÊ
+     75          *  º¯Êý·µ»Ø£ºÎÞ
+     76          *  Ê¹ÓÃÊ¾Àý£ºDCO_PLLConfig     (FLLREF_REFO, FLLREF_DIV_1, 16MHZ);  //ÉèÖÃDCO±¶Æµ»·ÒÔREFOµÄÒ»·ÖÆµ×÷Îª²Î¿¼Ê±ÖÓÔ´£¬±¶Æµµ½16MHZ
+     77          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine3:
+   \   000000   3C400009     MOV.W   #0x900, R12
+   \   000004   3D403D00     MOV.W   #0x3d, R13
+   \   000008   1001         RETA
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine1:
+   \   000000   ....1C42.... MOVX.W  &g_sClock + 36, R12
+   \   000006   ....1D42.... MOVX.W  &g_sClock + 38, R13
+   \   00000C   1001         RETA
+
+   \                                 In  segment CODE, align 2
+     78          void DCO_PLLConfig     (FLLREF_Source refsource, FLLREF_DIVx refdiv, uint32_t DCO_FLL_Fre)
+   \                     DCO_PLLConfig:
+     79          {
+   \   000000   5B14         PUSHM.A #0x6, R11
+   \   000002   474C         MOV.B   R12, R7
+   \   000004   464D         MOV.B   R13, R6
+   \   000006   0A4E         MOV.W   R14, R10
+   \   000008   0B4F         MOV.W   R15, R11
+     80            static const uint16_t ref_div_value[6]={1,2,4,8,12,16};
+     81            /*¸ù¾ÝÆµÂÊÌá¸ßÄÚºËµçÑ¹*/
+     82            //SetVcoreUp ( (DCO_FLL_Fre < 12MHz) ? 0 : ((DCO_FLL_Fre < 16MHz) ? 1 : ((DCO_FLL_Fre < 20MHz) ? 2 :3))); //ÉèÖÃÄÚºËµçÑ¹
+     83            if(DCO_FLL_Fre < 12MHz)
+   \   00000A   3F90B700     CMP.W   #0xb7, R15
+   \   00000E   0428         JNC     ??DCO_PLLConfig_3
+   \   000010   0520         JNE     ??DCO_PLLConfig_4
+   \   000012   3E90001B     CMP.W   #0x1b00, R14
+   \   000016   022C         JC      ??DCO_PLLConfig_4
+     84              SetVcoreUp (0x00);                      //ÉèÖÃÄÚºËµçÑ¹
+   \                     ??DCO_PLLConfig_3:
+   \   000018   4C43         MOV.B   #0x0, R12
+   \   00001A   143C         JMP     ??DCO_PLLConfig_1
+     85            else if(DCO_FLL_Fre < 16MHz)
+   \                     ??DCO_PLLConfig_4:
+   \   00001C   3F90F400     CMP.W   #0xf4, R15
+   \   000020   0428         JNC     ??DCO_PLLConfig_5
+   \   000022   0520         JNE     ??DCO_PLLConfig_6
+   \   000024   3E900024     CMP.W   #0x2400, R14
+   \   000028   022C         JC      ??DCO_PLLConfig_6
+     86              SetVcoreUp (0x01);       
+   \                     ??DCO_PLLConfig_5:
+   \   00002A   5C43         MOV.B   #0x1, R12
+   \   00002C   0B3C         JMP     ??DCO_PLLConfig_1
+     87            else if(DCO_FLL_Fre < 20MHz)
+   \                     ??DCO_PLLConfig_6:
+   \   00002E   0C4E         MOV.W   R14, R12
+   \   000030   0D4F         MOV.W   R15, R13
+   \   000032   ........     CALLA   #_Cast32uto32f
+   \   000036   ........     CALLA   #?Subroutine7
+   \                     ??CrossCallReturnLabel_22:
+   \   00003A   0224         JEQ     ??DCO_PLLConfig_7
+     88              SetVcoreUp (0x02);       
+   \   00003C   6C43         MOV.B   #0x2, R12
+   \   00003E   023C         JMP     ??DCO_PLLConfig_1
+     89            else
+     90              SetVcoreUp (0x03);       
+   \                     ??DCO_PLLConfig_7:
+   \   000040   7C400300     MOV.B   #0x3, R12
+   \                     ??DCO_PLLConfig_1:
+   \   000044   ........     CALLA   #SetVcoreUp
+     91            
+     92            __bis_SR_register(SCG0);                                              // ½ûÖ¹±¶Æµ»·FLL,
+   \   000048   32D04000     BIS.W   #0x40, SR
+     93            UCS->CTL0 = 0x0000;                                                   // ÇåÁã DCOx, MODx
+   \   00004C   82436001     MOV.W   #0x0, &0x160
+     94            
+     95            if (DCO_FLL_Fre < 0.63MHz)         //           fsystem < 0.63MHz
+   \   000050   3B900900     CMP.W   #0x9, R11
+   \   000054   0428         JNC     ??DCO_PLLConfig_8
+   \   000056   0720         JNE     ??DCO_PLLConfig_9
+   \   000058   3A90F09C     CMP.W   #0x9cf0, R10
+   \   00005C   042C         JC      ??DCO_PLLConfig_9
+     96          	UCS->DCORSEL = 0;
+   \                     ??DCO_PLLConfig_8:
+   \   00005E   F2F08F006201 AND.B   #0x8f, &0x162
+   \   000064   523C         JMP     ??DCO_PLLConfig_10
+     97            else if (DCO_FLL_Fre < 1.25MHz)    // 0.63MHz < fsystem < 1.25MHz
+   \                     ??DCO_PLLConfig_9:
+   \   000066   3B901300     CMP.W   #0x13, R11
+   \   00006A   0428         JNC     ??DCO_PLLConfig_11
+   \   00006C   0820         JNE     ??DCO_PLLConfig_12
+   \   00006E   3A90D012     CMP.W   #0x12d0, R10
+   \   000072   052C         JC      ??DCO_PLLConfig_12
+     98          	UCS->DCORSEL = 1;
+   \                     ??DCO_PLLConfig_11:
+   \   000074   ........     CALLA   #?Subroutine6
+   \                     ??CrossCallReturnLabel_16:
+   \   000078   7ED01000     BIS.B   #0x10, R14
+   \   00007C   403C         JMP     ??DCO_PLLConfig_2
+     99            else if (DCO_FLL_Fre < 2.5MHz)     // 1.25MHz < fsystem <  2.5MHz
+   \                     ??DCO_PLLConfig_12:
+   \   00007E   3B902600     CMP.W   #0x26, R11
+   \   000082   0428         JNC     ??DCO_PLLConfig_13
+   \   000084   0820         JNE     ??DCO_PLLConfig_14
+   \   000086   3A90A025     CMP.W   #0x25a0, R10
+   \   00008A   052C         JC      ??DCO_PLLConfig_14
+    100          	UCS->DCORSEL = 2;
+   \                     ??DCO_PLLConfig_13:
+   \   00008C   ........     CALLA   #?Subroutine6
+   \                     ??CrossCallReturnLabel_17:
+   \   000090   7ED02000     BIS.B   #0x20, R14
+   \   000094   343C         JMP     ??DCO_PLLConfig_2
+    101            else if (DCO_FLL_Fre <   5MHz)     // 2.5MHz  < fsystem <    5MHz
+   \                     ??DCO_PLLConfig_14:
+   \   000096   3B904C00     CMP.W   #0x4c, R11
+   \   00009A   0428         JNC     ??DCO_PLLConfig_15
+   \   00009C   0820         JNE     ??DCO_PLLConfig_16
+   \   00009E   3A90404B     CMP.W   #0x4b40, R10
+   \   0000A2   052C         JC      ??DCO_PLLConfig_16
+    102          	UCS->DCORSEL = 3;
+   \                     ??DCO_PLLConfig_15:
+   \   0000A4   ........     CALLA   #?Subroutine6
+   \                     ??CrossCallReturnLabel_18:
+   \   0000A8   7ED03000     BIS.B   #0x30, R14
+   \   0000AC   283C         JMP     ??DCO_PLLConfig_2
+    103            else if (DCO_FLL_Fre <  10MHz)     // 5MHz    < fsystem <   10MHz
+   \                     ??DCO_PLLConfig_16:
+   \   0000AE   3B909800     CMP.W   #0x98, R11
+   \   0000B2   0428         JNC     ??DCO_PLLConfig_17
+   \   0000B4   0820         JNE     ??DCO_PLLConfig_18
+   \   0000B6   3A908096     CMP.W   #0x9680, R10
+   \   0000BA   052C         JC      ??DCO_PLLConfig_18
+    104          	UCS->DCORSEL = 4;
+   \                     ??DCO_PLLConfig_17:
+   \   0000BC   ........     CALLA   #?Subroutine6
+   \                     ??CrossCallReturnLabel_19:
+   \   0000C0   7ED04000     BIS.B   #0x40, R14
+   \   0000C4   1C3C         JMP     ??DCO_PLLConfig_2
+    105            else if (DCO_FLL_Fre <  20MHz)     // 10MHz   < fsystem <   20MHz
+   \                     ??DCO_PLLConfig_18:
+   \   0000C6   0C4A         MOV.W   R10, R12
+   \   0000C8   0D4B         MOV.W   R11, R13
+   \   0000CA   ........     CALLA   #_Cast32uto32f
+   \   0000CE   084C         MOV.W   R12, R8
+   \   0000D0   094D         MOV.W   R13, R9
+   \   0000D2   ........     CALLA   #?Subroutine7
+   \                     ??CrossCallReturnLabel_23:
+   \   0000D6   0524         JEQ     ??DCO_PLLConfig_19
+    106          	UCS->DCORSEL = 5;
+   \   0000D8   ........     CALLA   #?Subroutine6
+   \                     ??CrossCallReturnLabel_20:
+   \   0000DC   7ED05000     BIS.B   #0x50, R14
+   \   0000E0   0E3C         JMP     ??DCO_PLLConfig_2
+    107            else if (DCO_FLL_Fre <  40MHz)     // 20MHz   < fsystem <   40MHz
+   \                     ??DCO_PLLConfig_19:
+   \   0000E2   3E408096     MOV.W   #0x9680, R14
+   \   0000E6   3F40184C     MOV.W   #0x4c18, R15
+   \   0000EA   0C48         MOV.W   R8, R12
+   \   0000EC   0D49         MOV.W   R9, R13
+   \   0000EE   ........     CALLA   #_CmpLt32f
+   \   0000F2   0C93         CMP.W   #0x0, R12
+   \   0000F4   0724         JEQ     ??DCO_PLLConfig_20
+    108          	UCS->DCORSEL = 6;
+   \   0000F6   ........     CALLA   #?Subroutine6
+   \                     ??CrossCallReturnLabel_21:
+   \   0000FA   7ED06000     BIS.B   #0x60, R14
+   \                     ??DCO_PLLConfig_2:
+   \   0000FE   C24E6201     MOV.B   R14, &0x162
+   \   000102   033C         JMP     ??DCO_PLLConfig_10
+    109            else
+    110          	UCS->DCORSEL = 7;
+   \                     ??DCO_PLLConfig_20:
+   \   000104   F2D070006201 BIS.B   #0x70, &0x162
+    111          
+    112            g_sClock.DCO_FLL_Frequency = DCO_FLL_Fre;
+   \                     ??DCO_PLLConfig_10:
+   \   00010A   ....824A.... MOVX.W  R10, &g_sClock + 36
+   \   000110   ....824B.... MOVX.W  R11, &g_sClock + 38
+    113            
+    114            UCS->FLLREFDIV = refdiv;
+   \   000116   78400700     MOV.B   #0x7, R8
+   \   00011A   4E46         MOV.B   R6, R14
+   \   00011C   4EF8         AND.B   R8, R14
+   \   00011E   7F40F800     MOV.B   #0xf8, R15
+   \   000122   5FF26601     AND.B   &0x166, R15
+   \   000126   4FDE         BIS.B   R14, R15
+   \   000128   C24F6601     MOV.B   R15, &0x166
+    115            UCS->SELREF = refsource;
+   \   00012C   4E47         MOV.B   R7, R14
+   \   00012E                RPT     #0x4
+   \   00012E   43184E5E     RLAX.B  R14
+   \   000132   7EF07000     AND.B   #0x70, R14
+   \   000136   7F408F00     MOV.B   #0x8f, R15
+   \   00013A   5FF26601     AND.B   &0x166, R15
+   \   00013E   4FDE         BIS.B   R14, R15
+   \   000140   C24F6601     MOV.B   R15, &0x166
+    116            
+    117            float Fref_value;
+    118            if(refsource == FLLREF_XT2)
+   \   000144   77900500     CMP.B   #0x5, R7
+   \   000148   0D20         JNE     ??DCO_PLLConfig_21
+    119            {
+    120              XT2_Config(TRUE);
+   \   00014A   5C43         MOV.B   #0x1, R12
+   \   00014C   ........     CALLA   #XT2_Config
+    121              Fref_value = (float)((uint32_t)EXTAL_IN_XT2_Hz/ref_div_value[refdiv]);  
+   \   000150   ........     CALLA   #?Subroutine3
+    122            }
+   \                     ??CrossCallReturnLabel_9:
+   \   000154   E606         ADDA    R6, R6
+   \   000156   ....1E46.... MOVX.W  ??ref_div_value(R6), R14
+   \   00015C   0F43         MOV.W   #0x0, R15
+   \   00015E   ........     CALLA   #?DivMod32u
+   \   000162   113C         JMP     ??DCO_PLLConfig_22
+    123            else if(refsource == FLLREF_XT1)
+   \                     ??DCO_PLLConfig_21:
+   \   000164   4793         CMP.B   #0x0, R7
+   \   000166   0420         JNE     ??DCO_PLLConfig_23
+    124            {
+    125              XT1_Config(TRUE);
+   \   000168   5C43         MOV.B   #0x1, R12
+   \   00016A   ........     CALLA   #XT1_Config
+    126              Fref_value = (float)(EXTAL_IN_XT1_Hz/ref_div_value[refdiv]);
+   \   00016E   023C         JMP     ??DCO_PLLConfig_24
+    127            }
+    128            else if(refsource == FLLREF_REFO)
+   \                     ??DCO_PLLConfig_23:
+   \   000170   6793         CMP.B   #0x2, R7
+   \   000172   0D20         JNE     ??DCO_PLLConfig_25
+    129            {
+    130              Fref_value = (float)(REFOCLK_FREQUENCY/ref_div_value[refdiv]);
+   \                     ??DCO_PLLConfig_24:
+   \   000174   3C400080     MOV.W   #0x8000, R12
+   \   000178   E606         ADDA    R6, R6
+   \   00017A   ....1E46.... MOVX.W  ??ref_div_value(R6), R14
+   \   000180   ........     CALLA   #?DivMod16u
+   \   000184   0D43         MOV.W   #0x0, R13
+   \                     ??DCO_PLLConfig_22:
+   \   000186   ........     CALLA   #_Cast32uto32f
+   \   00018A   0A4C         MOV.W   R12, R10
+   \   00018C   0B4D         MOV.W   R13, R11
+    131            }
+    132            uint16_t FLLN_VALUE = (uint16_t)((g_sClock.DCO_FLL_Frequency/Fref_value+0.5f)-1u);
+    133            ASSERT(FLLN_VALUE < 1024);         //²»ÔÊÐí³¬¹ý1023£¬Çë½«DCOÆµÂÊÉèµÍ»òÕß¸ü»»Îª¸ü¸ßÆµÂÊµÄ²Î¿¼Ê±ÖÓÔ´
+    134            
+    135            UCS->FLLN = FLLN_VALUE;        //
+   \                     ??DCO_PLLConfig_25:
+   \   00018E   ........     CALLA   #?Subroutine1
+   \                     ??CrossCallReturnLabel_5:
+   \   000192   ........     CALLA   #_Cast32uto32f
+   \   000196   0E4A         MOV.W   R10, R14
+   \   000198   0F4B         MOV.W   R11, R15
+   \   00019A   ........     CALLA   #_Div32f
+   \   00019E   0E43         MOV.W   #0x0, R14
+   \   0001A0   3F40003F     MOV.W   #0x3f00, R15
+   \   0001A4   ........     CALLA   #_Add32f
+   \   0001A8   0E43         MOV.W   #0x0, R14
+   \   0001AA   3F4080BF     MOV.W   #0xbf80, R15
+   \   0001AE   ........     CALLA   #_Add32f
+   \   0001B2   ........     CALLA   #_Cast32fto32u
+   \   0001B6   3CF0FF03     AND.W   #0x3ff, R12
+   \   0001BA   3F4000FC     MOV.W   #0xfc00, R15
+   \   0001BE   1FF26401     AND.W   &0x164, R15
+   \   0001C2   0FDC         BIS.W   R12, R15
+   \   0001C4   824F6401     MOV.W   R15, &0x164
+    136            UCS->FLLD = 0;     //ÉèÖÃDCO·ÖÆµ  
+   \   0001C8   B2F0FF8F6401 AND.W   #0x8fff, &0x164
+    137            
+    138            __bic_SR_register(SCG0);                  // Ê¹ÄÜFLL
+   \   0001CE   32C04000     BIC.W   #0x40, SR
+    139            do
+    140            {
+    141              UCS->DCO_FFG = RESET; // Çå³ý,DCO Ê§Ð§±êÖ¾                                        
+   \                     ??DCO_PLLConfig_0:
+   \   0001D2   D2C36E01     BIC.B   #0x1, &0x16e
+    142              SFRIFG1 &= ~OFIFG;                                             // Çå³ýÊ±ÖÓÊ§Ð§±êÖ¾
+   \   0001D6   A2C30201     BIC.W   #0x2, &0x102
+    143            }while (UCS->DCO_FFG == SET);                                           // ¼ì²éDCOÊ§Ð§±êÖ¾
+   \   0001DA   D2B36E01     BIT.B   #0x1, &0x16e
+   \   0001DE   F92F         JC      ??DCO_PLLConfig_0
+    144           
+    145            //½«Ê¹ÓÃDCO×÷ÎªÊ±ÖÓÔ´µÄÊ±ÖÓÆµÂÊÖµÐÞ¸Ä
+    146            if(UCS->SELM == DCO || UCS->SELM == DCO_DIV) 
+   \   0001E0   8B006801     MOVA    #0x168, R11
+   \   0001E4   4E48         MOV.B   R8, R14
+   \   0001E6   6EFB         AND.B   @R11, R14
+   \   0001E8   7E900300     CMP.B   #0x3, R14
+   \   0001EC   0424         JEQ     ??DCO_PLLConfig_26
+   \   0001EE   4E48         MOV.B   R8, R14
+   \   0001F0   6EFB         AND.B   @R11, R14
+   \   0001F2   6E92         CMP.B   #0x4, R14
+   \   0001F4   0720         JNE     ??DCO_PLLConfig_27
+    147            {
+    148              CLK_DIVx div = (CLK_DIVx)UCS->DIVM;
+   \                     ??DCO_PLLConfig_26:
+   \   0001F6   5D426A01     MOV.B   &0x16a, R13
+    149              CLOCK_MCLK_Config ((CLK_Source)UCS->SELM, div);
+   \   0001FA   4DF8         AND.B   R8, R13
+   \   0001FC   4C48         MOV.B   R8, R12
+   \   0001FE   6CFB         AND.B   @R11, R12
+   \   000200   ........     CALLA   #CLOCK_MCLK_Config
+    150            }
+    151            
+    152            if(UCS->SELS == DCO || UCS->SELS == DCO_DIV)
+   \                     ??DCO_PLLConfig_27:
+   \   000204   6E4B         MOV.B   @R11, R14
+   \   000206                RPT     #0x4
+   \   000206   43194E10     RRUX.B  R14
+   \   00020A   4EF8         AND.B   R8, R14
+   \   00020C   7E900300     CMP.B   #0x3, R14
+   \   000210   0624         JEQ     ??DCO_PLLConfig_28
+   \   000212   6E4B         MOV.B   @R11, R14
+   \   000214                RPT     #0x4
+   \   000214   43194E10     RRUX.B  R14
+   \   000218   4EF8         AND.B   R8, R14
+   \   00021A   6E92         CMP.B   #0x4, R14
+   \   00021C   0B20         JNE     ??DCO_PLLConfig_29
+    153            {
+    154              CLK_DIVx div = (CLK_DIVx)UCS->DIVS;
+   \                     ??DCO_PLLConfig_28:
+   \   00021E   5D426A01     MOV.B   &0x16a, R13
+    155              CLOCK_SMCLK_Config((CLK_Source)UCS->SELS, div);
+   \   000222                RPT     #0x4
+   \   000222   43194D10     RRUX.B  R13
+   \   000226   4DF8         AND.B   R8, R13
+   \   000228   6C4B         MOV.B   @R11, R12
+   \   00022A                RPT     #0x4
+   \   00022A   43194C10     RRUX.B  R12
+   \   00022E   4CF8         AND.B   R8, R12
+   \   000230   ........     CALLA   #CLOCK_SMCLK_Config
+    156            }
+    157            
+    158            if(UCS->SELA == DCO || UCS->SELA == DCO_DIV)
+   \                     ??DCO_PLLConfig_29:
+   \   000234   4E48         MOV.B   R8, R14
+   \   000236   5EF26901     AND.B   &0x169, R14
+   \   00023A   7E900300     CMP.B   #0x3, R14
+   \   00023E   0524         JEQ     ??DCO_PLLConfig_30
+   \   000240   4E48         MOV.B   R8, R14
+   \   000242   5EF26901     AND.B   &0x169, R14
+   \   000246   6E92         CMP.B   #0x4, R14
+   \   000248   0920         JNE     ??DCO_PLLConfig_31
+    159            {
+    160              CLK_DIVx div = (CLK_DIVx)UCS->DIVA;
+   \                     ??DCO_PLLConfig_30:
+   \   00024A   5D426B01     MOV.B   &0x16b, R13
+    161              CLOCK_ACLK_Config ((CLK_Source)UCS->SELS, div);
+   \   00024E   4DF8         AND.B   R8, R13
+   \   000250   6C4B         MOV.B   @R11, R12
+   \   000252                RPT     #0x4
+   \   000252   43194C10     RRUX.B  R12
+   \   000256   4CF8         AND.B   R8, R12
+   \   000258   ........     CALLA   #CLOCK_ACLK_Config
+    162            }
+    163          }
+   \                     ??DCO_PLLConfig_31:
+   \   00025C   5616         POPM.A  #0x6, R11
+   \   00025E   1001         RETA
+   \   000260                REQUIRE _A_SFRIFG1_L
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine7:
+   \   000000   3E408096     MOV.W   #0x9680, R14
+   \   000004   3F40984B     MOV.W   #0x4b98, R15
+   \   000008   ........     CALLA   #_CmpLt32f
+   \   00000C   0C93         CMP.W   #0x0, R12
+   \   00000E   1001         RETA
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine6:
+   \   000000   7E408F00     MOV.B   #0x8f, R14
+   \   000004   5EF26201     AND.B   &0x162, R14
+   \   000008   1001         RETA
+
+   \                                 In  segment DATA20_C, align 2, align-sorted
+   \                     ??ref_div_value:
+   \   000000   010002000400 DC16 1, 2, 4, 8, 12, 16
+   \            08000C001000
+    164          /*************************************************************************
+    165          *  º¯ÊýÃû³Æ£ºCLOCK_MCLK_Config  (CLK_Source mclk , CLK_DIVx mclk_div)
+    166          *  ¹¦ÄÜËµÃ÷£ºÉèÖÃÖ÷Ê±ÖÓÔ´¼°·ÖÆµ
+    167          *  ²ÎÊýËµÃ÷£ºCLK_Source mclk   :Ö÷Ê±ÖÓÊ±ÖÓÔ´
+    168                       CLK_DIVx mclk_div :Ö÷Ê±ÖÓ·ÖÆµÏµÊý
+    169          *  º¯Êý·µ»Ø£ºÎÞ
+    170          *  Ê¹ÓÃÊ¾Àý£ºCLOCK_MCLK_Config  (DCO , DIV_1);   //Ö÷Ê±ÖÓÊ¹ÓÃDCO×÷ÎªÊ±ÖÓÔ´£¬·ÖÆµÏµÊýÎª1£¨²»·ÖÆµ£©
+    171          *************************************************************************/  
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine5:
+   \   000000   ........     CALLA   #_Cast32uto32f
+   \   000004   3E400024     MOV.W   #0x2400, R14
+   \   000008   3F407449     MOV.W   #0x4974, R15
+   \   00000C   ........     BRA     #_Div32f
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine4:
+   \   000000   ........     CALLA   #?ShiftRight32u
+   \   000004   ........     MOVA    #g_sClock, R10
+   \   000008   1001         RETA
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine2:
+   \   000000   3E40E803     MOV.W   #0x3e8, R14
+   \   000004   0F43         MOV.W   #0x0, R15
+   \   000006   ........     BRA     #?DivMod32u
+
+   \                                 In  segment CODE, align 2
+    172          void CLOCK_MCLK_Config  (CLK_Source mclk , CLK_DIVx mclk_div)
+   \                     CLOCK_MCLK_Config:
+    173          {
+   \   000000   0A14         PUSHM.A #0x1, R10
+   \   000002   ........     CALLA   #?Subroutine0
+    174            if(mclk == XT2)
+    175            {
+    176              XT2_Config(TRUE);
+    177            }
+    178            else if(mclk == XT1)
+    179            {
+    180              XT1_Config(TRUE);
+    181            }
+    182            
+    183            UCS->SELM = mclk;                         //Ñ¡ÔñDCO×÷ÎªÊ±ÖÓÔ´
+   \                     ??CrossCallReturnLabel_0:
+   \   000006   ........     CALLA   #?Subroutine9
+    184            UCS->DIVM = mclk_div;
+   \                     ??CrossCallReturnLabel_27:
+   \   00000A   ........     CALLA   #?Subroutine12
+   \                     ??CrossCallReturnLabel_33:
+   \   00000E   ........     CALLA   #?Subroutine10
+    185            
+    186            switch(mclk)
+   \                     ??CrossCallReturnLabel_29:
+   \   000012   0E24         JEQ     ??CLOCK_MCLK_Config_2
+   \   000014   5F83         SUB.B   #0x1, R15
+   \   000016   0924         JEQ     ??CLOCK_MCLK_Config_3
+   \   000018   5F83         SUB.B   #0x1, R15
+   \   00001A   0A24         JEQ     ??CLOCK_MCLK_Config_2
+   \   00001C   5F83         SUB.B   #0x1, R15
+   \   00001E   0C24         JEQ     ??CLOCK_MCLK_Config_4
+   \   000020   5F83         SUB.B   #0x1, R15
+   \   000022   0A24         JEQ     ??CLOCK_MCLK_Config_4
+   \   000024   5F83         SUB.B   #0x1, R15
+   \   000026   0B24         JEQ     ??CLOCK_MCLK_Config_5
+   \   000028   213C         JMP     ??CLOCK_MCLK_Config_6
+    187            {
+    188            case XT1    :g_sClock.MCLK.CLK_HZ = EXTAL_IN_XT1_Hz;break;
+    189            case VLO    :g_sClock.MCLK.CLK_HZ = VLOCLK_FREQUENCY;break;
+   \                     ??CLOCK_MCLK_Config_3:
+   \   00002A   3C401027     MOV.W   #0x2710, R12
+   \   00002E   023C         JMP     ??CLOCK_MCLK_Config_7
+    190            case REFO   :g_sClock.MCLK.CLK_HZ = REFOCLK_FREQUENCY;break;       
+   \                     ??CLOCK_MCLK_Config_2:
+   \   000030   3C400080     MOV.W   #0x8000, R12
+   \                     ??CLOCK_MCLK_Config_7:
+   \   000034   0D43         MOV.W   #0x0, R13
+   \   000036   053C         JMP     ??CLOCK_MCLK_Config_8
+    191            case DCO    :g_sClock.MCLK.CLK_HZ = g_sClock.DCO_FLL_Frequency;break;    
+    192            case DCO_DIV:g_sClock.MCLK.CLK_HZ = g_sClock.DCO_FLL_Frequency;break;
+   \                     ??CLOCK_MCLK_Config_4:
+   \   000038   ........     CALLA   #?Subroutine1
+   \                     ??CrossCallReturnLabel_4:
+   \   00003C   023C         JMP     ??CLOCK_MCLK_Config_8
+    193            case XT2    :g_sClock.MCLK.CLK_HZ = EXTAL_IN_XT2_Hz;break;
+   \                     ??CLOCK_MCLK_Config_5:
+   \   00003E   ........     CALLA   #?Subroutine3
+    194            default :return;
+    195            }
+    196            g_sClock.MCLK.CLK_HZ  >>= mclk_div;
+   \                     ??CLOCK_MCLK_Config_8:
+   \   000042   ........     CALLA   #?Subroutine4
+   \                     ??CrossCallReturnLabel_12:
+   \   000046   8A4C0000     MOV.W   R12, 0(R10)
+   \   00004A   8A4D0200     MOV.W   R13, 0x2(R10)
+    197            g_sClock.MCLK.CLK_KHZ = g_sClock.MCLK.CLK_HZ/1000u;
+   \   00004E   ........     CALLA   #?Subroutine2
+   \                     ??CrossCallReturnLabel_8:
+   \   000052   8A4C0400     MOV.W   R12, 0x4(R10)
+   \   000056   8A4D0600     MOV.W   R13, 0x6(R10)
+    198            g_sClock.MCLK.CLK_MHZ = g_sClock.MCLK.CLK_HZ/1000000.0;
+   \   00005A   2C4A         MOV.W   @R10, R12
+   \   00005C   1D4A0200     MOV.W   0x2(R10), R13
+   \   000060   ........     CALLA   #?Subroutine5
+   \                     ??CrossCallReturnLabel_15:
+   \   000064   8A4C0800     MOV.W   R12, 0x8(R10)
+   \   000068   8A4D0A00     MOV.W   R13, 0xa(R10)
+    199          }
+   \                     ??CLOCK_MCLK_Config_6:
+   \   00006C   0A16         POPM.A  #0x1, R10
+   \   00006E   1001         RETA
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine10:
+   \   000000   5AF26A01     AND.B   &0x16a, R10
+   \   000004   4ADD         BIS.B   R13, R10
+   \   000006   C24A6A01     MOV.B   R10, &0x16a
+   \   00000A   4F83         SUB.B   #0x0, R15
+   \   00000C   1001         RETA
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine9:
+   \   000000   5AF26801     AND.B   &0x168, R10
+   \   000004   4ADD         BIS.B   R13, R10
+   \   000006   C24A6801     MOV.B   R10, &0x168
+   \   00000A   4D4E         MOV.B   R14, R13
+   \   00000C   1001         RETA
+
+   \                                 In  segment CODE, align 2, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   ........     CALLA   #?Subroutine11
+   \                     ??CrossCallReturnLabel_31:
+   \   000004                REQUIRE ?Subroutine12
+   \   000004                // Fall through to label ?Subroutine12
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine12:
+   \   000000   7DF00700     AND.B   #0x7, R13
+   \   000004   7A40F800     MOV.B   #0xf8, R10
+   \   000008   1001         RETA
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine11:
+   \   000000   4F4C         MOV.B   R12, R15
+   \   000002   4E4D         MOV.B   R13, R14
+   \   000004   7C900500     CMP.B   #0x5, R12
+   \   000008   0420         JNE     ??CLOCK_SMCLK_Config_0
+   \   00000A   5C43         MOV.B   #0x1, R12
+   \   00000C   ........     CALLA   #XT2_Config
+   \   000010   053C         JMP     ??CLOCK_SMCLK_Config_1
+   \                     ??CLOCK_SMCLK_Config_0:
+   \   000012   4C93         CMP.B   #0x0, R12
+   \   000014   0320         JNE     ??CLOCK_SMCLK_Config_1
+   \   000016   5C43         MOV.B   #0x1, R12
+   \   000018   ........     CALLA   #XT1_Config
+   \                     ??CLOCK_SMCLK_Config_1:
+   \   00001C   4D4F         MOV.B   R15, R13
+   \   00001E   1001         RETA
+    200          /*************************************************************************
+    201          *  º¯ÊýÃû³Æ£ºCLOCK_SMCLK_Config (CLK_Source smclk, CLK_DIVx smclk_div)
+    202          *  ¹¦ÄÜËµÃ÷£ºÉèÖÃÏµÍ³Ê±ÖÓÔ´¼°·ÖÆµ
+    203          *  ²ÎÊýËµÃ÷£ºCLK_Source smclk   :ÏµÍ³Ê±ÖÓÊ±ÖÓÔ´
+    204                       CLK_DIVx smclk_div :ÏµÍ³Ê±ÖÓ·ÖÆµÏµÊý
+    205          *  º¯Êý·µ»Ø£ºÎÞ
+    206          *  Ê¹ÓÃÊ¾Àý£ºCLOCK_SMCLK_Config  (DCO , DIV_2);   //ÏµÍ³Ê±ÖÓÊ¹ÓÃDCO×÷ÎªÊ±ÖÓÔ´£¬·ÖÆµÏµÊýÎª2£¨¶þ·ÖÆµ£©
+    207          *************************************************************************/  
+
+   \                                 In  segment CODE, align 2
+    208          void CLOCK_SMCLK_Config (CLK_Source smclk, CLK_DIVx smclk_div)
+   \                     CLOCK_SMCLK_Config:
+    209          {
+   \   000000   0A14         PUSHM.A #0x1, R10
+   \   000002   ........     CALLA   #?Subroutine11
+    210            if(smclk == XT2)
+    211            {
+    212              XT2_Config(TRUE);
+    213            }
+    214            else if(smclk == XT1)
+    215            {
+    216              XT1_Config(TRUE);
+    217            }
+    218            
+    219            UCS->SELS = smclk;//Ñ¡ÔñsmclkÊ±ÖÓÔ´
+   \                     ??CrossCallReturnLabel_30:
+   \   000006   ........     CALLA   #?Subroutine8
+   \                     ??CrossCallReturnLabel_24:
+   \   00000A   ........     CALLA   #?Subroutine9
+    220            UCS->DIVS = smclk_div;
+   \                     ??CrossCallReturnLabel_26:
+   \   00000E   ........     CALLA   #?Subroutine8
+   \                     ??CrossCallReturnLabel_25:
+   \   000012   ........     CALLA   #?Subroutine10
+    221            
+    222            switch(smclk)
+   \                     ??CrossCallReturnLabel_28:
+   \   000016   0E24         JEQ     ??CLOCK_SMCLK_Config_2
+   \   000018   5F83         SUB.B   #0x1, R15
+   \   00001A   0924         JEQ     ??CLOCK_SMCLK_Config_3
+   \   00001C   5F83         SUB.B   #0x1, R15
+   \   00001E   0A24         JEQ     ??CLOCK_SMCLK_Config_2
+   \   000020   5F83         SUB.B   #0x1, R15
+   \   000022   0C24         JEQ     ??CLOCK_SMCLK_Config_4
+   \   000024   5F83         SUB.B   #0x1, R15
+   \   000026   0A24         JEQ     ??CLOCK_SMCLK_Config_4
+   \   000028   5F83         SUB.B   #0x1, R15
+   \   00002A   0B24         JEQ     ??CLOCK_SMCLK_Config_5
+   \   00002C   223C         JMP     ??CLOCK_SMCLK_Config_6
+    223            {
+    224            case XT1    :g_sClock.SMCLK.CLK_HZ = EXTAL_IN_XT1_Hz;break;
+    225            case VLO    :g_sClock.SMCLK.CLK_HZ = VLOCLK_FREQUENCY;break;
+   \                     ??CLOCK_SMCLK_Config_3:
+   \   00002E   3C401027     MOV.W   #0x2710, R12
+   \   000032   023C         JMP     ??CLOCK_SMCLK_Config_7
+    226            case REFO   :g_sClock.SMCLK.CLK_HZ = REFOCLK_FREQUENCY;break;       
+   \                     ??CLOCK_SMCLK_Config_2:
+   \   000034   3C400080     MOV.W   #0x8000, R12
+   \                     ??CLOCK_SMCLK_Config_7:
+   \   000038   0D43         MOV.W   #0x0, R13
+   \   00003A   053C         JMP     ??CLOCK_SMCLK_Config_8
+    227            case DCO    :g_sClock.SMCLK.CLK_HZ = g_sClock.DCO_FLL_Frequency;break; 
+    228            case DCO_DIV:g_sClock.SMCLK.CLK_HZ = g_sClock.DCO_FLL_Frequency;break;
+   \                     ??CLOCK_SMCLK_Config_4:
+   \   00003C   ........     CALLA   #?Subroutine1
+   \                     ??CrossCallReturnLabel_3:
+   \   000040   023C         JMP     ??CLOCK_SMCLK_Config_8
+    229            case XT2    :g_sClock.SMCLK.CLK_HZ = EXTAL_IN_XT2_Hz;break;
+   \                     ??CLOCK_SMCLK_Config_5:
+   \   000042   ........     CALLA   #?Subroutine3
+    230            default :return;
+    231            }
+    232            g_sClock.SMCLK.CLK_HZ >>= smclk_div;
+   \                     ??CLOCK_SMCLK_Config_8:
+   \   000046   ........     CALLA   #?Subroutine4
+   \                     ??CrossCallReturnLabel_11:
+   \   00004A   8A4C0C00     MOV.W   R12, 0xc(R10)
+   \   00004E   8A4D0E00     MOV.W   R13, 0xe(R10)
+    233            g_sClock.SMCLK.CLK_KHZ = g_sClock.SMCLK.CLK_HZ/1000u;;
+   \   000052   ........     CALLA   #?Subroutine2
+   \                     ??CrossCallReturnLabel_7:
+   \   000056   8A4C1000     MOV.W   R12, 0x10(R10)
+   \   00005A   8A4D1200     MOV.W   R13, 0x12(R10)
+    234            g_sClock.SMCLK.CLK_MHZ = g_sClock.SMCLK.CLK_HZ/1000000.0;
+   \   00005E   1C4A0C00     MOV.W   0xc(R10), R12
+   \   000062   1D4A0E00     MOV.W   0xe(R10), R13
+   \   000066   ........     CALLA   #?Subroutine5
+   \                     ??CrossCallReturnLabel_14:
+   \   00006A   8A4C1400     MOV.W   R12, 0x14(R10)
+   \   00006E   8A4D1600     MOV.W   R13, 0x16(R10)
+    235          }
+   \                     ??CLOCK_SMCLK_Config_6:
+   \   000072   0A16         POPM.A  #0x1, R10
+   \   000074   1001         RETA
+
+   \                                 In  segment CODE, align 2
+   \                     ?Subroutine8:
+   \   000000                RPT     #0x4
+   \   000000   43184D5D     RLAX.B  R13
+   \   000004   7DF07000     AND.B   #0x70, R13
+   \   000008   7A408F00     MOV.B   #0x8f, R10
+   \   00000C   1001         RETA
+    236          /*************************************************************************
+    237          *  º¯ÊýÃû³Æ£ºCLOCK_ACLK_Config  (CLK_Source aclk , CLK_DIVx aclk_div)
+    238          *  ¹¦ÄÜËµÃ÷£ºÉèÖÃ¸¨ÖúÊ±ÖÓÔ´¼°·ÖÆµ
+    239          *  ²ÎÊýËµÃ÷£ºCLK_Source aclk   :¸¨ÖúÊ±ÖÓÊ±ÖÓÔ´
+    240                       CLK_DIVx aclk_div :¸¨ÖúÊ±ÖÓ·ÖÆµÏµÊý
+    241          *  º¯Êý·µ»Ø£ºÎÞ
+    242          *  Ê¹ÓÃÊ¾Àý£ºCLOCK_ACLK_Config  (XT! , DIV_4);   //¸¨ÖúÊ±ÖÓÊ¹ÓÃXT1×÷ÎªÊ±ÖÓÔ´£¬·ÖÆµÏµÊýÎª4£¨ËÄ·ÖÆµ£©
+    243          *************************************************************************/  
+
+   \                                 In  segment CODE, align 2
+    244          void CLOCK_ACLK_Config  (CLK_Source aclk , CLK_DIVx aclk_div)
+   \                     CLOCK_ACLK_Config:
+    245          {
+   \   000000   0A14         PUSHM.A #0x1, R10
+   \   000002   ........     CALLA   #?Subroutine0
+    246             if(aclk == XT2)
+    247            {
+    248              XT2_Config(TRUE);
+    249            }
+    250            else if(aclk == XT1)
+    251            {
+    252              XT1_Config(TRUE);
+    253            }
+    254            
+    255            UCS->SELA = aclk;//Ñ¡ÔñÊ±ÖÓÔ´                   
+   \                     ??CrossCallReturnLabel_1:
+   \   000006   5AF26901     AND.B   &0x169, R10
+   \   00000A   4ADD         BIS.B   R13, R10
+   \   00000C   C24A6901     MOV.B   R10, &0x169
+    256            UCS->DIVA = aclk_div; //ÉèÖÃ·ÖÆµÏµÊýÎª0
+   \   000010   4D4E         MOV.B   R14, R13
+   \   000012   ........     CALLA   #?Subroutine12
+   \                     ??CrossCallReturnLabel_32:
+   \   000016   5AF26B01     AND.B   &0x16b, R10
+   \   00001A   4ADD         BIS.B   R13, R10
+   \   00001C   C24A6B01     MOV.B   R10, &0x16b
+    257            
+    258            switch(aclk)
+   \   000020   4F83         SUB.B   #0x0, R15
+   \   000022   0E24         JEQ     ??CLOCK_ACLK_Config_2
+   \   000024   5F83         SUB.B   #0x1, R15
+   \   000026   0924         JEQ     ??CLOCK_ACLK_Config_3
+   \   000028   5F83         SUB.B   #0x1, R15
+   \   00002A   0A24         JEQ     ??CLOCK_ACLK_Config_2
+   \   00002C   5F83         SUB.B   #0x1, R15
+   \   00002E   0C24         JEQ     ??CLOCK_ACLK_Config_4
+   \   000030   5F83         SUB.B   #0x1, R15
+   \   000032   0A24         JEQ     ??CLOCK_ACLK_Config_4
+   \   000034   5F83         SUB.B   #0x1, R15
+   \   000036   0B24         JEQ     ??CLOCK_ACLK_Config_5
+   \   000038   223C         JMP     ??CLOCK_ACLK_Config_6
+    259            {
+    260            case XT1    :g_sClock.ACLK.CLK_HZ = EXTAL_IN_XT1_Hz;break;
+    261            case VLO    :g_sClock.ACLK.CLK_HZ = VLOCLK_FREQUENCY;break;
+   \                     ??CLOCK_ACLK_Config_3:
+   \   00003A   3C401027     MOV.W   #0x2710, R12
+   \   00003E   023C         JMP     ??CLOCK_ACLK_Config_7
+    262            case REFO   :g_sClock.ACLK.CLK_HZ = REFOCLK_FREQUENCY;break;       
+   \                     ??CLOCK_ACLK_Config_2:
+   \   000040   3C400080     MOV.W   #0x8000, R12
+   \                     ??CLOCK_ACLK_Config_7:
+   \   000044   0D43         MOV.W   #0x0, R13
+   \   000046   053C         JMP     ??CLOCK_ACLK_Config_8
+    263            case DCO    :g_sClock.ACLK.CLK_HZ = g_sClock.DCO_FLL_Frequency;break;   
+    264            case DCO_DIV:g_sClock.ACLK.CLK_HZ = g_sClock.DCO_FLL_Frequency;break;
+   \                     ??CLOCK_ACLK_Config_4:
+   \   000048   ........     CALLA   #?Subroutine1
+   \                     ??CrossCallReturnLabel_2:
+   \   00004C   023C         JMP     ??CLOCK_ACLK_Config_8
+    265            case XT2    :g_sClock.ACLK.CLK_HZ = EXTAL_IN_XT2_Hz;break;
+   \                     ??CLOCK_ACLK_Config_5:
+   \   00004E   ........     CALLA   #?Subroutine3
+    266            default :return;
+    267            }
+    268            g_sClock.ACLK.CLK_HZ >>= aclk_div;
+   \                     ??CLOCK_ACLK_Config_8:
+   \   000052   ........     CALLA   #?Subroutine4
+   \                     ??CrossCallReturnLabel_10:
+   \   000056   8A4C1800     MOV.W   R12, 0x18(R10)
+   \   00005A   8A4D1A00     MOV.W   R13, 0x1a(R10)
+    269            g_sClock.ACLK.CLK_KHZ = g_sClock.ACLK.CLK_HZ/1000u;;
+   \   00005E   ........     CALLA   #?Subroutine2
+   \                     ??CrossCallReturnLabel_6:
+   \   000062   8A4C1C00     MOV.W   R12, 0x1c(R10)
+   \   000066   8A4D1E00     MOV.W   R13, 0x1e(R10)
+    270            g_sClock.ACLK.CLK_MHZ = g_sClock.ACLK.CLK_HZ/1000000.0;
+   \   00006A   1C4A1800     MOV.W   0x18(R10), R12
+   \   00006E   1D4A1A00     MOV.W   0x1a(R10), R13
+   \   000072   ........     CALLA   #?Subroutine5
+   \                     ??CrossCallReturnLabel_13:
+   \   000076   8A4C2000     MOV.W   R12, 0x20(R10)
+   \   00007A   8A4D2200     MOV.W   R13, 0x22(R10)
+    271          }
+   \                     ??CLOCK_ACLK_Config_6:
+   \   00007E   0A16         POPM.A  #0x1, R10
+   \   000080   1001         RETA
+    272          /*******************************************************************************
+    273          º¯Êý¹¦ÄÜ£ºÉèÖÃÄÚºËµçÑ¹Öµ£¨ÓëÆµÂÊÉèÖÃÓÐ¹Ø£©
+    274          º¯Êý²ÎÊý£ºu8 level £ºµçÑ¹½×ÌÝ Ð¡ÓÚ3
+    275          ********************************************************************************/
+
+   \                                 In  segment CODE, align 2
+    276          void SetVcoreUp (uint8_t level)
+   \                     SetVcoreUp:
+    277          {
+    278          #if 1  //·ÂÕæÊ±ÐÞ¸ÄÎª0£¬·ñÔò»á¿¨ÔÚËÀÑ­»·Àï
+    279            // Open PMM registers for write
+    280            PMMCTL0_H = PMMPW_H;              
+   \   000000   F240A5002101 MOV.B   #0xa5, &0x121
+    281            // Set SVS/SVM high side new level
+    282            SVSMHCTL = SVSHE + SVSHRVL0 * level + SVMHE + SVSMHRRL0 * level;
+   \   000006   4F4C         MOV.B   R12, R15
+   \   000008   0E4F         MOV.W   R15, R14
+   \   00000A   8E10         SWPB    R14
+   \   00000C   0E5F         ADD.W   R15, R14
+   \   00000E   3E500044     ADD.W   #0x4400, R14
+   \   000012   824E2401     MOV.W   R14, &0x124
+    283            // Set SVM low side to new level
+    284            SVSMLCTL = SVSLE + SVMLE + SVSMLRRL0 * level;
+   \   000016   3F500044     ADD.W   #0x4400, R15
+   \   00001A   824F2601     MOV.W   R15, &0x126
+    285            // Wait till SVM is settled
+    286            uint16_t i=50000; 
+   \   00001E   3D4050C3     MOV.W   #0xc350, R13
+    287            while (((PMMIFG & SVSMLDLYIFG) == 0)&&((i--)>0));
+   \                     ??SetVcoreUp_0:
+   \   000022   92B32C01     BIT.W   #0x1, &0x12c
+   \   000026   042C         JC      ??SetVcoreUp_2
+   \   000028   0F4D         MOV.W   R13, R15
+   \   00002A   3D53         ADD.W   #0xffff, R13
+   \   00002C   0F93         CMP.W   #0x0, R15
+   \   00002E   F923         JNE     ??SetVcoreUp_0
+    288            // Clear already set flags
+    289            PMMIFG &= ~(SVMLVLRIFG + SVMLIFG);
+   \                     ??SetVcoreUp_2:
+   \   000030   B2F0F9FF2C01 AND.W   #0xfff9, &0x12c
+    290            // Set VCore to new level
+    291            PMMCTL0_L = PMMCOREV0 * level;
+   \   000036   C24C2001     MOV.B   R12, &0x120
+    292            // Wait till new level reached
+    293            i =50000;
+   \   00003A   3D4050C3     MOV.W   #0xc350, R13
+    294            if ((PMMIFG & SVMLIFG))
+   \   00003E   A2B32C01     BIT.W   #0x2, &0x12c
+   \   000042   0728         JNC     ??SetVcoreUp_3
+    295              while(((PMMIFG & SVMLVLRIFG) == 0)&&((i--)>0));
+   \                     ??SetVcoreUp_1:
+   \   000044   A2B22C01     BIT.W   #0x4, &0x12c
+   \   000048   042C         JC      ??SetVcoreUp_3
+   \   00004A   0F4D         MOV.W   R13, R15
+   \   00004C   3D53         ADD.W   #0xffff, R13
+   \   00004E   0F93         CMP.W   #0x0, R15
+   \   000050   F923         JNE     ??SetVcoreUp_1
+    296            /*
+    297            if ((PMMIFG & SVMLIFG))
+    298              while ((PMMIFG & SVMLVLRIFG) == 0);
+    299            */
+    300            // Set SVS/SVM low side to new level
+    301            SVSMLCTL = SVSLE + SVSLRVL0 * level + SVMLE + SVSMLRRL0 * level;
+   \                     ??SetVcoreUp_3:
+   \   000052   824E2601     MOV.W   R14, &0x126
+    302            // Lock PMM registers for write access
+    303            PMMCTL0_H = 0x00;
+   \   000056   C2432101     MOV.B   #0x0, &0x121
+    304          #endif
+    305          }
+   \   00005A   1001         RETA
+   \   00005C                REQUIRE _A_PMMCTL0_L
+   \   00005C                REQUIRE _A_SVSMHCTL_L
+   \   00005C                REQUIRE _A_SVSMLCTL_L
+   \   00005C                REQUIRE _A_PMMIFG_L
+
+   Maximum stack usage in bytes:
+
+   CSTACK Function
+   ------ --------
+       8  CLOCK_ACLK_Config
+             8 -> XT1_Config
+             8 -> XT2_Config
+             8 -> _Cast32uto32f
+             8 -> _Div32f
+       8  CLOCK_MCLK_Config
+             8 -> XT1_Config
+             8 -> XT2_Config
+             8 -> _Cast32uto32f
+             8 -> _Div32f
+       8  CLOCK_SMCLK_Config
+             8 -> XT1_Config
+             8 -> XT2_Config
+             8 -> _Cast32uto32f
+             8 -> _Div32f
+      28  DCO_PLLConfig
+            28 -> CLOCK_ACLK_Config
+            28 -> CLOCK_MCLK_Config
+            28 -> CLOCK_SMCLK_Config
+            28 -> SetVcoreUp
+            28 -> XT1_Config
+            28 -> XT2_Config
+            28 -> _Add32f
+            28 -> _Cast32fto32u
+            28 -> _Cast32uto32f
+            28 -> _CmpLt32f
+            28 -> _Div32f
+       4  SetVcoreUp
+       4  XT1_Config
+       4  XT2_Config
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ?Subroutine0
+      14  ?Subroutine1
+      14  ?Subroutine10
+      32  ?Subroutine11
+      10  ?Subroutine12
+      10  ?Subroutine2
+      10  ?Subroutine3
+      10  ?Subroutine4
+      16  ?Subroutine5
+      10  ?Subroutine6
+      16  ?Subroutine7
+      14  ?Subroutine8
+      14  ?Subroutine9
+     130  CLOCK_ACLK_Config
+     112  CLOCK_MCLK_Config
+     118  CLOCK_SMCLK_Config
+     608  DCO_PLLConfig
+      92  SetVcoreUp
+       4  UCS
+      48  XT1_Config
+      48  XT2_Config
+       2  _A_PCDIR_L
+       2  _A_PCSEL_L
+       2  _A_PMMCTL0_L
+       2  _A_PMMIFG_L
+       2  _A_SFRIFG1_L
+       2  _A_SVSMHCTL_L
+       2  _A_SVSMLCTL_L
+      40  g_sClock
+      12  ref_div_value
+
+ 
+ 1 330 bytes in segment CODE
+    14 bytes in segment DATA16_AN
+    16 bytes in segment DATA20_C
+    40 bytes in segment DATA20_N
+ 
+ 1 330 bytes of CODE  memory
+    16 bytes of CONST memory
+    40 bytes of DATA  memory (+ 14 bytes shared)
+
+Errors: none
+Warnings: none

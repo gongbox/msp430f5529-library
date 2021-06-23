@@ -1,0 +1,2907 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+//                                                      26/Nov/2016  11:15:15 /
+// IAR C/C++ Compiler V5.50.1.20465/W32, Evaluation edition for MSP430        /
+// Copyright 1996-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    __rt_version  =  3                                                      /
+//    __double_size =  32                                                     /
+//    __reg_r4      =  free                                                   /
+//    __reg_r5      =  free                                                   /
+//    __pic         =  no                                                     /
+//    __core        =  430X                                                   /
+//    __data_model  =  large                                                  /
+//    Source file   =  E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\timer.c                                              /
+//    Command line  =  E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\timer.c -D DEBUG -D RAM_VECTOR -lA                   /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Debug\List /
+//                     \ -o E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Debug /
+//                     \Obj\ --no_cse --no_unroll --no_inline                 /
+//                     --no_code_motion --no_tbaa --debug -D__MSP430F5529__   /
+//                     -e --double=32 --dlib_config "D:\Program Files\IAR     /
+//                     Systems\Embedded Workbench 6.4                         /
+//                     Evaluation\430\LIB\DLIB\dl430xlff.h" -I                /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\ -I        /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\in /
+//                     c\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Driv /
+//                     ers\src\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£° /
+//                     å\Drivers\src\USB\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C /
+//                     °æ\¹¤³ÌÄ£°å\Drivers\src\USB\USB_config\ -I             /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\USB\USB_User\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\ /
+//                     ¹¤³ÌÄ£°å\Drivers\srcUSB\USB_API\USB_CDC_API\ -I        /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\USB\USB_API\USB_HID_API\ -I                          /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\USB\USB_API\USB_MSC_API\ -I                          /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\  /
+//                     -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWar /
+//                     e\delay\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£° /
+//                     å\HardWare\18b20\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C° /
+//                     æ\¹¤³ÌÄ£°å\HardWare\KEY\ -I                            /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\L /
+//                     ED\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Har /
+//                     dWare\12864\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ /
+//                     ÌÄ£°å\HardWare\oled\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6 /
+//                     \C°æ\¹¤³ÌÄ£°å\HardWare\mpu6050\inc\ -I                 /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\m /
+//                     pu6050\src\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³Ì /
+//                     Ä£°å\HardWare\nokia5110\inc\ -I                        /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\n /
+//                     okia5110\src\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤ /
+//                     ³ÌÄ£°å\HardWare\LQ_1.8_TFT\ -I                         /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\L /
+//                     CD_API\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å /
+//                     \HardWare\2.2TFT\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C° /
+//                     æ\¹¤³ÌÄ£°å\HardWare\nrf24l01\ -I                       /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\System\    /
+//                     -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\System\ /
+//                     inc\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Sy /
+//                     stem\src\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£ /
+//                     °å\User\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£° /
+//                     å\User\USER\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ /
+//                     ÌÄ£°å\Lib\UCOSII\CONFIG\ -I                            /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII /
+//                     \App\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\L /
+//                     ib\uCOSII\CONFIHG\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C /
+//                     °æ\¹¤³ÌÄ£°å\Lib\uCOSII\PORT\ -I                        /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Lib\UCOSII /
+//                     \CORE\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\ /
+//                     Lib\FatFs\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ /
+//                     £°å\Lib\FatFs\option\ --core=430X --data_model=large   /
+//                     -On --multiplier=32 --multiplier_location=4C0          /
+//                     --hw_workaround=CPU40                                  /
+//    List file     =  E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Debug\List /
+//                     \timer.s43                                             /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME timer
+
+        RTMODEL "__SystemLibrary", "DLib"
+        RTMODEL "__core", "430X"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dlib_file_descriptor", "1"
+        RTMODEL "__double_size", "32"
+        RTMODEL "__pic", "no"
+        RTMODEL "__reg_r4", "free"
+        RTMODEL "__reg_r5", "free"
+        RTMODEL "__rt_version", "3"
+
+        RSEG CSTACK:DATA:SORT:NOROOT(0)
+
+        EXTERN ?Mul32
+        EXTERN ?DivMod32u
+        EXTERN ?longjmp_r4
+        EXTERN ?longjmp_r5
+        EXTERN ?setjmp_r4
+        EXTERN ?setjmp_r5
+
+        PUBWEAK ?setjmp_save_r4
+        PUBWEAK ?setjmp_save_r5
+        PUBLIC TIMERX
+        PUBLIC TIMER_CHANEL_PIN
+        PUBLIC TIMER_CLK_PIN
+        PUBLIC TIMER_Capture_CalTime_Us
+        FUNCTION TIMER_Capture_CalTime_Us,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 12, STACK
+        PUBLIC TIMER_Capture_Clear
+        FUNCTION TIMER_Capture_Clear,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 12, STACK
+        PUBLIC TIMER_Capture_GetValue
+        FUNCTION TIMER_Capture_GetValue,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 12, STACK
+        PUBLIC TIMER_Capture_Init
+        FUNCTION TIMER_Capture_Init,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 20, STACK
+        PUBLIC TIMER_Capture_SetMode
+        FUNCTION TIMER_Capture_SetMode,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 20, STACK
+        PUBLIC TIMER_ClearITPendingBit
+        FUNCTION TIMER_ClearITPendingBit,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 8, STACK
+        PUBLIC TIMER_Delay_Us
+        FUNCTION TIMER_Delay_Us,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 28, STACK
+        PUBLIC TIMER_GetChannelCounterValue
+        FUNCTION TIMER_GetChannelCounterValue,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 12, STACK
+        PUBLIC TIMER_GetChannelInValue
+        FUNCTION TIMER_GetChannelInValue,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC TIMER_GetChannelOutValue
+        FUNCTION TIMER_GetChannelOutValue,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC TIMER_GetCounterValue
+        FUNCTION TIMER_GetCounterValue,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC TIMER_GetITStatus
+        FUNCTION TIMER_GetITStatus,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC TIMER_ITConfig
+        FUNCTION TIMER_ITConfig,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 12, STACK
+        PUBLIC TIMER_Interval_Us
+        FUNCTION TIMER_Interval_Us,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 28, STACK
+        PUBLIC TIMER_PRECISON
+        PUBLIC TIMER_PWM_MultiChannel_Init
+        FUNCTION TIMER_PWM_MultiChannel_Init,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 40, STACK
+        PUBLIC TIMER_PWM_SetDuty
+        FUNCTION TIMER_PWM_SetDuty,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 20, STACK
+        PUBLIC TIMER_PWM_SetFreq
+        FUNCTION TIMER_PWM_SetFreq,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 28, STACK
+        PUBLIC TIMER_PWM_SetOUTMOD
+        FUNCTION TIMER_PWM_SetOUTMOD,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 20, STACK
+        PUBLIC TIMER_Pluse_Clear
+        FUNCTION TIMER_Pluse_Clear,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC TIMER_Pluse_GetValue
+        FUNCTION TIMER_Pluse_GetValue,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 12, STACK
+        PUBLIC TIMER_Pluse_Init
+        FUNCTION TIMER_Pluse_Init,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 8, STACK
+        PUBLIC TIMER_Run
+        FUNCTION TIMER_Run,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC TIMER_SetChannelCounterValue
+        FUNCTION TIMER_SetChannelCounterValue,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 20, STACK
+        PUBLIC TIMER_SetCounterValue
+        FUNCTION TIMER_SetCounterValue,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC TIMER_Stop
+        FUNCTION TIMER_Stop,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC TIMER_Timer_GetTime_Us
+        FUNCTION TIMER_Timer_GetTime_Us,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 12, STACK
+        PUBLIC TIMER_Timer_Init
+        FUNCTION TIMER_Timer_Init,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC TIMER_Timer_Start
+        FUNCTION TIMER_Timer_Start,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC TIMER_Timer_Stop
+        FUNCTION TIMER_Timer_Stop,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA SP DATA
+          CFI Resource PC:20, SP:20, SR:16, R4L:16, R4H:4, R4:20, R5L:16, R5H:4
+          CFI Resource R5:20, R6L:16, R6H:4, R6:20, R7L:16, R7H:4, R7:20, R8L:16
+          CFI Resource R8H:4, R8:20, R9L:16, R9H:4, R9:20, R10L:16, R10H:4
+          CFI Resource R10:20, R11L:16, R11H:4, R11:20, R12L:16, R12H:4, R12:20
+          CFI Resource R13L:16, R13H:4, R13:20, R14L:16, R14H:4, R14:20, R15L:16
+          CFI Resource R15H:4, R15:20
+          CFI ResourceParts R4 R4H, R4L
+          CFI ResourceParts R5 R5H, R5L
+          CFI ResourceParts R6 R6H, R6L
+          CFI ResourceParts R7 R7H, R7L
+          CFI ResourceParts R8 R8H, R8L
+          CFI ResourceParts R9 R9H, R9L
+          CFI ResourceParts R10 R10H, R10L
+          CFI ResourceParts R11 R11H, R11L
+          CFI ResourceParts R12 R12H, R12L
+          CFI ResourceParts R13 R13H, R13L
+          CFI ResourceParts R14 R14H, R14L
+          CFI ResourceParts R15 R15H, R15L
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H SameValue
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H SameValue
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H SameValue
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H SameValue
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H SameValue
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H SameValue
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H SameValue
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H SameValue
+          CFI R11 Concat
+          CFI R12L Undefined
+          CFI R12H Undefined
+          CFI R12 Undefined
+          CFI R13L Undefined
+          CFI R13H Undefined
+          CFI R13 Undefined
+          CFI R14L Undefined
+          CFI R14H Undefined
+          CFI R14 Undefined
+          CFI R15L Undefined
+          CFI R15H Undefined
+          CFI R15 Undefined
+          CFI EndCommon cfiCommon0
+        
+        EXTERN assert_failed
+        FUNCTION assert_failed,0202H
+        EXTERN _Cast32uto32f
+        FUNCTION _Cast32uto32f,0202H
+        EXTERN g_sClock
+        EXTERN _Div32f
+        FUNCTION _Div32f,0202H
+        EXTERN _Cast32fto32u
+        FUNCTION _Cast32fto32u,0202H
+        EXTERN GPIO_MultiBits_Init
+        FUNCTION GPIO_MultiBits_Init,0202H
+        EXTERN _Mul32f
+        FUNCTION _Mul32f,0202H
+
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "E:\\\\MSP430\\\\MSP430F5529...">`:
+        DC8 45H, 3AH, 5CH, 4DH, 53H, 50H, 34H, 33H
+        DC8 30H, 5CH, 4DH, 53H, 50H, 34H, 33H, 30H
+        DC8 46H, 35H, 35H, 32H, 39H, 0BFH, 0E2H, 0BAH
+        DC8 0AFH, 0CAH, 0FDH, 32H, 2EH, 36H, 5CH, 43H
+        DC8 0B0H, 0E6H, 5CH, 0B9H, 0A4H, 0B3H, 0CCH, 0C4H
+        DC8 0A3H, 0B0H, 0E5H, 5CH, 44H, 72H, 69H, 76H
+        DC8 65H, 72H, 73H, 5CH, 73H, 72H, 63H, 5CH
+        DC8 74H, 69H, 6DH, 65H, 72H, 2EH, 63H, 0
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "TIMER_PWM_MultiChanne...">`:
+        DC8 "TIMER_PWM_MultiChannel_Init"
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "\\266\\250\\312\\261\\306\\367\\315\\250\\2`:
+        DC8 "\266\250\312\261\306\367\315\250\265\300\262\316\312\375\263\254\263\366\267\266\316\247\243\241"
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "TIMER_PWM_SetDuty">`:
+        DC8 "TIMER_PWM_SetDuty"
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "\\266\\250\\312\\261\\306\\367\\325\\274\\2`:
+        DC8 "\266\250\312\261\306\367\325\274\277\325\261\310\262\316\312\375\263\254\263\366\267\266\316\247\243\241"
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "TIMER_Capture_Init">`:
+        DC8 "TIMER_Capture_Init"
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "TIMER_Capture_Clear">`:
+        DC8 "TIMER_Capture_Clear"
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "TIMER_Capture_GetValue">`:
+        DC8 "TIMER_Capture_GetValue"
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "TIMER_GetChannelCount...">`:
+        DC8 "TIMER_GetChannelCounterValue"
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+`?<Constant "TIMER_SetChannelCount...">`:
+        DC8 "TIMER_SetChannelCounterValue"
+// E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\src\timer.c
+//    1 #include "timer.h"
+//    2 #include "clock.h"
+//    3 #include "gpio.h"
+//    4 #include "stdarg.h"
+//    5 #include "system.h"
+//    6 #include "msp430f5529.h"
+//    7 #include "msp430f5529MemMap.h"
+//    8 
+//    9 //¶¨Òå4¸öÖ¸ÕëÊý×é±£´æ TIMERX µÄµØÖ·
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(1)
+//   10 const TIMER_MemMapPtr TIMERX[TIMER_NUM] ={TIMER_A0_BASE_PTR,TIMER_A1_BASE_PTR,TIMER_A2_BASE_PTR,TIMER_B0_BASE_PTR};
+TIMERX:
+        DC32 340H, 380H, 400H, 3C0H
+//   11 //¶¨ÒåÊý×é±£´æÕ¼¿Õ±È×î´óÖµ
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(1)
+//   12 const uint32_t TIMER_PRECISON[TIMER_NUM]={TIMER_PWM_A0_PRECISON,TIMER_PWM_A1_PRECISON,TIMER_PWM_A2_PRECISON,TIMER_PWM_B0_PRECISON};
+TIMER_PRECISON:
+        DC32 1000, 1000, 1000, 20000
+//   13 //¶¨ÒåÍ¨µÀÒý½Å
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+//   14 const GPIO_PIN TIMER_CHANEL_PIN[TIMER_NUM][TIMER_CH_NUM]=
+TIMER_CHANEL_PIN:
+        DC8 0, 1, 0, 2, 0, 3, 0, 4, 0, 5, 0, 0, 0, 0, 0, 7, 1, 0, 1, 1, 0, 0, 0
+        DC8 0, 0, 0, 0, 0, 1, 3, 1, 4, 1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 4, 6, 4, 7
+        DC8 6, 4, 6, 5, 6, 6, 2, 5, 2, 6
+//   15 {// CH0    CH1    CH2    CH3    CH4    CH5    CH6
+//   16   {{P1,1},{P1,2},{P1,3},{P1,4},{P1,5}},                  //TIMER_A0
+//   17   {{P1,7},{P2,0},{P2,1}},                                //TIMER_A1
+//   18   {{P2,3},{P2,4},{P2,5}},                                //TIMER_A2
+//   19   {{P5,6},{P5,7},{P7,4},{P7,5},{P7,6},{P3,5},{P3,6}}     //TIMER_B0
+//   20 };//Í¨µÀÒý½Å
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+//   21 const GPIO_PIN TIMER_CLK_PIN[TIMER_NUM] =
+TIMER_CLK_PIN:
+        DC8 0, 0, 0, 6, 1, 2, 6, 7
+//   22 {
+//   23   {P1,0},                                                //TIMER_A0
+//   24   {P1,6},                                                //TIMER_A1
+//   25   {P2,2},                                                //TIMER_A2
+//   26   {P7,7}                                                 //TIMER_B0
+//   27 };//Íâ²¿Ê±ÖÓÊäÈëÒý½Å
+//   28 /*******************************************************************************
+//   29 *  º¯ÊýÃû³Æ£ºTIMER_PWM_MultiChannel_Init(TIMERn timer, uint32_t fre, uint8_t ChannelNum,...)
+//   30 *  ¹¦ÄÜËµÃ÷£º¶¨Ê±Æ÷PWMÊä³ö³õÊ¼»¯(¿ÉÒÔ¶à¸öÍ¨µÀÍ¬Ê±³õÊ¼»¯)
+//   31 *  ²ÎÊýËµÃ÷£ºTIMERn timer       £º¶¨Ê±Æ÷Ä£¿é
+//   32              uint32_t fre         £ºÆµÂÊ
+//   33              uint8_t ChannelNum   £ºÒª³õÊ¼»¯µÄÍ¨µÀÊý
+//   34              ...                £º³õÊ¼»¯µÄÍ¨µÀ
+//   35 *  º¯Êý·µ»Ø£º²»³É¹¦Ôò·µ»ØERROR£¬³É¹¦Ôò·µ»ØSUCCESS
+//   36 *  Ê¹ÓÃÀý³Ì£ºÊµÀýÒ»£º£¨Ê¹ÓÃº¯Êý³õÊ¼»¯Ê±ÐèÒªÊäÈë³õÊ¼»¯Í¨µÀÊý£¬³õÊ¼»¯Í¨µÀÊý¿ÉÒÔÎª0£¬Èç£ºTIMER_PWM_MultiChannel_Init(TIMER_A0, 1000, 0);£©
+//   37              TIMER_PWM_MultiChannel_Init(TIMER_A0, 1000, 3, TIMER_CH1, TIMER_CH2, TIMER_CH4);
+//   38              //¶¨Ê±Æ÷TIMER_A0³õÊ¼»¯Êä³öPWM²¨£¬ÆµÂÊÎª1000Hz,³õÊ¼»¯3¸öÍ¨µÀ£¬·Ö±ðÊÇ£ºTIMER_CH1,TIMER_CH2,TIMER_CH4
+//   39              ÊµÀý¶þ£º(Ê¹ÓÃºê¶¨Òå³õÊ¼»¯Ê±²»ÐèÒªÊäÈë³õÊ¼»¯Í¨µÀÊý)
+//   40              TIMER_PWM_Init(TIMER_B0,1000,TIMER_CH1,TIMER_CH2,TIMER_CH3,TIMER_CH4,TIMER_CH5,TIMER_CH6);
+//   41              //¶¨Ê±Æ÷TIMER_B0³õÊ¼»¯Êä³öPWM²¨£¬ÆµÂÊÎª1000Hz,³õÊ¼»¯6¸öÍ¨µÀ£ºTIMER_CH1,TIMER_CH2,TIMER_CH3,TIMER_CH4,TIMER_CH5,TIMER_CH6
+//   42 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   43 STATUS TIMER_PWM_MultiChannel_Init(TIMERn timer, uint32_t fre, uint8_t ChannelNum,...)
+TIMER_PWM_MultiChannel_Init:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function TIMER_PWM_MultiChannel_Init
+//   44 {
+        FUNCALL TIMER_PWM_MultiChannel_Init, assert_failed
+        LOCFRAME CSTACK, 40, STACK
+        FUNCALL TIMER_PWM_MultiChannel_Init, GPIO_MultiBits_Init
+        LOCFRAME CSTACK, 40, STACK
+        FUNCALL TIMER_PWM_MultiChannel_Init, TIMER_PWM_SetFreq
+        LOCFRAME CSTACK, 40, STACK
+        PUSHM.A #0x8, R11
+          CFI R4L Frame(CFA, -36)
+          CFI R4H Frame(CFA, -34)
+          CFI R5L Frame(CFA, -32)
+          CFI R5H Frame(CFA, -30)
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+36
+        SUB.W   #0x4, SP
+          CFI CFA SP+40
+        MOV.B   R12, R10
+        MOV.W   R14, R6
+        MOV.W   R15, R7
+        MOV.B   R13, R8
+//   45 #ifdef DELAY_TIMER
+//   46   ASSERT((timer != DELAY_TIMER),
+//   47          "TIMER_PWM_MultiChannel_Init",
+//   48          "¶¨Ê±Æ÷ÒÑ¾­ÉèÖÃÎªÄ¬ÈÏÑÓÊ±¹¦ÄÜ£¬²»ÄÜÔÙ×÷ÎªÆäËû¹¦ÄÜÊ¹ÓÃ");       //²»ÔÊÐíÕâÖÖÇé¿öÏÂ»¹ºê¶¨Òå¸Ã¶¨Ê±Æ÷×÷ÎªÑÓÊ±ËùÓÃµÄ¶¨Ê±Æ÷£¬ÇëÔÚsystem.hÀïÐÞ¸ÄDELAY_TIMERºê¶¨Òå
+//   49 #endif
+//   50   ASSERT((timer==TIMER_A0&&ChannelNum<=TIMER_CH4)
+//   51        ||(timer==TIMER_A1&&ChannelNum<=TIMER_CH2)
+//   52        ||(timer==TIMER_A2&&ChannelNum<=TIMER_CH2)
+//   53        ||(timer==TIMER_B0&&ChannelNum<=TIMER_CH6),
+//   54        "TIMER_PWM_MultiChannel_Init",
+//   55        "¶¨Ê±Æ÷Í¨µÀ²ÎÊý³¬³ö·¶Î§£¡"); //¶ÏÑÔ¼ì²âÊäÈë²ÎÊý*/
+        CMP.B   #0x0, R10
+        JNE     ??TIMER_PWM_MultiChannel_Init_1
+        CMP.B   #0x5, R8
+        JNC     ??TIMER_PWM_MultiChannel_Init_2
+??TIMER_PWM_MultiChannel_Init_1:
+        CMP.B   #0x1, R10
+        JNE     ??TIMER_PWM_MultiChannel_Init_3
+        CMP.B   #0x3, R8
+        JNC     ??TIMER_PWM_MultiChannel_Init_2
+??TIMER_PWM_MultiChannel_Init_3:
+        CMP.B   #0x2, R10
+        JNE     ??TIMER_PWM_MultiChannel_Init_4
+        CMP.B   #0x3, R8
+        JNC     ??TIMER_PWM_MultiChannel_Init_2
+??TIMER_PWM_MultiChannel_Init_4:
+        CMP.B   #0x3, R10
+        JNE     ??TIMER_PWM_MultiChannel_Init_5
+        CMP.B   #0x7, R8
+        JNC     ??TIMER_PWM_MultiChannel_Init_2
+??TIMER_PWM_MultiChannel_Init_5:
+        MOVA    #`?<Constant "\\266\\250\\312\\261\\306\\367\\315\\250\\2`, R15
+        MOVA    #`?<Constant "TIMER_PWM_MultiChanne...">`, R14
+        MOV.W   #0x37, R13
+        MOVA    #`?<Constant "E:\\\\MSP430\\\\MSP430F5529...">`, R12
+        CALLA   #assert_failed
+//   56   
+//   57   va_list ap;
+//   58   va_start(ap,ChanelNum);
+??TIMER_PWM_MultiChannel_Init_2:
+        MOV.W   SP, R15
+        ADD.W   #0x28, R15
+        MOVA    R15, 0(SP)
+//   59   for(int i=0;i < ChannelNum;i++)           //¸ù¾Ý³õÊ¼»¯µÄÍ¨µÀÊý£¬ÖðÒ»³õÊ¼»¯Í¨µÀ
+        MOV.W   #0x0, R9
+??TIMER_PWM_MultiChannel_Init_0:
+        MOV.B   R8, R8
+        CMP.W   R8, R9
+        JGE     ??TIMER_PWM_MultiChannel_Init_6
+//   60   {
+//   61     TIMER_CHn ch = va_arg(ap, TIMER_CHn);  //¶ÁÈ¡Òª³õÊ¼»¯µÄÍ¨µÀ
+        MOVA    @SP, R15
+        ADDA    #0x2, R15
+        MOVA    R15, 0(SP)
+        MOVA    @SP, R15
+        MOV.B   -0x2(R15), R11
+//   62     if((ch == TIMER_CH0) || (ch >= TIMER_CH_NUM))   //ÅÐ¶ÏÍ¨µÀÖµÊÇ·ñºÏÀí
+        CMP.B   #0x0, R11
+        JEQ     ??TIMER_PWM_MultiChannel_Init_7
+        CMP.B   #0x7, R11
+        JNC     ??TIMER_PWM_MultiChannel_Init_8
+//   63     {
+//   64       return ERROR;                                 //²»ºÏÀí·µ»ØERROR
+??TIMER_PWM_MultiChannel_Init_7:
+        MOV.B   #0x0, R12
+        JMP     ??TIMER_PWM_MultiChannel_Init_9
+//   65     }
+//   66     //³õÊ¼»¯¶Ë¿Ú
+//   67     GPIO_Init(TIMER_CHANEL_PIN[timer][ch].Port,TIMER_CHANEL_PIN[timer][ch].Pin,GPO|SEL);
+??TIMER_PWM_MultiChannel_Init_8:
+        MOV.W   #0x102, R14
+        MOV.W   #0x1, R13
+        MOV.B   R11, R15
+        ADDA    R15, R15
+        MOV.B   R10, R12
+        ADDA    R12, R12
+        MOVA    R12, R4
+        ADDA    R12, R12
+        ADDA    R12, R4
+        ADDA    R12, R12
+        ADDA    R4, R12
+        MOVA    R12, R4
+        ADDA    R4, R15
+        MOVX.B  TIMER_CHANEL_PIN + 1(R15), R15
+        SUB.B   #0x1, R15
+        JN      ??TIMER_PWM_MultiChannel_Init_10
+        RPT     R15
+        RLAX.W  R13
+??TIMER_PWM_MultiChannel_Init_10:
+        ADD.B   #0x1, R15
+        MOV.B   R10, R15
+        ADDA    R15, R15
+        MOVA    R15, R4
+        ADDA    R15, R15
+        ADDA    R15, R4
+        ADDA    R15, R15
+        ADDA    R4, R15
+        MOV.B   R11, R12
+        ADDA    R12, R12
+        MOVA    R12, R4
+        ADDA    R4, R15
+        MOVX.B  TIMER_CHANEL_PIN(R15), R12
+        CALLA   #GPIO_MultiBits_Init
+//   68     //³õÊ¼»¯Õ¼¿Õ±È¼°Êä³ö²¨ÐÎ
+//   69     TIMERX[timer]->CCR[ch] = 0u;
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.B   R11, R14
+        ADDA    R14, R14
+        MOVA    R14, R13
+        ADDA    R13, R15
+        MOV.W   #0x0, 0x12(R15)
+//   70     TIMERX[timer]->CCTL[ch].IE = RESET;               //¹Ø±ÕÍ¨µÀÖÐ¶Ï
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.B   R11, R14
+        ADDA    R14, R14
+        MOVA    R14, R13
+        ADDA    R13, R15
+        BIC.W   #0x10, 0x2(R15)
+//   71     TIMERX[timer]->CCTL[ch].OUTMOD = DEFAULT_PWM_OUTMOD;      //Êä³ö²¨ÐÎÉèÖÃ
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.B   R11, R14
+        ADDA    R14, R14
+        MOVA    R14, R13
+        ADDA    R13, R15
+        BIS.W   #0xe0, 0x2(R15)
+//   72     TIMERX[timer]->CCTL[ch].CAPMODE = RESET;          //±È½ÏÄ£Ê½
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.B   R11, R11
+        ADDA    R11, R11
+        MOVA    R11, R14
+        ADDA    R14, R15
+        BIC.W   #0x100, 0x2(R15)
+//   73   }
+        ADD.W   #0x1, R9
+        JMP     ??TIMER_PWM_MultiChannel_Init_0
+//   74   va_end(ap);
+//   75   
+//   76   return TIMER_PWM_SetFreq(timer,fre);
+??TIMER_PWM_MultiChannel_Init_6:
+        MOV.W   R6, R14
+        MOV.W   R7, R15
+        MOV.B   R10, R12
+        CALLA   #TIMER_PWM_SetFreq
+??TIMER_PWM_MultiChannel_Init_9:
+        ADD.W   #0x4, SP
+          CFI CFA SP+36
+        POPM.A  #0x8, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R4H SameValue
+          CFI R5H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R4L SameValue
+          CFI R5L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock0
+//   77 }
+//   78 /*******************************************************************************
+//   79 *  º¯ÊýÃû³Æ£ºTIMER_PWM_SetOUTMOD(TIMERn timer,TIMER_CHn ch,TIMER_OUTMODn outmod)
+//   80 *  ¹¦ÄÜËµÃ÷£ºPWMÊä³ö²¨ÐÎÉèÖÃ
+//   81 *  ²ÎÊýËµÃ÷£ºTIMERn timer       £º¶¨Ê±Æ÷Ä£¿é
+//   82              TIMER_CHn ch       £º¶¨Ê±Æ÷Í¨µÀ
+//   83              TIMER_PWM_OUTMODn outmod £ºÊä³ö²¨ÐÎÄ£Ê½
+//   84 *  º¯Êý·µ»Ø£ºÎÞ
+//   85 *  Ê¹ÓÃÀý³Ì£ºTIMER_PWM_SetOUTMOD(TIMER_A0,TIMER_CH1,TIMER_PWM_OUTMOD3);  //ÐÞ¸Ä¶¨Ê±Æ÷A0µÄTIMER_CH1Í¨µÀÊä³ö²¨ÐÎ
+//   86 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   87 void TIMER_PWM_SetOUTMOD(TIMERn timer,TIMER_CHn ch,TIMER_PWM_OUTMODn outmod)
+TIMER_PWM_SetOUTMOD:
+          CFI Block cfiBlock1 Using cfiCommon0
+          CFI Function TIMER_PWM_SetOUTMOD
+//   88 {
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+//   89   TIMERX[timer]->CCTL[ch].OUTMOD = outmod;      //Êä³ö²¨ÐÎÉèÖÃ
+        MOV.B   R14, R15
+        RPT     #0x5
+        RLAX.W  R15
+        AND.W   #0xe0, R15
+        MOV.B   R12, R10
+        RLAM.A  #0x2, R10
+        MOVX.A  TIMERX(R10), R11
+        MOV.B   R13, R10
+        ADDA    R10, R10
+        MOVA    R10, R8
+        ADDA    R8, R11
+        MOV.W   0x2(R11), R11
+        AND.W   #0xff1f, R11
+        BIS.W   R15, R11
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.B   R13, R10
+        ADDA    R10, R10
+        MOVA    R10, R8
+        ADDA    R8, R15
+        MOV.W   R11, 0x2(R15)
+//   90 }
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock1
+//   91 /*******************************************************************************
+//   92 *  º¯ÊýÃû³Æ£ºTIMER_PWM_SetFreq(TIMERn timer,uint32_t fre)
+//   93 *  ¹¦ÄÜËµÃ÷£º¶¨Ê±Æ÷PWMÆµÂÊÉèÖÃ(×¢ÒâÕâÀïÃ»ÓÐ¸ü¸Ä¸÷¸öÍ¨µÀµÄÕ¼¿Õ±È£¬ËùÒÔÐÞ¸ÄÆµÂÊºóÕ¼¿Õ±È±äÁË£¬ÐèÒª´ÓÐÂÉèÖÃÕ¼¿Õ±È)
+//   94 *  ²ÎÊýËµÃ÷£ºTIMERn timer       £º¶¨Ê±Æ÷Ä£¿é
+//   95              uint32_t fre         £ºÆµÂÊ
+//   96 *  º¯Êý·µ»Ø£º²»³É¹¦Ôò·µ»ØERROR£¬³É¹¦Ôò·µ»ØSUCCESS
+//   97 *  Ê¹ÓÃÀý³Ì£ºTIMER_PWM_SetFreq(TIMER_B0,1000);       //½«¶¨Ê±Æ÷BÊä³öÆµÂÊÐÞ¸ÄÎª1000Hz
+//   98 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   99 STATUS  TIMER_PWM_SetFreq(TIMERn timer,uint32_t fre)
+TIMER_PWM_SetFreq:
+          CFI Block cfiBlock2 Using cfiCommon0
+          CFI Function TIMER_PWM_SetFreq
+//  100 {
+        PUSHM.A #0x6, R11
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+28
+        MOV.B   R12, R8
+        MOV.W   R14, R6
+        MOV.W   R15, R7
+//  101   if(fre == 0u)
+        MOV.W   R6, R15
+        BIS.W   R7, R15
+        CMP.W   #0x0, R15
+        JNE     ??TIMER_PWM_SetFreq_1
+//  102   {
+//  103     TIMERX[timer]->MC = TIMER_MC_STOP;              //ÔÝÍ£Êä³öPWM²¨
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        AND.W   #0xffcf, 0(R15)
+//  104     return SUCCESS;
+        MOV.B   #0x1, R12
+        JMP     ??TIMER_PWM_SetFreq_2
+//  105   }
+//  106   
+//  107   TIMERX[timer]->CLR = BIT_SET;
+??TIMER_PWM_SetFreq_1:
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        BIS.W   #0x4, 0(R15)
+//  108   TIMERX[timer]->SSEL = TIMER_SSEL_SMCLK;           //ÏÈÑ¡ÔñÊ±ÖÓÔ´ÎªSMCLK
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.W   #0xfcff, R11
+        AND.W   @R15, R11
+        BIS.W   #0x200, R11
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.W   R11, 0(R15)
+//  109   TIMERX[timer]->ID = 0u;                           //·ÖÆµÏµÊýÇåÁã
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        AND.W   #0xff3f, 0(R15)
+//  110   //Ê±ÖÓ´óÐ¡
+//  111   uint32_t Counter_Value = g_sClock.SMCLK.nHZ/fre;                 //¼ÆËã¼ÆÊýÖµ
+        MOVX.W  &g_sClock + 12, R12
+        MOVX.W  &g_sClock + 14, R13
+        MOV.W   R6, R14
+        MOV.W   R7, R15
+        CALLA   #?DivMod32u
+        MOV.W   R12, R10
+        MOV.W   R13, R11
+//  112   while(Counter_Value > 65536u)        //ÕâÀï²»ÊÇ0xffff£¬ÒòÎªºóÃæ»á-1£¬ËùÒÔÊÇ(0xffff+1)=65536
+??TIMER_PWM_SetFreq_0:
+        CMP.W   #0x1, R11
+        JNC     ??TIMER_PWM_SetFreq_3
+        JNE     ??TIMER_PWM_SetFreq_4
+        CMP.W   #0x1, R10
+        JNC     ??TIMER_PWM_SetFreq_3
+//  113   {  //·ÖÆµÒ»´Î
+//  114      TIMERX[timer]->ID ++;          
+??TIMER_PWM_SetFreq_4:
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.W   @R15, R15
+        PUSH.W  R14
+          CFI CFA SP+30
+        MOV.B   R15, 0(SP)
+        POP.W   R14
+          CFI CFA SP+28
+        RPT     #0x6
+        RRUX.B  R14
+        MOV.B   R14, R14
+        ADD.W   #0x1, R14
+        RPT     #0x6
+        RLAX.W  R14
+        AND.W   #0xc0, R14
+        AND.W   #0xff3f, R15
+        BIS.W   R14, R15
+        MOV.B   R8, R14
+        RLAM.A  #0x2, R14
+        MOVX.A  TIMERX(R14), R14
+        MOV.W   R15, 0(R14)
+//  115      Counter_Value >>= 1;          
+        RRUM.W  #0x1, R11
+        RRC.W   R10
+//  116      
+//  117      if((TIMERX[timer]->ID == 3u) && (Counter_Value > 65536))   //Õâ¸öÊ±ºòÒâÎ¶µÃÑ¡Ôñ¸üµÍÆµÂÊµÄÊ±ÖÓÁË
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.W   @R15, R14
+        AND.B   #0xc0, R14
+        CMP.B   #0xc0, R14
+        JNE     ??TIMER_PWM_SetFreq_0
+        CMP.W   #0x1, R11
+        JNC     ??TIMER_PWM_SetFreq_0
+        JNE     ??TIMER_PWM_SetFreq_5
+        CMP.W   #0x1, R10
+        JNC     ??TIMER_PWM_SetFreq_0
+//  118      {
+//  119        if(TIMERX[timer]->SSEL == TIMER_SSEL_ACLK)   //Èç¹ûÊ±ÖÓÒÑ¾­ÊÇ×îµÍµÄACLKÁË£¬ÄÇÃ´ÒâÎ¶×ÅÉèÖÃµÄÆµÂÊÌ«µÍÁË£¬Ê§°Ü·µ»ØERROR
+??TIMER_PWM_SetFreq_5:
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.W   @R15, R14
+        SWPB    R14
+        AND.W   #0xff, R14
+        AND.W   #0x3, R14
+        CMP.B   #0x1, R14
+        JNE     ??TIMER_PWM_SetFreq_6
+//  120        {
+//  121          return ERROR;
+        MOV.B   #0x0, R12
+        JMP     ??TIMER_PWM_SetFreq_2
+//  122        }
+//  123        //¸ü»»Îª¸üµÍµÄACLK£¬´ÓÐÂÅäÖÃ
+//  124        TIMERX[timer]->SSEL = TIMER_SSEL_ACLK;
+??TIMER_PWM_SetFreq_6:
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.W   #0xfcff, R14
+        AND.W   @R15, R14
+        BIS.W   #0x100, R14
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.W   R14, 0(R15)
+//  125        TIMERX[timer]->ID = 0u;  
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        AND.W   #0xff3f, 0(R15)
+//  126        Counter_Value = g_sClock.ACLK.nHZ/fre; 
+        MOVX.W  &g_sClock + 24, R12
+        MOVX.W  &g_sClock + 26, R13
+        MOV.W   R6, R14
+        MOV.W   R7, R15
+        CALLA   #?DivMod32u
+        MOV.W   R12, R10
+        MOV.W   R13, R11
+//  127        continue;  
+        JMP     ??TIMER_PWM_SetFreq_0
+//  128      } 
+//  129   }
+//  130   if(Counter_Value <= 1)//³öÏÖÕâÖÖÇé¿ö,ËµÃ÷ÆµÂÊ²»ºÏÊÊ
+??TIMER_PWM_SetFreq_3:
+        CMP.W   #0x0, R11
+        JNC     ??TIMER_PWM_SetFreq_7
+        JNE     ??TIMER_PWM_SetFreq_8
+        CMP.W   #0x2, R10
+        JC      ??TIMER_PWM_SetFreq_8
+//  131   {
+//  132     return ERROR; 
+??TIMER_PWM_SetFreq_7:
+        MOV.B   #0x0, R12
+        JMP     ??TIMER_PWM_SetFreq_2
+//  133   }
+//  134 
+//  135   TIMERX[timer]->CCR[0] = (uint16_t)(Counter_Value - 1u);//ÎªÊ²Ã´Òª¼õÒ»£¿£¿ÒòÎªTAR/TBR¼ÆÊýÆ÷´ÓCCR0±ä»¯µ½0»¹ÓÐÒ»¸ö¼ÆÊýÖÜÆÚ
+??TIMER_PWM_SetFreq_8:
+        MOV.W   R10, R15
+        ADD.W   #0xffff, R15
+        MOV.B   R8, R14
+        RLAM.A  #0x2, R14
+        MOVX.A  TIMERX(R14), R14
+        MOV.W   R15, 0x12(R14)
+//  136   TIMERX[timer]->IE = RESET;                      //¹Ø±ÕÖÐ¶Ï
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        BIC.W   #0x2, 0(R15)
+//  137   TIMERX[timer]->MC = TIMER_MC_UP;                //Ôö¼ÆÊýÄ£Ê½
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.W   #0xffcf, R14
+        AND.W   @R15, R14
+        BIS.W   #0x10, R14
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.W   R14, 0(R15)
+//  138   
+//  139   return SUCCESS;
+        MOV.B   #0x1, R12
+??TIMER_PWM_SetFreq_2:
+        POPM.A  #0x6, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock2
+//  140 }
+//  141 /*******************************************************************************
+//  142 *  º¯ÊýÃû³Æ£ºTIMER_PWM_SetDuty(TIMERn timer,TIMER_CHn ch,uint32_t duty)
+//  143 *  ¹¦ÄÜËµÃ÷£ºPWMÊä³öÕ¼¿Õ±ÈÉèÖÃ
+//  144 *  ²ÎÊýËµÃ÷£ºTIMERn timer       £º¶¨Ê±Æ÷Ä£¿é
+//  145              TIMER_CHn ch       £º¶¨Ê±Æ÷Í¨µÀ
+//  146              uint32_t duty      £ºÕ¼¿Õ±È
+//  147 *  º¯Êý·µ»Ø£ºÎÞ
+//  148 *  Ê¹ÓÃÀý³Ì£ºTIMER_PWM_SetDuty(TIMER_A0,TIMER_CH1,800);  //ÐÞ¸Ä¶¨Ê±Æ÷A0µÄTIMER_CH1Í¨µÀÕ¼¿Õ±ÈÎª(800/TIMAR_A0_PRECISON)*100%
+//  149 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  150 void  TIMER_PWM_SetDuty(TIMERn timer,TIMER_CHn ch,uint32_t duty)
+TIMER_PWM_SetDuty:
+          CFI Block cfiBlock3 Using cfiCommon0
+          CFI Function TIMER_PWM_SetDuty
+//  151 {
+        FUNCALL TIMER_PWM_SetDuty, assert_failed
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL TIMER_PWM_SetDuty, assert_failed
+        LOCFRAME CSTACK, 20, STACK
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        MOV.B   R12, R10
+        MOV.B   R13, R11
+        MOV.W   R14, R8
+        MOV.W   R15, R9
+//  152   ASSERT((timer==TIMER_A0&&ch<=TIMER_CH4)
+//  153        ||(timer==TIMER_A1&&ch<=TIMER_CH2)
+//  154        ||(timer==TIMER_A2&&ch<=TIMER_CH2)
+//  155        ||(timer==TIMER_B0&&ch<=TIMER_CH6),
+//  156        "TIMER_PWM_SetDuty",
+//  157        "¶¨Ê±Æ÷Í¨µÀ²ÎÊý³¬³ö·¶Î§£¡"); //¶ÏÑÔ¼ì²âÊäÈë²ÎÊý
+        CMP.B   #0x0, R10
+        JNE     ??TIMER_PWM_SetDuty_0
+        CMP.B   #0x5, R11
+        JNC     ??TIMER_PWM_SetDuty_1
+??TIMER_PWM_SetDuty_0:
+        CMP.B   #0x1, R10
+        JNE     ??TIMER_PWM_SetDuty_2
+        CMP.B   #0x3, R11
+        JNC     ??TIMER_PWM_SetDuty_1
+??TIMER_PWM_SetDuty_2:
+        CMP.B   #0x2, R10
+        JNE     ??TIMER_PWM_SetDuty_3
+        CMP.B   #0x3, R11
+        JNC     ??TIMER_PWM_SetDuty_1
+??TIMER_PWM_SetDuty_3:
+        CMP.B   #0x3, R10
+        JNE     ??TIMER_PWM_SetDuty_4
+        CMP.B   #0x7, R11
+        JNC     ??TIMER_PWM_SetDuty_1
+??TIMER_PWM_SetDuty_4:
+        MOVA    #`?<Constant "\\266\\250\\312\\261\\306\\367\\315\\250\\2`, R15
+        MOVA    #`?<Constant "TIMER_PWM_SetDuty">`, R14
+        MOV.W   #0x9d, R13
+        MOVA    #`?<Constant "E:\\\\MSP430\\\\MSP430F5529...">`, R12
+        CALLA   #assert_failed
+//  158   
+//  159   ASSERT(duty <= TIMER_PRECISON[timer],
+//  160          "TIMER_PWM_SetDuty",
+//  161          "¶¨Ê±Æ÷Õ¼¿Õ±È²ÎÊý³¬³ö·¶Î§£¡");      //ÓÃ¶ÏÑÔ¼ì²â Õ¼¿Õ±ÈÊÇ·ñºÏÀí
+??TIMER_PWM_SetDuty_1:
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        CMPX.W  R9, TIMER_PRECISON + 2(R15)
+        JNC     ??TIMER_PWM_SetDuty_5
+        JNE     ??TIMER_PWM_SetDuty_6
+        CMPX.W  R8, TIMER_PRECISON(R15)
+        JC      ??TIMER_PWM_SetDuty_6
+??TIMER_PWM_SetDuty_5:
+        MOVA    #`?<Constant "\\266\\250\\312\\261\\306\\367\\325\\274\\2`, R15
+        MOVA    #`?<Constant "TIMER_PWM_SetDuty">`, R14
+        MOV.W   #0xa1, R13
+        MOVA    #`?<Constant "E:\\\\MSP430\\\\MSP430F5529...">`, R12
+        CALLA   #assert_failed
+//  162   
+//  163   TIMERX[timer]->CCR[ch] = (uint16_t)((duty * (TIMERX[timer]->CCR[0]+1))/TIMER_PRECISON[timer]);
+??TIMER_PWM_SetDuty_6:
+        MOV.W   R8, R12
+        MOV.W   R9, R13
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.W   0x12(R15), R14
+        ADD.W   #0x1, R14
+        MOV.W   #0x0, R15
+        CALLA   #?Mul32
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.W  TIMER_PRECISON(R15), R14
+        MOVX.W  TIMER_PRECISON + 2(R15), R15
+        CALLA   #?DivMod32u
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.B   R11, R14
+        ADDA    R14, R14
+        MOVA    R14, R13
+        ADDA    R13, R15
+        MOV.W   R12, 0x12(R15)
+//  164 }
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock3
+//  165 /*******************************************************************************
+//  166 *  º¯ÊýÃû³Æ£ºTIMER_Interval_Us(TIMERn timer,uint32_t us)
+//  167 *  ¹¦ÄÜËµÃ÷£º¶¨Ê±Æ÷¶¨Ê±³õÊ¼»¯(µ¥Î»£ºus)
+//  168 *  ²ÎÊýËµÃ÷£ºTIMERn timer       £º¶¨Ê±Æ÷Ä£¿é
+//  169              uint32_t us          : ¶¨Ê±Ê±¼ä
+//  170 *  º¯Êý·µ»Ø£º²»³É¹¦Ôò·µ»ØERROR£¬³É¹¦Ôò·µ»ØSUCCESS
+//  171 *  Ê¹ÓÃÀý³Ì£ºTIMER_Interval_Us(TIMER_B0,2500);  //TB¶¨Ê±¼ä¸ô2.5msÖÐ¶Ï
+//  172 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  173 STATUS  TIMER_Interval_Us(TIMERn timer,uint32_t us)
+TIMER_Interval_Us:
+          CFI Block cfiBlock4 Using cfiCommon0
+          CFI Function TIMER_Interval_Us
+//  174 {
+        FUNCALL TIMER_Interval_Us, _Cast32uto32f
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL TIMER_Interval_Us, _Mul32f
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL TIMER_Interval_Us, _Cast32fto32u
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL TIMER_Interval_Us, _Cast32uto32f
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL TIMER_Interval_Us, _Mul32f
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL TIMER_Interval_Us, _Cast32fto32u
+        LOCFRAME CSTACK, 28, STACK
+        PUSHM.A #0x6, R11
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+28
+        MOV.B   R12, R8
+        MOV.W   R14, R6
+        MOV.W   R15, R7
+//  175 #ifdef DELAY_TIMER
+//  176   ASSERT((timer != DELAY_TIMER),
+//  177          "TIMER_Interval_Us",
+//  178          "¶¨Ê±Æ÷ÒÑ¾­ÉèÖÃÎªÄ¬ÈÏÑÓÊ±¹¦ÄÜ£¬²»ÄÜÔÙ×÷ÎªÆäËû¹¦ÄÜÊ¹ÓÃ");       //²»ÔÊÐíÕâÖÖÇé¿öÏÂ»¹ºê¶¨Òå¸Ã¶¨Ê±Æ÷×÷ÎªÑÓÊ±ËùÓÃµÄ¶¨Ê±Æ÷£¬ÇëÔÚsystem.hÀïÐÞ¸ÄDELAY_TIMERºê¶¨Òå
+//  179 #endif
+//  180   TIMERX[timer]->CLR = BIT_SET;
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        BIS.W   #0x4, 0(R15)
+//  181   TIMERX[timer]->SSEL = TIMER_SSEL_SMCLK;
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.W   #0xfcff, R11
+        AND.W   @R15, R11
+        BIS.W   #0x200, R11
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.W   R11, 0(R15)
+//  182   TIMERX[timer]->ID = 0u;
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        AND.W   #0xff3f, 0(R15)
+//  183   //¼ÆÊýÖµ
+//  184   uint32_t Counter_Value = (uint32_t)(us * g_sClock.SMCLK.fMHZ);
+        MOV.W   R6, R12
+        MOV.W   R7, R13
+        CALLA   #_Cast32uto32f
+        MOVX.W  &g_sClock + 20, R14
+        MOVX.W  &g_sClock + 22, R15
+        CALLA   #_Mul32f
+        CALLA   #_Cast32fto32u
+        MOV.W   R12, R10
+        MOV.W   R13, R11
+//  185   while(Counter_Value > 65536)
+??TIMER_Interval_Us_0:
+        CMP.W   #0x1, R11
+        JNC     ??TIMER_Interval_Us_1
+        JNE     ??TIMER_Interval_Us_2
+        CMP.W   #0x1, R10
+        JNC     ??TIMER_Interval_Us_1
+//  186   {
+//  187      TIMERX[timer]->ID ++; 
+??TIMER_Interval_Us_2:
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.W   @R15, R15
+        PUSH.W  R14
+          CFI CFA SP+30
+        MOV.B   R15, 0(SP)
+        POP.W   R14
+          CFI CFA SP+28
+        RPT     #0x6
+        RRUX.B  R14
+        MOV.B   R14, R14
+        ADD.W   #0x1, R14
+        RPT     #0x6
+        RLAX.W  R14
+        AND.W   #0xc0, R14
+        AND.W   #0xff3f, R15
+        BIS.W   R14, R15
+        MOV.B   R8, R14
+        RLAM.A  #0x2, R14
+        MOVX.A  TIMERX(R14), R14
+        MOV.W   R15, 0(R14)
+//  188      Counter_Value >>= 1;  
+        RRUM.W  #0x1, R11
+        RRC.W   R10
+//  189      if((TIMERX[timer]->ID == 3u) && (Counter_Value > 65536))   //Õâ¸öÊ±ºòÒâÎ¶µÃÑ¡Ôñ¸üµÍÆµÂÊµÄÊ±ÖÓÁË
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.W   @R15, R14
+        AND.B   #0xc0, R14
+        CMP.B   #0xc0, R14
+        JNE     ??TIMER_Interval_Us_0
+        CMP.W   #0x1, R11
+        JNC     ??TIMER_Interval_Us_0
+        JNE     ??TIMER_Interval_Us_3
+        CMP.W   #0x1, R10
+        JNC     ??TIMER_Interval_Us_0
+//  190      {
+//  191       if(TIMERX[timer]->SSEL == TIMER_SSEL_ACLK) //Èç¹ûÊ±ÖÓÒÑ¾­ÊÇ×îµÍµÄACLKÁË£¬ÄÇÃ´ÒâÎ¶×ÅÉèÖÃµÄÆµÂÊÌ«µÍÁË£¬Ê§°Ü·µ»ØERROR
+??TIMER_Interval_Us_3:
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.W   @R15, R14
+        SWPB    R14
+        AND.W   #0xff, R14
+        AND.W   #0x3, R14
+        CMP.B   #0x1, R14
+        JNE     ??TIMER_Interval_Us_4
+//  192       {
+//  193         return ERROR;
+        MOV.B   #0x0, R12
+        JMP     ??TIMER_Interval_Us_5
+//  194       }
+//  195       //¸ü»»Îª¸üµÍµÄACLK£¬´ÓÐÂÅäÖÃ
+//  196       TIMERX[timer]->SSEL = TIMER_SSEL_ACLK;
+??TIMER_Interval_Us_4:
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.W   #0xfcff, R14
+        AND.W   @R15, R14
+        BIS.W   #0x100, R14
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.W   R14, 0(R15)
+//  197       TIMERX[timer]->ID = 0u;  
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        AND.W   #0xff3f, 0(R15)
+//  198       Counter_Value = (uint32_t)(us * g_sClock.ACLK.fMHZ);
+        MOV.W   R6, R12
+        MOV.W   R7, R13
+        CALLA   #_Cast32uto32f
+        MOVX.W  &g_sClock + 32, R14
+        MOVX.W  &g_sClock + 34, R15
+        CALLA   #_Mul32f
+        CALLA   #_Cast32fto32u
+        MOV.W   R12, R10
+        MOV.W   R13, R11
+//  199       continue;  
+        JMP     ??TIMER_Interval_Us_0
+//  200      } 
+//  201   }
+//  202   if(Counter_Value <= 1)//³öÏÖÕâÖÖÇé¿ö,ËµÃ÷ÆµÂÊ²»ºÏÊÊ
+??TIMER_Interval_Us_1:
+        CMP.W   #0x0, R11
+        JNC     ??TIMER_Interval_Us_6
+        JNE     ??TIMER_Interval_Us_7
+        CMP.W   #0x2, R10
+        JC      ??TIMER_Interval_Us_7
+//  203   {
+//  204     return ERROR; 
+??TIMER_Interval_Us_6:
+        MOV.B   #0x0, R12
+        JMP     ??TIMER_Interval_Us_5
+//  205   }
+//  206   
+//  207   TIMERX[timer]->CCR[0] = (uint16_t)(Counter_Value - 1u);//ÎªÊ²Ã´Òª¼õÒ»£¿£¿ÒòÎªTAR/TBR¼ÆÊýÆ÷´ÓCCR0±ä»¯µ½0»¹ÓÐÒ»¸ö¼ÆÊýÖÜÆÚ
+??TIMER_Interval_Us_7:
+        MOV.W   R10, R15
+        ADD.W   #0xffff, R15
+        MOV.B   R8, R14
+        RLAM.A  #0x2, R14
+        MOVX.A  TIMERX(R14), R14
+        MOV.W   R15, 0x12(R14)
+//  208   TIMERX[timer]->CCTL[0].CAPMODE = RESET;          //±È½ÏÄ£Ê½
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        BIC.W   #0x100, 0x2(R15)
+//  209   TIMERX[timer]->IE = RESET;             //¹Ø±ÕÒç³öÖÐ¶Ï
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        BIC.W   #0x2, 0(R15)
+//  210   TIMERX[timer]->CCTL[0].IE = RESET;     //¹Ø±ÕÍ¨µÀÖÐ¶Ï
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        BIC.W   #0x10, 0x2(R15)
+//  211   TIMERX[timer]->MC = TIMER_MC_UP;      //Ôö¼ÆÊýÄ£Ê½
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.W   #0xffcf, R14
+        AND.W   @R15, R14
+        BIS.W   #0x10, R14
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.W   R14, 0(R15)
+//  212   
+//  213   return SUCCESS;
+        MOV.B   #0x1, R12
+??TIMER_Interval_Us_5:
+        POPM.A  #0x6, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock4
+//  214 }
+//  215 /*******************************************************************************
+//  216 *  º¯ÊýÃû³Æ£ºTIMER_Delay_Us(TIMERn timer,uint32_t us)
+//  217 *  ¹¦ÄÜËµÃ÷£º¶¨Ê±Æ÷ÑÓÊ±£¨µ¥Î»£ºms£©
+//  218 *  ²ÎÊýËµÃ÷£ºTIMERn timer       £º¶¨Ê±Æ÷Ä£¿é
+//  219              uint32_t us          : ¶¨Ê±Ê±¼ä
+//  220 *  º¯Êý·µ»Ø£º²»³É¹¦Ôò·µ»ØERROR£¬³É¹¦Ôò·µ»ØSUCCESS
+//  221 *  Ê¹ÓÃÀý³Ì£ºTIMER_Delay_Us(TIMER_B0 ,5000);      //ÔÚ´Ë´¦ÑÓÊ±5ms
+//  222 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  223 STATUS TIMER_Delay_Us(TIMERn timer,uint32_t us)
+TIMER_Delay_Us:
+          CFI Block cfiBlock5 Using cfiCommon0
+          CFI Function TIMER_Delay_Us
+//  224 {
+        FUNCALL TIMER_Delay_Us, _Cast32uto32f
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL TIMER_Delay_Us, _Mul32f
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL TIMER_Delay_Us, _Cast32fto32u
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL TIMER_Delay_Us, _Cast32uto32f
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL TIMER_Delay_Us, _Mul32f
+        LOCFRAME CSTACK, 28, STACK
+        FUNCALL TIMER_Delay_Us, _Cast32fto32u
+        LOCFRAME CSTACK, 28, STACK
+        PUSHM.A #0x6, R11
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+28
+        MOV.B   R12, R8
+        MOV.W   R14, R6
+        MOV.W   R15, R7
+//  225   TIMERX[timer]->CLR = BIT_SET;
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        BIS.W   #0x4, 0(R15)
+//  226   TIMERX[timer]->SSEL = TIMER_SSEL_SMCLK;
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.W   #0xfcff, R11
+        AND.W   @R15, R11
+        BIS.W   #0x200, R11
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.W   R11, 0(R15)
+//  227   TIMERX[timer]->ID = 0u;
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        AND.W   #0xff3f, 0(R15)
+//  228   //¼ÆÊýÖµ
+//  229   uint32_t Counter_Value = (uint32_t)(us * g_sClock.SMCLK.fMHZ);
+        MOV.W   R6, R12
+        MOV.W   R7, R13
+        CALLA   #_Cast32uto32f
+        MOVX.W  &g_sClock + 20, R14
+        MOVX.W  &g_sClock + 22, R15
+        CALLA   #_Mul32f
+        CALLA   #_Cast32fto32u
+        MOV.W   R12, R10
+        MOV.W   R13, R11
+//  230   while(Counter_Value > 65536)
+??TIMER_Delay_Us_0:
+        CMP.W   #0x1, R11
+        JNC     ??TIMER_Delay_Us_2
+        JNE     ??TIMER_Delay_Us_3
+        CMP.W   #0x1, R10
+        JNC     ??TIMER_Delay_Us_2
+//  231   {
+//  232      TIMERX[timer]->ID ++; 
+??TIMER_Delay_Us_3:
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.W   @R15, R15
+        PUSH.W  R14
+          CFI CFA SP+30
+        MOV.B   R15, 0(SP)
+        POP.W   R14
+          CFI CFA SP+28
+        RPT     #0x6
+        RRUX.B  R14
+        MOV.B   R14, R14
+        ADD.W   #0x1, R14
+        RPT     #0x6
+        RLAX.W  R14
+        AND.W   #0xc0, R14
+        AND.W   #0xff3f, R15
+        BIS.W   R14, R15
+        MOV.B   R8, R14
+        RLAM.A  #0x2, R14
+        MOVX.A  TIMERX(R14), R14
+        MOV.W   R15, 0(R14)
+//  233      Counter_Value >>= 1;  
+        RRUM.W  #0x1, R11
+        RRC.W   R10
+//  234      if((TIMERX[timer]->ID == 3u) && (Counter_Value > 65536))   //Õâ¸öÊ±ºòÒâÎ¶µÃÑ¡Ôñ¸üµÍÆµÂÊµÄÊ±ÖÓÁË
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.W   @R15, R14
+        AND.B   #0xc0, R14
+        CMP.B   #0xc0, R14
+        JNE     ??TIMER_Delay_Us_0
+        CMP.W   #0x1, R11
+        JNC     ??TIMER_Delay_Us_0
+        JNE     ??TIMER_Delay_Us_4
+        CMP.W   #0x1, R10
+        JNC     ??TIMER_Delay_Us_0
+//  235      {
+//  236       if(TIMERX[timer]->SSEL == TIMER_SSEL_ACLK) //Èç¹ûÊ±ÖÓÒÑ¾­ÊÇ×îµÍµÄACLKÁË£¬ÄÇÃ´ÒâÎ¶×ÅÉèÖÃµÄÆµÂÊÌ«µÍÁË£¬Ê§°Ü·µ»ØERROR
+??TIMER_Delay_Us_4:
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.W   @R15, R14
+        SWPB    R14
+        AND.W   #0xff, R14
+        AND.W   #0x3, R14
+        CMP.B   #0x1, R14
+        JNE     ??TIMER_Delay_Us_5
+//  237       {
+//  238         return ERROR;
+        MOV.B   #0x0, R12
+        JMP     ??TIMER_Delay_Us_6
+//  239       }
+//  240       //¸ü»»Îª¸üµÍµÄACLK£¬´ÓÐÂÅäÖÃ
+//  241       TIMERX[timer]->SSEL = TIMER_SSEL_ACLK;
+??TIMER_Delay_Us_5:
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.W   #0xfcff, R14
+        AND.W   @R15, R14
+        BIS.W   #0x100, R14
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.W   R14, 0(R15)
+//  242       TIMERX[timer]->ID = 0u;  
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        AND.W   #0xff3f, 0(R15)
+//  243       Counter_Value = (uint32_t)(us * g_sClock.ACLK.fMHZ);
+        MOV.W   R6, R12
+        MOV.W   R7, R13
+        CALLA   #_Cast32uto32f
+        MOVX.W  &g_sClock + 32, R14
+        MOVX.W  &g_sClock + 34, R15
+        CALLA   #_Mul32f
+        CALLA   #_Cast32fto32u
+        MOV.W   R12, R10
+        MOV.W   R13, R11
+//  244       continue;  
+        JMP     ??TIMER_Delay_Us_0
+//  245      } 
+//  246   }
+//  247   if(Counter_Value <= 1)//³öÏÖÕâÖÖÇé¿ö,ËµÃ÷ÆµÂÊ²»ºÏÊÊ
+??TIMER_Delay_Us_2:
+        CMP.W   #0x0, R11
+        JNC     ??TIMER_Delay_Us_7
+        JNE     ??TIMER_Delay_Us_8
+        CMP.W   #0x2, R10
+        JC      ??TIMER_Delay_Us_8
+//  248   {
+//  249     return ERROR; 
+??TIMER_Delay_Us_7:
+        MOV.B   #0x0, R12
+        JMP     ??TIMER_Delay_Us_6
+//  250   }
+//  251   
+//  252   TIMERX[timer]->CCR[0] = (uint16_t)(Counter_Value - 1u);//ÎªÊ²Ã´Òª¼õÒ»£¿£¿ÒòÎªTAR/TBR¼ÆÊýÆ÷´ÓCCR0±ä»¯µ½0»¹ÓÐÒ»¸ö¼ÆÊýÖÜÆÚ
+??TIMER_Delay_Us_8:
+        MOV.W   R10, R15
+        ADD.W   #0xffff, R15
+        MOV.B   R8, R14
+        RLAM.A  #0x2, R14
+        MOVX.A  TIMERX(R14), R14
+        MOV.W   R15, 0x12(R14)
+//  253   TIMERX[timer]->CCTL[0].CAPMODE = RESET;          //±È½ÏÄ£Ê½
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        BIC.W   #0x100, 0x2(R15)
+//  254   TIMERX[timer]->IE = RESET;             //¹Ø±ÕÒç³öÖÐ¶Ï
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        BIC.W   #0x2, 0(R15)
+//  255   TIMERX[timer]->CCTL[0].IE = RESET;     //¹Ø±ÕÍ¨µÀÖÐ¶Ï
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        BIC.W   #0x10, 0x2(R15)
+//  256   TIMERX[timer]->MC = TIMER_MC_UP;
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.W   #0xffcf, R14
+        AND.W   @R15, R14
+        BIS.W   #0x10, R14
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.W   R14, 0(R15)
+//  257   
+//  258   TIMERX[timer]->CCTL[0].CTL = 0;
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.W   #0x0, 0x2(R15)
+//  259   TIMERX[timer]->IFG = RESET;
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        BIC.W   #0x1, 0(R15)
+//  260   while(TIMERX[timer]->IFG == RESET);
+??TIMER_Delay_Us_1:
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        BIT.W   #0x1, 0(R15)
+        JNC     ??TIMER_Delay_Us_1
+//  261   TIMERX[timer]->CTL = 0;
+        MOV.B   R8, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.W   #0x0, 0(R15)
+//  262   
+//  263   return SUCCESS;
+        MOV.B   #0x1, R12
+??TIMER_Delay_Us_6:
+        POPM.A  #0x6, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock5
+//  264 }
+//  265 /*******************************************************************************
+//  266 *  º¯ÊýÃû³Æ£ºTIMER_Pluse_Init    (TIMERn timer)
+//  267 *  ¹¦ÄÜËµÃ÷£º¶¨Ê±Æ÷Âö³å¼ÆÊý³õÊ¼»¯
+//  268 *  ²ÎÊýËµÃ÷£ºTIMERn timer       £º¶¨Ê±Æ÷Ä£¿é
+//  269 *  º¯Êý·µ»Ø£º²»³É¹¦Ôò·µ»ØERROR£¬³É¹¦Ôò·µ»ØSUCCESS
+//  270 *  Ê¹ÓÃÀý³Ì£ºTIMER_Pluse_Init    (TIMER_A1);    //¶¨Ê±Æ÷TA1³õÊ¼»¯ÎªÂö³å¼ÆÊý¹¦ÄÜ
+//  271 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  272 STATUS  TIMER_Pluse_Init    (TIMERn timer)
+TIMER_Pluse_Init:
+          CFI Block cfiBlock6 Using cfiCommon0
+          CFI Function TIMER_Pluse_Init
+//  273 { 
+        FUNCALL TIMER_Pluse_Init, GPIO_MultiBits_Init
+        LOCFRAME CSTACK, 8, STACK
+        PUSHM.A #0x1, R10
+          CFI R10L Frame(CFA, -8)
+          CFI R10H Frame(CFA, -6)
+          CFI CFA SP+8
+        MOV.B   R12, R10
+//  274 #ifdef DELAY_TIMER
+//  275   ASSERT((timer != DELAY_TIMER),
+//  276          "TIMER_Pluse_Init",
+//  277          "¶¨Ê±Æ÷ÒÑ¾­ÉèÖÃÎªÄ¬ÈÏÑÓÊ±¹¦ÄÜ£¬²»ÄÜÔÙ×÷ÎªÆäËû¹¦ÄÜÊ¹ÓÃ");       //²»ÔÊÐíÕâÖÖÇé¿öÏÂ»¹ºê¶¨Òå¸Ã¶¨Ê±Æ÷×÷ÎªÑÓÊ±ËùÓÃµÄ¶¨Ê±Æ÷£¬ÇëÔÚsystem.hÀïÐÞ¸ÄDELAY_TIMERºê¶¨Òå
+//  278 #endif 
+//  279   //¶Ë¿ÚÉèÖÃÎªÊäÈë·½Ïò//Ñ¡ÔñµÚ¶þ¹¦ÄÜ
+//  280   GPIO_Init(TIMER_CLK_PIN[timer].Port,TIMER_CLK_PIN[timer].Pin,GPI|SEL);
+        MOV.W   #0x101, R14
+        MOV.W   #0x1, R13
+        MOV.B   R10, R15
+        ADDA    R15, R15
+        MOVX.B  TIMER_CLK_PIN + 1(R15), R15
+        SUB.B   #0x1, R15
+        JN      ??TIMER_Pluse_Init_0
+        RPT     R15
+        RLAX.W  R13
+??TIMER_Pluse_Init_0:
+        ADD.B   #0x1, R15
+        MOV.B   R10, R15
+        ADDA    R15, R15
+        MOVX.B  TIMER_CLK_PIN(R15), R12
+        CALLA   #GPIO_MultiBits_Init
+//  281   
+//  282   TIMERX[timer]->CLR = BIT_SET;                       
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        BIS.W   #0x4, 0(R15)
+//  283   TIMERX[timer]->SSEL = TIMER_SSEL_INCLK;             //Ê±ÖÓÔ´Ñ¡ÔñÎªÍâ²¿ÊäÈë
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        BIS.W   #0x300, 0(R15)
+//  284   TIMERX[timer]->ID = 0u;                             //²»·ÖÆµ
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        AND.W   #0xff3f, 0(R15)
+//  285   TIMERX[timer]->MC = TIMER_MC_CONTINOUS;             //Á¬Ðø¼ÆÊýÄ£Ê½
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.W   #0xffcf, R14
+        AND.W   @R15, R14
+        BIS.W   #0x20, R14
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.W   R14, 0(R15)
+//  286   TIMERX[timer]->IE = RESET;                          //½ûÖ¹Òç³öÖÐ¶Ï
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        BIC.W   #0x2, 0(R15)
+//  287   
+//  288   return SUCCESS;
+        MOV.B   #0x1, R12
+        POPM.A  #0x1, R10
+          CFI R10H SameValue
+          CFI R10L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock6
+//  289 }
+//  290 /*******************************************************************************
+//  291 *  º¯ÊýÃû³Æ£ºTIMER_Pluse_GetValue(TIMERn timer,uint16_t overflowTime)
+//  292 *  ¹¦ÄÜËµÃ÷£º¶¨Ê±Æ÷Âö³å¼ÆÊýÖµ»ñÈ¡
+//  293 *  ²ÎÊýËµÃ÷£ºTIMERn timer       £º¶¨Ê±Æ÷Ä£¿é
+//  294              uint16_t overflowTime £º¼ÆÊýÆ÷Òç³ö´ÎÊý
+//  295 *  º¯Êý·µ»Ø£º¶¨Ê±Æ÷Âö³å¼ÆÊýÖµ
+//  296 *  Ê¹ÓÃÀý³Ì£º
+//  297              int32 pulse = TIMER_Pluse_GetValue(TIMER_A1,0);    //ÔÚÃ»ÓÐ·¢ÉúÒç³öµÄÇé¿öÏÂ¶ÁÈ¡Âö³å¸öÊý
+//  298              TIMER_Pluse_Clear   (TIMER_A1);                    //¶ÁÈ¡ºóÓ¦¸ÃÒªÇåÁã
+//  299 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  300 uint32_t TIMER_Pluse_GetValue(TIMERn timer,uint16_t overflowTime)
+TIMER_Pluse_GetValue:
+          CFI Block cfiBlock7 Using cfiCommon0
+          CFI Function TIMER_Pluse_GetValue
+//  301 {
+        PUSHM.A #0x2, R11
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+12
+//  302   return (TIMERX[timer]->R + (overflowTime*65536u));
+        MOV.B   R12, R12
+        RLAM.A  #0x2, R12
+        MOVX.A  TIMERX(R12), R15
+        MOV.W   0x10(R15), R14
+        MOV.W   #0x0, R15
+        MOV.W   R13, R10
+        MOV.W   #0x0, R11
+        MOV.W   R10, R11
+        MOV.W   #0x0, R10
+        ADD.W   R10, R14
+        ADDC.W  R11, R15
+        MOV.W   R14, R12
+        MOV.W   R15, R13
+        POPM.A  #0x2, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock7
+//  303 }
+//  304 /*******************************************************************************
+//  305 *  º¯ÊýÃû³Æ£ºTIMER_Pluse_Clear   (TIMERn timer)
+//  306 *  ¹¦ÄÜËµÃ÷£º¶¨Ê±Æ÷Âö³å¼ÆÊýÖµÇåÁã
+//  307 *  ²ÎÊýËµÃ÷£ºTIMERn timer       £º¶¨Ê±Æ÷Ä£¿é
+//  308 *  º¯Êý·µ»Ø£ºÎÞ
+//  309 *  Ê¹ÓÃÀý³Ì£º
+//  310              int32 pulse = TIMER_Pluse_Read    (TIMER_A1,0);    //ÔÚÃ»ÓÐ·¢ÉúÒç³öµÄÇé¿öÏÂ¶ÁÈ¡Âö³å¸öÊý
+//  311              TIMER_Pluse_Clear   (TIMER_A1);                    //¶ÁÈ¡ºóÓ¦¸ÃÒªÇåÁã
+//  312 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  313 void   TIMER_Pluse_Clear   (TIMERn timer)
+TIMER_Pluse_Clear:
+          CFI Block cfiBlock8 Using cfiCommon0
+          CFI Function TIMER_Pluse_Clear
+//  314 {
+//  315   TIMERX[timer]->R = 0;
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.W   #0x0, 0x10(R15)
+//  316 }
+        RETA
+          CFI EndBlock cfiBlock8
+//  317 /*******************************************************************************
+//  318 *  º¯ÊýÃû³Æ£ºTIMER_Capture_Init(TIMERn timer,TIMER_CHn ch,TIMER_CAPTUREn capmode)
+//  319 *  ¹¦ÄÜËµÃ÷£º¶¨Ê±Æ÷²¶»ñ³õÊ¼»¯
+//  320 *  ²ÎÊýËµÃ÷£ºTIMERn timer        £º¶¨Ê±Æ÷Ä£¿é
+//  321              TIMER_CHn ch        £º¶¨Ê±Æ÷Í¨µÀ
+//  322              TIMER_CAPTUREn capmode£º²¶»ñÄ£Ê½
+//  323 *  º¯Êý·µ»Ø£º²»³É¹¦Ôò·µ»ØERROR£¬³É¹¦Ôò·µ»ØSUCCESS
+//  324 *  Ê¹ÓÃÀý³Ì£ºTIMER_Capture_Init(TIMER_A0,TIMER_CH1,CAP_Rising);         //¶¨Ê±Æ÷TA0 CCR1Í¨µÀ³õÊ¼»¯Îª±ßÔµ²¶»ñ£¬ÉÏÉýÑØ²¶»ñ
+//  325 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  326 STATUS TIMER_Capture_Init(TIMERn timer,TIMER_CHn ch,TIMER_CAPTUREn capmode)
+TIMER_Capture_Init:
+          CFI Block cfiBlock9 Using cfiCommon0
+          CFI Function TIMER_Capture_Init
+//  327 {
+        FUNCALL TIMER_Capture_Init, assert_failed
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL TIMER_Capture_Init, GPIO_MultiBits_Init
+        LOCFRAME CSTACK, 20, STACK
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        MOV.B   R12, R10
+        MOV.B   R13, R11
+        MOV.B   R14, R8
+//  328 #ifdef DELAY_TIMER
+//  329   ASSERT((timer != DELAY_TIMER),
+//  330          "TIMER_Capture_Init",
+//  331          "¶¨Ê±Æ÷ÒÑ¾­ÉèÖÃÎªÄ¬ÈÏÑÓÊ±¹¦ÄÜ£¬²»ÄÜÔÙ×÷ÎªÆäËû¹¦ÄÜÊ¹ÓÃ");       //²»ÔÊÐíÕâÖÖÇé¿öÏÂ»¹ºê¶¨Òå¸Ã¶¨Ê±Æ÷×÷ÎªÑÓÊ±ËùÓÃµÄ¶¨Ê±Æ÷£¬ÇëÔÚsystem.hÀïÐÞ¸ÄDELAY_TIMERºê¶¨Òå
+//  332 #endif
+//  333   ASSERT((timer==TIMER_A0&&ch<=TIMER_CH4)
+//  334        ||(timer==TIMER_A1&&ch<=TIMER_CH2)
+//  335        ||(timer==TIMER_A2&&ch<=TIMER_CH2)
+//  336        ||(timer==TIMER_B0&&ch<=TIMER_CH6),
+//  337        "TIMER_Capture_Init",
+//  338        "¶¨Ê±Æ÷Í¨µÀ²ÎÊý³¬³ö·¶Î§£¡"); //¶ÏÑÔ¼ì²âÊäÈë²ÎÊý
+        CMP.B   #0x0, R10
+        JNE     ??TIMER_Capture_Init_0
+        CMP.B   #0x5, R11
+        JNC     ??TIMER_Capture_Init_1
+??TIMER_Capture_Init_0:
+        CMP.B   #0x1, R10
+        JNE     ??TIMER_Capture_Init_2
+        CMP.B   #0x3, R11
+        JNC     ??TIMER_Capture_Init_1
+??TIMER_Capture_Init_2:
+        CMP.B   #0x2, R10
+        JNE     ??TIMER_Capture_Init_3
+        CMP.B   #0x3, R11
+        JNC     ??TIMER_Capture_Init_1
+??TIMER_Capture_Init_3:
+        CMP.B   #0x3, R10
+        JNE     ??TIMER_Capture_Init_4
+        CMP.B   #0x7, R11
+        JNC     ??TIMER_Capture_Init_1
+??TIMER_Capture_Init_4:
+        MOVA    #`?<Constant "\\266\\250\\312\\261\\306\\367\\315\\250\\2`, R15
+        MOVA    #`?<Constant "TIMER_Capture_Init">`, R14
+        MOV.W   #0x152, R13
+        MOVA    #`?<Constant "E:\\\\MSP430\\\\MSP430F5529...">`, R12
+        CALLA   #assert_failed
+//  339  
+//  340   TIMERX[timer]->CCTL[ch].CAPMODE = BIT_SET;                //ÉèÎª²¶»ñÄ£Ê½
+??TIMER_Capture_Init_1:
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.B   R11, R14
+        ADDA    R14, R14
+        MOVA    R14, R13
+        ADDA    R13, R15
+        BIS.W   #0x100, 0x2(R15)
+//  341   TIMERX[timer]->CCTL[ch].CM = capmode;                 //Ñ¡Ôñ²¶»ñÑØ
+        MOV.B   R8, R15
+        RPT     #0x6
+        RLAX.B  R15
+        AND.W   #0xff, R15
+        SWPB    R15
+        MOV.B   R10, R14
+        RLAM.A  #0x2, R14
+        MOVX.A  TIMERX(R14), R14
+        MOV.B   R11, R13
+        ADDA    R13, R13
+        MOVA    R13, R12
+        ADDA    R12, R14
+        MOV.W   0x2(R14), R14
+        AND.W   #0x3fff, R14
+        BIS.W   R15, R14
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.B   R11, R13
+        ADDA    R13, R13
+        MOVA    R13, R12
+        ADDA    R12, R15
+        MOV.W   R14, 0x2(R15)
+//  342   
+//  343   TIMERX[timer]->CCTL[ch].CCIS = (timer == TIMER_B0) ? TIMER_CCIS_1 : TIMER_CCIS_0;
+        CMP.B   #0x3, R10
+        JNE     ??TIMER_Capture_Init_5
+        MOV.W   #0x1, R15
+        JMP     ??TIMER_Capture_Init_6
+??TIMER_Capture_Init_5:
+        MOV.W   #0x0, R15
+??TIMER_Capture_Init_6:
+        RPT     #0x4
+        RLAX.B  R15
+        AND.W   #0xff, R15
+        SWPB    R15
+        AND.W   #0x3000, R15
+        MOV.B   R10, R14
+        RLAM.A  #0x2, R14
+        MOVX.A  TIMERX(R14), R14
+        MOV.B   R11, R13
+        ADDA    R13, R13
+        MOVA    R13, R12
+        ADDA    R12, R14
+        MOV.W   0x2(R14), R14
+        AND.W   #0xcfff, R14
+        BIS.W   R15, R14
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.B   R11, R13
+        ADDA    R13, R13
+        MOVA    R13, R12
+        ADDA    R12, R15
+        MOV.W   R14, 0x2(R15)
+//  344   
+//  345   TIMERX[timer]->CLR = BIT_SET;
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        BIS.W   #0x4, 0(R15)
+//  346   TIMERX[timer]->SSEL = TIMER_SSEL_SMCLK;
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.W   #0xfcff, R14
+        AND.W   @R15, R14
+        BIS.W   #0x200, R14
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.W   R14, 0(R15)
+//  347   TIMERX[timer]->ID = 0u; //ÕâÀïÑ¡Ôñ×ÓÏµÍ³Ê±ÖÓ£¬³ý·ÇÆµÂÊÌØ±ðµÍÊ±²ÅÊ¹ÓÃ¸¨ÖúÊ±ÖÓ
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        AND.W   #0xff3f, 0(R15)
+//  348   TIMERX[timer]->IE = RESET;              //¹Ø±ÕÒç³öÖÐ¶Ï
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        BIC.W   #0x2, 0(R15)
+//  349   TIMERX[timer]->CCTL[ch].IE = RESET;     //¹Ø±ÕÍ¨µÀÖÐ¶Ï
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.B   R11, R14
+        ADDA    R14, R14
+        MOVA    R14, R13
+        ADDA    R13, R15
+        BIC.W   #0x10, 0x2(R15)
+//  350   TIMERX[timer]->MC = TIMER_MC_CONTINOUS;             //Á¬Ðø¼ÆÊýÄ£Ê½
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.W   #0xffcf, R14
+        AND.W   @R15, R14
+        BIS.W   #0x20, R14
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.W   R14, 0(R15)
+//  351   
+//  352   //¶Ë¿ÚÉèÖÃÎªÊäÈë·½,Ñ¡ÔñµÚ¶þ¹¦ÄÜ
+//  353   GPIO_Init(TIMER_CHANEL_PIN[timer][ch].Port,TIMER_CHANEL_PIN[timer][ch].Pin,GPI|SEL);
+        MOV.W   #0x101, R14
+        MOV.W   #0x1, R13
+        MOV.B   R11, R15
+        ADDA    R15, R15
+        MOV.B   R10, R12
+        ADDA    R12, R12
+        MOVA    R12, R9
+        ADDA    R12, R12
+        ADDA    R12, R9
+        ADDA    R12, R12
+        ADDA    R9, R12
+        MOVA    R12, R9
+        ADDA    R9, R15
+        MOVX.B  TIMER_CHANEL_PIN + 1(R15), R15
+        SUB.B   #0x1, R15
+        JN      ??TIMER_Capture_Init_7
+        RPT     R15
+        RLAX.W  R13
+??TIMER_Capture_Init_7:
+        ADD.B   #0x1, R15
+        MOV.B   R10, R15
+        ADDA    R15, R15
+        MOVA    R15, R9
+        ADDA    R15, R15
+        ADDA    R15, R9
+        ADDA    R15, R15
+        ADDA    R9, R15
+        MOV.B   R11, R9
+        ADDA    R9, R9
+        MOVA    R9, R12
+        ADDA    R12, R15
+        MOVX.B  TIMER_CHANEL_PIN(R15), R12
+        CALLA   #GPIO_MultiBits_Init
+//  354   
+//  355   return SUCCESS;
+        MOV.B   #0x1, R12
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock9
+//  356 }
+//  357 /*******************************************************************************
+//  358 *  º¯ÊýÃû³Æ£ºTIMER_Capture_SetMode(TIMERn timer, TIMER_CHn ch, TIMER_CAPTUREn cap_mode)
+//  359 *  ¹¦ÄÜËµÃ÷£º¶¨Ê±Æ÷²¶»ñ±ßÑØÉèÖÃ
+//  360 *  ²ÎÊýËµÃ÷£ºTIMERn timer        £º¶¨Ê±Æ÷Ä£¿é
+//  361              TIMER_CHn ch        £º¶¨Ê±Æ÷Í¨µÀ
+//  362              TIMER_CAPTUREn capmode£º²¶»ñÄ£Ê½
+//  363 *  º¯Êý·µ»Ø£ºÎÞ
+//  364 *  Ê¹ÓÃÀý³Ì£ºTIMER_Capture_SetMode(TIMER_A0,TIMER_CH1,CAP_Rising);         //¶¨Ê±Æ÷TA0 CCR1Í¨µÀ³õÊ¼»¯Îª±ßÔµ²¶»ñ£¬ÉÏÉýÑØ²¶»ñ
+//  365 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  366 void   TIMER_Capture_SetMode   (TIMERn timer, TIMER_CHn ch, TIMER_CAPTUREn cap_mode)
+TIMER_Capture_SetMode:
+          CFI Block cfiBlock10 Using cfiCommon0
+          CFI Function TIMER_Capture_SetMode
+//  367 {
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+//  368    TIMERX[timer]->CCTL[ch].CM = cap_mode;                 //ÉèÖÃ²¶»ñÑØ
+        MOV.B   R14, R15
+        RPT     #0x6
+        RLAX.B  R15
+        AND.W   #0xff, R15
+        SWPB    R15
+        MOV.B   R12, R10
+        RLAM.A  #0x2, R10
+        MOVX.A  TIMERX(R10), R11
+        MOV.B   R13, R10
+        ADDA    R10, R10
+        MOVA    R10, R8
+        ADDA    R8, R11
+        MOV.W   0x2(R11), R11
+        AND.W   #0x3fff, R11
+        BIS.W   R15, R11
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.B   R13, R10
+        ADDA    R10, R10
+        MOVA    R10, R8
+        ADDA    R8, R15
+        MOV.W   R11, 0x2(R15)
+//  369 }
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock10
+//  370 /*******************************************************************************
+//  371 *  º¯ÊýÃû³Æ£ºTIMER_Capture_Clear     (TIMERn timer,TIMER_CHn ch)
+//  372 *  ¹¦ÄÜËµÃ÷£ºÄ³Ò»Í¨µÀ¶ÁÈ¡Êý¾ÝÇåÁã
+//  373 *  ²ÎÊýËµÃ÷£ºTIMERn timer       £º¶¨Ê±Æ÷Ä£¿é
+//  374              TIMER_CHn ch       £º¶¨Ê±Æ÷Í¨µÀ
+//  375 *  º¯Êý·µ»Ø£º
+//  376 *  Ê¹ÓÃÀý³Ì£ºint16 overflowTime;  //¶¨Òå±äÁ¿£¬ÔÚ¶¨Ê±Æ÷Òç³öÖÐ¶ÏÀï¶Ô¸ÃÖµÔöÒ»
+//  377              ......
+//  378              data=TIMER_Capture_GetTime_Us(TIMER_A0,TIMER_CH1,overflowTime)
+//  379              TIMER_Capture_Clear(TIMER_A0,TIMER_CH1);  //ÇåÁã
+//  380              overflowTime=0;       //ÇåÁã
+//  381 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  382 void   TIMER_Capture_Clear     (TIMERn timer,TIMER_CHn ch)
+TIMER_Capture_Clear:
+          CFI Block cfiBlock11 Using cfiCommon0
+          CFI Function TIMER_Capture_Clear
+//  383 {
+        FUNCALL TIMER_Capture_Clear, assert_failed
+        LOCFRAME CSTACK, 12, STACK
+        PUSHM.A #0x2, R11
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+12
+        MOV.B   R12, R10
+        MOV.B   R13, R11
+//  384   ASSERT((timer==TIMER_A0&&ch<=TIMER_CH4)
+//  385        ||(timer==TIMER_A1&&ch<=TIMER_CH2)
+//  386        ||(timer==TIMER_A2&&ch<=TIMER_CH2)
+//  387        ||(timer==TIMER_B0&&ch<=TIMER_CH6),
+//  388        "TIMER_Capture_Clear",
+//  389        "¶¨Ê±Æ÷Í¨µÀ²ÎÊý³¬³ö·¶Î§£¡"); //¶ÏÑÔ¼ì²âÊäÈë²ÎÊý
+        CMP.B   #0x0, R10
+        JNE     ??TIMER_Capture_Clear_0
+        CMP.B   #0x5, R11
+        JNC     ??TIMER_Capture_Clear_1
+??TIMER_Capture_Clear_0:
+        CMP.B   #0x1, R10
+        JNE     ??TIMER_Capture_Clear_2
+        CMP.B   #0x3, R11
+        JNC     ??TIMER_Capture_Clear_1
+??TIMER_Capture_Clear_2:
+        CMP.B   #0x2, R10
+        JNE     ??TIMER_Capture_Clear_3
+        CMP.B   #0x3, R11
+        JNC     ??TIMER_Capture_Clear_1
+??TIMER_Capture_Clear_3:
+        CMP.B   #0x3, R10
+        JNE     ??TIMER_Capture_Clear_4
+        CMP.B   #0x7, R11
+        JNC     ??TIMER_Capture_Clear_1
+??TIMER_Capture_Clear_4:
+        MOVA    #`?<Constant "\\266\\250\\312\\261\\306\\367\\315\\250\\2`, R15
+        MOVA    #`?<Constant "TIMER_Capture_Clear">`, R14
+        MOV.W   #0x185, R13
+        MOVA    #`?<Constant "E:\\\\MSP430\\\\MSP430F5529...">`, R12
+        CALLA   #assert_failed
+//  390   
+//  391   TIMERX[timer]->CCR[ch] = 0u;
+??TIMER_Capture_Clear_1:
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.B   R11, R14
+        ADDA    R14, R14
+        MOVA    R14, R13
+        ADDA    R13, R15
+        MOV.W   #0x0, 0x12(R15)
+//  392   TIMERX[timer]->R = 0u;
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.W   #0x0, 0x10(R15)
+//  393 }
+        POPM.A  #0x2, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock11
+//  394 /*******************************************************************************
+//  395 *  º¯ÊýÃû³Æ£ºTIMER_Capture_GetValue(TIMERn timer,TIMER_CHn ch)
+//  396 *  ¹¦ÄÜËµÃ÷£º¶ÁÈ¡·¢Éú²¶»ñÊ±¶¨Ê±Æ÷¸ÃÍ¨µÀ¼ÆÊýÖµ
+//  397 *  ²ÎÊýËµÃ÷£ºTIMERn timer       £º¶¨Ê±Æ÷Ä£¿é
+//  398              TIMER_CHn ch       £º¶¨Ê±Æ÷Í¨µÀ
+//  399 *  º¯Êý·µ»Ø£º
+//  400 *  Ê¹ÓÃÀý³Ì£º
+//  401              uint16_t value = TIMER_Capture_GetValue(TIMER_A0,TIMER_CH1);  //¶ÁÈ¡·¢Éú²¶»ñÊ±µÄÊ±¼ä
+//  402 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  403 uint16_t TIMER_Capture_GetValue(TIMERn timer,TIMER_CHn ch)
+TIMER_Capture_GetValue:
+          CFI Block cfiBlock12 Using cfiCommon0
+          CFI Function TIMER_Capture_GetValue
+//  404 {
+        FUNCALL TIMER_Capture_GetValue, assert_failed
+        LOCFRAME CSTACK, 12, STACK
+        PUSHM.A #0x2, R11
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+12
+        MOV.B   R12, R10
+        MOV.B   R13, R11
+//  405   ASSERT((timer==TIMER_A0&&ch<=TIMER_CH4)
+//  406        ||(timer==TIMER_A1&&ch<=TIMER_CH2)
+//  407        ||(timer==TIMER_A2&&ch<=TIMER_CH2)
+//  408        ||(timer==TIMER_B0&&ch<=TIMER_CH6),
+//  409        "TIMER_Capture_GetValue",
+//  410        "¶¨Ê±Æ÷Í¨µÀ²ÎÊý³¬³ö·¶Î§£¡"); //¶ÏÑÔ¼ì²âÊäÈë²ÎÊý
+        CMP.B   #0x0, R10
+        JNE     ??TIMER_Capture_GetValue_0
+        CMP.B   #0x5, R11
+        JNC     ??TIMER_Capture_GetValue_1
+??TIMER_Capture_GetValue_0:
+        CMP.B   #0x1, R10
+        JNE     ??TIMER_Capture_GetValue_2
+        CMP.B   #0x3, R11
+        JNC     ??TIMER_Capture_GetValue_1
+??TIMER_Capture_GetValue_2:
+        CMP.B   #0x2, R10
+        JNE     ??TIMER_Capture_GetValue_3
+        CMP.B   #0x3, R11
+        JNC     ??TIMER_Capture_GetValue_1
+??TIMER_Capture_GetValue_3:
+        CMP.B   #0x3, R10
+        JNE     ??TIMER_Capture_GetValue_4
+        CMP.B   #0x7, R11
+        JNC     ??TIMER_Capture_GetValue_1
+??TIMER_Capture_GetValue_4:
+        MOVA    #`?<Constant "\\266\\250\\312\\261\\306\\367\\315\\250\\2`, R15
+        MOVA    #`?<Constant "TIMER_Capture_GetValue">`, R14
+        MOV.W   #0x19a, R13
+        MOVA    #`?<Constant "E:\\\\MSP430\\\\MSP430F5529...">`, R12
+        CALLA   #assert_failed
+//  411   
+//  412   return TIMERX[timer]->CCR[ch];
+??TIMER_Capture_GetValue_1:
+        MOV.B   R10, R10
+        RLAM.A  #0x2, R10
+        MOVX.A  TIMERX(R10), R15
+        MOV.B   R11, R11
+        ADDA    R11, R11
+        MOVA    R11, R14
+        ADDA    R14, R15
+        MOV.W   0x12(R15), R12
+        POPM.A  #0x2, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock12
+//  413 }
+//  414 /*******************************************************************************
+//  415 *  º¯ÊýÃû³Æ£ºTIMER_Capture_CalTime_Us(uint16_t start_value,uint16_t stop_value,uint16_t overflowTime)
+//  416 *  ¹¦ÄÜËµÃ÷£º¶ÁÈ¡·¢Éú²¶»ñÊ±¶¨Ê±Æ÷¸ÃÍ¨µÀ¼ÆÊýÖµ
+//  417 *  ²ÎÊýËµÃ÷£ºuint16_t start_value  £º²¶»ñÆðÊ¼Öµ
+//  418              uint16_t stop_value   £º²¶»ñ½áÊøÖµ
+//  419              uint16_t overflowTime £º¼ÆÊýÆ÷Òç³ö´ÎÊý
+//  420 *  º¯Êý·µ»Ø£º
+//  421 *  Ê¹ÓÃÀý³Ì£ºuint16 overflowTime;  //¶¨Òå±äÁ¿£¬ÔÚ¶¨Ê±Æ÷Òç³öÖÐ¶ÏÀï¶Ô¸ÃÖµÔöÒ»
+//  422              ......
+//  423              TIMER_Capture_CalTime_Us(0,TIMER_Capture_GetValue  (TIMER_A0,TIMER_CH1),overflowTime);  //¶ÁÈ¡·¢Éú²¶»ñÊ±µÄÊ±¼ä
+//  424              overflowTime=0;       //ÇåÁã
+//  425 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  426 uint32_t TIMER_Capture_CalTime_Us(uint16_t start_value,uint16_t stop_value,uint16_t overflowTime)
+TIMER_Capture_CalTime_Us:
+          CFI Block cfiBlock13 Using cfiCommon0
+          CFI Function TIMER_Capture_CalTime_Us
+//  427 {
+        FUNCALL TIMER_Capture_CalTime_Us, _Cast32uto32f
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL TIMER_Capture_CalTime_Us, _Div32f
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL TIMER_Capture_CalTime_Us, _Cast32fto32u
+        LOCFRAME CSTACK, 12, STACK
+        PUSHM.A #0x2, R11
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+12
+        MOV.W   R12, R15
+        MOV.W   R13, R12
+//  428   return (uint32_t)((((int32_t)stop_value - (int32_t)start_value) + (uint32_t)overflowTime*65536)/g_sClock.SMCLK.fMHZ);
+        MOV.W   #0x0, R13
+        MOV.W   R15, R10
+        MOV.W   #0x0, R11
+        SUB.W   R10, R12
+        SUBC.W  R11, R13
+        MOV.W   #0x0, R15
+        MOV.W   R14, R15
+        MOV.W   #0x0, R14
+        ADD.W   R14, R12
+        ADDC.W  R15, R13
+        CALLA   #_Cast32uto32f
+        MOVX.W  &g_sClock + 20, R14
+        MOVX.W  &g_sClock + 22, R15
+        CALLA   #_Div32f
+        CALLA   #_Cast32fto32u
+        POPM.A  #0x2, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock13
+//  429 }
+//  430 /*******************************************************************************
+//  431 *  º¯ÊýÃû³Æ£ºTIMER_Timer_Init      (TIMERn timer)
+//  432 *  ¹¦ÄÜËµÃ÷£º¼ÆÊ±¹¦ÄÜ³õÊ¼»¯
+//  433 *  ²ÎÊýËµÃ÷£ºTIMERn timer       £º¶¨Ê±Æ÷Ä£¿é
+//  434 *  º¯Êý·µ»Ø£º²»³É¹¦Ôò·µ»ØERROR£¬³É¹¦Ôò·µ»ØSUCCESS
+//  435 *  Ê¹ÓÃÀý³Ì£ºTIMER_Timer_Init      (TIMER_A1);     //¶¨Ê±Æ÷TA1³õÊ¼»¯Îª¼ÆÊ±Æ÷
+//  436 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  437 STATUS   TIMER_Timer_Init      (TIMERn timer)
+TIMER_Timer_Init:
+          CFI Block cfiBlock14 Using cfiCommon0
+          CFI Function TIMER_Timer_Init
+//  438 {
+        MOV.B   R12, R14
+//  439 #ifdef DELAY_TIMER
+//  440  ASSERT((timer != DELAY_TIMER),
+//  441          "TIMER_Timer_Init",
+//  442          "¶¨Ê±Æ÷ÒÑ¾­ÉèÖÃÎªÄ¬ÈÏÑÓÊ±¹¦ÄÜ£¬²»ÄÜÔÙ×÷ÎªÆäËû¹¦ÄÜÊ¹ÓÃ");       //²»ÔÊÐíÕâÖÖÇé¿öÏÂ»¹ºê¶¨Òå¸Ã¶¨Ê±Æ÷×÷ÎªÑÓÊ±ËùÓÃµÄ¶¨Ê±Æ÷£¬ÇëÔÚsystem.hÀïÐÞ¸ÄDELAY_TIMERºê¶¨Òå
+//  443 #endif
+//  444   TIMERX[timer]->CLR = BIT_SET;
+        MOV.B   R14, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        BIS.W   #0x4, 0(R15)
+//  445   TIMERX[timer]->SSEL = TIMER_SSEL_SMCLK;             //ÕâÀïÑ¡Ôñ×ÓÏµÍ³Ê±ÖÓ
+        MOV.B   R14, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.W   #0xfcff, R13
+        AND.W   @R15, R13
+        BIS.W   #0x200, R13
+        MOV.B   R14, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.W   R13, 0(R15)
+//  446   TIMERX[timer]->ID = 0u; 
+        MOV.B   R14, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        AND.W   #0xff3f, 0(R15)
+//  447   TIMERX[timer]->MC = TIMER_MC_STOP;                  //ÏÈÍ£Ö¹¼ÆÊý¼ÆÊý
+        MOV.B   R14, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        AND.W   #0xffcf, 0(R15)
+//  448   TIMERX[timer]->IE = RESET;                          //½ûÖ¹Òç³öÖÐ¶Ï
+        MOV.B   R14, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        BIC.W   #0x2, 0(R15)
+//  449   
+//  450   return SUCCESS;
+        MOV.B   #0x1, R12
+        RETA
+          CFI EndBlock cfiBlock14
+//  451 }
+//  452 /*******************************************************************************
+//  453 *  º¯ÊýÃû³Æ£ºTIMER_Timer_Start(TIMERn timer)
+//  454 *  ¹¦ÄÜËµÃ÷£º¼ÆÊ±¹¦ÄÜ¿ªÊ¼¼ÆÊ±
+//  455 *  ²ÎÊýËµÃ÷£ºTIMERn timer       £º¶¨Ê±Æ÷Ä£¿é
+//  456 *  º¯Êý·µ»Ø£ºÎÞ
+//  457 *  Ê¹ÓÃÀý³Ì£ºTIMER_Timer_Start(TIMER_A1);      //¼ÆÊ±Æ÷¿ªÊ¼¼ÆÊ±
+//  458 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  459 void   TIMER_Timer_Start(TIMERn timer)
+TIMER_Timer_Start:
+          CFI Block cfiBlock15 Using cfiCommon0
+          CFI Function TIMER_Timer_Start
+//  460 {
+//  461   TIMERX[timer]->R = 0u;
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.W   #0x0, 0x10(R15)
+//  462   TIMERX[timer]->MC = TIMER_MC_CONTINUOUS;
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.W   #0xffcf, R14
+        AND.W   @R15, R14
+        BIS.W   #0x20, R14
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.W   R14, 0(R15)
+//  463 }
+        RETA
+          CFI EndBlock cfiBlock15
+//  464 /*******************************************************************************
+//  465 *  º¯ÊýÃû³Æ£ºTIMER_Timer_Stop (TIMERn timer)
+//  466 *  ¹¦ÄÜËµÃ÷£º¼ÆÊ±¹¦ÄÜÍ£Ö¹¼ÆÊ±
+//  467 *  ²ÎÊýËµÃ÷£ºTIMERn timer       £º¶¨Ê±Æ÷Ä£¿é
+//  468 *  º¯Êý·µ»Ø£º·µ»Øµ±Ç°¼ÆÊýÖµ
+//  469 *  Ê¹ÓÃÀý³Ì£ºTIMER_Timer_Stop (TIMER_A1);   //¼ÆÊ±Æ÷Í£Ö¹¼ÆÊ±
+//  470 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  471 uint16_t   TIMER_Timer_Stop (TIMERn timer)
+TIMER_Timer_Stop:
+          CFI Block cfiBlock16 Using cfiCommon0
+          CFI Function TIMER_Timer_Stop
+//  472 {
+//  473    TIMERX[timer]->MC = TIMER_MC_STOP;
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        AND.W   #0xffcf, 0(R15)
+//  474    return TIMERX[timer]->R;
+        MOV.B   R12, R12
+        RLAM.A  #0x2, R12
+        MOVX.A  TIMERX(R12), R15
+        MOV.W   0x10(R15), R12
+        RETA
+          CFI EndBlock cfiBlock16
+//  475 }
+//  476 /*******************************************************************************
+//  477 *  º¯ÊýÃû³Æ£ºTIMER_Timer_GetTime_Us(TIMERn timer,uint16_t overflowTime)
+//  478 *  ¹¦ÄÜËµÃ÷£º¼ÆÊ±Ê±¼ä¶ÁÈ¡
+//  479 *  ²ÎÊýËµÃ÷£ºTIMERn timer       £º¶¨Ê±Æ÷Ä£¿é
+//  480              uint16_t overflowTime £º¼ÆÊýÆ÷Òç³ö´ÎÊý
+//  481 *  º¯Êý·µ»Ø£º·µ»Ø¼ÆÊ±Ê±¼ä £¨µ¥Î»£ºus£©
+//  482 *  Ê¹ÓÃÀý³Ì£ºint16 overflowTime;  //¶¨Òå±äÁ¿£¬ÔÚ¶¨Ê±Æ÷Òç³öÖÐ¶ÏÀï¶Ô¸ÃÖµÔöÒ»
+//  483              ......
+//  484              TIMER_Timer_GetTime_Us(TIMAER_A1,overflowTime);  //¶ÁÈ¡¼ÆÊ±Ê±¼ä
+//  485              overflowTime=0;       //ÇåÁã
+//  486 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  487 uint32_t TIMER_Timer_GetTime_Us(TIMERn timer,uint16_t overflowTime)
+TIMER_Timer_GetTime_Us:
+          CFI Block cfiBlock17 Using cfiCommon0
+          CFI Function TIMER_Timer_GetTime_Us
+//  488 {
+        FUNCALL TIMER_Timer_GetTime_Us, _Cast32uto32f
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL TIMER_Timer_GetTime_Us, _Div32f
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL TIMER_Timer_GetTime_Us, _Cast32fto32u
+        LOCFRAME CSTACK, 12, STACK
+        PUSHM.A #0x2, R11
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+12
+//  489   return (uint32_t)((TIMERX[timer]->R + overflowTime*65536u)/g_sClock.SMCLK.fMHZ);
+        MOV.B   R12, R12
+        RLAM.A  #0x2, R12
+        MOVX.A  TIMERX(R12), R15
+        MOV.W   0x10(R15), R10
+        MOV.W   #0x0, R11
+        MOV.W   R13, R14
+        MOV.W   #0x0, R15
+        MOV.W   R14, R15
+        MOV.W   #0x0, R14
+        ADD.W   R14, R10
+        ADDC.W  R15, R11
+        MOV.W   R10, R12
+        MOV.W   R11, R13
+        CALLA   #_Cast32uto32f
+        MOVX.W  &g_sClock + 20, R14
+        MOVX.W  &g_sClock + 22, R15
+        CALLA   #_Div32f
+        CALLA   #_Cast32fto32u
+        POPM.A  #0x2, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock17
+//  490 }
+//  491 /*******************************************************************************
+//  492 *  º¯ÊýÃû³Æ£ºTIMER_Run (TIMERn timer)
+//  493 *  ¹¦ÄÜËµÃ÷£º¶¨Ê±Æ÷¹¤×÷
+//  494 *  ²ÎÊýËµÃ÷£ºTIMERn timer       £º¶¨Ê±Æ÷Ä£¿é
+//  495 *  º¯Êý·µ»Ø£ºÎÞ
+//  496 *  Ê¹ÓÃÀý³Ì£ºTIMER_Clear_Counter (TIMAER_A1)£»  //Æô¶¯¶¨Ê±Æ÷A1
+//  497 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  498 void   TIMER_Run (TIMERn timer)
+TIMER_Run:
+          CFI Block cfiBlock18 Using cfiCommon0
+          CFI Function TIMER_Run
+//  499 {
+//  500   TIMERX[timer]->MC = TIMER_MC_CONTINUOUS;
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.W   #0xffcf, R14
+        AND.W   @R15, R14
+        BIS.W   #0x20, R14
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.W   R14, 0(R15)
+//  501 }
+        RETA
+          CFI EndBlock cfiBlock18
+//  502 /*******************************************************************************
+//  503 *  º¯ÊýÃû³Æ£ºTIMER_Stop (TIMERn timer)
+//  504 *  ¹¦ÄÜËµÃ÷£º¶¨Ê±Æ÷¹¤×÷
+//  505 *  ²ÎÊýËµÃ÷£ºTIMERn timer       £º¶¨Ê±Æ÷Ä£¿é
+//  506 *  º¯Êý·µ»Ø£ºÎÞ
+//  507 *  Ê¹ÓÃÀý³Ì£ºTIMER_Stop(TIMAER_A1)£»  //Í£Ö¹¶¨Ê±Æ÷A1
+//  508 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  509 void   TIMER_Stop (TIMERn timer)
+TIMER_Stop:
+          CFI Block cfiBlock19 Using cfiCommon0
+          CFI Function TIMER_Stop
+//  510 {
+//  511   TIMERX[timer]->MC = TIMER_MC_STOP;
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        AND.W   #0xffcf, 0(R15)
+//  512 }
+        RETA
+          CFI EndBlock cfiBlock19
+//  513 /*******************************************************************************
+//  514 *  º¯ÊýÃû³Æ£ºTIMER_GetCounterValue (TIMERn timer)
+//  515 *  ¹¦ÄÜËµÃ÷£º¶ÁÈ¡¶¨Ê±Æ÷¼ÆÊýÖµ
+//  516 *  ²ÎÊýËµÃ÷£ºTIMERn timer  £º¶¨Ê±Æ÷Ä£¿é
+//  517 *  º¯Êý·µ»Ø£ºuint16_t      £º¼ÆÊýÖµ
+//  518 *  Ê¹ÓÃÀý³Ì£ºuint16_t value = TIMER_GetCounterValue(TIMAER_A1)£»  //¶ÁÈ¡¶¨Ê±Æ÷A1¼ÆÊýÖµ
+//  519 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  520 uint16_t   TIMER_GetCounterValue (TIMERn timer)
+TIMER_GetCounterValue:
+          CFI Block cfiBlock20 Using cfiCommon0
+          CFI Function TIMER_GetCounterValue
+//  521 {
+//  522   return TIMERX[timer]->R;
+        MOV.B   R12, R12
+        RLAM.A  #0x2, R12
+        MOVX.A  TIMERX(R12), R15
+        MOV.W   0x10(R15), R12
+        RETA
+          CFI EndBlock cfiBlock20
+//  523 }
+//  524 /*******************************************************************************
+//  525 *  º¯ÊýÃû³Æ£ºTIMER_SetCounterValue(TIMERn timer,uint16_t value)
+//  526 *  ¹¦ÄÜËµÃ÷£ºÉèÖÃ¶¨Ê±Æ÷¼ÆÊýÖµ
+//  527 *  ²ÎÊýËµÃ÷£ºTIMERn timer       £º¶¨Ê±Æ÷Ä£¿é
+//  528              uint16_t value     £º¼ÆÊýÖµ
+//  529 *  º¯Êý·µ»Ø£ºÎÞ
+//  530 *  Ê¹ÓÃÀý³Ì£ºTIMER_SetCounterValue(TIMAER_A1,0)£»  //ÉèÖÃ¶¨Ê±Æ÷A1¼ÆÊýÖµÎª0
+//  531 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  532 void   TIMER_SetCounterValue (TIMERn timer,uint16_t value)
+TIMER_SetCounterValue:
+          CFI Block cfiBlock21 Using cfiCommon0
+          CFI Function TIMER_SetCounterValue
+//  533 {
+//  534   TIMERX[timer]->R = value;
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.W   R13, 0x10(R15)
+//  535 }
+        RETA
+          CFI EndBlock cfiBlock21
+//  536 /*******************************************************************************
+//  537 *  º¯ÊýÃû³Æ£ºTIMER_GetChannelCounterValue (TIMERn timer,TIMER_CHn ch)
+//  538 *  ¹¦ÄÜËµÃ÷£º¶ÁÈ¡¶¨Ê±Æ÷Í¨µÀ¼ÆÊýÖµ
+//  539 *  ²ÎÊýËµÃ÷£ºTIMERn timer       £º¶¨Ê±Æ÷Ä£¿é
+//  540              TIMER_CHn ch       £º¶¨Ê±Æ÷Í¨µÀ             
+//  541 *  º¯Êý·µ»Ø£ºuint16_t value     £º¸ÃÍ¨µÀµÄ¼ÆÊýÖµ
+//  542 *  Ê¹ÓÃÀý³Ì£ºuint16_t value = TIMER_GetChannelCounterValue(TIMAER_A1,TIMER_CH4)£»  //¶ÁÈ¡¶¨Ê±Æ÷A1Í¨µÀ4¼ÆÊýÖµ
+//  543 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  544 uint16_t   TIMER_GetChannelCounterValue (TIMERn timer,TIMER_CHn ch)
+TIMER_GetChannelCounterValue:
+          CFI Block cfiBlock22 Using cfiCommon0
+          CFI Function TIMER_GetChannelCounterValue
+//  545 {
+        FUNCALL TIMER_GetChannelCounterValue, assert_failed
+        LOCFRAME CSTACK, 12, STACK
+        PUSHM.A #0x2, R11
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+12
+        MOV.B   R12, R10
+        MOV.B   R13, R11
+//  546   ASSERT((timer==TIMER_A0&&ch<=TIMER_CH4)
+//  547        ||(timer==TIMER_A1&&ch<=TIMER_CH2)
+//  548        ||(timer==TIMER_A2&&ch<=TIMER_CH2)
+//  549        ||(timer==TIMER_B0&&ch<=TIMER_CH6),
+//  550        "TIMER_GetChannelCounterValue",
+//  551        "¶¨Ê±Æ÷Í¨µÀ²ÎÊý³¬³ö·¶Î§£¡"); //¶ÏÑÔ¼ì²âÊäÈë²ÎÊý
+        CMP.B   #0x0, R10
+        JNE     ??TIMER_GetChannelCounterValue_0
+        CMP.B   #0x5, R11
+        JNC     ??TIMER_GetChannelCounterValue_1
+??TIMER_GetChannelCounterValue_0:
+        CMP.B   #0x1, R10
+        JNE     ??TIMER_GetChannelCounterValue_2
+        CMP.B   #0x3, R11
+        JNC     ??TIMER_GetChannelCounterValue_1
+??TIMER_GetChannelCounterValue_2:
+        CMP.B   #0x2, R10
+        JNE     ??TIMER_GetChannelCounterValue_3
+        CMP.B   #0x3, R11
+        JNC     ??TIMER_GetChannelCounterValue_1
+??TIMER_GetChannelCounterValue_3:
+        CMP.B   #0x3, R10
+        JNE     ??TIMER_GetChannelCounterValue_4
+        CMP.B   #0x7, R11
+        JNC     ??TIMER_GetChannelCounterValue_1
+??TIMER_GetChannelCounterValue_4:
+        MOVA    #`?<Constant "\\266\\250\\312\\261\\306\\367\\315\\250\\2`, R15
+        MOVA    #`?<Constant "TIMER_GetChannelCount...">`, R14
+        MOV.W   #0x227, R13
+        MOVA    #`?<Constant "E:\\\\MSP430\\\\MSP430F5529...">`, R12
+        CALLA   #assert_failed
+//  552   
+//  553   return TIMERX[timer]->CCR[ch];
+??TIMER_GetChannelCounterValue_1:
+        MOV.B   R10, R10
+        RLAM.A  #0x2, R10
+        MOVX.A  TIMERX(R10), R15
+        MOV.B   R11, R11
+        ADDA    R11, R11
+        MOVA    R11, R14
+        ADDA    R14, R15
+        MOV.W   0x12(R15), R12
+        POPM.A  #0x2, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock22
+//  554 }
+//  555 /*******************************************************************************
+//  556 *  º¯ÊýÃû³Æ£ºTIMER_SetChannelCounterValue(TIMERn timer,uint16_t value)
+//  557 *  ¹¦ÄÜËµÃ÷£ºÉèÖÃ¶¨Ê±Æ÷¼ÆÊýÖµ
+//  558 *  ²ÎÊýËµÃ÷£ºTIMERn timer       £º¶¨Ê±Æ÷Ä£¿é
+//  559              TIMER_CHn ch       £º¶¨Ê±Æ÷Í¨µÀ
+//  560              uint16_t value     £º¼ÆÊýÖµ
+//  561 *  º¯Êý·µ»Ø£ºÎÞ
+//  562 *  Ê¹ÓÃÀý³Ì£ºTIMER_SetChannelCounterValue(TIMAER_A1,TIMER_CH4,0)£»  //ÉèÖÃ¶¨Ê±Æ÷A1Í¨µÀ4¼ÆÊýÖµÎª0
+//  563 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  564 void   TIMER_SetChannelCounterValue (TIMERn timer,TIMER_CHn ch,uint16_t value)
+TIMER_SetChannelCounterValue:
+          CFI Block cfiBlock23 Using cfiCommon0
+          CFI Function TIMER_SetChannelCounterValue
+//  565 {
+        FUNCALL TIMER_SetChannelCounterValue, assert_failed
+        LOCFRAME CSTACK, 20, STACK
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        MOV.B   R12, R10
+        MOV.B   R13, R11
+        MOV.W   R14, R8
+//  566   ASSERT((timer==TIMER_A0&&ch<=TIMER_CH4)
+//  567        ||(timer==TIMER_A1&&ch<=TIMER_CH2)
+//  568        ||(timer==TIMER_A2&&ch<=TIMER_CH2)
+//  569        ||(timer==TIMER_B0&&ch<=TIMER_CH6),
+//  570        "TIMER_SetChannelCounterValue",
+//  571        "¶¨Ê±Æ÷Í¨µÀ²ÎÊý³¬³ö·¶Î§£¡"); //¶ÏÑÔ¼ì²âÊäÈë²ÎÊý
+        CMP.B   #0x0, R10
+        JNE     ??TIMER_SetChannelCounterValue_0
+        CMP.B   #0x5, R11
+        JNC     ??TIMER_SetChannelCounterValue_1
+??TIMER_SetChannelCounterValue_0:
+        CMP.B   #0x1, R10
+        JNE     ??TIMER_SetChannelCounterValue_2
+        CMP.B   #0x3, R11
+        JNC     ??TIMER_SetChannelCounterValue_1
+??TIMER_SetChannelCounterValue_2:
+        CMP.B   #0x2, R10
+        JNE     ??TIMER_SetChannelCounterValue_3
+        CMP.B   #0x3, R11
+        JNC     ??TIMER_SetChannelCounterValue_1
+??TIMER_SetChannelCounterValue_3:
+        CMP.B   #0x3, R10
+        JNE     ??TIMER_SetChannelCounterValue_4
+        CMP.B   #0x7, R11
+        JNC     ??TIMER_SetChannelCounterValue_1
+??TIMER_SetChannelCounterValue_4:
+        MOVA    #`?<Constant "\\266\\250\\312\\261\\306\\367\\315\\250\\2`, R15
+        MOVA    #`?<Constant "TIMER_SetChannelCount...">`, R14
+        MOV.W   #0x23b, R13
+        MOVA    #`?<Constant "E:\\\\MSP430\\\\MSP430F5529...">`, R12
+        CALLA   #assert_failed
+//  572   
+//  573   TIMERX[timer]->CCR[ch] = value;
+??TIMER_SetChannelCounterValue_1:
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.B   R11, R14
+        ADDA    R14, R14
+        MOVA    R14, R13
+        ADDA    R13, R15
+        MOV.W   R8, 0x12(R15)
+//  574 }
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock23
+//  575 /*******************************************************************************
+//  576 *  º¯ÊýÃû³Æ£ºTIMER_GetChannelInValue(TIMERn timer, TIMER_CHn ch)
+//  577 *  ¹¦ÄÜËµÃ÷£º»ñÈ¡Í¨µÀÊäÈëÖµ
+//  578 *  ²ÎÊýËµÃ÷£ºTIMERn timer       £º¶¨Ê±Æ÷Ä£¿é
+//  579              TIMER_CHn ch       £º¶¨Ê±Æ÷Í¨µÀ
+//  580 *  º¯Êý·µ»Ø£ºSTATUS : BIT_SET-ÊäÈë¸ßµçÆ½ RESET-ÊäÈëµÍµçÆ½
+//  581 *  Ê¹ÓÃÀý³Ì£ºSTATUS status = TIMER_GetChannelInValue(TIMAER_A1, TIMER_CH1);  //¶ÁÈ¡¶¨Ê±Æ÷A1Í¨µÀ1ÊäÈëµçÆ½
+//  582 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  583 STATUS TIMER_GetChannelInValue (TIMERn timer, TIMER_CHn ch)
+TIMER_GetChannelInValue:
+          CFI Block cfiBlock24 Using cfiCommon0
+          CFI Function TIMER_GetChannelInValue
+//  584 {
+//  585   return (TIMERX[timer]->CCTL[ch].CH_CCI) ? BIT_SET : RESET;
+        MOV.B   R12, R12
+        RLAM.A  #0x2, R12
+        MOVX.A  TIMERX(R12), R15
+        MOV.B   R13, R13
+        ADDA    R13, R13
+        MOVA    R13, R14
+        ADDA    R14, R15
+        BIT.W   #0x8, 0x2(R15)
+        JNC     ??TIMER_GetChannelInValue_0
+        MOV.B   #0x1, R12
+        RETA
+??TIMER_GetChannelInValue_0:
+        MOV.B   #0x0, R12
+        RETA
+          CFI EndBlock cfiBlock24
+//  586 }
+//  587 /*******************************************************************************
+//  588 *  º¯ÊýÃû³Æ£ºTIMER_GetChannelOutValue(TIMERn timer, TIMER_CHn ch)
+//  589 *  ¹¦ÄÜËµÃ÷£º»ñÈ¡Í¨µÀÊä³öÖµ
+//  590 *  ²ÎÊýËµÃ÷£ºTIMERn timer       £º¶¨Ê±Æ÷Ä£¿é
+//  591              TIMER_CHn ch       £º¶¨Ê±Æ÷Í¨µÀ
+//  592 *  º¯Êý·µ»Ø£ºSTATUS : BIT_SET-Êä³ö¸ßµçÆ½ RESET-Êä³öµÍµçÆ½
+//  593 *  Ê¹ÓÃÀý³Ì£ºSTATUS status = TIMER_GetChannelOutValue(TIMAER_A1, TIMER_CH1);  //¶ÁÈ¡¶¨Ê±Æ÷A1Í¨µÀ1Êä³öµçÆ½
+//  594 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  595 STATUS TIMER_GetChannelOutValue(TIMERn timer, TIMER_CHn ch)
+TIMER_GetChannelOutValue:
+          CFI Block cfiBlock25 Using cfiCommon0
+          CFI Function TIMER_GetChannelOutValue
+//  596 {
+//  597   return (TIMERX[timer]->CCTL[ch].CH_OUT) ? BIT_SET : RESET;
+        MOV.B   R12, R12
+        RLAM.A  #0x2, R12
+        MOVX.A  TIMERX(R12), R15
+        MOV.B   R13, R13
+        ADDA    R13, R13
+        MOVA    R13, R14
+        ADDA    R14, R15
+        BIT.W   #0x4, 0x2(R15)
+        JNC     ??TIMER_GetChannelOutValue_0
+        MOV.B   #0x1, R12
+        RETA
+??TIMER_GetChannelOutValue_0:
+        MOV.B   #0x0, R12
+        RETA
+          CFI EndBlock cfiBlock25
+//  598 }
+//  599 /*******************************************************************************
+//  600 *  º¯ÊýÃû³Æ£ºTIMER_ITConfig (TIMERn timer,TIMER_IRQn irqn,STATUS ITState)
+//  601 *  ¹¦ÄÜËµÃ÷£ºÉèÖÃÊÇ·ñÊ¹ÄÜTIMERµÄÄ³Ò»¸öÖÐ¶Ï
+//  602 *  ²ÎÊýËµÃ÷£ºTIMERn timer       £º¶¨Ê±Æ÷Ä£¿é
+//  603              TIMER_IRQn irqn    £ºÖÐ¶ÏÊÂ¼þ
+//  604              STATUS ITState     £ºÊÇ·ñÊ¹ÄÜÖÐ¶Ï
+//  605 *  º¯Êý·µ»Ø£ºÎÞ
+//  606 *  Ê¹ÓÃÀý³Ì£ºTIMER_ITConfig (TIMAER_A1,TIMER_CCR0_IRQn,ENABLE); //Ê¹ÄÜ¶¨Ê±Æ÷1Í¨µÀ0ÖÐ¶Ï£¬¼´¶¨Ê±ÖÐ¶Ï
+//  607 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  608 void  TIMER_ITConfig (TIMERn timer,TIMER_IRQn irqn,STATUS ITState)
+TIMER_ITConfig:
+          CFI Block cfiBlock26 Using cfiCommon0
+          CFI Function TIMER_ITConfig
+//  609 {
+        PUSHM.A #0x2, R11
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+12
+//  610   if(irqn == TIMER_OverFlow_IRQn)
+        CMP.B   #0x7, R13
+        JNE     ??TIMER_ITConfig_2
+//  611   {
+//  612     TIMERX[timer]->IE = ITState;
+        MOV.B   R14, R14
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        BIT.B   #0x1, R14
+        JC      ??TIMER_ITConfig_3
+        BIC.W   #0x2, 0(R15)
+        JMP     ??TIMER_ITConfig_0
+??TIMER_ITConfig_3:
+        BIS.W   #0x2, 0(R15)
+        JMP     ??TIMER_ITConfig_0
+//  613   }
+//  614   else
+//  615   {
+//  616     TIMERX[timer]->CCTL[irqn].IE = ITState;
+??TIMER_ITConfig_2:
+        MOV.B   R14, R14
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.B   R13, R10
+        ADDA    R10, R10
+        MOVA    R10, R11
+        ADDA    R11, R15
+        BIT.B   #0x1, R14
+        JC      ??TIMER_ITConfig_4
+        BIC.W   #0x10, 0x2(R15)
+        JMP     ??TIMER_ITConfig_0
+??TIMER_ITConfig_4:
+        BIS.W   #0x10, 0x2(R15)
+//  617   }
+//  618 }
+??TIMER_ITConfig_0:
+        POPM.A  #0x2, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock26
+//  619 /*******************************************************************************
+//  620 *  º¯ÊýÃû³Æ£ºTIMER_GetITStatus(TIMERn timer,TIMER_IRQn irqn)
+//  621 *  ¹¦ÄÜËµÃ÷£º»ñÈ¡TIMERµÄÄ³Ò»¸öÖÐ¶Ï±êÖ¾
+//  622 *  ²ÎÊýËµÃ÷£ºTIMERn timer       £º¶¨Ê±Æ÷Ä£¿é
+//  623              TIMER_IRQn irqn    £ºÖÐ¶ÏÊÂ¼þ
+//  624 *  º¯Êý·µ»Ø£ºSTATUS : TRUE-ÖÐ¶ÏÊÂ¼þ·¢Éú FALSE-ÖÐ¶ÏÊÂ¼þÎ´·¢Éú
+//  625 *  Ê¹ÓÃÀý³Ì£ºif(TRUE == TIMER_GetITStatus(TIMAER_A1,TIMER_CCR1_IRQn)){...} //ÅÐ¶Ï¶¨Ê±Æ÷A1Í¨µÀ1ÖÐ¶ÏÊÂ¼þÊÇ·ñ·¢Éú
+//  626 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  627 STATUS TIMER_GetITStatus(TIMERn timer,TIMER_IRQn irqn)
+TIMER_GetITStatus:
+          CFI Block cfiBlock27 Using cfiCommon0
+          CFI Function TIMER_GetITStatus
+//  628 {
+//  629   if(irqn == TIMER_OverFlow_IRQn)
+        CMP.B   #0x7, R13
+        JNE     ??TIMER_GetITStatus_0
+//  630   {
+//  631     return ((TIMERX[timer]->IFG == BIT_SET) ? TRUE : FALSE);
+        MOV.B   R12, R12
+        RLAM.A  #0x2, R12
+        MOVX.A  TIMERX(R12), R15
+        MOV.W   #0x1, R12
+        AND.W   @R15, R12
+        RETA
+//  632   }
+//  633   else
+//  634   {
+//  635     return ((TIMERX[timer]->CCTL[irqn].IFG == BIT_SET) ? TRUE : FALSE);
+??TIMER_GetITStatus_0:
+        MOV.B   R12, R12
+        RLAM.A  #0x2, R12
+        MOVX.A  TIMERX(R12), R15
+        MOV.B   R13, R13
+        ADDA    R13, R13
+        MOVA    R13, R14
+        ADDA    R14, R15
+        MOV.W   0x2(R15), R12
+        AND.W   #0x1, R12
+        RETA
+          CFI EndBlock cfiBlock27
+//  636   }
+//  637 }
+//  638 /*******************************************************************************
+//  639 *  º¯ÊýÃû³Æ£ºTIMER_ClearITPendingBit(TIMERn timer,TIMER_IRQn irqn)
+//  640 *  ¹¦ÄÜËµÃ÷£ºÇå³ýTIMERµÄÄ³Ò»¸öÖÐ¶Ï±êÖ¾
+//  641 *  ²ÎÊýËµÃ÷£ºTIMERn timer       £º¶¨Ê±Æ÷Ä£¿é
+//  642              TIMER_IRQn irqn    £ºÖÐ¶ÏÊÂ¼þ
+//  643 *  º¯Êý·µ»Ø£ºÎÞ
+//  644 *  Ê¹ÓÃÀý³Ì£ºTIMER_ClearITPendingBit(TIMAER_A1,TIMER_CCR1_IRQn);   //Çå³ý¶¨Ê±Æ÷Í¨µÀ1ÖÐ¶Ï±êÖ¾Î»
+//  645 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  646 void  TIMER_ClearITPendingBit(TIMERn timer,TIMER_IRQn irqn)
+TIMER_ClearITPendingBit:
+          CFI Block cfiBlock28 Using cfiCommon0
+          CFI Function TIMER_ClearITPendingBit
+//  647 {
+        PUSHM.A #0x1, R10
+          CFI R10L Frame(CFA, -8)
+          CFI R10H Frame(CFA, -6)
+          CFI CFA SP+8
+//  648   if(irqn == TIMER_OverFlow_IRQn)
+        CMP.B   #0x7, R13
+        JNE     ??TIMER_ClearITPendingBit_0
+//  649   {
+//  650     TIMERX[timer]->IFG = RESET;
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        BIC.W   #0x1, 0(R15)
+        JMP     ??TIMER_ClearITPendingBit_1
+//  651   }
+//  652   else
+//  653   {
+//  654     TIMERX[timer]->CCTL[irqn].IFG = RESET;
+??TIMER_ClearITPendingBit_0:
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  TIMERX(R15), R15
+        MOV.B   R13, R14
+        ADDA    R14, R14
+        MOVA    R14, R10
+        ADDA    R10, R15
+        BIC.W   #0x1, 0x2(R15)
+//  655   }
+//  656 }
+??TIMER_ClearITPendingBit_1:
+        POPM.A  #0x1, R10
+          CFI R10H SameValue
+          CFI R10L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock28
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r4:
+        REQUIRE ?setjmp_r4
+        REQUIRE ?longjmp_r4
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r5:
+        REQUIRE ?setjmp_r5
+        REQUIRE ?longjmp_r5
+
+        END
+// 
+// 3 646 bytes in segment CODE
+//   378 bytes in segment DATA20_C
+// 
+// 3 646 bytes of CODE  memory
+//   378 bytes of CONST memory
+//
+//Errors: none
+//Warnings: none

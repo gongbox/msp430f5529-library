@@ -1,0 +1,1028 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+//                                                      26/Nov/2016  11:15:10 /
+// IAR C/C++ Compiler V5.50.1.20465/W32, Evaluation edition for MSP430        /
+// Copyright 1996-2012 IAR Systems AB.                                        /
+//                                                                            /
+//    __rt_version  =  3                                                      /
+//    __double_size =  32                                                     /
+//    __reg_r4      =  free                                                   /
+//    __reg_r5      =  free                                                   /
+//    __pic         =  no                                                     /
+//    __core        =  430X                                                   /
+//    __data_model  =  large                                                  /
+//    Source file   =  E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\i2c.c                                                /
+//    Command line  =  E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\i2c.c -D DEBUG -D RAM_VECTOR -lA                     /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Debug\List /
+//                     \ -o E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Debug /
+//                     \Obj\ --no_cse --no_unroll --no_inline                 /
+//                     --no_code_motion --no_tbaa --debug -D__MSP430F5529__   /
+//                     -e --double=32 --dlib_config "D:\Program Files\IAR     /
+//                     Systems\Embedded Workbench 6.4                         /
+//                     Evaluation\430\LIB\DLIB\dl430xlff.h" -I                /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\ -I        /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\in /
+//                     c\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Driv /
+//                     ers\src\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£° /
+//                     å\Drivers\src\USB\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C /
+//                     °æ\¹¤³ÌÄ£°å\Drivers\src\USB\USB_config\ -I             /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\USB\USB_User\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\ /
+//                     ¹¤³ÌÄ£°å\Drivers\srcUSB\USB_API\USB_CDC_API\ -I        /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\USB\USB_API\USB_HID_API\ -I                          /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\sr /
+//                     c\USB\USB_API\USB_MSC_API\ -I                          /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\  /
+//                     -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWar /
+//                     e\delay\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£° /
+//                     å\HardWare\18b20\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C° /
+//                     æ\¹¤³ÌÄ£°å\HardWare\KEY\ -I                            /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\L /
+//                     ED\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Har /
+//                     dWare\12864\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ /
+//                     ÌÄ£°å\HardWare\oled\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6 /
+//                     \C°æ\¹¤³ÌÄ£°å\HardWare\mpu6050\inc\ -I                 /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\m /
+//                     pu6050\src\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³Ì /
+//                     Ä£°å\HardWare\nokia5110\inc\ -I                        /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\n /
+//                     okia5110\src\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤ /
+//                     ³ÌÄ£°å\HardWare\LQ_1.8_TFT\ -I                         /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\HardWare\L /
+//                     CD_API\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å /
+//                     \HardWare\2.2TFT\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C° /
+//                     æ\¹¤³ÌÄ£°å\HardWare\nrf24l01\ -I                       /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\System\    /
+//                     -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\System\ /
+//                     inc\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Sy /
+//                     stem\src\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£ /
+//                     °å\User\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£° /
+//                     å\User\USER\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ /
+//                     ÌÄ£°å\Lib\UCOSII\CONFIG\ -I                            /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII /
+//                     \App\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\L /
+//                     ib\uCOSII\CONFIHG\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C /
+//                     °æ\¹¤³ÌÄ£°å\Lib\uCOSII\PORT\ -I                        /
+//                     E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Lib\UCOSII /
+//                     \CORE\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\ /
+//                     Lib\FatFs\ -I E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ /
+//                     £°å\Lib\FatFs\option\ --core=430X --data_model=large   /
+//                     -On --multiplier=32 --multiplier_location=4C0          /
+//                     --hw_workaround=CPU40                                  /
+//    List file     =  E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Debug\List /
+//                     \i2c.s43                                               /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME i2c
+
+        RTMODEL "__SystemLibrary", "DLib"
+        RTMODEL "__core", "430X"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dlib_file_descriptor", "1"
+        RTMODEL "__double_size", "32"
+        RTMODEL "__pic", "no"
+        RTMODEL "__reg_r4", "free"
+        RTMODEL "__reg_r5", "free"
+        RTMODEL "__rt_version", "3"
+
+        RSEG CSTACK:DATA:SORT:NOROOT(0)
+
+        EXTERN ?DivMod32u
+        EXTERN ?longjmp_r4
+        EXTERN ?longjmp_r5
+        EXTERN ?setjmp_r4
+        EXTERN ?setjmp_r5
+
+        PUBWEAK ?setjmp_save_r4
+        PUBWEAK ?setjmp_save_r5
+        PUBLIC I2C_ClearITPendingBit
+        FUNCTION I2C_ClearITPendingBit,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        FUNCTION I2C_EnterRead,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        FUNCTION I2C_EnterSend,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC I2C_GetITStatus
+        FUNCTION I2C_GetITStatus,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC I2C_ITConfig
+        FUNCTION I2C_ITConfig,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 8, STACK
+        PUBLIC I2C_MasterInit
+        FUNCTION I2C_MasterInit,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 30, STACK
+        PUBLIC I2C_PIN
+        PUBLIC I2C_ReadByte
+        FUNCTION I2C_ReadByte,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC I2C_ReadReg
+        FUNCTION I2C_ReadReg,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 12, STACK
+        PUBLIC I2C_SendByte
+        FUNCTION I2C_SendByte,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC I2C_SetSlaveID
+        FUNCTION I2C_SetSlaveID,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        FUNCTION I2C_Start,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        FUNCTION I2C_Stop,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        FUNCTION I2C_WaitBusy,0203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 4, STACK
+        PUBLIC I2C_WriteReg
+        FUNCTION I2C_WriteReg,021203H
+        ARGFRAME CSTACK, 0, STACK
+        LOCFRAME CSTACK, 20, STACK
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA SP DATA
+          CFI Resource PC:20, SP:20, SR:16, R4L:16, R4H:4, R4:20, R5L:16, R5H:4
+          CFI Resource R5:20, R6L:16, R6H:4, R6:20, R7L:16, R7H:4, R7:20, R8L:16
+          CFI Resource R8H:4, R8:20, R9L:16, R9H:4, R9:20, R10L:16, R10H:4
+          CFI Resource R10:20, R11L:16, R11H:4, R11:20, R12L:16, R12H:4, R12:20
+          CFI Resource R13L:16, R13H:4, R13:20, R14L:16, R14H:4, R14:20, R15L:16
+          CFI Resource R15H:4, R15:20
+          CFI ResourceParts R4 R4H, R4L
+          CFI ResourceParts R5 R5H, R5L
+          CFI ResourceParts R6 R6H, R6L
+          CFI ResourceParts R7 R7H, R7L
+          CFI ResourceParts R8 R8H, R8L
+          CFI ResourceParts R9 R9H, R9L
+          CFI ResourceParts R10 R10H, R10L
+          CFI ResourceParts R11 R11H, R11L
+          CFI ResourceParts R12 R12H, R12L
+          CFI ResourceParts R13 R13H, R13L
+          CFI ResourceParts R14 R14H, R14L
+          CFI ResourceParts R15 R15H, R15L
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 2
+          CFI DataAlign 2
+          CFI ReturnAddress PC CODE
+          CFI CFA SP+4
+          CFI PC Frame(CFA, -4)
+          CFI SR Undefined
+          CFI R4L SameValue
+          CFI R4H SameValue
+          CFI R4 Concat
+          CFI R5L SameValue
+          CFI R5H SameValue
+          CFI R5 Concat
+          CFI R6L SameValue
+          CFI R6H SameValue
+          CFI R6 Concat
+          CFI R7L SameValue
+          CFI R7H SameValue
+          CFI R7 Concat
+          CFI R8L SameValue
+          CFI R8H SameValue
+          CFI R8 Concat
+          CFI R9L SameValue
+          CFI R9H SameValue
+          CFI R9 Concat
+          CFI R10L SameValue
+          CFI R10H SameValue
+          CFI R10 Concat
+          CFI R11L SameValue
+          CFI R11H SameValue
+          CFI R11 Concat
+          CFI R12L Undefined
+          CFI R12H Undefined
+          CFI R12 Undefined
+          CFI R13L Undefined
+          CFI R13H Undefined
+          CFI R13 Undefined
+          CFI R14L Undefined
+          CFI R14H Undefined
+          CFI R14 Undefined
+          CFI R15L Undefined
+          CFI R15H Undefined
+          CFI R15 Undefined
+          CFI EndCommon cfiCommon0
+        
+        EXTERN USCIX
+        EXTERN g_sClock
+        EXTERN GPIO_MultiBits_Init
+        FUNCTION GPIO_MultiBits_Init,0202H
+        EXTERN GPIO_WriteBit
+        FUNCTION GPIO_WriteBit,0202H
+
+// E:\MSP430\MSP430F5529¿âº¯Êý2.6\C°æ\¹¤³ÌÄ£°å\Drivers\src\i2c.c
+//    1 #include "i2c.h"
+//    2 #include "clock.h" 
+//    3 #include "system.h"
+//    4 #include "gpio.h"
+//    5 #include "msp430f5529.h"
+//    6 #include "msp430f5529MemMap.h"
+//    7 
+//    8 const struct{
+//    9   GPIO_PIN SCL;
+//   10   GPIO_PIN SDA;
+
+        RSEG DATA20_C:CONST:SORT:NOROOT(0)
+//   11 }I2C_PIN[]=
+I2C_PIN:
+        DC8 2, 1, 2, 0, 3, 2, 3, 1
+//   12 { //        SCL         SDA
+//   13   /*I2C0*/{.SCL={P3,1},.SDA={P3,0}},           
+//   14   /*I2C1*/{.SCL={P4,2},.SDA={P4,1}}          
+//   15 };
+//   16 static inline void  I2C_Start     (I2Cn i2cn);          //·¢ËÍÒ»¸öÆðÊ¼ÐÅºÅ
+//   17 static inline void  I2C_Stop      (I2Cn i2cn);          //·¢ËÍÒ»¸öÍ£Ö¹ÐÅºÅ
+//   18 static inline void  I2C_WaitBusy  (I2Cn i2cn);          //µÈ´ý¿ÕÏÐ
+//   19 static inline void  I2C_EnterSend (I2Cn i2cn);          //½øÈë·¢ËÍÄ£Ê½
+//   20 static inline void  I2C_EnterRead (I2Cn i2cn);          //½øÈë½ÓÊÕÄ£Ê½
+//   21 /*******************************************************************************
+//   22 *  º¯ÊýÃû³Æ£ºI2C_MasterInit(I2Cn i2cn,uint16_t SlaveID,uint32_t BaudRate) 
+//   23 *  ¹¦ÄÜËµÃ÷£º³õÊ¼»¯Ò»¸öÄ£¿éÎªI2CÖ÷»úÄ£¿é£¬²¢ÉèÖÃ´Ó»úµØÖ·¼°´«Êä²¨ÌØÂÊ
+//   24 *  ²ÎÊýËµÃ÷£ºI2Cn i2cn      :Ä£¿éºÅ
+//   25              uint8_t SlaveID  :´Ó»úµØÖ·
+//   26              uint32_t BaudRate:´«Êä²¨ÌØÂÊ
+//   27 *  º¯Êý·µ»Ø£ºÎÞ
+//   28 *  Ê¹ÓÃÊ¾Àý£ºI2C_MasterInit   (I2C0, 0x68,100000);  //³õÊ¼»¯I2C0Ä£¿éÎªÖ÷»ú£¬´Ó»úµØÖ·Îª0x68,ÉèÖÃ´«Êä²¨ÌØÂÊÎª100000
+//   29 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   30 void  I2C_MasterInit(I2Cn i2cn,uint16_t SlaveID,uint32_t BaudRate)                                       
+I2C_MasterInit:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function I2C_MasterInit
+//   31 {
+        FUNCALL I2C_MasterInit, GPIO_MultiBits_Init
+        LOCFRAME CSTACK, 30, STACK
+        FUNCALL I2C_MasterInit, GPIO_WriteBit
+        LOCFRAME CSTACK, 30, STACK
+        FUNCALL I2C_MasterInit, GPIO_WriteBit
+        LOCFRAME CSTACK, 30, STACK
+        FUNCALL I2C_MasterInit, GPIO_MultiBits_Init
+        LOCFRAME CSTACK, 30, STACK
+        FUNCALL I2C_MasterInit, GPIO_MultiBits_Init
+        LOCFRAME CSTACK, 30, STACK
+        PUSHM.A #0x6, R11
+          CFI R6L Frame(CFA, -28)
+          CFI R6H Frame(CFA, -26)
+          CFI R7L Frame(CFA, -24)
+          CFI R7H Frame(CFA, -22)
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+28
+        SUB.W   #0x2, SP
+          CFI CFA SP+30
+        MOV.B   R12, R10
+        MOV.W   R13, R11
+        MOV.W   R14, R8
+        MOV.W   R15, R9
+//   32   WordType BR;
+//   33   BR.Word=g_sClock.SMCLK.nHZ/BaudRate;        //ÇóÈ¡²¨ÌØÂÊËùÐèµÄ·ÖÆµÏµÊý
+        MOVX.W  &g_sClock + 12, R12
+        MOVX.W  &g_sClock + 14, R13
+        MOV.W   R8, R14
+        MOV.W   R9, R15
+        CALLA   #?DivMod32u
+        MOV.W   R12, 0(SP)
+//   34   GPIO_Init(I2C_PIN[i2cn-I2C0].SCL.Port,I2C_PIN[i2cn-I2C0].SCL.Pin,GPO);
+        MOV.W   #0x2, R14
+        MOV.W   #0x1, R13
+        MOV.B   R10, R15
+        ADD.W   #0xfffe, R15
+        XOR.W   #0x8000, R15
+        RLAM.A  #0x2, R15
+        MOVX.B  I2C_PIN - 131071(R15), R15
+        SUB.B   #0x1, R15
+        JN      ??I2C_MasterInit_1
+        RPT     R15
+        RLAX.W  R13
+??I2C_MasterInit_1:
+        ADD.B   #0x1, R15
+        MOV.B   R10, R15
+        ADD.W   #0xfffe, R15
+        RLAM.A  #0x2, R15
+        MOVX.B  I2C_PIN(R15), R12
+        CALLA   #GPIO_MultiBits_Init
+//   35   //Êä³ö9¸öÊ±ÖÓÒÔ»Ö¸´I2Cn×ÜÏß×´Ì¬  
+//   36   for(uint8_t i=0;i<9;i++)
+        MOV.B   #0x0, R6
+??I2C_MasterInit_0:
+        CMP.B   #0x9, R6
+        JC      ??I2C_MasterInit_2
+//   37   {
+//   38     GPIO_WriteBit  (I2C_PIN[i2cn-I2C0].SCL.Port,I2C_PIN[i2cn-I2C0].SCL.Pin,  BIT_SET);
+        MOV.B   #0x1, R14
+        MOV.B   R10, R15
+        ADD.W   #0xfffe, R15
+        XOR.W   #0x8000, R15
+        RLAM.A  #0x2, R15
+        MOVX.B  I2C_PIN - 131071(R15), R13
+        MOV.B   R10, R15
+        ADD.W   #0xfffe, R15
+        RLAM.A  #0x2, R15
+        MOVX.B  I2C_PIN(R15), R12
+        CALLA   #GPIO_WriteBit
+//   39     DELAY_US(5);
+        ////////////// Start of 125 cycles delay.
+        MOV.W   #0x28, R15
+??I2C_MasterInit_7:
+        ADD.W   #0xffff, R15
+        JC      ??I2C_MasterInit_7
+        ////////////// End of delay code.
+//   40     GPIO_WriteBit  (I2C_PIN[i2cn-I2C0].SCL.Port,I2C_PIN[i2cn-I2C0].SCL.Pin,RESET);
+        MOV.B   #0x0, R14
+        MOV.B   R10, R15
+        ADD.W   #0xfffe, R15
+        XOR.W   #0x8000, R15
+        RLAM.A  #0x2, R15
+        MOVX.B  I2C_PIN - 131071(R15), R13
+        MOV.B   R10, R15
+        ADD.W   #0xfffe, R15
+        RLAM.A  #0x2, R15
+        MOVX.B  I2C_PIN(R15), R12
+        CALLA   #GPIO_WriteBit
+//   41     DELAY_US(5);
+        ////////////// Start of 125 cycles delay.
+        MOV.W   #0x28, R15
+??I2C_MasterInit_8:
+        ADD.W   #0xffff, R15
+        JC      ??I2C_MasterInit_8
+        ////////////// End of delay code.
+//   42   }
+        ADD.B   #0x1, R6
+        JMP     ??I2C_MasterInit_0
+//   43   //³õÊ¼»¯Òý½Å
+//   44   GPIO_Init(I2C_PIN[i2cn-I2C0].SCL.Port,I2C_PIN[i2cn-I2C0].SCL.Pin,SEL);
+??I2C_MasterInit_2:
+        MOV.W   #0x100, R14
+        MOV.W   #0x1, R13
+        MOV.B   R10, R15
+        ADD.W   #0xfffe, R15
+        XOR.W   #0x8000, R15
+        RLAM.A  #0x2, R15
+        MOVX.B  I2C_PIN - 131071(R15), R15
+        SUB.B   #0x1, R15
+        JN      ??I2C_MasterInit_3
+        RPT     R15
+        RLAX.W  R13
+??I2C_MasterInit_3:
+        ADD.B   #0x1, R15
+        MOV.B   R10, R15
+        ADD.W   #0xfffe, R15
+        RLAM.A  #0x2, R15
+        MOVX.B  I2C_PIN(R15), R12
+        CALLA   #GPIO_MultiBits_Init
+//   45   GPIO_Init(I2C_PIN[i2cn-I2C0].SDA.Port,I2C_PIN[i2cn-I2C0].SDA.Pin,SEL);
+        MOV.W   #0x100, R14
+        MOV.W   #0x1, R13
+        MOV.B   R10, R15
+        ADD.W   #0xfffe, R15
+        XOR.W   #0x8000, R15
+        RLAM.A  #0x2, R15
+        MOVX.B  I2C_PIN - 131069(R15), R15
+        SUB.B   #0x1, R15
+        JN      ??I2C_MasterInit_4
+        RPT     R15
+        RLAX.W  R13
+??I2C_MasterInit_4:
+        ADD.B   #0x1, R15
+        MOV.B   R10, R15
+        ADD.W   #0xfffe, R15
+        XOR.W   #0x8000, R15
+        RLAM.A  #0x2, R15
+        MOVX.B  I2C_PIN - 131070(R15), R12
+        CALLA   #GPIO_MultiBits_Init
+//   46   //³õÊ¼»¯¼Ä´æÆ÷
+//   47   USCIX[i2cn]->CTL1 = UCSWRST;                       // Èí¼þ¸´Î»Ê¹ÄÜ£¬±£³Ö¸´Î»×´Ì¬
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  USCIX(R15), R15
+        MOV.B   #0x1, 0(R15)
+//   48   USCIX[i2cn]->CTL0 = UCMST + UCMODE_3 + UCSYNC;     // I2CÖ÷»ú£¬Í¬²½Ä£Ê½
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  USCIX(R15), R15
+        MOV.B   #0xf, 0x1(R15)
+//   49   if(SlaveID > 0x7F)
+        CMP.W   #0x80, R11
+        JNC     ??I2C_MasterInit_5
+//   50   {
+//   51     USCIX[i2cn]->SLA10 = BIT_SET;
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  USCIX(R15), R15
+        BIS.B   #0x40, 0x1(R15)
+        JMP     ??I2C_MasterInit_6
+//   52   }
+//   53   else
+//   54   {
+//   55     USCIX[i2cn]->SLA10 = RESET;
+??I2C_MasterInit_5:
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  USCIX(R15), R15
+        BIC.B   #0x40, 0x1(R15)
+//   56   }
+//   57   USCIX[i2cn]->I2CSA = SlaveID;
+??I2C_MasterInit_6:
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  USCIX(R15), R15
+        MOV.W   R11, 0x12(R15)
+//   58   USCIX[i2cn]->CTL1 |= UCSSEL__SMCLK;                 //Ê¹ÓÃSMCLK×÷ÎªÊ±ÖÓÔ´
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  USCIX(R15), R15
+        BIS.B   #0x80, 0(R15)
+//   59   USCIX[i2cn]->BR0 = BR.Byte[0];
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  USCIX(R15), R15
+        MOV.B   @SP, 0x6(R15)
+//   60   USCIX[i2cn]->BR1 = BR.Byte[1];                        
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  USCIX(R15), R15
+        MOV.B   0x1(SP), 0x7(R15)
+//   61   USCIX[i2cn]->CTL1 &=~ UCSWRST;                      //Çå³ýÈí¼þ¸´Î»£¬Õý³£²Ù×÷
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  USCIX(R15), R15
+        BIC.B   #0x1, 0(R15)
+//   62   
+//   63   USCIX[i2cn]->IE = 0u;                                         //¹Ø±ÕËùÓÐÖÐ¶Ï
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  USCIX(R15), R15
+        MOV.B   #0x0, 0x1c(R15)
+//   64   USCIX[i2cn]->RXIFG = RESET;                                   //Çå³ý½ÓÊÕÊý¾Ý±êÖ¾
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  USCIX(R15), R15
+        BIC.B   #0x1, 0x1d(R15)
+//   65   USCIX[i2cn]->TXIFG = BIT_SET;                                     //ÖÃÎ»·¢ËÍ»º³åÇøÎª¿Õ±êÖ¾ 
+        MOV.B   R10, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  USCIX(R15), R15
+        BIS.B   #0x2, 0x1d(R15)
+//   66 }
+        ADD.W   #0x2, SP
+          CFI CFA SP+28
+        POPM.A  #0x6, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R6H SameValue
+          CFI R7H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R6L SameValue
+          CFI R7L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock0
+//   67 /*******************************************************************************
+//   68 *  º¯ÊýÃû³Æ£ºI2C_SetSlaveID(I2Cn i2cn,uint16_t SlaveID)
+//   69 *  ¹¦ÄÜËµÃ÷£ºÉèÖÃ´Ó»úµØÖ·
+//   70 *  ²ÎÊýËµÃ÷£º I2Cn i2cn      :Ä£¿éºÅ
+//   71               uint8_t SlaveID  :´Ó»úµØÖ·
+//   72 *  º¯Êý·µ»Ø£ºÎÞ
+//   73 *  Ê¹ÓÃÊ¾Àý£ºI2C_SetSlaveID(I2C1,0x68);   //ÉèÖÃI2C1Ä£¿éµÄ´Ó»úµØÖ·Îª0x68
+//   74 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   75 void I2C_SetSlaveID(I2Cn i2cn,uint16_t SlaveID)
+I2C_SetSlaveID:
+          CFI Block cfiBlock1 Using cfiCommon0
+          CFI Function I2C_SetSlaveID
+//   76 {
+//   77   if(SlaveID > 0x7F)
+        CMP.W   #0x80, R13
+        JNC     ??I2C_SetSlaveID_0
+//   78   {
+//   79     USCIX[i2cn]->SLA10 = BIT_SET;
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  USCIX(R15), R15
+        BIS.B   #0x40, 0x1(R15)
+        JMP     ??I2C_SetSlaveID_1
+//   80   }
+//   81   else
+//   82   {
+//   83     USCIX[i2cn]->SLA10 = RESET;
+??I2C_SetSlaveID_0:
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  USCIX(R15), R15
+        BIC.B   #0x40, 0x1(R15)
+//   84   }
+//   85   USCIX[i2cn]->I2CSA = SlaveID;
+??I2C_SetSlaveID_1:
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  USCIX(R15), R15
+        MOV.W   R13, 0x12(R15)
+//   86 }
+        RETA
+          CFI EndBlock cfiBlock1
+//   87 /*******************************************************************************
+//   88 *  º¯ÊýÃû³Æ£ºI2C_Start(I2Cn i2cn)
+//   89 *  ¹¦ÄÜËµÃ÷£º·¢ËÍÒ»¸öÆðÊ¼ÐÅºÅ
+//   90 *  ²ÎÊýËµÃ÷£ºI2Cn i2cn      :Ä£¿éºÅ
+//   91 *  º¯Êý·µ»Ø£ºÎÞ
+//   92 *  Ê¹ÓÃÊ¾Àý£ºI2C_Start (I2C1);  //I2C1Ä£¿é·¢ËÍÒ»¸öÆðÊ¼ÐÅºÅ
+//   93 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//   94 inline void I2C_Start(I2Cn i2cn)
+I2C_Start:
+??I2C_Start_0:
+          CFI Block cfiBlock2 Using cfiCommon0
+          CFI Function I2C_Start
+//   95 {
+//   96   while((USCIX[i2cn]->UC_BUSY==BIT_SET) || (USCIX[i2cn]->TXSTP==BIT_SET));//È·±£×ÜÏß¿ÕÏÐ
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  USCIX(R15), R15
+        BIT.B   #0x1, 0xa(R15)
+        JC      ??I2C_Start_0
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  USCIX(R15), R15
+        MOV.B   @R15, R14
+        RPT     #0x2
+        RRUX.B  R14
+        BIT.B   #0x1, R14
+        JNE     ??I2C_Start_0
+//   97   USCIX[i2cn]->TXSTT = BIT_SET;
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  USCIX(R15), R15
+        BIS.B   #0x2, 0(R15)
+//   98 }
+        RETA
+          CFI EndBlock cfiBlock2
+//   99 /*******************************************************************************
+//  100 *  º¯ÊýÃû³Æ£ºI2C_Stop(I2Cn i2cn)
+//  101 *  ¹¦ÄÜËµÃ÷£º·¢ËÍÒ»¸öÍ£Ö¹ÐÅºÅ
+//  102 *  ²ÎÊýËµÃ÷£ºI2Cn i2cn      :Ä£¿éºÅ
+//  103 *  º¯Êý·µ»Ø£ºÎÞ
+//  104 *  Ê¹ÓÃÊ¾Àý£ºI2C_Stop (I2C1);  //I2C1Ä£¿é·¢ËÍÒ»¸öÍ£Ö¹ÐÅºÅ
+//  105 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  106 inline void I2C_Stop(I2Cn i2cn)
+I2C_Stop:
+??I2C_Stop_0:
+          CFI Block cfiBlock3 Using cfiCommon0
+          CFI Function I2C_Stop
+//  107 {
+//  108   while(USCIX[i2cn]->UC_BUSY == BIT_SET);                 //µÈ´ý¿ÕÏÐ
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  USCIX(R15), R15
+        BIT.B   #0x1, 0xa(R15)
+        JC      ??I2C_Stop_0
+//  109   USCIX[i2cn]->TXSTP =BIT_SET;                            //·¢ËÍÍ£Ö¹Î»
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  USCIX(R15), R15
+        BIS.B   #0x4, 0(R15)
+//  110   while(USCIX[i2cn]->TXSTP == BIT_SET);                   //µÈ´ýÍ£Ö¹Î»·¢ËÍÍê³É
+??I2C_Stop_1:
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  USCIX(R15), R15
+        MOV.B   @R15, R14
+        RPT     #0x2
+        RRUX.B  R14
+        BIT.B   #0x1, R14
+        JNE     ??I2C_Stop_1
+//  111 }
+        RETA
+          CFI EndBlock cfiBlock3
+//  112 /*******************************************************************************
+//  113 *  º¯ÊýÃû³Æ£ºI2C_EnterSend (I2Cn i2cn)
+//  114 *  ¹¦ÄÜËµÃ÷£ºI2C½øÈë·¢ËÍÄ£Ê½
+//  115 *  ²ÎÊýËµÃ÷£ºI2Cn i2cn      :Ä£¿éºÅ
+//  116 *  º¯Êý·µ»Ø£ºÎÞ
+//  117 *  Ê¹ÓÃÊ¾Àý£ºI2C_EnterSend (I2C1);  //I2C1Ä£¿é½øÈëÐ´Ä£Ê½
+//  118 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  119 inline void I2C_EnterSend (I2Cn i2cn)
+I2C_EnterSend:
+          CFI Block cfiBlock4 Using cfiCommon0
+          CFI Function I2C_EnterSend
+//  120 {
+//  121   USCIX[i2cn]->TR = BIT_SET;                              //½øÈë·¢ËÍÄ£Ê½
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  USCIX(R15), R15
+        BIS.B   #0x10, 0(R15)
+//  122 }
+        RETA
+          CFI EndBlock cfiBlock4
+//  123 /*******************************************************************************
+//  124 *  º¯ÊýÃû³Æ£ºI2C_EnterRead (I2Cn i2cn)
+//  125 *  ¹¦ÄÜËµÃ÷£ºI2C½øÈë½ÓÊÕÄ£Ê½
+//  126 *  ²ÎÊýËµÃ÷£ºI2Cn i2cn      :Ä£¿éºÅ
+//  127 *  º¯Êý·µ»Ø£ºÎÞ
+//  128 *  Ê¹ÓÃÊ¾Àý£ºI2C_EnterRead (I2C1);  //I2C1Ä£¿é½øÈë¶ÁÄ£Ê½
+//  129 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  130 inline void I2C_EnterRead (I2Cn i2cn)
+I2C_EnterRead:
+          CFI Block cfiBlock5 Using cfiCommon0
+          CFI Function I2C_EnterRead
+//  131 {
+//  132   USCIX[i2cn]->TR = RESET;                             //½øÈë½ÓÊÕÄ£Ê½
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  USCIX(R15), R15
+        BIC.B   #0x10, 0(R15)
+//  133 }
+        RETA
+          CFI EndBlock cfiBlock5
+//  134 /*******************************************************************************
+//  135 *  º¯ÊýÃû³Æ£ºI2C_SendByte (I2Cn i2cn,uint8_t data)
+//  136 *  ¹¦ÄÜËµÃ÷£ºI2C·¢ËÍÒ»×Ö½ÚÊý¾Ý
+//  137 *  ²ÎÊýËµÃ÷£ºI2Cn i2cn      :Ä£¿éºÅ
+//  138              uint8_t data     :Òª·¢ËÍµÄÊý¾Ý
+//  139 *  º¯Êý·µ»Ø£ºÎÞ
+//  140 *  Ê¹ÓÃÊ¾Àý£ºI2C_SendByte (I2C1,0x01);  //I2C1Ä£¿é·¢ËÍÒ»×Ö½ÚÊý¾Ý0x01
+//  141 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  142 inline void I2C_SendByte (I2Cn i2cn,uint8_t data)
+I2C_SendByte:
+??I2C_SendByte_0:
+          CFI Block cfiBlock6 Using cfiCommon0
+          CFI Function I2C_SendByte
+//  143 {
+//  144   while(USCIX[i2cn]->TXIFG == RESET);                   //µÈ´ý
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  USCIX(R15), R15
+        MOV.B   0x1d(R15), R14
+        RRUX.B  R14
+        BIT.B   #0x1, R14
+        JEQ     ??I2C_SendByte_0
+//  145   USCIX[i2cn]->TXBUF = data;                            //·¢ËÍÒªÐ´ÈëµÄÊý¾Ý
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  USCIX(R15), R15
+        MOV.B   R13, 0xe(R15)
+//  146 }
+        RETA
+          CFI EndBlock cfiBlock6
+//  147 /*******************************************************************************
+//  148 *  º¯ÊýÃû³Æ£ºI2C_ReadByte  (I2Cn i2cn)
+//  149 *  ¹¦ÄÜËµÃ÷£ºIIC¶ÁÈ¡Ò»¸ö×Ö½ÚÊý¾Ý
+//  150 *  ²ÎÊýËµÃ÷£ºI2Cn i2cn      :Ä£¿éºÅ
+//  151 *  º¯Êý·µ»Ø£º¶ÁÈ¡µ½µÄÊý¾Ý
+//  152 *  Ê¹ÓÃÊ¾Àý£ºuint8 data = I2C_ReadByte  (I2C1);   //¶ÁÈ¡Êý¾Ý
+//  153 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  154 inline uint8_t I2C_ReadByte  (I2Cn i2cn)
+I2C_ReadByte:
+??I2C_ReadByte_0:
+          CFI Block cfiBlock7 Using cfiCommon0
+          CFI Function I2C_ReadByte
+//  155 {
+//  156   while(USCIX[i2cn]->RXIFG == RESET);                 //µÈ´ý½ÓÊÕµ½Êý¾Ý
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  USCIX(R15), R15
+        BIT.B   #0x1, 0x1d(R15)
+        JNC     ??I2C_ReadByte_0
+//  157   return USCIX[i2cn]->RXBUF;
+        MOV.B   R12, R12
+        RLAM.A  #0x2, R12
+        MOVX.A  USCIX(R12), R15
+        MOV.B   0xc(R15), R12
+        RETA
+          CFI EndBlock cfiBlock7
+//  158 }
+//  159 /*******************************************************************************
+//  160 *  º¯ÊýÃû³Æ£ºI2C_WaitBusy(I2Cn i2cn)
+//  161 *  ¹¦ÄÜËµÃ÷£ºI2CµÈ´ý¿ÕÏÐ
+//  162 *  ²ÎÊýËµÃ÷£ºI2Cn i2cn      :Ä£¿éºÅ
+//  163 *  º¯Êý·µ»Ø£ºÎÞ
+//  164 *  Ê¹ÓÃÊ¾Àý£ºI2C_WaitBusy(I2C1);  //µÈ´ýI2C1Ä£¿é²»Ã¦
+//  165 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  166 inline void I2C_WaitBusy(I2Cn i2cn)
+I2C_WaitBusy:
+??I2C_WaitBusy_0:
+          CFI Block cfiBlock8 Using cfiCommon0
+          CFI Function I2C_WaitBusy
+//  167 {
+//  168   while(USCIX[i2cn]->UC_BUSY == BIT_SET);                    //µÈ´ý·¢ËÍ»ò½ÓÊÕÍê³É
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  USCIX(R15), R15
+        BIT.B   #0x1, 0xa(R15)
+        JC      ??I2C_WaitBusy_0
+//  169 }
+        RETA
+          CFI EndBlock cfiBlock8
+//  170 /*******************************************************************************
+//  171 *  º¯ÊýÃû³Æ£º I2C_WriteReg(I2Cn i2cn, uint8_t address, char data)
+//  172 *  ¹¦ÄÜËµÃ÷£º ÍùÄ³Ò»¸öµØÖ·Ð´ÈëÒ»×Ö½ÚÊý¾Ý
+//  173 *  ²ÎÊýËµÃ÷£º I2Cn i2cn      :Ä£¿éºÅ
+//  174               uint8_t address :¼Ä´æÆ÷µØÖ·
+//  175               uint8_t data    :¶Ô¸ÃµØÖ·ÒªÐ´ÈëµÄÊý¾ÝÄÚÈÝ
+//  176 *  º¯Êý·µ»Ø£ºÎÞ
+//  177 *  Ê¹ÓÃÊ¾Àý£ºI2C_WriteReg(I2C1, 0x20, 0x12);   //¶ÔµØÖ·Îª0x20´¦Ð´ÈëÄÚÈÝ0x12
+//  178 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  179 void  I2C_WriteReg(I2Cn i2cn, uint8_t address, uint8_t data)     
+I2C_WriteReg:
+          CFI Block cfiBlock9 Using cfiCommon0
+          CFI Function I2C_WriteReg
+//  180 {
+        FUNCALL I2C_WriteReg, I2C_EnterSend
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL I2C_WriteReg, I2C_Start
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL I2C_WriteReg, I2C_SendByte
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL I2C_WriteReg, I2C_SendByte
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL I2C_WriteReg, I2C_Stop
+        LOCFRAME CSTACK, 20, STACK
+        FUNCALL I2C_WriteReg, I2C_WaitBusy
+        LOCFRAME CSTACK, 20, STACK
+        PUSHM.A #0x4, R11
+          CFI R8L Frame(CFA, -20)
+          CFI R8H Frame(CFA, -18)
+          CFI R9L Frame(CFA, -16)
+          CFI R9H Frame(CFA, -14)
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+20
+        MOV.B   R12, R11
+        MOV.B   R13, R8
+        MOV.B   R14, R10
+//  181   I2C_EnterSend(i2cn);
+        MOV.B   R11, R12
+        CALLA   #I2C_EnterSend
+//  182   I2C_Start    (i2cn);                        //·¢ËÍÒ»¸öÆðÊ¼ÐÅºÅ
+        MOV.B   R11, R12
+        CALLA   #I2C_Start
+//  183   I2C_SendByte (i2cn,address);                //·¢ËÍÒªÐ´ÈëµÄµØÖ·
+        MOV.B   R8, R13
+        MOV.B   R11, R12
+        CALLA   #I2C_SendByte
+//  184   I2C_SendByte (i2cn,data);                   //·¢ËÍÒªÐ´ÈëµÄÊý¾Ý
+        MOV.B   R10, R13
+        MOV.B   R11, R12
+        CALLA   #I2C_SendByte
+//  185   I2C_Stop     (i2cn);                        //·¢ËÍÍ£Ö¹Î»
+        MOV.B   R11, R12
+        CALLA   #I2C_Stop
+//  186   I2C_WaitBusy (i2cn);
+        MOV.B   R11, R12
+        CALLA   #I2C_WaitBusy
+//  187 }
+        POPM.A  #0x4, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R8H SameValue
+          CFI R9H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI R8L SameValue
+          CFI R9L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock9
+//  188 /*******************************************************************************
+//  189 *  º¯ÊýÃû³Æ£º I2C_ReadReg(I2Cn i2cn, uint8_t address) 
+//  190 *  ¹¦ÄÜËµÃ÷£º ¶ÔÍâ²¿Ð¾Æ¬¶ÁÈ¡Ä³Ò»µØÖ·µÄÄÚÈÝ
+//  191 *  ²ÎÊýËµÃ÷£º I2Cn i2cn      :Ä£¿éºÅ
+//  192               uint8_t address :¼Ä´æÆ÷µØÖ·
+//  193 *  º¯Êý·µ»Ø£º ¶ÁÈ¡µ½µÄÄÚÈÝ
+//  194 *  Ê¹ÓÃÊ¾Àý£º uint8_t data = I2C_ReadReg(I2C1, 0x20);  //¶ÁÈ¡¼Ä´æÆ÷µØÖ·Îª0x20´¦µÄÄÚÈÝ
+//  195 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  196 uint8_t    I2C_ReadReg(I2Cn i2cn, uint8_t address)             
+I2C_ReadReg:
+          CFI Block cfiBlock10 Using cfiCommon0
+          CFI Function I2C_ReadReg
+//  197 {
+        FUNCALL I2C_ReadReg, I2C_EnterSend
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL I2C_ReadReg, I2C_Start
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL I2C_ReadReg, I2C_SendByte
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL I2C_ReadReg, I2C_WaitBusy
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL I2C_ReadReg, I2C_EnterRead
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL I2C_ReadReg, I2C_Start
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL I2C_ReadReg, I2C_WaitBusy
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL I2C_ReadReg, I2C_Stop
+        LOCFRAME CSTACK, 12, STACK
+        FUNCALL I2C_ReadReg, I2C_ReadByte
+        LOCFRAME CSTACK, 12, STACK
+        PUSHM.A #0x2, R11
+          CFI R10L Frame(CFA, -12)
+          CFI R10H Frame(CFA, -10)
+          CFI R11L Frame(CFA, -8)
+          CFI R11H Frame(CFA, -6)
+          CFI CFA SP+12
+        MOV.B   R12, R10
+        MOV.B   R13, R11
+//  198   I2C_EnterSend (i2cn);                       //½øÈë·¢ËÍÄ£Ê½
+        MOV.B   R10, R12
+        CALLA   #I2C_EnterSend
+//  199   I2C_Start     (i2cn);                       //·¢ËÍÒ»¸öÆðÊ¼ÐÅºÅ
+        MOV.B   R10, R12
+        CALLA   #I2C_Start
+//  200   I2C_SendByte  (i2cn,address);               //·¢ËÍÒ»×Ö½ÚÊý¾Ý
+        MOV.B   R11, R13
+        MOV.B   R10, R12
+        CALLA   #I2C_SendByte
+//  201   I2C_WaitBusy  (i2cn);                       //µÈ´ý´«ÊäÍê±Ï
+        MOV.B   R10, R12
+        CALLA   #I2C_WaitBusy
+//  202   I2C_EnterRead (i2cn);                       //½øÈë½ÓÊÕÄ£Ê½
+        MOV.B   R10, R12
+        CALLA   #I2C_EnterRead
+//  203   I2C_Start     (i2cn);                       //·¢ËÍÒ»¸öÆðÊ¼ÐÅºÅ
+        MOV.B   R10, R12
+        CALLA   #I2C_Start
+//  204   I2C_WaitBusy  (i2cn);                       //µÈ´ý¿ÕÏÐ
+        MOV.B   R10, R12
+        CALLA   #I2C_WaitBusy
+//  205   I2C_Stop      (i2cn);                       //·¢ËÍÒ»¸öÍ£Ö¹ÐÅºÅ,¶ÁµÄ»°ÒªÏÈ·¢ËÍÍ£Ö¹Î»
+        MOV.B   R10, R12
+        CALLA   #I2C_Stop
+//  206   return I2C_ReadByte(i2cn);                  //¶ÁÈ¡Êý¾Ý
+        MOV.B   R10, R12
+        CALLA   #I2C_ReadByte
+        POPM.A  #0x2, R11
+          CFI R10H SameValue
+          CFI R11H SameValue
+          CFI R10L SameValue
+          CFI R11L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock10
+//  207 }
+//  208 /*******************************************************************************
+//  209 *  º¯ÊýÃû³Æ£º I2C_ITConfig (I2Cn i2cn,I2C_IRQn irqn,STATUS ITState)
+//  210 *  ¹¦ÄÜËµÃ÷£º ÉèÖÃÊ¹ÄÜ»ò½ûÖ¹I2CnµÄÄ³Ò»¸öÖÐ¶Ï
+//  211 *  ²ÎÊýËµÃ÷£º I2Cn i2cn      :Ä£¿éºÅ
+//  212               I2C_IRQn irqn :ÖÐ¶ÏÀàÐÍ
+//  213 *  º¯Êý·µ»Ø£ºÎÞ
+//  214 *  Ê¹ÓÃÊ¾Àý£ºI2C_ITConfig (I2C1,I2C_RX_IRQn,ENABLE);  //Ê¹ÄÜI2C1µÄ½ÓÊÕÖÐ¶Ï
+//  215 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  216 void  I2C_ITConfig (I2Cn i2cn,I2C_IRQn irqn,STATUS ITState)
+I2C_ITConfig:
+          CFI Block cfiBlock11 Using cfiCommon0
+          CFI Function I2C_ITConfig
+//  217 {
+        PUSHM.A #0x1, R10
+          CFI R10L Frame(CFA, -8)
+          CFI R10H Frame(CFA, -6)
+          CFI CFA SP+8
+//  218   if(ITState != DISABLE)
+        CMP.B   #0x0, R14
+        JEQ     ??I2C_ITConfig_0
+//  219   {
+//  220     USCIX[i2cn]->IE |= irqn;
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  USCIX(R15), R15
+        BIS.B   R13, 0x1c(R15)
+        JMP     ??I2C_ITConfig_1
+//  221   }
+//  222   else
+//  223   {
+//  224     USCIX[i2cn]->IE &=~irqn;
+??I2C_ITConfig_0:
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  USCIX(R15), R15
+        BIC.B   R13, 0x1c(R15)
+//  225   }
+//  226 }
+??I2C_ITConfig_1:
+        POPM.A  #0x1, R10
+          CFI R10H SameValue
+          CFI R10L SameValue
+          CFI CFA SP+4
+        RETA
+          CFI EndBlock cfiBlock11
+//  227 /*******************************************************************************
+//  228 *  º¯ÊýÃû³Æ£º I2C_GetITStatus(I2Cn i2cn,I2C_IRQn irqn)
+//  229 *  ¹¦ÄÜËµÃ÷£º »ñÈ¡I2CµÄÄ³Ò»¸öÖÐ¶Ï±êÖ¾
+//  230 *  ²ÎÊýËµÃ÷£º I2Cn i2cn      :Ä£¿éºÅ
+//  231               I2C_IRQn irqn :ÖÐ¶ÏÀàÐÍ
+//  232 *  º¯Êý·µ»Ø£º STATUS : TRUE ÖÐ¶ÏÊÂ¼þ·¢Éú£¬FALSE ÖÐ¶ÏÊÂ¼þÎ´·¢Éú
+//  233 *  Ê¹ÓÃÊ¾Àý£º if(TRUE == I2C_GetITStatus(I2C0,I2C_RX_IRQn)){...} //ÅÐ¶ÏI2C0Ä£¿éÊÇ·ñ½ÓÊÕÍê³ÉÊÂ¼þÖÐ¶Ï·¢Éú
+//  234 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  235 STATUS I2C_GetITStatus(I2Cn i2cn,I2C_IRQn irqn)
+I2C_GetITStatus:
+          CFI Block cfiBlock12 Using cfiCommon0
+          CFI Function I2C_GetITStatus
+//  236 {
+//  237   return ((USCIX[i2cn]->IFG & irqn) ? TRUE :FALSE);
+        MOV.B   R12, R12
+        RLAM.A  #0x2, R12
+        MOVX.A  USCIX(R12), R15
+        BIT.B   R13, 0x1d(R15)
+        JEQ     ??I2C_GetITStatus_0
+        MOV.B   #0x1, R12
+        RETA
+??I2C_GetITStatus_0:
+        MOV.B   #0x0, R12
+        RETA
+          CFI EndBlock cfiBlock12
+//  238 }
+//  239 /*******************************************************************************
+//  240 *  º¯ÊýÃû³Æ£º I2C_ClearITPendingBit(I2Cn i2cn,I2C_IRQn irqn)
+//  241 *  ¹¦ÄÜËµÃ÷£º Çå³ýI2CnµÄÄ³Ò»¸öÖÐ¶Ï±êÖ¾
+//  242 *  ²ÎÊýËµÃ÷£º I2Cn i2cn      :Ä£¿éºÅ
+//  243               I2C_IRQn irqn :ÖÐ¶ÏÀàÐÍ
+//  244 *  º¯Êý·µ»Ø£º ÎÞ
+//  245 *  Ê¹ÓÃÊ¾Àý£º I2C_ClearITPendingBit(I2C0,I2C_RX_IRQn);   //Çå³ýI2C1Ä£¿é½ÓÊÕÖÐ¶Ï±êÖ¾Î»
+//  246 ********************************************************************************/
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+//  247 void  I2C_ClearITPendingBit(I2Cn i2cn,I2C_IRQn irqn)
+I2C_ClearITPendingBit:
+          CFI Block cfiBlock13 Using cfiCommon0
+          CFI Function I2C_ClearITPendingBit
+//  248 {
+//  249   USCIX[i2cn]->IFG &=~ irqn;
+        MOV.B   R12, R15
+        RLAM.A  #0x2, R15
+        MOVX.A  USCIX(R15), R15
+        BIC.B   R13, 0x1d(R15)
+//  250 }
+        RETA
+          CFI EndBlock cfiBlock13
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r4:
+        REQUIRE ?setjmp_r4
+        REQUIRE ?longjmp_r4
+
+        RSEG CODE:CODE:REORDER:NOROOT(1)
+?setjmp_save_r5:
+        REQUIRE ?setjmp_r5
+        REQUIRE ?longjmp_r5
+
+        END
+// 
+// 972 bytes in segment CODE
+//   8 bytes in segment DATA20_C
+// 
+// 972 bytes of CODE  memory
+//   8 bytes of CONST memory
+//
+//Errors: none
+//Warnings: none

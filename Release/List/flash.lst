@@ -1,0 +1,423 @@
+###############################################################################
+#                                                                             #
+#                                                       06/Jun/2016  16:42:26 #
+# IAR C/C++ Compiler V5.50.1.20465/W32, Evaluation edition for MSP430         #
+# Copyright 1996-2012 IAR Systems AB.                                         #
+#                                                                             #
+#    __rt_version  =  3                                                       #
+#    __double_size =  32                                                      #
+#    __reg_r4      =  free                                                    #
+#    __reg_r5      =  free                                                    #
+#    __pic         =  no                                                      #
+#    __core        =  430X                                                    #
+#    __data_model  =  large                                                   #
+#    Source file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\flash.c                              #
+#    Command line  =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\flash.c -D NDEBUG -D RAM_VECTOR -lC  #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\List\ -lA C:\Users\615\Desktop\MSP430\MS #
+#                     P430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Release\List\ -o        #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\Obj\ -D__MSP430F5529__ -e --double=32    #
+#                     --dlib_config "D:\Program Files (x86)\IAR               #
+#                     Systems\Embedded Workbench 6.4                          #
+#                     Evaluation\430\LIB\DLIB\dl430xlfn.h" -I                 #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\ -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Ê #
+#                     ý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\inc\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\ -I C:\Users\615\Desktop\MSP430\MSP4 #
+#                     30F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\src\USB\ -I       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_config\ -I                   #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_User\ -I                     #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\srcUSB\USB_API\USB_CDC_API\ -I           #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_API\USB_HID_API\ -I          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Drivers\src\USB\USB_API\USB_MSC_API\ -I          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\KEY\ -I C:\Users\615\Desktop\MSP430\MSP #
+#                     430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\LED\ -I         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\12864\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\HardWare\oled\ -I      #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\mpu6050\inc\ -I                         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\mpu6050\src\ -I                         #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\nokia5110\inc\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\nokia5110\src\ -I                       #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\LQ_1.8_TFT\ -I                          #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\LCD_API\ -I                             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\2.2TFT\ -I                              #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\HardWare\delay\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\ -I             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\System\inc\ -I C:\Users\615\Desktop\MSP430\MSP43 #
+#                     0F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\System\src\ -I             #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\User\ -I C:\Users\615\Desktop\MSP430\MSP430F5529 #
+#                     ¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\User\USER\ -I                    #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\UCOSII\CONFIG\ -I                            #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\uCOSII\App\ -I C:\Users\615\Desktop\MSP430\M #
+#                     SP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\uCOSII\CONFIHG\    #
+#                     -I C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ #
+#                     \¹¤³ÌÄ£°å\Lib\uCOSII\PORT\ -I                           #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\UCOSII\CORE\ -I                              #
+#                     C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Lib\FatFs\ -I C:\Users\615\Desktop\MSP430\MSP430 #
+#                     F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Lib\FatFs\option\           #
+#                     --core=430X --data_model=large -Oh --multiplier=32      #
+#                     --multiplier_location=4C0 --hw_workaround=CPU40         #
+#    List file     =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\List\flash.lst                           #
+#    Object file   =  C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤ #
+#                     ³ÌÄ£°å\Release\Obj\flash.r43                            #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\615\Desktop\MSP430\MSP430F5529¿âº¯Êý2.5\C°æ\¹¤³ÌÄ£°å\Drivers\src\flash.c
+      1          #include "flash.h"
+
+   \                                 In  segment DATA16_AN, at 0x140
+   \   union <unnamed> __data16 _A_FCTL1_L
+   \                     _A_FCTL1_L:
+   \   000000                DS8 2
+
+   \                                 In  segment DATA16_AN, at 0x144
+   \   union <unnamed> __data16 _A_FCTL3_L
+   \                     _A_FCTL3_L:
+   \   000000                DS8 2
+      2          #include "system.h"
+      3          
+      4          //×¢Òâ£ºÊ¹ÓÃflashÊ±Ó¦Ê¹ÓÃ¿¿ºóµÄµØÖ·£¬·ñÔò¿ÉÄÜ»áÆÆ»µ³ÌÐò
+      5          /*******************************************************************************
+      6          *  º¯ÊýÃû³Æ£º²Á³ýflashÖÐµÄÄ³Ò»¶Î
+      7          *  ¹¦ÄÜËµÃ÷£º¶ÎÓ¦¸ÃÊÇÔÚ£¨£©£¬Îª±£»¤³ÌÐò£¬×îºÃÈ¡×îºó¼¸¸ö¶Î
+      8          *  ²ÎÊýËµÃ÷£º±ØÐëÒ»´Î²Á³ý512×Ö½Ú£¬FlashÈÝÁ¿£¨128KB£©¶ÔÓ¦segmentNoÊýÁ¿£¨128*1024/512=256£©£¬Ê¹ÓÃÊ±½¨ÒéÈ¡¿¿ºóÃæµÄ¶ÎÎ»
+      9          *  º¯Êý·µ»Ø£ºÎÞ
+     10          *  Ê¹ÓÃÊ¾Àý£ºFlash_Erase_Segment(MAX_SEGMENT);                  //²Á³ýµÚMAX_SEGMENT¶Î
+     11          ********************************************************************************/
+
+   \                                 In  segment CODE_I, align 2, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   1D15         PUSHM.W #0x2, R13
+   \   000002   0F16         POPM.A  #0x1, R15
+   \   000004   8F430000     MOV.W   #0x0, 0(R15)
+   \                     ??Flash_Erase_Addr_0:
+   \   000008   92B34401     BIT.W   #0x1, &0x144
+   \   00000C   FD2F         JC      ??Flash_Erase_Addr_0
+   \   00000E                REQUIRE ?Subroutine5
+   \   00000E                // Fall through to label ?Subroutine5
+
+   \                                 In  segment CODE_I, align 2, keep-with-next
+   \                     ?Subroutine5:
+   \   000000   B24000A54001 MOV.W   #0xa500, &0x140
+   \   000006   B24010A54401 MOV.W   #0xa510, &0x144
+   \   00000C   1001         RETA
+
+   \                                 In  segment CODE_I, align 2
+     12          __ramfunc void Flash_Erase_Segment(uint16_t segmentNo)
+   \                     Flash_Erase_Segment:
+   \   000000   ........     CALLA   #?Subroutine3
+     13          {
+     14            ASSERT(segmentNo >= MIN_SEGMENT && segmentNo <= MAX_SEGMENT);  //¶ÏÑÔ¼ì²â¶Î·¶Î§ÊÇ·ñÔÚFLASHÇø¼ä
+     15            
+     16            uint16_t * Addr = (uint16_t *)((uint32_t)segmentNo*512);   //¼ÆËãµØÖ·
+     17            
+     18            FCTL3 = FWKEY;                              // Çå³ýËø¶¨
+     19            FCTL1 = FWKEY+ERASE;                        // ²Á³ýÒ»¶Î
+     20            *Addr = 0;                                  //¶Ô²Á³ýµÄµØÖ··¶Î§ÄÚÈÎÒâ×öÒ»´Î¿ÕÐ´Èë£¬ÓÃÒÔÆô¶¯²Á³ý²Ù×÷
+   \                     ??CrossCallReturnLabel_3:
+   \   000004   0D43         MOV.W   #0x0, R13
+   \   000006   ........     CALLA   #?ShiftLeft32_9
+   \   00000A   ....         JMP     ?Subroutine0
+   \   00000C   0343         NOP
+   \   00000E                REQUIRE _A_FCTL3_L
+   \   00000E                REQUIRE _A_FCTL1_L
+     21            while (FCTL3 & BUSY);                       // µÈ´ýÔÊÐí²Ù×÷
+     22            FCTL1 = FWKEY;                              //Çå³ý²Á³ýÎ»  
+     23            FCTL3 = FWKEY+LOCK;                         //¶ÔFLASH¼ÓËø£¬¿É¶Á£¬²»¿ÉÐ´£¬²»¿É²Á³ý
+     24          }
+
+   \                                 In  segment CODE_I, align 2
+   \                     ?Subroutine3:
+   \   000000                REQUIRE ?cstart_init_copy_ramfunc
+   \   000000   B24000A54401 MOV.W   #0xa500, &0x144
+   \   000006   B24002A54001 MOV.W   #0xa502, &0x140
+   \   00000C   1001         RETA
+     25          /*******************************************************************************
+     26          *  º¯ÊýÃû³Æ£º²Á³ýflashÖÐµÄÄ³Ò»¶Î
+     27          *  ¹¦ÄÜËµÃ÷£º¶ÎÓ¦¸ÃÊÇÔÚ£¨£©£¬Îª±£»¤³ÌÐò£¬×îºÃÈ¡×îºó¼¸¸ö¶Î
+     28          *  ²ÎÊýËµÃ÷£º±ØÐëÒ»´Î²Á³ý512×Ö½Ú£¬FlashÈÝÁ¿£¨128KB£©¶ÔÓ¦segmentNoÊýÁ¿£¨128*1024/512=256£©£¬Ê¹ÓÃÊ±½¨ÒéÈ¡¿¿ºóÃæµÄ¶ÎÎ»
+     29          *  º¯Êý·µ»Ø£ºÎÞ
+     30          *  Ê¹ÓÃÊ¾Àý£ºFlash_Erase_Addr(0xFFFF);
+     31          ********************************************************************************/
+
+   \                                 In  segment CODE_I, align 2, keep-with-next
+     32          __ramfunc void Flash_Erase_Addr   (uint32_t addr)
+   \                     Flash_Erase_Addr:
+   \   000000   ........     CALLA   #?Subroutine3
+     33          {
+     34            uint16_t * Addr = (uint16_t *)addr;
+     35            FCTL3 = FWKEY;                              // Çå³ýËø¶¨
+     36            FCTL1 = FWKEY+ERASE;                        // ²Á³ýÒ»¶Î
+     37            *Addr = 0;                                  //¶Ô²Á³ýµÄµØÖ··¶Î§ÄÚÈÎÒâ×öÒ»´Î¿ÕÐ´Èë£¬ÓÃÒÔÆô¶¯²Á³ý²Ù×÷
+   \                     ??CrossCallReturnLabel_2:
+   \   000004                REQUIRE ?Subroutine0
+   \   000004                REQUIRE _A_FCTL3_L
+   \   000004                REQUIRE _A_FCTL1_L
+   \   000004                // Fall through to label ?Subroutine0
+     38            while (FCTL3 & BUSY);                       // µÈ´ýÔÊÐí²Ù×÷
+     39            FCTL1 = FWKEY;                              //Çå³ý²Á³ýÎ»  
+     40            FCTL3 = FWKEY+LOCK;                         //¶ÔFLASH¼ÓËø£¬¿É¶Á£¬²»¿ÉÐ´£¬²»¿É²Á³ý
+     41          }
+     42          /*******************************************************************************
+     43          *  º¯ÊýÃû³Æ£º
+     44          *  ¹¦ÄÜËµÃ÷£ºÐ´ÈëÒ»¸ö×Ö½ÚÊý¾Ýµ½Flash
+     45          *  ²ÎÊýËµÃ÷£ºuint16 segmentNo £º¶ÎÎ» uint16_t offset £ºÆ«ÒÆÁ¿£¬uint16 data £ºÒªÐ´ÈëµÄÊý¾Ý
+     46          *  º¯Êý·µ»Ø£ºÎÞ
+     47          *  Ê¹ÓÃÊ¾Àý£ºFlash_Write(200,0,0x10);    //ÔÚµÚ200¸ö¶ÎÎ»£¬Æ«ÒÆ0¸ö×Ö½Ú£¬Ð´ÈëÊý¾Ý0x10
+     48          ********************************************************************************/
+
+   \                                 In  segment CODE_I, align 2, keep-with-next
+   \                     ?Subroutine6:
+   \   000000   0D43         MOV.W   #0x0, R13
+   \   000002   ........     CALLA   #?ShiftLeft32_9
+   \   000006   0C5A         ADD.W   R10, R12
+   \   000008   0D63         ADDC.W  #0x0, R13
+   \   00000A   1001         RETA
+
+   \                                 In  segment CODE_I, align 2, keep-with-next
+     49          __ramfunc void Flash_Write_Byte(uint16_t segmentNo,uint16_t offset,uint8_t data)
+   \                     Flash_Write_Byte:
+   \   000000                REQUIRE ?cstart_init_copy_ramfunc
+     50          {
+   \   000000   1B14         PUSHM.A #0x2, R11
+   \   000002   0A4D         MOV.W   R13, R10
+     51            ASSERT(segmentNo >= MIN_SEGMENT && segmentNo <= MAX_SEGMENT);  //¶ÏÑÔ¼ì²â¶Î·¶Î§ÊÇ·ñÔÚFLASHÇø¼ä
+     52            
+     53            uint8_t * Addr = (uint8_t *)((uint32_t)segmentNo*512 + offset);        //¼ÆËãµØÖ·
+     54            
+     55            FCTL3 = FWKEY;                            //Çå³ýËø¶¨ 
+   \   000004   ........     CALLA   #?Subroutine4
+     56            FCTL1 = FWKEY+WRT;                        //ÖÃÎ»±à³ÌÎ»
+     57            *Addr = data;                             //Ð´ÈëÒ»¸ö×Ö
+   \                     ??CrossCallReturnLabel_5:
+   \   000008   ........     CALLA   #?Subroutine6
+   \                     ??CrossCallReturnLabel_7:
+   \   00000C   1D15         PUSHM.W #0x2, R13
+   \   00000E   0F16         POPM.A  #0x1, R15
+   \   000010   CF4E0000     MOV.B   R14, 0(R15)
+   \   000014                REQUIRE ?Subroutine1
+   \   000014                REQUIRE _A_FCTL3_L
+   \   000014                REQUIRE _A_FCTL1_L
+   \   000014                // Fall through to label ?Subroutine1
+     58            while (FCTL3 & BUSY);                     //µÈ´ý²Ù×÷Íê³É
+     59            FCTL1 = FWKEY;                            //Çå³ýÐ´ÈëÎ»
+     60            FCTL3 = FWKEY+LOCK;                       //¶ÔFLASH¼ÓËø£¬¿É¶Á£¬²»¿ÉÐ´£¬²»¿É²Á³ý£¬±£»¤Êý¾Ý
+     61          }
+
+   \                                 In  segment CODE_I, align 2, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   92B34401     BIT.W   #0x1, &0x144
+   \   000004   FD2F         JC      ?Subroutine1
+   \   000006                REQUIRE ??Subroutine7_0
+   \   000006                // Fall through to label ??Subroutine7_0
+
+   \                                 In  segment CODE_I, align 2
+   \                     ??Subroutine7_0:
+   \   000000   ........     CALLA   #?Subroutine5
+   \                     ??CrossCallReturnLabel_8:
+   \   000004   1A16         POPM.A  #0x2, R11
+   \   000006   1001         RETA
+
+   \                                 In  segment CODE_I, align 2
+   \                     ?Subroutine4:
+   \   000000   B24000A54401 MOV.W   #0xa500, &0x144
+   \   000006   B24040A54001 MOV.W   #0xa540, &0x140
+   \   00000C   1001         RETA
+     62          /*******************************************************************************
+     63          *  º¯ÊýÃû³Æ£º
+     64          *  ¹¦ÄÜËµÃ÷£ºÐ´ÈëÒ»¸ö×ÖÊý¾Ýµ½Flash
+     65          *  ²ÎÊýËµÃ÷£ºuint16 segmentNo £º¶ÎÎ» uint16_t offset £ºÆ«ÒÆÁ¿£¬uint16 data £ºÒªÐ´ÈëµÄÊý¾Ý
+     66          *  º¯Êý·µ»Ø£ºÎÞ
+     67          *  Ê¹ÓÃÊ¾Àý£ºFlash_Write(200,0,0xf010);    //ÔÚµÚ200¸ö¶ÎÎ»£¬Æ«ÒÆ0¸ö×Ö½Ú£¬Ð´ÈëÊý¾Ý0xf010
+     68          ********************************************************************************/
+
+   \                                 In  segment CODE_I, align 2, keep-with-next
+     69          __ramfunc void Flash_Write_Word(uint16_t segmentNo,uint16_t offset,uint16_t data)
+   \                     Flash_Write_Word:
+   \   000000                REQUIRE ?cstart_init_copy_ramfunc
+     70          {
+   \   000000   1B14         PUSHM.A #0x2, R11
+   \   000002   ........     CALLA   #?Subroutine2
+     71            ASSERT(segmentNo >= MIN_SEGMENT && segmentNo <= MAX_SEGMENT);  //¶ÏÑÔ¼ì²â¶Î·¶Î§ÊÇ·ñÔÚFLASHÇø¼ä
+     72            
+     73            uint16_t * Addr=(uint16_t *)((uint32_t)segmentNo*512 + offset);        //¼ÆËãµØÖ·
+     74            
+     75            FCTL3 = FWKEY;                            //Çå³ýËø¶¨ 
+     76            FCTL1 = FWKEY+BLKWRT;                     //ÖÃÎ»±à³ÌÎ»
+     77            *Addr = data;                             //Ð´ÈëÒ»¸ö×Ö
+   \                     ??CrossCallReturnLabel_0:
+   \   000006   1D15         PUSHM.W #0x2, R13
+   \   000008   0F16         POPM.A  #0x1, R15
+   \   00000A   8F4E0000     MOV.W   R14, 0(R15)
+   \   00000E   ....         JMP     ?Subroutine1
+   \   000010   0343         NOP
+   \   000012                REQUIRE _A_FCTL3_L
+   \   000012                REQUIRE _A_FCTL1_L
+
+   \                                 In  segment CODE_I, align 2, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   0A4D         MOV.W   R13, R10
+   \   000002   B24000A54401 MOV.W   #0xa500, &0x144
+   \   000008   B24080A54001 MOV.W   #0xa580, &0x140
+   \   00000E                REQUIRE ?Subroutine6
+   \   00000E                // Fall through to label ?Subroutine6
+     78            while (FCTL3 & BUSY);                     //µÈ´ý²Ù×÷Íê³É
+     79            FCTL1 = FWKEY;                            //Çå³ýÐ´ÈëÎ»
+     80            FCTL3 = FWKEY+LOCK;                       //¶ÔFLASH¼ÓËø£¬¿É¶Á£¬²»¿ÉÐ´£¬²»¿É²Á³ý£¬±£»¤Êý¾Ý
+     81          }
+     82          /*******************************************************************************
+     83          *  º¯ÊýÃû³Æ£º
+     84          *  ¹¦ÄÜËµÃ÷£ºÐ´ÈëËÄ¸ö×Ö½ÚÊý¾Ýµ½Flash
+     85          *  ²ÎÊýËµÃ÷£ºuint16 segmentNo £º¶ÎÎ» uint16_t offset £ºÆ«ÒÆÁ¿£¬int32 data £ºÒªÐ´ÈëµÄÊý¾Ý
+     86          *  º¯Êý·µ»Ø£ºÎÞ
+     87          *  Ê¹ÓÃÊ¾Àý£ºFlash_Write(200,0,0xf0e0d010);    //ÔÚµÚ200¸ö¶ÎÎ»£¬Æ«ÒÆ0¸ö×Ö½Ú£¬Ð´ÈëÊý¾Ý0xf0e0d010
+     88          ********************************************************************************/
+
+   \                                 In  segment CODE_I, align 2, keep-with-next
+     89          __ramfunc void Flash_Write_DWold(uint16_t segmentNo,uint16_t offset,uint32_t data)
+   \                     Flash_Write_DWold:
+   \   000000                REQUIRE ?cstart_init_copy_ramfunc
+     90          {
+   \   000000   1B14         PUSHM.A #0x2, R11
+   \   000002   ........     CALLA   #?Subroutine2
+     91            ASSERT(segmentNo >= MIN_SEGMENT && segmentNo <= MAX_SEGMENT);  //¶ÏÑÔ¼ì²â¶Î·¶Î§ÊÇ·ñÔÚFLASHÇø¼ä
+     92            
+     93            uint32_t * Addr = (uint32_t *)((uint32_t)segmentNo*512 + offset);        //¼ÆËãµØÖ·
+     94            
+     95            FCTL3 = FWKEY;                            //Çå³ýËø¶¨ 
+     96            FCTL1 = FWKEY+BLKWRT;                     //ÖÃÎ»±à³ÌÎ»
+     97            *Addr = data;                             //Ð´ÈëÒ»¸ö×Ö
+   \                     ??CrossCallReturnLabel_1:
+   \   000006   1D15         PUSHM.W #0x2, R13
+   \   000008   0B16         POPM.A  #0x1, R11
+   \   00000A   8B4E0000     MOV.W   R14, 0(R11)
+   \   00000E   8B4F0200     MOV.W   R15, 0x2(R11)
+   \   000012   ....         JMP     ?Subroutine1
+   \   000014   0343         NOP
+   \   000016                REQUIRE _A_FCTL3_L
+   \   000016                REQUIRE _A_FCTL1_L
+     98            while (FCTL3 & BUSY);                     //µÈ´ý²Ù×÷Íê³É
+     99            FCTL1 = FWKEY;                            //Çå³ýÐ´ÈëÎ»
+    100            FCTL3 = FWKEY+LOCK;                       //¶ÔFLASH¼ÓËø£¬¿É¶Á£¬²»¿ÉÐ´£¬²»¿É²Á³ý£¬±£»¤Êý¾Ý
+    101          }
+    102          /*******************************************************************************
+    103          *  º¯ÊýÃû³Æ£ºFlash_Write_buf(uint16_t segmentNo,uint16_t offset,uint16_t cnt,uint8_t buf[])
+    104          *  ¹¦ÄÜËµÃ÷£ºÐ´Èë¶à¸ö×Ö½ÚÊý¾Ýµ½Flash
+    105          *  ²ÎÊýËµÃ÷£ºuint16 segmentNo £º¶ÎÎ» uint16_t offset £ºÆðÊ¼Êý¾ÝÆ«ÒÆÁ¿£¬uint16 cnt £ºÐ´ÈëÊý¾ÝÊýÁ¿£¬uint8 buf[]ÒªÐ´ÈëµÄÊý¾Ý
+    106          *  º¯Êý·µ»Ø£ºÎÞ
+    107          *  Ê¹ÓÃÊ¾Àý£ºuint8 data[10];Flash_Write_buf(200,0,10,data);            //´ÓµÚ200¸ö¶ÎÎ»£¬Æ«ÒÆµØÖ·Îª0¿ªÊ¼£¬Á¬ÐøÐ´Èë10¸ö×Ö½Ú
+    108          ********************************************************************************/
+
+   \                                 In  segment CODE_I, align 2, keep-with-next
+    109          __ramfunc void Flash_Write_buf(uint16_t segmentNo,uint16_t offset,uint16_t cnt,uint8_t buf[])
+   \                     Flash_Write_buf:
+   \   000000                REQUIRE ?cstart_init_copy_ramfunc
+    110          {
+   \   000000   1B14         PUSHM.A #0x2, R11
+   \   000002   0A4D         MOV.W   R13, R10
+    111            ASSERT(segmentNo >= MIN_SEGMENT && segmentNo <= MAX_SEGMENT);  //¶ÏÑÔ¼ì²â¶Î·¶Î§ÊÇ·ñÔÚFLASHÇø¼ä
+    112             
+    113            uint8_t * Addr = (uint8_t *)((uint32_t)segmentNo*512 + offset);        //¼ÆËãµØÖ·
+   \   000004   ........     CALLA   #?Subroutine6
+   \                     ??CrossCallReturnLabel_6:
+   \   000008   1D15         PUSHM.W #0x2, R13
+   \   00000A   0B16         POPM.A  #0x1, R11
+    114             
+    115            FCTL3 = FWKEY;                            //Çå³ýËø¶¨ 
+   \   00000C   ........     CALLA   #?Subroutine4
+    116            FCTL1 = FWKEY + WRT ;                     //ÖÃÎ»±à³ÌÎ»
+   \                     ??CrossCallReturnLabel_4:
+   \   000010   0E93         CMP.W   #0x0, R14
+   \   000012   0A24         JEQ     ??Flash_Write_buf_2
+   \                     ??Flash_Write_buf_1:
+   \   000014   3E53         ADD.W   #0xffff, R14
+    117            while(cnt--)                              
+    118            {
+    119              while (FCTL3 & BUSY);                   //µÈ´ýÔÊÐí²Ù×÷
+   \                     ??Flash_Write_buf_0:
+   \   000016   92B34401     BIT.W   #0x1, &0x144
+   \   00001A   FD2F         JC      ??Flash_Write_buf_0
+    120              *Addr++ = *buf++;                       //Ð´ÈëÊý¾ÝÊ±Æô¶¯Ê±Ðò·¢ÉúÆ÷
+   \   00001C   FB4F0000     MOV.B   @R15+, 0(R11)
+   \   000020   AB000100     ADDA    #0x1, R11
+    121            }
+   \   000024   0E93         CMP.W   #0x0, R14
+   \   000026   F623         JNE     ??Flash_Write_buf_1
+    122            FCTL1 = FWKEY;                            //Çå³ýÐ´ÈëÎ»
+   \                     ??Flash_Write_buf_2:
+   \   000028   ....         JMP     ??Subroutine7_0
+   \   00002A   0343         NOP
+   \   00002C                REQUIRE _A_FCTL3_L
+   \   00002C                REQUIRE _A_FCTL1_L
+    123            FCTL3 = FWKEY+LOCK;                       //¶ÔFLASH¼ÓËø£¬¿É¶Á£¬²»¿ÉÐ´£¬²»¿É²Á³ý£¬±£»¤Êý¾Ý
+    124          }
+
+   Maximum stack usage in bytes:
+
+   CSTACK Function
+   ------ --------
+       4  Flash_Erase_Addr
+       4  Flash_Erase_Segment
+      12  Flash_Write_Byte
+      12  Flash_Write_DWold
+      12  Flash_Write_Word
+      12  Flash_Write_buf
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       8  ??Subroutine7_0
+      14  ?Subroutine0
+       6  ?Subroutine1
+      14  ?Subroutine2
+      14  ?Subroutine3
+      14  ?Subroutine4
+      14  ?Subroutine5
+      12  ?Subroutine6
+       4  Flash_Erase_Addr
+      14  Flash_Erase_Segment
+      20  Flash_Write_Byte
+      22  Flash_Write_DWold
+      18  Flash_Write_Word
+      44  Flash_Write_buf
+       2  _A_FCTL1_L
+       2  _A_FCTL3_L
+
+ 
+ 218 bytes in segment CODE_I
+   4 bytes in segment DATA16_AN
+ 
+ 218 bytes of DATA memory (+ 4 bytes shared)
+
+Errors: none
+Warnings: none
