@@ -116,3 +116,5 @@ TIMER_PWM_Init(TIMER_A0,1000,TIMER_CH1,TIMER_CH2,TIMER_CH4);                    
 ## 11：定时器，SPI，I2C等模块初始化时通过查表查找复用引脚，要查看或修改该模块的复用引脚请参考模块对应.c文件上方的数组。下面是SPI模块引脚数组；
 
 ![img_7.png](images/img_7.png)
+
+qq群：461507831，欢迎入群交流
