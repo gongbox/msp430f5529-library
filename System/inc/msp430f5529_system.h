@@ -22,7 +22,7 @@
 //#define DELAY_TIMER      TIMER_B0
 
 #if(defined(DELAY_TIMER))
-#include "timer.h"
+#include "msp430f5529_timer.h"
 #define DELAY_MS(ms)     TIMER_Delay_Ms(DELAY_TIMER,ms)
 #define DELAY_US(us)     TIMER_Delay_Us(DELAY_TIMER,us)
 #else
@@ -48,7 +48,7 @@
 #define PRINT_BAUD       115200         //宏定义默认打印串口波特率 
 
 #if(defined(DEBUG) && defined(DEBUG_UART_PRINT))
-#include "uart.h"
+#include "msp430f5529_uart.h"
 #ifndef PRINT_UART
 #error 没有宏定义"PRINT_UART",请在system.h里宏定义，如#define PRINT_UART  UART0
 #endif

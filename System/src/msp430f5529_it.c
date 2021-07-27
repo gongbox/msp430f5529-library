@@ -16,7 +16,7 @@ __interrupt void default_isr(void)
 #ifdef DEBUG
 #ifdef DEBUG_UART_PRINT
     //启动函数中已经初始化过串口，主函数中若修改了SMCLK频率则需再设置波特率，以便从新设置波特率
-    UART_SetBaudRate (Print_UART,Print_Baud);                    
+    UART_SetBaudRate (PRINT_UART,PRINT_BAUD);                    
 #endif
     LED_Init(LED_ALL);                        //LED灯初始化
     //while (1)  //这里取消死循环

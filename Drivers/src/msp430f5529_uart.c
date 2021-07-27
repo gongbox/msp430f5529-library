@@ -189,7 +189,7 @@ void  UART_ClearITPendingBit(UARTn uartn,UART_IRQn irqn)
 
 PUTCHAR_PROTOTYPE
 {
-  UART_PutChar(Print_UART,(char)ch);
+  UART_PutChar(PRINT_UART,(char)ch);
   return ch;
 }
  

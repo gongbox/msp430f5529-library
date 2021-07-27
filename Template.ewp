@@ -746,7 +746,7 @@
         </option>
         <option>
           <name>XclFile</name>
-          <state>$PROJ_DIR$\Config\Linker\lnk430f5529.xcl</state>
+          <state>$PROJ_DIR$\lnk430f5529.xcl</state>
         </option>
         <option>
           <name>XclFileSlave</name>
@@ -2067,96 +2067,6 @@
     <file>
       <name>$PROJ_DIR$\HardWare\oled\OLED.h</name>
     </file>
-  </group>
-  <group>
-    <name>Lib</name>
-    <group>
-      <name>FatFs</name>
-      <file>
-        <name>$PROJ_DIR$\Lib\FatFs\diskio.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\Lib\FatFs\ff.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\Lib\FatFs\ff.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\Lib\FatFs\ffconf.h</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\Lib\FatFs\mmc.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\Lib\FatFs\mmc.h</name>
-      </file>
-    </group>
-    <group>
-      <name>uCOS-II</name>
-      <group>
-        <name>App</name>
-      </group>
-      <group>
-        <name>CONFIG</name>
-        <file>
-          <name>$PROJ_DIR$\Lib\UCOSII\CONFIG\includes.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\Lib\UCOSII\CONFIG\os_cfg.h</name>
-        </file>
-      </group>
-      <group>
-        <name>CORE</name>
-        <file>
-          <name>$PROJ_DIR$\Lib\UCOSII\CORE\os_core.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\Lib\UCOSII\CORE\os_flag.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\Lib\UCOSII\CORE\os_mbox.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\Lib\UCOSII\CORE\os_mem.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\Lib\UCOSII\CORE\os_mutex.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\Lib\UCOSII\CORE\os_q.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\Lib\UCOSII\CORE\os_sem.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\Lib\UCOSII\CORE\os_task.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\Lib\UCOSII\CORE\os_time.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\Lib\UCOSII\CORE\os_tmr.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\Lib\UCOSII\CORE\ucos_ii.h</name>
-        </file>
-      </group>
-      <group>
-        <name>PORT</name>
-        <file>
-          <name>$PROJ_DIR$\Lib\UCOSII\PORT\os_cpu.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\Lib\UCOSII\PORT\os_cpu_a.s43</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\Lib\UCOSII\PORT\os_cpu_c.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\Lib\UCOSII\PORT\os_dbg.c</name>
-        </file>
-      </group>
-    </group>
   </group>
   <group>
     <name>StdPeriph_Driver</name>

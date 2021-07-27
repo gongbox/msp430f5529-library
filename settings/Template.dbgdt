@@ -45,7 +45,7 @@
       <WATCH_1>
         <expressions>
           
-        <item>text</item><item>Str</item><item></item></expressions>
+        <item>text</item><item>Str</item><item/></expressions>
         <col-names>
           
           

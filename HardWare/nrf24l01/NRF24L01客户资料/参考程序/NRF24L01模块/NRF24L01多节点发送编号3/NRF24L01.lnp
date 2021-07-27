@@ -1,6 +1,0 @@
-"NRF24L01.obj",
-"Delay.obj",
-"·¢Éä.obj",
-"DS18N02.obj" 
-TO "NRF24L01" 
-RAMSIZE(256) 

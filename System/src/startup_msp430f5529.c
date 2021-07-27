@@ -62,7 +62,7 @@ void SystemInit (void)
     /**************************************************************************/
 #if(defined(DEBUG))
 #if(defined(DEBUG_UART_PRINT))
-    UART_Init(Print_UART, Print_Baud);          //调试模式下，如果选择使用串口作为信息打印则初始化UART模块
+    UART_Init(PRINT_UART, PRINT_BAUD);          //调试模式下，如果选择使用串口作为信息打印则初始化UART模块
 #endif
     Start_Show();
 #endif
