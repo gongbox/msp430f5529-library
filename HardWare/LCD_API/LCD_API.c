@@ -1,5 +1,5 @@
-#include "LCD_API.h"
-#include "LCD_FONT.h"
+#include "lcd_api.h"
+#include "lcd_font.h"
 #include <stdarg.h>
 #include <string.h>
 #include <stdio.h>

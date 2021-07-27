@@ -1,4 +1,4 @@
-#include "KEY.h"
+#include "key.h"
 #include "msp430f5529_gpio.h"
 //°´¼ü´¦Àí½×¶Î
 typedef enum

@@ -1,4 +1,4 @@
-#include "LCD.h"
+#include "lcd.h"
 #include "delay.h" 
 void LCD_PORT_Init(void)
 {

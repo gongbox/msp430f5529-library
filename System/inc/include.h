@@ -23,11 +23,11 @@
 #include "msp430f5529_it.h"
 #include "msp430f5529_vectors.h"
 /****用户自定义***/
-#include "KEY.h"
-#include "LED.h"
-#include "LCD_API.h"
-#include "OLED.h"
+#include "key.h"
+#include "led.h"
+#include "lcd_api.h"
+#include "oled.h"
 #include "math.h"
-#include "PID.h"
+#include "pid.h"
 
 #endif

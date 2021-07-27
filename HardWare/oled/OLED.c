@@ -1,6 +1,6 @@
-#include "OLED.h"
-#include "OLED_FONT.h"
-#include "OLED_FONT_CHINESE.h"
+#include "oled.h"
+#include "oled_font.h"
+#include "oled_font_chinese.h"
 #include <stdarg.h>
 #include <string.h>
 #include <stdio.h>

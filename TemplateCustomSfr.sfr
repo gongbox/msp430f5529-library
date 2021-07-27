@@ -104,12 +104,68 @@ sfr = "P1IN",	"Memory",	0x200,	1,	base=16,	modified
 sfr = "P1OUT",	"Memory",	0x202,	1,	base=16,	modified
 sfr = "P1DIR",	"Memory",	0x204,	1,	base=16,	modified
 sfr = "P1REN",	"Memory",	0x206,	1,	base=16,	modified
+sfr = "P1DS",	"Memory",	0x208,	1,	base=16,	modified
+sfr = "P1SEL",	"Memory",	0x20a,	1,	base=16,	modified
+sfr = "P1IV",	"Memory",	0x20e,	2,	base=16,	modified
+sfr = "P1IES",	"Memory",	0x218,	1,	base=16,	modified
 sfr = "P1IE",	"Memory",	0x21a,	1,	base=16,	modified
 sfr = "P1IFG",	"Memory",	0x21c,	1,	base=16,	modified
 sfr = "P2IN",	"Memory",	0x201,	1,	base=16,	modified
 sfr = "P2OUT",	"Memory",	0x203,	1,	base=16,	modified
 sfr = "P2DIR",	"Memory",	0x205,	1,	base=16,	modified
 sfr = "P2REN",	"Memory",	0x207,	1,	base=16,	modified
+sfr = "P2DS",	"Memory",	0x209,	1,	base=16,	modified
+sfr = "P2SEL",	"Memory",	0x20b,	1,	base=16,	modified
+sfr = "P2IV",	"Memory",	0x21e,	2,	base=16,	modified
+sfr = "P2IES",	"Memory",	0x219,	1,	base=16,	modified
+sfr = "P2IE",	"Memory",	0x21b,	1,	base=16,	modified
+sfr = "P2IFG",	"Memory",	0x21d,	1,	base=16,	modified
+sfr = "PBIN",	"Memory",	0x220,	2,	base=16,	modified
+sfr = "PBOUT",	"Memory",	0x222,	2,	base=16,	modified
+sfr = "PBDIR",	"Memory",	0x224,	2,	base=16,	modified
+sfr = "PBREN",	"Memory",	0x226,	2,	base=16,	modified
+sfr = "PBDS",	"Memory",	0x228,	2,	base=16,	modified
+sfr = "PBSEL",	"Memory",	0x22a,	2,	base=16,	modified
+sfr = "P3IN",	"Memory",	0x220,	1,	base=16,	modified
+sfr = "P3OUT",	"Memory",	0x222,	1,	base=16,	modified
+sfr = "P3DIR",	"Memory",	0x224,	1,	base=16,	modified
+sfr = "P3REN",	"Memory",	0x226,	1,	base=16,	modified
+sfr = "P3DS",	"Memory",	0x228,	1,	base=16,	modified
+sfr = "P3SEL",	"Memory",	0x22a,	1,	base=16,	modified
+sfr = "P4IN",	"Memory",	0x221,	1,	base=16,	modified
+sfr = "P4OUT",	"Memory",	0x223,	1,	base=16,	modified
+sfr = "P4DIR",	"Memory",	0x225,	1,	base=16,	modified
+sfr = "P4REN",	"Memory",	0x227,	1,	base=16,	modified
+sfr = "P4DS",	"Memory",	0x229,	1,	base=16,	modified
+sfr = "P4SEL",	"Memory",	0x22b,	1,	base=16,	modified
+sfr = "PCIN",	"Memory",	0x240,	2,	base=16,	modified
+sfr = "PCOUT",	"Memory",	0x242,	2,	base=16,	modified
+sfr = "PCDIR",	"Memory",	0x244,	2,	base=16,	modified
+sfr = "PCREN",	"Memory",	0x246,	2,	base=16,	modified
+sfr = "PCDS",	"Memory",	0x248,	2,	base=16,	modified
+sfr = "PCSEL",	"Memory",	0x24a,	2,	base=16,	modified
+sfr = "P5IN",	"Memory",	0x240,	1,	base=16,	modified
+sfr = "P5OUT",	"Memory",	0x242,	1,	base=16,	modified
+sfr = "P5DIR",	"Memory",	0x244,	1,	base=16,	modified
+sfr = "P5REN",	"Memory",	0x246,	1,	base=16,	modified
+sfr = "P5DS",	"Memory",	0x248,	1,	base=16,	modified
+sfr = "P5SEL",	"Memory",	0x24a,	1,	base=16,	modified
+sfr = "P6IN",	"Memory",	0x241,	1,	base=16,	modified
+sfr = "P6OUT",	"Memory",	0x243,	1,	base=16,	modified
+sfr = "P6DIR",	"Memory",	0x245,	1,	base=16,	modified
+sfr = "P6REN",	"Memory",	0x247,	1,	base=16,	modified
+sfr = "P6DS",	"Memory",	0x249,	1,	base=16,	modified
+sfr = "P6SEL",	"Memory",	0x24b,	1,	base=16,	modified
+sfr = "PDIN",	"Memory",	0x260,	2,	base=16,	modified
+sfr = "PDOUT",	"Memory",	0x262,	2,	base=16,	modified
+sfr = "PDDIR",	"Memory",	0x264,	2,	base=16,	modified
+sfr = "PDREN",	"Memory",	0x266,	2,	base=16,	modified
+sfr = "PDDS",	"Memory",	0x268,	2,	base=16,	modified
+sfr = "PDSEL",	"Memory",	0x26a,	2,	base=16,	modified
+sfr = "P7IN",	"Memory",	0x260,	1,	base=16,	modified
+sfr = "P7OUT",	"Memory",	0x262,	1,	base=16,	modified
+sfr = "P7DIR",	"Memory",	0x264,	1,	base=16,	modified
+sfr = "P7REN",	"Memory",	0x266,	1,	base=16,	modified
 sfr = "P7DS",	"Memory",	0x268,	1,	base=16,	modified
 sfr = "P7SEL",	"Memory",	0x26a,	1,	base=16,	modified
 sfr = "P8IN",	"Memory",	0x261,	1,	base=16,	modified
@@ -467,700 +523,6 @@ sfr = "UCB1IE",	"Memory",	0x63c,	1,	base=16,	modified
 sfr = "UCB1IFG",	"Memory",	0x63d,	1,	base=16,	modified
 sfr = "UCB1IV",	"Memory",	0x63e,	2,	base=16,	modified
 sfr = "WDTCTL",	"Memory",	0x15c,	2,	base=16,	modified
-sfr = "P1REN.P1REN1",	"Memory",	0x206,	1,	base=16,	modified
-sfr = "P1REN.P1REN2",	"Memory",	0x206,	1,	base=16,	modified
-sfr = "P1REN.P1REN3",	"Memory",	0x206,	1,	base=16,	modified
-sfr = "P1REN.P1REN4",	"Memory",	0x206,	1,	base=16,	modified
-sfr = "P1REN.P1REN5",	"Memory",	0x206,	1,	base=16,	modified
-sfr = "P1REN.P1REN6",	"Memory",	0x206,	1,	base=16,	modified
-sfr = "P1REN.P1REN7",	"Memory",	0x206,	1,	base=16,	modified
-sfr = "P1DS",	"Memory",	0x208,	1,	base=16,	modified
-sfr = "P1DS.P1DS0",	"Memory",	0x208,	1,	base=16,	modified
-sfr = "P1DS.P1DS1",	"Memory",	0x208,	1,	base=16,	modified
-sfr = "P1DS.P1DS2",	"Memory",	0x208,	1,	base=16,	modified
-sfr = "P1DS.P1DS3",	"Memory",	0x208,	1,	base=16,	modified
-sfr = "P1DS.P1DS4",	"Memory",	0x208,	1,	base=16,	modified
-sfr = "P1DS.P1DS5",	"Memory",	0x208,	1,	base=16,	modified
-sfr = "P1DS.P1DS6",	"Memory",	0x208,	1,	base=16,	modified
-sfr = "P1DS.P1DS7",	"Memory",	0x208,	1,	base=16,	modified
-sfr = "P1SEL",	"Memory",	0x20a,	1,	base=16,	modified
-sfr = "P1SEL.P1SEL0",	"Memory",	0x20a,	1,	base=16,	modified
-sfr = "P1SEL.P1SEL1",	"Memory",	0x20a,	1,	base=16,	modified
-sfr = "P1SEL.P1SEL2",	"Memory",	0x20a,	1,	base=16,	modified
-sfr = "P1SEL.P1SEL3",	"Memory",	0x20a,	1,	base=16,	modified
-sfr = "P1SEL.P1SEL4",	"Memory",	0x20a,	1,	base=16,	modified
-sfr = "P1SEL.P1SEL5",	"Memory",	0x20a,	1,	base=16,	modified
-sfr = "P1SEL.P1SEL6",	"Memory",	0x20a,	1,	base=16,	modified
-sfr = "P1SEL.P1SEL7",	"Memory",	0x20a,	1,	base=16,	modified
-sfr = "P1IV",	"Memory",	0x20e,	2,	base=16,	modified
-sfr = "P1IES",	"Memory",	0x218,	1,	base=16,	modified
-sfr = "P1IES.P1IES0",	"Memory",	0x218,	1,	base=16,	modified
-sfr = "P1IES.P1IES1",	"Memory",	0x218,	1,	base=16,	modified
-sfr = "P1IES.P1IES2",	"Memory",	0x218,	1,	base=16,	modified
-sfr = "P1IES.P1IES3",	"Memory",	0x218,	1,	base=16,	modified
-sfr = "P1IES.P1IES4",	"Memory",	0x218,	1,	base=16,	modified
-sfr = "P2OUT.P2OUT1",	"Memory",	0x203,	1,	base=16,	modified
-sfr = "P2OUT.P2OUT3",	"Memory",	0x203,	1,	base=16,	modified
-sfr = "P2DIR.P2DIR0",	"Memory",	0x205,	1,	base=16,	modified
-sfr = "P2DIR.P2DIR5",	"Memory",	0x205,	1,	base=16,	modified
-sfr = "P2DS",	"Memory",	0x209,	1,	base=16,	modified
-sfr = "P2DS.P2DS0",	"Memory",	0x209,	1,	base=16,	modified
-sfr = "P2DS.P2DS1",	"Memory",	0x209,	1,	base=16,	modified
-sfr = "P2DS.P2DS5",	"Memory",	0x209,	1,	base=16,	modified
-sfr = "P2DS.P2DS6",	"Memory",	0x209,	1,	base=16,	modified
-sfr = "P2DS.P2DS7",	"Memory",	0x209,	1,	base=16,	modified
-sfr = "P2SEL",	"Memory",	0x20b,	1,	base=16,	modified
-sfr = "P2SEL.P2SEL0",	"Memory",	0x20b,	1,	base=16,	modified
-sfr = "P2SEL.P2SEL1",	"Memory",	0x20b,	1,	base=16,	modified
-sfr = "P2SEL.P2SEL2",	"Memory",	0x20b,	1,	base=16,	modified
-sfr = "P2SEL.P2SEL3",	"Memory",	0x20b,	1,	base=16,	modified
-sfr = "P2SEL.P2SEL4",	"Memory",	0x20b,	1,	base=16,	modified
-sfr = "P2SEL.P2SEL5",	"Memory",	0x20b,	1,	base=16,	modified
-sfr = "P2SEL.P2SEL6",	"Memory",	0x20b,	1,	base=16,	modified
-sfr = "P2SEL.P2SEL7",	"Memory",	0x20b,	1,	base=16,	modified
-sfr = "P2IV",	"Memory",	0x21e,	2,	base=16,	modified
-sfr = "P2IES",	"Memory",	0x219,	1,	base=16,	modified
-sfr = "P2IES.P2IES0",	"Memory",	0x219,	1,	base=16,	modified
-sfr = "P2IES.P2IES1",	"Memory",	0x219,	1,	base=16,	modified
-sfr = "P2IES.P2IES2",	"Memory",	0x219,	1,	base=16,	modified
-sfr = "P2IES.P2IES3",	"Memory",	0x219,	1,	base=16,	modified
-sfr = "P2IES.P2IES4",	"Memory",	0x219,	1,	base=16,	modified
-sfr = "P2IES.P2IES5",	"Memory",	0x219,	1,	base=16,	modified
-sfr = "P2IES.P2IES6",	"Memory",	0x219,	1,	base=16,	modified
-sfr = "P2IES.P2IES7",	"Memory",	0x219,	1,	base=16,	modified
-sfr = "P2IE",	"Memory",	0x21b,	1,	base=16,	modified
-sfr = "P2IE.P2IE0",	"Memory",	0x21b,	1,	base=16,	modified
-sfr = "P2IE.P2IE1",	"Memory",	0x21b,	1,	base=16,	modified
-sfr = "P2IE.P2IE2",	"Memory",	0x21b,	1,	base=16,	modified
-sfr = "P2IE.P2IE3",	"Memory",	0x21b,	1,	base=16,	modified
-sfr = "P2IE.P2IE4",	"Memory",	0x21b,	1,	base=16,	modified
-sfr = "P2IE.P2IE5",	"Memory",	0x21b,	1,	base=16,	modified
-sfr = "P2IE.P2IE6",	"Memory",	0x21b,	1,	base=16,	modified
-sfr = "P2IE.P2IE7",	"Memory",	0x21b,	1,	base=16,	modified
-sfr = "P2IFG",	"Memory",	0x21d,	1,	base=16,	modified
-sfr = "P2IFG.P2IFG0",	"Memory",	0x21d,	1,	base=16,	modified
-sfr = "P2IFG.P2IFG1",	"Memory",	0x21d,	1,	base=16,	modified
-sfr = "P2IFG.P2IFG2",	"Memory",	0x21d,	1,	base=16,	modified
-sfr = "P2IFG.P2IFG3",	"Memory",	0x21d,	1,	base=16,	modified
-sfr = "P2IFG.P2IFG4",	"Memory",	0x21d,	1,	base=16,	modified
-sfr = "P2IFG.P2IFG5",	"Memory",	0x21d,	1,	base=16,	modified
-sfr = "P2IFG.P2IFG6",	"Memory",	0x21d,	1,	base=16,	modified
-sfr = "P2IFG.P2IFG7",	"Memory",	0x21d,	1,	base=16,	modified
-sfr = "PBIN",	"Memory",	0x220,	2,	base=16,	modified
-sfr = "PBIN.PBIN0",	"Memory",	0x220,	2,	base=16,	modified
-sfr = "PBIN.PBIN1",	"Memory",	0x220,	2,	base=16,	modified
-sfr = "PBIN.PBIN2",	"Memory",	0x220,	2,	base=16,	modified
-sfr = "PBIN.PBIN3",	"Memory",	0x220,	2,	base=16,	modified
-sfr = "PBIN.PBIN4",	"Memory",	0x220,	2,	base=16,	modified
-sfr = "PBIN.PBIN5",	"Memory",	0x220,	2,	base=16,	modified
-sfr = "PBIN.PBIN6",	"Memory",	0x220,	2,	base=16,	modified
-sfr = "PBIN.PBIN7",	"Memory",	0x220,	2,	base=16,	modified
-sfr = "PBIN.PBIN8",	"Memory",	0x220,	2,	base=16,	modified
-sfr = "PBIN.PBIN9",	"Memory",	0x220,	2,	base=16,	modified
-sfr = "PBIN.PBIN10",	"Memory",	0x220,	2,	base=16,	modified
-sfr = "PBIN.PBIN11",	"Memory",	0x220,	2,	base=16,	modified
-sfr = "PBIN.PBIN12",	"Memory",	0x220,	2,	base=16,	modified
-sfr = "PBIN.PBIN13",	"Memory",	0x220,	2,	base=16,	modified
-sfr = "PBIN.PBIN14",	"Memory",	0x220,	2,	base=16,	modified
-sfr = "PBIN.PBIN15",	"Memory",	0x220,	2,	base=16,	modified
-sfr = "PBOUT",	"Memory",	0x222,	2,	base=16,	modified
-sfr = "PBOUT.PBOUT0",	"Memory",	0x222,	2,	base=16,	modified
-sfr = "PBOUT.PBOUT1",	"Memory",	0x222,	2,	base=16,	modified
-sfr = "PBOUT.PBOUT2",	"Memory",	0x222,	2,	base=16,	modified
-sfr = "PBOUT.PBOUT3",	"Memory",	0x222,	2,	base=16,	modified
-sfr = "PBOUT.PBOUT4",	"Memory",	0x222,	2,	base=16,	modified
-sfr = "PBOUT.PBOUT5",	"Memory",	0x222,	2,	base=16,	modified
-sfr = "PBOUT.PBOUT6",	"Memory",	0x222,	2,	base=16,	modified
-sfr = "PBOUT.PBOUT7",	"Memory",	0x222,	2,	base=16,	modified
-sfr = "PBOUT.PBOUT8",	"Memory",	0x222,	2,	base=16,	modified
-sfr = "PBOUT.PBOUT9",	"Memory",	0x222,	2,	base=16,	modified
-sfr = "PBOUT.PBOUT10",	"Memory",	0x222,	2,	base=16,	modified
-sfr = "PBOUT.PBOUT11",	"Memory",	0x222,	2,	base=16,	modified
-sfr = "PBOUT.PBOUT12",	"Memory",	0x222,	2,	base=16,	modified
-sfr = "PBOUT.PBOUT13",	"Memory",	0x222,	2,	base=16,	modified
-sfr = "PBOUT.PBOUT14",	"Memory",	0x222,	2,	base=16,	modified
-sfr = "PBOUT.PBOUT15",	"Memory",	0x222,	2,	base=16,	modified
-sfr = "PBDIR",	"Memory",	0x224,	2,	base=16,	modified
-sfr = "PBDIR.PBDIR0",	"Memory",	0x224,	2,	base=16,	modified
-sfr = "PBDIR.PBDIR1",	"Memory",	0x224,	2,	base=16,	modified
-sfr = "PBDIR.PBDIR2",	"Memory",	0x224,	2,	base=16,	modified
-sfr = "PBDIR.PBDIR3",	"Memory",	0x224,	2,	base=16,	modified
-sfr = "PBDIR.PBDIR4",	"Memory",	0x224,	2,	base=16,	modified
-sfr = "PBDIR.PBDIR5",	"Memory",	0x224,	2,	base=16,	modified
-sfr = "PBDIR.PBDIR6",	"Memory",	0x224,	2,	base=16,	modified
-sfr = "PBDIR.PBDIR7",	"Memory",	0x224,	2,	base=16,	modified
-sfr = "PBDIR.PBDIR8",	"Memory",	0x224,	2,	base=16,	modified
-sfr = "PBDIR.PBDIR9",	"Memory",	0x224,	2,	base=16,	modified
-sfr = "PBDIR.PBDIR10",	"Memory",	0x224,	2,	base=16,	modified
-sfr = "PBDIR.PBDIR11",	"Memory",	0x224,	2,	base=16,	modified
-sfr = "PBDIR.PBDIR12",	"Memory",	0x224,	2,	base=16,	modified
-sfr = "PBDIR.PBDIR13",	"Memory",	0x224,	2,	base=16,	modified
-sfr = "PBDIR.PBDIR14",	"Memory",	0x224,	2,	base=16,	modified
-sfr = "PBDIR.PBDIR15",	"Memory",	0x224,	2,	base=16,	modified
-sfr = "PBREN",	"Memory",	0x226,	2,	base=16,	modified
-sfr = "PBREN.PBREN0",	"Memory",	0x226,	2,	base=16,	modified
-sfr = "PBREN.PBREN1",	"Memory",	0x226,	2,	base=16,	modified
-sfr = "PBREN.PBREN2",	"Memory",	0x226,	2,	base=16,	modified
-sfr = "PBREN.PBREN3",	"Memory",	0x226,	2,	base=16,	modified
-sfr = "PBREN.PBREN4",	"Memory",	0x226,	2,	base=16,	modified
-sfr = "PBREN.PBREN5",	"Memory",	0x226,	2,	base=16,	modified
-sfr = "PBREN.PBREN6",	"Memory",	0x226,	2,	base=16,	modified
-sfr = "PBREN.PBREN7",	"Memory",	0x226,	2,	base=16,	modified
-sfr = "PBREN.PBREN8",	"Memory",	0x226,	2,	base=16,	modified
-sfr = "PBREN.PBREN9",	"Memory",	0x226,	2,	base=16,	modified
-sfr = "PBREN.PBREN10",	"Memory",	0x226,	2,	base=16,	modified
-sfr = "PBREN.PBREN11",	"Memory",	0x226,	2,	base=16,	modified
-sfr = "PBREN.PBREN12",	"Memory",	0x226,	2,	base=16,	modified
-sfr = "PBREN.PBREN13",	"Memory",	0x226,	2,	base=16,	modified
-sfr = "PBREN.PBREN14",	"Memory",	0x226,	2,	base=16,	modified
-sfr = "PBREN.PBREN15",	"Memory",	0x226,	2,	base=16,	modified
-sfr = "PBDS",	"Memory",	0x228,	2,	base=16,	modified
-sfr = "PBDS.PBDS0",	"Memory",	0x228,	2,	base=16,	modified
-sfr = "PBDS.PBDS1",	"Memory",	0x228,	2,	base=16,	modified
-sfr = "PBDS.PBDS2",	"Memory",	0x228,	2,	base=16,	modified
-sfr = "PBDS.PBDS3",	"Memory",	0x228,	2,	base=16,	modified
-sfr = "PBDS.PBDS4",	"Memory",	0x228,	2,	base=16,	modified
-sfr = "PBDS.PBDS5",	"Memory",	0x228,	2,	base=16,	modified
-sfr = "PBDS.PBDS6",	"Memory",	0x228,	2,	base=16,	modified
-sfr = "PBDS.PBDS7",	"Memory",	0x228,	2,	base=16,	modified
-sfr = "PBDS.PBDS8",	"Memory",	0x228,	2,	base=16,	modified
-sfr = "PBDS.PBDS9",	"Memory",	0x228,	2,	base=16,	modified
-sfr = "PBDS.PBDS10",	"Memory",	0x228,	2,	base=16,	modified
-sfr = "PBDS.PBDS11",	"Memory",	0x228,	2,	base=16,	modified
-sfr = "PBDS.PBDS12",	"Memory",	0x228,	2,	base=16,	modified
-sfr = "PBDS.PBDS13",	"Memory",	0x228,	2,	base=16,	modified
-sfr = "PBDS.PBDS14",	"Memory",	0x228,	2,	base=16,	modified
-sfr = "PBDS.PBDS15",	"Memory",	0x228,	2,	base=16,	modified
-sfr = "PBSEL",	"Memory",	0x22a,	2,	base=16,	modified
-sfr = "PBSEL.PBSEL0",	"Memory",	0x22a,	2,	base=16,	modified
-sfr = "PBSEL.PBSEL1",	"Memory",	0x22a,	2,	base=16,	modified
-sfr = "PBSEL.PBSEL2",	"Memory",	0x22a,	2,	base=16,	modified
-sfr = "PBSEL.PBSEL3",	"Memory",	0x22a,	2,	base=16,	modified
-sfr = "PBSEL.PBSEL4",	"Memory",	0x22a,	2,	base=16,	modified
-sfr = "PBSEL.PBSEL5",	"Memory",	0x22a,	2,	base=16,	modified
-sfr = "PBSEL.PBSEL6",	"Memory",	0x22a,	2,	base=16,	modified
-sfr = "PBSEL.PBSEL7",	"Memory",	0x22a,	2,	base=16,	modified
-sfr = "PBSEL.PBSEL8",	"Memory",	0x22a,	2,	base=16,	modified
-sfr = "PBSEL.PBSEL9",	"Memory",	0x22a,	2,	base=16,	modified
-sfr = "PBSEL.PBSEL10",	"Memory",	0x22a,	2,	base=16,	modified
-sfr = "PBSEL.PBSEL11",	"Memory",	0x22a,	2,	base=16,	modified
-sfr = "PBSEL.PBSEL12",	"Memory",	0x22a,	2,	base=16,	modified
-sfr = "PBSEL.PBSEL13",	"Memory",	0x22a,	2,	base=16,	modified
-sfr = "PBSEL.PBSEL14",	"Memory",	0x22a,	2,	base=16,	modified
-sfr = "PBSEL.PBSEL15",	"Memory",	0x22a,	2,	base=16,	modified
-sfr = "P3IN",	"Memory",	0x220,	1,	base=16,	modified
-sfr = "P3IN.P3IN0",	"Memory",	0x220,	1,	base=16,	modified
-sfr = "P3IN.P3IN1",	"Memory",	0x220,	1,	base=16,	modified
-sfr = "P3IN.P3IN2",	"Memory",	0x220,	1,	base=16,	modified
-sfr = "P3IN.P3IN3",	"Memory",	0x220,	1,	base=16,	modified
-sfr = "P3IN.P3IN4",	"Memory",	0x220,	1,	base=16,	modified
-sfr = "P3IN.P3IN5",	"Memory",	0x220,	1,	base=16,	modified
-sfr = "P3IN.P3IN6",	"Memory",	0x220,	1,	base=16,	modified
-sfr = "P3IN.P3IN7",	"Memory",	0x220,	1,	base=16,	modified
-sfr = "P3OUT",	"Memory",	0x222,	1,	base=16,	modified
-sfr = "P3OUT.P3OUT0",	"Memory",	0x222,	1,	base=16,	modified
-sfr = "P3OUT.P3OUT1",	"Memory",	0x222,	1,	base=16,	modified
-sfr = "P3OUT.P3OUT2",	"Memory",	0x222,	1,	base=16,	modified
-sfr = "P3OUT.P3OUT3",	"Memory",	0x222,	1,	base=16,	modified
-sfr = "P3OUT.P3OUT4",	"Memory",	0x222,	1,	base=16,	modified
-sfr = "P3OUT.P3OUT5",	"Memory",	0x222,	1,	base=16,	modified
-sfr = "P3OUT.P3OUT6",	"Memory",	0x222,	1,	base=16,	modified
-sfr = "P3OUT.P3OUT7",	"Memory",	0x222,	1,	base=16,	modified
-sfr = "P3DIR",	"Memory",	0x224,	1,	base=16,	modified
-sfr = "P3DIR.P3DIR0",	"Memory",	0x224,	1,	base=16,	modified
-sfr = "P3DIR.P3DIR1",	"Memory",	0x224,	1,	base=16,	modified
-sfr = "P3DIR.P3DIR2",	"Memory",	0x224,	1,	base=16,	modified
-sfr = "P3DIR.P3DIR3",	"Memory",	0x224,	1,	base=16,	modified
-sfr = "P3DIR.P3DIR4",	"Memory",	0x224,	1,	base=16,	modified
-sfr = "P3DIR.P3DIR5",	"Memory",	0x224,	1,	base=16,	modified
-sfr = "P3DIR.P3DIR6",	"Memory",	0x224,	1,	base=16,	modified
-sfr = "P3DIR.P3DIR7",	"Memory",	0x224,	1,	base=16,	modified
-sfr = "P3REN",	"Memory",	0x226,	1,	base=16,	modified
-sfr = "P3REN.P3REN0",	"Memory",	0x226,	1,	base=16,	modified
-sfr = "P3REN.P3REN1",	"Memory",	0x226,	1,	base=16,	modified
-sfr = "P3REN.P3REN2",	"Memory",	0x226,	1,	base=16,	modified
-sfr = "P3REN.P3REN3",	"Memory",	0x226,	1,	base=16,	modified
-sfr = "P3REN.P3REN4",	"Memory",	0x226,	1,	base=16,	modified
-sfr = "P3REN.P3REN5",	"Memory",	0x226,	1,	base=16,	modified
-sfr = "P3REN.P3REN6",	"Memory",	0x226,	1,	base=16,	modified
-sfr = "P3REN.P3REN7",	"Memory",	0x226,	1,	base=16,	modified
-sfr = "P3DS",	"Memory",	0x228,	1,	base=16,	modified
-sfr = "P3DS.P3DS0",	"Memory",	0x228,	1,	base=16,	modified
-sfr = "P3DS.P3DS1",	"Memory",	0x228,	1,	base=16,	modified
-sfr = "P3DS.P3DS2",	"Memory",	0x228,	1,	base=16,	modified
-sfr = "P3DS.P3DS3",	"Memory",	0x228,	1,	base=16,	modified
-sfr = "P3DS.P3DS4",	"Memory",	0x228,	1,	base=16,	modified
-sfr = "P3DS.P3DS5",	"Memory",	0x228,	1,	base=16,	modified
-sfr = "P3DS.P3DS6",	"Memory",	0x228,	1,	base=16,	modified
-sfr = "P3DS.P3DS7",	"Memory",	0x228,	1,	base=16,	modified
-sfr = "P3SEL",	"Memory",	0x22a,	1,	base=16,	modified
-sfr = "P3SEL.P3SEL0",	"Memory",	0x22a,	1,	base=16,	modified
-sfr = "P3SEL.P3SEL1",	"Memory",	0x22a,	1,	base=16,	modified
-sfr = "P3SEL.P3SEL2",	"Memory",	0x22a,	1,	base=16,	modified
-sfr = "P3SEL.P3SEL3",	"Memory",	0x22a,	1,	base=16,	modified
-sfr = "P3SEL.P3SEL4",	"Memory",	0x22a,	1,	base=16,	modified
-sfr = "P3SEL.P3SEL5",	"Memory",	0x22a,	1,	base=16,	modified
-sfr = "P3SEL.P3SEL6",	"Memory",	0x22a,	1,	base=16,	modified
-sfr = "P3SEL.P3SEL7",	"Memory",	0x22a,	1,	base=16,	modified
-sfr = "P4IN",	"Memory",	0x221,	1,	base=16,	modified
-sfr = "P4IN.P4IN0",	"Memory",	0x221,	1,	base=16,	modified
-sfr = "P4IN.P4IN1",	"Memory",	0x221,	1,	base=16,	modified
-sfr = "P4IN.P4IN2",	"Memory",	0x221,	1,	base=16,	modified
-sfr = "P4IN.P4IN3",	"Memory",	0x221,	1,	base=16,	modified
-sfr = "P4IN.P4IN4",	"Memory",	0x221,	1,	base=16,	modified
-sfr = "P4IN.P4IN5",	"Memory",	0x221,	1,	base=16,	modified
-sfr = "P4IN.P4IN6",	"Memory",	0x221,	1,	base=16,	modified
-sfr = "P4IN.P4IN7",	"Memory",	0x221,	1,	base=16,	modified
-sfr = "P4OUT",	"Memory",	0x223,	1,	base=16,	modified
-sfr = "P4OUT.P4OUT0",	"Memory",	0x223,	1,	base=16,	modified
-sfr = "P4OUT.P4OUT1",	"Memory",	0x223,	1,	base=16,	modified
-sfr = "P4OUT.P4OUT2",	"Memory",	0x223,	1,	base=16,	modified
-sfr = "P4OUT.P4OUT3",	"Memory",	0x223,	1,	base=16,	modified
-sfr = "P4OUT.P4OUT4",	"Memory",	0x223,	1,	base=16,	modified
-sfr = "P4OUT.P4OUT5",	"Memory",	0x223,	1,	base=16,	modified
-sfr = "P4OUT.P4OUT6",	"Memory",	0x223,	1,	base=16,	modified
-sfr = "P4OUT.P4OUT7",	"Memory",	0x223,	1,	base=16,	modified
-sfr = "P4DIR",	"Memory",	0x225,	1,	base=16,	modified
-sfr = "P4DIR.P4DIR0",	"Memory",	0x225,	1,	base=16,	modified
-sfr = "P4DIR.P4DIR1",	"Memory",	0x225,	1,	base=16,	modified
-sfr = "P4DIR.P4DIR2",	"Memory",	0x225,	1,	base=16,	modified
-sfr = "P4DIR.P4DIR3",	"Memory",	0x225,	1,	base=16,	modified
-sfr = "P4DIR.P4DIR4",	"Memory",	0x225,	1,	base=16,	modified
-sfr = "P4DIR.P4DIR5",	"Memory",	0x225,	1,	base=16,	modified
-sfr = "P4DIR.P4DIR6",	"Memory",	0x225,	1,	base=16,	modified
-sfr = "P4DIR.P4DIR7",	"Memory",	0x225,	1,	base=16,	modified
-sfr = "P4REN",	"Memory",	0x227,	1,	base=16,	modified
-sfr = "P4REN.P4REN0",	"Memory",	0x227,	1,	base=16,	modified
-sfr = "P4REN.P4REN1",	"Memory",	0x227,	1,	base=16,	modified
-sfr = "P4REN.P4REN2",	"Memory",	0x227,	1,	base=16,	modified
-sfr = "P4REN.P4REN3",	"Memory",	0x227,	1,	base=16,	modified
-sfr = "P4REN.P4REN4",	"Memory",	0x227,	1,	base=16,	modified
-sfr = "P4REN.P4REN5",	"Memory",	0x227,	1,	base=16,	modified
-sfr = "P4REN.P4REN6",	"Memory",	0x227,	1,	base=16,	modified
-sfr = "P4REN.P4REN7",	"Memory",	0x227,	1,	base=16,	modified
-sfr = "P4DS",	"Memory",	0x229,	1,	base=16,	modified
-sfr = "P4DS.P4DS0",	"Memory",	0x229,	1,	base=16,	modified
-sfr = "P4DS.P4DS1",	"Memory",	0x229,	1,	base=16,	modified
-sfr = "P4DS.P4DS2",	"Memory",	0x229,	1,	base=16,	modified
-sfr = "P4DS.P4DS3",	"Memory",	0x229,	1,	base=16,	modified
-sfr = "P4DS.P4DS4",	"Memory",	0x229,	1,	base=16,	modified
-sfr = "P4DS.P4DS5",	"Memory",	0x229,	1,	base=16,	modified
-sfr = "P4DS.P4DS6",	"Memory",	0x229,	1,	base=16,	modified
-sfr = "P4DS.P4DS7",	"Memory",	0x229,	1,	base=16,	modified
-sfr = "P4SEL",	"Memory",	0x22b,	1,	base=16,	modified
-sfr = "P4SEL.P4SEL0",	"Memory",	0x22b,	1,	base=16,	modified
-sfr = "P4SEL.P4SEL1",	"Memory",	0x22b,	1,	base=16,	modified
-sfr = "P4SEL.P4SEL2",	"Memory",	0x22b,	1,	base=16,	modified
-sfr = "P4SEL.P4SEL3",	"Memory",	0x22b,	1,	base=16,	modified
-sfr = "P4SEL.P4SEL4",	"Memory",	0x22b,	1,	base=16,	modified
-sfr = "P4SEL.P4SEL5",	"Memory",	0x22b,	1,	base=16,	modified
-sfr = "P4SEL.P4SEL6",	"Memory",	0x22b,	1,	base=16,	modified
-sfr = "P4SEL.P4SEL7",	"Memory",	0x22b,	1,	base=16,	modified
-sfr = "PCIN",	"Memory",	0x240,	2,	base=16,	modified
-sfr = "PCIN.PCIN0",	"Memory",	0x240,	2,	base=16,	modified
-sfr = "PCIN.PCIN1",	"Memory",	0x240,	2,	base=16,	modified
-sfr = "PCIN.PCIN2",	"Memory",	0x240,	2,	base=16,	modified
-sfr = "PCIN.PCIN3",	"Memory",	0x240,	2,	base=16,	modified
-sfr = "PCIN.PCIN4",	"Memory",	0x240,	2,	base=16,	modified
-sfr = "PCIN.PCIN5",	"Memory",	0x240,	2,	base=16,	modified
-sfr = "PCIN.PCIN6",	"Memory",	0x240,	2,	base=16,	modified
-sfr = "PCIN.PCIN7",	"Memory",	0x240,	2,	base=16,	modified
-sfr = "PCIN.PCIN8",	"Memory",	0x240,	2,	base=16,	modified
-sfr = "PCIN.PCIN9",	"Memory",	0x240,	2,	base=16,	modified
-sfr = "PCIN.PCIN10",	"Memory",	0x240,	2,	base=16,	modified
-sfr = "PCIN.PCIN11",	"Memory",	0x240,	2,	base=16,	modified
-sfr = "PCIN.PCIN12",	"Memory",	0x240,	2,	base=16,	modified
-sfr = "PCIN.PCIN13",	"Memory",	0x240,	2,	base=16,	modified
-sfr = "PCIN.PCIN14",	"Memory",	0x240,	2,	base=16,	modified
-sfr = "PCIN.PCIN15",	"Memory",	0x240,	2,	base=16,	modified
-sfr = "PCOUT",	"Memory",	0x242,	2,	base=16,	modified
-sfr = "PCOUT.PCOUT0",	"Memory",	0x242,	2,	base=16,	modified
-sfr = "PCOUT.PCOUT1",	"Memory",	0x242,	2,	base=16,	modified
-sfr = "PCOUT.PCOUT2",	"Memory",	0x242,	2,	base=16,	modified
-sfr = "PCOUT.PCOUT3",	"Memory",	0x242,	2,	base=16,	modified
-sfr = "PCOUT.PCOUT4",	"Memory",	0x242,	2,	base=16,	modified
-sfr = "PCOUT.PCOUT5",	"Memory",	0x242,	2,	base=16,	modified
-sfr = "PCOUT.PCOUT6",	"Memory",	0x242,	2,	base=16,	modified
-sfr = "PCOUT.PCOUT7",	"Memory",	0x242,	2,	base=16,	modified
-sfr = "PCOUT.PCOUT8",	"Memory",	0x242,	2,	base=16,	modified
-sfr = "PCOUT.PCOUT9",	"Memory",	0x242,	2,	base=16,	modified
-sfr = "PCOUT.PCOUT10",	"Memory",	0x242,	2,	base=16,	modified
-sfr = "PCOUT.PCOUT11",	"Memory",	0x242,	2,	base=16,	modified
-sfr = "PCOUT.PCOUT12",	"Memory",	0x242,	2,	base=16,	modified
-sfr = "PCOUT.PCOUT13",	"Memory",	0x242,	2,	base=16,	modified
-sfr = "PCOUT.PCOUT14",	"Memory",	0x242,	2,	base=16,	modified
-sfr = "PCOUT.PCOUT15",	"Memory",	0x242,	2,	base=16,	modified
-sfr = "PCDIR",	"Memory",	0x244,	2,	base=16,	modified
-sfr = "PCDIR.PCDIR0",	"Memory",	0x244,	2,	base=16,	modified
-sfr = "PCDIR.PCDIR1",	"Memory",	0x244,	2,	base=16,	modified
-sfr = "PCDIR.PCDIR2",	"Memory",	0x244,	2,	base=16,	modified
-sfr = "PCDIR.PCDIR3",	"Memory",	0x244,	2,	base=16,	modified
-sfr = "PCDIR.PCDIR4",	"Memory",	0x244,	2,	base=16,	modified
-sfr = "PCDIR.PCDIR5",	"Memory",	0x244,	2,	base=16,	modified
-sfr = "PCDIR.PCDIR6",	"Memory",	0x244,	2,	base=16,	modified
-sfr = "PCDIR.PCDIR7",	"Memory",	0x244,	2,	base=16,	modified
-sfr = "PCDIR.PCDIR8",	"Memory",	0x244,	2,	base=16,	modified
-sfr = "PCDIR.PCDIR9",	"Memory",	0x244,	2,	base=16,	modified
-sfr = "PCDIR.PCDIR10",	"Memory",	0x244,	2,	base=16,	modified
-sfr = "PCDIR.PCDIR11",	"Memory",	0x244,	2,	base=16,	modified
-sfr = "PCDIR.PCDIR12",	"Memory",	0x244,	2,	base=16,	modified
-sfr = "PCDIR.PCDIR13",	"Memory",	0x244,	2,	base=16,	modified
-sfr = "PCDIR.PCDIR14",	"Memory",	0x244,	2,	base=16,	modified
-sfr = "PCDIR.PCDIR15",	"Memory",	0x244,	2,	base=16,	modified
-sfr = "PCREN",	"Memory",	0x246,	2,	base=16,	modified
-sfr = "PCREN.PCREN0",	"Memory",	0x246,	2,	base=16,	modified
-sfr = "PCREN.PCREN1",	"Memory",	0x246,	2,	base=16,	modified
-sfr = "PCREN.PCREN2",	"Memory",	0x246,	2,	base=16,	modified
-sfr = "PCREN.PCREN3",	"Memory",	0x246,	2,	base=16,	modified
-sfr = "PCREN.PCREN4",	"Memory",	0x246,	2,	base=16,	modified
-sfr = "PCREN.PCREN5",	"Memory",	0x246,	2,	base=16,	modified
-sfr = "PCREN.PCREN6",	"Memory",	0x246,	2,	base=16,	modified
-sfr = "PCREN.PCREN7",	"Memory",	0x246,	2,	base=16,	modified
-sfr = "PCREN.PCREN8",	"Memory",	0x246,	2,	base=16,	modified
-sfr = "PCREN.PCREN9",	"Memory",	0x246,	2,	base=16,	modified
-sfr = "PCREN.PCREN10",	"Memory",	0x246,	2,	base=16,	modified
-sfr = "PCREN.PCREN11",	"Memory",	0x246,	2,	base=16,	modified
-sfr = "PCREN.PCREN12",	"Memory",	0x246,	2,	base=16,	modified
-sfr = "PCREN.PCREN13",	"Memory",	0x246,	2,	base=16,	modified
-sfr = "PCREN.PCREN14",	"Memory",	0x246,	2,	base=16,	modified
-sfr = "PCREN.PCREN15",	"Memory",	0x246,	2,	base=16,	modified
-sfr = "PCDS",	"Memory",	0x248,	2,	base=16,	modified
-sfr = "PCDS.PCDS0",	"Memory",	0x248,	2,	base=16,	modified
-sfr = "PCDS.PCDS1",	"Memory",	0x248,	2,	base=16,	modified
-sfr = "PCDS.PCDS2",	"Memory",	0x248,	2,	base=16,	modified
-sfr = "PCDS.PCDS3",	"Memory",	0x248,	2,	base=16,	modified
-sfr = "PCDS.PCDS4",	"Memory",	0x248,	2,	base=16,	modified
-sfr = "PCDS.PCDS5",	"Memory",	0x248,	2,	base=16,	modified
-sfr = "PCDS.PCDS6",	"Memory",	0x248,	2,	base=16,	modified
-sfr = "PCDS.PCDS7",	"Memory",	0x248,	2,	base=16,	modified
-sfr = "PCDS.PCDS8",	"Memory",	0x248,	2,	base=16,	modified
-sfr = "PCDS.PCDS9",	"Memory",	0x248,	2,	base=16,	modified
-sfr = "PCDS.PCDS10",	"Memory",	0x248,	2,	base=16,	modified
-sfr = "PCDS.PCDS11",	"Memory",	0x248,	2,	base=16,	modified
-sfr = "PCDS.PCDS12",	"Memory",	0x248,	2,	base=16,	modified
-sfr = "PCDS.PCDS13",	"Memory",	0x248,	2,	base=16,	modified
-sfr = "PCDS.PCDS14",	"Memory",	0x248,	2,	base=16,	modified
-sfr = "PCDS.PCDS15",	"Memory",	0x248,	2,	base=16,	modified
-sfr = "PCSEL",	"Memory",	0x24a,	2,	base=16,	modified
-sfr = "PCSEL.PCSEL0",	"Memory",	0x24a,	2,	base=16,	modified
-sfr = "PCSEL.PCSEL1",	"Memory",	0x24a,	2,	base=16,	modified
-sfr = "PCSEL.PCSEL2",	"Memory",	0x24a,	2,	base=16,	modified
-sfr = "PCSEL.PCSEL3",	"Memory",	0x24a,	2,	base=16,	modified
-sfr = "PCSEL.PCSEL4",	"Memory",	0x24a,	2,	base=16,	modified
-sfr = "PCSEL.PCSEL5",	"Memory",	0x24a,	2,	base=16,	modified
-sfr = "PCSEL.PCSEL6",	"Memory",	0x24a,	2,	base=16,	modified
-sfr = "PCSEL.PCSEL7",	"Memory",	0x24a,	2,	base=16,	modified
-sfr = "PCSEL.PCSEL8",	"Memory",	0x24a,	2,	base=16,	modified
-sfr = "PCSEL.PCSEL9",	"Memory",	0x24a,	2,	base=16,	modified
-sfr = "PCSEL.PCSEL10",	"Memory",	0x24a,	2,	base=16,	modified
-sfr = "PCSEL.PCSEL11",	"Memory",	0x24a,	2,	base=16,	modified
-sfr = "PCSEL.PCSEL12",	"Memory",	0x24a,	2,	base=16,	modified
-sfr = "PCSEL.PCSEL13",	"Memory",	0x24a,	2,	base=16,	modified
-sfr = "PCSEL.PCSEL14",	"Memory",	0x24a,	2,	base=16,	modified
-sfr = "PCSEL.PCSEL15",	"Memory",	0x24a,	2,	base=16,	modified
-sfr = "P5IN",	"Memory",	0x240,	1,	base=16,	modified
-sfr = "P5IN.P5IN0",	"Memory",	0x240,	1,	base=16,	modified
-sfr = "P5IN.P5IN1",	"Memory",	0x240,	1,	base=16,	modified
-sfr = "P5IN.P5IN2",	"Memory",	0x240,	1,	base=16,	modified
-sfr = "P5IN.P5IN3",	"Memory",	0x240,	1,	base=16,	modified
-sfr = "P5IN.P5IN4",	"Memory",	0x240,	1,	base=16,	modified
-sfr = "P5IN.P5IN5",	"Memory",	0x240,	1,	base=16,	modified
-sfr = "P5IN.P5IN6",	"Memory",	0x240,	1,	base=16,	modified
-sfr = "P5IN.P5IN7",	"Memory",	0x240,	1,	base=16,	modified
-sfr = "P5OUT",	"Memory",	0x242,	1,	base=16,	modified
-sfr = "P5OUT.P5OUT0",	"Memory",	0x242,	1,	base=16,	modified
-sfr = "P5OUT.P5OUT1",	"Memory",	0x242,	1,	base=16,	modified
-sfr = "P5OUT.P5OUT2",	"Memory",	0x242,	1,	base=16,	modified
-sfr = "P5OUT.P5OUT3",	"Memory",	0x242,	1,	base=16,	modified
-sfr = "P5OUT.P5OUT4",	"Memory",	0x242,	1,	base=16,	modified
-sfr = "P5OUT.P5OUT5",	"Memory",	0x242,	1,	base=16,	modified
-sfr = "P5OUT.P5OUT6",	"Memory",	0x242,	1,	base=16,	modified
-sfr = "P5OUT.P5OUT7",	"Memory",	0x242,	1,	base=16,	modified
-sfr = "P5DIR",	"Memory",	0x244,	1,	base=16,	modified
-sfr = "P5DIR.P5DIR0",	"Memory",	0x244,	1,	base=16,	modified
-sfr = "P5DIR.P5DIR1",	"Memory",	0x244,	1,	base=16,	modified
-sfr = "P5DIR.P5DIR2",	"Memory",	0x244,	1,	base=16,	modified
-sfr = "P5DIR.P5DIR3",	"Memory",	0x244,	1,	base=16,	modified
-sfr = "P5DIR.P5DIR4",	"Memory",	0x244,	1,	base=16,	modified
-sfr = "P5DIR.P5DIR5",	"Memory",	0x244,	1,	base=16,	modified
-sfr = "P5DIR.P5DIR6",	"Memory",	0x244,	1,	base=16,	modified
-sfr = "P5DIR.P5DIR7",	"Memory",	0x244,	1,	base=16,	modified
-sfr = "P5REN",	"Memory",	0x246,	1,	base=16,	modified
-sfr = "P5REN.P5REN0",	"Memory",	0x246,	1,	base=16,	modified
-sfr = "P5REN.P5REN1",	"Memory",	0x246,	1,	base=16,	modified
-sfr = "P5REN.P5REN2",	"Memory",	0x246,	1,	base=16,	modified
-sfr = "P5REN.P5REN3",	"Memory",	0x246,	1,	base=16,	modified
-sfr = "P5REN.P5REN4",	"Memory",	0x246,	1,	base=16,	modified
-sfr = "P5REN.P5REN5",	"Memory",	0x246,	1,	base=16,	modified
-sfr = "P5REN.P5REN6",	"Memory",	0x246,	1,	base=16,	modified
-sfr = "P5REN.P5REN7",	"Memory",	0x246,	1,	base=16,	modified
-sfr = "P5DS",	"Memory",	0x248,	1,	base=16,	modified
-sfr = "P5DS.P5DS0",	"Memory",	0x248,	1,	base=16,	modified
-sfr = "P5DS.P5DS1",	"Memory",	0x248,	1,	base=16,	modified
-sfr = "P5DS.P5DS2",	"Memory",	0x248,	1,	base=16,	modified
-sfr = "P5DS.P5DS3",	"Memory",	0x248,	1,	base=16,	modified
-sfr = "P5DS.P5DS4",	"Memory",	0x248,	1,	base=16,	modified
-sfr = "P5DS.P5DS5",	"Memory",	0x248,	1,	base=16,	modified
-sfr = "P5DS.P5DS6",	"Memory",	0x248,	1,	base=16,	modified
-sfr = "P5DS.P5DS7",	"Memory",	0x248,	1,	base=16,	modified
-sfr = "P5SEL",	"Memory",	0x24a,	1,	base=16,	modified
-sfr = "P5SEL.P5SEL0",	"Memory",	0x24a,	1,	base=16,	modified
-sfr = "P5SEL.P5SEL1",	"Memory",	0x24a,	1,	base=16,	modified
-sfr = "P5SEL.P5SEL2",	"Memory",	0x24a,	1,	base=16,	modified
-sfr = "P5SEL.P5SEL3",	"Memory",	0x24a,	1,	base=16,	modified
-sfr = "P5SEL.P5SEL4",	"Memory",	0x24a,	1,	base=16,	modified
-sfr = "P5SEL.P5SEL5",	"Memory",	0x24a,	1,	base=16,	modified
-sfr = "P5SEL.P5SEL6",	"Memory",	0x24a,	1,	base=16,	modified
-sfr = "P5SEL.P5SEL7",	"Memory",	0x24a,	1,	base=16,	modified
-sfr = "P6IN",	"Memory",	0x241,	1,	base=16,	modified
-sfr = "P6IN.P6IN0",	"Memory",	0x241,	1,	base=16,	modified
-sfr = "P6IN.P6IN1",	"Memory",	0x241,	1,	base=16,	modified
-sfr = "P6IN.P6IN2",	"Memory",	0x241,	1,	base=16,	modified
-sfr = "P6IN.P6IN3",	"Memory",	0x241,	1,	base=16,	modified
-sfr = "P6IN.P6IN4",	"Memory",	0x241,	1,	base=16,	modified
-sfr = "P6IN.P6IN5",	"Memory",	0x241,	1,	base=16,	modified
-sfr = "P6IN.P6IN6",	"Memory",	0x241,	1,	base=16,	modified
-sfr = "P6IN.P6IN7",	"Memory",	0x241,	1,	base=16,	modified
-sfr = "P6OUT",	"Memory",	0x243,	1,	base=16,	modified
-sfr = "P6OUT.P6OUT0",	"Memory",	0x243,	1,	base=16,	modified
-sfr = "P6OUT.P6OUT1",	"Memory",	0x243,	1,	base=16,	modified
-sfr = "P6OUT.P6OUT2",	"Memory",	0x243,	1,	base=16,	modified
-sfr = "P6OUT.P6OUT3",	"Memory",	0x243,	1,	base=16,	modified
-sfr = "P6OUT.P6OUT4",	"Memory",	0x243,	1,	base=16,	modified
-sfr = "P6OUT.P6OUT5",	"Memory",	0x243,	1,	base=16,	modified
-sfr = "P6OUT.P6OUT6",	"Memory",	0x243,	1,	base=16,	modified
-sfr = "P6OUT.P6OUT7",	"Memory",	0x243,	1,	base=16,	modified
-sfr = "P6DIR",	"Memory",	0x245,	1,	base=16,	modified
-sfr = "P6DIR.P6DIR0",	"Memory",	0x245,	1,	base=16,	modified
-sfr = "P6DIR.P6DIR1",	"Memory",	0x245,	1,	base=16,	modified
-sfr = "P6DIR.P6DIR2",	"Memory",	0x245,	1,	base=16,	modified
-sfr = "P6DIR.P6DIR3",	"Memory",	0x245,	1,	base=16,	modified
-sfr = "P6DIR.P6DIR4",	"Memory",	0x245,	1,	base=16,	modified
-sfr = "P6DIR.P6DIR5",	"Memory",	0x245,	1,	base=16,	modified
-sfr = "P6DIR.P6DIR6",	"Memory",	0x245,	1,	base=16,	modified
-sfr = "P6DIR.P6DIR7",	"Memory",	0x245,	1,	base=16,	modified
-sfr = "P6REN",	"Memory",	0x247,	1,	base=16,	modified
-sfr = "P6REN.P6REN0",	"Memory",	0x247,	1,	base=16,	modified
-sfr = "P6REN.P6REN1",	"Memory",	0x247,	1,	base=16,	modified
-sfr = "P6REN.P6REN2",	"Memory",	0x247,	1,	base=16,	modified
-sfr = "P6REN.P6REN3",	"Memory",	0x247,	1,	base=16,	modified
-sfr = "P6REN.P6REN4",	"Memory",	0x247,	1,	base=16,	modified
-sfr = "P6REN.P6REN5",	"Memory",	0x247,	1,	base=16,	modified
-sfr = "P6REN.P6REN6",	"Memory",	0x247,	1,	base=16,	modified
-sfr = "P6REN.P6REN7",	"Memory",	0x247,	1,	base=16,	modified
-sfr = "P6DS",	"Memory",	0x249,	1,	base=16,	modified
-sfr = "P6DS.P6DS0",	"Memory",	0x249,	1,	base=16,	modified
-sfr = "P6DS.P6DS1",	"Memory",	0x249,	1,	base=16,	modified
-sfr = "P6DS.P6DS2",	"Memory",	0x249,	1,	base=16,	modified
-sfr = "P6DS.P6DS3",	"Memory",	0x249,	1,	base=16,	modified
-sfr = "P6DS.P6DS4",	"Memory",	0x249,	1,	base=16,	modified
-sfr = "P6DS.P6DS5",	"Memory",	0x249,	1,	base=16,	modified
-sfr = "P6DS.P6DS6",	"Memory",	0x249,	1,	base=16,	modified
-sfr = "P6DS.P6DS7",	"Memory",	0x249,	1,	base=16,	modified
-sfr = "P6SEL",	"Memory",	0x24b,	1,	base=16,	modified
-sfr = "P6SEL.P6SEL0",	"Memory",	0x24b,	1,	base=16,	modified
-sfr = "P6SEL.P6SEL1",	"Memory",	0x24b,	1,	base=16,	modified
-sfr = "P6SEL.P6SEL2",	"Memory",	0x24b,	1,	base=16,	modified
-sfr = "P6SEL.P6SEL3",	"Memory",	0x24b,	1,	base=16,	modified
-sfr = "P6SEL.P6SEL4",	"Memory",	0x24b,	1,	base=16,	modified
-sfr = "P6SEL.P6SEL5",	"Memory",	0x24b,	1,	base=16,	modified
-sfr = "P6SEL.P6SEL6",	"Memory",	0x24b,	1,	base=16,	modified
-sfr = "P6SEL.P6SEL7",	"Memory",	0x24b,	1,	base=16,	modified
-sfr = "PDIN",	"Memory",	0x260,	2,	base=16,	modified
-sfr = "PDIN.PDIN0",	"Memory",	0x260,	2,	base=16,	modified
-sfr = "PDIN.PDIN1",	"Memory",	0x260,	2,	base=16,	modified
-sfr = "PDIN.PDIN2",	"Memory",	0x260,	2,	base=16,	modified
-sfr = "PDIN.PDIN3",	"Memory",	0x260,	2,	base=16,	modified
-sfr = "PDIN.PDIN4",	"Memory",	0x260,	2,	base=16,	modified
-sfr = "PDIN.PDIN5",	"Memory",	0x260,	2,	base=16,	modified
-sfr = "PDIN.PDIN6",	"Memory",	0x260,	2,	base=16,	modified
-sfr = "PDIN.PDIN7",	"Memory",	0x260,	2,	base=16,	modified
-sfr = "PDIN.PDIN8",	"Memory",	0x260,	2,	base=16,	modified
-sfr = "PDIN.PDIN9",	"Memory",	0x260,	2,	base=16,	modified
-sfr = "PDIN.PDIN10",	"Memory",	0x260,	2,	base=16,	modified
-sfr = "PDIN.PDIN11",	"Memory",	0x260,	2,	base=16,	modified
-sfr = "PDIN.PDIN12",	"Memory",	0x260,	2,	base=16,	modified
-sfr = "PDIN.PDIN13",	"Memory",	0x260,	2,	base=16,	modified
-sfr = "PDIN.PDIN14",	"Memory",	0x260,	2,	base=16,	modified
-sfr = "PDIN.PDIN15",	"Memory",	0x260,	2,	base=16,	modified
-sfr = "PDOUT",	"Memory",	0x262,	2,	base=16,	modified
-sfr = "PDOUT.PDOUT0",	"Memory",	0x262,	2,	base=16,	modified
-sfr = "PDOUT.PDOUT1",	"Memory",	0x262,	2,	base=16,	modified
-sfr = "PDOUT.PDOUT2",	"Memory",	0x262,	2,	base=16,	modified
-sfr = "PDOUT.PDOUT3",	"Memory",	0x262,	2,	base=16,	modified
-sfr = "PDOUT.PDOUT4",	"Memory",	0x262,	2,	base=16,	modified
-sfr = "PDOUT.PDOUT5",	"Memory",	0x262,	2,	base=16,	modified
-sfr = "PDOUT.PDOUT6",	"Memory",	0x262,	2,	base=16,	modified
-sfr = "PDOUT.PDOUT7",	"Memory",	0x262,	2,	base=16,	modified
-sfr = "PDOUT.PDOUT8",	"Memory",	0x262,	2,	base=16,	modified
-sfr = "PDOUT.PDOUT9",	"Memory",	0x262,	2,	base=16,	modified
-sfr = "PDOUT.PDOUT10",	"Memory",	0x262,	2,	base=16,	modified
-sfr = "PDOUT.PDOUT11",	"Memory",	0x262,	2,	base=16,	modified
-sfr = "PDOUT.PDOUT12",	"Memory",	0x262,	2,	base=16,	modified
-sfr = "PDOUT.PDOUT13",	"Memory",	0x262,	2,	base=16,	modified
-sfr = "PDOUT.PDOUT14",	"Memory",	0x262,	2,	base=16,	modified
-sfr = "PDOUT.PDOUT15",	"Memory",	0x262,	2,	base=16,	modified
-sfr = "PDDIR",	"Memory",	0x264,	2,	base=16,	modified
-sfr = "PDDIR.PDDIR0",	"Memory",	0x264,	2,	base=16,	modified
-sfr = "PDDIR.PDDIR1",	"Memory",	0x264,	2,	base=16,	modified
-sfr = "PDDIR.PDDIR2",	"Memory",	0x264,	2,	base=16,	modified
-sfr = "PDDIR.PDDIR3",	"Memory",	0x264,	2,	base=16,	modified
-sfr = "PDDIR.PDDIR4",	"Memory",	0x264,	2,	base=16,	modified
-sfr = "PDDIR.PDDIR5",	"Memory",	0x264,	2,	base=16,	modified
-sfr = "PDDIR.PDDIR6",	"Memory",	0x264,	2,	base=16,	modified
-sfr = "PDDIR.PDDIR7",	"Memory",	0x264,	2,	base=16,	modified
-sfr = "PDDIR.PDDIR8",	"Memory",	0x264,	2,	base=16,	modified
-sfr = "PDDIR.PDDIR9",	"Memory",	0x264,	2,	base=16,	modified
-sfr = "PDDIR.PDDIR10",	"Memory",	0x264,	2,	base=16,	modified
-sfr = "PDDIR.PDDIR11",	"Memory",	0x264,	2,	base=16,	modified
-sfr = "PDDIR.PDDIR12",	"Memory",	0x264,	2,	base=16,	modified
-sfr = "PDDIR.PDDIR13",	"Memory",	0x264,	2,	base=16,	modified
-sfr = "PDDIR.PDDIR14",	"Memory",	0x264,	2,	base=16,	modified
-sfr = "PDDIR.PDDIR15",	"Memory",	0x264,	2,	base=16,	modified
-sfr = "PDREN",	"Memory",	0x266,	2,	base=16,	modified
-sfr = "PDREN.PDREN0",	"Memory",	0x266,	2,	base=16,	modified
-sfr = "PDREN.PDREN1",	"Memory",	0x266,	2,	base=16,	modified
-sfr = "PDREN.PDREN2",	"Memory",	0x266,	2,	base=16,	modified
-sfr = "PDREN.PDREN3",	"Memory",	0x266,	2,	base=16,	modified
-sfr = "PDREN.PDREN4",	"Memory",	0x266,	2,	base=16,	modified
-sfr = "PDREN.PDREN5",	"Memory",	0x266,	2,	base=16,	modified
-sfr = "PDREN.PDREN6",	"Memory",	0x266,	2,	base=16,	modified
-sfr = "PDREN.PDREN7",	"Memory",	0x266,	2,	base=16,	modified
-sfr = "PDREN.PDREN8",	"Memory",	0x266,	2,	base=16,	modified
-sfr = "PDREN.PDREN9",	"Memory",	0x266,	2,	base=16,	modified
-sfr = "PDREN.PDREN10",	"Memory",	0x266,	2,	base=16,	modified
-sfr = "PDREN.PDREN11",	"Memory",	0x266,	2,	base=16,	modified
-sfr = "PDREN.PDREN12",	"Memory",	0x266,	2,	base=16,	modified
-sfr = "PDREN.PDREN13",	"Memory",	0x266,	2,	base=16,	modified
-sfr = "PDREN.PDREN14",	"Memory",	0x266,	2,	base=16,	modified
-sfr = "PDREN.PDREN15",	"Memory",	0x266,	2,	base=16,	modified
-sfr = "PDDS",	"Memory",	0x268,	2,	base=16,	modified
-sfr = "PDDS.PDDS0",	"Memory",	0x268,	2,	base=16,	modified
-sfr = "PDDS.PDDS1",	"Memory",	0x268,	2,	base=16,	modified
-sfr = "PDDS.PDDS2",	"Memory",	0x268,	2,	base=16,	modified
-sfr = "PDDS.PDDS3",	"Memory",	0x268,	2,	base=16,	modified
-sfr = "PDDS.PDDS4",	"Memory",	0x268,	2,	base=16,	modified
-sfr = "PDDS.PDDS5",	"Memory",	0x268,	2,	base=16,	modified
-sfr = "PDDS.PDDS6",	"Memory",	0x268,	2,	base=16,	modified
-sfr = "PDDS.PDDS7",	"Memory",	0x268,	2,	base=16,	modified
-sfr = "PDDS.PDDS8",	"Memory",	0x268,	2,	base=16,	modified
-sfr = "PDDS.PDDS9",	"Memory",	0x268,	2,	base=16,	modified
-sfr = "PDDS.PDDS10",	"Memory",	0x268,	2,	base=16,	modified
-sfr = "PDDS.PDDS11",	"Memory",	0x268,	2,	base=16,	modified
-sfr = "PDDS.PDDS12",	"Memory",	0x268,	2,	base=16,	modified
-sfr = "PDDS.PDDS13",	"Memory",	0x268,	2,	base=16,	modified
-sfr = "PDDS.PDDS14",	"Memory",	0x268,	2,	base=16,	modified
-sfr = "PDDS.PDDS15",	"Memory",	0x268,	2,	base=16,	modified
-sfr = "PDSEL",	"Memory",	0x26a,	2,	base=16,	modified
-sfr = "PDSEL.PDSEL0",	"Memory",	0x26a,	2,	base=16,	modified
-sfr = "PDSEL.PDSEL1",	"Memory",	0x26a,	2,	base=16,	modified
-sfr = "PDSEL.PDSEL2",	"Memory",	0x26a,	2,	base=16,	modified
-sfr = "PDSEL.PDSEL3",	"Memory",	0x26a,	2,	base=16,	modified
-sfr = "PDSEL.PDSEL4",	"Memory",	0x26a,	2,	base=16,	modified
-sfr = "PDSEL.PDSEL5",	"Memory",	0x26a,	2,	base=16,	modified
-sfr = "PDSEL.PDSEL6",	"Memory",	0x26a,	2,	base=16,	modified
-sfr = "PDSEL.PDSEL7",	"Memory",	0x26a,	2,	base=16,	modified
-sfr = "PDSEL.PDSEL8",	"Memory",	0x26a,	2,	base=16,	modified
-sfr = "PDSEL.PDSEL9",	"Memory",	0x26a,	2,	base=16,	modified
-sfr = "PDSEL.PDSEL10",	"Memory",	0x26a,	2,	base=16,	modified
-sfr = "PDSEL.PDSEL11",	"Memory",	0x26a,	2,	base=16,	modified
-sfr = "PDSEL.PDSEL12",	"Memory",	0x26a,	2,	base=16,	modified
-sfr = "PDSEL.PDSEL13",	"Memory",	0x26a,	2,	base=16,	modified
-sfr = "PDSEL.PDSEL14",	"Memory",	0x26a,	2,	base=16,	modified
-sfr = "PDSEL.PDSEL15",	"Memory",	0x26a,	2,	base=16,	modified
-sfr = "P7IN",	"Memory",	0x260,	1,	base=16,	modified
-sfr = "P7IN.P7IN0",	"Memory",	0x260,	1,	base=16,	modified
-sfr = "P7IN.P7IN1",	"Memory",	0x260,	1,	base=16,	modified
-sfr = "P7IN.P7IN2",	"Memory",	0x260,	1,	base=16,	modified
-sfr = "P7IN.P7IN3",	"Memory",	0x260,	1,	base=16,	modified
-sfr = "P7IN.P7IN4",	"Memory",	0x260,	1,	base=16,	modified
-sfr = "P7IN.P7IN5",	"Memory",	0x260,	1,	base=16,	modified
-sfr = "P7IN.P7IN6",	"Memory",	0x260,	1,	base=16,	modified
-sfr = "P7IN.P7IN7",	"Memory",	0x260,	1,	base=16,	modified
-sfr = "P7OUT",	"Memory",	0x262,	1,	base=16,	modified
-sfr = "P7OUT.P7OUT0",	"Memory",	0x262,	1,	base=16,	modified
-sfr = "P7OUT.P7OUT1",	"Memory",	0x262,	1,	base=16,	modified
-sfr = "P7OUT.P7OUT2",	"Memory",	0x262,	1,	base=16,	modified
-sfr = "P7OUT.P7OUT3",	"Memory",	0x262,	1,	base=16,	modified
-sfr = "P7OUT.P7OUT4",	"Memory",	0x262,	1,	base=16,	modified
-sfr = "P7OUT.P7OUT5",	"Memory",	0x262,	1,	base=16,	modified
-sfr = "P7OUT.P7OUT6",	"Memory",	0x262,	1,	base=16,	modified
-sfr = "P7OUT.P7OUT7",	"Memory",	0x262,	1,	base=16,	modified
-sfr = "P7DIR",	"Memory",	0x264,	1,	base=16,	modified
-sfr = "P7DIR.P7DIR0",	"Memory",	0x264,	1,	base=16,	modified
-sfr = "P7DIR.P7DIR1",	"Memory",	0x264,	1,	base=16,	modified
-sfr = "P7DIR.P7DIR2",	"Memory",	0x264,	1,	base=16,	modified
-sfr = "P7DIR.P7DIR3",	"Memory",	0x264,	1,	base=16,	modified
-sfr = "P7DIR.P7DIR4",	"Memory",	0x264,	1,	base=16,	modified
-sfr = "P7DIR.P7DIR5",	"Memory",	0x264,	1,	base=16,	modified
-sfr = "P7DIR.P7DIR6",	"Memory",	0x264,	1,	base=16,	modified
-sfr = "P7DIR.P7DIR7",	"Memory",	0x264,	1,	base=16,	modified
-sfr = "P7REN",	"Memory",	0x266,	1,	base=16,	modified
-sfr = "P7REN.P7REN0",	"Memory",	0x266,	1,	base=16,	modified
-sfr = "P7REN.P7REN1",	"Memory",	0x266,	1,	base=16,	modified
-sfr = "P7REN.P7REN2",	"Memory",	0x266,	1,	base=16,	modified
-sfr = "P7REN.P7REN3",	"Memory",	0x266,	1,	base=16,	modified
-sfr = "P7REN.P7REN4",	"Memory",	0x266,	1,	base=16,	modified
-sfr = "P7REN.P7REN5",	"Memory",	0x266,	1,	base=16,	modified
-sfr = "P7REN.P7REN6",	"Memory",	0x266,	1,	base=16,	modified
-sfr = "TB0CCTL0.CCI",	"Memory",	0x3c2,	2,	base=16,	modified
-sfr = "TB0CCTL1.OUTMOD1",	"Memory",	0x3c4,	2,	base=16,	modified
-sfr = "P1DS",	"Memory",	0x208,	1,	base=16,	modified
-sfr = "P1SEL",	"Memory",	0x20a,	1,	base=16,	modified
-sfr = "P1IV",	"Memory",	0x20e,	2,	base=16,	modified
-sfr = "P1IES",	"Memory",	0x218,	1,	base=16,	modified
-sfr = "P2DS",	"Memory",	0x209,	1,	base=16,	modified
-sfr = "P2SEL",	"Memory",	0x20b,	1,	base=16,	modified
-sfr = "P2IV",	"Memory",	0x21e,	2,	base=16,	modified
-sfr = "P2IES",	"Memory",	0x219,	1,	base=16,	modified
-sfr = "P2IE",	"Memory",	0x21b,	1,	base=16,	modified
-sfr = "P2IFG",	"Memory",	0x21d,	1,	base=16,	modified
-sfr = "PBIN",	"Memory",	0x220,	2,	base=16,	modified
-sfr = "PBOUT",	"Memory",	0x222,	2,	base=16,	modified
-sfr = "PBDIR",	"Memory",	0x224,	2,	base=16,	modified
-sfr = "PBREN",	"Memory",	0x226,	2,	base=16,	modified
-sfr = "PBDS",	"Memory",	0x228,	2,	base=16,	modified
-sfr = "PBSEL",	"Memory",	0x22a,	2,	base=16,	modified
-sfr = "P3IN",	"Memory",	0x220,	1,	base=16,	modified
-sfr = "P3OUT",	"Memory",	0x222,	1,	base=16,	modified
-sfr = "P3DIR",	"Memory",	0x224,	1,	base=16,	modified
-sfr = "P3REN",	"Memory",	0x226,	1,	base=16,	modified
-sfr = "P3DS",	"Memory",	0x228,	1,	base=16,	modified
-sfr = "P3SEL",	"Memory",	0x22a,	1,	base=16,	modified
-sfr = "P4IN",	"Memory",	0x221,	1,	base=16,	modified
-sfr = "P4OUT",	"Memory",	0x223,	1,	base=16,	modified
-sfr = "P4DIR",	"Memory",	0x225,	1,	base=16,	modified
-sfr = "P4REN",	"Memory",	0x227,	1,	base=16,	modified
-sfr = "P4DS",	"Memory",	0x229,	1,	base=16,	modified
-sfr = "P4SEL",	"Memory",	0x22b,	1,	base=16,	modified
-sfr = "PCIN",	"Memory",	0x240,	2,	base=16,	modified
-sfr = "PCOUT",	"Memory",	0x242,	2,	base=16,	modified
-sfr = "PCDIR",	"Memory",	0x244,	2,	base=16,	modified
-sfr = "PCREN",	"Memory",	0x246,	2,	base=16,	modified
-sfr = "PCDS",	"Memory",	0x248,	2,	base=16,	modified
-sfr = "PCSEL",	"Memory",	0x24a,	2,	base=16,	modified
-sfr = "P5IN",	"Memory",	0x240,	1,	base=16,	modified
-sfr = "P5OUT",	"Memory",	0x242,	1,	base=16,	modified
-sfr = "P5DIR",	"Memory",	0x244,	1,	base=16,	modified
-sfr = "P5REN",	"Memory",	0x246,	1,	base=16,	modified
-sfr = "P5DS",	"Memory",	0x248,	1,	base=16,	modified
-sfr = "P5SEL",	"Memory",	0x24a,	1,	base=16,	modified
-sfr = "P6IN",	"Memory",	0x241,	1,	base=16,	modified
-sfr = "P6OUT",	"Memory",	0x243,	1,	base=16,	modified
-sfr = "P6DIR",	"Memory",	0x245,	1,	base=16,	modified
-sfr = "P6REN",	"Memory",	0x247,	1,	base=16,	modified
-sfr = "P6DS",	"Memory",	0x249,	1,	base=16,	modified
-sfr = "P6SEL",	"Memory",	0x24b,	1,	base=16,	modified
-sfr = "PDIN",	"Memory",	0x260,	2,	base=16,	modified
-sfr = "PDOUT",	"Memory",	0x262,	2,	base=16,	modified
-sfr = "PDDIR",	"Memory",	0x264,	2,	base=16,	modified
-sfr = "PDREN",	"Memory",	0x266,	2,	base=16,	modified
-sfr = "PDDS",	"Memory",	0x268,	2,	base=16,	modified
-sfr = "PDSEL",	"Memory",	0x26a,	2,	base=16,	modified
-sfr = "P7IN",	"Memory",	0x260,	1,	base=16,	modified
-sfr = "P7OUT",	"Memory",	0x262,	1,	base=16,	modified
-sfr = "P7DIR",	"Memory",	0x264,	1,	base=16,	modified
-sfr = "P7REN",	"Memory",	0x266,	1,	base=16,	modified
 
 
 [SfrGroupInfo]
@@ -1181,64 +543,74 @@ group = "Custom", "MPY32L", "MPY32H", "MPYS32L", "MPYS32H", "MAC32L", "MAC32H"
 group = "Custom", "MACS32L", "MACS32H", "OP2L", "OP2H", "RES0", "RES1"
 group = "Custom", "RES2", "RES3", "PAIN", "PAOUT", "PADIR", "PAREN"
 group = "Custom", "PADS", "PASEL", "PAIES", "PAIE", "PAIFG", "P1IN"
-group = "Custom", "P1OUT", "P1DIR", "P1REN", "P1IE", "P1IFG", "P2IN"
-group = "Custom", "P2OUT", "P2DIR", "P2REN", "P7DS", "P7SEL", "P8IN"
-group = "Custom", "P8OUT", "P8DIR", "P8REN", "P8DS", "P8SEL", "PJIN"
-group = "Custom", "PJOUT", "PJDIR", "PJREN", "PJDS", "PMAPKEYID", "PMAPCTL"
-group = "Custom", "P4MAP01", "P4MAP23", "P4MAP45", "P4MAP67", "P4MAP0", "P4MAP1"
-group = "Custom", "P4MAP2", "P4MAP3", "P4MAP4", "P4MAP5", "P4MAP6", "P4MAP7"
-group = "Custom", "PMMCTL0", "PMMCTL1", "SVSMHCTL", "SVSMLCTL", "SVSMIO", "PMMIFG"
-group = "Custom", "PMMRIE", "PM5CTL0", "RCCTL0", "REFCTL0", "RTCCTL01", "RTCCTL23"
-group = "Custom", "RTCPS0CTL", "RTCPS1CTL", "RTCPS", "RTCIV", "RTCTIM0", "RTCTIM1"
-group = "Custom", "RTCDATE", "RTCYEAR", "RTCAMINHR", "RTCADOWDAY", "SFRIE1", "SFRIFG1"
-group = "Custom", "SFRRPCR", "SYSCTL", "SYSBSLC", "SYSJMBC", "SYSJMBI0", "SYSJMBI1"
-group = "Custom", "SYSJMBO0", "SYSJMBO1", "SYSBERRIV", "SYSUNIV", "SYSSNIV", "SYSRSTIV"
-group = "Custom", "TA0CTL", "TA0CCTL0", "TA0CCTL1", "TA0CCTL2", "TA0CCTL3", "TA0CCTL4"
-group = "Custom", "TA0R", "TA0CCR0", "TA0CCR1", "TA0CCR2", "TA0CCR3", "TA0CCR4"
-group = "Custom", "TA0IV", "TA0EX0", "TA1CTL", "TA1CCTL0", "TA1CCTL1", "TA1CCTL2"
-group = "Custom", "TA1R", "TA1CCR0", "TA1CCR1", "TA1CCR2", "TA1IV", "TA1EX0"
-group = "Custom", "TA2CTL", "TA2CCTL0", "TA2CCTL1", "TA2CCTL2", "TA2R", "TA2CCR0"
-group = "Custom", "TA2CCR1", "TA2CCR2", "TA2IV", "TA2EX0", "TB0CTL", "TB0CCTL0"
-group = "Custom", "TB0CCTL1", "TB0CCTL2", "TB0CCTL3", "TB0CCTL4", "TB0CCTL5", "TB0CCTL6"
-group = "Custom", "TB0R", "TB0CCR0", "TB0CCR1", "TB0CCR2", "TB0CCR3", "TB0CCR4"
-group = "Custom", "TB0CCR5", "TB0CCR6", "TB0EX0", "TB0IV", "USBKEYID", "USBCNF"
-group = "Custom", "USBPHYCTL", "USBPWRCTL", "USBPLLCTL", "USBPLLDIVB", "USBPLLIR", "USBIEPCNF_0"
-group = "Custom", "USBIEPCNT_0", "USBOEPCNF_0", "USBOEPCNT_0", "USBIEPIE", "USBOEPIE", "USBIEPIFG"
-group = "Custom", "USBOEPIFG", "USBVECINT", "USBMAINT", "USBTSREG", "USBFN", "USBCTL"
-group = "Custom", "USBIE", "USBIFG", "USBFUNADR", "USBIEPSIZXY_7", "USBIEPBCTY_7", "USBIEPBBAY_7"
-group = "Custom", "USBIEPBCTX_7", "USBIEPBBAX_7", "USBIEPCNF_7", "USBIEPSIZXY_6", "USBIEPBCTY_6", "USBIEPBBAY_6"
-group = "Custom", "USBIEPBCTX_6", "USBIEPBBAX_6", "USBIEPCNF_6", "USBIEPSIZXY_5", "USBIEPBCTY_5", "USBIEPBBAY_5"
-group = "Custom", "USBIEPBCTX_5", "USBIEPBBAX_5", "USBIEPCNF_5", "USBIEPSIZXY_4", "USBIEPBCTY_4", "USBIEPBBAY_4"
-group = "Custom", "USBIEPBCTX_4", "USBIEPBBAX_4", "USBIEPCNF_4", "USBIEPSIZXY_3", "USBIEPBCTY_3", "USBIEPBBAY_3"
-group = "Custom", "USBIEPBCTX_3", "USBIEPBBAX_3", "USBIEPCNF_3", "USBIEPSIZXY_2", "USBIEPBCTY_2", "USBIEPBBAY_2"
-group = "Custom", "USBIEPBCTX_2", "USBIEPBBAX_2", "USBIEPCNF_2", "USBIEPSIZXY_1", "USBIEPBCTY_1", "USBIEPBBAY_1"
-group = "Custom", "USBIEPBCTX_1", "USBIEPBBAX_1", "USBIEPCNF_1", "USBOEPSIZXY_7", "USBOEPBCTY_7", "USBOEPBBAY_7"
-group = "Custom", "USBOEPBCTX_7", "USBOEPBBAX_7", "USBOEPCNF_7", "USBOEPSIZXY_6", "USBOEPBCTY_6", "USBOEPBBAY_6"
-group = "Custom", "USBOEPBCTX_6", "USBOEPBBAX_6", "USBOEPCNF_6", "USBOEPSIZXY_5", "USBOEPBCTY_5", "USBOEPBBAY_5"
-group = "Custom", "USBOEPBCTX_5", "USBOEPBBAX_5", "USBOEPCNF_5", "USBOEPSIZXY_4", "USBOEPBCTY_4", "USBOEPBBAY_4"
-group = "Custom", "USBOEPBCTX_4", "USBOEPBBAX_4", "USBOEPCNF_4", "USBOEPSIZXY_3", "USBOEPBCTY_3", "USBOEPBBAY_3"
-group = "Custom", "USBOEPBCTX_3", "USBOEPBBAX_3", "USBOEPCNF_3", "USBOEPSIZXY_2", "USBOEPBCTY_2", "USBOEPBBAY_2"
-group = "Custom", "USBOEPBCTX_2", "USBOEPBBAX_2", "USBOEPCNF_2", "USBOEPSIZXY_1", "USBOEPBCTY_1", "USBOEPBBAY_1"
-group = "Custom", "USBOEPBCTX_1", "USBOEPBBAX_1", "USBOEPCNF_1", "USBSUBLK", "USBIEP0BUF", "USBOEP0BUF"
-group = "Custom", "USBTOPBUFF", "USBSTABUFF", "UCSCTL0", "UCSCTL1", "UCSCTL2", "UCSCTL3"
-group = "Custom", "UCSCTL4", "UCSCTL5", "UCSCTL6", "UCSCTL7", "UCSCTL8", "UCA0CTLW0"
-group = "Custom", "UCA0CTL0", "UCA0CTL1", "UCA0BRW", "UCA0BR0", "UCA0BR1", "UCA0MCTL"
-group = "Custom", "UCA0STAT", "UCA0RXBUF", "UCA0TXBUF", "UCA0ABCTL", "UCA0IRCTL", "UCA0IRTCTL"
-group = "Custom", "UCA0IRRCTL", "UCA0ICTL", "UCA0IE", "UCA0IFG", "UCA0IV", "UCA0CTLW0__SPI"
-group = "Custom", "UCA0CTL0__SPI", "UCA0CTL1__SPI", "UCA0BRW__SPI", "UCA0BR0__SPI", "UCA0BR1__SPI", "UCA0MCTL__SPI"
-group = "Custom", "UCA0STAT__SPI", "UCA0RXBUF__SPI", "UCA0TXBUF__SPI", "UCA0ICTL__SPI", "UCA0IE__SPI", "UCA0IFG__SPI"
-group = "Custom", "UCA0IV__SPI", "UCB0CTLW0__SPI", "UCB0CTL0__SPI", "UCB0CTL1__SPI", "UCB0BRW__SPI", "UCB0BR0__SPI"
-group = "Custom", "UCB0BR1__SPI", "UCB0STAT__SPI", "UCB0RXBUF__SPI", "UCB0TXBUF__SPI", "UCB0ICTL__SPI", "UCB0IE__SPI"
-group = "Custom", "UCB0IFG__SPI", "UCB0IV__SPI", "UCB0CTLW0", "UCB0CTL0", "UCB0CTL1", "UCB0BRW"
-group = "Custom", "UCB0BR0", "UCB0BR1", "UCB0STAT", "UCB0RXBUF", "UCB0TXBUF", "UCB0I2COA"
-group = "Custom", "UCB0I2CSA", "UCB0ICTL", "UCB0IE", "UCB0IFG", "UCB0IV", "UCA1CTLW0"
-group = "Custom", "UCA1CTL0", "UCA1CTL1", "UCA1BRW", "UCA1BR0", "UCA1BR1", "UCA1MCTL"
-group = "Custom", "UCA1STAT", "UCA1RXBUF", "UCA1TXBUF", "UCA1ABCTL", "UCA1IRCTL", "UCA1IRTCTL"
-group = "Custom", "UCA1IRRCTL", "UCA1ICTL", "UCA1IE", "UCA1IFG", "UCA1IV", "UCA1CTLW0__SPI"
-group = "Custom", "UCA1CTL0__SPI", "UCA1CTL1__SPI", "UCA1BRW__SPI", "UCA1BR0__SPI", "UCA1BR1__SPI", "UCA1MCTL__SPI"
-group = "Custom", "UCA1STAT__SPI", "UCA1RXBUF__SPI", "UCA1TXBUF__SPI", "UCA1ICTL__SPI", "UCA1IE__SPI", "UCA1IFG__SPI"
-group = "Custom", "UCA1IV__SPI", "UCB1CTLW0__SPI", "UCB1CTL0__SPI", "UCB1CTL1__SPI", "UCB1BRW__SPI", "UCB1BR0__SPI"
-group = "Custom", "UCB1BR1__SPI", "UCB1STAT__SPI", "UCB1RXBUF__SPI", "UCB1TXBUF__SPI", "UCB1ICTL__SPI", "UCB1IE__SPI"
-group = "Custom", "UCB1IFG__SPI", "UCB1IV__SPI", "UCB1CTLW0", "UCB1CTL0", "UCB1CTL1", "UCB1BRW"
-group = "Custom", "UCB1BR0", "UCB1BR1", "UCB1STAT", "UCB1RXBUF", "UCB1TXBUF", "UCB1I2COA"
-group = "Custom", "UCB1I2CSA", "UCB1ICTL", "UCB1IE", "UCB1IFG", "UCB1IV", "WDTCTL"
+group = "Custom", "P1OUT", "P1DIR", "P1REN", "P1DS", "P1SEL", "P1IV"
+group = "Custom", "P1IES", "P1IE", "P1IFG", "P2IN", "P2OUT", "P2DIR"
+group = "Custom", "P2REN", "P2DS", "P2SEL", "P2IV", "P2IES", "P2IE"
+group = "Custom", "P2IFG", "PBIN", "PBOUT", "PBDIR", "PBREN", "PBDS"
+group = "Custom", "PBSEL", "P3IN", "P3OUT", "P3DIR", "P3REN", "P3DS"
+group = "Custom", "P3SEL", "P4IN", "P4OUT", "P4DIR", "P4REN", "P4DS"
+group = "Custom", "P4SEL", "PCIN", "PCOUT", "PCDIR", "PCREN", "PCDS"
+group = "Custom", "PCSEL", "P5IN", "P5OUT", "P5DIR", "P5REN", "P5DS"
+group = "Custom", "P5SEL", "P6IN", "P6OUT", "P6DIR", "P6REN", "P6DS"
+group = "Custom", "P6SEL", "PDIN", "PDOUT", "PDDIR", "PDREN", "PDDS"
+group = "Custom", "PDSEL", "P7IN", "P7OUT", "P7DIR", "P7REN", "P7DS"
+group = "Custom", "P7SEL", "P8IN", "P8OUT", "P8DIR", "P8REN", "P8DS"
+group = "Custom", "P8SEL", "PJIN", "PJOUT", "PJDIR", "PJREN", "PJDS"
+group = "Custom", "PMAPKEYID", "PMAPCTL", "P4MAP01", "P4MAP23", "P4MAP45", "P4MAP67"
+group = "Custom", "P4MAP0", "P4MAP1", "P4MAP2", "P4MAP3", "P4MAP4", "P4MAP5"
+group = "Custom", "P4MAP6", "P4MAP7", "PMMCTL0", "PMMCTL1", "SVSMHCTL", "SVSMLCTL"
+group = "Custom", "SVSMIO", "PMMIFG", "PMMRIE", "PM5CTL0", "RCCTL0", "REFCTL0"
+group = "Custom", "RTCCTL01", "RTCCTL23", "RTCPS0CTL", "RTCPS1CTL", "RTCPS", "RTCIV"
+group = "Custom", "RTCTIM0", "RTCTIM1", "RTCDATE", "RTCYEAR", "RTCAMINHR", "RTCADOWDAY"
+group = "Custom", "SFRIE1", "SFRIFG1", "SFRRPCR", "SYSCTL", "SYSBSLC", "SYSJMBC"
+group = "Custom", "SYSJMBI0", "SYSJMBI1", "SYSJMBO0", "SYSJMBO1", "SYSBERRIV", "SYSUNIV"
+group = "Custom", "SYSSNIV", "SYSRSTIV", "TA0CTL", "TA0CCTL0", "TA0CCTL1", "TA0CCTL2"
+group = "Custom", "TA0CCTL3", "TA0CCTL4", "TA0R", "TA0CCR0", "TA0CCR1", "TA0CCR2"
+group = "Custom", "TA0CCR3", "TA0CCR4", "TA0IV", "TA0EX0", "TA1CTL", "TA1CCTL0"
+group = "Custom", "TA1CCTL1", "TA1CCTL2", "TA1R", "TA1CCR0", "TA1CCR1", "TA1CCR2"
+group = "Custom", "TA1IV", "TA1EX0", "TA2CTL", "TA2CCTL0", "TA2CCTL1", "TA2CCTL2"
+group = "Custom", "TA2R", "TA2CCR0", "TA2CCR1", "TA2CCR2", "TA2IV", "TA2EX0"
+group = "Custom", "TB0CTL", "TB0CCTL0", "TB0CCTL1", "TB0CCTL2", "TB0CCTL3", "TB0CCTL4"
+group = "Custom", "TB0CCTL5", "TB0CCTL6", "TB0R", "TB0CCR0", "TB0CCR1", "TB0CCR2"
+group = "Custom", "TB0CCR3", "TB0CCR4", "TB0CCR5", "TB0CCR6", "TB0EX0", "TB0IV"
+group = "Custom", "USBKEYID", "USBCNF", "USBPHYCTL", "USBPWRCTL", "USBPLLCTL", "USBPLLDIVB"
+group = "Custom", "USBPLLIR", "USBIEPCNF_0", "USBIEPCNT_0", "USBOEPCNF_0", "USBOEPCNT_0", "USBIEPIE"
+group = "Custom", "USBOEPIE", "USBIEPIFG", "USBOEPIFG", "USBVECINT", "USBMAINT", "USBTSREG"
+group = "Custom", "USBFN", "USBCTL", "USBIE", "USBIFG", "USBFUNADR", "USBIEPSIZXY_7"
+group = "Custom", "USBIEPBCTY_7", "USBIEPBBAY_7", "USBIEPBCTX_7", "USBIEPBBAX_7", "USBIEPCNF_7", "USBIEPSIZXY_6"
+group = "Custom", "USBIEPBCTY_6", "USBIEPBBAY_6", "USBIEPBCTX_6", "USBIEPBBAX_6", "USBIEPCNF_6", "USBIEPSIZXY_5"
+group = "Custom", "USBIEPBCTY_5", "USBIEPBBAY_5", "USBIEPBCTX_5", "USBIEPBBAX_5", "USBIEPCNF_5", "USBIEPSIZXY_4"
+group = "Custom", "USBIEPBCTY_4", "USBIEPBBAY_4", "USBIEPBCTX_4", "USBIEPBBAX_4", "USBIEPCNF_4", "USBIEPSIZXY_3"
+group = "Custom", "USBIEPBCTY_3", "USBIEPBBAY_3", "USBIEPBCTX_3", "USBIEPBBAX_3", "USBIEPCNF_3", "USBIEPSIZXY_2"
+group = "Custom", "USBIEPBCTY_2", "USBIEPBBAY_2", "USBIEPBCTX_2", "USBIEPBBAX_2", "USBIEPCNF_2", "USBIEPSIZXY_1"
+group = "Custom", "USBIEPBCTY_1", "USBIEPBBAY_1", "USBIEPBCTX_1", "USBIEPBBAX_1", "USBIEPCNF_1", "USBOEPSIZXY_7"
+group = "Custom", "USBOEPBCTY_7", "USBOEPBBAY_7", "USBOEPBCTX_7", "USBOEPBBAX_7", "USBOEPCNF_7", "USBOEPSIZXY_6"
+group = "Custom", "USBOEPBCTY_6", "USBOEPBBAY_6", "USBOEPBCTX_6", "USBOEPBBAX_6", "USBOEPCNF_6", "USBOEPSIZXY_5"
+group = "Custom", "USBOEPBCTY_5", "USBOEPBBAY_5", "USBOEPBCTX_5", "USBOEPBBAX_5", "USBOEPCNF_5", "USBOEPSIZXY_4"
+group = "Custom", "USBOEPBCTY_4", "USBOEPBBAY_4", "USBOEPBCTX_4", "USBOEPBBAX_4", "USBOEPCNF_4", "USBOEPSIZXY_3"
+group = "Custom", "USBOEPBCTY_3", "USBOEPBBAY_3", "USBOEPBCTX_3", "USBOEPBBAX_3", "USBOEPCNF_3", "USBOEPSIZXY_2"
+group = "Custom", "USBOEPBCTY_2", "USBOEPBBAY_2", "USBOEPBCTX_2", "USBOEPBBAX_2", "USBOEPCNF_2", "USBOEPSIZXY_1"
+group = "Custom", "USBOEPBCTY_1", "USBOEPBBAY_1", "USBOEPBCTX_1", "USBOEPBBAX_1", "USBOEPCNF_1", "USBSUBLK"
+group = "Custom", "USBIEP0BUF", "USBOEP0BUF", "USBTOPBUFF", "USBSTABUFF", "UCSCTL0", "UCSCTL1"
+group = "Custom", "UCSCTL2", "UCSCTL3", "UCSCTL4", "UCSCTL5", "UCSCTL6", "UCSCTL7"
+group = "Custom", "UCSCTL8", "UCA0CTLW0", "UCA0CTL0", "UCA0CTL1", "UCA0BRW", "UCA0BR0"
+group = "Custom", "UCA0BR1", "UCA0MCTL", "UCA0STAT", "UCA0RXBUF", "UCA0TXBUF", "UCA0ABCTL"
+group = "Custom", "UCA0IRCTL", "UCA0IRTCTL", "UCA0IRRCTL", "UCA0ICTL", "UCA0IE", "UCA0IFG"
+group = "Custom", "UCA0IV", "UCA0CTLW0__SPI", "UCA0CTL0__SPI", "UCA0CTL1__SPI", "UCA0BRW__SPI", "UCA0BR0__SPI"
+group = "Custom", "UCA0BR1__SPI", "UCA0MCTL__SPI", "UCA0STAT__SPI", "UCA0RXBUF__SPI", "UCA0TXBUF__SPI", "UCA0ICTL__SPI"
+group = "Custom", "UCA0IE__SPI", "UCA0IFG__SPI", "UCA0IV__SPI", "UCB0CTLW0__SPI", "UCB0CTL0__SPI", "UCB0CTL1__SPI"
+group = "Custom", "UCB0BRW__SPI", "UCB0BR0__SPI", "UCB0BR1__SPI", "UCB0STAT__SPI", "UCB0RXBUF__SPI", "UCB0TXBUF__SPI"
+group = "Custom", "UCB0ICTL__SPI", "UCB0IE__SPI", "UCB0IFG__SPI", "UCB0IV__SPI", "UCB0CTLW0", "UCB0CTL0"
+group = "Custom", "UCB0CTL1", "UCB0BRW", "UCB0BR0", "UCB0BR1", "UCB0STAT", "UCB0RXBUF"
+group = "Custom", "UCB0TXBUF", "UCB0I2COA", "UCB0I2CSA", "UCB0ICTL", "UCB0IE", "UCB0IFG"
+group = "Custom", "UCB0IV", "UCA1CTLW0", "UCA1CTL0", "UCA1CTL1", "UCA1BRW", "UCA1BR0"
+group = "Custom", "UCA1BR1", "UCA1MCTL", "UCA1STAT", "UCA1RXBUF", "UCA1TXBUF", "UCA1ABCTL"
+group = "Custom", "UCA1IRCTL", "UCA1IRTCTL", "UCA1IRRCTL", "UCA1ICTL", "UCA1IE", "UCA1IFG"
+group = "Custom", "UCA1IV", "UCA1CTLW0__SPI", "UCA1CTL0__SPI", "UCA1CTL1__SPI", "UCA1BRW__SPI", "UCA1BR0__SPI"
+group = "Custom", "UCA1BR1__SPI", "UCA1MCTL__SPI", "UCA1STAT__SPI", "UCA1RXBUF__SPI", "UCA1TXBUF__SPI", "UCA1ICTL__SPI"
+group = "Custom", "UCA1IE__SPI", "UCA1IFG__SPI", "UCA1IV__SPI", "UCB1CTLW0__SPI", "UCB1CTL0__SPI", "UCB1CTL1__SPI"
+group = "Custom", "UCB1BRW__SPI", "UCB1BR0__SPI", "UCB1BR1__SPI", "UCB1STAT__SPI", "UCB1RXBUF__SPI", "UCB1TXBUF__SPI"
+group = "Custom", "UCB1ICTL__SPI", "UCB1IE__SPI", "UCB1IFG__SPI", "UCB1IV__SPI", "UCB1CTLW0", "UCB1CTL0"
+group = "Custom", "UCB1CTL1", "UCB1BRW", "UCB1BR0", "UCB1BR1", "UCB1STAT", "UCB1RXBUF"
+group = "Custom", "UCB1TXBUF", "UCB1I2COA", "UCB1I2CSA", "UCB1ICTL", "UCB1IE", "UCB1IFG"
+group = "Custom", "UCB1IV", "WDTCTL"

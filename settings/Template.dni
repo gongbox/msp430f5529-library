@@ -73,10 +73,7 @@ Enabled=0
 ShowSource=1
 [Breakpoints]
 Bp0=_ "STD_CODE" "{$PROJ_DIR$\System\src\isr.c}.24.8" 0 0 0 0 "" 0 ""
-Bp1=_ "STD_CODE" "{$PROJ_DIR$\User\main.c}.52.1" 0 0 0 0 "" 0 ""
-Bp2=_ "STD_CODE" "{$PROJ_DIR$\User\main.c}.52.1" 0 0 0 0 "" 0 ""
-Bp3=_ "STD_CODE" "{$PROJ_DIR$\User\main.c}.52.2" 0 0 0 0 "" 0 ""
-Count=4
+Count=1
 [FET]
 Clock mode=14
 Extended Clock mode=-1

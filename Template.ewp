@@ -2032,28 +2032,34 @@
       <name>$PROJ_DIR$\HardWare\delay\delay.h</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\HardWare\KEY\KEY.c</name>
+      <name>$PROJ_DIR$\HardWare\key\key.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\HardWare\KEY\KEY.h</name>
+      <name>$PROJ_DIR$\HardWare\key\key.h</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\HardWare\2.2TFT\LCD.c</name>
+      <name>$PROJ_DIR$\HardWare\2.2TFT\lcd.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\HardWare\2.2TFT\LCD.h</name>
+      <name>$PROJ_DIR$\HardWare\2.2TFT\lcd.h</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\HardWare\LCD_API\LCD_API.c</name>
+      <name>$PROJ_DIR$\HardWare\lcd_api\lcd_api.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\HardWare\LCD_API\LCD_API.h</name>
+      <name>$PROJ_DIR$\HardWare\lcd_api\lcd_api.h</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\HardWare\LED\LED.c</name>
+      <name>$PROJ_DIR$\HardWare\lcd_api\lcd_font.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\HardWare\LED\LED.h</name>
+      <name>$PROJ_DIR$\HardWare\lcd_api\lcd_font.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\HardWare\led\led.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\HardWare\led\led.h</name>
     </file>
     <file>
       <name>$PROJ_DIR$\HardWare\nrf24l01\nrf2401.c</name>
@@ -2062,10 +2068,10 @@
       <name>$PROJ_DIR$\HardWare\nrf24l01\nrf2401.h</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\HardWare\oled\OLED.c</name>
+      <name>$PROJ_DIR$\HardWare\oled\oled.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\HardWare\oled\OLED.h</name>
+      <name>$PROJ_DIR$\HardWare\oled\oled.h</name>
     </file>
   </group>
   <group>
@@ -2190,10 +2196,10 @@
     <group>
       <name>User</name>
       <file>
-        <name>$PROJ_DIR$\User\USER\PID.c</name>
+        <name>$PROJ_DIR$\User\USER\pid.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$\User\USER\PID.h</name>
+        <name>$PROJ_DIR$\User\USER\pid.h</name>
       </file>
     </group>
     <file>

@@ -9,7 +9,7 @@
 //如果使用硬件SPI则需宏定义以下函数
 //硬件SPI初始化函数，时钟线在没有数据传输时为高电平，主机先下降沿接收数据，再在上升沿发送数据
 //波特率太慢也会显示乱码，不知道为什么
-#define OLEDHardWareSPI_Init()            SPI_Master_Init(SPI3,30MHz,SPI_MSB_First,SPI_STE_None,SPI_CLK_Mode_4)
+#define OLEDHardWareSPI_Init()            SPI_Master_Init(SPI3,10MHz,SPI_MSB_First,SPI_STE_None,SPI_CLK_Mode_4)
 #define OLEDHardWareSPI_SendByte(data)    SPI_SendReadByte(SPI3,data)
 #else
 //如果使用IO口模拟SPI，则需宏定义以下IO口

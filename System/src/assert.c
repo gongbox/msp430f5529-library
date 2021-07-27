@@ -10,15 +10,8 @@
  * 作者         ：
 **********************************************************************************/
 
-/*
- * File:        assert.c
- * Purpose:     Provide macro for software assertions
- *
- * Notes:       ASSERT macro defined in assert.h calls assert_failed()
- */
-
 #include "common.h"
-#include "LED.h"
+#include "led.h"
 #include "msp430f5529_system.h"
 
 const char ASSERT_FAILED_STR[] = "断言条件不成立，请检测错误原因：\n断言发生在%s文件的第%d行！\n断言所在函数：%s\n断言失败说明：%s\t—— by CTGU-GB\n\n";
