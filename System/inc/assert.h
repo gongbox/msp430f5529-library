@@ -23,7 +23,7 @@ void assert_failed(char *file, int line,char *funName,char *str);
     if (!(expr)) \
         assert_failed(__FILE__, __LINE__,funName,str)
 #else
-#define ASSERT(expr)
+#define ASSERT(expr,funName,str)
 #endif
 
 /********************************************************************/

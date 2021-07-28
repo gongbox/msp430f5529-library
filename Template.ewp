@@ -321,39 +321,20 @@
           <state>$PROJ_DIR$</state>
           <state>$PROJ_DIR$\Drivers\inc</state>
           <state>$PROJ_DIR$\Drivers\src</state>
-          <state>$PROJ_DIR$\Drivers\src\USB</state>
-          <state>$PROJ_DIR$\Drivers\src\USB\USB_config</state>
-          <state>$PROJ_DIR$\Drivers\src\USB\USB_User</state>
-          <state>$PROJ_DIR$\Drivers\srcUSB\USB_API\USB_CDC_API</state>
-          <state>$PROJ_DIR$\Drivers\src\USB\USB_API\USB_HID_API</state>
-          <state>$PROJ_DIR$\Drivers\src\USB\USB_API\USB_MSC_API</state>
           <state>$PROJ_DIR$\HardWare</state>
-          <state>$PROJ_DIR$\HardWare\delay</state>
-          <state>$PROJ_DIR$\HardWare\18b20</state>
-          <state>$PROJ_DIR$\HardWare\KEY</state>
-          <state>$PROJ_DIR$\HardWare\LED</state>
-          <state>$PROJ_DIR$\HardWare\12864</state>
-          <state>$PROJ_DIR$\HardWare\oled</state>
-          <state>$PROJ_DIR$\HardWare\mpu6050\inc</state>
-          <state>$PROJ_DIR$\HardWare\mpu6050\src</state>
-          <state>$PROJ_DIR$\HardWare\nokia5110\inc</state>
-          <state>$PROJ_DIR$\HardWare\nokia5110\src</state>
-          <state>$PROJ_DIR$\HardWare\LQ_1.8_TFT</state>
-          <state>$PROJ_DIR$\HardWare\LCD_API</state>
-          <state>$PROJ_DIR$\HardWare\2.2TFT</state>
+          <state>$PROJ_DIR$\HardWare\led</state>
+          <state>$PROJ_DIR$\HardWare\key</state>
+          <state>$PROJ_DIR$\HardWare\lcd</state>
+          <state>$PROJ_DIR$\HardWare\lcd_api</state>
           <state>$PROJ_DIR$\HardWare\nrf24l01</state>
+          <state>$PROJ_DIR$\HardWare\oled</state>
+          <state>$PROJ_DIR$\HardWare\delay</state>
+          <state>$PROJ_DIR$\HardWare\2.2TFT</state>
           <state>$PROJ_DIR$\System</state>
           <state>$PROJ_DIR$\System\inc</state>
           <state>$PROJ_DIR$\System\src</state>
           <state>$PROJ_DIR$\User</state>
           <state>$PROJ_DIR$\User\USER</state>
-          <state>$PROJ_DIR$\Lib\UCOSII\CONFIG</state>
-          <state>$PROJ_DIR$\Lib\uCOSII\App</state>
-          <state>$PROJ_DIR$\Lib\uCOSII\CONFIHG</state>
-          <state>$PROJ_DIR$\Lib\uCOSII\PORT</state>
-          <state>$PROJ_DIR$\Lib\UCOSII\CORE</state>
-          <state>$PROJ_DIR$\Lib\FatFs</state>
-          <state>$PROJ_DIR$\Lib\FatFs\option</state>
         </option>
         <option>
           <name>CCStdIncCheck</name>
@@ -1333,36 +1314,20 @@
           <state>$PROJ_DIR$</state>
           <state>$PROJ_DIR$\Drivers\inc</state>
           <state>$PROJ_DIR$\Drivers\src</state>
-          <state>$PROJ_DIR$\Drivers\src\USB</state>
-          <state>$PROJ_DIR$\Drivers\src\USB\USB_config</state>
-          <state>$PROJ_DIR$\Drivers\src\USB\USB_User</state>
-          <state>$PROJ_DIR$\Drivers\srcUSB\USB_API\USB_CDC_API</state>
-          <state>$PROJ_DIR$\Drivers\src\USB\USB_API\USB_HID_API</state>
-          <state>$PROJ_DIR$\Drivers\src\USB\USB_API\USB_MSC_API</state>
-          <state>$PROJ_DIR$\HardWare\KEY</state>
-          <state>$PROJ_DIR$\HardWare\LED</state>
-          <state>$PROJ_DIR$\HardWare\12864</state>
+          <state>$PROJ_DIR$\HardWare</state>
+          <state>$PROJ_DIR$\HardWare\led</state>
+          <state>$PROJ_DIR$\HardWare\key</state>
+          <state>$PROJ_DIR$\HardWare\lcd</state>
+          <state>$PROJ_DIR$\HardWare\lcd_api</state>
+          <state>$PROJ_DIR$\HardWare\nrf24l01</state>
           <state>$PROJ_DIR$\HardWare\oled</state>
-          <state>$PROJ_DIR$\HardWare\mpu6050\inc</state>
-          <state>$PROJ_DIR$\HardWare\mpu6050\src</state>
-          <state>$PROJ_DIR$\HardWare\nokia5110\inc</state>
-          <state>$PROJ_DIR$\HardWare\nokia5110\src</state>
-          <state>$PROJ_DIR$\HardWare\LQ_1.8_TFT</state>
-          <state>$PROJ_DIR$\HardWare\LCD_API</state>
-          <state>$PROJ_DIR$\HardWare\2.2TFT</state>
           <state>$PROJ_DIR$\HardWare\delay</state>
+          <state>$PROJ_DIR$\HardWare\2.2TFT</state>
           <state>$PROJ_DIR$\System</state>
           <state>$PROJ_DIR$\System\inc</state>
           <state>$PROJ_DIR$\System\src</state>
           <state>$PROJ_DIR$\User</state>
           <state>$PROJ_DIR$\User\USER</state>
-          <state>$PROJ_DIR$\Lib\UCOSII\CONFIG</state>
-          <state>$PROJ_DIR$\Lib\uCOSII\App</state>
-          <state>$PROJ_DIR$\Lib\uCOSII\CONFIHG</state>
-          <state>$PROJ_DIR$\Lib\uCOSII\PORT</state>
-          <state>$PROJ_DIR$\Lib\UCOSII\CORE</state>
-          <state>$PROJ_DIR$\Lib\FatFs</state>
-          <state>$PROJ_DIR$\Lib\FatFs\option</state>
         </option>
         <option>
           <name>CCStdIncCheck</name>
@@ -1689,7 +1654,7 @@
         </option>
         <option>
           <name>OutputFile</name>
-          <state>Demo_Project.d43</state>
+          <state>Template.d43</state>
         </option>
         <option>
           <name>OutputFormat</name>
@@ -1755,7 +1720,7 @@
         </option>
         <option>
           <name>XclFile</name>
-          <state>$PROJ_DIR$\Config\Linker\lnk430f5529.xcl</state>
+          <state>$PROJ_DIR$\lnk430f5529.xcl</state>
         </option>
         <option>
           <name>XclFileSlave</name>
@@ -1883,7 +1848,7 @@
         </option>
         <option>
           <name>ExtraOutputFile</name>
-          <state>Demo_Project.a43</state>
+          <state>Template.a43</state>
         </option>
         <option>
           <name>ExtraOutputFormat</name>
