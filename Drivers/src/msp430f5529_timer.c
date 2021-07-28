@@ -53,7 +53,7 @@ STATUS TIMER_PWM_MultiChannel_Init(TIMERn timer, uint32_t fre, uint8_t ChannelNu
        "定时器通道参数超出范围！"); //断言检测输入参数*/
   
   va_list ap;
-  va_start(ap,ChanelNum);
+  va_start(ap,ChannelNum);
   for(int i=0;i < ChannelNum;i++)           //根据初始化的通道数，逐一初始化通道
   {
     TIMER_CHn ch = va_arg(ap, TIMER_CHn);  //读取要初始化的通道
