@@ -12,8 +12,8 @@
 #define PID_VAR_TYPE                            float     //int
 
 //定义结构体
-typedef struct  
-{  
+typedef struct
+{
     PID_VAR_TYPE SetPoint;      // 设定目标 
     PID_VAR_TYPE Proportion;    // 比例常数
     PID_VAR_TYPE Integral;      // 积分常数
@@ -28,16 +28,19 @@ typedef struct
     PID_VAR_TYPE OutMin;        // 输出限幅最小值
     PID_VAR_TYPE IntegralMax;   // 积分限幅最大值
     PID_VAR_TYPE IntegralMin;   // 积分限幅最小值
-}PID;
+} PID;
 
-extern void PID_Init(PID * s_PID, PID_VAR_TYPE set_point,PID_VAR_TYPE Proportion, PID_VAR_TYPE Integral, PID_VAR_TYPE Derivative);  //PID初始化
+extern void PID_Init(PID *s_PID, PID_VAR_TYPE set_point,
+                        PID_VAR_TYPE Proportion,
+                        PID_VAR_TYPE Integral,
+                        PID_VAR_TYPE Derivative);  //PID初始化
 
-extern void  PID_SetOutRange  (PID * s_PID, PID_VAR_TYPE outMax,PID_VAR_TYPE outMin);         //设置PID输出范围
-extern void  PID_SetIntegralOutRange(PID * s_PID, PID_VAR_TYPE outMax,PID_VAR_TYPE outMin);   //设置PID积分范围
-extern void  PID_SetPoint     (PID * s_PID, PID_VAR_TYPE set_point);            //设置目标值
+extern void PID_SetOutRange(PID *s_PID, PID_VAR_TYPE outMax, PID_VAR_TYPE outMin);          //设置PID输出范围
+extern void PID_SetIntegralOutRange(PID *s_PID, PID_VAR_TYPE outMax, PID_VAR_TYPE outMin);  //设置PID积分范围
+extern void PID_SetPoint(PID *s_PID, PID_VAR_TYPE set_point);                               //设置目标值
 
-extern PID_VAR_TYPE Increment_PID_Cal(PID * s_PID, PID_VAR_TYPE now_point);     //增量式PID计算
-extern PID_VAR_TYPE Position_PID_Cal (PID * s_PID, PID_VAR_TYPE now_point);     //位置式PID计算
-extern PID_VAR_TYPE PID_Cal          (PID * s_PID, PID_VAR_TYPE now_point);     //比例外置式PID
- 
+extern PID_VAR_TYPE Increment_PID_Cal(PID *s_PID, PID_VAR_TYPE now_point);  //增量式PID计算
+extern PID_VAR_TYPE Position_PID_Cal(PID *s_PID, PID_VAR_TYPE now_point);   //位置式PID计算
+extern PID_VAR_TYPE PID_Cal(PID *s_PID, PID_VAR_TYPE now_point);            //比例外置式PID
+
 #endif 

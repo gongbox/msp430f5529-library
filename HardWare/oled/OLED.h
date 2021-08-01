@@ -9,7 +9,7 @@
 //Èç¹ûÊ¹ÓÃÓ²¼şSPIÔòĞèºê¶¨ÒåÒÔÏÂº¯Êı
 //Ó²¼şSPI³õÊ¼»¯º¯Êı£¬Ê±ÖÓÏßÔÚÃ»ÓĞÊı¾İ´«ÊäÊ±Îª¸ßµçÆ½£¬Ö÷»úÏÈÏÂ½µÑØ½ÓÊÕÊı¾İ£¬ÔÙÔÚÉÏÉıÑØ·¢ËÍÊı¾İ
 //²¨ÌØÂÊÌ«ÂıÒ²»áÏÔÊ¾ÂÒÂë£¬²»ÖªµÀÎªÊ²Ã´
-#define OLEDHardWareSPI_Init()            SPI_Master_Init(SPI3,10MHz,SPI_MSB_First,SPI_STE_None,SPI_CLK_Mode_4)
+#define OLEDHardWareSPI_Init()            SPI_Master_Init(SPI3,30MHz,SPI_MSB_First,SPI_STE_None,SPI_CLK_Mode_4)
 #define OLEDHardWareSPI_SendByte(data)    SPI_SendReadByte(SPI3,data)
 #else
 //Èç¹ûÊ¹ÓÃIO¿ÚÄ£ÄâSPI£¬ÔòĞèºê¶¨ÒåÒÔÏÂIO¿Ú
@@ -46,22 +46,17 @@ void OLED_Init(void);                                                      //³õÊ
 void OLED_Clear(void);                                                      //ÇåÆÁ
 #ifdef OLED_RAM //¿ªÆôÏÔ´æ
 void OLED_DrawPoint(uint8_t x, uint8_t y, uint8_t value);                   //»­µã
-void OLED_FillRect(uint8_t x0, uint8_t y0, uint8_t x1, uint8_t y1,
-                   uint8_t data);   //»­¾ØĞÎÇøÓò
+void OLED_FillRect(uint8_t x0, uint8_t y0, uint8_t x1, uint8_t y1, uint8_t data);   //»­¾ØĞÎÇøÓò
 #endif
 void OLED_FillPart(uint8_t x0, uint8_t line0, uint8_t x1, uint8_t line1,
                    uint8_t data);     //»­¾ØĞÎÇøÓò
 void OLED_DispChar(OLED_FONT font, uint8_t line, uint8_t x, char ascii); //ÏÔÊ¾Ò»¸ö×Ö·û        
 void OLED_DispStringAt(OLED_FONT font, uint8_t line, uint8_t x, char *str); //ÔÚÖ¸¶¨Î»ÖÃÏÔÊ¾Ò»¸öÓ¢ÎÄ×Ö·û´®        
 void OLED_DispStringAtCEOL(OLED_FONT font, uint8_t line, uint8_t x, char *str); //ÔÚÖ¸¶¨Î»ÖÃÏÔÊ¾Ò»¸öÓ¢ÎÄ×Ö·û´®²¢Çå³ıÖÁÄ©Î² 
-void OLED_DispStringLenAt(OLED_FONT font, uint8_t line, uint8_t x, char *str,
-                          uint8_t len); //ÔÚÖ¸¶¨Î»ÖÃÏÔÊ¾Ò»¸öÖ¸¶¨×Ö·û³¤¶ÈµÄÓ¢ÎÄ×Ö·û´® 
-void OLED_DispDecAt(OLED_FONT font, uint8_t line, uint8_t x, int32_t number,
-                    uint8_t len);  //ÔÚÖ¸¶¨Î»ÖÃÏÔÊ¾Ò»¸öÕûĞÎÊı×Ö     
-void OLED_DispFolatAt(OLED_FONT font, uint8_t line, uint8_t x, float number,
-                      uint8_t len);  //ÔÚÖ¸¶¨Î»ÖÃÏÔÊ¾Ò»¸ö¸¡µãÊı
-void OLED_PrintfAt(OLED_FONT font, uint8_t line, uint8_t x, const char *fmt,
-                   ...);         //ÔÚÖ¸¶¨Î»ÖÃ´òÓ¡ 
+void OLED_DispStringLenAt(OLED_FONT font, uint8_t line, uint8_t x, char *str, uint8_t len); //ÔÚÖ¸¶¨Î»ÖÃÏÔÊ¾Ò»¸öÖ¸¶¨×Ö·û³¤¶ÈµÄÓ¢ÎÄ×Ö·û´®
+void OLED_DispDecAt(OLED_FONT font, uint8_t line, uint8_t x, int32_t number, uint8_t len);  //ÔÚÖ¸¶¨Î»ÖÃÏÔÊ¾Ò»¸öÕûĞÎÊı×Ö
+void OLED_DispFolatAt(OLED_FONT font, uint8_t line, uint8_t x, float number, uint8_t len);  //ÔÚÖ¸¶¨Î»ÖÃÏÔÊ¾Ò»¸ö¸¡µãÊı
+void OLED_PrintfAt(OLED_FONT font, uint8_t line, uint8_t x, const char *fmt, ...);         //ÔÚÖ¸¶¨Î»ÖÃ´òÓ¡
 void OLED_Printf(OLED_FONT font, const char *fmt, ...);                    //´òÓ¡ 
 void OLED_DispChineseAt(OLED_FONT font, uint8_t line, uint8_t x, char *str); //ÔÚÖ¸¶¨Î»ÖÃÏÔÊ¾Ò»¸öÖĞÎÄ×Ö·û´® 
 
