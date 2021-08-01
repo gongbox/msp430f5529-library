@@ -4,13 +4,12 @@
 #include "common.h"
 #include "lcd.h"
 
-extern  uint16_t BACK_COLOR, POINT_COLOR;   //背景色，画笔色
+extern uint16_t BACK_COLOR, POINT_COLOR;   //背景色，画笔色
 
 #if (1)
 
 /*********************** API接口 ******************************/
 //提供API接口给LCD调用
-
 #define LCD_H                   320                 //高
 #define LCD_W                   240                 //宽
 

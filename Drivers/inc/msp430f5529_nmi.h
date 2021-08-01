@@ -6,9 +6,9 @@
 //NMI 
 typedef enum
 {
-  NMI_Rising             ,                 //上升沿
-  NMI_Falling            ,                 //下降沿
-}NMIIES;          //NMI中断边沿选择
+    NMI_Rising,     //上升沿
+    NMI_Falling,    //下降沿
+} NMIIES;   //NMI中断边沿选择
 
 extern void    NMI_Init     (NMIIES ies);                                       // 初始化NMI功能，并选择中断边沿
 extern void    NMI_DeInit   (void);                                             // 屏蔽NMI功能

@@ -9,27 +9,27 @@
                                      //RTCTEV__1200    /* RTC Time Event: 3 (00:00 changed) */
 typedef struct
 {
-  uint8_t Seconds;    //! Seconds of minute between 0-59
-  uint8_t Minutes;    //! Minutes of hour between 0-59
-  uint8_t Hours;      //! Hour of day between 0-23
-  uint8_t DayOfWeek;  //! Day of week between 0-6
-  uint8_t DayOfMonth; //! Day of month between 1-31
-  uint8_t Month;      //! Month between 0-11
-  uint16_t Year;      //! Year between 0-4095
-}Calendar;   
+    uint8_t Seconds;    //! Seconds of minute between 0-59
+    uint8_t Minutes;    //! Minutes of hour between 0-59
+    uint8_t Hours;      //! Hour of day between 0-23
+    uint8_t DayOfWeek;  //! Day of week between 0-6
+    uint8_t DayOfMonth; //! Day of month between 1-31
+    uint8_t Month;      //! Month between 0-11
+    uint16_t Year;      //! Year between 0-4095
+} Calendar;
 typedef enum
 {
-  Every_Hours,    //每个小时的某一分钟
-  Every_Days,     //每天的某一分钟
-  Every_Weeks,    //每个星期的某一分钟
-  Every_Months,   //每个月的某一分钟
-}Alarm_Type;  //闹钟模式
+    Every_Hours,    //每个小时的某一分钟
+    Every_Days,     //每天的某一分钟
+    Every_Weeks,    //每个星期的某一分钟
+    Every_Months,   //每个月的某一分钟
+} Alarm_Type;  //闹钟模式
 typedef enum
 {
-  RTC_Ready_IRQn          =(0x01u),     /* RTC Ready Interrupt   */
-  RTC_Alarm_IRQn          =(0x02u),     /* RTC Alarm Interrupt   */
-  RTC_TimeEvent_IRQn      =(0x04u),     /* RTC Time Event Interrupt   *///时钟事件,参考上面的宏定义：RTC_TimeEvent
-}RTC_IRQn;
+    RTC_Ready_IRQn      = (0x01u), /* RTC Ready Interrupt   */
+    RTC_Alarm_IRQn      = (0x02u), /* RTC Alarm Interrupt   */
+    RTC_TimeEvent_IRQn  = (0x04u), /* RTC Time Event Interrupt   */ //时钟事件,参考上面的宏定义：RTC_TimeEvent
+} RTC_IRQn;
 
 extern void    RTC_Init    (Calendar nowDate);                                  //初始化RTC，并设置当前时间
 extern void    RTC_SetTime (Calendar nowDate);                                  //设置RTC时间

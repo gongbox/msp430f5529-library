@@ -3,20 +3,20 @@
 
 #include"common.h"
 
-typedef enum 
-{                         //端口              SCL          SDA
-  I2C0          =2u,      //I2C_B0            P3.1         P3.0
-  I2C1          =3u,      //I2C_B1            P4.2         P4.1
-}I2Cn;         //I2Cn模块
+typedef enum
+{                      //端口               SCL          SDA
+    I2C0    = 2u,      //I2C_B0            P3.1         P3.0
+    I2C1    = 3u,      //I2C_B1            P4.2         P4.1
+} I2Cn;         //I2Cn模块
 typedef enum
 {
-  I2C_RX_IRQn        =(0x0001u),  /* USCI Receive Interrupt  */
-  I2C_TX_IRQn        =(0x0002u),  /* USCI Transmit Interrupt  */  
-  I2C_START_IRQn     =(0x0004u),  /* START Condition interrupt  */
-  I2C_STOP_IRQn      =(0x0008u),  /* STOP Condition interrupt  */
-  I2C_AL_IRQn        =(0x0010u),  /* Arbitration Lost interrupt  */
-  I2C_NACK_IRQn      =(0x0020u),  /* NAK Condition interrupt  */
-}I2C_IRQn;     //I2Cn中断类别
+    I2C_RX_IRQn     = (0x0001u), /* USCI Receive Interrupt  */
+    I2C_TX_IRQn     = (0x0002u), /* USCI Transmit Interrupt  */
+    I2C_START_IRQn  = (0x0004u), /* START Condition interrupt  */
+    I2C_STOP_IRQn   = (0x0008u), /* STOP Condition interrupt  */
+    I2C_AL_IRQn     = (0x0010u), /* Arbitration Lost interrupt  */
+    I2C_NACK_IRQn   = (0x0020u), /* NAK Condition interrupt  */
+} I2C_IRQn;     //I2Cn中断类别
 
 extern void    I2C_MasterInit (I2Cn, uint16_t SlaveID, uint32_t BaudRate);      //初始化I2C模块（主机模式）
 extern void    I2C_SetSlaveID (I2Cn, uint16_t SlaveID);                         //设置从机地址

@@ -37,28 +37,32 @@
 
 #define OLED_RAM                //宏定义是否开启开启显存，会消耗1K的RAM，但是只有开启后才能使用画点函数
 
-typedef enum 
+typedef enum
 {
-  FONT_ASCII_6X8    ,
-  FONT_ASCII_8X16   ,
-  FONT_CHINESE_16X16, 
-}OLED_FONT; //OLED字体
+    FONT_ASCII_6X8, FONT_ASCII_8X16, FONT_CHINESE_16X16,
+} OLED_FONT; //OLED字体
 
-void OLED_Init(void);                                                           //初始化
-void OLED_Clear(void);                                                          //清屏
+void OLED_Init(void);                                                      //初始化
+void OLED_Clear(void);                                                      //清屏
 #ifdef OLED_RAM //开启显存
-void OLED_DrawPoint(uint8_t x,uint8_t y,uint8_t value);                         //画点
-void OLED_FillRect(uint8_t x0,uint8_t y0,uint8_t x1,uint8_t y1,uint8_t data);   //画矩形区域
+void OLED_DrawPoint(uint8_t x, uint8_t y, uint8_t value);                   //画点
+void OLED_FillRect(uint8_t x0, uint8_t y0, uint8_t x1, uint8_t y1,
+                   uint8_t data);   //画矩形区域
 #endif
-void OLED_FillPart(uint8_t x0,uint8_t line0,uint8_t x1,uint8_t line1,uint8_t data);     //画矩形区域
-void OLED_DispChar(OLED_FONT font,uint8_t line,uint8_t x,char ascii);                   //显示一个字符        
-void OLED_DispStringAt(OLED_FONT font,uint8_t line,uint8_t x,char *str);                //在指定位置显示一个英文字符串        
-void OLED_DispStringAtCEOL(OLED_FONT font,uint8_t line,uint8_t x,char *str);            //在指定位置显示一个英文字符串并清除至末尾 
-void OLED_DispStringLenAt(OLED_FONT font,uint8_t line,uint8_t x,char *str,uint8_t len); //在指定位置显示一个指定字符长度的英文字符串 
-void OLED_DispDecAt(OLED_FONT font,uint8_t line,uint8_t x,int32_t number,uint8_t len);  //在指定位置显示一个整形数字     
-void OLED_DispFolatAt(OLED_FONT font,uint8_t line,uint8_t x,float number,uint8_t len);  //在指定位置显示一个浮点数
-void OLED_PrintfAt(OLED_FONT font,uint8_t line,uint8_t x,const char * fmt,...);         //在指定位置打印 
-void OLED_Printf(OLED_FONT font,const char * fmt,...);                                  //打印 
-void OLED_DispChineseAt(OLED_FONT font,uint8_t line,uint8_t x,char *str);               //在指定位置显示一个中文字符串 
+void OLED_FillPart(uint8_t x0, uint8_t line0, uint8_t x1, uint8_t line1,
+                   uint8_t data);     //画矩形区域
+void OLED_DispChar(OLED_FONT font, uint8_t line, uint8_t x, char ascii); //显示一个字符        
+void OLED_DispStringAt(OLED_FONT font, uint8_t line, uint8_t x, char *str); //在指定位置显示一个英文字符串        
+void OLED_DispStringAtCEOL(OLED_FONT font, uint8_t line, uint8_t x, char *str); //在指定位置显示一个英文字符串并清除至末尾 
+void OLED_DispStringLenAt(OLED_FONT font, uint8_t line, uint8_t x, char *str,
+                          uint8_t len); //在指定位置显示一个指定字符长度的英文字符串 
+void OLED_DispDecAt(OLED_FONT font, uint8_t line, uint8_t x, int32_t number,
+                    uint8_t len);  //在指定位置显示一个整形数字     
+void OLED_DispFolatAt(OLED_FONT font, uint8_t line, uint8_t x, float number,
+                      uint8_t len);  //在指定位置显示一个浮点数
+void OLED_PrintfAt(OLED_FONT font, uint8_t line, uint8_t x, const char *fmt,
+                   ...);         //在指定位置打印 
+void OLED_Printf(OLED_FONT font, const char *fmt, ...);                    //打印 
+void OLED_DispChineseAt(OLED_FONT font, uint8_t line, uint8_t x, char *str); //在指定位置显示一个中文字符串 
 
 #endif

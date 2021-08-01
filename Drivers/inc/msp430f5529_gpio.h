@@ -43,23 +43,23 @@ typedef enum
   PC            ,PORTC = PC,  //P5.0-P6.7
   PD            ,PORTD = PD,  //P7.0-P8.7
 #endif
-}PORTn;  //端口
+} PORTn;  //端口
 typedef enum
 {
-  GPI                   =0x0001u,// 输入方向（默认）
-  GPO                   =0x0002u,// 输出方向
-  
-  LDS                   =0x0004u,// 低驱动能力（默认）
-  HDS                   =0x0008u,// 高驱动能力
-  
-  PULL_DOWN             =0x0010u,// 下拉
-  PULL_UP               =0x0020u,// 上拉
-  
-  IRQ_RISING            =0x0040u,// 上升沿触发中断
-  IRQ_FALLING           =0x0080u,// 下降沿触发中断
-  
-  SEL                   =0x0100u,// 第二复用功能
-}GPIO_Config;     //GPIO模式
+    GPI         = 0x0001u,  // 输入方向（默认）
+    GPO         = 0x0002u,  // 输出方向
+
+    LDS         = 0x0004u,  // 低驱动能力（默认）
+    HDS         = 0x0008u,  // 高驱动能力
+
+    PULL_DOWN   = 0x0010u,  // 下拉
+    PULL_UP     = 0x0020u,  // 上拉
+
+    IRQ_RISING  = 0x0040u,  // 上升沿触发中断
+    IRQ_FALLING = 0x0080u,  // 下降沿触发中断
+
+    SEL         = 0x0100u,  // 第二复用功能
+} GPIO_Config;     //GPIO模式
 /**************************IO口操作函数****************************************/
 extern void      GPIO_MultiBits_Init(PORTn, uint16_t BITs, uint16_t config);    //一位或多位IO口功能初始化,参数BITs为BIT0,BIT1，...BIT7或他们的和等
 #define          GPIO_Init(port,pin,config)         GPIO_MultiBits_Init(port,(1u<<pin),config)
@@ -88,10 +88,10 @@ extern void      GPIO_ClearITPendingBit(PORTn, uint8_t pin);                    
 #define          GPIO_PinReadBit(pin)           GPIO_ReadBit((PORTn)((pin>>4)+PORT1),(pin&0x0f)) 
 #define          GPIO_PinTurnBit(pin)           GPIO_TurnBit((PORTn)((pin>>4)+PORT1),(pin&0x0f)) 
 /********************************************************************************************
-实现像51单片机一样的位控制
-如PIN_OUT(P1,1)=1;便是将P1.1位输出高电平，不影响P1端口的其他位，int value=PIN_IN(P1,0);便是读取P1.0引脚的输入电平值（0或1）
-注意:port,pin参数必须是P1-P8,可以是宏定义,但不能为变量,
-*********************************************************************************************/
+ 实现像51单片机一样的位控制
+ 如PIN_OUT(P1,1)=1;便是将P1.1位输出高电平，不影响P1端口的其他位，int value=PIN_IN(P1,0);便是读取P1.0引脚的输入电平值（0或1）
+ 注意:port,pin参数必须是P1-P8,可以是宏定义,但不能为变量,
+ *********************************************************************************************/
 #define          PIN_DIR(port,pin)               GPIO_PIN_DIR(port,pin)         //输入方向寄存器
 #define          PIN_OUT(port,pin)               GPIO_PIN_OUT(port,pin)         //输出状态寄存器
 #define          PIN_IN(port,pin)                GPIO_PIN_IN(port,pin)          //输入状态寄存器

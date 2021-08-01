@@ -20,7 +20,6 @@
  */
 //宏定义延时使用的定时器，注释该宏定义则使用软件延时，
 //#define DELAY_TIMER      TIMER_B0
-
 #if(defined(DELAY_TIMER))
 #include "msp430f5529_timer.h"
 #define DELAY_MS(ms)     TIMER_Delay_Ms(DELAY_TIMER,ms)

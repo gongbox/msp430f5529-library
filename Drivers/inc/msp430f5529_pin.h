@@ -32,11 +32,11 @@ typedef enum
   PIND_0 = PIN7_0,PIND_1,PIND_2,PIND_3,PIND_4,PIND_5,PIND_6,PIND_7,
   PIND_8 = PIN8_0,PIND_9,PIND_10,PIND_11,PIND_12,PIND_13,PIND_14,PIND_15,
 #endif
-}PIN;
+} PIN;
 typedef struct GPIO_PIN
 {
-  PORTn   Port;
-  uint8_t Pin;
-}GPIO_PIN;
+    PORTn   Port;
+    uint8_t Pin;
+} GPIO_PIN;
 
 #endif

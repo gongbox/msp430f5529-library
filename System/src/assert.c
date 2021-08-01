@@ -8,16 +8,17 @@
  * 备    注     ：
  *
  * 作者         ：
-**********************************************************************************/
+ **********************************************************************************/
 
 #include "common.h"
 #include "led.h"
 #include "msp430f5529_system.h"
 
-const char ASSERT_FAILED_STR[] = "断言条件不成立，请检测错误原因：\n断言发生在%s文件的第%d行！\n断言所在函数：%s\n断言失败说明：%s\t—— by CTGU-GB\n\n";
+const char ASSERT_FAILED_STR[] =
+        "断言条件不成立，请检测错误原因：\n断言发生在%s文件的第%d行！\n断言所在函数：%s\n断言失败说明：%s\t—— by CTGU-GB\n\n";
 /********************************************************************/
 //如果断言条件不成立，进入了错误状态，就会打印错误信息和用LED来显示状态
-void assert_failed(char *file, int line,char *funName,char *str)
+void assert_failed(char *file, int line, char *funName, char *str)
 {
 #ifdef DEBUG
 #ifdef DEBUG_UART_PRINT

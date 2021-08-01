@@ -3,37 +3,37 @@
 
 #include"common.h"
 
-typedef enum 
+typedef enum
 {
-  TIMER_A0              ,
-  TIMER_A1              ,
-  TIMER_A2              ,
-  TIMER_B0              ,
-  TIMER_NUM             ,
-}TIMERn;             //定时器模块
-typedef enum 
+    TIMER_A0,
+    TIMER_A1,
+    TIMER_A2,
+    TIMER_B0,
+    TIMER_NUM,
+} TIMERn;   //定时器模块
+typedef enum
 {
-  TIMER_CH0             ,  
-  TIMER_CH1             ,  
-  TIMER_CH2             ,
-  TIMER_CH3             , 
-  TIMER_CH4             , 
-  TIMER_CH5             ,
-  TIMER_CH6             , 
-  TIMER_CH_NUM          ,
-}TIMER_CHn;           //定时器通道
+    TIMER_CH0,
+    TIMER_CH1,
+    TIMER_CH2,
+    TIMER_CH3,
+    TIMER_CH4,
+    TIMER_CH5,
+    TIMER_CH6,
+    TIMER_CH_NUM,
+} TIMER_CHn;    //定时器通道
 /*********************************PWM功能**************************************/
 typedef enum
 {
-  TIMER_PWM_OUTMOD0     ,
-  TIMER_PWM_OUTMOD1     ,
-  TIMER_PWM_OUTMOD2     ,
-  TIMER_PWM_OUTMOD3     ,
-  TIMER_PWM_OUTMOD4     ,
-  TIMER_PWM_OUTMOD5     ,
-  TIMER_PWM_OUTMOD6     ,
-  TIMER_PWM_OUTMOD7     ,
-}TIMER_PWM_OUTMODn;       //PWM波输出波形
+    TIMER_PWM_OUTMOD0,
+    TIMER_PWM_OUTMOD1,
+    TIMER_PWM_OUTMOD2,
+    TIMER_PWM_OUTMOD3,
+    TIMER_PWM_OUTMOD4,
+    TIMER_PWM_OUTMOD5,
+    TIMER_PWM_OUTMOD6,
+    TIMER_PWM_OUTMOD7,
+} TIMER_PWM_OUTMODn;    //PWM波输出波形
 //输出PWM波功能
 #define DEFAULT_PWM_OUTMOD      TIMER_PWM_OUTMOD7  //宏定义PWM波输出默认波形
 //定义占空比最大值
@@ -61,7 +61,7 @@ typedef enum
   CAP_Falling           ,  //下降沿捕获
   CAP_RisingAndFalling  ,  //上升沿下降沿都捕获
 }TIMER_CAPTUREn;      //捕获模式
-extern STATUS   TIMER_Capture_Init      (TIMERn, TIMER_CHn, TIMER_CAPTUREn);    //初始化一个通道为捕获模式， 
+extern STATUS   TIMER_Capture_Init      (TIMERn, TIMER_CHn, TIMER_CAPTUREn);    //初始化一个通道为捕获模式，
 extern void     TIMER_Capture_SetMode   (TIMERn, TIMER_CHn, TIMER_CAPTUREn);    //设置捕获边沿
 extern uint16_t TIMER_Capture_GetValue  (TIMERn, TIMER_CHn);                    //读取发生该捕获条件时的计数值
 extern uint32_t TIMER_Capture_CalTime_Us(uint16_t start_value,uint16_t stop_value,uint16_t overflowTime);  //计算两次捕获的时间差，注意还要考虑发生两次捕获之间的定时器溢出次数

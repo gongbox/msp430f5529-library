@@ -26,27 +26,27 @@ __interrupt void Reset_Handler(void)
 }
 #else
 /*******************************************************************************
-*  函数名称：__low_level_init(void)
-*  功能说明：启动函数，在主函数之前调用
-*  参数说明：无
-*  函数返回：无
-*  使用示例：无
-********************************************************************************/
+ *  函数名称：__low_level_init(void)
+ *  功能说明：启动函数，在主函数之前调用
+ *  参数说明：无
+ *  函数返回：无
+ *  使用示例：无
+ ********************************************************************************/
 __intrinsic int __low_level_init(void)
 {
     SystemInit();
-    return 0;//0-不初始化参数,1-初始化参数
+    return 0; //0-不初始化参数,1-初始化参数
 }
 #endif
 /*******************************************************************************
-*  函数名称：SystemInit (void)
-*  功能说明：启动函数，在主函数之前调用
-*  参数说明：无
-*  函数返回：无
-*  使用示例：无
-********************************************************************************/
-void SystemInit (void)
-{   
+ *  函数名称：SystemInit (void)
+ *  功能说明：启动函数，在主函数之前调用
+ *  参数说明：无
+ *  函数返回：无
+ *  使用示例：无
+ ********************************************************************************/
+void SystemInit(void)
+{
     DisableWatchDog();            //关闭看门狗
 #ifdef RAM_VECTOR
     Set_VectorTable_To_RAM();     //设置中断向量映射到RAM区域
@@ -83,12 +83,12 @@ void Start_Show()
 }
 #endif
 /*******************************************************************************
-*  函数名称：RAM_data_Init(void)
-*  功能说明：复制中断向量表 和 必要的数据到 RAM里
-*  参数说明：无
-*  函数返回：无
-*  使用示例：无
-********************************************************************************/
+ *  函数名称：RAM_data_Init(void)
+ *  功能说明：复制中断向量表 和 必要的数据到 RAM里
+ *  参数说明：无
+ *  函数返回：无
+ *  使用示例：无
+ ********************************************************************************/
 #pragma section = "DATA16_I"
 #pragma section = "DATA20_I"
 #pragma section = "DATA16_ID"
@@ -107,19 +107,19 @@ void RAM_data_Init(void)
     //ISR_TYPE *vector_rom = __section_begin("INTVEC");
     VectorTableCopyToRAM();                       //从FLASH中复制中断向量表到RAM
     /* 把已赋初值的变量从ROM里复制数据到RAM里 */
-    uint8_t *data_ram = __section_begin("DATA16_I");        //已赋初值的变量的地址在RAM里
-    uint8_t *data_rom = __section_begin("DATA16_ID");       //已赋初值的变量的数据存放在ROM里，需要赋值到RAM里
+    uint8_t *data_ram = __section_begin("DATA16_I");    //已赋初值的变量的地址在RAM里
+    uint8_t *data_rom = __section_begin("DATA16_ID");   //已赋初值的变量的数据存放在ROM里，需要赋值到RAM里
     uint8_t *data_rom_end = __section_end("DATA16_ID");
     n = data_rom_end - data_rom;
 
     /* 复制初始化数据到RAM里 */
     while (n--)
     {
-        *data_ram++ = *data_rom++; 
+        *data_ram++ = *data_rom++;
     }
     /* 把已赋初值的变量从ROM里复制数据到RAM里 */
-    data_ram = __section_begin("DATA20_I");                //已赋初值的变量的地址在RAM里
-    data_rom = __section_begin("DATA20_ID");               //已赋初值的变量的数据存放在ROM里，需要赋值到RAM里
+    data_ram = __section_begin("DATA20_I");         //已赋初值的变量的地址在RAM里
+    data_rom = __section_begin("DATA20_ID");        //已赋初值的变量的数据存放在ROM里，需要赋值到RAM里
     data_rom_end = __section_end("DATA20_ID");
     n = data_rom_end - data_rom;
 
@@ -128,14 +128,14 @@ void RAM_data_Init(void)
     {
         *data_ram++ = *data_rom++;
     }
-    
+
     /* 没赋初值或者初值为0的变量，需要清除其RAM里的数据，确保值为0 */
     uint8_t *bss_start = __section_begin("DATA16_Z");
     uint8_t *bss_end = __section_end("DATA16_Z");
 
     /* 清除没赋初值或者初值为0的变量数据值 */
     n = bss_end - bss_start;
-    while(n--)
+    while (n--)
     {
         *bss_start++ = 0;
     }
@@ -145,12 +145,12 @@ void RAM_data_Init(void)
 
     /* 清除没赋初值或者初值为0的变量数据值 */
     n = bss_end - bss_start;
-    while(n--)
+    while (n--)
     {
         *bss_start++ = 0;
     }
-   
-     /* 赋值用 __ramfunc 声明的函数的的代码段到 RAM，可以加快代码的运行        */
+
+    /* 赋值用 __ramfunc 声明的函数的的代码段到 RAM，可以加快代码的运行        */
     uint8_t *code_relocate_ram = __section_begin("CODE_I");
     uint8_t *code_relocate = __section_begin("CODE_ID");
     uint8_t *code_relocate_end = __section_end("CODE_ID");
@@ -161,11 +161,11 @@ void RAM_data_Init(void)
     {
         *code_relocate_ram++ = *code_relocate++;
     }
-    
+
     /* 赋值 Thread-local storage for main thread(require custom runtime library)到RAM*/
     uint8_t *tls_ram = __section_begin("TLS16_I");
     uint8_t *tls_start = __section_begin("TLS16_ID");
-    uint8_t *tls_end   = __section_end("TLS16_ID");
+    uint8_t *tls_end = __section_end("TLS16_ID");
 
     /* 从ROM里复制函数代码到RAM里 */
     n = tls_end - tls_start;

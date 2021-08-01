@@ -8,15 +8,14 @@
  * 备    注     ：assert_failed() 在 assert.c 里定义,用来检测条件是否满足，条件不满足时，执行assert_failed函数，提示用户
  *
  * 作者         ：
-**********************************************************************************/
-
+ **********************************************************************************/
 
 #ifndef _ASSERT_H_
 #define _ASSERT_H_
 
 /********************************************************************/
 
-void assert_failed(char *file, int line,char *funName,char *str);                  
+void assert_failed(char *file, int line, char *funName, char *str);
 
 #ifdef DEBUG
 #define ASSERT(expr,funName,str) \

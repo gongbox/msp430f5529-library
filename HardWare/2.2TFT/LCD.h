@@ -36,15 +36,11 @@
 #define LCD_RST    PIN_OUT(LCD_RST_PORT,LCD_RST_PIN)
 #define LCD_DC     PIN_OUT(LCD_DC_PORT,LCD_DC_PIN)
 
-void LCD_Init(void); 
+void LCD_Init(void);
 void LCD_SetPos(unsigned int x1,unsigned int y1,unsigned int x2,unsigned int y2);
 void LCD_Write_DATA8(char da);
 void LCD_Write_DATA16(uint16_t da);
 void LCD_Write_REG(char da);
-					  		 
+
 #endif  
-	 
-	 
-
-
 
