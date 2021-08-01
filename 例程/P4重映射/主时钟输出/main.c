@@ -5,7 +5,7 @@
  *
  *
  * @file       main.c
-* @brief      MSP430F5529 平台主程序
+ * @brief      MSP430F5529 平台主程序
 
  * @author     CTGU-GB
  * @version    v2.7
@@ -15,16 +15,15 @@
 
 void main()
 {
-  DisableInterrupts();            //禁止总中断
-  LED_Init(LED_ALL);              //LED灯初始化
-  
-  GPIO_PinRemapConfig(P4,0,GPIO_Remap_MCLK);             //P4.0端口重映射为MCLK输出
-  GPIO_PinRemapConfig(P4,7,GPIO_Remap_MCLK);             //P4.7端口重映射为MCLK输出
-  EnableInterrupts();                //使能中断
-  while(1)
-  {
-    
-  }
-}
+    DisableInterrupts();            //禁止总中断
+    LED_Init(LED_ALL);              //LED灯初始化
 
+    GPIO_PinRemapConfig(P4, 0, GPIO_Remap_MCLK);             //P4.0端口重映射为MCLK输出
+    GPIO_PinRemapConfig(P4, 7, GPIO_Remap_MCLK);             //P4.7端口重映射为MCLK输出
+    EnableInterrupts();                //使能中断
+    while (1)
+    {
+
+    }
+}
 

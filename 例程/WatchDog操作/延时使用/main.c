@@ -5,7 +5,7 @@
  *
  *
  * @file       main.c
-* @brief      MSP430F5529 平台主程序
+ * @brief      MSP430F5529 平台主程序
 
  * @author     CTGU-GB
  * @version    v2.7
@@ -15,12 +15,12 @@
 
 void main()
 {
-  DisableInterrupts();            //禁止总中断
-  LED_Init(LED_ALL);              //LED灯初始化
-  EnableInterrupts();              //是能中断
-  while(1)
-  {
-     WatchDog_Delay_Ms(500);  //500MS，看门狗延时
-     LED_Turn  (LED1);               //指示灯闪烁
-  }
+    DisableInterrupts();            //禁止总中断
+    LED_Init(LED_ALL);              //LED灯初始化
+    EnableInterrupts();              //是能中断
+    while (1)
+    {
+        WatchDog_Delay_Ms(500);  //500MS，看门狗延时
+        LED_Turn(LED1);               //指示灯闪烁
+    }
 }

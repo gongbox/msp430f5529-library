@@ -6,7 +6,7 @@
 #include <stdio.h>
 typedef enum
 {
-    CMD = 0u, //命令时为低电平
+    CMD  = 0u, //命令时为低电平
     DATA = 1u, //数据时为高电平
 } CMD_OR_DATA;
 static const struct
@@ -14,9 +14,12 @@ static const struct
     uint8_t width;
     uint8_t height;
     const unsigned char *pData;
-} Font[] = { { .width = 6, .height = 8, .pData = &ASCII_6X8[0][0] }, {
-        .width = 8, .height = 16, .pData = &ASCII_8X16[0][0] },
-             { .width = 16, .height = 16, .pData = &CHINESE_16X16[0][0] }, };
+} Font[] =
+{
+  {.width=6,.height= 8,.pData= &ASCII_6X8[0][0]},
+  {.width=8,.height=16,.pData=&ASCII_8X16[0][0]},
+  {.width=16,.height=16,.pData=&CHINESE_16X16[0][0]},
+};
 #ifdef OLED_RAM //开启显存
 static uint8_t OLED_RAM_DATA[(OLED_HEIGHT / 8)][OLED_WIDTH] = { 0 }; //显存
 static uint8_t line_position = 0, row_position = 0;   //光标位置
@@ -207,8 +210,7 @@ void OLED_Init(void)
     OLED_PORT_Init();
     // OLED_CS  = 0;  //芯片选择输入 低电平使能
     OLED_RST = 0;  //复位信号,不可省略
-    for (i = 0; i < 10000; i++)
-        ;
+    for (i = 0; i < 10000; i++);
     OLED_RST = 1;
 
     OLED_WriteByte(CMD, 0xA8);    //set Multiplex Ratio
